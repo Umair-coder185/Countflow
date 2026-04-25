@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Allow: /tools/
+Allow: /blog/
+Allow: /tools/word-counter
+Allow: /tools/character-counter
+Allow: /tools/reading-time
+Allow: /tools/sentence-calculator
+
+Disallow: /.next/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.git/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://countflow.com/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+# Bing specific
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /
