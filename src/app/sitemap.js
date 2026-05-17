@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = "https://countflow.com";
+  const baseUrl = "https://countflows.com";
 
   const routes = [
     {

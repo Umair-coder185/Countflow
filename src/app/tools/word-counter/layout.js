@@ -5,17 +5,17 @@ export const metadata = {
   openGraph: {
     title: "Free Word Counter Online - Instant Text Analysis",
     description: "Count words, characters, sentences and paragraphs instantly. Advanced analytics and readability scores.",
-    url: "https://countflow.com/tools/word-counter",
+    url: "https://countflows.com/tools/word-counter",
     type: "website",
     images: [{
-      url: "https://countflow.com/word-counter-og.png",
+      url: "https://countflows.com/word-counter-og.png",
       width: 1200,
       height: 630,
-      alt: "Countflow Word Counter"
+      alt: "Countflows Word Counter"
     }]
   },
   alternates: {
-    canonical: "https://countflow.com/tools/word-counter"
+    canonical: "https://countflows.com/tools/word-counter"
   }
 }
 

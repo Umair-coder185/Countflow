@@ -43,7 +43,7 @@ export default function Navbar() {
           className="flex items-center gap-2 font-bold text-xl sm:text-2xl bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-transparent hover:opacity-80 transition"
         >
           <span className="text-2xl">�</span>
-          Countflow
+          Countflows
         </Link>
 
         {/* Desktop Menu */}

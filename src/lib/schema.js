@@ -1,14 +1,14 @@
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Countflow",
-  "url": "https://countflow.com",
-  "logo": "https://countflow.com/logo.png",
+  "name": "Countflows",
+  "url": "https://countflows.com",
+  "logo": "https://countflows.com/logo.png",
   "description": "Free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer",
   "sameAs": [
-    "https://twitter.com/countflow",
-    "https://facebook.com/countflow",
-    "https://linkedin.com/company/countflow"
+    "https://twitter.com/countflows",
+    "https://facebook.com/countflows",
+    "https://linkedin.com/company/countflows"
   ],
   "contact": {
     "@type": "ContactPoint",
@@ -21,9 +21,9 @@ export const organizationSchema = {
 export const wordCounterToolSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Word Counter - Countflow",
+  "name": "Word Counter - Countflows",
   "description": "Free online word counter tool to instantly count words, characters, sentences and paragraphs",
-  "url": "https://countflow.com/tools/word-counter",
+  "url": "https://countflows.com/tools/word-counter",
   "applicationCategory": "Productivity",
   "operatingSystem": "Web",
   "offers": {
@@ -41,9 +41,9 @@ export const wordCounterToolSchema = {
 export const characterCounterToolSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Character Counter - Countflow",
+  "name": "Character Counter - Countflows",
   "description": "Free online character counter to count characters, letters, spaces and symbols instantly",
-  "url": "https://countflow.com/tools/character-counter",
+  "url": "https://countflows.com/tools/character-counter",
   "applicationCategory": "Productivity",
   "operatingSystem": "Web",
   "offers": {
@@ -56,9 +56,9 @@ export const characterCounterToolSchema = {
 export const readingTimeToolSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Reading Time Calculator - Countflow",
+  "name": "Reading Time Calculator - Countflows",
   "description": "Free reading time calculator to estimate how long content takes to read and speak",
-  "url": "https://countflow.com/tools/reading-time",
+  "url": "https://countflows.com/tools/reading-time",
   "applicationCategory": "Productivity",
   "operatingSystem": "Web",
   "offers": {
@@ -71,9 +71,9 @@ export const readingTimeToolSchema = {
 export const sentenceCounterToolSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Sentence Counter - Countflow",
+  "name": "Sentence Counter - Countflows",
   "description": "Free sentence counter and analyzer to count sentences and analyze writing structure",
-  "url": "https://countflow.com/tools/sentence-calculator",
+  "url": "https://countflows.com/tools/sentence-calculator",
   "applicationCategory": "Productivity",
   "operatingSystem": "Web",
   "offers": {
@@ -89,18 +89,18 @@ export const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Countflow?",
+      "name": "What is Countflows?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Countflow is a suite of free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer. Perfect for writers, students, bloggers, and content creators."
+        "text": "Countflows is a suite of free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer. Perfect for writers, students, bloggers, and content creators."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Countflow free to use?",
+      "name": "Is Countflows free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Countflow is completely free to use. No registration or subscription required."
+        "text": "Yes, Countflows is completely free to use. No registration or subscription required."
       }
     },
     {

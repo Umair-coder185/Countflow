@@ -53,7 +53,7 @@ With these features, writers, students, and professionals can meet limits, impro
       </h2>
       <p  className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Counting words in pages helps measure text length and improve readability. A good readability score ensures your writing is clear, easy to follow, and engaging for readers. This makes essays, articles, and reports more effective and reader-friendly.
 
-Use our  <Link href="/tools/reading-time-calculator" className="text-blue-500 hover:underline">reading time counter</Link> to estimate how long it will take readers to finish your text. Just paste your content, and it shows minutes and seconds instantly, helping you plan your writing for better engagement and readability.
+Use our  <Link href="/tools/reading-time" className="text-blue-500 hover:underline">reading time counter</Link> to estimate how long it will take readers to finish your text. Just paste your content, and it shows minutes and seconds instantly, helping you plan your writing for better engagement and readability.
       </p>
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
         Word Count Per Page Converter
