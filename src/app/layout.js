@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { Providers } from "./Providers"
 import { Inter, Poppins } from "next/font/google"
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const poppins = Poppins({ subsets: ["latin"], weight: ["400","600","700"], variable: "--font-poppins" })
@@ -63,6 +64,30 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+
+
+
+      <head>
+              
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-5H9EXT0X10"
+  strategy="afterInteractive"
+/>
+
+<Script
+  id="google-analytics"
+  strategy="afterInteractive"
+>
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5H9EXT0X10');
+  `}
+</Script>
+
+      </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans bg-white text-gray-900 dark:bg-gray-950 dark:text-white transition-colors duration-300`}>
         <Providers>
           <Navbar />
