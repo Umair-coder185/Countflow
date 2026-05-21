@@ -2,7 +2,7 @@
 import { Quote } from "lucide-react";
 import { motion } from "framer-motion";
 
-export function Testimonials() {
+function Testimonials() {
   const testimonials = [
     {
       name: "Sarah, Blogger",
@@ -55,3 +55,5 @@ export function Testimonials() {
     </section>
   );
 }
+
+export default Testimonials;
