@@ -1,15 +1,15 @@
 export const metadata = {
-  title: "Terms & Conditions - Text Tools",
+  title: "Terms & Conditions - countflows ",
   description:
     "Terms & Conditions for Text Tools. Learn about usage rules, disclaimers, intellectual property, and user responsibilities when using our online writing utilities.",
   alternates: {
-    canonical: "https://yourdomain.com/terms-and-conditions",
+    canonical: "https://countflows.com/terms-and-conditions",
   },
   openGraph: {
-    title: "Terms & Conditions - Text Tools",
+    title: "Terms & Conditions - countflows ",
     description:
-      "Text Tools Terms & Conditions covering usage rules, disclaimers, intellectual property, and user responsibilities.",
-    url: "https://yourdomain.com/terms-and-conditions",
+      "countflows Terms & Conditions covering usage rules, disclaimers, intellectual property, and user responsibilities.",
+    url: "https://countflows.com/terms-and-conditions",
     siteName: "Text Tools",
     type: "website",
   },
@@ -110,10 +110,10 @@ export default function TermsAndConditions() {
         If you have any questions about these Terms & Conditions, please contact
         us at:{" "}
         <a
-          href="mailto:your-email@example.com"
+          href="mailto:umairrao965@gmail.com"
           className="text-blue-500 hover:underline"
         >
-          your-email@example.com
+          umairrao965@gmail.com
         </a>
         .
       </p>

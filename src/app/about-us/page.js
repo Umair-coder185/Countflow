@@ -1,16 +1,16 @@
 export const metadata = {
-  title: "About Us - Text Tools",
+  title: "About Us - countflows",
   description:
-    "Learn more about Text Tools, a premium suite of online writing utilities including Word Counter, Sentence Counter, Reading Time Calculator, and Character Counter. Our mission is to provide fast, accurate, and user-friendly tools for writers, students, and professionals.",
+    "Learn more about countflows, a premium suite of online writing utilities including Word Counter, Sentence Counter, Reading Time Calculator, and Character Counter. Our mission is to provide fast, accurate, and user-friendly tools for writers, students, and professionals.",
   alternates: {
-    canonical: "https://yourdomain.com/about-us",
+    canonical: "https://countflows.com/about-us",
   },
   openGraph: {
-    title: "About Us - Text Tools",
+    title: "About Us - countflows",
     description:
-      "Text Tools provides free, accurate, and easy-to-use writing utilities like Word Counter, Sentence Counter, Reading Time Calculator, and Character Counter. Built for bloggers, students, and SEO writers.",
-    url: "https://yourdomain.com/about-us",
-    siteName: "Text Tools",
+      "countflows provides free, accurate, and easy-to-use writing utilities like Word Counter, Sentence Counter, Reading Time Calculator, and Character Counter. Built for bloggers, students, and SEO writers.",
+    url: "https://countflows.com/about-us",
+    siteName: "countflows",
     type: "website",
   },
 };

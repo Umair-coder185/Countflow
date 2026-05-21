@@ -39,6 +39,12 @@ export default async function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog/seo-content-writing-guide`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: `${baseUrl}/about-us`,
       lastModified: new Date(),
       changeFrequency: "monthly",

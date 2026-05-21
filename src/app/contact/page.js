@@ -32,7 +32,7 @@ export default function ContactUs() {
               Email
             </h3>
             <p className="text-gray-600 dark:text-slate-400">
-              your-email@example.com
+              umairrao965@gmail.com
             </p>
           </motion.div>
 
