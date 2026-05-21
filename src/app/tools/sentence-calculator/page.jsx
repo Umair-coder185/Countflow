@@ -86,7 +86,7 @@ export default function SentenceCounterPage() {
         <motion.h1
           initial={false}
           animate={{ opacity: 1, y: 0 }}
-          className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
+          className="text-2xl  mt-8 md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
         >
           Sentence <span className="text-cyan-500">Cou</span>n
           <span className="text-cyan-400">ter</span>

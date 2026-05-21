@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 /* Main content respects fixed navbar */
-main {
-  @apply pt-20 md:pt-24;
-}
 
 /* Premium Gradient Background */
 html {

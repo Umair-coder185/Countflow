@@ -7,7 +7,7 @@ import BlogHeader from "@/components/blog/BlogHeader";
 
 export default function BlogContent({ post }) {
   return (
-    <main className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 lg:py-16">
+    <main className="max-w-5xl   mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 lg:py-16">
       {/* Header Back Link */}
          <BlogHeader
         title={post.title}

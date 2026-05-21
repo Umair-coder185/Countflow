@@ -10,7 +10,7 @@ export default function BlogHeader({ title, subtitle }) {
       initial={false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="mb-10 text-center"
+      className="mb-10 text-center mt-8"
     >
       {/* Back Link */}
       <div className="mb-6 text-left">
@@ -23,7 +23,7 @@ export default function BlogHeader({ title, subtitle }) {
       </div>
 
       {/* Icon */}
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-2 mt-4">
         <BookOpen className="w-10 h-10 text-blue-600" />
       </div>
 

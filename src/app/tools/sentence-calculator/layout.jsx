@@ -5,17 +5,17 @@ export const metadata = {
   openGraph: {
     title: "Free Sentence Counter - Analyze Sentence Structure",
     description: "Count sentences and analyze writing structure instantly. Improve readability and sentence quality.",
-    url: "https://countflow.com/tools/sentence-calculator",
+    url: "https://countflows.com/tools/sentence-calculator",
     type: "website",
     images: [{
-      url: "https://countflow.com/sentence-counter-og.png",
+      url: "https://countflows.com/sentence-counter-og.png",
       width: 1200,
       height: 630,
-      alt: "Countflow Sentence Counter"
+      alt: "Countflows Sentence Counter"
     }]
   },
   alternates: {
-    canonical: "https://countflow.com/tools/sentence-calculator"
+    canonical: "https://countflows.com/tools/sentence-calculator"
   }
 }
 

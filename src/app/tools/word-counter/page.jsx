@@ -99,7 +99,7 @@ export default function WordCounterPage() {
         <motion.h1
           initial={false}
           animate={{ opacity: 1, y: 0 }}
-          className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
+          className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8"
         >
           Wo<span className="text-cyan-500">R</span>d
           <span className="text-cyan-500"> </span>Co
