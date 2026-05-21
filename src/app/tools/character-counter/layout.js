@@ -5,17 +5,17 @@ export const metadata = {
   openGraph: {
     title: "Free Character Counter Online - Instant Character Count",
     description: "Count characters, letters, and spaces instantly. Perfect for social media and content optimization.",
-    url: "https://countflow.com/tools/character-counter",
+    url: "https://countflows.com/tools/character-counter",
     type: "website",
     images: [{
-      url: "https://countflow.com/character-counter-og.png",
+      url: "https://countflows.com/character-counter-og.png",
       width: 1200,
       height: 630,
       alt: "Countflow Character Counter"
     }]
   },
   alternates: {
-    canonical: "https://countflow.com/tools/character-counter"
+    canonical: "https://countflows.com/tools/character-counter"
   }
 }
 

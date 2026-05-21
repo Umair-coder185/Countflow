@@ -33,8 +33,10 @@ const features = [
 
   return (
     <>
+      {/* Main Article for SEO and Accessibility */}
+      <article aria-label="Character Counter Tool Information">
       {/* Content Section */}
-      <section className="bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 py-12 md:py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="what-is-character-counter">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Introduction */}
           <motion.div
@@ -44,9 +46,9 @@ const features = [
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 dark:text-white">
+            <h1 id="what-is-character-counter" className="text-3xl sm:text-4xl font-medium text-gray-900 dark:text-white">
               What is a <span className="text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text">Character Counter?</span>
-            </h2>
+            </h1>
             <p className="text-gray-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
               A Character Counter is a simple tool that shows how many characters and words your text contains. It also tracks sentences and paragraphs, helping you stay within limits for posts, essays, or messages.
 you can also use a <Link href="/tools/word-counter" className="text-blue-500 hover:underline">Word Counter</Link> to check total words easily.
@@ -85,19 +87,25 @@ you can also use a <Link href="/tools/word-counter" className="text-blue-500 hov
           </motion.div>
 
           {/* How to Use */}
+          {/* How to Use - Step by Step */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="space-y-4 p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-500/10 dark:to-blue-500/10 border border-cyan-200 dark:border-cyan-500/20"
+            aria-labelledby="how-to-use"
           >
-            <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 dark:text-white">
+            <h2 id="how-to-use" className="text-2xl sm:text-3xl font-medium text-gray-900 dark:text-white">
               How to Use the Character Counter
             </h2>
-            <p className="text-gray-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
-              Simply type or paste your text into the counter and receive instant analysis. The tool displays character counts, word counts, and additional metrics like sentences, paragraphs, and estimated reading time—perfect for essays, social media content, and emails.
-            </p>
+            <ol className="list-decimal pl-6 text-gray-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed space-y-2">
+              <li>Type or paste your text into the input box above.</li>
+              <li>View instant character, word, and sentence counts as you type.</li>
+              <li>Set a character goal or use a preset for social media, SEO, or SMS.</li>
+              <li>Use the toolbar to copy, clear, or download your text.</li>
+              <li>Check additional metrics like reading time and average word length.</li>
+            </ol>
           </motion.div>
 
           {/* Readability Metrics */}
@@ -139,7 +147,7 @@ you can also use a <Link href="/tools/word-counter" className="text-blue-500 hov
       </section>
 
       {/* Comparison Section */}
-      <section className="bg-slate-950 text-white py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-slate-950 text-white py-12 md:py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="comparison">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -149,7 +157,7 @@ you can also use a <Link href="/tools/word-counter" className="text-blue-500 hov
             className="space-y-8"
           >
             <div className="text-center space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-semibold">
+              <h2 id="comparison" className="text-3xl sm:text-4xl font-semibold">
                 Character Counter vs <span className="text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text">Word Counter</span>
               </h2>
               <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
@@ -187,7 +195,7 @@ you can also use a <Link href="/tools/word-counter" className="text-blue-500 hov
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900 py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900 py-12 md:py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="benefits">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -196,7 +204,7 @@ you can also use a <Link href="/tools/word-counter" className="text-blue-500 hov
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 dark:text-white">
+            <h2 id="benefits" className="text-3xl sm:text-4xl font-medium text-gray-900 dark:text-white">
               Benefits of Using This Tool
             </h2>
             <p className="text-gray-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
@@ -218,6 +226,20 @@ you can also use a <Link href="/tools/word-counter" className="text-blue-500 hov
           </motion.div>
         </div>
       </section>
+      {/* Use Cases Section */}
+      <section className="bg-white dark:bg-slate-900 py-12 md:py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="use-cases">
+        <div className="max-w-4xl mx-auto">
+          <h2 id="use-cases" className="text-3xl sm:text-4xl font-medium text-gray-900 dark:text-white mb-8">Who Should Use a Character Counter?</h2>
+          <ul className="list-disc pl-6 space-y-4 text-gray-700 dark:text-gray-300 text-base sm:text-lg">
+            <li><strong>Students & Researchers:</strong> For essays, reports, and academic writing with strict length requirements.</li>
+            <li><strong>Writers & Authors:</strong> To maintain style, meet publisher limits, and ensure concise writing.</li>
+            <li><strong>Marketers & Copywriters:</strong> For optimizing ad copy, social media posts, and email subject lines.</li>
+            <li><strong>Social Media Managers:</strong> To keep posts within platform limits and maximize engagement.</li>
+            <li><strong>SEO Professionals:</strong> For crafting meta titles and descriptions that fit search engine guidelines.</li>
+          </ul>
+        </div>
+      </section>
+      </article>
     </>
   )
 }

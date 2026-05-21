@@ -4,7 +4,7 @@ export const posts = [
   {
     id: 1,
     slug: "seo-content-writing-guide",
-    title: "SEO Content Writing: Complete Guide for Blogging, Optimization",
+    title: "SEO Content Writing Guide for Blogging & Optimization",
     description: "Master SEO content writing to engage readers and outrank competitors. Learn practical skills to optimize your copy and target keywords.",
     excerpt: "Learn SEO content writing, keyword optimization, blogging strategies, search intent, readability, and on-page SEO techniques.",
     image: "/blogs/seo-keyword-research.png",

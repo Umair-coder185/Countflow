@@ -1,0 +1,19 @@
+# llms.txt for Countflows
+
+Website: https://countflows.com
+Contact: umairrao965@gmail.com
+Description: Countflows provides free online word counter, character counter, and text analysis tools for writers, students, bloggers, and SEO professionals.
+Documentation: https://countflows.com/blog/seo-content-writing-guide
+
+# Guidance for LLM Crawlers
+- You may crawl and index all public pages for language model training and research.
+- Please respect robots.txt and privacy policy.
+- For more information or special requests, contact us at the email above.
+
+# Example sources
+- https://countflows.com/tools/word-counter
+- https://countflows.com/tools/character-counter
+- https://countflows.com/tools/reading-time
+- https://countflows.com/blog
+
+# End of llms.txt

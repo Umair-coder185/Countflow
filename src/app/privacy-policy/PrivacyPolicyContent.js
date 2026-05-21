@@ -26,8 +26,8 @@ export default function PrivacyPolicyContent() {
       <div className="prose prose-sm sm:prose-base md:prose-lg lg:prose-xl dark:prose-invert max-w-none">
         <p>
           This Privacy Policy describes how CountFlows (
-          <a href="https://countflows.com/" className="text-blue-600">
-            https://countflows.com/
+          <a href="https://countflows.com/" className="text-blue-600" aria-label="Visit CountFlows homepage">
+            Visit our homepage
           </a>
           ) collects, uses, and protects information when you visit or use our
           website. By using our website, you agree to the terms explained
@@ -91,13 +91,14 @@ export default function PrivacyPolicyContent() {
           show ads based on your visits to this and other websites.
         </p>
         <p>
-          You can opt out of personalized ads here:{" "}
+          You can opt out of personalized ads by visiting the{' '}
           <a
             href="https://www.google.com/settings/ads"
             className="text-blue-600"
+            aria-label="Google Ad Settings page"
           >
-            https://www.google.com/settings/ads
-          </a>
+            Google Ad Settings page
+          </a>.
         </p>
 
         <h2>5. Third-Party Services</h2>
@@ -188,7 +189,7 @@ export default function PrivacyPolicyContent() {
           </li>
           <li>
             <strong>Opt-out of personalized ads:</strong>{" "}
-            <a href="https://www.google.com/settings/ads" className="text-blue-600">
+            <a href="https://www.google.com/settings/ads" className="text-blue-600" aria-label="Google Ad Settings">
               Google Ad Settings
             </a>
           </li>
@@ -210,7 +211,7 @@ export default function PrivacyPolicyContent() {
         <ul>
           <li>
             <strong>Email:</strong>{" "}
-            <a href="mailto:umairrao965@gmail.com" className="text-blue-600">
+            <a href="mailto:umairrao965@gmail.com" className="text-blue-600" aria-label="Email CountFlows support">
               umairrao965@gmail.com
             </a>
           </li>
@@ -219,8 +220,9 @@ export default function PrivacyPolicyContent() {
             <a
               href="https://countflows.com/contact"
               className="text-blue-600"
+              aria-label="Contact page"
             >
-              https://countflows.com/contact
+              Contact page
             </a>
           </li>
           <li>
