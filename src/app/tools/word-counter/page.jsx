@@ -89,13 +89,7 @@ export default function WordCounterPage() {
   return (
     <main
       id="word-counter-top"
-      className="
-        relative overflow-hidden
-        bg-gradient-to-b from-white to-cyan-50 
-        dark:from-gray-950 dark:to-gray-800 
-        min-h-screen md:mt-12 
-        dark:text-white
-      "
+      className="relative overflow-hidden bg-gradient-to-b from-white to-cyan-50 dark:from-gray-950 dark:to-gray-800 min-h-screen md:mt-12 dark:text-white"
     >
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-500/20" />
@@ -171,17 +165,7 @@ export default function WordCounterPage() {
 
 
             placeholder="Start typing or paste your text..."
-            className="
-    w-full max-w-4xl mx-auto min-h-[150px] sm:min-h-[200px] md:min-h-[240px] 
-    border border-gray-300 dark:border-gray-600 
-    rounded-xl p-4 
-    outline-none focus:ring-2 focus:ring-cyan-500 
-    resize-y 
-    bg-white dark:bg-gray-900 
-    text-gray-900 dark:text-gray-100 
-    placeholder-gray-400 dark:placeholder-gray-500
-    text-base md:text-lg
-  "
+            className="w-full max-w-4xl mx-auto min-h-[150px] sm:min-h-[200px] md:min-h-[240px] border border-gray-300 dark:border-gray-600 rounded-xl p-4 outline-none focus:ring-2 focus:ring-cyan-500 resize-y bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 text-base md:text-lg"
           />
       
 

@@ -1,41 +1,20 @@
+import seoContent from "./blogs/seo-content-writing-guide";
+
 export const posts = [
   {
-    slug: "how-many-words-is-5-minute-speech",
-    title: "How Many Words is a 5 Minute Speech?",
-    description:
-      "Learn how many words you should write for a 5 minute speech and improve your speaking skills.",
-    content: `
-A 5-minute speech typically contains around 600 to 750 words depending on your speaking speed.
-
-Most people speak at an average speed of 120 to 150 words per minute.
-
-To deliver an effective speech, it's important to practice timing and pacing.
-
-Tips:
-- Speak clearly and naturally
-- Add pauses for emphasis
-- Avoid rushing
-
-This ensures your speech is engaging and easy to understand.
-    `
+    id: 1,
+    slug: "seo-content-writing-guide",
+    title: "SEO Content Writing: Complete Guide for Blogging, Optimization",
+    description: "Master SEO content writing to engage readers and outrank competitors. Learn practical skills to optimize your copy and target keywords.",
+    excerpt: "Learn SEO content writing, keyword optimization, blogging strategies, search intent, readability, and on-page SEO techniques.",
+    image: "/blogs/seo-keyword-research.png",
+    category: "SEO",
+    author: "Countflows Team",
+    date: "May 21, 2026",
+    readTime: "12 min read",
+    keywords: ["SEO content writing", "blogging", "on-page SEO", "keyword optimization", "search intent", "content structure", "keyword research online"],
+    content: seoContent,
   },
+];
 
-  {
-    slug: "ideal-blog-post-length-seo",
-    title: "Ideal Blog Post Length for SEO in 2026",
-    description:
-      "Discover the perfect blog post length to rank higher on Google and improve SEO performance.",
-    content: `
-The ideal blog post length for SEO is typically between 1500 and 2500 words.
-
-Longer content tends to rank better because it provides more value and covers topics in depth.
-
-However, quality always matters more than quantity.
-
-Tips:
-- Focus on user intent
-- Use headings properly
-- Add internal links
-    `
-  }
-]
+export const blogs = posts;
