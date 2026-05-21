@@ -1,7 +1,7 @@
 export async function GET() {
   const baseUrl = "https://countflows.com";
   const routes = [
-    "",
+    "/",
     "/tools/word-counter",
     "/tools/character-counter",
     "/tools/reading-time",
