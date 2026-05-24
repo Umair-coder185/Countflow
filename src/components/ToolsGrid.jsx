@@ -72,9 +72,8 @@ export default function ToolsGrid() {
           <p className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 dark:bg-cyan-400/5 px-4 py-2 text-sm font-medium text-cyan-600 dark:text-cyan-400 mb-6 backdrop-blur-sm">
             Powerful Writing Tools
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-gray-900 dark:text-white mb-4">
-            Explore Our <span className="text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text">Premium Tools</span>
-          </h2>
+          <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+            <span className="text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text">Explore </span>Our <span className="text-transparent bg-gradient-to-r from-cyan-600 to-blue-500 bg-clip-text">Premium</span> Tools</h1>
           <p className="mx-auto max-w-2xl text-gray-600 dark:text-slate-400 text-base sm:text-lg">
             Comprehensive writing analysis tools designed to help you create better content faster
           </p>

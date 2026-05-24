@@ -70,14 +70,9 @@ export default function ReadingTimePage() {
 
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
-        <motion.h1
-          initial={false}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-2xl  mt-8 md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
-        >
-          Reading <span className="text-cyan-500">Ti</span>me
-          <span className="text-cyan-500"> </span>Calculator
-        </motion.h1>
+        <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
+          Reading <span className="text-cyan-500">Time Calculator</span>
+        </h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
           Instantly calculate how long it takes to read any text. Plan your reading sessions, estimate article times, and optimize your content for your audience's schedule.

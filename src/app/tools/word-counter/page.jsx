@@ -96,15 +96,9 @@ export default function WordCounterPage() {
 
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
-        <motion.h1
-          initial={false}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8"
-        >
-          Wo<span className="text-cyan-500">R</span>d
-          <span className="text-cyan-500"> </span>Co
-          <span className="text-cyan-400">U</span>nter
-        </motion.h1>
+        <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
+          Word <span className="text-cyan-500">Counter</span>
+        </h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
           Track your writing progress with instant word, character, and sentence counts. Set goals and watch your progress bar fill with every keystroke.

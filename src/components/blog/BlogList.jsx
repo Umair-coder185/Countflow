@@ -18,7 +18,7 @@ export default function BlogList({ posts }) {
           <BookOpen className="w-10 h-10 text-blue-600 dark:text-cyan-400" />
         </div>
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 dark:text-gray-100 leading-tight tracking-tight">
-          Blog
+          Blogs
         </h1>
         <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           Discover expert writing tips, SEO strategies, and content creation guides.

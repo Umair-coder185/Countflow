@@ -1,4 +1,4 @@
-import { posts } from "@/lib/blogData";
+import { posts } from "@/lib/blogData";   
 import BlogContent from "@/components/blog/BlogContent";
 
 export async function generateMetadata({ params }) {
