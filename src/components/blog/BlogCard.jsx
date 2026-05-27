@@ -6,38 +6,36 @@ import { Calendar, Clock, User, ArrowRight } from "lucide-react";
 
 export default function BlogCard({ post }) {
   return (
-    <motion.div
+    <motion.article
       whileHover={{
-        scale: 1.01,
-        boxShadow: "0 8px 24px rgba(0, 120, 255, 0.10)",
+        scale: 1.02,
+        boxShadow: "0 12px 40px rgba(0, 120, 255, 0.15)",
       }}
       transition={{ duration: 0.3 }}
-      className="bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col hover:shadow-xl transition-all w-full max-w-2xl min-w-[340px] mx-auto"
+      className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col hover:shadow-2xl transition-all w-full h-full"
     >
       {/* Featured Image */}
-      <div className="relative h-28 sm:h-32 w-full overflow-hidden group">
+      <div className="relative h-40 sm:h-48 md:h-52 w-full overflow-hidden group">
         <img
           src={post.image}
           alt={post.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-2xl"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity rounded-t-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity rounded-t-2xl" />
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 p-4 gap-2">
+      <div className="flex flex-col flex-1 p-3 sm:p-6 gap-3">
         <Link href={`/blog/${post.slug}`} className="block">
-          <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-gray-100 mb-2 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors line-clamp-2">
+          <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors line-clamp-2">
             {post.title}
-          </h2>
+          </h4>
         </Link>
 
-        <p className="text-gray-600 dark:text-gray-400 text-sm mb-2 line-clamp-2">
-          {post.excerpt}
-        </p>
+       
 
         {/* Meta Info */}
-        <div className="flex flex-wrap gap-3 text-xs text-gray-500 dark:text-gray-400 mb-2">
+        <div className="flex flex-wrap gap-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-3">
           <span className="flex items-center gap-1">
             <User className="w-4 h-4" /> {post.author}
           </span>
@@ -50,7 +48,7 @@ export default function BlogCard({ post }) {
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mt-auto mb-3">
+        <div className="flex flex-wrap gap-1 mt-auto mb-1">
           {post.keywords.slice(0, 3).map((keyword, i) => (
             <span
               key={i}
@@ -64,12 +62,12 @@ export default function BlogCard({ post }) {
         {/* Read More Button */}
         <Link
           href={`/blog/${post.slug}`}
-          className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-md bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold shadow hover:from-blue-700 hover:to-cyan-700 transition-colors text-xs sm:text-sm mt-1"
+          className="inline-flex items-center gap-2 self-start px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold shadow hover:from-blue-700 hover:to-cyan-700 transition-colors text-sm mt-2"
           aria-label={`Read more about ${post.title}`}
         >
           Read More <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }

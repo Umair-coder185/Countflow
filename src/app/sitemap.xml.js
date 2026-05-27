@@ -8,10 +8,12 @@ export async function GET() {
     "/tools/sentence-calculator",
     "/blog",
     "/blog/seo-content-writing-guide",
+    "/blog/manage-essay-word-count",
     "/about-us",
     "/contact",
     "/privacy-policy",
     "/terms"
+    
   ];
 
   const urls = routes.map(
