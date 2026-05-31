@@ -13,8 +13,8 @@ export const metadata = {
   title: "Countflows: Free Word & Character Counter Tools",
   description: "Free online word counter, character counter, and text analysis tools for writers, bloggers, and SEO. Get instant counts, reading time, and improve your content.",
   keywords: "word counter, character counter, reading time calculator, sentence counter, free online tools, text analyzer, writing tools, seo tools, content analysis",
-  authors: [{ name: "Countflows" }],
-  creator: "Countflows",
+  authors: [{ name: "Umair Tufail" }],
+  creator: "Umair Tufail",
   publisher: "Countflows",
   formatDetection: {
     email: false,

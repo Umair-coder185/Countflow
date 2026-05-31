@@ -9,6 +9,7 @@ export async function GET() {
     "/blog",
     "/blog/seo-content-writing-guide",
     "/blog/manage-essay-word-count",
+    "/blog/academic-writing",
     "/about-us",
     "/contact",
     "/privacy-policy",

@@ -1,9 +1,29 @@
 import seoContent from "./blogs/seo-content-writing-guide";
 import howToManageEssayWordCount  from "./blogs/how-to-manage-esaay";
+import academicwriting from "./blogs/Academic-writing";
+import { title } from "framer-motion/client";
 
 export const posts = [
   {
-    id: 1,
+    id:1,
+    slug : "academic-writing",
+    title:"Academic Writing Guide for Students , Researcher  and Scholars",
+    description: "Learn academic writing definition, types, styles & structure. A complete beginner's guide to master formal & scholarly writing skills.",
+    excerpt: "Academic writing is a formal style of communication used in educational and research contexts...",
+    image:"/blogs/blog3-1.png",
+    category:"Academic Writing",
+    author: "Umair Tufail",
+    date: "May 31, 2026",
+    readTime: "15 min read",
+    keywords: ["academic writing definition", "academic writing structure", "formal writing style", "difference between academic writing and creative writing", "academic writing tips for beginners", "importance of academic writing for students", "how to write an academic essay step by step"],
+    content: academicwriting,
+
+
+
+
+  },
+  {
+    id: 2,
     slug: "seo-content-writing-guide",
     title: "SEO Content Writing Guide for Blogging & Optimization",
     description: "Master SEO content writing to engage readers and outrank competitors. Learn practical skills to optimize your copy and target keywords.",
@@ -19,7 +39,7 @@ export const posts = [
 
 
    {
-    id: 2,
+    id: 3,
     slug: "manage-essay-word-count",
     title: "How to Manage Essay Word Count Effectively",
     description: "Learn how to manage essay word count effectively with latest strategies. Discover tips for improving readability and meeting academic requirements.",
@@ -29,7 +49,7 @@ export const posts = [
     author: "Countflows Team",
     date: "May 17, 2026",
     readTime: "15 min read",
-    keywords: ["essay word count", "academic writing", "college essays"],
+    keywords: ["essay word count", "academic writing", "college essays","academic writing principles and guidelines","research‑based prose","importance of academic writing for students"],
     content: howToManageEssayWordCount,
   },
 ];

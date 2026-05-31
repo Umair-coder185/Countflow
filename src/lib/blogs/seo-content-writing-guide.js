@@ -23,7 +23,10 @@ const seoContent = `
 <p>SEO content writing boosts organic traffic growth by aligning search intent, improving keyword optimization, and strengthening on-page SEO through structured content, supported by Word Counter analysis.</p>
 
 <h3>Ranking Improvement</h3>
-<p>SEO content writing improves ranking by optimizing search intent, strengthening keyword optimization, and enhancing on-page SEO through structured content and Word Counter analysis.</p>
+<p>SEO content writing improves ranking by optimizing search intent, strengthening keyword optimization, and enhancing on-page SEO through structured content and 
+ <a href="/tools/word-counter" style={{ color: '#3b82f6', textDecoration: 'underline', fontWeight: 'bold' }}>
+      free Word Counter
+      </a> analysis.</p>
 
 <h3>Increased User Engagement</h3>
 <p>Content writing increases user engagement by matching search intent, improving keyword optimization, and using clear content structure with strong on-page SEO and Word Counter analysis.</p>
