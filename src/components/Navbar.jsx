@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X, BookOpen, FileText, Clock, Zap } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
@@ -38,13 +39,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4   sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-bold text-xl sm:text-2xl bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-transparent hover:opacity-80 transition"
-        >
-          <span className="text-2xl">�</span>
-          Countflows
-        </Link>
+<Link
+  href="/"
+  className="flex items-center gap-2 font-bold text-xl sm:text-2xl bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-transparent hover:opacity-80 transition"
+>
+  <Image
+    src="/favicon.png"
+    alt="Countflows logo"
+    width={24}
+    height={32}
+    className="rounded-md"
+    style={{ width: "auto", height: "auto" }}
+    priority
+  />
+  Countflows
+</Link>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-1">

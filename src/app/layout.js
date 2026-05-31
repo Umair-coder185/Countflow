@@ -11,6 +11,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400","600","700"], varia
 export const metadata = {
   metadataBase: new URL('https://countflows.com'),
   title: "Countflows: Free Word & Character Counter Tools",
+   template: "%s | Countflows",
   description: "Free online word counter, character counter, and text analysis tools for writers, bloggers, and SEO. Get instant counts, reading time, and improve your content.",
   keywords: "word counter, character counter, reading time calculator, sentence counter, free online tools, text analyzer, writing tools, seo tools, content analysis",
   authors: [{ name: "Umair Tufail" }],
@@ -56,16 +57,12 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://countflows.com",
-    languages: {
-      "en": "https://countflows.com",
-    },
-  },
+ 
+
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 }
 
