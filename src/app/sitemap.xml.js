@@ -10,6 +10,7 @@ export async function GET() {
     "/blog/seo-content-writing-guide",
     "/blog/manage-essay-word-count",
     "/blog/academic-writing",
+    "/blog/how-many-pages-is-2000-words",
     "/about-us",
     "/contact",
     "/privacy-policy",

@@ -1,6 +1,7 @@
 import seoContent from "./blogs/seo-content-writing-guide";
 import howToManageEssayWordCount  from "./blogs/how-to-manage-esaay";
 import academicwriting from "./blogs/Academic-writing";
+import blog4 from "./blogs/blog4";
 import { title } from "framer-motion/client";
 
 export const posts = [
@@ -52,6 +53,22 @@ export const posts = [
     keywords: ["essay word count", "academic writing", "college essays","academic writing principles and guidelines","research‑based prose","importance of academic writing for students"],
     content: howToManageEssayWordCount,
   },
+
+
+  {
+    id :4,
+    slug: "how-many-pages-is-2000-words",
+    title: "How Many Pages Is 2000 Words?",
+    description: "Words per page vary by font, spacing & margins. Get exact counts for books, essays & documents. ",
+    excerpt: "Learn the approximate number of pages that 2000 words will occupy based on different formatting options.",
+    image: "/blogs/blog4-2.png",
+    category: "Academic Writing",
+    author: "Countflows Team",
+    date: "june 2, 2026",
+    readTime: "10 min read",
+    keywords: ["2000 words", "pages", "word count", "spacing", "font size"],
+    content: blog4,
+  }
 ];
 
 export const blogs = posts;
