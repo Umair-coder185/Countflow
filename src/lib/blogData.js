@@ -2,6 +2,7 @@ import seoContent from "./blogs/seo-content-writing-guide";
 import howToManageEssayWordCount  from "./blogs/how-to-manage-esaay";
 import academicwriting from "./blogs/Academic-writing";
 import blog4 from "./blogs/blog4";
+import blog5 from "./blogs/blog5";
 import { title } from "framer-motion/client";
 
 export const posts = [
@@ -68,7 +69,37 @@ export const posts = [
     readTime: "10 min read",
     keywords: ["2000 words", "pages", "word count", "spacing", "font size"],
     content: blog4,
-  }
+  },
+
+
+  {
+    
+  id: 5,
+  slug: "cover-letter-word-count",
+  title: "Cover Letter Word Count: Exact Length That Gets Interviews",
+  description: "What's the ideal cover letter word count? Learn how long a cover letter should be, how to start and end it, and avoid mistakes that cost interviews.",
+  excerpt: "Discover the ideal cover letter length, word count guidelines by experience level, and proven tips to write a cover letter that gets noticed.",
+  image: "/blogs/blog5-2.png",
+  category: "Career Development",
+  author: "Countflows Team",
+  date: "June 5, 2026",
+  readTime: "8 min read",
+  keywords: [
+    "cover letter word count",
+    "how long should a cover letter be",
+    "cover letter length",
+    "how many words should a cover letter be",
+    "cover letter examples",
+    "cover letter format",
+    "job application"
+  ],
+  content: blog5,
+},
+
+
+
+
+  
 ];
 
 export const blogs = posts;
