@@ -5,17 +5,17 @@ export const metadata = {
   openGraph: {
     title: "Free Reading Time Calculator - Estimate Reading Duration",
     description: "Calculate reading time and speaking time for your content. Perfect for bloggers and publishers.",
-    url: "https://countflow.com/tools/reading-time",
+    url: "https://countflows.com/tools/reading-time",
     type: "website",
     images: [{
-      url: "https://countflow.com/reading-time-og.png",
+      url: "https://countflows.com/reading-time-og.png",
       width: 1200,
       height: 630,
-      alt: "Countflow Reading Time Calculator"
+      alt: "Countflows Reading Time Calculator"
     }]
   },
   alternates: {
-    canonical: "https://countflow.com/tools/reading-time"
+    canonical: "https://countflows.com/tools/reading-time"
   }
 }
 

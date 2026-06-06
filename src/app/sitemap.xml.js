@@ -12,6 +12,7 @@ export async function GET() {
     "/blog/academic-writing",
     "/blog/how-many-pages-is-2000-words",
     "/blog/cover-letter-word-count",
+    "/blog/common-writing-mistakes",
     "/about-us",
     "/contact",
     "/privacy-policy",

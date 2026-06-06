@@ -2,6 +2,23 @@
 import { Mail, Clock, Globe, Wrench, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 
+export const metadata = {
+  title: "Contact Us - Countflows",
+  description:
+    "Get in touch with the Countflows team. Have questions, suggestions, or feedback about our word counter, character counter, and text analysis tools? We respond within 24-48 hours.",
+  keywords: "contact countflows, customer support, feedback, report bug, feature request, business inquiry",
+  openGraph: {
+    title: "Contact Us - Countflows",
+    description:
+      "Contact the Countflows team for support, feedback, bug reports, and business inquiries.",
+    url: "https://countflows.com/contact",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://countflows.com/contact",
+  },
+};
+
 export default function ContactUs() {
   return (
     <main className="relative py-16 mt-8 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">

@@ -1,16 +1,16 @@
 export const metadata = {
-  title: "Terms & Conditions - countflows ",
+  title: "Terms & Conditions - Countflows",
   description:
     "Terms & Conditions for Text Tools. Learn about usage rules, disclaimers, intellectual property, and user responsibilities when using our online writing utilities.",
   alternates: {
     canonical: "https://countflows.com/terms",
   },
   openGraph: {
-    title: "Terms & Conditions - countflows ",
+    title: "Terms & Conditions - Countflows",
     description:
-      "countflows Terms & Conditions covering usage rules, disclaimers, intellectual property, and user responsibilities.",
+      "Countflows Terms & Conditions covering usage rules, disclaimers, intellectual property, and user responsibilities.",
     url: "https://countflows.com/terms",
-    siteName: "countflows",
+    siteName: "Countflows",
     type: "website",
   },
 };

@@ -45,5 +45,58 @@ export default async function BlogPost({ params }) {
     );
   }
 
-  return <BlogContent post={post} />;
+  // Article Schema Markup
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.description,
+    "image": `https://countflows.com${post.image}`,
+    "url": `https://countflows.com/blog/${slug}`,
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Countflows",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://countflows.com/logo.png"
+      }
+    },
+    "articleBody": post.excerpt
+  };
+
+  // FAQ Schema Markup (if FAQs exist in post)
+  const faqSchema = post.faqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <BlogContent post={post} />
+    </>
+  );
 }
