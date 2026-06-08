@@ -4,6 +4,7 @@ import academicwriting from "./blogs/Academic-writing";
 import blog4 from "./blogs/blog4";
 import blog5 from "./blogs/blog5";
 import blog6 from "./blogs/blog6";
+import blog7 from "./blogs/blog7";
 
 export const posts = [
   {
@@ -114,8 +115,6 @@ export const posts = [
       }
     ]
   },
-
-
   {
     id: 4,
     slug: "how-many-pages-is-2000-words",
@@ -173,28 +172,28 @@ export const posts = [
       "job application"
     ],
     content: blog5,
-  faqs: [
-    {
-      question: "How long should a cover letter be?",
-      answer: "A cover letter should be 250-400 words, fitting on a single page. This gives you space to show personality and explain why you're interested without overwhelming the hiring manager. Keep it concise and scannable."
-    },
-    {
-      question: "What's the ideal word count for a cover letter?",
-      answer: "300-350 words is ideal. This length lets you cover three main sections: why you're interested (4-5 lines), relevant accomplishments (6-8 lines), and a strong close (2-3 lines). Too short seems lazy, too long shows poor judgment."
-    },
-    {
-      question: "Do cover letters need to be exactly one page?",
-      answer: "Yes, one full page is standard. Anything longer looks unfocused. Anything shorter seems like you didn't care. Format with proper margins and spacing — this affects length more than word count."
-    },
-    {
-      question: "Should my cover letter be longer if I have lots of experience?",
-      answer: "No, keep it to one page regardless. Instead of making it longer, make it more strategic. Focus on your most relevant achievements and accomplishments. Let your resume show everything; your letter should tell the story."
-    },
-    {
-      question: "How many times should I mention the company name in a cover letter?",
-      answer: "Mention it 2-3 times naturally throughout the letter. Overusing the company name looks desperate and robotic. Use it in the opening, middle, and possibly closing. Show you've done research without overdoing it."
-    }
-  ]
+    faqs: [
+      {
+        question: "How long should a cover letter be?",
+        answer: "A cover letter should be 250-400 words, fitting on a single page. This gives you space to show personality and explain why you're interested without overwhelming the hiring manager. Keep it concise and scannable."
+      },
+      {
+        question: "What's the ideal word count for a cover letter?",
+        answer: "300-350 words is ideal. This length lets you cover three main sections: why you're interested (4-5 lines), relevant accomplishments (6-8 lines), and a strong close (2-3 lines). Too short seems lazy, too long shows poor judgment."
+      },
+      {
+        question: "Do cover letters need to be exactly one page?",
+        answer: "Yes, one full page is standard. Anything longer looks unfocused. Anything shorter seems like you didn't care. Format with proper margins and spacing — this affects length more than word count."
+      },
+      {
+        question: "Should my cover letter be longer if I have lots of experience?",
+        answer: "No, keep it to one page regardless. Instead of making it longer, make it more strategic. Focus on your most relevant achievements and accomplishments. Let your resume show everything; your letter should tell the story."
+      },
+      {
+        question: "How many times should I mention the company name in a cover letter?",
+        answer: "Mention it 2-3 times naturally throughout the letter. Overusing the company name looks desperate and robotic. Use it in the opening, middle, and possibly closing. Show you've done research without overdoing it."
+      }
+    ]
   },
   {
     id: 6,
@@ -221,26 +220,70 @@ export const posts = [
     ],
     content: blog6,
     faqs: [
-    {
-      question: "What are the most common writing mistakes beginners make?",
-      answer: "Passive voice, run-on sentences, and weak word choice. These three kill clarity and bore readers. Fix these first and everything else improves. Use active voice, short sentences, and strong verbs. Weak words like 'very' and 'good' add nothing."
-    },
-    {
-      question: "How do I improve my writing clarity fast?",
-      answer: "Write shorter sentences, use active voice, and choose specific words. Read your draft aloud — if you stumble, your reader will too. Remove every word that doesn't add value. One idea per sentence, one main point per paragraph."
-    },
-    {
-      question: "What common writing mistakes should I avoid in a business plan?",
-      answer: "Vague unmeasurable goals, inflated financial projections, and ignoring your competition. Each signals poor thinking to investors. Be specific, realistic, and thorough. Show you've done research and know the market."
-    },
-    {
-      question: "How many proofreading rounds does good writing need?",
-      answer: "Minimum two: one for structure and flow, one for grammar. Business documents need at least three rounds. First pass: big picture. Second: grammar and clarity. Third: formatting and polish. Each round catches different mistakes."
-    },
-    {
-      question: "Is passive voice always wrong?",
-      answer: "Not always. Scientific papers and legal documents use it legitimately. But in blogs, business writing, and everyday content, active voice is almost always sharper and more engaging. Use passive only when you truly need it."
-    }
+      {
+        question: "What are the most common writing mistakes beginners make?",
+        answer: "Passive voice, run-on sentences, and weak word choice. These three kill clarity and bore readers. Fix these first and everything else improves. Use active voice, short sentences, and strong verbs. Weak words like 'very' and 'good' add nothing."
+      },
+      {
+        question: "How do I improve my writing clarity fast?",
+        answer: "Write shorter sentences, use active voice, and choose specific words. Read your draft aloud — if you stumble, your reader will too. Remove every word that doesn't add value. One idea per sentence, one main point per paragraph."
+      },
+      {
+        question: "What common writing mistakes should I avoid in a business plan?",
+        answer: "Vague unmeasurable goals, inflated financial projections, and ignoring your competition. Each signals poor thinking to investors. Be specific, realistic, and thorough. Show you've done research and know the market."
+      },
+      {
+        question: "How many proofreading rounds does good writing need?",
+        answer: "Minimum two: one for structure and flow, one for grammar. Business documents need at least three rounds. First pass: big picture. Second: grammar and clarity. Third: formatting and polish. Each round catches different mistakes."
+      },
+      {
+        question: "Is passive voice always wrong?",
+        answer: "Not always. Scientific papers and legal documents use it legitimately. But in blogs, business writing, and everyday content, active voice is almost always sharper and more engaging. Use passive only when you truly need it."
+      }
+    ]
+  },
+  {
+    id: 7,
+    slug: "how-many-words-in-a-novel",
+    title: "How Many Words in a Novel? 7 Genre Counts Revealed",
+    description: "Discover typical novel word counts by genre, chapter/page guidance, and practical tips to hit your target length.",
+    excerpt: "How many words should a novel be? Learn genre targets, chapter lengths, and practical writing tips to hit your ideal manuscript length.",
+    image: "/blogs/blog7-1.png",
+    category: "Writing & Editing",
+    author: "Umair Tufail",
+    date: "June 8, 2026",
+    readTime: "10 min read",
+    keywords: ["novel word count", "how many words in a novel", "words per chapter", "genre word counts", "word count guide"],
+    content: blog7,
+    faqs: [
+      {
+        question: "How many words in a novel for a first-time author?",
+        answer: "Aim for 80,000–100,000 words. This is the standard manuscript length most literary agents expect from debut submissions across mainstream genres."
+      },
+      {
+        question: "How many words are in a typical novel?",
+        answer: "The average novel contains 70,000–100,000 words, though this varies significantly by genre."
+      },
+      {
+        question: "How many words per page in a novel?",
+        answer: "A standard manuscript page (double-spaced, 12pt font) holds approximately 250 words. A printed trade paperback page holds roughly 250–300 words."
+      },
+      {
+        question: "How many words in a chapter of a novel?",
+        answer: "Most chapters run between 2,000 and 5,000 words. Short-chapter genres like thrillers average 1,000–2,000; literary fiction chapters can exceed 5,000–8,000 words."
+      },
+      {
+        question: "How many words in a 300-page novel?",
+        answer: "A 300-page novel typically contains 75,000–90,000 words depending on the publisher's layout and formatting choices."
+      },
+      {
+        question: "How many words in a 400-page novel?",
+        answer: "A 400-page novel usually contains between 100,000 and 120,000 words — appropriate for fantasy, sci-fi, or substantial literary fiction."
+      },
+      {
+        question: "Can a novel be under 50,000 words?",
+        answer: "Technically, works under 40,000 words are classified as novellas. Some organisations count 50,000 words as a minimum, but traditional publishers rarely acquire fiction below 60,000 words unless it's a specific niche format."
+      }
     ]
   }
 ];

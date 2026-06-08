@@ -16,7 +16,7 @@ Disallow: /.git/
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://countflow.com/sitemap.xml
+Sitemap: https://countflows.com/sitemap.xml
 
 # Google specific
 User-agent: Googlebot
