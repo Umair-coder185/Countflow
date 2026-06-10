@@ -14,6 +14,7 @@ export async function GET() {
     "/blog/cover-letter-word-count",
     "/blog/common-writing-mistakes",
     "/blog/how-many-words-in-a-novel",
+    "/blog/keyboard-shortcut-word-count",
     "/about-us",
     "/contact",
     "/privacy-policy",

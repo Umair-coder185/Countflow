@@ -5,6 +5,7 @@ import blog4 from "./blogs/blog4";
 import blog5 from "./blogs/blog5";
 import blog6 from "./blogs/blog6";
 import blog7 from "./blogs/blog7";
+import blog8 from "./blogs/blog8";
 
 export const posts = [
   {
@@ -285,7 +286,63 @@ export const posts = [
         answer: "Technically, works under 40,000 words are classified as novellas. Some organisations count 50,000 words as a minimum, but traditional publishers rarely acquire fiction below 60,000 words unless it's a specific niche format."
       }
     ]
-  }
+  },
+
+
+
+  {
+    id: 8,
+    slug: "keyboard-shortcut-word-count",
+    title: "Keyboard Shortcut for Word Count in Text, Docs & Vim",
+    description: "Learn the keyboard shortcuts for checking word count in Microsoft Word, Google Docs, Vim, and other platforms—quick tips to stay focused while you write.",
+    excerpt: "One-press shortcuts for word count across Word, Google Docs and Vim—how to view live counts and dialog boxes quickly.",
+    image: "/blogs/blog8-2.png",
+    category: "Tools",
+    author: "umair tufail ",
+    date: "June 10, 2026",
+    readTime: "6 min read",
+    keywords: ["word count shortcut", "Ctrl+Shift+G", "Google Docs word count", "Vim word count", "live word count"],
+    content: blog8,
+    faqs: [
+      {
+        question: "Does Ctrl+Shift+G work in all Word versions?",
+        answer: "Yes — Ctrl + Shift + G opens the Word Count dialog in most desktop versions of Microsoft Word, including Word 2007 through Microsoft 365."
+      },
+      {
+        question: "Is there a shortcut for word count in Word Online?",
+        answer: "Word Online does not support Ctrl + Shift + G. Use the Review tab and the built-in word count feature instead."
+      },
+      {
+        question: "How do I assign a custom word count shortcut in Word?",
+        answer: "Go to File → Options → Customize Ribbon, click 'Keyboard shortcuts: Customize', find the Word Count command under Tools, press your preferred keys, and click Assign."
+      },
+      {
+        question: "What is the shortcut for word count?",
+        answer: "In Microsoft Word press Ctrl + Shift + G; in Google Docs press Ctrl + Shift + C (Cmd + Shift + C on Mac)."
+      },
+      {
+        question: "What is Ctrl+F4 in Word?",
+        answer: "Ctrl + F4 closes the current document window in Microsoft Word without saving — save before using it."
+      },
+      {
+        question: "What is Ctrl+K in Word?",
+        answer: "Ctrl + K opens the Insert Hyperlink dialog so you can add a link to the selected text."
+      },
+      {
+        question: "What is Ctrl+F3 in Word?",
+        answer: "Ctrl + F3 cuts selected text to the Spike; paste everything from the Spike later with Ctrl + Shift + F3."
+      },
+      {
+        question: "How do I get live word count in Google Docs?",
+        answer: "Press Ctrl + Shift + C to open the word count dialog, or enable 'Display word count while typing' from the Tools menu to see a live counter."
+      },
+      {
+        question: "How do I check word count in Vim?",
+        answer: "In command mode press 'g' then Ctrl+G to show file statistics including words, lines, characters, and cursor position."
+      }
+    ]
+  },
+
 ];
 
 export const blogs = posts;
