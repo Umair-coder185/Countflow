@@ -15,6 +15,7 @@ export async function GET() {
     "/blog/common-writing-mistakes",
     "/blog/how-many-words-in-a-novel",
     "/blog/keyboard-shortcut-word-count",
+    "/blog/how-long-should-a-blog-post-be",
     "/about-us",
     "/contact",
     "/privacy-policy",
