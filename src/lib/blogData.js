@@ -7,6 +7,7 @@ import blog6 from "./blogs/blog6";
 import blog7 from "./blogs/blog7";
 import blog8 from "./blogs/blog8";
 import blog9 from "./blogs/blog9";
+import blog10 from "./blogs/blog10";
 
 export const posts = [
   {
@@ -393,7 +394,41 @@ export const posts = [
         answer: "Track clicks, time on page, bounce rate, social shares, and conversions using tools like Google Analytics. These metrics show whether your content meets audience and business goals."
       }
     ]
-  }
+  },
+ {
+  id: 10,
+  slug: "check-word-count-in-google-docs",
+  title: "How to Check Word Count in Google Docs (Complete Guide)",
+  description: "Complete guide to check word count in Google Docs on desktop, mobile, and selected text, with keyboard shortcuts and tips.",
+  excerpt: "Learn how to view word count in Google Docs on desktop, mobile and for selected text, plus keyboard shortcuts and live counter tips.",
+  image: "/blogs/blog10-1.png",
+  category: "Tools",
+  author: "Umair Tufail",
+  date: "June 17, 2026",
+  readTime: "6 min read",
+  keywords: ["google docs word count", "word count google docs", "Ctrl+Shift+C", "display word count while typing", "google docs mobile word count"],
+  content: blog10,
+  faqs: [
+    {
+      question: "What does Ctrl+K do in Google Docs?",
+      answer: "Ctrl+K opens the insert link tool, not the word count. Use the Word Count option or the keyboard shortcut Ctrl + Shift + C to view counts."
+    },
+    {
+      question: "How do I see word count while typing?",
+      answer: "Open Tools > Word count and tick 'Display word count while typing' — the live counter will appear at the bottom of the screen."
+    },
+    {
+      question: "What is the shortcut for word count on Google Docs?",
+      answer: "Press Ctrl + Shift + C on Windows or Command + Shift + C on Mac to open the word count pop-up instantly."
+    },
+    {
+      question: "Why is there no word count on Google Docs?",
+      answer: "If the word count option is missing, try updating the Google Docs app or use the browser version. The feature can be hidden in outdated apps."
+    }
+  ]
+ }
+
+
 ];
 
 export const blogs = posts;
