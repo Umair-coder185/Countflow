@@ -17,6 +17,7 @@ export async function GET() {
     "/blog/keyboard-shortcut-word-count",
     "/blog/how-long-should-a-blog-post-be",
     "/blog/check-word-count-in-google-docs",
+    "/blog/how-to-read-military-time",
     "/about-us",
     "/contact",
     "/privacy-policy",
