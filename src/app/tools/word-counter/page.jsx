@@ -28,13 +28,7 @@ export default function WordCounterPage() {
       "@type": "Organization",
       "name": "Countflows"
     },
-    "feature": [
-      "Real-time word and character counting",
-      "Sentence and paragraph counts",
-      "Goal tracker with progress bar",
-      "Focus mode to reduce distractions",
-      "Download and copy text"
-    ],
+    "keywords": "Real-time word and character counting, Sentence and paragraph counts, Goal tracker with progress bar, Focus mode to reduce distractions, Download and copy text",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -51,6 +45,16 @@ export default function WordCounterPage() {
       { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://countflows.com/tools" },
       { "@type": "ListItem", "position": 3, "name": "Word Counter", "item": "https://countflows.com/tools/word-counter" }
     ]
+  };
+  
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": wordCounterFAQs.map((f) => ({
+      "@type": "Question",
+      "name": f.question.trim(),
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer.trim() }
+    }))
   };
   
 
@@ -137,6 +141,7 @@ export default function WordCounterPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
@@ -145,7 +150,7 @@ export default function WordCounterPage() {
         </h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
-          Track your writing progress with instant word, character, and sentence counts. Set goals and watch your progress bar fill with every keystroke.
+          This free Word Counter instantly shows how many words, characters, sentences, and paragraphs are in your text — no signup required. Use it to track progress against targets, improve readability, and export your draft when you're finished.
         </p>
 
       

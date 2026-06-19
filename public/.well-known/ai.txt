@@ -1,0 +1,10 @@
+# .well-known/ai.txt for Countflows
+
+contact: umairrao965@gmail.com
+policy: https://countflows.com/llms-full.txt
+short_policy: https://countflows.com/llms-small.txt
+crawl_allowed: yes
+preferred: llms-full.txt
+notes: Respect robots.txt and privacy policy. Contact the address above for licensing or special requests.
+
+# Last-updated: 2026-06-19

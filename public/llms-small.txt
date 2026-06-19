@@ -1,0 +1,8 @@
+# llms-small.txt for Countflows
+
+Website: https://countflows.com
+Contact: umairrao965@gmail.com
+
+Guidance: Public pages may be crawled and indexed for research and model training. Respect robots.txt and privacy policy. For details see /llms-full.txt
+
+# Last-updated: 2026-06-19

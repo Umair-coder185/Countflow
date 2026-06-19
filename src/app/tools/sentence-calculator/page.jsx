@@ -76,12 +76,7 @@ export default function SentenceCounterPage() {
     "applicationCategory": "ProductivityApplication",
     "operatingSystem": "All",
     "author": { "@type": "Organization", "name": "Countflows" },
-    "feature": [
-      "Sentence counting",
-      "Average and longest sentence metrics",
-      "Readability score (Flesch estimate)",
-      "Export and copy options"
-    ],
+    "keywords": "Sentence counting, Average and longest sentence metrics, Readability score (Flesch estimate), Export and copy options",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
   };
 
@@ -93,6 +88,16 @@ export default function SentenceCounterPage() {
       { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://countflows.com/tools" },
       { "@type": "ListItem", "position": 3, "name": "Sentence Calculator", "item": "https://countflows.com/tools/sentence-calculator" }
     ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": sentenceCounterFAQs.map((f) => ({
+      "@type": "Question",
+      "name": f.question.trim(),
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer.trim() }
+    }))
   };
 
   return (
@@ -112,6 +117,7 @@ export default function SentenceCounterPage() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
@@ -125,7 +131,7 @@ export default function SentenceCounterPage() {
         </motion.h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
-          Instantly count sentences in your text, analyze readability, and understand your writing structure. Perfect for essays, content creation, and text analysis.
+          Instantly count sentences, measure average sentence length, and surface readability signals so you can improve clarity and pacing. Ideal for essays, articles, and technical writing.
         </p>
 
 

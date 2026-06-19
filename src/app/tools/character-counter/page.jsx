@@ -27,12 +27,7 @@ export default function CharacterCounterPage() {
       "@type": "Organization",
       "name": "Countflows"
     },
-    "feature": [
-      "Instant character and word counts",
-      "Presets for tweets, SMS, meta descriptions",
-      "Progress bar with limit indicators",
-      "Download and copy text"
-    ],
+    "keywords": "Instant character and word counts, Presets for tweets, SMS, meta descriptions, Progress bar with limit indicators, Download and copy text",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -49,6 +44,16 @@ export default function CharacterCounterPage() {
       { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://countflows.com/tools" },
       { "@type": "ListItem", "position": 3, "name": "Character Counter", "item": "https://countflows.com/tools/character-counter" }
     ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": characterCounterFAQs.map((f) => ({
+      "@type": "Question",
+      "name": f.question.trim(),
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer.trim() }
+    }))
   };
 
   const handleClear = () => setText("")
@@ -97,13 +102,14 @@ export default function CharacterCounterPage() {
       {/* Hero Section */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
         <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
           Character <span className="text-cyan-500">Counter</span>
         </h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
-          Paste your draft, type your copy, and get instant character, word, and readability feedback with a clean, modern interface built for fast editing.
+          This Character Counter instantly measures characters, words, and average word length so you can meet limits for social posts, meta descriptions, or submissions. Paste your text and get quick export and preset options for common formats like Tweet and SMS.
         </p>
 
 

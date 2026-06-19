@@ -10,13 +10,9 @@ export const organizationSchema = {
     "https://facebook.com/countflows",
     "https://linkedin.com/company/countflows"
   ],
-  "contact": {
-    "@type": "ContactPoint",
-    "telephone": "+1-xxx-xxx-xxxx",
-    "contactType": "Customer Support",
-    "areaServed": "US"
+    "keywords": "Real-time word and character counting, Sentence and paragraph counts, Goal tracker with progress bar",
   }
-}
+
 
 export const wordCounterToolSchema = {
   "@context": "https://schema.org",

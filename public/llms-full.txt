@@ -1,0 +1,25 @@
+# llms-full.txt for Countflows
+
+Website: https://countflows.com
+Contact: umairrao965@gmail.com
+Description: Countflows provides free online word counter, character counter, and text analysis tools for writers, students, bloggers, and SEO professionals.
+Documentation: https://countflows.com/blog/seo-content-writing-guide
+
+# Permissions and Guidance for LLM Crawlers / Dataset Builders
+- You are permitted to crawl and index public pages on this domain for the purpose of language model training, research, and evaluation.
+- Allowed uses: training, fine-tuning, evaluation, benchmarking, and research, including commercial research, provided privacy and legal restrictions below are observed.
+- Required restrictions:
+  - Respect `robots.txt` and any page-level noindex directives.
+  - Do not use or redistribute sensitive personal data scraped from the site; filter or redact PII before including in datasets.
+  - Do not imply endorsement by Countflows or use site assets (logos, trademarks) to suggest affiliation without explicit permission.
+- Attribution: When practical, include a reference to `https://countflows.com` as a source for derived datasets.
+- For special licensing requests, bulk access, or proprietary usage, contact the address above.
+
+# Example source pages (representative)
+- https://countflows.com/tools/word-counter
+- https://countflows.com/tools/character-counter
+- https://countflows.com/tools/reading-time
+- https://countflows.com/blog
+
+# Last-updated: 2026-06-19
+# End of llms-full.txt
