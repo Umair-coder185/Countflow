@@ -8,6 +8,7 @@ import blog7 from "./blogs/blog7";
 import blog8 from "./blogs/blog8";
 import blog9 from "./blogs/blog9";
 import blog10 from "./blogs/blog10";
+import blog11 from "./blogs/blog11";
 
 export const posts = [
   {
@@ -426,9 +427,47 @@ export const posts = [
       answer: "If the word count option is missing, try updating the Google Docs app or use the browser version. The feature can be hidden in outdated apps."
     }
   ]
- }
+ },
+
+{
+  id: 11,
+  slug: "how-to-read-military-time",
+  title: "Simple Steps to Read Military Time",
+  description: "Learn how to read military time easily in minutes. Master the 24-hour clock with our simple conversion tricks, chart, and quick-reference guide.",
+
+  excerpt: "Military time uses the 24-hour clock — learn the two rules that make conversion easy.",
+  image: "/blogs/blog11-1.png",
+  category: "Time & Tools",
+  author: "Umair Tufail",
+  date: "June 18, 2026",
+  readTime: "6 min read",
+  keywords: ["military time","24-hour clock","convert military time","how to read military time","time conversion"],
+  content: blog11,
+  faqs: [
+    {
+      question: "What is military time?",
+      answer: "Military time is the 24-hour clock where days run from 0000 to 2359 (or 2400 for midnight). There is no AM/PM — hours after noon are represented by adding 12 to the hour."
+    },
+    {
+      question: "How do I convert 1530 to standard time?",
+      answer: "Subtract 12 from hours greater than 12: 15 − 12 = 3, so 1530 becomes 3:30 PM."
+    },
+    {
+      question: "What does 0000 and 2400 mean?",
+      answer: "0000 represents midnight at the start of the day (00:00) and 2400 is sometimes used to denote midnight at the end of the day — both refer to 12:00 AM depending on context."
+    },
+    {
+      question: "Where is military time commonly used?",
+      answer: "It's commonly used in the military, healthcare, aviation, emergency services, and computing because it removes ambiguity between AM and PM."
+    },
+    {
+      question: "How should I pronounce military time?",
+      answer: "Pronounce times as groups of digits: 0700 as 'zero seven hundred' or 'oh seven hundred', 1545 as 'fifteen forty-five', and 0000 as 'zero hundred hours' or 'midnight'."
+    }
+  ]
+},
 
 
-];
+]
 
 export const blogs = posts;

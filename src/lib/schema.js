@@ -20,7 +20,7 @@ export const organizationSchema = {
 
 export const wordCounterToolSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   "name": "Word Counter - Countflows",
   "description": "Free online word counter tool to instantly count words, characters, sentences and paragraphs",
   "url": "https://countflows.com/tools/word-counter",
@@ -40,7 +40,7 @@ export const wordCounterToolSchema = {
 
 export const characterCounterToolSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   "name": "Character Counter - Countflows",
   "description": "Free online character counter to count characters, letters, spaces and symbols instantly",
   "url": "https://countflows.com/tools/character-counter",
@@ -55,7 +55,7 @@ export const characterCounterToolSchema = {
 
 export const readingTimeToolSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   "name": "Reading Time Calculator - Countflows",
   "description": "Free reading time calculator to estimate how long content takes to read and speak",
   "url": "https://countflows.com/tools/reading-time",
@@ -70,7 +70,7 @@ export const readingTimeToolSchema = {
 
 export const sentenceCounterToolSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   "name": "Sentence Counter - Countflows",
   "description": "Free sentence counter and analyzer to count sentences and analyze writing structure",
   "url": "https://countflows.com/tools/sentence-calculator",

@@ -15,6 +15,42 @@ export default function CharacterCounterPage() {
   const [text, setText] = useState("")
   const [goal, setGoal] = useState(2000) // default character goal
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Character Counter - Countflows",
+    "url": "https://countflows.com/tools/character-counter",
+    "description": "Free online character counter that gives instant character, word, and readability feedback with presets and download options.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Countflows"
+    },
+    "feature": [
+      "Instant character and word counts",
+      "Presets for tweets, SMS, meta descriptions",
+      "Progress bar with limit indicators",
+      "Download and copy text"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://countflows.com" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://countflows.com/tools" },
+      { "@type": "ListItem", "position": 3, "name": "Character Counter", "item": "https://countflows.com/tools/character-counter" }
+    ]
+  };
+
   const handleClear = () => setText("")
   const handleCopy = () => navigator.clipboard.writeText(text)
   const handleDownload = () => {
@@ -59,6 +95,8 @@ export default function CharacterCounterPage() {
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-500/20" />
 
       {/* Hero Section */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
         <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
           Character <span className="text-cyan-500">Counter</span>

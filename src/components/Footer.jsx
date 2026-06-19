@@ -19,7 +19,7 @@ export default function Footer() {
             {/* Brand Section */}
             <div className="sm:col-span-2 lg:col-span-1">
               <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent mb-3">
-                Countflow
+                Countflows
               </h2>
               <p className="text-sm text-slate-400 leading-relaxed mb-5">
                 Premium writing tools for creators, writers, and professionals. Count words, analyze readability, and optimize your content instantly.
@@ -122,7 +122,7 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div className="text-sm text-slate-400 text-center md:text-left">
-              <p>© {new Date().getFullYear()} Countflow. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} Countflows. All rights reserved.</p>
               <p className="mt-2 text-xs text-slate-500">
                 Made with <span className="text-cyan-400">❤</span> for writers and creators
               </p>
@@ -148,7 +148,7 @@ export default function Footer() {
         {/* Disclaimer for AdSense */}
         <div className="bg-white/5 border-t border-white/10 px-4 sm:px-6 lg:px-8 py-4">
           <p className="max-w-7xl mx-auto text-xs text-slate-500 text-center">
-            Countflow is an independent service. We are not affiliated with any third parties. This site may contain affiliate links and advertisements.
+            Countflows is an independent service. We are not affiliated with any third parties. This site may contain affiliate links and advertisements.
           </p>
         </div>
       </div>

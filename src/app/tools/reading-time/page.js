@@ -54,6 +54,41 @@ export default function ReadingTimePage() {
   if (fleschScore >= 70) difficultyLabel = "😊 Easy to read (8th grade)";
   else if (fleschScore >= 50) difficultyLabel = "📖 Fairly difficult (college level)";
   else difficultyLabel = "📚 Difficult (academic/professional)";
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Reading Time Calculator - Countflows",
+    "url": "https://countflows.com/tools/reading-time",
+    "description": "Calculate approximate reading and speaking time for any text with instant estimates, speaking time, and reading difficulty scores.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Countflows"
+    },
+    "feature": [
+      "Instant reading time estimates",
+      "Speaking time estimates",
+      "Flesch reading-ease score",
+      "Goal tracker"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://countflows.com" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://countflows.com/tools" },
+      { "@type": "ListItem", "position": 3, "name": "Reading Time Calculator", "item": "https://countflows.com/tools/reading-time" }
+    ]
+  };
 
   return (
     <main
@@ -68,7 +103,11 @@ export default function ReadingTimePage() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-amber-200/30 blur-3xl dark:bg-amber-500/20" />
 
+    
+
       {/* Hero Section */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
         <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
           Reading <span className="text-cyan-500">Time Calculator</span>

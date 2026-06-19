@@ -14,6 +14,44 @@ export default function WordCounterPage() {
   const [text, setText] = useState("")
   const [goal, setGoal] = useState(1000) // default word goal
   const [focusMode, setFocusMode] = useState(false)
+
+  // Structured data for AI Overviews / rich results
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Word Counter - Countflows",
+    "url": "https://countflows.com/tools/word-counter",
+    "description": "Free online word counter that provides  word, character, sentence, and paragraph counts plus goal tracking and readability tips.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Countflows"
+    },
+    "feature": [
+      "Real-time word and character counting",
+      "Sentence and paragraph counts",
+      "Goal tracker with progress bar",
+      "Focus mode to reduce distractions",
+      "Download and copy text"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://countflows.com" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://countflows.com/tools" },
+      { "@type": "ListItem", "position": 3, "name": "Word Counter", "item": "https://countflows.com/tools/word-counter" }
+    ]
+  };
   
 
 
@@ -93,6 +131,12 @@ export default function WordCounterPage() {
     >
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-500/20" />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">

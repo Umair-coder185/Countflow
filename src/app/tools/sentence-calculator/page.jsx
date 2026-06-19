@@ -67,6 +67,33 @@ export default function SentenceCounterPage() {
   if (fleschScore >= 70) readabilityLabel = "😊 Easy to read (8th grade)";
   else if (fleschScore >= 50) readabilityLabel = "📖 Fairly difficult (college level)";
   else readabilityLabel = "📚 Difficult (academic/professional)";
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Sentence Calculator - Countflows",
+    "url": "https://countflows.com/tools/sentence-calculator",
+    "description": "Instant sentence counting and readability analysis tool — shows sentence counts, longest sentence, average sentence length and readability scores.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "All",
+    "author": { "@type": "Organization", "name": "Countflows" },
+    "feature": [
+      "Sentence counting",
+      "Average and longest sentence metrics",
+      "Readability score (Flesch estimate)",
+      "Export and copy options"
+    ],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://countflows.com" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://countflows.com/tools" },
+      { "@type": "ListItem", "position": 3, "name": "Sentence Calculator", "item": "https://countflows.com/tools/sentence-calculator" }
+    ]
+  };
 
   return (
     <main
@@ -81,6 +108,11 @@ export default function SentenceCounterPage() {
     >
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-violet-200/30 blur-3xl dark:bg-violet-500/20" />
+
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
         <motion.h1

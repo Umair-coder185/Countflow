@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Calendar, User, Clock, Tag } from "lucide-react";
 import BlogHeader from "@/components/blog/BlogHeader";
+import authors from "@/lib/authors";
 
 
 export default function BlogContent({ post }) {
@@ -95,17 +96,55 @@ export default function BlogContent({ post }) {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        {/* Bottom Section */}
+        {/* Bottom Section with Author Card */}
         <div className="mt-16 pt-10 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-            <div>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                Written by
-              </p>
-              <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
-                {post.author}
-              </p>
+          <div className="flex flex-col sm:flex-row gap-6 items-start justify-between">
+            {/* Author block */}
+            <div className="flex gap-4 items-start">
+              {(() => {
+                const key = post.author
+                  ? post.author.toString().toLowerCase().trim().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")
+                  : null;
+                const info = key ? authors[key] : null;
+
+                if (info) {
+                  return (
+                    <>
+                      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 text-blue-700 font-bold text-lg">
+                        {info.name
+                          .split(" ")
+                          .map((s) => s[0])
+                          .slice(0, 2)
+                          .join("")}
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Written by</p>
+                        <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">{info.name}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{info.role}</p>
+                        <p className="mt-2 text-sm text-gray-700 dark:text-gray-300 max-w-xl">{info.bio}</p>
+                        <div className="mt-3 flex gap-3">
+                          {info.twitter && (
+                            <a href={info.twitter} className="text-blue-600 hover:underline text-sm">Twitter</a>
+                          )}
+                          {info.linkedin && (
+                            <a href={info.linkedin} className="text-blue-600 hover:underline text-sm">LinkedIn</a>
+                          )}
+                        </div>
+                      </div>
+                    </>
+                  );
+                }
+
+                // Fallback: simple byline
+                return (
+                  <div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Written by</p>
+                    <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">{post.author}</p>
+                  </div>
+                );
+              })()}
             </div>
+
             <a
               href="/blog"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 sm:py-3 px-5 sm:px-6 rounded-lg transition-colors text-sm sm:text-base md:text-lg"

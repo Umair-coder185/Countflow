@@ -2,7 +2,8 @@ import { posts } from "@/lib/blogData";
 import BlogContent from "@/components/blog/BlogContent";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;   // ✅ await params
+  const { slug: slugParam } = await params;
+  const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
   const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPost({ params }) {
-  const { slug } = await params;   // ✅ await params
+  const { slug: slugParam } = await params;
+  const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
   const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
@@ -70,6 +72,32 @@ export default async function BlogPost({ params }) {
     "articleBody": post.excerpt
   };
 
+  // Breadcrumb for the article
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://countflows.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://countflows.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": `https://countflows.com/blog/${slug}`
+      }
+    ]
+  };
+
   // FAQ Schema Markup (if FAQs exist in post)
   const faqSchema = post.faqs ? {
     "@context": "https://schema.org",
@@ -89,6 +117,10 @@ export default async function BlogPost({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {faqSchema && (
         <script

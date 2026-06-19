@@ -23,7 +23,7 @@ export const defaultSEO = {
   },
   schema: {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebApplication",
     "name": "Countflows",
     "description": "Free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer",
     "url": "https://countflows.com",
