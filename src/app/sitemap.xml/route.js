@@ -18,6 +18,7 @@ export async function GET() {
     "/blog/how-long-should-a-blog-post-be",
     "/blog/check-word-count-in-google-docs",
     "/blog/how-to-read-military-time",
+    "/blog/the-great-gatsby ",
     "/about-us",
     "/contact",
     "/privacy-policy",

@@ -9,6 +9,7 @@ import blog8 from "./blogs/blog8";
 import blog9 from "./blogs/blog9";
 import blog10 from "./blogs/blog10";
 import blog11 from "./blogs/blog11";
+import blog12 from "./blogs/blog12";
 
 export const posts = [
   {
@@ -466,6 +467,67 @@ export const posts = [
     }
   ]
 },
+
+
+  {
+  id: 12,
+  slug: "the-great-gatsby",
+  title: "How Long Does It Take to Read The Great Gatsby?",
+  description: "Find out how long The Great Gatsby takes to read slow, average, and fast speeds ,chapter breakdown, audiobook time, and a free student planner.",
+  
+  excerpt: "At 47,094 words, The Great Gatsby can be finished in a single afternoon or spread across a week — depending on your reading speed.",
+  image: "/blogs/blog12-1.png",
+  category: "Books & Literature",
+  author: "Umair Tufail",
+  date: "June 20, 2026",
+  readTime: "8 min read",
+  keywords: [
+    "great gatsby reading time",
+    "how long to read great gatsby",
+    "gatsby word count",
+    "gatsby audiobook length",
+    "chapter breakdown great gatsby",
+    "great gatsby pages",
+    "is great gatsby hard to read",
+    "great gatsby reading level",
+    "great gatsby reading level",
+    "how many pages is the great gatsby",
+
+
+  ],
+  content: blog12,
+  faqs: [
+    {
+      question: "How many words are in The Great Gatsby?",
+      answer: "The Great Gatsby contains 47,094 words across 9 chapters, based on the Project Gutenberg edition."
+    },
+    {
+      question: "How long does it take to read The Great Gatsby?",
+      answer: "For an average reader at 238 WPM, it takes about 3 hours 18 minutes. Slow readers may need nearly 8 hours, while fast readers can finish in under 2 hours."
+    },
+    {
+      question: "Can I read The Great Gatsby in one sitting?",
+      answer: "Yes. At just over 3 hours for an average reader, it fits comfortably in a single afternoon with one short break."
+    },
+    {
+      question: "How long is The Great Gatsby audiobook?",
+      answer: "The Jake Gyllenhaal narration on Audible runs 4 hours 39 minutes, which is longer than silent reading because narrators speak at 140–160 WPM."
+    },
+    {
+      question: "Is The Great Gatsby hard to read?",
+      answer: "The vocabulary is accessible, but Fitzgerald’s long, layered sentences require more concentration than contemporary fiction."
+    },
+    {
+      question: "How many pages is The Great Gatsby?",
+      answer: "Depending on the edition, it ranges from 180 to 208 pages. Publisher, font size, and formatting all affect the final count."
+    },
+    {
+      question: "Is The Great Gatsby shorter than other classics?",
+      answer: "Yes. At 47,094 words, it’s shorter than 1984 (88,942 words) and To Kill a Mockingbird (100,388 words), but longer than Of Mice and Men (30,000 words)."
+    }
+  ]
+},
+
 
 
 ]
