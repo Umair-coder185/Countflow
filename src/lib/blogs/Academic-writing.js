@@ -2,7 +2,7 @@ const academicwriting =`
 
 
 <article>
-  <h1>What Is Academic Writing? Meaning, Definition, Styles and Examples</h1>
+ 
 
 
   <p>

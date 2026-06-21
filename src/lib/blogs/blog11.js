@@ -4,7 +4,7 @@ const blog11 =`
 
 
 
-<h1>Simple Steps to Read Military Time</h1>
+
 
 <p>Blank stare for "1347"? You're not the only one. For most people who aren't in the armed forces, medical profession, or flying planes, learning military time can be a big mystery. However, knowing just two things makes how to read military time easy for absolutely anyone. Here you get the whole picture of reading military time covered, starting from explanations to a detailed chart, examples, and even tips that really work!</p>
 

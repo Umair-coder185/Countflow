@@ -1,7 +1,7 @@
 const blog9 = `
 
 
-<h1>How Long Should a Blog Post Be? The Complete Guide </h1>
+
 
 
 <P>The length of a blog post refers to the number of words required for a particular blog post in order to attain your objectives. It is difficult for most bloggers to determine this due to the fact that few words may affect rankings while too many may cause loss of traffic.

@@ -1,9 +1,5 @@
 const blog4=`
- <h1> 
  
- How Many Words Per Page? Complete Guide for Every Format
- 
- </h2>
  <figure><img src="/blogs/blog4-1.png" alt=" Essay Word Counter to Stay on Track"/></figure>
 
  <p>Have you ever asked yourself how many words per page fits in your essay or novel? The answer changes based on font, spacing, and format. It may surprise you how significant these small considerations are when it comes to the final word count per page.

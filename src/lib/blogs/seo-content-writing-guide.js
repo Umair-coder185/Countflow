@@ -1,5 +1,5 @@
 const seoContent = `
-<h1>Introduction</h1>
+
 <p>SEO Content Writing is the process of creating content for search engines. It helps your blog rank by using keywords and clear structure for optimization. This complete guide focuses on blogging and SEO optimization techniques.</p>
 
 <p>Most content fails because it does not match what users are searching for. You may have traffic but still struggle to get real engagement or clicks.</p>

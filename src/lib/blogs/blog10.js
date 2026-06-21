@@ -4,7 +4,7 @@ const blog10 = `
 
 
   <article>
-    <h1>How to Check Word Count in Google Docs (Complete Guide)</h1>
+   
 
     <p>Checking your word count in Google Docs means discovering exactly how many words in your document has. It is a quick task that only takes a few clicks. Want an even faster way? Try our free <a href="/tools/word-counter" style="color: #007bff; text-decoration: underline;">Word Counter Tool</a> to check word count instantly without opening Google Docs.</p>
 

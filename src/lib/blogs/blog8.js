@@ -2,7 +2,7 @@ const blog8 = `
 
 
 <article>
-  <h1>Keyboard Shortcut for Word Count in Text, Docs & Vim</h1>
+ 
 
   <p>Most writers don't realize how much time slips away just checking text count the slow way. You're deep in a sentence, ideas are flowing, then you stop, grab the mouse, dig through menus, and just like that, the momentum is gone. A keyboard shortcut for word count fixes this instantly. One press and the number appears right in front of you, no clicking, no detour, no lost thought.<a href="/tools/word-counter" style="color: blue; text-decoration: underline;">word counter</a> our premium feature.</p>
 

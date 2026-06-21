@@ -4,7 +4,6 @@ const blog12 =`
 
 
 
-<h1>How Long Does It Take to Read The Great Gatsby?</h1>
 
 <p>Most sites give you a The Great Gatsby reading time between 2 hours and 6 hours with no explanation why the gap exists. That range comes down to one thing: reading speed. Every calculator uses a different number, and none of them tell you which one applies to you. This guide breaks it down by slow, average, and fast readers, shows you the time chapter by chapter, and covers the audiobook option too.For knowing the reading time use our free <a href="/tools/reading-time-" style="color: blue; text-decoration: underline;">Reading Time Calculator</a>.</p>
 

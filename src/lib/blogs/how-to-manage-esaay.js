@@ -1,5 +1,5 @@
 const howToManageEssayWordCount =`
- <h1>Introduction</h1>
+
 
 <p> Any writing resource advises to “stay within the word count.” However, none of them will provide you with the explanation of why this step is difficult or how to actually follow this advice and not ruin all of your valuable content. In reality, the art of managing word count has nothing to do with word count. Actually, it lies in planning and analysis even before you start typing your first sentence. A great 500-word paper will win any 1,200-word piece of irrelevant content.
 Having helped hundreds of students fix their essays the night before submission, one pattern stands out most word count problems start at the outline stage, not the writing stage. </p>

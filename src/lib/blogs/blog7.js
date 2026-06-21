@@ -1,6 +1,6 @@
 const blog7 = `
 
-<h1>How Many Words in a Novel? 7 Genre Counts Revealed</h1>
+
 
 <p>You finish your manuscript and the first thought isn't "I did it" — it's "was that even enough?" 60,000 words? 110,000? The doubt hits either way. How many words in a novel is not a single clean answer; it depends on your genre, your audience, and what the market expects right now. Get it wrong and your query never gets read. Get it right and you've quietly cleared one of publishing's toughest filters.
 </p>

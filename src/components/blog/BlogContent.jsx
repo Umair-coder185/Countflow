@@ -30,15 +30,7 @@ export default function BlogContent({ post }) {
           />
         </motion.div>
 
-        {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 text-gray-900 dark:text-gray-100 leading-snug"
-        >
-          {post.title}
-        </motion.h1>
+       
 
         {/* Meta Info */}
         <div className="flex flex-wrap gap-3 sm:gap-4 items-center text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 mb-10 pb-8 border-b border-gray-200 dark:border-gray-700">
@@ -56,10 +48,10 @@ export default function BlogContent({ post }) {
           </span>
         </div>
 
-        {/* Description */}
+        {/* Description
         <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 font-semibold mb-10 leading-relaxed">
           {post.description}
-        </p>
+        </p> */}
 
         {/* Keywords */}
         <div className="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">

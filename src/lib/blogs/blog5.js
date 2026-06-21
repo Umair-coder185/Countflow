@@ -1,9 +1,6 @@
 const blog5 =`
 
-<h1>
-Cover Letter Word Count: Exact Length That Gets Interviews
 
-</h1>
 
 
 <p>
