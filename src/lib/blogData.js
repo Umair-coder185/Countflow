@@ -11,6 +11,7 @@ import blog10 from "./blogs/blog10";
 import blog11 from "./blogs/blog11";
 import blog12 from "./blogs/blog12";
 import blog13 from "./blogs/blog13";
+import blog14 from "./blogs/blog14";
 
 export const posts = [
   {
@@ -578,6 +579,60 @@ export const posts = [
 
 
 },
+
+  {
+    id: 14,
+    slug: "where-was-the-hobbit-filmed",
+    title: "Where Was The Hobbit Filmed? Complete Location Guide",
+    description: "Scene-by-scene breakdown of The Hobbit filming locations across New Zealand and the UK, with visit status, costs, and insider production details.",
+    excerpt: "You've watched the films a dozen times. But you still couldn't say which scene was shot where, whether you're allowed to stand there, or why one of the most famous locations isn't even in New Zealand. This guide fixes that — scene by scene, with a clear visit status for every spot and the real production story behind it.",
+    image: "/blogs/where-was-the-hobbit-filmed-location.png",
+    category: "Travel & Film",
+    author: "Umair Tufail",
+    date: "June 25, 2026",
+    readTime: "12 min read",
+    keywords: [
+      "hobbit filming locations",
+      "where was the hobbit filmed",
+      "hobbiton matamata",
+      "pelorus river barrel scene",
+      "lake pukaki laketown",
+      "rivendell pinewood studios",
+      "new zealand film tourism",
+      "lord of the rings filming sites",
+      "best time to visit hobbiton",
+      "mountain victoria"
+    ],
+    content: blog14,
+    faqs: [
+      {
+        question: "Was The Hobbit filmed entirely in New Zealand?",
+        answer: "Almost. Every exterior and most interiors were shot across the North and South Islands. The lone exception is Rivendell's interior council scenes and the older Bilbo prologue, filmed at Pinewood Studios in Buckinghamshire, UK."
+      },
+      {
+        question: "Can you visit Hobbiton from The Hobbit?",
+        answer: "Yes. The Hobbiton Movie Set near Matamata is open year-round with daily tours. Book ahead — especially between December and February."
+      },
+      {
+        question: "Where was the barrel scene filmed in The Hobbit?",
+        answer: "On the Pelorus River near Nelson, South Island. Walk the riverside trail for free, or take a guided kayak tour down the same stretch Jackson used in The Desolation of Smaug."
+      },
+      {
+        question: "Which Hobbit locations are on the South Island?",
+        answer: "Most of them — Earnslaw Burn, Lake Pukaki, Pass Burn, Twizel, Queenstown, and the Pelorus River. The South Island carried nearly all of Middle-earth's dramatic alpine and wilderness terrain."
+      },
+      {
+        question: "Where exactly is Hobbiton?",
+        answer: "On Alexander Farm in Matamata, Waikato — State Highway 27 between Hamilton and Rotorua, North Island. GPS coordinates are on the Hobbiton Movie Set website."
+      },
+      {
+        question: "Did Peter Jackson use a studio for any scenes?",
+        answer: "Yes. Pinewood Studios in Iver Heath, Buckinghamshire was used for Rivendell interiors and the older Bilbo scenes — mainly because Christopher Lee and Ian Holm both lived in the UK and couldn't make the trip."
+      }
+    ]
+  }
+
+
 
 
 

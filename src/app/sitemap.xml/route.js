@@ -19,6 +19,8 @@ export async function GET() {
     "/blog/check-word-count-in-google-docs",
     "/blog/how-to-read-military-time",
     "/blog/the-great-gatsby ",
+    "/blog/where-was-the-hobbit-filmed",
+    "blog/how-to-read-faster",
     "/about-us",
     "/contact",
     "/privacy-policy",
