@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import {
   Type,
   Hash,
+  TextSearch,
   Clock,
   FileText,
   CaseSensitive
@@ -13,6 +14,7 @@ import {
 const icons = {
   Type,
   Hash,
+  TextSearch,
   Clock,
   FileText,
   CaseSensitive

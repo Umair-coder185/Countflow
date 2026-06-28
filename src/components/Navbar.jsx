@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, BookOpen, FileText, Clock, Zap } from "lucide-react"
+import { Menu, X, BookOpen, FileText, Clock, Zap,TextSearch } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 import ThemeToggle from "./ThemeToggle"
@@ -23,7 +23,8 @@ export default function Navbar() {
     { href: "/tools/word-counter", label: "Word Counter", icon: FileText },
     { href: "/tools/character-counter", label: "Character Counter", icon: Zap },
     { href: "/tools/reading-time", label: "Reading Time", icon: Clock },
-    {href : "/tools/sentence-calculator", label: "Sentence Counter", icon: BookOpen },
+    
+    {href : "/tools/keyword-density-checker", label:"keyword density checker" , icon:TextSearch},
     { href: "/blog", label: "Blog", icon: BookOpen },
   ]
 

@@ -13,7 +13,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <ToolsGrid />
+      <ToolsGrid/>
       <WhyChooseUs />
       <Testimonials />
       <HomeSeo />

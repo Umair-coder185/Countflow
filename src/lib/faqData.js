@@ -98,8 +98,51 @@ const sentenceCounterFAQs = [
     question: "Does it store my text?",
 
     answer :"No, most tools do not store your text. They process it instantly and keep your data private."
+  },
+]
+ const keywordDensityFAQs = [
+
+  {
+    question: "What is keyword density?",
+    answer:
+      "Keyword density is the percentage of times a keyword or phrase appears in your text compared to the total number of words. It's calculated as (keyword count ÷ total words) × 100 and helps you understand how focused your content is around a topic.",
+  },
+  {
+    question: "Does keyword density have a direct impact on Google rankings?",
+    answer:
+      "Not in a direct, measurable way — Google has never published an exact formula. But keywords still need to be present for a page to rank for them. The real goal is to use them naturally and in the right places, rather than chasing a specific percentage.",
+  },
+  {
+    question: "What are 2 and 3-word phrases (n-grams)?",
+    answer:
+      "N-grams are sequences of words. A 2-word phrase (bigram) like 'keyword density' and a 3-word phrase (trigram) like 'free keyword tool' help you see which multi-word terms appear most often, which is useful for long-tail keyword optimization.",
+  },
+  {
+    question: "What keyword density percentage is considered safe?",
+    answer:
+      "Most experienced SEOs work within the 1% to 2% range for their primary target keyword. Once you push past 3%, you're entering territory where search engines may start viewing your content as over-optimized.",
+  },
+  {
+    question: "Can I use this tool to analyze a competitor's page?",
+    answer:
+      "Absolutely. Just paste their URL into the tool the same way you would your own. You'll get a full keyword breakdown of their content — including which phrases they're using most and how their density compares.",
+  },
+  {
+    question:"Will CountFlows save or read my pasted content?",
+    answer:"No. Whatever you paste into the text field stays private. We don't store it, we don't read it, and we don't share it. Your content is yours.",
+  },
+  {
+    question:"What's the actual difference between keyword density and keyword frequency?",
+    answer:"Frequency is the raw count how many times a word appears. Density turns that count into a percentage relative to your total word count. Both numbers show up in your report, and together they give you the clearest picture of your keyword usage",
+  },
+  {
+    question:"Does content length change what density I should aim for?",
+
+     answer:"It can. Very short pieces are sometimes read with a slightly higher density just because there are fewer total words. Longer articles tend to have lower density even with more total keyword mentions. The advice stays the same either way: write naturally, check the numbers, adjust where needed.",
   }
 ]
 
 
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs }
+
+
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs }

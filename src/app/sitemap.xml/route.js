@@ -6,6 +6,7 @@ export async function GET() {
     "/tools/character-counter",
     "/tools/reading-time",
     "/tools/sentence-calculator",
+    "/tools/keyword-density-checker",
     "/blog",
     "/blog/seo-content-writing-guide",
     "/blog/manage-essay-word-count",

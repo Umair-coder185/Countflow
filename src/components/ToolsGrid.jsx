@@ -17,6 +17,12 @@ export default function ToolsGrid() {
       iconName: "Hash",
       link: "/tools/character-counter",
     },
+      {
+      title: "keyword density checker",
+      description: "free keyword density checker",
+      iconName:"TextSearch",
+      link: "/tools/keyword-density-checker",
+    },
     {
       title: "Reading Time",
       description: "Estimate reading and speaking time.",
@@ -29,6 +35,7 @@ export default function ToolsGrid() {
       iconName: "FileText",
       link: "/tools/sentence-calculator",
     },
+  
 
   ]
 
