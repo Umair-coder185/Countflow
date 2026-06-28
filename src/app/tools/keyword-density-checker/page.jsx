@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Copy, Trash, Download, Search } from "lucide-react";
 import { keywordDensityFAQs } from "@/lib/faqData";
 import FAQ from "@/components/FAQ";
- import SEOContent from "@/components/Keyword-density-checker-seo/SeoContent";
+import SEOContent from "@/components/keyword-density-checker-seo/SeoContent";
 
 // Common English stop words (toggle to ignore them)
 const STOP_WORDS = new Set(
