@@ -12,6 +12,7 @@ import blog11 from "./blogs/blog11";
 import blog12 from "./blogs/blog12";
 import blog13 from "./blogs/blog13";
 import blog14 from "./blogs/blog14";
+import blog15 from "./blogs/blog15";
 
 export const posts = [
   {
@@ -630,7 +631,62 @@ export const posts = [
         answer: "Yes. Pinewood Studios in Iver Heath, Buckinghamshire was used for Rivendell interiors and the older Bilbo scenes — mainly because Christopher Lee and Ian Holm both lived in the UK and couldn't make the trip."
       }
     ]
+  },
+  
+
+    
+  {
+    id: 15,
+    slug: "how-to-check-keyword-density",
+    title: "How to Check Keyword Density of Any Web Page",
+    description: "Learn how to check keyword density of any web page in seconds, using the exact formula, a free online checker, and real before-and-after fix examples.",
+    excerpt: "You've probably already tried counting words by hand and lost track. This guide shows the real formula, a free tool to check any page instantly, and why density is more guardrail than ranking factor.",
+    image: "/blogs/keyword-density-free-check.png",
+    category: "SEO & Content",
+    author: "Umair Tufail",
+    date: "June 29, 2026",
+    readTime: "10 min read",
+    keywords: [
+      "keyword density checker",
+      "check keyword density",
+      "keyword stuffing google",
+      "seo keyword density formula",
+      "keyword prominence vs density",
+      "how to check keyword density",
+      "keyword density tool",
+      "google keyword stuffing policy",
+      "word counter seo",
+      "keyword optimization guide"
+    ],
+    content: blog15,
+    faqs: [
+      {
+        question: "What is a good keyword density percentage?",
+        answer: "Most well-optimized pages land between 0.5% and 2.5%. There's no official number Google enforces, so treat this as a sanity check rather than a target to hit exactly."
+      },
+      {
+        question: "How do I check keyword density without a tool?",
+        answer: "Copy the page text, count the total words with a word counter, search the keyword with Ctrl+F to get the match count, then divide matches by total words and multiply by 100."
+      },
+      {
+        question: "Does Google penalize high keyword density?",
+        answer: "Google penalizes keyword stuffing, which is the behavior, not a specific density percentage. A page can have unnatural repetition at 3% or read perfectly naturally at 4%, depending on how the keyword is used."
+      },
+      {
+        question: "What's the difference between keyword density and keyword stuffing?",
+        answer: "Density is just a measurement. Stuffing happens when you force the keyword into the text repeatedly instead of writing it naturally."
+      },
+      {
+        question: "Should I check density for every page on my site?",
+        answer: "It's most useful on pages targeting a specific keyword where you've already noticed repetitive-sounding sentences. Running it on every page as a routine habit usually isn't worth the time."
+      }
+   
+    ]
   }
+  
+
+    
+  
 
 
 

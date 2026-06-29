@@ -22,6 +22,7 @@ export async function GET() {
     "/blog/the-great-gatsby",
     "/blog/how-to-read-faster",
     "/blog/where-was-the-hobbit-filmed",
+    "/blog/how-to-check-keyword-density",
     "/about-us",
     "/contact",
     "/privacy-policy",
