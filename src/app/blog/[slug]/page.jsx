@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: post.title + " | Countflows Blog",
+    title: post.title + " | Countflows Blogs",
     description: post.description,
     openGraph: {
       title: post.title,

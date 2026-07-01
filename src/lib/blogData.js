@@ -13,6 +13,7 @@ import blog12 from "./blogs/blog12";
 import blog13 from "./blogs/blog13";
 import blog14 from "./blogs/blog14";
 import blog15 from "./blogs/blog15";
+import blog16 from "./blogs/blog16";
 
 export const posts = [
   {
@@ -98,7 +99,7 @@ export const posts = [
     author: "Countflows Team",
     date: "May 17, 2026",
     readTime: "15 min read",
-    keywords: ["essay word count", "academic writing", "college essays","academic writing principles and guidelines","research‑based prose","importance of academic writing for students"],
+    keywords: ["essay word count", "academic writing", "college essays", "academic writing principles and guidelines", "research‑based prose", "importance of academic writing for students"],
     content: howToManageEssayWordCount,
     faqs: [
       {
@@ -349,7 +350,7 @@ export const posts = [
       }
     ]
   },
-  
+
 
 
 
@@ -400,138 +401,138 @@ export const posts = [
       }
     ]
   },
- {
-  id: 10,
-  slug: "check-word-count-in-google-docs",
-  title: "How to Check Word Count in Google Docs (Complete Guide)",
-  description: "Complete guide to check word count in Google Docs on desktop, mobile, and selected text, with keyboard shortcuts and tips.",
-  excerpt: "Learn how to view word count in Google Docs on desktop, mobile and for selected text, plus keyboard shortcuts and live counter tips.",
-  image: "/blogs/blog10-1.png",
-  category: "Tools",
-  author: "Umair Tufail",
-  date: "June 17, 2026",
-  readTime: "6 min read",
-  keywords: ["google docs word count", "word count google docs", "Ctrl+Shift+C", "display word count while typing", "google docs mobile word count"],
-  content: blog10,
-  faqs: [
-    {
-      question: "What does Ctrl+K do in Google Docs?",
-      answer: "Ctrl+K opens the insert link tool, not the word count. Use the Word Count option or the keyboard shortcut Ctrl + Shift + C to view counts."
-    },
-    {
-      question: "How do I see word count while typing?",
-      answer: "Open Tools > Word count and tick 'Display word count while typing' — the live counter will appear at the bottom of the screen."
-    },
-    {
-      question: "What is the shortcut for word count on Google Docs?",
-      answer: "Press Ctrl + Shift + C on Windows or Command + Shift + C on Mac to open the word count pop-up instantly."
-    },
-    {
-      question: "Why is there no word count on Google Docs?",
-      answer: "If the word count option is missing, try updating the Google Docs app or use the browser version. The feature can be hidden in outdated apps."
-    }
-  ]
- },
+  {
+    id: 10,
+    slug: "check-word-count-in-google-docs",
+    title: "How to Check Word Count in Google Docs (Complete Guide)",
+    description: "Complete guide to check word count in Google Docs on desktop, mobile, and selected text, with keyboard shortcuts and tips.",
+    excerpt: "Learn how to view word count in Google Docs on desktop, mobile and for selected text, plus keyboard shortcuts and live counter tips.",
+    image: "/blogs/blog10-1.png",
+    category: "Tools",
+    author: "Umair Tufail",
+    date: "June 17, 2026",
+    readTime: "6 min read",
+    keywords: ["google docs word count", "word count google docs", "Ctrl+Shift+C", "display word count while typing", "google docs mobile word count"],
+    content: blog10,
+    faqs: [
+      {
+        question: "What does Ctrl+K do in Google Docs?",
+        answer: "Ctrl+K opens the insert link tool, not the word count. Use the Word Count option or the keyboard shortcut Ctrl + Shift + C to view counts."
+      },
+      {
+        question: "How do I see word count while typing?",
+        answer: "Open Tools > Word count and tick 'Display word count while typing' — the live counter will appear at the bottom of the screen."
+      },
+      {
+        question: "What is the shortcut for word count on Google Docs?",
+        answer: "Press Ctrl + Shift + C on Windows or Command + Shift + C on Mac to open the word count pop-up instantly."
+      },
+      {
+        question: "Why is there no word count on Google Docs?",
+        answer: "If the word count option is missing, try updating the Google Docs app or use the browser version. The feature can be hidden in outdated apps."
+      }
+    ]
+  },
 
-{
-  id: 11,
-  slug: "how-to-read-military-time",
-  title: "Simple Steps to Read Military Time",
-  description: "Learn how to read military time easily in minutes. Master the 24-hour clock with our simple conversion tricks, chart, and quick-reference guide.",
+  {
+    id: 11,
+    slug: "how-to-read-military-time",
+    title: "Simple Steps to Read Military Time",
+    description: "Learn how to read military time easily in minutes. Master the 24-hour clock with our simple conversion tricks, chart, and quick-reference guide.",
 
-  excerpt: "Military time uses the 24-hour clock — learn the two rules that make conversion easy.",
-  image: "/blogs/blog11-1.png",
-  category: "Time & Tools",
-  author: "Umair Tufail",
-  date: "June 18, 2026",
-  readTime: "6 min read",
-  keywords: ["military time","24-hour clock","convert military time","how to read military time","time conversion"],
-  content: blog11,
-  faqs: [
-    {
-      question: "What is military time?",
-      answer: "Military time is the 24-hour clock where days run from 0000 to 2359 (or 2400 for midnight). There is no AM/PM — hours after noon are represented by adding 12 to the hour."
-    },
-    {
-      question: "How do I convert 1530 to standard time?",
-      answer: "Subtract 12 from hours greater than 12: 15 − 12 = 3, so 1530 becomes 3:30 PM."
-    },
-    {
-      question: "What does 0000 and 2400 mean?",
-      answer: "0000 represents midnight at the start of the day (00:00) and 2400 is sometimes used to denote midnight at the end of the day — both refer to 12:00 AM depending on context."
-    },
-    {
-      question: "Where is military time commonly used?",
-      answer: "It's commonly used in the military, healthcare, aviation, emergency services, and computing because it removes ambiguity between AM and PM."
-    },
-    {
-      question: "How should I pronounce military time?",
-      answer: "Pronounce times as groups of digits: 0700 as 'zero seven hundred' or 'oh seven hundred', 1545 as 'fifteen forty-five', and 0000 as 'zero hundred hours' or 'midnight'."
-    }
-  ]
-},
+    excerpt: "Military time uses the 24-hour clock — learn the two rules that make conversion easy.",
+    image: "/blogs/blog11-1.png",
+    category: "Time & Tools",
+    author: "Umair Tufail",
+    date: "June 18, 2026",
+    readTime: "6 min read",
+    keywords: ["military time", "24-hour clock", "convert military time", "how to read military time", "time conversion"],
+    content: blog11,
+    faqs: [
+      {
+        question: "What is military time?",
+        answer: "Military time is the 24-hour clock where days run from 0000 to 2359 (or 2400 for midnight). There is no AM/PM — hours after noon are represented by adding 12 to the hour."
+      },
+      {
+        question: "How do I convert 1530 to standard time?",
+        answer: "Subtract 12 from hours greater than 12: 15 − 12 = 3, so 1530 becomes 3:30 PM."
+      },
+      {
+        question: "What does 0000 and 2400 mean?",
+        answer: "0000 represents midnight at the start of the day (00:00) and 2400 is sometimes used to denote midnight at the end of the day — both refer to 12:00 AM depending on context."
+      },
+      {
+        question: "Where is military time commonly used?",
+        answer: "It's commonly used in the military, healthcare, aviation, emergency services, and computing because it removes ambiguity between AM and PM."
+      },
+      {
+        question: "How should I pronounce military time?",
+        answer: "Pronounce times as groups of digits: 0700 as 'zero seven hundred' or 'oh seven hundred', 1545 as 'fifteen forty-five', and 0000 as 'zero hundred hours' or 'midnight'."
+      }
+    ]
+  },
 
 
   {
-  id: 12,
-  slug: "the-great-gatsby",
-  title: "How Long Does It Take to Read The Great Gatsby?",
-  description: "Find out how long The Great Gatsby takes to read slow, average, and fast speeds ,chapter breakdown, audiobook time, and a free student planner.",
-  
-  excerpt: "At 47,094 words, The Great Gatsby can be finished in a single afternoon or spread across a week — depending on your reading speed.",
-  image: "/blogs/blog12-1.png",
-  category: "Books & Literature",
-  author: "Umair Tufail",
-  date: "June 20, 2026",
-  readTime: "8 min read",
-  keywords: [
-    "great gatsby reading time",
-    "how long to read great gatsby",
-    "gatsby word count",
-    "gatsby audiobook length",
-    "chapter breakdown great gatsby",
-    "great gatsby pages",
-    "is great gatsby hard to read",
-    "great gatsby reading level",
-    "great gatsby reading level",
-    "how many pages is the great gatsby",
+    id: 12,
+    slug: "the-great-gatsby",
+    title: "How Long Does It Take to Read The Great Gatsby?",
+    description: "Find out how long The Great Gatsby takes to read slow, average, and fast speeds ,chapter breakdown, audiobook time, and a free student planner.",
+
+    excerpt: "At 47,094 words, The Great Gatsby can be finished in a single afternoon or spread across a week — depending on your reading speed.",
+    image: "/blogs/blog12-1.png",
+    category: "Books & Literature",
+    author: "Umair Tufail",
+    date: "June 20, 2026",
+    readTime: "8 min read",
+    keywords: [
+      "great gatsby reading time",
+      "how long to read great gatsby",
+      "gatsby word count",
+      "gatsby audiobook length",
+      "chapter breakdown great gatsby",
+      "great gatsby pages",
+      "is great gatsby hard to read",
+      "great gatsby reading level",
+      "great gatsby reading level",
+      "how many pages is the great gatsby",
 
 
-  ],
-  content: blog12,
-  faqs: [
-    {
-      question: "How many words are in The Great Gatsby?",
-      answer: "The Great Gatsby contains 47,094 words across 9 chapters, based on the Project Gutenberg edition."
-    },
-    {
-      question: "How long does it take to read The Great Gatsby?",
-      answer: "For an average reader at 238 WPM, it takes about 3 hours 18 minutes. Slow readers may need nearly 8 hours, while fast readers can finish in under 2 hours."
-    },
-    {
-      question: "Can I read The Great Gatsby in one sitting?",
-      answer: "Yes. At just over 3 hours for an average reader, it fits comfortably in a single afternoon with one short break."
-    },
-    {
-      question: "How long is The Great Gatsby audiobook?",
-      answer: "The Jake Gyllenhaal narration on Audible runs 4 hours 39 minutes, which is longer than silent reading because narrators speak at 140–160 WPM."
-    },
-    {
-      question: "Is The Great Gatsby hard to read?",
-      answer: "The vocabulary is accessible, but Fitzgerald’s long, layered sentences require more concentration than contemporary fiction."
-    },
-    {
-      question: "How many pages is The Great Gatsby?",
-      answer: "Depending on the edition, it ranges from 180 to 208 pages. Publisher, font size, and formatting all affect the final count."
-    },
-    {
-      question: "Is The Great Gatsby shorter than other classics?",
-      answer: "Yes. At 47,094 words, it’s shorter than 1984 (88,942 words) and To Kill a Mockingbird (100,388 words), but longer than Of Mice and Men (30,000 words)."
-    }
-  ]
-},
+    ],
+    content: blog12,
+    faqs: [
+      {
+        question: "How many words are in The Great Gatsby?",
+        answer: "The Great Gatsby contains 47,094 words across 9 chapters, based on the Project Gutenberg edition."
+      },
+      {
+        question: "How long does it take to read The Great Gatsby?",
+        answer: "For an average reader at 238 WPM, it takes about 3 hours 18 minutes. Slow readers may need nearly 8 hours, while fast readers can finish in under 2 hours."
+      },
+      {
+        question: "Can I read The Great Gatsby in one sitting?",
+        answer: "Yes. At just over 3 hours for an average reader, it fits comfortably in a single afternoon with one short break."
+      },
+      {
+        question: "How long is The Great Gatsby audiobook?",
+        answer: "The Jake Gyllenhaal narration on Audible runs 4 hours 39 minutes, which is longer than silent reading because narrators speak at 140–160 WPM."
+      },
+      {
+        question: "Is The Great Gatsby hard to read?",
+        answer: "The vocabulary is accessible, but Fitzgerald’s long, layered sentences require more concentration than contemporary fiction."
+      },
+      {
+        question: "How many pages is The Great Gatsby?",
+        answer: "Depending on the edition, it ranges from 180 to 208 pages. Publisher, font size, and formatting all affect the final count."
+      },
+      {
+        question: "Is The Great Gatsby shorter than other classics?",
+        answer: "Yes. At 47,094 words, it’s shorter than 1984 (88,942 words) and To Kill a Mockingbird (100,388 words), but longer than Of Mice and Men (30,000 words)."
+      }
+    ]
+  },
 
- {
+  {
     id: 13,
     slug: "how-to-read-faster",
     title: "How to Read Faster Without Losing Comprehension",
@@ -547,9 +548,9 @@ export const posts = [
       "how to read faster",
       "how to read and comprehend faster",
       "how to read a book fast",
-      "reading speed",
-      "words per minute",
-      "speed reading",
+
+
+
       "improve reading comprehension",
       "reading techniques",
     ],
@@ -576,10 +577,10 @@ export const posts = [
         answer: "It places a rough ceiling on extreme speed, but trying to force it away usually backfires on harder material. The better approach is reducing it naturally through practice, not suppressing it through willpower."
       }
     ]
-  
 
 
-},
+
+  },
 
   {
     id: 14,
@@ -632,9 +633,9 @@ export const posts = [
       }
     ]
   },
-  
 
-    
+
+
   {
     id: 15,
     slug: "how-to-check-keyword-density",
@@ -647,15 +648,15 @@ export const posts = [
     date: "June 29, 2026",
     readTime: "10 min read",
     keywords: [
-      "keyword density checker",
-      "check keyword density",
+      " free keyword density checker",
+      "check keyword density online",
       "keyword stuffing google",
       "seo keyword density formula",
       "keyword prominence vs density",
       "how to check keyword density",
-      "keyword density tool",
+      "keyword density tool ai",
       "google keyword stuffing policy",
-      "word counter seo",
+      "word counter ai ",
       "keyword optimization guide"
     ],
     content: blog15,
@@ -680,13 +681,60 @@ export const posts = [
         question: "Should I check density for every page on my site?",
         answer: "It's most useful on pages targeting a specific keyword where you've already noticed repetitive-sounding sentences. Running it on every page as a routine habit usually isn't worth the time."
       }
-   
-    ]
-  }
-  
 
-    
-  
+    ]
+  },
+
+{
+    id: 16,
+    slug: "how-to-calculate-words-per-minute-reading",
+    title: "How to Calculate Words Per Minute Reading (Formula + Examples)",
+    description: "Learn how to calculate your true reading speed in words per minute (WPM) with formulas, worked examples, and common mistakes explained.",
+    excerpt: "This guide walks you through exactly how to calculate words per minute reading — your true reading speed measured in words per minute — using one straightforward formula, examples worked out end to end, and the single conversion slip that silently wrecks almost everyone's numbers.",
+ 
+    category: "Reading & Writing",
+    image: "/blogs/How to Calculate Words Per Minute Reading.png",
+    author: "Umair Tufail",
+    date: "2026-07-01",
+    readTime: "8 min read",
+    keywords: [
+      "how to calculate words per minute reading",
+      
+      "reading speed online calculator",
+      "words correct per minute"
+    ],
+    content: blog16,
+    faqs: [
+
+
+
+      {
+        question: "What is the formula to calculate words per minute reading?",
+        answer: "Take your total words and divide by the reading time in minutes. For a sharper result, strip out any reading errors first so you're measuring correct words per minute instead of raw speed alone."
+      },
+      {
+        question: "How do you figure out words per minute without a calculator?",
+        answer: "Set a one-minute timer, read at your usual pace, and count the words you managed. That count is your WPM — no further math needed."
+      },
+      {
+        question: "How do I calculate WPM reading for a full book instead of one page?",
+        answer: "Reach for the page estimation method: count words per line, multiply by the lines on a page, then time one page and run the formula. You get a dependable estimate without timing all of them."
+      },
+
+      {
+        question: "What is a good reading speed in words per minute?",
+        answer: "Most adults sit near 238 WPM for silent non-fiction and around 260 WPM for fiction, per the Rayner et al. meta-analysis of 190 studies. Anywhere between 200 and 300 WPM with solid comprehension is a strong, sustainable pace."
+
+      },
+      {
+        question: "Does calculating WPM account for comprehension?",
+        answer: "Raw WPM doesn't. Words correct per minute does, because it removes misread or skipped words from the total before the division."
+      }
+    ]
+  },
+ 
+
+
 
 
 

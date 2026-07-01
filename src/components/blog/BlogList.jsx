@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
 
 export default function BlogList({ posts }) {
+  
   // ✅ Sort posts by date (latest first)
   const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date) - new Date(a.date)

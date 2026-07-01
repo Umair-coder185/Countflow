@@ -17,7 +17,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://countflows.com/blog",
-  },
+  }, 
 };
 
 export default function BlogPage() {

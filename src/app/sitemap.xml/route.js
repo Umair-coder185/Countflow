@@ -23,6 +23,7 @@ export async function GET() {
     "/blog/how-to-read-faster",
     "/blog/where-was-the-hobbit-filmed",
     "/blog/how-to-check-keyword-density",
+    "/blog/how-to-calculate-words-per-minute-reading",
     "/about-us",
     "/contact",
     "/privacy-policy",
