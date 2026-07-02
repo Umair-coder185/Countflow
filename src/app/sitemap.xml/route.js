@@ -24,6 +24,7 @@ export async function GET() {
     "/blog/where-was-the-hobbit-filmed",
     "/blog/how-to-check-keyword-density",
     "/blog/how-to-calculate-words-per-minute-reading",
+    "/blog/how-long-does-it-take-to-read-10000-words",
     "/about-us",
     "/contact",
     "/privacy-policy",
