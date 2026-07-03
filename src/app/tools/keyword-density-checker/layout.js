@@ -1,3 +1,4 @@
+import {keywordDensityToolSchema } from "@/lib/schema";
 export const metadata = {
   title: "Free Keyword Density Checker - Analyze Keyword Frequency & Density",
   description:
@@ -12,7 +13,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://countflows.com/keyword-density-og.png",
+        url: "https://countflows.com/public/blogs/blog3-2.png",
         width: 1200,
         height: 630,
         alt: "Countflows Keyword Density Checker",
@@ -25,5 +26,13 @@ export const metadata = {
 };
 
 export default function Layout({ children }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(keywordDensityToolSchema ) }}
+      />
+      {children}
+    </>
+  );
 }

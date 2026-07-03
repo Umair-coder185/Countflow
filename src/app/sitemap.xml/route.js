@@ -25,6 +25,7 @@ export async function GET() {
     "/blog/how-to-check-keyword-density",
     "/blog/how-to-calculate-words-per-minute-reading",
     "/blog/how-long-does-it-take-to-read-10000-words",
+    "/blog/average-reading-speed",
     "/about-us",
     "/contact",
     "/privacy-policy",

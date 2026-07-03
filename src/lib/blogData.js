@@ -15,12 +15,13 @@ import blog14 from "./blogs/blog14";
 import blog15 from "./blogs/blog15";
 import blog16 from "./blogs/blog16";
 import blog17 from "./blogs/blog17";
+import readingspeed from "./blogs/reading-speed";
 
 export const posts = [
   {
     id: 1,
     slug: "academic-writing",
-    title: "Academic Writing Guide for Students, Researcher and Scholars",
+    title: "Academic Writing Guide for Students, Researchers",
     description: "Learn academic writing definition, types, styles & structure. A complete beginner's guide to master formal & scholarly writing skills.",
     excerpt: "Academic writing is a formal style of communication used in educational and research contexts...",
     image: "/blogs/blog3-1.png",
@@ -778,7 +779,82 @@ export const posts = [
       answer: "It gets you through the text faster, but comprehension drops sharply. Skimming and full reading produce very different recall outcomes even for the same word count."
     }
   ]
+},
+{
+  id: 18,
+  slug: "average-reading-speed",
+  title: "Average Reading Speed: What's Normal & How to Test Yours",
+  description: "Discover the real average reading speed, why sources disagree, how speed connects to comprehension, and how to test your own pace in under a minute.",
+  excerpt: "Adults typically read silently at 238 WPM with non-fiction and around 260 WPM with fiction. Out-loud reading drops to about 183 WPM. Anywhere from 175 to 300 WPM counts as normal.",
+  category: "Reading & Writing",
+  image: "/blogs/average reading speed.png",
+  author: "Umair Tufail",
+  date: "2026-07-02",
+  readTime: "10 min read",
+  keywords: [
+    "average reading speed",
+    "words per minute reading",
+    "reading comprehension vs speed",
+    "pages per hour reading",
+    "literacy rate and reading speed"
+  ],
+  content: readingspeed,
+  faqs: [
+    {
+      question: "What is the average reading speed for an adult?",
+      answer: "For silent reading, most adults land in the 200–260 WPM zone — roughly 238 WPM on non-fiction, and a touch quicker (about 260 WPM) on fiction."
+    },
+    {
+      question: "Why do different websites list different average reading speeds?",
+      answer: "The figure depends on what was tested — silent vs. oral reading, fiction vs. non-fiction, and the size of the study sample all change the average. That's why numbers range between 200 and 300 WPM."
+    },
+    {
+      question: "What is a good reading speed?",
+      answer: "For everyday adult reading, any pace from 200 to 300 WPM paired with solid comprehension qualifies as good."
+    },
+    {
+      question: "Is 200 WPM a slow reading speed?",
+      answer: "No. 200 WPM is within the normal adult range. The meta-analysis average for silent non-fiction reading is 238 WPM, so 200 WPM with good comprehension is entirely typical."
+    },
+    {
+      question: "How many pages per hour is normal?",
+      answer: "A typical paperback goes by at 40–55 pages per hour for most adults, and anything from 30 to 60 pages sits comfortably within the normal range."
+    },
+    {
+      question: "How long does it take to read 100 pages?",
+      answer: "Around 3 to 3.5 hours for a typical book at an average pace of 238–250 WPM. Dense textbooks packing roughly 800 words onto each page can take double that."
+    },
+    {
+      question: "Is reading 20 pages an hour slow?",
+      answer: "For dense, technical, or academic material, 20 pages an hour is normal. For light fiction it's on the slower side, but comprehension matters more than raw pace."
+    },
+    {
+      question: "Does reading speed change with age?",
+      answer: "Yes. Pace keeps building through childhood and the teen years before flattening out in adulthood. Some slowdown in later life is also expected and nothing to worry about."
+    },
+    {
+      question: "Does reading faster reduce comprehension?",
+      answer: "Beyond roughly 400–500 WPM, yes — reading comprehension drops sharply because of the physical limits of eye movement. Below that threshold, moderate speed increases through practice usually preserve comprehension."
+    },
+    {
+      question: "Can I increase my reading speed without losing comprehension?",
+      answer: "To a degree, yes — mainly through consistent practice, previewing texts, and building vocabulary rather than shortcuts. Pushing speed too far past your natural pace always costs retention."
+    },
+    {
+      question: "What reading speed do I need for college?",
+      answer: "For general material, college students usually manage 250–350 WPM. Textbook study for retention runs far slower — 100 to 200 WPM — and that drop is both normal and necessary."
+    },
+    {
+      question: "What is considered speed reading?",
+      answer: "Anything past 400 WPM is usually labeled speed reading. Claims in the 700–1,000+ range almost always involve skimming, because eye-movement limits rule out full comprehension at that pace."
+    },
+    {
+      question: "Does literacy rate affect average reading speed?",
+      answer: "Yes. Reading speed averages are based on fluent readers, so regions with lower literacy rates show lower averages. Second-language readers also read more slowly, which pulls down averages in multilingual populations."
+    }
+  ]
 }
+
 
   
  

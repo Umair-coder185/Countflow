@@ -1,3 +1,5 @@
+import { readingTimeToolSchema} from "@/lib/schema";
+
 export const metadata = {
   title: "Free Reading Time Calculator - Estimate Article Reading Speed",
   description: "Calculate reading time and speaking time for your content with Countflow's free reading time calculator. Perfect for bloggers, content creators, and publishers. Get accurate reading duration estimates instantly.",
@@ -8,7 +10,7 @@ export const metadata = {
     url: "https://countflows.com/tools/reading-time",
     type: "website",
     images: [{
-      url: "https://countflows.com/reading-time-og.png",
+      url: "https://countflows.com/public/blogs/blog4-1.png",
       width: 1200,
       height: 630,
       alt: "Countflows Reading Time Calculator"
@@ -20,5 +22,13 @@ export const metadata = {
 }
 
 export default function Layout({ children }) {
-  return children
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(readingTimeToolSchema) }}
+      />
+      {children}
+    </>
+  );
 }

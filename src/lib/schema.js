@@ -1,83 +1,135 @@
+
+
+// lib/schema.js
+
+const siteUrl = "https://countflows.com";
+
+// ============================================
+// 1. ORGANIZATION — site-wide identity
+// (root layout mein ek baar inject hogi)
+// ============================================
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Countflows",
-  "url": "https://countflows.com",
-  "logo": "https://countflows.com/logo.png",
-  "description": "Free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer",
-  "sameAs": [
+  "@id": `${siteUrl}#organization`,
+  name: "Countflows",
+  url: siteUrl,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/logo.png`,
+  },
+  description:
+    "Free online writing analysis tools including word counter, character counter, reading time calculator, sentence analyzer, and keyword density checker",
+  sameAs: [
     "https://twitter.com/countflows",
     "https://facebook.com/countflows",
-    "https://linkedin.com/company/countflows"
+    "https://linkedin.com/company/countflows",
   ],
-    "keywords": "Real-time word and character counting, Sentence and paragraph counts, Goal tracker with progress bar",
-  }
+};
 
-
-export const wordCounterToolSchema = {
+// ============================================
+// 2. WEBSITE — site-level schema
+// (root layout mein Organization ke saath inject hogi)
+// ============================================
+export const websiteSchema = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Word Counter - Countflows",
-  "description": "Free online word counter tool to instantly count words, characters, sentences and paragraphs",
-  "url": "https://countflows.com/tools/word-counter",
-  "applicationCategory": "Productivity",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "1250"
-  }
+  "@type": "WebSite",
+  "@id": `${siteUrl}#website`,
+  name: "Countflows",
+  url: siteUrl,
+  publisher: { "@id": `${siteUrl}#organization` },
+};
+
+// ============================================
+// 3. TOOL SCHEMA FACTORY
+// Naya tool add karna ho to bas neeche ek aur
+// createToolSchema() call add kar dein
+// ============================================
+function createToolSchema({ name, description, path, features }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": `${siteUrl}${path}#webapp`,
+    name: `${name} - Countflows`,
+    description,
+    url: `${siteUrl}${path}`,
+    applicationCategory: "UtilitiesApplication",
+    browserRequirements: "Requires JavaScript. Works in all modern browsers.",
+    featureList: features,
+    isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    provider: { "@id": `${siteUrl}#organization` },
+  };
 }
 
-export const characterCounterToolSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Character Counter - Countflows",
-  "description": "Free online character counter to count characters, letters, spaces and symbols instantly",
-  "url": "https://countflows.com/tools/character-counter",
-  "applicationCategory": "Productivity",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
+// ============================================
+// 4. TOOL SCHEMAS
+// ============================================
 
-export const readingTimeToolSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Reading Time Calculator - Countflows",
-  "description": "Free reading time calculator to estimate how long content takes to read and speak",
-  "url": "https://countflows.com/tools/reading-time",
-  "applicationCategory": "Productivity",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
+export const wordCounterToolSchema = createToolSchema({
+  name: "Word Counter",
+  description:
+    "Free online word counter tool to instantly count words, characters, sentences and paragraphs",
+  path: "/tools/word-counter",
+  features: [
+    "Real-time word and character counting",
+    "Sentence and paragraph counts",
+    "Goal tracker with progress bar",
+  ],
+});
 
-export const sentenceCounterToolSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Sentence Counter - Countflows",
-  "description": "Free sentence counter and analyzer to count sentences and analyze writing structure",
-  "url": "https://countflows.com/tools/sentence-calculator",
-  "applicationCategory": "Productivity",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
+export const characterCounterToolSchema = createToolSchema({
+  name: "Character Counter",
+  description:
+    "Free online character counter to count characters, letters, spaces and symbols instantly",
+  path: "/tools/character-counter",
+  features: [
+    "Character count with and without spaces",
+    "Letter and symbol counting",
+    "Social media character limit checking",
+  ],
+});
+
+export const readingTimeToolSchema = createToolSchema({
+  name: "Reading Time Calculator",
+  description:
+    "Free reading time calculator to estimate how long content takes to read and speak",
+  path: "/tools/reading-time",
+  features: [
+    "Reading time estimation",
+    "Speaking time estimation",
+    "Adjustable reading speed (WPM)",
+  ],
+});
+
+export const sentenceCounterToolSchema = createToolSchema({
+  name: "Sentence Counter",
+  description:
+    "Free sentence counter and analyzer to count sentences and analyze writing structure",
+  path: "/tools/sentence-calculator",
+  features: [
+    "Sentence counting",
+    "Average sentence length analysis",
+    "Writing structure insights",
+  ],
+});
+
+export const keywordDensityToolSchema = createToolSchema({
+  name: "Keyword Density Checker",
+  description:
+    "Free online keyword density checker that analyzes single words and 2–3 word phrases with frequency and density percentages",
+  path: "/tools/keyword-density-checker",
+  features: [
+    "Keyword density percentage analysis",
+    "1, 2 and 3-word phrase frequency",
+    "Stop word filtering",
+    "Copy and export results",
+  ],
+});
 
 export const faqSchema = {
   "@context": "https://schema.org",

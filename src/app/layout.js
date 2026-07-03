@@ -4,16 +4,20 @@ import Footer from "@/components/Footer"
 import { Providers } from "./Providers"
 import { Inter, Poppins } from "next/font/google"
 import Script from "next/script";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const poppins = Poppins({ subsets: ["latin"], weight: ["400","600","700"], variable: "--font-poppins" })
 
 export const metadata = {
   metadataBase: new URL('https://countflows.com'),
-  title: "Countflows: Free Word & Character Counter Tools",
-   template: "%s | Countflows",
+  // 🐛 FIX: title ab object hai, template iske andar
+  title: {
+    default: "Countflows: Free Word & Character Counter Tools",
+  
+  },
   description: "Free online word counter, character counter, and text analysis tools for writers, bloggers, and SEO. Get instant counts, reading time, and improve your content.",
-  keywords: "word counter, character counter, reading time calculator, sentence counter, free online tools, text analyzer, writing tools, seo tools, content analysis",
+  // ❌ keywords line delete kar di
   authors: [{ name: "Umair Tufail" }],
   creator: "Umair Tufail",
   publisher: "Countflows",
@@ -57,8 +61,6 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
- 
-
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -69,29 +71,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-
-
-
       <head>
-              
-<Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-5H9EXT0X10"
-  strategy="afterInteractive"
-/>
-
-<Script
-  id="google-analytics"
-  strategy="afterInteractive"
->
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-5H9EXT0X10');
-  `}
-</Script>
-
+        {/* ✅ Organization + WebSite schema — pure site pe ek baar */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5H9EXT0X10"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5H9EXT0X10');
+          `}
+        </Script>
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans bg-gradient-to-br from-white via-slate-50 to-blue-50 dark:bg-gradient-to-br dark:from-gray-950 dark:via-slate-900 dark:to-blue-950 text-gray-900 dark:text-white transition-colors duration-300`}>
         <Providers>
