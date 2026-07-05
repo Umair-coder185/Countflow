@@ -26,6 +26,7 @@ export async function GET() {
     "/blog/how-to-calculate-words-per-minute-reading",
     "/blog/how-long-does-it-take-to-read-10000-words",
     "/blog/average-reading-speed",
+    "/blog/best-speed-reading-programs",
     "/about-us",
     "/contact",
     "/privacy-policy",
