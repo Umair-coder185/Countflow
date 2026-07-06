@@ -28,6 +28,7 @@ export async function GET() {
     "/blog/average-reading-speed",
     "/blog/best-speed-reading-programs",
     "/blog/fast-reading-test",
+    "/blog/best-speed-reading-apps-for-pc",
     "/about-us",
     "/contact",
     "/privacy-policy",
