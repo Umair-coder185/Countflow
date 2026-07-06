@@ -17,6 +17,7 @@ import blog16 from "./blogs/blog16";
 import blog17 from "./blogs/blog17";
 import readingspeed from "./blogs/reading-speed";
 import blog19 from "./blogs/blog19";
+import blog20 from "./blogs/blog20";
 
 export const posts = [
   {
@@ -299,8 +300,6 @@ export const posts = [
     ]
   },
 
-
-
   {
     id: 8,
     slug: "keyboard-shortcut-word-count",
@@ -353,9 +352,6 @@ export const posts = [
       }
     ]
   },
-
-
-
 
   {
     id: 9,
@@ -908,6 +904,48 @@ export const posts = [
     {
       "question": "How long does it take to see results?",
       "answer": "Most structured programs show measurable gains in 2 to 4 weeks with daily 20–30 minute practice. Weekly WPM tests with recall summaries confirm progress."
+    }
+  ]
+},
+{
+  "id": 20,
+  "slug": "fast-reading-test",
+  "title": "Fast Reading Test: How to Check Your WPM in 3 Minutes (No App Needed)",
+  "description": "Take a fast reading test in 3 minutes with any article and a timer. Get your accurate WPM, compare it to the research-backed 238 WPM average, and track your progress weekly.",
+  "excerpt": "You can test your reading speed in 3 minutes with any article and a timer. Read for 3 minutes, count the words with a word counter, and divide by 3. The average adult reads 238 WPM silently — but your score only counts if you can summarize what you read.",
+  "category": "Reading & Writing",
+  "image": "/blogs/reading-wpm-test.png",
+  "author": "Umair Tufail",
+  "date": "2026-07-06",
+  "readTime": "8 min read",
+  "keywords": [
+    "fast reading test",
+    "wpm reading test",
+    "reading words per minute test",
+    "how many words do I read per minute",
+    "reading speed test without app"
+  ],
+  content: blog20,
+  "faqs": [
+    {
+      "question": "How many words do I read per minute on average?",
+      "answer": "If you are like most adults, you read about 238 words per minute silently for non-fiction and 260 WPM for fiction, based on a meta-analysis of 190 studies. Run the 3-minute fast reading test to get your personal number."
+    },
+    {
+      "question": "How long should a fast reading test be?",
+      "answer": "At least 3 minutes. Shorter tests let you sprint through a small passage, which inflates your WPM by 10 to 20 percent. A 3-minute test on normal material reflects your sustainable speed."
+    },
+    {
+      "question": "Is 200 WPM a bad reading speed?",
+      "answer": "No. 200 WPM sits just below the adult silent reading average of 238 WPM and within the normal range. If your comprehension is strong at 200 WPM, you have a solid base to build speed with technique practice."
+    },
+    {
+      "question": "What is a good score on a wpm reading test?",
+      "answer": "Anything from 180 to 260 WPM is normal for adults, and 260 to 400 WPM is above average. Scores above 400 WPM usually indicate skimming, so verify them with a written recall summary."
+    },
+    {
+      "question": "Can I take a reading words per minute test without an app?",
+      "answer": "Yes. Read a fresh passage for exactly 3 minutes, paste what you covered into a free online word counter, and divide the word count by 3. That gives you the same WPM an app would report, on material you actually read."
     }
   ]
 }

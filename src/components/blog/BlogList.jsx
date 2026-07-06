@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import BlogCard from "@/components/blog/BlogCard";
-import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
 
 export default function BlogList({ posts }) {
@@ -27,12 +26,7 @@ export default function BlogList({ posts }) {
   return (
     <main className="max-w-screen-xl  px-2 sm:px-6 md:px-8 py-6 sm:py-14 lg:py-4 mx-auto">
       {/* Header */}
-      <motion.header
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-6 text-center"
-      >
+      <header className="mb-6 text-center">
         <div className="flex justify-center mb-5">
           <BookOpen className="w-10 h-10 text-blue-600 dark:text-cyan-400" />
         </div>
@@ -42,7 +36,7 @@ export default function BlogList({ posts }) {
         <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           Discover expert writing tips, SEO strategies, and content creation guides — always updated with the latest articles first.
         </p>
-      </motion.header>
+      </header>
 
       {/* Filter Bar */}
       <div className="flex justify-end items-center mb-8 gap-3">
@@ -62,23 +56,13 @@ export default function BlogList({ posts }) {
       </div>
 
       {/* Blog Grid */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="grid gap-6 sm:gap-10 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2"
-      >
-        {filteredPosts.map((post, i) => (
-          <motion.div
-            key={post.slug}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-          >
+      <section className="grid gap-6 sm:gap-10 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
+        {filteredPosts.map((post) => (
+          <div key={post.slug}>
             <BlogCard post={post} />
-          </motion.div>
+          </div>
         ))}
-      </motion.section>
+      </section>
     </main>
   );
 }
