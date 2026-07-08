@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, BookOpen, FileText, Clock, Zap,TextSearch } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "@/lib/no-motion"
 import { useState, useEffect } from "react"
 import ThemeToggle from "./ThemeToggle"
 

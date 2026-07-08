@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes"
 import { Sun, Moon } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion } from "@/lib/no-motion"
 import { useEffect, useState } from "react"
 
 export default function ThemeToggle() {

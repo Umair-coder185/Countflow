@@ -1,6 +1,6 @@
 "use client";
 import { Mail, Clock, Globe, Wrench, Briefcase } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/no-motion";
 
 export default function ContactUsClient() {
   return (

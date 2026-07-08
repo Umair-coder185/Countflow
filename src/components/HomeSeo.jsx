@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "@/lib/no-motion";
 import Link from "next/link";
 
 const features = [

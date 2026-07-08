@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/no-motion";
 import { ArrowRight, Copy, Trash, Download, Search } from "lucide-react";
 import { keywordDensityFAQs } from "@/lib/faqData";
 import FAQ from "@/components/FAQ";
@@ -35,21 +35,41 @@ export default function KeywordDensityCheckerPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Keyword Density Checker - Countflows",
-    url: "https://countflows.com/tools/keyword-density-checker",
-    description:
-      "Free online keyword density checker that analyzes single words and 2–3 word phrases with frequency and density percentages.",
-    applicationCategory: "SEOApplication",
-    operatingSystem: "All",
-    author: { "@type": "Organization", name: "Countflows" },
-    keywords:
-      "Keyword density analysis, 1, 2 and 3-word phrase frequency, Density percentage, Stop word filtering, Copy and export results",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    
+    "@id": "https://countflows.com/tools/keyword-density-checker",
+    "name": "Keyword Density Checker - Countflows",
+    "url": "https://countflows.com/tools/keyword-density-checker",
+    "description": "Free online keyword density checker that analyzes single words and 2–3 word phrases with frequency and density percentages.",
+    "image": "https://countflows.com/og-image.png",
+    "applicationCategory": "SEOApplication",
+    "operatingSystem": "All",
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-07-08",
+    "author": {
+      "@type": "Organization",
+      "name": "Countflows",
+      "url": "https://countflows.com",
+      "logo": "https://countflows.com/logo.png"
     },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Countflows",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://countflows.com/logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://countflows.com/tools/keyword-density-checker"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "isAccessibleForFree": true
   };
 
   const breadcrumbSchema = {

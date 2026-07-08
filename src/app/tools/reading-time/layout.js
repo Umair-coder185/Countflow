@@ -10,7 +10,7 @@ export const metadata = {
     url: "https://countflows.com/tools/reading-time",
     type: "website",
     images: [{
-      url: "https://countflows.com/public/blogs/blog4-1.png",
+      url: "https://countflows.com/blogs/blog4-1.png",
       width: 1200,
       height: 630,
       alt: "Countflows Reading Time Calculator"

@@ -37,7 +37,7 @@ const blog10 = `
    
     <h2>Want to Check Word Count in Google Docs while you're on the move? The mobile app makes it simple too.</h2>
     
-    <figure><img  src="blogs/blog10/word-count-mobile.png" alt="google docs word counter on mobile"></figure>
+    <figure><img  src="/blogs/blog10-2.png" alt="google docs word counter on mobile"></figure>
     <h3>How to Check Word Count on Android</h3>
 
     <p>Launch the Google Docs application and select the file from which you want to determine the word count. You will notice three vertical dots at the upper right-hand side of the screen; click on those dots to view the options in the drop-down menu. Choose “word count” from the drop-down list, and you will be presented with the required information.</p>

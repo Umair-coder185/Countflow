@@ -122,7 +122,7 @@ const readingspeed =`
 <section>
   <h2>Is My Reading Speed Slow? (Probably Not)</h2>
   <p>If you've ever seen someone online claim they read 600 words per minute and felt behind, here's the reality: most people quoting extreme numbers are skimming, estimating generously, or both.</p>
-  <p>Reading at 150–200 WPM with strong comprehension is a completely functional reading speed. Slower reading while studying, taking notes, or working through scholarly material is not a weakness — it's what deep comprehension actually looks like. If you're a student working through dense academic texts, our <a href="blog/academic-writing" style="color:blue">Academic Writing Guide</a> explains why formal scholarly writing is designed to be read slowly and carefully.</p>
+  <p>Reading at 150–200 WPM with strong comprehension is a completely functional reading speed. Slower reading while studying, taking notes, or working through scholarly material is not a weakness — it's what deep comprehension actually looks like. If you're a student working through dense academic texts, our <a href="/blog/academic-writing" style="color:blue">Academic Writing Guide</a> explains why formal scholarly writing is designed to be read slowly and carefully.</p>
 </section>
 
 <section>

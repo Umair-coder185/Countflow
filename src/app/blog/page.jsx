@@ -8,7 +8,7 @@ export const metadata = {
     "Free guides on word counts, reading speed, essay length, and writing tips. Learn how many pages 2000 words is, how to read faster, and more on Countflows.",
   authors: [{ name: "Umair Tufail", url: "https://countflows.com/about" }],
   openGraph: {
-    title: "Countflows Blog — Word Count & Writing Guides",
+    title: "Countflows Blog — Word Count Online & Writing Guides",
     description:
       "Practical guides on word counts, reading time, essay length, and SEO writing — powered by Countflows free text analysis tools.",
     url: "https://countflows.com/blog",
@@ -17,7 +17,7 @@ export const metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://countflows.com/public/blogs/blog2.png", // 1200x630 banayein
+        url: "https://countflows.com/blogs/blog2.png",
         width: 1200,
         height: 630,
         alt: "Countflows Blog — Writing and Word Count Guides",

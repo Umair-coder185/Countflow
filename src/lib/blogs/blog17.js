@@ -5,7 +5,7 @@ const blog17 =`
 
   <p>You have been assigned with writing a 10,000 word report, thesis, assignment or anything and have no clue on how to schedule your time for the same. Most sources give you an average figure and think that is all that there is about it. But, the figure changes drastically based on your speed of reading, your style of reading and whether you are reading silently or out loud. So, how long does it take to read 10,000 words? Here, you will get an accurate figure of the reading time taken by you to read 10,000 words in every possible scenario.</p>
 
-  <p>No worries, you don’t have to do the math here. Simply enter your text in the <a href="tools/reading-time" style="color:blue">Reading Time Calculator </a>to get your reading time for 10,000 words instantly.</p>
+  <p>No worries, you don't have to do the math here. Simply enter your text in the <a href="/tools/reading-time" style="color:blue">Reading Time Calculator </a>to get your reading time for 10,000 words instantly.</p>
 
   <h2>The Quick Answer: How Long It Takes at Different Speeds</h2>
   <p>The standard formula is simple. Total Terms divided by your reading speed in words per minute gives you total Mins.</p>

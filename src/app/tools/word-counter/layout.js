@@ -12,7 +12,7 @@ export const metadata = {
     url: "https://countflows.com/tools/word-counter",
     type: "website",
     images: [{
-      url: "https://countflows.com/public/blogs/blog6-1.png",
+      url: "https://countflows.com/blogs/blog6-1.png",
       width: 1200,
       height: 630,
       alt: "Countflows Word Counter"

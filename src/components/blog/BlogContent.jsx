@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "@/lib/no-motion";
 import { Calendar, User, Clock, Tag } from "lucide-react";
 import BlogHeader from "@/components/blog/BlogHeader";
 import authors from "@/lib/authors";

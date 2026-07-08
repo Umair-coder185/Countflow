@@ -1,6 +1,6 @@
 "use client";
 import { Quote } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/no-motion";
 
 function Testimonials() {
   const testimonials = [

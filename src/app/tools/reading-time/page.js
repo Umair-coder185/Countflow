@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion } from "@/lib/no-motion"
 import { Copy, Trash, Download, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import clsx from "clsx"
@@ -57,22 +57,41 @@ export default function ReadingTimePage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://countflows.com/tools/reading-time",
     "name": "Reading Time Calculator - Countflows",
     "url": "https://countflows.com/tools/reading-time",
     "description": "Calculate approximate reading and speaking time for any text with instant estimates, speaking time, and reading difficulty scores.",
+    "image": "https://countflows.com/og-image.png",
     "applicationCategory": "ProductivityApplication",
     "operatingSystem": "All",
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-07-08",
     "author": {
       "@type": "Organization",
-      "name": "Countflows"
+      "name": "Countflows",
+      "url": "https://countflows.com",
+      "logo": "https://countflows.com/logo.png"
     },
-    "keywords": "Instant reading time estimates, Speaking time estimates, Flesch reading-ease score, Goal tracker",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Countflows",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://countflows.com/logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://countflows.com/tools/reading-time"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
-    }
+    },
+    "isAccessibleForFree": true
   };
 
   const breadcrumbSchema = {

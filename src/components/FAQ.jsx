@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "@/lib/no-motion"
 import { ChevronDown } from "lucide-react"
 
 export default function FAQ({ faqs }) {

@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "@/lib/no-motion"
 import { Type, Hash, Clock, Mic, AlignLeft, List } from "lucide-react"
 
 export default function StatsCard({ text }) {

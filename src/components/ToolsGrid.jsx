@@ -1,7 +1,7 @@
 "use client"
 
 import ToolCard from "./ToolCard"
-import { motion } from "framer-motion"
+import { motion } from "@/lib/no-motion"
 
 export default function ToolsGrid() {
   const tools = [

@@ -6,24 +6,18 @@ Allow: /tools/word-counter
 Allow: /tools/character-counter
 Allow: /tools/reading-time
 Allow: /tools/sentence-calculator
-Allow:/tools/keyword-density-checker
+Allow: /tools/keyword-density-checker
 Disallow: /.next/
 Disallow: /node_modules/
 Disallow: /.env
 Disallow: /.git/
 
-# Crawl delay
-Crawl-delay: 1
-
 # Sitemaps
 Sitemap: https://countflows.com/sitemap.xml
 
-# Google specific
+# Specific crawlers (no crawl-delay; Google ignores it)
 User-agent: Googlebot
-Crawl-delay: 0
 Allow: /
 
-# Bing specific
 User-agent: Bingbot
-Crawl-delay: 1
 Allow: /

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion } from "@/lib/no-motion"
 import { ArrowRight, Copy, Trash, Download } from "lucide-react"
 
 import { wordCounterFAQs } from "@/lib/faqData"
@@ -19,22 +19,41 @@ export default function WordCounterPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://countflows.com/tools/word-counter",
     "name": "Word Counter - Countflows",
     "url": "https://countflows.com/tools/word-counter",
-    "description": "Free online word counter that provides  word, character, sentence, and paragraph counts plus goal tracking and readability tips.",
+    "description": "Free online word counter that provides word, character, sentence, and paragraph counts plus goal tracking and readability tips.",
+    "image": "https://countflows.com/og-image.png",
     "applicationCategory": "ProductivityApplication",
     "operatingSystem": "All",
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-07-08",
     "author": {
       "@type": "Organization",
-      "name": "Countflows"
+      "name": "Countflows",
+      "url": "https://countflows.com",
+      "logo": "https://countflows.com/logo.png"
     },
-    "keywords": "Real-time word and character counting, Sentence and paragraph counts, Goal tracker with progress bar, Focus mode to reduce distractions, Download and copy text",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Countflows",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://countflows.com/logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://countflows.com/tools/word-counter"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
-    }
+    },
+    "isAccessibleForFree": true
   };
 
   const breadcrumbSchema = {
@@ -201,16 +220,10 @@ export default function WordCounterPage() {
           {/* Textarea */}
           <textarea
             value={text}
-              onChange={(e) => setText(e.target.value)}
-
-              // auto-analyze on any change (paste or typing)
-          
-
-
+            onChange={(e) => setText(e.target.value)}
             placeholder="Start typing or paste your text..."
             className="w-full max-w-4xl mx-auto min-h-[150px] sm:min-h-[200px] md:min-h-[240px] border border-gray-300 dark:border-gray-600 rounded-xl p-4 outline-none focus:ring-2 focus:ring-cyan-500 resize-y bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 text-base md:text-lg"
           />
-      
 
           {/* Actions */}
           <div className="flex flex-col gap-4 mt-6">

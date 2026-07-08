@@ -3,7 +3,16 @@ export default function robots() {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: [
+          "/",
+          "/tools/",
+          "/blog/",
+          "/tools/word-counter",
+          "/tools/character-counter",
+          "/tools/reading-time",
+          "/tools/sentence-calculator",
+          "/tools/keyword-density-checker",
+        ],
         disallow: [
           "/api/",
           "/admin/",

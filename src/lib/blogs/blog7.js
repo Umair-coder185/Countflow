@@ -96,7 +96,7 @@ This range is compact, quick, and fulfilling. Single title romances on the other
 
 <h2>How Many Words Per Chapter in a Novel? </h2>
 
-<figure><img src="blogs/blog7-2.png" alt="how many words in a novel" style="width: 100%; max-width:600px; margin: 20px auto; display:block;"></figure>
+<figure><img src="/blogs/blog7-2.png" alt="how many words in a novel" style="width: 100%; max-width:600px; margin: 20px auto; display:block;"></figure>
 
 <p>No manual tells you how long a chapter should be. But open any commonly published novel and a pattern emerges fast; most chapters land somewhere between 2000 and 5000 words. That is roughly 8 to 20 pages depending on how your manuscript is formatted.
 Short chapters are different. Under 1,500 words and you're creating momentum the kind that makes readers flip pages at midnight without meaning to. Thrillers do this. YA does this. Horror does this. The break comes before the reader is ready, and that tension is the whole point. Long chapters work the opposite way. Literary fiction and epic fantasy writers push into 5,000 to 10,000 words per chapter because they want you to sink. To forget the real world exists. To resurface only when the chapter decides you can.

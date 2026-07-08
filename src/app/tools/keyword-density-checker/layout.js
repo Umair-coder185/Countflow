@@ -13,7 +13,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://countflows.com/public/blogs/blog3-2.png",
+        url: "https://countflows.com/blogs/blog3-2.png",
         width: 1200,
         height: 630,
         alt: "Countflows Keyword Density Checker",

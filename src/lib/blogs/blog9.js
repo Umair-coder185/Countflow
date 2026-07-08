@@ -85,7 +85,7 @@ What we can say for sure, however, is that the best performing articles fall wit
     <h2>Benefits of Long-Form Blog Posts</h2>
 
 
-    <figure><img src="blogs/blog9-2.png" alt="benefits of long-form blog posts" /></figure>
+    <figure><img src="/blogs/blog9-2.png" alt="benefits of long-form blog posts" /></figure>
     <h3>Longer Posts Lead to More Time on Page</h3>
     <p>Almost 40 percent of the readers spend extra time reading long articles. Such time spent on the article sends clear signals to the search engine about its relevance, credibility, and high ranks. Time spent on the page may also afford you an opportunity of making more money through affiliate ads on your blog.</p>
    

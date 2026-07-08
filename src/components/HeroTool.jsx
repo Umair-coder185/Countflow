@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion } from "@/lib/no-motion"
 import { Copy, Trash, Download } from "lucide-react"
 
 import StatsCards from "./StatsCard"

@@ -53,7 +53,7 @@ export default function SEOContentBenefits() {
       </ul>
 
       <p className="mt-8 text-base sm:text-lg text-center">
-        With CountFlows, you don’t just analyze text  you{" "}
+        With CountFlows, you don’t just analyze text — you
         <span className="font-semibold text-blue-700 dark:text-blue-300">
           create content that Google rewards
         </span> and readers love.

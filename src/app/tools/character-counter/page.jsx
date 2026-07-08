@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion } from "@/lib/no-motion"
 import Link from "next/link"
 import { ArrowRight, Trash, Download } from "lucide-react"
 import { Copy, } from "lucide-react"
@@ -18,22 +18,41 @@ export default function CharacterCounterPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://countflows.com/tools/character-counter",
     "name": "Character Counter - Countflows",
     "url": "https://countflows.com/tools/character-counter",
     "description": "Free online character counter that gives instant character, word, and readability feedback with presets and download options.",
+    "image": "https://countflows.com/og-image.png",
     "applicationCategory": "ProductivityApplication",
     "operatingSystem": "All",
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-07-08",
     "author": {
       "@type": "Organization",
-      "name": "Countflows"
+      "name": "Countflows",
+      "url": "https://countflows.com",
+      "logo": "https://countflows.com/logo.png"
     },
-    "keywords": "Instant character and word counts, Presets for tweets, SMS, meta descriptions, Progress bar with limit indicators, Download and copy text",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Countflows",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://countflows.com/logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://countflows.com/tools/character-counter"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
-    }
+    },
+    "isAccessibleForFree": true
   };
 
   const breadcrumbSchema = {

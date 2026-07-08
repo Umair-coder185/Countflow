@@ -20,7 +20,7 @@ export const metadata = {
   // ❌ keywords line delete kar di
   authors: [{ name: "Umair Tufail" }],
   creator: "Umair Tufail",
-  publisher: "Countflows",
+  publisher: "Umair Tufail",
   formatDetection: {
     email: false,
     telephone: false,
@@ -31,7 +31,7 @@ export const metadata = {
     locale: "en_US",
     url: "https://countflows.com",
     siteName: "Countflows",
-    title: "Countflows - Free Word Counter & Text Analysis Tools",
+    title: "Free Word Counter & Text Analysis Tools",
     description: "Get instant word counts, character counts, reading time estimates, and sentence analysis. The best free online writing tool suite.",
     images: [
       {
@@ -40,6 +40,7 @@ export const metadata = {
         height: 630,
         alt: "Countflows - Free Writing Analysis Tools",
         type: "image/png",
+        secureUrl: "https://countflows.com/og-image.png",
       },
     ],
   },
@@ -48,7 +49,14 @@ export const metadata = {
     site: "@countflows",
     title: "Countflows - Free Word Counter & Writing Tools",
     description: "Instant text analysis with word counter, character counter, and reading time calculator.",
-    images: ["https://countflows.com/og-image.png"],
+    images: [
+      {
+        url: "https://countflows.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Countflows Writing Tools",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -62,9 +70,14 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "96x96" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/favicon.png", type: "image/png", sizes: "180x180" },
+    ],
   },
 }
 

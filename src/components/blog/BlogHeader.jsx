@@ -1,7 +1,7 @@
 "use client";
 
 import { BookOpen } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/no-motion";
 import Link from "next/link";
 
 export default function BlogHeader({ title, subtitle }) {

@@ -13,7 +13,7 @@ export const metadata = {
     url: "https://countflows.com/tools/character-counter",
     type: "website",
     images: [{
-      url: "https://countflows.com/public/blogs/blog3-1.png",
+      url: "https://countflows.com/blogs/blog3-1.png",
       width: 1200,
       height: 630,
       alt: "Countflow Character Counter"

@@ -2,9 +2,9 @@ const authors = {
   "umair-tufail": {
     name: "Umair Tufail",
     role: "Senior Editor",
-    bio: "Umair Tufail is a content strategist and editor specializing in writing guides, SEO, and academic communication. He helps writers create clear, research-backed content.",
-    
-    linkedin: "https://www.linkedin.com/in/umair-rao/",
+    bio: "Umair Tufail is a content strategist , developer and editor specializing in writing guides, SEO, and academic communication. He helps writers create clear, research-backed content.",
+    linkedin: "https://www.linkedin.com/in/umair-nextjs-dev",
+    twitter: "https://twitter.com/umairrbuilds",
   },
   "countflows-team": {
     name: "Countflows Team",

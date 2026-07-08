@@ -97,7 +97,7 @@ const blog8 = `
 
   <h2>Best Add-ons for Tracking Word Count in Google Docs</h2>
   <p>Open Extensions then click Add-ons and select Add-ons. Search for <a href="/tools/word-counter" target="_blank">Word Counter Max</a> in the add-ons store and install it directly. This add-on shows a live sidebar with Text Measure character Track, sentence count and readability score.</p>
-  <p>Try <a href="/tools/docupilot-stats" target="_blank">DocuPilot Stats</a>  for reading time estimates. It helps you to measure how long your content takes to read. Both add-ons work directly inside Google Docs and restore in real time as you write.</p>
+  <p>Try our free <a href="/tools/reading-time" target="_blank">Reading Time Calculator</a> for reading time estimates. It helps you to measure how long your content takes to read and get instant reading duration analysis.</p>
 
   <h2>Word Count Shortcut for a Specific Section or Selection</h2>
 
