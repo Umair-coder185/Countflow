@@ -19,6 +19,7 @@ import readingspeed from "./blogs/reading-speed";
 import blog19 from "./blogs/blog19";
 import blog20 from "./blogs/blog20";
 import blog21 from "./blogs/blog21";
+import blog22 from "./blogs/blog22";
 
 export const posts = [
   {
@@ -991,7 +992,56 @@ export const posts = [
       "answer": "Most readers notice a steadier pace within two to four weeks of short daily sessions. Re-test weekly with a passage of similar difficulty and track raw WPM alongside comprehension."
     }
   ]
-}
+},
+
+{
+  "id": 22,
+  "slug": "speech-time-calculator",
+  "title": "Speech Time Calculator: How Many Words for a 3, 5, 10 and 15 Minute Speech",
+  "description": "Free speech time calculator guide: convert words to minutes and get exact word counts for 3, 5, 10, and 15 minute speeches at slow, average, and fast pace.",
+  "excerpt": "At an average speaking pace of 130 WPM, a 3 minute speech needs about 390 words, a 5 minute speech about 650, a 10 minute speech about 1,300, and a 15 minute speech about 1,950. Slow speakers plan at 110 WPM and fast speakers at 160, so test your own pace once before you draft.",
+  "category": "Reading & Writing",
+  "image": "/blogs/speech-time-calculator-wordcount-vs-clock.png",
+  "author": "Umair Tufail",
+  "date": "2026-07-10",
+  "readTime": "10 min read",
+  "keywords": [
+    "speech time calculator",
+    "how many words is a 3 minute speech",
+    "how many words for a 5 minute speech",
+    "how many words for a 10 minute speech",
+    "how many words is a 15 minute speech",
+    "words per minute calculator",
+    "average speaking speed"
+  ],
+  content: blog22,
+  "faqs": [
+    {
+      "question": "How many words is a 1 minute speech?",
+      "answer": "Roughly 110 to 160 words, with 130 as the safe middle. Treat it as one strong paragraph: write it, say it against a timer, and trim whatever spills over."
+    },
+    {
+      "question": "How many pages is a 10 minute speech?",
+      "answer": "Around 2.5 pages single-spaced or 5 double-spaced, assuming 1,300 words in 12 point type. Scale up to about 4 and 8 pages for a 15 minute speech."
+    },
+    {
+      "question": "Is a speech time calculator the same as a words per minute calculator?",
+      "answer": "They run the same equation in opposite directions. A words per minute calculator returns your rate from time and word count, while a speech time calculator returns your time from word count and rate."
+    },
+    {
+      "question": "Why do I run over even when my word count fits?",
+      "answer": "Delivery spends time that text never shows: transitions, reactions, asides, and pauses. Time a full rehearsal out loud and trim a tenth from the script."
+    },
+    {
+      "question": "Is speaking speed the same as reading speed?",
+      "answer": "No. The averages stack up as 238 WPM for silent reading, 183 for reading aloud (Brysbaert, 2019), and 110 to 160 for a prepared talk. Same words, three different clocks."
+    },
+    {
+      "question": "How many words per minute is too fast for a speech?",
+      "answer": "Once you pass about 170 words per minute, listeners keep up with the words but lose the stress patterns that tell them what matters. Around 140 keeps first-time comprehension intact."
+    }
+  ]
+},
 
 
 
