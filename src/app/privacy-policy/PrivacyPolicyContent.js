@@ -1,5 +1,3 @@
-'use client';
-
 import { Shield } from "lucide-react";
 import { motion } from "@/lib/no-motion";
 

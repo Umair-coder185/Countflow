@@ -1,6 +1,5 @@
 import { posts } from "@/lib/blogData";
 import BlogList from "@/components/blog/BlogList";
-import Link from "next/link";
 
 export const metadata = {
   title: "Word Count, Reading Time & Writing Guides | Countflows Blog",

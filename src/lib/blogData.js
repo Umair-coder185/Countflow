@@ -25,8 +25,8 @@ export const posts = [
   {
     id: 1,
     slug: "academic-writing",
-    title: "Academic Writing Guide for Students, Researchers",
-    description: "Learn academic writing definition, types, styles & structure. A complete beginner's guide to master formal & scholarly writing skills.",
+    title: "Free Academic Writing Guide for Students, Researchers",
+    description: "Learn academic writing definition, types, styles & structure. A complete beginner's guide to master formal writing skills.",
     excerpt: "Academic writing is a formal style of communication used in educational and research contexts...",
     image: "/blogs/blog3-1.png",
     category: "Academic Writing",
@@ -58,114 +58,165 @@ export const posts = [
       }
     ]
   },
+ {
+  id: 2,
+  slug: "seo-content-writing-guide",
+  title: "SEO Content Writing: The 2026 Guide to Ranking on Google",
+  description:
+    "Learn SEO content writing step by step: keyword research, search intent, E-E-A-T, ideal length, and how to get cited in AI Overviews and ChatGPT in 2026.",
+  excerpt:
+    "A practical SEO content writing guide covering keyword research, search intent, E-E-A-T, content length data, on-page SEO, and AI search visibility.",
+  image: "/blogs/seo-keyword-research.png",
+  category: "SEO",
+  author: "Umair Tufail",
+  date: "May 21, 2026",
+  readTime: "11 min read",
+  keywords: [
+    "SEO content writing",
+    "how to write SEO content",
+    "search intent",
+    "on-page SEO",
+    "keyword optimization",
+    "E-E-A-T",
+    "AI Overviews SEO",
+    "blog post length for SEO",
+  ],
+  content: seoContent,
+  faqs: [
+    {
+      question: "How do I start SEO content writing as a beginner?",
+      answer:
+        "Pick one topic you know well, find one low-competition keyword, and write the most complete answer on the internet for it. Repeat weekly. Skill compounds faster through publishing than through courses.",
+    },
+    {
+      question: "How much do SEO content writers earn?",
+      answer:
+        "Beginners typically charge 3 to 5 cents per word, experienced writers 10 to 25 cents, and specialists with proven ranking results charge per project. Income tracks proof: writers who can show pages they ranked earn several times more than writers who cannot.",
+    },
+    {
+      question: "What does an SEO content writer actually do?",
+      answer:
+        "An SEO content writer researches keywords, studies search intent, writes structured content around it, and optimizes titles, headings, and links so the page can rank. The job is half writing and half understanding what searchers want.",
+    },
+    {
+      question: "What is the difference between SEO writing and copywriting?",
+      answer:
+        "SEO writing attracts and informs people who are searching; copywriting persuades people who have arrived. One earns the visit, the other converts it. Strong content teams use both on the same page.",
+    },
+    {
+      question: "Is SEO dead now that AI answers questions?",
+      answer:
+        "No. Google still processes billions of searches daily, and AI engines need source content to generate answers. What died is lazy SEO: thin posts written for crawlers. Content with real experience and clear structure now wins in both places at once.",
+    },
+    {
+      question: "How do I get my content cited in AI Overviews and ChatGPT?",
+      answer:
+        "Write extractable answers: a direct, factual statement at the top of each section, supported by evidence. Keep sections self-contained, use structured formats like tables and lists, and build topical depth so AI systems treat your site as a reliable source on the subject.",
+    },
+    {
+      question: "Does AI-generated content rank on Google?",
+      answer:
+        "Google rewards helpful content regardless of how it was produced, but punishes unedited mass production. Raw AI drafts fail on experience and originality, the two signals that matter most now. Use AI for outlines and research summaries, then add your own data, examples, and judgment.",
+    },
+    {
+      question: "Is blogging still worth it in 2026?",
+      answer:
+        "Yes, with a condition. Blogs that summarize what everyone already knows are losing clicks to AI answers. Blogs that publish original data, honest reviews, and first-hand experience are gaining, because both readers and AI engines have to come to the source.",
+    },
+  ],
+},
   {
-    id: 2,
-    slug: "seo-content-writing-guide",
-    title: "SEO Content Writing Guide for Blogging & Optimization",
-    description: "Master SEO content writing to engage readers and outrank competitors. Learn practical skills to optimize your copy and target keywords.",
-    excerpt: "Learn SEO content writing, keyword optimization, blogging strategies, search intent, readability, and on-page SEO techniques.",
-    image: "/blogs/seo-keyword-research.png",
-    category: "SEO",
-    author: "Countflows Team",
-    date: "May 21, 2026",
-    readTime: "12 min read",
-    keywords: ["SEO content writing", "blogging", "on-page SEO", "keyword optimization", "search intent", "content structure", "keyword research online"],
-    content: seoContent,
-    faqs: [
-      {
-        question: "What is SEO content writing?",
-        answer: "SEO content writing is creating content that ranks well in search engines while remaining engaging and valuable to readers. It combines keyword research, strategic placement, and quality writing to attract organic traffic and address user search intent."
-      },
-      {
-        question: "How do I find the right keywords for my content?",
-        answer: "Use tools like Google Keyword Planner, SEMrush, or Ahrefs to research search volume and competition. Look for keywords with decent search volume but lower competition. Consider search intent — whether people want information, to buy something, or local results."
-      },
-      {
-        question: "What is search intent and why does it matter?",
-        answer: "Search intent is what the user actually wants when they search. There are four types: informational (learning), navigational (finding a site), commercial (comparing products), and transactional (buying). Match your content to the user's intent for better rankings."
-      },
-      {
-        question: "How often should I use keywords in my content?",
-        answer: "Aim for 1-2% keyword density — if you're targeting 100 words, include your keyword 1-2 times. Don't force keywords unnaturally. Focus on synonyms and related terms too. Google cares about relevance, not exact keyword frequency."
-      },
-      {
-        question: "What makes content rank higher in search results?",
-        answer: "Multiple factors: keyword relevance, content quality and depth, page speed, mobile-friendliness, backlinks, and user engagement (click-through rate, time on page). Write for humans first, search engines second."
-      }
-    ]
-  },
-  {
-    id: 3,
-    slug: "manage-essay-word-count",
-    title: "How to Manage Essay Word Count Effectively",
-    description: "Learn how to manage essay word count effectively with latest strategies. Discover tips for improving readability and meeting academic requirements.",
-    excerpt: "Managing essay word count starts at the outline stage, not the writing stage...",
-    image: "/blogs/blog2.png",
-    category: "Academic Writing",
-    author: "Countflows Team",
-    date: "May 17, 2026",
-    readTime: "15 min read",
-    keywords: ["essay word count", "academic writing", "college essays", "academic writing principles and guidelines", "research‑based prose", "importance of academic writing for students"],
-    content: howToManageEssayWordCount,
-    faqs: [
-      {
-        question: "How do I manage my essay word count from the start?",
-        answer: "Plan during the outline stage, not while writing. Count main points you need to cover, then allocate words accordingly. If you have 2000 words and 5 main ideas, budget roughly 400 words per section. This prevents rambling and keeps you on track."
-      },
-      {
-        question: "What should I do if my essay is too long?",
-        answer: "Remove redundant sentences and ideas. Cut examples that don't add value. Replace wordy phrases with concise ones. Read each paragraph and ask: 'Does this paragraph advance my argument?' If not, cut it or merge it with another section."
-      },
-      {
-        question: "What if my essay is too short?",
-        answer: "Add evidence and analysis, not filler. Strengthen your arguments with examples, data, and expert quotes. Expand explanations of key points. Develop counter-arguments to show deeper thinking. Never add words just to hit a target — quality matters more than quantity."
-      },
-      {
-        question: "Can I exceed the word count limit by a small amount?",
-        answer: "Many professors allow 5-10% over the limit, but check your assignment guidelines. When in doubt, ask. Deliberately exceeding the limit can result in grade penalties. It's better to be slightly under than significantly over."
-      },
-      {
-        question: "Do citations and headers count toward the word count?",
-        answer: "It depends on your style guide and professor. Usually the main body text counts, but headers, titles, and references don't. In-text citations sometimes count, sometimes don't. Ask your professor for clarification before you start writing."
-      }
-    ]
-  },
-  {
-    id: 4,
-    slug: "how-many-pages-is-2000-words",
-    title: "How Many Pages Is 2000 Words?",
-    description: "Words per page vary by font, spacing & margins. Get exact counts for books, essays & documents.",
-    excerpt: "Learn the approximate number of pages that 2000 words will occupy based on different formatting options.",
-    image: "/blogs/blog4-2.png",
-    category: "Academic Writing",
-    author: "Countflows Team",
-    date: "June 2, 2026",
-    readTime: "10 min read",
-    keywords: ["2000 words", "pages", "word count", "spacing", "font size"],
-    content: blog4,
-    faqs: [
-      {
-        question: "How many pages is 2000 words?",
-        answer: "With standard formatting (Times New Roman, 12pt, double-spaced), 2000 words equals approximately 8 pages. With single spacing it's about 4 pages. With narrow margins and smaller font, it could be 3-4 pages. Formatting dramatically affects page count."
-      },
-      {
-        question: "Does changing font size affect page count?",
-        answer: "Yes, significantly. Larger fonts (14pt) take up more pages, smaller fonts (10pt) use fewer. Font choice matters too — serif fonts (Times New Roman) take more space than sans-serif fonts (Arial). If you need fewer pages, use a smaller font, but check your assignment guidelines."
-      },
-      {
-        question: "What's the difference between single-spaced and double-spaced?",
-        answer: "Double-spaced text has more space between lines, making it take up roughly twice as many pages as single-spaced text. Most academic papers require double spacing. Single spacing is used for manuscripts and professional documents."
-      },
-      {
-        question: "How do margins affect the page count?",
-        answer: "Narrower margins (0.5 inches) fit more text per page, reducing total pages. Standard margins are 1 inch on all sides. Wider margins increase page count. If your essay is slightly short, narrowing margins is usually acceptable, but check guidelines first."
-      },
-      {
-        question: "Is there a standard page count for 2000 words?",
-        answer: "The most common standard is 2000 words ≈ 8 pages with double spacing, 12pt font, and 1-inch margins. However, this varies by font and formatting. Always check your assignment guidelines for specific requirements."
-      }
-    ]
-  },
+  id: 3,
+  slug: "manage-essay-word-count",
+  title: "Essay Word Count Guide: How Long Is an Essay? (By Level)",
+  description:
+    "Learn how to manage essay word count: length by academic level, what counts toward the limit, the 10 percent rule, and how to cut or add words safely.",
+  excerpt:
+    "Word count problems start at the outline stage, not the writing stage. Learn essay lengths by level, what counts toward the limit, and how to cut or add words without losing marks.",
+  image: "/blogs/blog2.png",
+  category: "Academic Writing",
+  author: "Umair Tufail",
+  date: "May 17, 2026",
+  readTime: "9 min read",
+  keywords: [
+    "essay word count",
+    "how long is an essay",
+    "word count limit university",
+    "does word count include references",
+    "10 percent rule word count",
+    "3000 words in pages",
+    "how to reduce word count in an essay",
+  ],
+  content: howToManageEssayWordCount,
+  faqs: [
+    {
+      question: "Does the word count include references and quotes?",
+      answer:
+        "At most universities, quotes and in-text citations count, while the reference list, title page, and appendices do not. The rule varies by institution, so confirm it in your assignment brief before you rely on it.",
+    },
+    {
+      question: "Can I go 10 percent over the word limit?",
+      answer:
+        "Often yes, because many universities allow 10 percent above or below the stated limit. Never assume it, though. Some markers penalize any overage, and a few stop reading at the limit, so check your module handbook first.",
+    },
+    {
+      question: "How many words is a 2 minute speech?",
+      answer:
+        "About 260 words at an average speaking pace of 130 words per minute. Speaking speed, not typing speed, sets this number. See our full guide to speech word counts for every length from 3 to 15 minutes.",
+    },
+    {
+      question: "Can I write a 3,000-word essay in one day?",
+      answer:
+        "Yes, if the research is already done. Budget the day in blocks: outline and word budget in the morning, drafting in two or three focused sessions, and a final hour for cutting and citation checks. Quality drops sharply when research and writing share the same day.",
+    },
+  ],
+},
+ {
+  id: 4,
+  slug: "how-many-pages-is-2000-words",
+  title: "How Many Words Per Page? Essays, Books & Documents",
+  description:
+    "How many words per page? About 500 single-spaced or 250 double-spaced. See conversions for essays, books, handwriting, and speeches by font and format.",
+  excerpt:
+    "A standard page holds about 500 words single-spaced or 250 double-spaced. See exact conversions for essays, books, handwritten pages, and speeches.",
+  image: "/blogs/blog4-1.png",
+  category: "Academic Writing",
+  author: "Umair Tufail",
+  date: "June 2, 2026",
+  readTime: "7 min read",
+  keywords: [
+    "words per page",
+    "how many pages is 2000 words",
+    "how many pages is 1000 words",
+    "words per page double spaced",
+    "how many words is a 300 page book",
+    "words per A4 page",
+    "handwritten words per page",
+  ],
+  content: blog4,
+  faqs: [
+    {
+      question: "How many pages is 1,000 words?",
+      answer:
+        "About two pages single-spaced or four pages double-spaced, using 12pt Times New Roman with one-inch margins. Larger fonts or wider margins increase the page count.",
+    },
+    {
+      question: "How many words fit on an A4 page?",
+      answer:
+        "About 500 words single-spaced or 250 words double-spaced with 12pt font and standard margins, nearly identical to US Letter. At 1.5 spacing, an A4 page holds roughly 350 to 400 words.",
+    },
+    {
+      question: "How many words is a 300-page book?",
+      answer:
+        "Roughly 82,500 words at the publishing average of 275 words per page. The true figure ranges from 75,000 to 90,000 depending on trim size, font, and how much dialogue the book contains.",
+    },
+    {
+      question: "How many handwritten pages is 500 words?",
+      answer:
+        "About two pages with average handwriting, since handwritten text takes roughly the same space as double-spaced type. Larger handwriting can push it to three pages.",
+    },
+  ],
+},
   {
     id: 5,
     slug: "cover-letter-word-count",

@@ -1,26 +1,60 @@
-"use client";
-
 import { motion } from "@/lib/no-motion";
 import { Calendar, User, Clock, Tag } from "lucide-react";
 import BlogHeader from "@/components/blog/BlogHeader";
-import authors from "@/lib/authors";
+import authors from "@/lib/authors"; // ✅ ADDED: ek jagah wali content styling (agar globals.css mein already import hai to yeh line hata dein)
 
+const SITE_URL = "https://countflows.com"; // ✅ ADDED
 
 export default function BlogContent({ post }) {
+  // ✅ ADDED: Article schema — har post ke liye auto
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: `${SITE_URL}${post.image}`,
+    author: { "@type": "Person", name: post.author },
+    datePublished: post.date,
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+  };
+
+  // ✅ ADDED: FAQ schema — sirf tab banegi jab post.faqs array mojood ho
+  const faqSchema =
+    post.faqs && post.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        }
+      : null;
+
   return (
-    <main className="max-w-5xl   mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 lg:py-12">
-      {/* Header Back Link */}
-         <BlogHeader
-        title={post.title}
-        subtitle={post.description}
+    <main className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 lg:py-12">
+      {/* ✅ ADDED: Schema scripts — Google in ko padhta hai, screen par kuch nahi dikhta */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
+      {/* Header Back Link */}
+      <BlogHeader title={post.title} subtitle={post.description} />
 
       <article className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden px-6 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16">
         {/* Featured Image */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className="relative h-56 sm:h-72 md:h-96 w-full bg-gray-100 overflow-hidden mb-8 sm:mb-12 md:mb-14 rounded-lg"
         >
           <img
@@ -29,8 +63,6 @@ export default function BlogContent({ post }) {
             className="w-full h-full object-cover"
           />
         </motion.div>
-
-       
 
         {/* Meta Info */}
         <div className="flex flex-wrap gap-3 sm:gap-4 items-center text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 mb-10 pb-8 border-b border-gray-200 dark:border-gray-700">
@@ -47,11 +79,6 @@ export default function BlogContent({ post }) {
             <Tag className="w-4 h-4" /> {post.category}
           </span>
         </div>
-
-        {/* Description
-        <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 font-semibold mb-10 leading-relaxed">
-          {post.description}
-        </p> */}
 
         {/* Keywords */}
         <div className="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
@@ -72,21 +99,25 @@ export default function BlogContent({ post }) {
 
         {/* Main Content */}
         <motion.div
-          initial={ false }
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          initial={false}
+          animate={{ opacity: 1 , y:0}}
+          transition={{ duration: 0.5 }}
           className="prose blog-content prose-sm sm:prose-base md:prose-lg lg:prose-xl dark:prose-invert max-w-none
             prose-headings:font-bold prose-headings:mt-6 prose-headings:mb-3
             prose-h2:text-xl sm:prose-h2:text-2xl md:prose-h2:text-3xl lg:prose-h2:text-4xl
             prose-h3:text-lg sm:prose-h3:text-xl md:prose-h3:text-2xl lg:prose-h3:text-3xl
             prose-p:text-gray-800 dark:prose-p:text-gray-300 prose-p:leading-relaxed
             prose-a:text-blue-600 prose-a:font-semibold prose-a:underline hover:prose-a:text-blue-700 dark:prose-a:text-cyan-400 dark:hover:prose-a:text-cyan-300
-            prose-img:rounded-lg prose-img:w-full h-auto prose-img:my-4
+            prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:my-4
             prose-ul:list-disc prose-ul:ml-5 prose-ul:my-3
             prose-table:w-full prose-table:my-4 prose-table:text-sm sm:prose-table:text-base md:prose-table:text-lg
-            prose-th:p-2 sm:prose-th:p-3 prose-td:p-2 sm:prose-td:p-3"
+            prose-th:p-2 sm:prose-th:p-3 prose-td:p-2 sm:prose-td:p-3
+            prose-a:text-cyan-600 dark:prose-a:text-cyan-400
+            prose-a:underline prose-a:font-medium
+            hover:prose-a:text-cyan-700 dark:hover:prose-a:text-cyan-300"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+        {/* ✅ FIXED upar: "h-auto" ab "prose-img:h-auto" hai (pehle wo galat jagah lag raha tha) */}
 
         {/* Bottom Section with Author Card */}
         <div className="mt-16 pt-10 border-t border-gray-200 dark:border-gray-700">
@@ -95,10 +126,14 @@ export default function BlogContent({ post }) {
             <div className="flex gap-4 items-start">
               {(() => {
                 const key = post.author
-                  ? post.author.toString().toLowerCase().trim().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")
+                  ? post.author
+                      .toString()
+                      .toLowerCase()
+                      .trim()
+                      .replace(/\s+/g, "-")
+                      .replace(/[^a-z0-9-]/g, "")
                   : null;
                 const info = key ? authors[key] : null;
-
                 if (info) {
                   return (
                     <>
@@ -126,7 +161,6 @@ export default function BlogContent({ post }) {
                     </>
                   );
                 }
-
                 // Fallback: simple byline
                 return (
                   <div>
@@ -136,7 +170,6 @@ export default function BlogContent({ post }) {
                 );
               })()}
             </div>
-
             <a
               href="/blog"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 sm:py-3 px-5 sm:px-6 rounded-lg transition-colors text-sm sm:text-base md:text-lg"

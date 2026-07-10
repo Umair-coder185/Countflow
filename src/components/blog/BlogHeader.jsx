@@ -1,5 +1,3 @@
-"use client";
-
 import { BookOpen } from "lucide-react";
 import { motion } from "@/lib/no-motion";
 import Link from "next/link";

@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "@/lib/no-motion";
@@ -33,6 +31,7 @@ function BlogCard({ post, priority = false }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority={priority}
           loading={priority ? "eager" : "lazy"}
+          unoptimized={true}
           className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-2xl"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity rounded-t-2xl" />

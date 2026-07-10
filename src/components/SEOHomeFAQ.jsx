@@ -1,5 +1,3 @@
-"use client";
-
 export default function SEOHomeFAQ() {
   return (
     <section className="max-w-3xl mx-auto mb-12 prose dark:prose-invert">

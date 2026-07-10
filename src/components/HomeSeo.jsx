@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "@/lib/no-motion";
 import Link from "next/link";
 

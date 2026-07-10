@@ -1,5 +1,3 @@
- "use client";
-
 import { Zap, Shield, BarChart3 } from "lucide-react";
 
 import { motion } from "@/lib/no-motion";
