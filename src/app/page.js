@@ -1,25 +1,45 @@
-import ToolsGrid from "@/components/ToolsGrid";
-import { WhyChooseUs } from "@/components/choseus";
-import Testimonials from "@/components/Testimonials";
-import HomeSeo from "@/components/HomeSeo";
-import SEOWritingTips from "@/components/SEOWritingTips";
-import SEOContentBenefits from "@/components/SEOContentBenefits";
-import SEOHomeFAQ from "@/components/SEOHomeFAQ";
+// src/app/page.jsx
+import Hero from "@/components/home/Hero";
+import ToolGrid from "@/components/home/ToolGrid";
+import LimitsCheatSheet from "@/components/home/LimitsCheatSheet";
+import WhyCountFlows from "@/components/home/WhyCountFlows";
+import BlogStrip from "@/components/home/BlogStrip";
+import AboutBlock from "@/components/home/AboutBlock";
+import Faq from "@/components/home/Faq";
+import HomeJsonLd from "@/components/seo/HomeJsonLd";
+
+const description =
+  "Free word counter, character counter, sentence counter and reading time calculator. Instant results as you type, no sign-up, and your text never leaves your browser.";
 
 export const metadata = {
-  alternates: { canonical: "https://countflows.com" },
+  title: "Countflows: Free Word & Character Counter Tools",
+  description,
+  alternates: { canonical: "https://countflows.com/" },
+  openGraph: {
+    title: "Countflows: Free Word & Character Counter Tools",
+    description,
+    url: "https://countflows.com/",
+    siteName: "CountFlows",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Countflows: Free Word & Character Counter Tools",
+    description,
+  },
 };
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
-      <ToolsGrid/>
-      <WhyChooseUs />
-      <Testimonials />
-      <HomeSeo />
-      <SEOWritingTips />
-      <SEOContentBenefits />
-      <SEOHomeFAQ />
+      <HomeJsonLd />
+      <Hero />
+      <ToolGrid />
+      <LimitsCheatSheet />
+      <WhyCountFlows />
+      <BlogStrip />
+      <AboutBlock />
+      <Faq />
     </>
   );
 }
