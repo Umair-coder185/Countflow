@@ -31,7 +31,7 @@ export default function Hero() {
         </span>
 
         {/* Short H1: gradient on the keywords, dark text only on line 2 */}
-        <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl">
+        <h1 className="mt-8 md:text-5xl text-2xl font-bold tracking-tight sm:text-6xl">
           <span className="bg-gradient-to-r from-cyan-500 to-blue-500 transition bg-clip-text text-transparent dark:from-blue-400 dark:via-cyan-400 dark:to-blue-400">
             Word &amp; ch<span className="text-slate-900 dark:text-slate-100">a</span>ra<span className="text-slate-900 dark:text-slate-100">c</span>ter Counter
           </span>

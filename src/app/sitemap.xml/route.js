@@ -9,6 +9,7 @@ export async function GET() {
     "/tools/reading-time",
     "/tools/sentence-calculator",
     "/tools/keyword-density-checker",
+    "/tools/case-converter",
     "/blog",
     "/about-us",
     "/contact",

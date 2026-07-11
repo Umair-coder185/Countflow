@@ -1,6 +1,5 @@
-
-
 // lib/schema.js
+import { caseConverterFAQs } from "@/lib/faqData"; // ← needed for the FAQ schema below
 
 const siteUrl = "https://countflows.com";
 
@@ -29,7 +28,6 @@ export const organizationSchema = {
 
 // ============================================
 // 2. WEBSITE — site-level schema
-// (root layout mein Organization ke saath inject hogi)
 // ============================================
 export const websiteSchema = {
   "@context": "https://schema.org",
@@ -42,8 +40,6 @@ export const websiteSchema = {
 
 // ============================================
 // 3. TOOL SCHEMA FACTORY
-// Naya tool add karna ho to bas neeche ek aur
-// createToolSchema() call add kar dein
 // ============================================
 function createToolSchema({ name, description, path, features }) {
   return {
@@ -69,7 +65,6 @@ function createToolSchema({ name, description, path, features }) {
 // ============================================
 // 4. TOOL SCHEMAS
 // ============================================
-
 export const wordCounterToolSchema = createToolSchema({
   name: "Word Counter",
   description:
@@ -131,33 +126,75 @@ export const keywordDensityToolSchema = createToolSchema({
   ],
 });
 
+export const caseConverterToolSchema = createToolSchema({
+  name: "Case Converter",
+  description:
+    "Free online case converter. Convert text to UPPERCASE, lowercase, Title Case, Sentence case, Capitalized Case, and more — entirely in your browser.",
+  path: "/tools/case-converter",
+  features: [
+    "Convert to UPPERCASE",
+    "Convert to lowercase",
+    "Convert to Title Case",
+    "Convert to Sentence case",
+    "Convert to Capitalized Case",
+    "Convert to aLtErNaTiNg cAsE",
+    "Convert to InVeRsE cAsE",
+  ],
+});
+
+// ============================================
+// 5. CASE CONVERTER — page-specific schemas
+// ============================================
+export const caseConverterBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools` },
+    { "@type": "ListItem", position: 3, name: "Case Converter", item: `${siteUrl}/tools/case-converter` },
+  ],
+};
+
+export const caseConverterFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: caseConverterFAQs.map((f) => ({
+    "@type": "Question",
+    name: f.question.trim(),
+    acceptedAnswer: { "@type": "Answer", text: f.answer.trim() },
+  })),
+};
+
+// ============================================
+// 6. SITE-WIDE FAQ (homepage)
+// ============================================
 export const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
+  mainEntity: [
     {
       "@type": "Question",
-      "name": "What is Countflows?",
-      "acceptedAnswer": {
+      name: "What is Countflows?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "Countflows is a suite of free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer. Perfect for writers, students, bloggers, and content creators."
-      }
+        text: "Countflows is a suite of free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer. Perfect for writers, students, bloggers, and content creators.",
+      },
     },
     {
       "@type": "Question",
-      "name": "Is Countflows free to use?",
-      "acceptedAnswer": {
+      name: "Is Countflows free to use?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "Yes, Countflows is completely free to use. No registration or subscription required."
-      }
+        text: "Yes, Countflows is completely free to use. No registration or subscription required.",
+      },
     },
     {
       "@type": "Question",
-      "name": "How accurate is the word counter?",
-      "acceptedAnswer": {
+      name: "How accurate is the word counter?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "Our word counter is 100% accurate. It counts all words including hyphenated words and contractions according to standard word count rules."
-      }
-    }
-  ]
-}
+        text: "Our word counter is 100% accurate. It counts all words including hyphenated words and contractions according to standard word count rules.",
+      },
+    },
+  ],
+};

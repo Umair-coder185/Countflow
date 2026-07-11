@@ -141,8 +141,44 @@ const sentenceCounterFAQs = [
      answer:"It can. Very short pieces are sometimes read with a slightly higher density just because there are fewer total words. Longer articles tend to have lower density even with more total keyword mentions. The advice stays the same either way: write naturally, check the numbers, adjust where needed.",
   }
 ]
+export const caseConverterFAQs = [
+  {
+    question: "How do I convert upper case to lower case?",
+    answer:
+      "Paste your text into the converter above and click lower case. Every capital letter becomes a small letter instantly. Click Sentence case instead if you want the first letter of each sentence to stay capitalized.",
+  },
+  {
+    question: "Is this case converter free?",
+    answer:
+      "Yes. It is completely free, with no registration, no usage limits, and no premium tier. The site is supported by ads, not subscriptions.",
+  },
+  {
+    question: "Is my text uploaded or stored when I convert it?",
+    answer:
+      "No. The conversion runs in your browser using JavaScript. Your text is never sent to our servers, so there is nothing for us to store, read, or share.",
+  },
+  {
+    question: "What is the difference between Title Case and Capitalized Case?",
+    answer:
+      "Title Case capitalizes major words but leaves minor words like 'a', 'and', 'the', and 'of' in lowercase \u2014 the style used for book and article titles. Capitalized Case capitalizes the first letter of every word, including the small ones.",
+  },
+  {
+    question: "Can I convert text case in Excel or Word instead?",
+    answer:
+      "Yes. Excel uses the =UPPER(), =LOWER(), and =PROPER() formulas, and Word has a Change Case button under the Home tab. For text that does not need to stay in a spreadsheet, pasting it into this converter is usually faster.",
+  },
+  {
+    question: "Does the case converter work on phones?",
+    answer:
+      "Yes. It works in any modern browser on any device \u2014 phone, tablet, or desktop. There is nothing to install.",
+  },
+  {
+    question: "Will it change my numbers, symbols, or emoji?",
+    answer:
+      "No. Only letters change case. Numbers, punctuation, symbols, and emoji pass through untouched.",
+  },
+]
 
 
 
-
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs }
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs }

@@ -167,8 +167,8 @@ export default function KeywordDensityCheckerPage() {
   
       {/* Hero Section */}
      <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
-        <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
-          Keyword Density <span className="text-cyan-500">Checker</span>
+        <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
+          Free Keyword Density <span className="text-cyan-500">Checker</span>
         </h1>
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
           This free Keyword Density Checker instantly shows how often each word and phrase appears

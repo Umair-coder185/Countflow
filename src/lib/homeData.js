@@ -82,15 +82,17 @@ export const toolCategories = [
   },
   {
     category: "Text Cleaning and Formatting",
-    // tools: [
-    //   {
-    //     name: "Case Converter",
-    //     href: "/tools/case-converter",
-    //     icon: CaseSensitive,
-    //     description:
-    //       "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
-    //     live: false, // NEW: flip to true when the tool page ships
-    //   },
+    tools: [
+      {
+        name: "Case Converter",
+        href: "/tools/case-converter",
+       icon: CaseSensitive,
+      description:
+       "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
+       live: true, // NEW: flip to true when the tool page ships
+      },
+    ],
+
     //   {
     //     name: "Remove Line Breaks",
     //     href: "/tools/remove-line-breaks",

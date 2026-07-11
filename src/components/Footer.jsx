@@ -25,15 +25,13 @@ export default function Footer() {
                 Premium writing tools for creators, writers, and professionals. Count words, analyze readability, and optimize your content instantly.
               </p>
               <div className="flex gap-3">
-                <a href="https://twitter.com/umairrbuilds" target="_blank" rel="noopener noreferrer" className="inline-flex p-2 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                <a href="https://twitter.com/umairrbuilds" target="_blank"  className="inline-flex p-2 rounded-lg bg-white/5 hover:bg-white/10 transition">
                   <Twitter size={18} />
                 </a>
                 <a href="https://www.linkedin.com/in/umair-nextjs-dev" target="_blank" rel="noopener noreferrer" className="inline-flex p-2 rounded-lg bg-white/5 hover:bg-white/10 transition">
                   <Linkedin size={18} />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex p-2 rounded-lg bg-white/5 hover:bg-white/10 transition">
-                  <Github size={18} />
-                </a>
+               
               </div>
             </div>
 

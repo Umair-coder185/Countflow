@@ -9,7 +9,7 @@ import Faq from "@/components/home/Faq";
 import HomeJsonLd from "@/components/seo/HomeJsonLd";
 
 const description =
-  "Free word counter, character counter, sentence counter and reading time calculator. Instant results as you type, no sign-up, and your text never leaves your browser.";
+  "Free word counter, character counter, sentence counter,case converter and reading time calculator. Instant results as you type, no sign-up, and your text never leaves your browser.";
 
 export const metadata = {
   title: "Countflows: Free Word & Character Counter Tools",
