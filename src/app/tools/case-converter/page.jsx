@@ -2,7 +2,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { caseConverterFAQs } from "@/lib/faqData"
 import FAQ from "@/components/FAQ"
-import SeoContent from "@/components/Case-converter-seo/SeoContent"
+import SeoContent from "@/components/case-converter-seo/SeoContent"
 import CaseConverterTool from "@/components/case-converter/CaseConverterTool"
 
 const FEATURES = [
