@@ -1,6 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
+  async redirects() {
+    return [
+      {
+        source: '/tools/sentence-calculator',
+        destination: '/tools/sentence-counter',
+        permanent: true, // 301 — purani SEO value naye URL pe transfer hogi
+      },
+      {
+        source: '/about',
+        destination: '/about-us',
+        permanent: true, // 301 — /about ke purane links safe rahenge
+      },
+    ];
+  },
   async headers() {
     return [
       {

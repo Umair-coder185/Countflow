@@ -4,10 +4,11 @@ export async function GET() {
   const baseUrl = "https://countflows.com";
   const staticRoutes = [
     "/",
+    "/tools",
     "/tools/word-counter",
     "/tools/character-counter",
     "/tools/reading-time",
-    "/tools/sentence-calculator",
+    "/tools/sentence-counter",
     "/tools/keyword-density-checker",
     "/tools/case-converter",
     "/blog",

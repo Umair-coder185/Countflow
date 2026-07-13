@@ -1,37 +1,33 @@
-
-import { characterCounterToolSchema } from "@/lib/schema";
-
-
+// app/tools/character-counter/layout.js
+// FIX: schema <script> yahan se HATA diya gaya hai.
+// WebApplication + Breadcrumb + FAQ schema ab server page.jsx (File A) mein render hote hain.
+// Do jagah schema rakhna = duplicate structured data.
 
 export const metadata = {
-  title: "Free Character Counter Online - Count Characters, Spaces & Letters",
-  description: "Count characters, letters, and spaces instantly with Countflow's free online character counter. Ideal for social media posts, essays, and text analysis. Get accurate character counts with and without spaces.",
-  keywords: "character counter, free character counter, count characters online, character counter tool, letter counter, text counter, character counter without spaces, character limit checker",
+  title: "Free Character Counter \u2013 With & Without Spaces, All Limits",
+  description:
+    "Count characters with and without spaces instantly. Check limits for X (Twitter), Instagram, SMS, meta descriptions, and UCAS \u2014 free, private, no sign-up.",
   openGraph: {
-    title: "Free Character Counter Online - Instant Character Count",
-    description: "Count characters, letters, and spaces instantly. Perfect for social media and content optimization.",
+    title: "Free Character Counter \u2013 With & Without Spaces, All Limits",
+    description:
+      "Count characters with and without spaces instantly, and check every major platform limit in one place.",
     url: "https://countflows.com/tools/character-counter",
     type: "website",
-    images: [{
-      url: "https://countflows.com/blogs/blog3-1.png",
-      width: 1200,
-      height: 630,
-      alt: "Countflow Character Counter"
-    }]
+    images: [
+      {
+        // FIX: blogs/blog3-1.png (blog image) ki jagah proper OG image
+        url: "https://countflows.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CountFlows Character Counter",
+      },
+    ],
   },
   alternates: {
-    canonical: "https://countflows.com/tools/character-counter"
-  }
+    canonical: "https://countflows.com/tools/character-counter",
+  },
 }
 
 export default function Layout({ children }) {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(characterCounterToolSchema) }}
-      />
-      {children}
-    </>
-  );
+  return children
 }

@@ -10,7 +10,7 @@ import SEOContent from "@/components/keyword-density-checker-seo/SeoContent";
 
 // Common English stop words (toggle to ignore them)
 const STOP_WORDS = new Set(
-    `a about above after again against all am an and any are aren't as at be because
+  `a about above after again against all am an and any are aren't as at be because
   been before being below between both but by can't cannot could couldn't did didn't
   do does doesn't doing don't down during each few for from further had hadn't has
   hasn't have haven't having he he'd he'll he's her here here's hers herself him
@@ -155,18 +155,28 @@ export default function KeywordDensityCheckerPage() {
   return (
     <main
       id="keyword-density-top"
-      className="relative overflow-hidden bg-gradient-to-b from-white to-cyan-50 dark:from-gray-950 dark:to-gray-800 min-h-screen md:mt-12 dark:text-white"
+      className="relative overflow-hidden bg-gradient-to-b from-white to-cyan-50 dark:from-gray-950 dark:to-gray-800 min-h-screen md:mt-12 dark:text-white mt-12 md:mt-16"
     >
-      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
-      <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-500/20" />
-         
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20 mt-12 md:mt-16" />
+      <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-500/20 mt-12 md:mt-16" />
 
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema)}}  />
-      <script type="application/ld+json" dangerouslySetInnerHTML= {{__html: JSON.stringify(breadcrumbSchema)}}  />
-      <script type="application/ld+json" dangerouslySetInnerHTML= {{__html: JSON.stringify(faqSchema) }} />
-  
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+
+      <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-4 md:px-8 pt-6">
+        <ol className="flex flex-wrap items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+          <li><Link href="/" className="hover:text-cyan-600">Home</Link></li>
+          <li aria-hidden="true">/</li>
+          <li><Link href="/tools" className="hover:text-cyan-600">Tools</Link></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-gray-900 dark:text-gray-100 font-medium">Keyword Density Checker</li>
+        </ol>
+      </nav>
       {/* Hero Section */}
-     <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
+      <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
         <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 mt-8">
           Free Keyword Density <span className="text-cyan-500">Checker</span>
         </h1>
@@ -199,11 +209,10 @@ export default function KeywordDensityCheckerPage() {
                 <button
                   key={n}
                   onClick={() => setPhraseLength(n)}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
-                    phraseLength === n
+                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${phraseLength === n
                       ? "bg-cyan-500 text-white"
                       : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                  }`}
+                    }`}
                 >
                   {n} {n === 1 ? "word" : "words"}
                 </button>
@@ -335,7 +344,18 @@ export default function KeywordDensityCheckerPage() {
       </section>
 
       {/* SEO Content */}
-       <SEOContent /> 
+      <SEOContent />
+
+
+      <p className="mt-10 text-center">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm shadow-slate-200 transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-950 dark:text-blue-300 dark:hover:border-blue-500 dark:hover:bg-slate-900"
+        >
+          All guides
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </p>
 
       {/* FAQ */}
       <div className="mb-20">
@@ -351,10 +371,10 @@ export default function KeywordDensityCheckerPage() {
           <ArrowRight className="h-5 w-5" />
         </Link>
       </div>
-      
 
 
-    </main> 
-  
-        );
-    }
+
+    </main>
+
+  );
+}

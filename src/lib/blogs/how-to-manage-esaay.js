@@ -146,7 +146,7 @@ const howToManageEssayWordCount =`
   </tbody>
 </table>
 
-<p>Run this pass sentence by sentence. A <a href="/tools/sentence-calculator">Sentence Counter</a> helps here: if a paragraph holds eight sentences but makes one point, several of those sentences are decoration.</p>
+<p>Run this pass sentence by sentence. A <a href="/tools/sentence-counter">Sentence Counter</a> helps here: if a paragraph holds eight sentences but makes one point, several of those sentences are decoration.</p>
 
 <h3>4. Simplify Examples</h3>
 

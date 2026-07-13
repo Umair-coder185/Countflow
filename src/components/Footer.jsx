@@ -55,8 +55,18 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/sentence-calculator" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Sentence Calculator</span>
+                  <Link href="/tools/sentence-counter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
+                    <span className="group-hover:translate-x-1 transition">Sentence Counter</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools/keyword-density-checker" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
+                    <span className="group-hover:translate-x-1 transition">Keyword Density Checker</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools/case-converter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
+                    <span className="group-hover:translate-x-1 transition">Case Converter</span>
                   </Link>
                 </li>
               </ul>

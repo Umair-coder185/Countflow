@@ -121,12 +121,20 @@ export default function ReadingTimePage() {
         "relative overflow-hidden",
         "bg-gradient-to-b from-white to-cyan-50",
         "dark:from-gray-950 dark:to-gray-800",
-        "min-h-screen md:mt-12 dark:text-white"
+        "min-h-screen md:mt-12 dark:text-white", "mt-12", "md:mt-16"
       )}
     >
-      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20 mt-12 md:mt-16" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-amber-200/30 blur-3xl dark:bg-amber-500/20" />
-
+        <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-4 md:px-8 pt-6">
+              <ol className="flex flex-wrap items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+                <li><Link href="/" className="hover:text-cyan-600">Home</Link></li>
+                <li aria-hidden="true">/</li>
+                <li><Link href="/tools" className="hover:text-cyan-600">Tools</Link></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" className="text-gray-900 dark:text-gray-100 font-medium">Reading Time Calculator</li>
+              </ol>
+            </nav>
     
 
       {/* Hero Section */}
@@ -292,6 +300,16 @@ export default function ReadingTimePage() {
 
       {/* SEO Content */}
       <SEOContent />
+
+        <p className="mt-10 text-center">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm shadow-slate-200 transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-950 dark:text-blue-300 dark:hover:border-blue-500 dark:hover:bg-slate-900"
+                >
+                  All guides
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </p>
 
       {/* FAQ */}
       <div className="mb-20">

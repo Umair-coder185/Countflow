@@ -27,39 +27,60 @@ export const wordCounterFAQs = [
   answer: "You can use a word counter tool or check manually by selecting the text in Word, Google Docs, or Pages. It instantly shows your essay’s total words."
 
 },
-{
-  question: "How to find word count in Google Docs & MS Word?",
-  answer: "In Google Docs, go to Tools → Word Count, or enable the real-time counter at the bottom. In MS Word, check the status bar or click Tools → Word Count for details."
 
-},
 
 
 ]
 
 
 
-const characterCounterFAQs = [
-
+export const characterCounterFAQs = [
   {
-    question: "What is a character counter?",
-    answer :"A character counter is a tool that quickly counts letters, spaces, and symbols in your text. It helps writers, students, and marketers check text length easily."
+    question: "Is this character counter free?",
+    answer:
+      "Yes. Every CountFlows tool is completely free with no sign-up, no length limit, and no premium tier. The site is supported by ads, not subscriptions.",
   },
   {
-    question :"How does the tool work?",
-    answer :"You just type or paste your text into the box. The tool instantly calculates characters, words, sentences, and more."
-
-  },
-
-  {
-    question : "Is there any text limit?",
-    answer :"Most online character counters handle large texts, often thousands of words. However, some tools may have a maximum limit for very long documents."
+    question: "Do emoji count as one character?",
+    answer:
+      "Usually no. Most platforms, including X, count one emoji as 2 characters, and this tool counts them the same way. An emoji-heavy caption hits its limit faster than plain text.",
   },
   {
-    question : "Can it count words as well?",
-    answer : "Yes, the tool also counts words, sentences, and paragraphs. It’s perfect for checking word limits or readability."
-  }
+    question: "Does punctuation count as characters?",
+    answer:
+      "Yes. Every visible symbol counts: letters, numbers, punctuation marks, spaces, and emoji. If a platform enforces a limit, it counts everything you can type.",
+  },
+  {
+    question: "How many words is 2,000 characters?",
+    answer:
+      "About 300 to 350 words. Divide characters by 6 for a quick estimate. Academic writing lands lower, chat-style writing higher.",
+  },
+  {
+    question: "How many characters can a tweet have?",
+    answer:
+      "280 characters on a free X account, up to 25,000 with X Premium. Links always count as 23 characters regardless of length, and most emoji count as 2.",
+  },
+  {
+    question: "How many characters is the UCAS personal statement?",
+    answer:
+      "4,000 characters including spaces, about 600 words. From 2026 entry it is split into three questions with a 350-character minimum each, but the overall cap is unchanged.",
+  },
+  {
+    question: "Why did my SMS split into two messages?",
+    answer:
+      "A standard SMS holds 160 characters, but one emoji or curly quote switches the message to Unicode encoding, cutting the limit to 70. Longer messages split into segments of 153 (standard) or 67 (Unicode) characters, billed separately.",
+  },
+  {
+    question: "Is it safe to paste private or confidential text?",
+    answer:
+      "Yes. Counting happens in your browser on your own device, and your text is never sent to our servers. Close the tab and it is gone.",
+  },
+  {
+    question: "Why does my character count differ from Word or Google Docs?",
+    answer:
+      "Each program treats line breaks, hidden formatting characters, and special symbols slightly differently. A difference of a few characters on a long document is normal.",
+  },
 ]
-
 
 const readingTimeFAQs = [
   {

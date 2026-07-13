@@ -11,7 +11,7 @@ const academicwriting =`
 
 <p>Three things separate it from a blog post, an email, or a caption. Every claim needs evidence. The tone stays objective, so personal feelings stay out. And the structure follows a logical path, where each paragraph builds on the one before it. Think of it as a written debate among scholars: your reader should be able to check every statement you make.</p>
 
-<p>One habit that improves academic drafts immediately is controlling sentence length. Long, tangled sentences bury your argument. Run your draft through the free <a href="/tools/sentence-calculator">Sentence Counter</a> to spot paragraphs where your sentences have grown past the point of clarity.</p>
+<p>One habit that improves academic drafts immediately is controlling sentence length. Long, tangled sentences bury your argument. Run your draft through the free <a href="/tools/sentence-counter">Sentence Counter</a> to spot paragraphs where your sentences have grown past the point of clarity.</p>
 
 <h2>The 4 Types of Academic Writing</h2>
 

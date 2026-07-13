@@ -5,7 +5,7 @@ Allow: /blog/
 Allow: /tools/word-counter
 Allow: /tools/character-counter
 Allow: /tools/reading-time
-Allow: /tools/sentence-calculator
+Allow: /tools/sentence-counter
 Allow: /tools/keyword-density-checker
 Disallow: /.next/
 Disallow: /node_modules/

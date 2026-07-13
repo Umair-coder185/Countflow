@@ -13,7 +13,7 @@ export const metadata = {
   metadataBase: new URL('https://countflows.com'),
   // 🐛 FIX: title ab object hai, template iske andar
   title: {
-    default: "Countflows: Free Word & Character Counter Tools",
+    default: "Free Word & Character Counter Tools - Countflows",
   
   },
   description: "Free online word counter, character counter, and text analysis tools for writers, bloggers, and SEO. Get instant counts, reading time, and improve your content.",
@@ -71,8 +71,9 @@ export const metadata = {
   },
   icons: {
     icon: [
+       { url: "/favicon.png", type: "image/png", sizes: "96x96" },
       { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
-      { url: "/favicon.png", type: "image/png", sizes: "96x96" },
+     
     ],
     shortcut: "/favicon.ico",
     apple: [

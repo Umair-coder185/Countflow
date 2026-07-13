@@ -10,7 +10,7 @@ export default function robots() {
           "/tools/word-counter",
           "/tools/character-counter",
           "/tools/reading-time",
-          "/tools/sentence-calculator",
+          "/tools/sentence-counter",
           "/tools/keyword-density-checker",
         ],
         disallow: [

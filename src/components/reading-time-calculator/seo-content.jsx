@@ -67,7 +67,7 @@ Also, it displays results clearly in minutes or hours, helping you plan your rea
         <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
             You can change your reading pace to match your comfort using the words to time tool. It lets you increase or decrease speed, giving a more accurate reading estimate.
 Also, adjusting speed helps beginners or fast readers plan their time efficiently for any text.
-Check your text with <Link href="/tools/sentence-calculator" className="text-blue-500 hover:underline">Sentence Counter</Link> to optimize your reading or speaking pace.
+Check your text with <Link href="/tools/sentence-counter" className="text-blue-500 hover:underline">Sentence Counter</Link> to optimize your reading or speaking pace.
 
         </p>
         <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">

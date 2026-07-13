@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const features = [
   {
-    title: <Link href="/tools/sentence-calculator" className="text-blue-500 hover:underline">Instant Text Analysis</Link>,
+    title: <Link href="/tools/sentence-counter" className="text-blue-500 hover:underline">Instant Text Analysis</Link>,
     description: "You can quickly count characters and words with this tool. It also shows sentences, paragraphs, and reading time instantly. This makes editing easier and ensures your text fits limits for social media, essays, or posts. You can also analyze sentence structure using a Sentence Counter tool to improve clarity and flow.",
   },
     {
@@ -11,7 +11,7 @@ const features = [
       description: "Get AI suggestions to make your text shorter, clearer, and more effective with simpler vocabulary.",
     },
     {
-      title: <Link href="/tools/sentence-calculator" className="text-blue-500 hover:underline">Grammar & Clarity Check</Link>,
+      title: <Link href="/tools/sentence-counter" className="text-blue-500 hover:underline">Grammar & Clarity Check</Link>,
       description: "Identify errors and get suggestions for clearer, more professional writing instantly.",
     },
     {

@@ -33,7 +33,7 @@ export default function AboutBlock() {
                 Contact us
               </Link>{' '}
               or{' '}
-              <Link href="/about" className="font-medium text-blue-600 hover:underline dark:text-blue-300">
+              <Link href="/about-us" className="font-medium text-blue-600 hover:underline dark:text-blue-300">
                 read more about the site
               </Link>
               .

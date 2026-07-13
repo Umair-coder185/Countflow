@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: "Free Sentence Counter - Analyze Sentence Structure",
     description: "Count sentences and analyze writing structure instantly. Improve readability and sentence quality.",
-    url: "https://countflows.com/tools/sentence-calculator",
+    url: "https://countflows.com/tools/sentence-counter",
     type: "website",
     images: [{
       url: "https://countflows.com/public/blogs/blog5-1.png",
@@ -19,7 +19,7 @@ export const metadata = {
     }]
   },
   alternates: {
-    canonical: "https://countflows.com/tools/sentence-calculator"
+    canonical: "https://countflows.com/tools/sentence-counter"
   }
 }
 

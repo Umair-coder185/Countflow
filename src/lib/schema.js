@@ -105,7 +105,7 @@ export const sentenceCounterToolSchema = createToolSchema({
   name: "Sentence Counter",
   description:
     "Free sentence counter and analyzer to count sentences and analyze writing structure",
-  path: "/tools/sentence-calculator",
+  path: "/tools/sentence-counter",
   features: [
     "Sentence counting",
     "Average sentence length analysis",
