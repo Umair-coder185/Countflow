@@ -11,6 +11,7 @@ export async function GET() {
     "/tools/sentence-counter",
     "/tools/keyword-density-checker",
     "/tools/case-converter",
+    "/tools/ai-text-cleaner",
     "/blog",
     "/about-us",
     "/contact",

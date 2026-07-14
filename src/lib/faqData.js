@@ -199,7 +199,54 @@ export const caseConverterFAQs = [
       "No. Only letters change case. Numbers, punctuation, symbols, and emoji pass through untouched.",
   },
 ]
+export const aiTextCleanerFAQs = [
+  {
+    question: "How do I remove ChatGPT formatting from text?",
+    answer:
+      "Paste the text into the cleaner above, keep 'Remove markdown symbols' switched on, and click Clean Text. All the asterisks, hashtags, backticks, and link brackets disappear while every word stays exactly where it was. Copy the result and paste it anywhere as plain text.",
+  },
+  {
+    question: "Why does ChatGPT text paste with asterisks and hashtags?",
+    answer:
+      "ChatGPT writes in markdown, a formatting language where **text** means bold and ## means a heading. Apps like ChatGPT render those symbols as styling, but when you copy the raw text into a plain editor, an email, or a CMS, the symbols come along as literal characters. This cleaner strips the markdown syntax and keeps only the words.",
+  },
+  {
+    question: "Can this remove em dashes from AI text?",
+    answer:
+      "Yes. The 'Fix em dashes' option replaces every em dash and en dash: a spaced dash ( \u2014 ) becomes a comma, and a tight dash between words becomes a regular hyphen. The overuse of em dashes is one of the most recognizable habits of AI writing, and this removes it in one click.",
+  },
+  {
+    question: "What are the invisible characters in AI-generated text?",
+    answer:
+      "AI tools often insert characters you cannot see: zero-width spaces, non-breaking spaces, soft hyphens, and byte-order marks. They break search-and-replace, cause weird line wrapping in Google Docs and Word, and can corrupt code or spreadsheet formulas. The 'Remove invisible characters' option deletes zero-width characters and converts every exotic space back to a normal one.",
+  },
+  {
+    question: "Will cleaning AI text make it pass AI detectors?",
+    answer:
+      "No, and we do not claim it will. This tool removes formatting artifacts \u2014 markdown symbols, em dashes, invisible characters, and smart quotes \u2014 but it does not rewrite or paraphrase your words. AI detectors analyze the writing itself, not the formatting. If you need different wording, that is an editing job, not a cleaning job.",
+  },
+  {
+    question: "Does it work with Claude, Gemini, and Copilot text?",
+    answer:
+      "Yes. Claude, Gemini, Copilot, DeepSeek, and Perplexity all output markdown with the same symbols and the same hidden characters as ChatGPT. The cleaner works on any text from any AI tool \u2014 or on messy text from PDFs, emails, and websites.",
+  },
+  {
+    question: "Is my text uploaded or stored when I clean it?",
+    answer:
+      "No. All cleaning runs in your browser using JavaScript. Your text is never sent to our servers, so there is nothing for us to store, read, or share. You can safely paste confidential drafts, contracts, or client work.",
+  },
+  {
+    question: "Is this AI text cleaner free? Is there a word limit?",
+    answer:
+      "Yes, it is completely free with no registration, no word limit, and no premium tier. Clean a single sentence or an entire report \u2014 the site is supported by ads, not subscriptions.",
+  },
+  {
+    question: "Can I remove the formatting but keep my bullet points?",
+    answer:
+      "Yes. 'Remove bullet points' is a separate toggle that is off by default. Leave it off and your lists keep their dashes and numbering; switch it on and every line loses its leading bullet or number, which is handy when you are turning a list back into a paragraph.",
+  },
+]
 
 
 
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs }
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs }

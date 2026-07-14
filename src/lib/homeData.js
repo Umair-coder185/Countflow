@@ -91,8 +91,16 @@ export const toolCategories = [
        "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
        live: true, // NEW: flip to true when the tool page ships
       },
-    ],
-
+    
+      {
+      name: "AI Text Cleaner",
+      href: "/tools/ai-text-cleaner",
+      icon: Sparkles,
+      description:
+        "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
+      live: true,
+    },
+  ],
     //   {
     //     name: "Remove Line Breaks",
     //     href: "/tools/remove-line-breaks",

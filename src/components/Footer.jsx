@@ -69,6 +69,11 @@ export default function Footer() {
                     <span className="group-hover:translate-x-1 transition">Case Converter</span>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/tools/ai-text-cleaner" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
+                    <span className="group-hover:translate-x-1 transition">Ai Text Cleaner</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 

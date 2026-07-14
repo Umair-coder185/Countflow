@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import {
   Menu, X, BookOpen, FileText, Clock, TextSearch,
-  CaseSensitive, ChevronDown, Mail, Info, LayoutGrid,Type, AlignLeft
+  CaseSensitive, ChevronDown, Mail, Info, LayoutGrid,Type, Sparkles, AlignLeft
 } from "lucide-react"
 import { motion, AnimatePresence } from "@/lib/no-motion"
 import { useState, useEffect, useRef } from "react"
@@ -16,7 +16,8 @@ const toolItems = [
   { href: "/tools/case-converter", label: "Case Converter", icon: CaseSensitive },
   { href: "/tools/keyword-density-checker", label: "Keyword Density Checker", icon: TextSearch },
   { href: "/tools/character-counter", label: "Character Counter", icon: Type },
-{ href: "/tools/sentence-counter", label: "Sentence Counter", icon: AlignLeft }
+{ href: "/tools/sentence-counter", label: "Sentence Counter", icon: AlignLeft },
+{href : "/tools/ai-text-cleaner",label: "AI Text Cleaner" , icon :  Sparkles,}
   // 👇 add new tools here as they go live
 ]
 

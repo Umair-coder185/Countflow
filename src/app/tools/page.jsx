@@ -8,6 +8,7 @@ import {
   CaseSensitive,
   ArrowRight,
   BookOpen,
+  Sparkles,
 } from "lucide-react";
 
 const SITE = "https://countflows.com";
@@ -78,6 +79,15 @@ const CATEGORIES = [
         icon: CaseSensitive,
         desc: "Convert text to sentence case, Title Case, UPPERCASE, or lowercase without retyping anything.",
         best: "Headlines and pasted text cleanup",
+      },
+
+      {
+        name: "AI Text Cleaner",
+        slug: "/tools/ai-text-cleaner",
+        icon: Sparkles,
+        desc:
+          "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
+        best: "Ai Text issues cleanup",
       },
     ],
   },
