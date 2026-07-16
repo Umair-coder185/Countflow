@@ -246,7 +246,49 @@ export const aiTextCleanerFAQs = [
       "Yes. 'Remove bullet points' is a separate toggle that is off by default. Leave it off and your lists keep their dashes and numbering; switch it on and every line loses its leading bullet or number, which is handy when you are turning a list back into a paragraph.",
   },
 ]
+export const syllableCounterFAQs = [
+  {
+    question: "How do you count syllables in a word?",
+    answer:
+      "Count the vowel sounds, not the vowel letters. Say the word slowly and listen for each beat: cat has one, po-em has two, cho-co-late has two or three depending on how you say it. Silent vowels do not count \u2014 make has one syllable, not two. The counter above does this automatically for every word you type.",
+  },
+  {
+    question: "How many syllables are in fire?",
+    answer:
+      "Dictionaries count fire as one syllable, but many speakers naturally say it with two (FY-er). Both are accepted \u2014 this is one of English's classic edge cases, along with hour, poem, and chocolate. The counter follows the dictionary count.",
+  },
+  {
+    question: "Does a haiku have to be 5-7-5?",
+    answer:
+      "For school assignments and traditional English haiku, yes \u2014 three lines of 5, 7, and 5 syllables. Japanese haiku actually count sounds called on rather than syllables, so many modern English haiku poets treat 17 syllables as a maximum rather than a strict target. Haiku mode above checks the strict 5-7-5 pattern.",
+  },
+  {
+    question: "How accurate is the syllable counter?",
+    answer:
+      "Words found in the built-in dictionary are exact. Unknown words fall back to a vowel-group algorithm that is right for most standard English words but can miss by one on rare words, names, and regional pronunciations. Algorithm-counted words get a dashed marker so you can double-check them.",
+  },
+  {
+    question: "Is this syllable counter free?",
+    answer:
+      "Yes. It is completely free with no registration, no usage limits, and no premium tier. The site is supported by ads, not subscriptions.",
+  },
+  {
+    question: "Is my text uploaded or stored when I count syllables?",
+    answer:
+      "No. The counting runs in your browser using JavaScript. Your text is never sent to our servers, so there is nothing for us to store, read, or share.",
+  },
+  {
+    question: "Can I count syllables in a whole poem or song at once?",
+    answer:
+      "Yes. Paste the full text and you get the total count, a line-by-line breakdown, and a per-word count \u2014 there is no character limit.",
+  },
+  {
+    question: "Does the syllable counter work on phones?",
+    answer:
+      "Yes. It works in any modern browser on any device \u2014 phone, tablet, or desktop. There is nothing to install.",
+  },
+]
 
 
 
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs }
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs }

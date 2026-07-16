@@ -38,6 +38,8 @@ const MORE_TOOLS = [
   { href: "/tools/reading-time", name: "Reading Time Calculator", desc: "estimate reading and speaking time." },
   { href: "/tools/case-converter", name: "Case Converter", desc: "fix capitalization in one click." },
   { href: "/tools/keyword-density-checker", name: "Keyword Density Checker", desc: "keep keyword usage natural before you publish." },
+  {href : "/tools/ai-text-cleaner" , name :"AI Text Cleaner" , desc : "remove AI artifacts , formatting, and spaces from your text."},
+  {href : "/tools/syllable-counter" , name :"Syllable Counter", desc: "count syllables in words, sentences, and poems." }
 ]
 
 const RELATED_GUIDES = [

@@ -167,6 +167,31 @@ export default function SEOContent() {
           </Link>{" "}
           — keep keyword usage natural before you publish.
         </li>
+
+        <li>
+          <Link href="/tools/ai-text-cleaner" className={linkClass}>
+            AI Text Cleaner
+          </Link>{" "}
+          — remove AI artifacts, formatting, and spaces from your text.
+        </li>
+        <li>
+          <Link href="/tools/syllable-counter" className={linkClass}>
+            Syllable Counter
+          </Link>{" "}
+          — count syllables in words, sentences, and poems.
+        </li>
+        <li>
+          <Link href="/tools/word-counter" className={linkClass}>
+            Word Counter
+          </Link>{" "}
+          — check word count, character count, and reading time in real time.
+        </li>
+        <li>
+          <Link href="/tools/case-converter" className={linkClass}>
+            Case Converter
+          </Link>{" "}
+        </li>
+
       </ul>
     </section>
   )

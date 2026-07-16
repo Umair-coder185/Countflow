@@ -223,6 +223,23 @@ export default function SeoContent() {
                     </Link>{" "}
                     — keep keyword usage natural before you publish.
                 </li>
+                <li>
+                    <Link href="/tools/reading-time" className={linkClass}>
+                        Reading Time Calculator
+                    </Link>{" "}
+                </li>
+                <li>
+                    <Link href="/tools/ai-text-cleaner" className={linkClass}>
+                        AI Text Cleaner
+                    </Link>{" "}
+                    — remove AI artifacts, formatting, and spaces from your text.
+                </li>
+                <li>
+                    <Link href="/tools/syllable-counter" className={linkClass}>
+                        Syllable Counter
+                    </Link>{" "}
+                    — count syllables in words, sentences, and poems.
+                </li>
             </ul>
         </section>
     )

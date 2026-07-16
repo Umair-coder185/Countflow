@@ -44,14 +44,14 @@ export const toolCategories = [
           "Count sentences and check your average sentence length for readability.",
         live: true,
       },
-    //   {
-    //     name: "Syllable Counter",
-    //     href: "/tools/syllable-counter",
-    //     icon: Music4,
-    //     description:
-    //       "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
-    //     live: false, // NEW: flip to true when the tool page ships
-    //   },
+       {
+        name: "Syllable Counter",
+        href: "/tools/syllable-counter",
+       icon: Music4,
+       description:
+         "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
+        live: false, // NEW: flip to true when the tool page ships
+      },
     ],
   },
   {

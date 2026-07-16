@@ -9,6 +9,7 @@ import {
   ArrowRight,
   BookOpen,
   Sparkles,
+  Music4,
 } from "lucide-react";
 
 const SITE = "https://countflows.com";
@@ -54,6 +55,13 @@ const CATEGORIES = [
         desc: "Count sentences and check your average sentence length to keep writing readable.",
         best: "Editing and readability checks",
       },
+      {
+        name: "Syllable Counter",
+        slug: "/tools/syllable-counter",
+        icon: Music4,
+        desc: "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
+        best: "Poetry and creative writing",
+      }
     ],
   },
   {
@@ -277,6 +285,31 @@ export default function ToolsPage() {
               </Link>{" "}
               before it goes live.
             </li>
+            <li>
+              <strong className="text-slate-900 dark:text-slate-100">Converting text case?</strong>{" "}
+              Run it through the{" "}
+              <Link
+                href="/tools/case-converter"
+                className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
+              >
+                Case Converter
+              </Link>{" "}
+              before it goes live.
+              
+            </li>
+            <li>
+              <strong className="text-slate-900 dark:text-slate-100">Writing poetry?</strong>{" "}
+              Use the{" "}
+              <Link
+                href="/tools/syllable-counter"
+                className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
+              >
+                Syllable Counter
+              </Link>
+              .
+            </li>
+            
+
           </ul>
         </section>
 
