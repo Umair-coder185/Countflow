@@ -7,7 +7,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import SyllableCounterTool from "@/components/syllable-counter/SyllableCounterTool"
 import FAQ from "@/components/FAQ"
-import SeoContent from "@/components/Syllable-counter/SeoContent"
+import SeoContent from "@/components/syllable-counter/SeoContent"
 import { syllableCounterFAQs } from "@/lib/faqData"
 
 const SITE = "https://countflows.com"
