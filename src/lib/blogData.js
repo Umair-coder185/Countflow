@@ -20,6 +20,7 @@ import blog19 from "./blogs/blog19";
 import blog20 from "./blogs/blog20";
 import blog21 from "./blogs/blog21";
 import blog22 from "./blogs/blog22";
+import caseConverter from "./blogs/case-converter";
 
 export const posts = [
   {
@@ -1092,6 +1093,52 @@ export const posts = [
       "answer": "Once you pass about 170 words per minute, listeners keep up with the words but lose the stress patterns that tell them what matters. Around 140 keeps first-time comprehension intact."
     }
   ]
+},
+
+
+{
+	"id": 23,
+	"slug": "how-to-convert-case-in-excel",
+	"title": "How to Convert Case in Excel",
+	"description": "Learn how to convert case in Excel with UPPER, LOWER, and PROPER formulas, Flash Fill, Power Query, AI tools, and a free no-formula case converter.",
+	"excerpt": "Excel converts text case in seconds with three formulas: =UPPER(A2) for ALL CAPS, =LOWER(A2) for lowercase, and =PROPER(A2) for Title Case. No formulas? Use Flash Fill with Ctrl+E, set up Power Query for weekly reports, or paste your cells into a free browser case converter for sentence case and styles Excel cannot do.",
+	"category": "Reading & Writing",
+	"image": "/blogs/case-converter.webp",
+	"author": "Umair Tufail",
+	"date": "2026-07-17",
+	"readTime": "9 min read",
+	"keywords": [
+		"how to convert case in excel",
+		"excel convert lower case to upper case",
+		"excel convert upper case to lower case",
+		"convert to title case in excel",
+		"sentence case in excel",
+		"excel change case shortcut",
+		"upper lower proper formulas"
+	],
+	content: caseConverter,
+	"faqs": [
+		{
+			"question": "What is the shortcut to change case in Excel?",
+			"answer": "Excel has no direct keyboard shortcut like Word's Shift+F3. The closest thing is Flash Fill with Ctrl+E, which copies the case pattern you type in the first cell."
+		},
+		{
+			"question": "How do I convert case in Excel without formulas?",
+			"answer": "Use Flash Fill (Ctrl+E), Power Query, or copy your cells into a free online case converter and paste the result back."
+		},
+		{
+			"question": "Does converting case change my numbers or dates?",
+			"answer": "No. UPPER, LOWER, and PROPER only touch letters. Numbers, dates, and symbols pass through unchanged."
+		},
+		{
+			"question": "How do I convert an entire column at once?",
+			"answer": "Enter the formula in the first row, then double-click the small square at the bottom-right corner of the cell. Excel copies the formula down the whole column instantly."
+		},
+		{
+			"question": "Which method is fastest for a one-time fix?",
+			"answer": "For a handful of cells, Flash Fill wins. For hundreds of mixed cells with multiple sentences, pasting into a browser case converter is usually the fastest route."
+		}
+	]
 },
 
 
