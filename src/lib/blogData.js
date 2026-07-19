@@ -22,6 +22,8 @@ import blog21 from "./blogs/blog21";
 import blog22 from "./blogs/blog22";
 import caseConverter from "./blogs/case-converter";
 import blog24 from "./blogs/remove-ai-detection";
+import ReadVerity from "./blogs/ReadVerity";
+
 
 export const posts = [
   {
@@ -1198,6 +1200,59 @@ export const posts = [
       answer:
         "An AI text cleaner removes hidden formatting, Unicode characters, smart punctuation, and markdown. An AI humanizer rewrites sentences to sound more natural and human."
     }
+  ]
+},
+
+
+{
+  id: 25,
+  slug: "how-long-to-read-verity",
+  title: "How Long to Read Verity by Colleen Hoover? Word Count, Genre & Reading Time Explained",
+  description:
+    "Learn how many words are in Verity by Colleen Hoover, how long it takes to read, its page count, audiobook length, publication history, and whether it's a romance, thriller, or both.",
+  excerpt:
+    "Verity by Colleen Hoover contains an estimated 80,000 to 100,000 words and takes about 6 to 7.5 hours to read. Discover its page count, audiobook length, genre, and whether you should read it before the movie.",
+  category: "Reading & Writing",
+  image: "/blogs/dark-psychological-thriller-book.webp",
+  author: "Umair Tufail",
+  date: "2026-07-19",
+  readTime: "8 min read",
+  keywords: [
+    "how long to read verity",
+    "verity word count",
+    "how many words are in verity",
+    "verity reading time",
+    "verity page count",
+    "verity audiobook length",
+    "verity genre",
+    "is verity a thriller",
+    "colleen hoover verity",
+    "how long does it take to read verity"
+  ],
+  content: ReadVerity,
+  faqs: [
+    {
+      question: "What genre is Verity by Colleen Hoover?",
+      answer:
+        "Verity is a psychological romantic thriller. It combines psychological suspense with a romantic subplot throughout the story."
+    },
+    {
+      question: "How many words are in Verity?",
+      answer:
+        "Verity contains approximately 80,000 to 100,000 words, depending on the edition and formatting."
+    },
+    {
+      question: "How long does it take to read Verity?",
+      answer:
+        "Most readers finish Verity in about 6 to 7.5 hours at an average reading speed of 200 to 250 words per minute."
+    },
+    {
+      question: "Is Verity based on a true story?",
+      answer:
+        "No. Verity is a fictional novel. Verity Crawford, Lowen Ashleigh, and the manuscript featured in the story are all fictional."
+    },
+    
+    
   ]
 },
 
