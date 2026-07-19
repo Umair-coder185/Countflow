@@ -21,6 +21,11 @@ export const metadata = {
   authors: [{ name: "Umair Tufail" }],
   creator: "Umair Tufail",
   publisher: "Umair Tufail",
+  verification: {
+    other: {
+      'p:domain_verify': 'b217ae0c175a4a1c20c289f095490fd6',
+    },
+  },
   formatDetection: {
     email: false,
     telephone: false,
