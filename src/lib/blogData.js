@@ -23,6 +23,8 @@ import blog22 from "./blogs/blog22";
 import caseConverter from "./blogs/case-converter";
 import blog24 from "./blogs/remove-ai-detection";
 import ReadVerity from "./blogs/ReadVerity";
+import sentencecase from "./blogs/sentence-case";
+
 
 
 export const posts = [
@@ -1253,6 +1255,72 @@ export const posts = [
     },
     
     
+  ]
+},
+
+
+{
+  id: 26,
+  slug: "what-is-sentence-case",
+  title: "What Is Sentence Case? Definition, Examples & Rules",
+  description:
+    "Learn what sentence case means, how it differs from title case, when APA requires it, and how to convert text instantly with real examples.",
+  excerpt:
+    "Sentence case capitalizes only the first word and proper nouns, making it one of the simplest and most widely used capitalization styles. Learn the rules, compare it with title case, see real examples, and understand when APA requires it.",
+  category: "Reading & Writing",
+  image: "/blogs/online-case-converter.png",
+  author: "Umair Tufail",
+  date: "2026-07-20",
+  readTime: "9 min read",
+  keywords: [
+    "what is sentence case",
+    "online case converter",
+    "sentence case examples",
+    "sentence case vs title case",
+    "sentence case rules",
+    "sentence case letter",
+    "apa sentence case",
+    "capitalize sentence case",
+    "sentence case in references",
+    "how to convert to sentence case"
+  ],
+  content: sentencecase,
+  faqs: [
+    {
+      question: "What is sentence case?",
+      answer:
+        "A capitalization rule where only the first word of a sentence or heading — plus any proper nouns — gets capitalized, and everything else stays lowercase."
+    },
+    {
+      question: "How is it different from title case?",
+      answer:
+        "Sentence case capitalizes just the first word and proper nouns. Title case capitalizes most major words throughout the heading, including nouns, verbs, and adjectives."
+    },
+    {
+      question: "Does APA require sentence case or title case?",
+      answer:
+        "Both, depending on where the title appears. Reference-list entries use sentence case; the paper's own title on the cover page uses title case."
+    },
+    {
+      question: "Can you give a quick example?",
+      answer:
+        "\"The rise of remote work in Pakistan\" is correct — only \"The\" and the proper noun \"Pakistan\" are capitalized."
+    },
+    {
+      question: "Is this just normal writing capitalization?",
+      answer:
+        "Yes. It's the same rule you already use in everyday sentences, applied to headings and titles instead of paragraphs."
+    },
+    {
+      question: "Do developers use the term differently?",
+      answer:
+        "Loosely, yes — \"sentence casing\" often shows up in UI copy, button labels, and error messages, but the underlying rule is identical."
+    },
+    {
+      question: "Is there a tool that converts text automatically?",
+      answer:
+        "Yes — The Online Case Converter on Countflows switches any block of text between sentence case, title case, uppercase, or lowercase in one click. If you also work with spreadsheets, you can follow our guide on how to convert case in Excel to format text faster across different workflows."
+    }
   ]
 },
 
