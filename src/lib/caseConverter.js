@@ -50,6 +50,51 @@ export const toInverseCase = (t) =>
         c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase()
     )
 
+// ─── Developer case styles ────────────────────────────────────────────
+// Helper: robustly splits text into individual words regardless of
+// whether the input is plain English, camelCase, PascalCase,
+// snake_case, or kebab-case.
+const splitIntoWords = (t) =>
+    t
+        .replace(/([a-z\d])([A-Z])/g, "$1 $2")          // camelCase / PascalCase boundaries
+        .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2")      // acronyms: XMLParser → XML Parser
+        .replace(/[_\-]/g, " ")                           // underscores & hyphens → spaces
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((w) => w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, ""))  // strip punctuation
+        .filter(Boolean)
+
+// camelCase — first word lowercase, rest capitalized, no spaces
+export const toCamelCase = (t) => {
+    const words = splitIntoWords(t)
+    return words
+        .map((w, i) =>
+            i === 0 ? w : w.charAt(0).toUpperCase() + w.slice(1)
+        )
+        .join("")
+}
+
+// PascalCase — every word capitalized, no spaces
+export const toPascalCase = (t) => {
+    const words = splitIntoWords(t)
+    return words
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join("")
+}
+
+// snake_case — all lowercase, words joined by underscores
+export const toSnakeCase = (t) => {
+    const words = splitIntoWords(t)
+    return words.join("_")
+}
+
+// kebab-case — all lowercase, words joined by hyphens
+export const toKebabCase = (t) => {
+    const words = splitIntoWords(t)
+    return words.join("-")
+}
+
 export const CASE_STYLES = [
     { name: "Sentence case", convert: toSentenceCase },
     { name: "lower case", convert: toLowerCase },
@@ -58,4 +103,8 @@ export const CASE_STYLES = [
     { name: "Capitalized Case", convert: toCapitalizedCase },
     { name: "aLtErNaTiNg cAsE", convert: toAlternatingCase },
     { name: "InVeRsE cAsE", convert: toInverseCase },
+    { name: "camelCase", convert: toCamelCase },
+    { name: "PascalCase", convert: toPascalCase },
+    { name: "snake_case", convert: toSnakeCase },
+    { name: "kebab-case", convert: toKebabCase },
 ]

@@ -24,6 +24,7 @@ import caseConverter from "./blogs/case-converter";
 import blog24 from "./blogs/remove-ai-detection";
 import ReadVerity from "./blogs/ReadVerity";
 import sentencecase from "./blogs/sentence-case";
+import snake_case from "./blogs/snake_case";
 
 
 
@@ -1321,6 +1322,79 @@ export const posts = [
       answer:
         "Yes — The Online Case Converter on Countflows switches any block of text between sentence case, title case, uppercase, or lowercase in one click. If you also work with spreadsheets, you can follow our guide on how to convert case in Excel to format text faster across different workflows."
     }
+  ]
+},
+
+{
+  id: 27,
+  slug: "camelcase-pascalcase-snake-case-explained",
+  title: "CamelCase, PascalCase & Snake_Case Explained",
+  description:
+    "Learn  free what  is camelCase, PascalCase, snake_case, and kebab-case , see real code examples, and discover which naming convention is best for your programming language or project.",
+  excerpt:
+    "Understand the differences between camelCase, PascalCase, snake_case, and kebab-case with practical examples from JavaScript, Python, TypeScript, HTML, and CSS.",
+  image: "/blogs/snake_case-vs-camelCase.webp",
+  imageAlt:
+    "Comparison of camelCase, PascalCase, snake_case, and kebab-case naming conventions",
+  category: "Programming",
+  author: "Umair Tufail",
+  date: "2026-07-25",
+  readTime: "8 min read",
+  keywords: [
+    "camelCase",
+    "PascalCase",
+    "snake_case",
+    "kebab-case",
+    "naming conventions",
+    "case styles",
+    "JavaScript naming conventions",
+    "Python snake_case",
+    "TypeScript PascalCase",
+    "React component naming",
+    "CSS class naming",
+    "HTML custom elements",
+    "variable naming",
+    "function naming",
+    "class naming",
+    "programming style guide",
+    "PEP 8",
+    "code naming standards",
+    "case converter",
+    "convert camelCase to snake_case"
+
+  ],
+  content:snake_case,
+
+
+
+
+    faqs: [
+    {
+      question: "Is snake_case the same as underscore case?",
+      answer:
+        "Yes. snake_case and underscore case refer to the same naming convention where all words are lowercase and separated by underscores, such as task_title."
+    },
+    {
+      question: "What naming style does Python use?",
+      answer:
+        "Python's official style guide (PEP 8) recommends using snake_case for variables and functions, while classes should use PascalCase."
+    },
+    {
+      question: "Can I mix naming styles in one project?",
+      answer:
+        "You can, and your code will usually still run because naming style is a convention rather than a language rule. However, mixing styles makes code harder to read, often fails linter checks, and reduces consistency across a project."
+    },
+    {
+      question: "What's the difference between camelCase and PascalCase?",
+      answer:
+        "The only difference is the first letter. camelCase starts with a lowercase letter (taskTitle), while PascalCase starts with an uppercase letter (TaskTitle). Every following word begins with a capital letter in both styles."
+    },
+    {
+      question: "Is there a standard naming style for JSON?",
+      answer:
+        "There is no official standard. camelCase is common in JavaScript-based APIs, while snake_case is frequently used in APIs built with Python, Ruby, and many backend frameworks."
+    }
+  
   ]
 },
 

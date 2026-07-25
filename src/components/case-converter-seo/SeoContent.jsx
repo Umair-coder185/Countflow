@@ -83,6 +83,45 @@ export default function SeoContent() {
                 while holding Shift for capitals, which leaves the case exactly backwards.
             </p>
 
+
+                   <h3 className={h3Class}>camelCase</h3>
+            <p className={pClass}>
+                No spaces, no underscores — each word after the first starts with a capital
+                letter, like cartTotal or isLoggedIn. This is the default naming style for
+                variables and functions in JavaScript, Java, and C#.
+            </p>
+
+            <h3 className={h3Class}>PascalCase</h3>
+            <p className={pClass}>
+                Same idea as camelCase, but the first letter is capitalized too — CartTotal
+                instead of cartTotal. Classes, types, and React component names almost always
+                follow this pattern.
+            </p>
+
+            <h3 className={h3Class}>snake_case</h3>
+            <p className={pClass}>
+                Every letter stays lowercase, and an underscore sits between each word —
+                cart_total, is_logged_in. Python's style guide recommends this for variables and
+                functions, and most database column names follow it too.
+            </p>
+
+            <h3 className={h3Class}>kebab-case</h3>
+            <p className={pClass}>
+                Lowercase words separated by a hyphen instead of an underscore — cart-total,
+                user-profile. You won't see this inside variable names, since most languages read
+                the hyphen as subtraction, but it's everywhere in URLs, file names, and CSS
+                classes.
+            </p>
+
+               <p className={pClass}>
+                Want the deeper breakdown — when to use each style, naming conventions by
+                language, and common mistakes to avoid? Read the full guide:{" "}
+                <a href="/blog/what-is-camelcase">
+                    What Is CamelCase? PascalCase, Snake_Case & Kebab-Case Explained
+                </a>
+                .
+            </p>
+
             <h2 className={h2Class}>Title Case vs. Sentence Case: Which One Should You Use?</h2>
             <p className={pClass}>
                 This is the most common capitalization question, and the answer depends on where
