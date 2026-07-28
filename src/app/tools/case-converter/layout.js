@@ -8,7 +8,7 @@ import {
 export const metadata = {
   title: "Free Case Converter - Convert Text Case Online | Countflows",
   description:
-    "Convert text to UPPERCASE, lowercase, Title Case, or Sentence case in one click. Free, runs in your browser \u2014 your text is never uploaded or stored.",
+    "Free online Convert text to UPPERCASE, lowercase, Title Case, or Sentence case in one click. Free, runs in your browser \u2014 your text is never uploaded or stored.",
   keywords:
     "case converter, text case converter, convert upper case to lower case, convert text case, title case converter, sentence case converter, capital case converter, case converter online",
   openGraph: {

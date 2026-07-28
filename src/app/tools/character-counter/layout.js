@@ -6,7 +6,7 @@
 export const metadata = {
   title: "Free Character Counter \u2013 With & Without Spaces, All Limits",
   description:
-    "Count characters with and without spaces instantly. Check limits for X (Twitter), Instagram, SMS, meta descriptions, and UCAS \u2014 free, private, no sign-up.",
+    "Free Count characters with and without spaces instantly.Check limits for X (Twitter), Instagram, SMS, meta descriptions, and UCAS \u2014 free, private, no sign-up.",
   openGraph: {
     title: "Free Character Counter \u2013 With & Without Spaces, All Limits",
     description:
