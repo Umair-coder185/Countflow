@@ -28,7 +28,6 @@ export const metadata = {
     type: "website",
   },
 };
-
 const CATEGORIES = [
   {
     name: "Counting Tools",
@@ -61,7 +60,14 @@ const CATEGORIES = [
         icon: Music4,
         desc: "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
         best: "Poetry and creative writing",
-      }
+      },
+      {
+        name: "AI Token Counter",
+        slug: "/tools/ai-token-counter",
+        icon: Hash,
+        desc: "Count tokens for ChatGPT, GPT-4, and Claude before you send a prompt, so you never hit a limit or get a surprise bill.",
+        best: "AI prompts, API calls, system prompts",
+      },
     ],
   },
   {
@@ -114,7 +120,7 @@ const CATEGORIES = [
   },
 ];
 
-const COMING_NEXT = ["AI Token Counter", "Small Text Generator", "SMS Segment Counter"];
+const COMING_NEXT = [ "Small Text Generator", "SMS Segment Counter"];
 
 const GUIDES = [
   { title: "How to Manage Essay Word Count", href: "/blog/manage-essay-word-count" },

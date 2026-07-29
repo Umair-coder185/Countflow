@@ -290,5 +290,54 @@ export const syllableCounterFAQs = [
 ]
 
 
+export const aitokenCounterFAQs = [
+  {
+    question: "Why did I hit ChatGPT's token limit even though my text looked short?",
+    answer:
+      "Token limits include both your input (system prompt + user message) and the model's output. If you have a long system prompt plus conversation history plus your new message, they all add up together. Use this token counter to check your full prompt before sending.",
+  },
+  {
+    question: "Why does Claude show a different token count than GPT for the same text?",
+    answer:
+      "Claude and GPT use different tokenizers. Anthropic built its own tokenizer for Claude, while OpenAI uses tiktoken. The same sentence can tokenize into slightly different numbers of tokens depending on which model's algorithm you use. Our tool shows GPT-exact counts and Claude estimates clearly labeled.",
+  },
+  {
+    question: "How many tokens is 1,000 words?",
+    answer:
+      "Approximately 700\u2013800 tokens for standard English text. Code and technical content can be higher. Non-English languages (especially Chinese, Japanese, Arabic) typically produce more tokens per word than English.",
+  },
+  {
+    question: "Do spaces and punctuation count as tokens?",
+    answer:
+      "Yes. Spaces, commas, periods, quotation marks, brackets, and newlines all count toward your token total. In tiktoken, a space before a word is often merged with that word as a single token.",
+  },
+  {
+    question: "What is the difference between tokens, words, and characters?",
+    answer:
+      "Characters \u2014 Every letter, space, and symbol. \"Hello\" = 5 characters. Words \u2014 Human-readable word units. \"Hello world\" = 2 words. Tokens \u2014 Model-specific chunks. \"Hello world\" = 2 tokens in GPT. Character count \u00f7 4 gives a rough token estimate, but model-specific counting is more accurate.",
+  },
+  {
+    question: "Can I use this tool to check token count for API requests?",
+    answer:
+      "Yes. Paste your full prompt \u2014 including system instructions and user message \u2014 and select your model. The count you see is what you'll be billed for (input tokens). Output tokens are counted separately after the response is generated.",
+  },
+  {
+    question: "Is my text saved or stored when I use this tool?",
+    answer:
+      "No. All token counting happens in your browser. Your text never leaves your device and is never sent to our servers or stored anywhere.",
+  },
+  {
+    question: "Does token count affect AI response quality?",
+    answer:
+      "Indirectly, yes. If your prompt is too long and gets truncated, the model loses context and produces worse output. Staying within 70\u201380% of the context window gives the model enough room to generate a full, high-quality response.",
+  },
+  {
+    question: "What is the maximum token limit for ChatGPT?",
+    answer:
+      "It depends on the model. GPT-3.5 Turbo supports up to 16,385 tokens. GPT-4o supports up to 128,000 tokens. GPT-4 Turbo also supports 128,000 tokens. The free version of ChatGPT uses GPT-3.5 by default with the lower limit.",
+  },
+]
 
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs }
+
+
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs,aitokenCounterFAQs }

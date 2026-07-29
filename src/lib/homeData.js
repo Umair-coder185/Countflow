@@ -14,8 +14,8 @@ import {
   Eraser,
   Repeat2,
   Sparkles,
+  Hash
 } from "lucide-react";
-
 export const toolCategories = [
   {
     category: "Counting Tools",
@@ -44,15 +44,24 @@ export const toolCategories = [
           "Count sentences and check your average sentence length for readability.",
         live: true,
       },
-       {
+      {
         name: "Syllable Counter",
         href: "/tools/syllable-counter",
-       icon: Music4,
-       description:
-         "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
+        icon: Music4,
+        description:
+          "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
         live: false, // NEW: flip to true when the tool page ships
       },
+      
+      {
+        name: "AI Token Counter",
+        href: "/tools/ai-token-counter",
+        icon: Hash,
+        description:
+         " Count tokens for GPT-5, Claude, and Gemini instantly. See word, character, and token counts side by side. 100% free, runs in your browser — nothing uploaded."
+      },
     ],
+  
   },
   {
     category: "Reading and Speech",
@@ -86,59 +95,56 @@ export const toolCategories = [
       {
         name: "Case Converter",
         href: "/tools/case-converter",
-       icon: CaseSensitive,
-      description:
-       "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
-       live: true, // NEW: flip to true when the tool page ships
+        icon: CaseSensitive,
+        description:
+          "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
+        live: true,
       },
-    
       {
-      name: "AI Text Cleaner",
-      href: "/tools/ai-text-cleaner",
-      icon: Sparkles,
-      description:
-        "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
-      live: true,
-    },
-  ],
-    //   {
-    //     name: "Remove Line Breaks",
-    //     href: "/tools/remove-line-breaks",
-    //     icon: Eraser,
-    //     description:
-    //       "Strip unwanted line breaks from text pasted out of PDFs and emails instantly.",
-    //     live: false, // NEW: flip to true when the tool page ships
-    //   },
-    // ],
+        name: "AI Text Cleaner",
+        href: "/tools/ai-text-cleaner",
+        icon: Sparkles,
+        description:
+          "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
+        live: true,
+      },
+      // {
+      //   name: "Remove Line Breaks",
+      //   href: "/tools/remove-line-breaks",
+      //   icon: Eraser,
+      //   description:
+      //     "Strip unwanted line breaks from text pasted out of PDFs and emails instantly.",
+      //   live: false, // NEW: flip to true when the tool page ships
+      // },
+    ],
   },
-   {
-//     category: "Text Generators",
-//     tools: [
-//       {
-//         name: "Text Repeater",
-//         href: "/tools/text-repeater",
-//         icon: Repeat2,
-//         description:
-//           "Repeat any word or phrase as many times as you need, with custom separators.",
-//         live: false, // NEW: flip to true when the tool page ships
-//       },
-//     //   {
-//     //     name: "Small Text Generator",
-//     //     href: "/tools/small-text-generator",
-//     //     icon: Sparkles,
-//     //     description:
-//     //       "Turn normal text into tiny Unicode text and small caps for bios and comments.",
-//     //     live: false, // NEW: flip to true when the tool page ships
-//     //   },
-//     ],
-  },
+ 
+  // {
+  //   category: "Text Generators",
+  //   tools: [
+  //     {
+  //       name: "Text Repeater",
+  //       href: "/tools/text-repeater",
+  //       icon: Repeat2,
+  //       description:
+  //         "Repeat any word or phrase as many times as you need, with custom separators.",
+  //       live: false, // NEW: flip to true when the tool page ships
+  //     },
+  //     {
+  //       name: "Small Text Generator",
+  //       href: "/tools/small-text-generator",
+  //       icon: Sparkles,
+  //       description:
+  //         "Turn normal text into tiny Unicode text and small caps for bios and comments.",
+  //       live: false, // NEW: flip to true when the tool page ships
+  //     },
+  //   ],
+  // },
 ];
 
-export const comingNext = [
-  "AI Token Counter",
-  "Small Text Generator",
-  "SMS Segment Counter",
-];
+export const comingNext = [ "Small Text Generator",
+  "SMS Segment Counter",];
+
 
 export const characterLimits = [
   { platform: "X (Twitter) post", limit: "280" },

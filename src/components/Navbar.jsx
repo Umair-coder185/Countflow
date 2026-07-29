@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import {
   Menu, X, BookOpen, FileText, Clock, TextSearch,
-  CaseSensitive, ChevronDown, Mail, Info, LayoutGrid,Type, Sparkles, AlignLeft, Music4
+  CaseSensitive, ChevronDown, Mail, Info, LayoutGrid,Type, Sparkles, AlignLeft, Music4,Hash
 } from "lucide-react"
 import { motion, AnimatePresence } from "@/lib/no-motion"
 import { useState, useEffect, useRef } from "react"
@@ -18,7 +18,8 @@ const toolItems = [
   { href: "/tools/character-counter", label: "Character Counter", icon: Type },
 { href: "/tools/sentence-counter", label: "Sentence Counter", icon: AlignLeft },
 {href : "/tools/ai-text-cleaner",label: "AI Text Cleaner" , icon :  Sparkles,},
-{href : "/tools/syllable-counter" , label : "Syllable Counter" , icon : Music4}
+{href : "/tools/syllable-counter" , label : "Syllable Counter" , icon : Music4},
+{href :"/tools/ai-token-counter" ,label :"AI Token Counter" , icon : Hash}
   // 👇 add new tools here as they go live
 ]
 

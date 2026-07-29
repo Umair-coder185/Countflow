@@ -13,6 +13,7 @@ export async function GET() {
     "/tools/case-converter",
     "/tools/ai-text-cleaner",
     "/tools/syllable-counter",
+    "/tools/ai-token-counter",
     "/blog",
     "/about-us",
     "/contact",
