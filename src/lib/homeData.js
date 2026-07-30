@@ -50,7 +50,7 @@ export const toolCategories = [
         icon: Music4,
         description:
           "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
-        live: false, // NEW: flip to true when the tool page ships
+        live: true, // NEW: flip to true when the tool page ships
       },
       
       {
@@ -58,7 +58,8 @@ export const toolCategories = [
         href: "/tools/ai-token-counter",
         icon: Hash,
         description:
-         " Count tokens for GPT-5, Claude, and Gemini instantly. See word, character, and token counts side by side. 100% free, runs in your browser — nothing uploaded."
+         " Count tokens for GPT-5, Claude, and Gemini instantly. See word, character, and token counts side by side. 100% free, runs in your browser — nothing uploaded.",
+        live: true,
       },
     ],
   
