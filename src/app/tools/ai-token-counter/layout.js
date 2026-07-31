@@ -1,13 +1,13 @@
 export const metadata = {
-  title: "Free AI Token Counter - Instant GPT-4 & LLM Token Calculator | Countflows",
+  title: "Free AI Token Counter & Cost Calculator - GPT, Claude & Gemini | Countflows",
   description:
-    "Count tokens for GPT-5, Claude, and Gemini instantly. See word, character, and token counts side by side.100% free, runs in your browser — nothing uploaded.",
+    "Count tokens for GPT-5.6, Claude, and Gemini, estimate API cost, and track context window usage instantly. 100% free, runs in your browser — nothing uploaded.",
   keywords:
-    "ai token counter, gpt-4 token counter, chatgpt token counter, openai token calculator, llm token counter, count tokens online, ai token estimator, gpt token limit checker, text to tokens converter, free ai token counter",
+    "ai token counter, ai cost calculator, token budget calculator, context window calculator, gpt token counter, chatgpt token counter, openai token calculator, llm token counter, count tokens online, ai token estimator, gpt token limit checker, text to tokens converter, free ai token counter",
   openGraph: {
-    title: "Free AI Token Counter - Instant GPT-4 & LLM Token Calculator",
+    title: "Free AI Token Counter & Cost Calculator - GPT, Claude & Gemini",
     description:
-      "Calculate GPT-4, Claude, and LLM tokens, words, and characters for your prompts instantly. 100% free and private.",
+      "Count tokens, estimate API cost, and track context window usage for GPT-5.6, Claude, and Gemini instantly. 100% free and private.",
     url: "https://countflows.com/tools/ai-token-counter",
     type: "website",
     images: [

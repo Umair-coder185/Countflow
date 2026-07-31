@@ -336,6 +336,16 @@ export const aitokenCounterFAQs = [
     answer:
       "It depends on the model. GPT-3.5 Turbo supports up to 16,385 tokens. GPT-4o supports up to 128,000 tokens. GPT-4 Turbo also supports 128,000 tokens. The free version of ChatGPT uses GPT-3.5 by default with the lower limit.",
   },
+  {
+  question: "How is the AI cost estimate calculated?",
+  answer:
+    "It multiplies your token count by that model's current per-million-token price, entirely in your browser. Add an expected response length to include estimated output cost too. Pricing is dated on the page and updated periodically — it is not a live quote from the provider.",
+},
+{
+  question: "What happens if my text exceeds a model's context window?",
+  answer:
+    "The context window bar turns red and tells you by how many tokens you're over. In practice, the model will either reject the request or truncate the oldest part of your input — trim your text or switch to a model with a larger context window.",
+},
 ]
 
 

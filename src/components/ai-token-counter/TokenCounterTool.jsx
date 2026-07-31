@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Copy, Trash2, Check, ChevronDown, Info } from "lucide-react";
-
-const MODELS = [
-  { id: "gpt-4o", label: "GPT-4o", charsPerToken: 4.0, subwordFactor: 1.28 },
-  { id: "gpt-4", label: "GPT-4 / GPT-4 Turbo", charsPerToken: 4.0, subwordFactor: 1.28 },
-  { id: "gpt-3.5", label: "GPT-3.5 Turbo", charsPerToken: 4.0, subwordFactor: 1.30 },
-  { id: "claude", label: "Claude (Sonnet / Opus / Haiku)", charsPerToken: 3.6, subwordFactor: 1.22 },
-  { id: "gemini", label: "Gemini 1.5", charsPerToken: 4.0, subwordFactor: 1.25 },
-  { id: "llama", label: "Llama 3", charsPerToken: 4.2, subwordFactor: 1.20 },
-];
+import {
+  Copy,
+  Trash2,
+  Check,
+  ChevronDown,
+  Info,
+  DollarSign,
+  Wallet,
+  AlertTriangle,
+} from "lucide-react";
+import { MODELS } from "@/lib/modelPricing";
 
 const CHIP_COLORS = [
   "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300",
@@ -19,6 +20,13 @@ const CHIP_COLORS = [
   "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
   "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
   "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300",
+];
+
+const RESPONSE_LENGTH_PRESETS = [
+  { id: "none", label: "Input only (no reply estimated)", outputTokens: 0 },
+  { id: "short", label: "Short reply (~150 tokens)", outputTokens: 150 },
+  { id: "medium", label: "Medium reply (~500 tokens)", outputTokens: 500 },
+  { id: "long", label: "Long reply (~1,500 tokens)", outputTokens: 1500 },
 ];
 
 function splitIntoUnits(text) {
@@ -52,12 +60,45 @@ function estimateTokens(text, model) {
   return { count: Math.max(blended, text ? 1 : 0), pieces };
 }
 
+// ---- Cost / context-window helpers — pure functions, no network calls ----
+
+function getRates(model, inputTokens) {
+  if (!model.hasFixedPricing) return null;
+  if (model.longContext && inputTokens > model.longContext.thresholdTokens) {
+    return {
+      inputRate: model.longContext.inputPricePerMillion,
+      outputRate: model.longContext.outputPricePerMillion,
+      isLongContext: true,
+    };
+  }
+  return {
+    inputRate: model.inputPricePerMillion,
+    outputRate: model.outputPricePerMillion,
+    isLongContext: false,
+  };
+}
+
+function formatCost(amount) {
+  if (amount === 0) return "$0.00";
+  if (amount < 0.01) return `$${amount.toFixed(6)}`;
+  return `$${amount.toFixed(4)}`;
+}
+
 export default function TokenCounterTool() {
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
   const [modelId, setModelId] = useState(MODELS[0].id);
 
+  const [responseLengthId, setResponseLengthId] = useState("none");
+
+  const [budgetModelId, setBudgetModelId] = useState(MODELS[0].id);
+  const [monthlyBudget, setMonthlyBudget] = useState(20);
+  const [avgInputTokens, setAvgInputTokens] = useState(500);
+  const [avgOutputTokens, setAvgOutputTokens] = useState(300);
+
   const selectedModel = MODELS.find((m) => m.id === modelId) ?? MODELS[0];
+  const responsePreset =
+    RESPONSE_LENGTH_PRESETS.find((p) => p.id === responseLengthId) ?? RESPONSE_LENGTH_PRESETS[0];
 
   const { count: tokenCount, pieces } = useMemo(
     () => estimateTokens(text, selectedModel),
@@ -86,15 +127,61 @@ export default function TokenCounterTool() {
       }));
   }, [pieces]);
 
+  // Cost estimate + context window usage — derived from tokenCount above.
+  // No recomputation of tokens happens here; this only does arithmetic.
+  const insights = useMemo(() => {
+    const outputTokens = responsePreset.outputTokens;
+    const totalTokens = tokenCount + outputTokens;
+    const rates = getRates(selectedModel, tokenCount);
+
+    let cost = null;
+    if (rates) {
+      const inputCost = (tokenCount / 1_000_000) * rates.inputRate;
+      const outputCost = (outputTokens / 1_000_000) * rates.outputRate;
+      cost = {
+        inputCost,
+        outputCost,
+        totalCost: inputCost + outputCost,
+        isLongContext: rates.isLongContext,
+      };
+    }
+
+    const contextWindow = selectedModel.contextWindowTokens;
+    const usagePercent = (totalTokens / contextWindow) * 100;
+    const remainingTokens = contextWindow - totalTokens;
+    const exceedsWindow = totalTokens > contextWindow;
+
+    return { totalTokens, cost, usagePercent, remainingTokens, exceedsWindow };
+  }, [tokenCount, responsePreset, selectedModel]);
+
+  const budgetModel = MODELS.find((m) => m.id === budgetModelId) ?? MODELS[0];
+
+  const budgetPlan = useMemo(() => {
+    if (!budgetModel.hasFixedPricing) return null;
+    const costPerRequest =
+      (avgInputTokens / 1_000_000) * budgetModel.inputPricePerMillion +
+      (avgOutputTokens / 1_000_000) * budgetModel.outputPricePerMillion;
+    if (costPerRequest <= 0) return null;
+    return {
+      costPerRequest,
+      requestsPerMonth: Math.floor(monthlyBudget / costPerRequest),
+    };
+  }, [budgetModel, avgInputTokens, avgOutputTokens, monthlyBudget]);
+
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleClear = () => {
-    setText("");
-  };
+  const handleClear = () => setText("");
+
+  const usageBarColor =
+    insights.usagePercent >= 85
+      ? "bg-rose-500"
+      : insights.usagePercent >= 50
+      ? "bg-amber-500"
+      : "bg-emerald-500";
 
   return (
     <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl shadow-cyan-100/50 dark:shadow-black/30 p-4 md:p-6">
@@ -132,41 +219,31 @@ export default function TokenCounterTool() {
           <div className="text-2xl md:text-3xl font-extrabold text-cyan-600 dark:text-cyan-400">
             {tokenCount.toLocaleString()}
           </div>
-          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
-            Tokens
-          </div>
+          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">Tokens</div>
         </div>
         <div className="bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-4 text-center">
           <div className="text-2xl md:text-3xl font-bold text-gray-700 dark:text-gray-200">
             {stats.words.toLocaleString()}
           </div>
-          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
-            Words
-          </div>
+          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">Words</div>
         </div>
         <div className="bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-4 text-center">
           <div className="text-2xl md:text-3xl font-bold text-gray-700 dark:text-gray-200">
             {stats.characters.toLocaleString()}
           </div>
-          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
-            Characters
-          </div>
+          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">Characters</div>
         </div>
         <div className="bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-4 text-center">
           <div className="text-2xl md:text-3xl font-bold text-gray-700 dark:text-gray-200">
             {stats.lines.toLocaleString()}
           </div>
-          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
-            Lines
-          </div>
+          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">Lines</div>
         </div>
         <div className="bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-4 text-center col-span-2 md:col-span-1">
           <div className="text-2xl md:text-3xl font-bold text-gray-700 dark:text-gray-200">
             {stats.paragraphs.toLocaleString()}
           </div>
-          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
-            Paragraphs
-          </div>
+          <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">Paragraphs</div>
         </div>
       </div>
 
@@ -206,12 +283,10 @@ export default function TokenCounterTool() {
         )}
       </div>
 
-      {/* Token chip visualization — always visible when there's text */}
+      {/* Token chip visualization */}
       {text && (
         <div className="mt-8">
-          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-3">
-            Token breakdown
-          </h3>
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-3">Token breakdown</h3>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 max-h-64 overflow-y-auto">
             <div className="flex flex-wrap gap-1">
               {tokenChips.map((chip, i) => (
@@ -228,6 +303,188 @@ export default function TokenCounterTool() {
                 ? `Showing first 500 of ${pieces.length.toLocaleString()} approximate pieces.`
                 : "Approximate token breakdown — actual tokenization may split words differently."}
             </p>
+          </div>
+        </div>
+      )}
+
+      {/* Cost estimate, context window usage, and budget planner —
+          always visible as soon as there's text/token estimate, no click needed */}
+      {text && (
+        <div className="mt-6 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-800">
+            <DollarSign className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+            <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+              Cost estimate &amp; context window usage
+            </span>
+          </div>
+
+          <div className="p-4 space-y-5">
+            {/* Expected response length */}
+            <div>
+              <label
+                htmlFor="response-length"
+                className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1"
+              >
+                Expected response length (optional — for cost &amp; context estimate)
+              </label>
+              <div className="relative w-full sm:w-80">
+                <select
+                  id="response-length"
+                  value={responseLengthId}
+                  onChange={(e) => setResponseLengthId(e.target.value)}
+                  className="w-full appearance-none pl-3 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer"
+                >
+                  {RESPONSE_LENGTH_PRESETS.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {p.label}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              </div>
+            </div>
+
+            {/* Cost estimate */}
+            <div className="rounded-lg bg-gray-50 dark:bg-gray-800 p-3">
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
+                Estimated cost — {selectedModel.label}
+              </p>
+              {insights.cost ? (
+                <>
+                  <p className="text-xl font-bold text-cyan-600 dark:text-cyan-400">
+                    {formatCost(insights.cost.totalCost)}
+                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    {formatCost(insights.cost.inputCost)} input
+                    {responseLengthId !== "none" && ` + ${formatCost(insights.cost.outputCost)} output`}
+                    {insights.cost.isLongContext && " · long-context rate applied"}
+                  </p>
+                </>
+              ) : (
+                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedModel.pricingNote}</p>
+              )}
+            </div>
+
+            {/* Context window usage */}
+            <div>
+              <div className="flex items-center justify-between text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                <span>Context window usage</span>
+                <span>{selectedModel.contextWindowTokens.toLocaleString()} tokens max</span>
+              </div>
+              <div className="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                <div
+                  className={`h-full ${usageBarColor} transition-all`}
+                  style={{ width: `${Math.min(insights.usagePercent, 100)}%` }}
+                />
+              </div>
+              {insights.exceedsWindow ? (
+                <p className="mt-1.5 flex items-center gap-1 text-xs font-medium text-rose-600 dark:text-rose-400">
+                  <AlertTriangle className="h-3.5 w-3.5" />
+                  Exceeds {selectedModel.label}&apos;s context window by{" "}
+                  {Math.abs(insights.remainingTokens).toLocaleString()} tokens
+                </p>
+              ) : (
+                <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+                  {insights.usagePercent.toFixed(1)}% used · {insights.remainingTokens.toLocaleString()} tokens
+                  remaining
+                </p>
+              )}
+            </div>
+
+            <p className="text-xs text-gray-400 dark:text-gray-500 border-t border-gray-200 dark:border-gray-700 pt-3">
+              Cost and context window estimates are calculated entirely in your browser from the token count
+              above — nothing is sent anywhere.
+            </p>
+
+            {/* Token Budget Planner — always visible alongside cost/context, no click needed */}
+            <div className="rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+              <div className="flex items-center gap-2 px-3 py-2.5 bg-gray-50 dark:bg-gray-800">
+                <Wallet className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+                <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+                  Token budget planner
+                </span>
+              </div>
+
+              <div className="p-3 space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label htmlFor="budget-model" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                      Model
+                    </label>
+                    <div className="relative">
+                      <select
+                        id="budget-model"
+                        value={budgetModelId}
+                        onChange={(e) => setBudgetModelId(e.target.value)}
+                        className="w-full appearance-none pl-3 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer"
+                      >
+                        {MODELS.map((m) => (
+                          <option key={m.id} value={m.id}>
+                            {m.label}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="monthly-budget" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                      Monthly budget (USD)
+                    </label>
+                    <input
+                      id="monthly-budget"
+                      type="number"
+                      min="0"
+                      step="1"
+                      value={monthlyBudget}
+                      onChange={(e) => setMonthlyBudget(Math.max(0, Number(e.target.value) || 0))}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="avg-input" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                      Avg. input tokens / request
+                    </label>
+                    <input
+                      id="avg-input"
+                      type="number"
+                      min="0"
+                      step="10"
+                      value={avgInputTokens}
+                      onChange={(e) => setAvgInputTokens(Math.max(0, Number(e.target.value) || 0))}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="avg-output" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                      Avg. output tokens / request
+                    </label>
+                    <input
+                      id="avg-output"
+                      type="number"
+                      min="0"
+                      step="10"
+                      value={avgOutputTokens}
+                      onChange={(e) => setAvgOutputTokens(Math.max(0, Number(e.target.value) || 0))}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    />
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-700 dark:text-gray-200 bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-100 dark:border-cyan-800 rounded-lg px-3 py-2.5">
+                  {budgetPlan ? (
+                    <>
+                      At this rate, your budget covers approximately{" "}
+                      <strong>{budgetPlan.requestsPerMonth.toLocaleString()} requests/month</strong> on{" "}
+                      {budgetModel.label} ({formatCost(budgetPlan.costPerRequest)} per request).
+                    </>
+                  ) : (
+                    budgetModel.pricingNote ||
+                    "Enter a budget and average token counts to see how many requests it covers."
+                  )}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       )}

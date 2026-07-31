@@ -5,26 +5,20 @@ import FAQ from "@/components/FAQ"
 import SeoContent from "@/components/ai-token-counter/SeoContent"
 import TokenCounterTool from "@/components/ai-token-counter/TokenCounterTool"
 
-/* ------------- Placeholder FAQs (Move to @/lib/faqData later) ------------- */
-
-/* ------------------------------------------------------------------------- */
-
-/* ------------- Structured data (rendered on the server) ------------- */
-
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "@id": "https://countflows.com/tools/ai-token-counter",
-  name: "AI Token Counter - CountFlows",
+  name: "AI Token Counter & Cost Calculator - CountFlows",
   url: "https://countflows.com/tools/ai-token-counter",
   description:
-    "Free online AI token counter. Calculate exact GPT-4, Claude, and LLM tokens, words, and characters instantly in your browser.",
+    "Free online AI token counter and cost calculator. Count GPT, Claude, and Gemini tokens, estimate API cost, and track context window usage instantly in your browser.",
   image: "https://countflows.com/og-image.png",
   applicationCategory: "ProductivityApplication",
   operatingSystem: "All",
   inLanguage: "en-US",
   datePublished: "2026-07-14",
-  dateModified: "2026-07-14",
+  dateModified: "2026-07-31",
   author: {
     "@type": "Organization",
     name: "CountFlows",
@@ -71,7 +65,7 @@ const faqSchema = {
 
 const FEATURES = [
   { title: "Real-time counting", description: "See exact token, word, and character counts update instantly as you type or paste your prompt." },
-  { title: "Model specific limits", description: "Track your usage against standard context windows for GPT-4, Claude, and Llama models." },
+  { title: "Cost & context window", description: "Track usage against context windows for GPT, Claude, and Gemini, and see the estimated API cost as you type." },
   { title: "100% private", description: "All processing happens locally in your browser. Your prompts are never uploaded, logged, or stored." },
 ]
 
@@ -84,9 +78,9 @@ export default function AiTokenCounterPage() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-500/20" />
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={ { __html: JSON.stringify(schema) } } />
-      <script type="application/ld+json" dangerouslySetInnerHTML={ { __html: JSON.stringify(breadcrumbSchema) } } />
-      <script type="application/ld+json" dangerouslySetInnerHTML={ { __html: JSON.stringify(faqSchema) } } />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-4 md:px-8 pt-6">
         <ol className="flex flex-wrap items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
@@ -98,27 +92,23 @@ export default function AiTokenCounterPage() {
         </ol>
       </nav>
 
-      {/* Hero Section (server-rendered) */}
       <section className="max-w-4xl mx-auto px-4 md:px-8 py-6 md:py-12 text-center relative">
         <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mt-4">
           AI Token <span className="text-cyan-500">Counter</span>
           <span className="block mt-3 text-lg md:text-2xl font-semibold text-gray-700 dark:text-gray-300">
-            Free Count tokens, words, and characters for GPT-5, Claude, and Gemini instantly.
+            Free. Count tokens, estimate cost, and check context window usage for GPT-5.6, Claude, and Gemini instantly.
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
-          Paste your prompt to see exactly how many tokens it uses.Optimize your
-          context window for GPT-4, Claude, and other LLMs without wasting API
-          credits.
+          Paste your prompt to see exactly how many tokens it uses, what it will cost, and how much of your
+          model&apos;s context window is left — without wasting API credits.
         </p>
       </section>
 
-      {/* Interactive tool - the ONLY client component on the page */}
       <section className="max-w-4xl mx-auto px-4 md:px-8 mb-12">
         <TokenCounterTool />
       </section>
 
-      {/* Feature cards (server-rendered) */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
         <div className="mt-2 grid gap-4 sm:grid-cols-3">
           {FEATURES.map((item) => (
@@ -133,7 +123,6 @@ export default function AiTokenCounterPage() {
         </div>
       </section>
 
-      {/* SEO Content (server-rendered) */}
       <SeoContent />
 
       <p className="mt-10 text-center">
@@ -146,7 +135,6 @@ export default function AiTokenCounterPage() {
         </Link>
       </p>
 
-      {/* FAQ */}
       <div className="mb-20">
         <FAQ faqs={aitokenCounterFAQs} />
       </div>
