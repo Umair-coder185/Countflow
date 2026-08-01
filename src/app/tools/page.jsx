@@ -10,6 +10,7 @@ import {
   BookOpen,
   Sparkles,
   Music4,
+  Eraser,
 } from "lucide-react";
 
 const SITE = "https://countflows.com";
@@ -103,6 +104,13 @@ const CATEGORIES = [
           "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
         best: "Ai Text issues cleanup",
       },
+      {
+        name: "Remove Line Breaks",
+        slug: "/tools/remove-line-breaks",
+        icon: Eraser,
+        desc: "Strip unwanted line breaks from text pasted out of PDFs and emails instantly.",
+        best: "Pasted text cleanup",
+      }
     ],
   },
   {
@@ -312,8 +320,32 @@ export default function ToolsPage() {
               >
                 Syllable Counter
               </Link>
-              .
+              
             </li>
+            <li>
+              <strong className="text-slate-900 dark:text-slate-100">Working with AI?</strong>{" "}
+              Use the{" "}
+              <Link
+                href="/tools/ai-token-counter"
+                className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
+              >
+                AI Token Counter
+              </Link>{" "}
+              to check your prompt and response token counts before you send it.
+            </li>
+
+            <li>
+              <strong className="text-slate-900 dark:text-slate-100">Pasting text from PDFs or emails?</strong>{" "}
+              Use the{" "}
+              <Link
+                href="/tools/remove-line-breaks"
+                className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
+              >
+                Remove Line Breaks
+              </Link>{" "}
+              tool to strip unwanted line breaks from pasted text instantly.
+            </li>
+
             
 
           </ul>

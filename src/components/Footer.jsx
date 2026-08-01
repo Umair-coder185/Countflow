@@ -84,6 +84,11 @@ export default function Footer() {
                     <span className="group-hover:translate-x-1 transition">AI Token counter</span>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/tools/remove-line-breaks" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
+                    <span className="group-hover:translate-x-1 transition">Remove Line Breaks</span>
+                  </Link>
+                </li>
 
               </ul>
             </div>

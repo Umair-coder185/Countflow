@@ -346,8 +346,41 @@ export const aitokenCounterFAQs = [
   answer:
     "The context window bar turns red and tells you by how many tokens you're over. In practice, the model will either reject the request or truncate the oldest part of your input — trim your text or switch to a model with a larger context window.",
 },
+
+]
+
+export const removeLineBreaksFAQs = [
+  {
+    question: "Is this tool free?",
+    answer: "Yes. No account, no word limit, no paid tier. Paste as much text as you want, use any mode, and copy the result without ever signing up.",
+  },
+  {
+    question: "Does it work on mobile?",
+    answer: "Yes. The tool works in any modern browser, including mobile Safari and Chrome. The input and output boxes are touch-friendly and resize to fit your screen.",
+  },
+  {
+    question: "Will it change my punctuation or spelling?",
+    answer: "Never. The tool only touches line break characters (\\n, \\r\\n, \\r). Every word, comma, period, and apostrophe stays exactly as you pasted it.",
+  },
+  {
+    question: "What is the difference between a line break and a paragraph break?",
+    answer: "A line break (\\n or \\r\\n) moves text to the next line within the same paragraph. A paragraph break is two or more consecutive line breaks (\\n\\n) that create visible spacing between blocks of text. The Preserve Paragraphs mode removes single line breaks while keeping the double-break paragraph spacing intact.",
+  },
+  {
+    question: "Can I remove carriage returns online?",
+    answer: "Yes. Carriage returns (\\r) are handled automatically across all three modes. Windows-style \\r\\n line endings are treated as a single break, so you do not need to worry about which operating system the text came from.",
+  },
+  {
+    question: "What if removing breaks fuses two words together?",
+    answer: "The tool inserts a space at every break point when joining lines. If words are still fusing, the source text had no space before the break. You can add one manually in the output box, or switch to Preserve Paragraphs mode which is more conservative about joining.",
+  },
+  {
+    question: "Can I keep some line breaks and remove others?",
+    answer: "Not in a single pass with the Remove All mode. However, the Preserve Paragraphs mode does exactly this: it removes single line breaks (the ones breaking sentences mid-paragraph) while keeping the double line breaks that separate paragraphs. For finer control, use Custom Separator mode and choose what replaces each break.",
+  },
 ]
 
 
 
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs,aitokenCounterFAQs }
+
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs,aitokenCounterFAQs , removeLineBreaksFAQs }

@@ -109,14 +109,14 @@ export const toolCategories = [
           "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
         live: true,
       },
-      // {
-      //   name: "Remove Line Breaks",
-      //   href: "/tools/remove-line-breaks",
-      //   icon: Eraser,
-      //   description:
-      //     "Strip unwanted line breaks from text pasted out of PDFs and emails instantly.",
-      //   live: false, // NEW: flip to true when the tool page ships
-      // },
+       {
+       name: "Remove Line Breaks",
+        href: "/tools/remove-line-breaks",
+         icon: Eraser,
+       description:
+         "Strip unwanted line breaks from text pasted out of PDFs and emails instantly.",
+       live: true, // NEW: flip to true when the tool page ships
+       },
     ],
   },
  

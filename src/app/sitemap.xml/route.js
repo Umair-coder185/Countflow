@@ -14,6 +14,7 @@ export async function GET() {
     "/tools/ai-text-cleaner",
     "/tools/syllable-counter",
     "/tools/ai-token-counter",
+    "/tools/remove-line-breaks",
     "/blog",
     "/about-us",
     "/contact",
