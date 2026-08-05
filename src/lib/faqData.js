@@ -382,5 +382,55 @@ export const removeLineBreaksFAQs = [
 
 
 
+export const textRepeaterFAQs = [
+  {
+    question: "What does a text repeater do?",
+    answer:
+      "It duplicates text a selected number of times. You enter the original text once, choose a count and separator, and copy the completed output.",
+  },
+  {
+    question: "Can I repeat text 100 or 1,000 times?",
+    answer:
+      "Yes. Enter the number manually or use a preset if one is available.",
+  },
+  {
+    question: "What is the maximum repeat count?",
+    answer:
+      "The tool can produce up to 10,000 copies in a single run.",
+  },
+  {
+    question: "Can it repeat emojis?",
+    answer:
+      "Yes. You can repeat emojis, symbols, accented characters, and text written in supported non-English scripts.",
+  },
+  {
+    question: "Can I repeat a full paragraph?",
+    answer:
+      "Yes. Paste the paragraph into the input field. Any original line breaks inside it will remain part of each copy.",
+  },
+  {
+    question: "Is the tool free?",
+    answer:
+      "Yes. There is no account, email requirement, or payment step.",
+  },
+  {
+    question: "Does it work on a phone?",
+    answer:
+      "Yes. The interface works in modern mobile and desktop browsers.",
+  },
+  {
+    question: "Can I save the output?",
+    answer:
+      "Yes. Copy it to your clipboard or download it as a plain .txt file.",
+  },
+  {
+    question: "Is there a copy shortcut?",
+    answer:
+      "Use Ctrl + Enter on Windows or Cmd + Enter on macOS.",
+  },
+];
 
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs,aitokenCounterFAQs , removeLineBreaksFAQs }
+
+
+
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs,aitokenCounterFAQs , removeLineBreaksFAQs, textRepeaterFAQs }

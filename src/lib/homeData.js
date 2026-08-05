@@ -120,18 +120,18 @@ export const toolCategories = [
     ],
   },
  
-  // {
-  //   category: "Text Generators",
-  //   tools: [
-  //     {
-  //       name: "Text Repeater",
-  //       href: "/tools/text-repeater",
-  //       icon: Repeat2,
-  //       description:
-  //         "Repeat any word or phrase as many times as you need, with custom separators.",
-  //       live: false, // NEW: flip to true when the tool page ships
-  //     },
-  //     {
+   {
+   category: "Text Generators",
+    tools: [
+       {
+        name: "Text Repeater",
+        href: "/tools/text-repeater",
+         icon: Repeat2,
+        description:
+          "Repeat any word or phrase as many times as you need, with custom separators.",
+        live: true, // NEW: flip to true when the tool page ships
+      },
+      //  {
   //       name: "Small Text Generator",
   //       href: "/tools/small-text-generator",
   //       icon: Sparkles,
@@ -139,8 +139,8 @@ export const toolCategories = [
   //         "Turn normal text into tiny Unicode text and small caps for bios and comments.",
   //       live: false, // NEW: flip to true when the tool page ships
   //     },
-  //   ],
-  // },
+     ],
+  },
 ];
 
 export const comingNext = [ "Small Text Generator",
