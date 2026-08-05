@@ -26,6 +26,7 @@ import ReadVerity from "./blogs/ReadVerity";
 import sentencecase from "./blogs/sentence-case";
 import snake_case from "./blogs/snake_case";
 import aiproblems from "./blogs/ai-problems";
+import emdashes from "./blogs/em-deshes";
 
 
 
@@ -1455,7 +1456,59 @@ export const posts = [
         "answer": " Paid tiers generally raise both the context window and the practical output limits your account is allowed to use, so upgrading can reduce how often you hit either limit — but it doesn't eliminate the caps entirely, since every model still has a hard ceiling"
       }
     ]
-  }
+  },
+
+
+  {
+  id: 29,
+  slug: "em-dash-ai-tell",
+  title: "The Em Dash Isn't the AI Tell You Think It Is — 2026 Guide",
+  description: "Learn why the em dash is no longer a reliable AI writing tell, what actually triggers AI detectors in 2026, and how to make your text sound more human.",
+  excerpt: "Discover why the em dash myth is outdated, what patterns AI detectors really look for, and how to clean up AI-generated text without overcorrecting punctuation.",
+  image: "/blogs/em-dash-ai-tell-guide.webp",
+  imageAlt: "Article about the em dash myth and AI writing detection in 2026",
+  category: "AI & Technology",
+  author: "Umair Tufail",
+  date: "2026-08-05",
+  readTime: "10 min read",
+  keywords: [
+    "em dash AI tell",
+    "does em dash mean AI writing",
+    "AI detector false positives",
+    "ChatGPT em dash",
+    "Claude em dash",
+    "Gemini em dash",
+    "AI writing patterns",
+    "how to remove em dashes",
+    "make ChatGPT sound human",
+    "AI Text Cleaner",
+    "keyword density checker",
+    "word counter"
+  ],
+  content: emdashes,
+  faqs: [
+    {
+      question: "Is the em dash still an AI tell in 2026?",
+      answer: "Not a reliable one. Of the major models tested in the 2026 Economist analysis, only Claude used em dashes more than human writers — ChatGPT now uses them less often than people do."
+    },
+    {
+      question: "What actually triggers AI detectors?",
+      answer: "Detection tools weigh dozens of signals, but the strongest ones identified so far are light punctuation overall, long and uniform sentence structure, overuse of \"and,\" excess verbosity, and predictable rhetorical patterns like rule-of-three lists."
+    },
+    {
+      question: "How do I remove em dashes from text online for free?",
+      answer: "Paste your text into our AI Text Cleaner — it removes em dashes, smart quotes, and markdown formatting instantly, with nothing uploaded or saved."
+    },
+    {
+      question: "Do AI detectors give false positives?",
+      answer: "Yes, regularly — especially when a detector (or a person) relies on a single signal like punctuation. That's part of why relying on the em dash alone as evidence of AI writing has caused real problems for human writers."
+    },
+    {
+      question: "What should I use instead of an em dash?",
+      answer: "Depends on the sentence: a comma or semicolon for a related thought, a period and new sentence for a cleaner break, or parentheses if the aside is truly secondary."
+    }
+  ]
+}
 
 
 
