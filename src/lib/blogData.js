@@ -27,6 +27,7 @@ import sentencecase from "./blogs/sentence-case";
 import snake_case from "./blogs/snake_case";
 import aiproblems from "./blogs/ai-problems";
 import emdashes from "./blogs/em-deshes";
+import syllableCounter from "./blogs/syllable-counter";
 
 
 
@@ -1506,6 +1507,67 @@ export const posts = [
     {
       question: "What should I use instead of an em dash?",
       answer: "Depends on the sentence: a comma or semicolon for a related thought, a period and new sentence for a cleaner break, or parentheses if the aside is truly secondary."
+    }
+  ]
+},
+
+ {
+  id: 30,
+  slug:"why-ai-chatbots-cant-count-syllables",
+  title:
+    "Why AI Chatbots Can't Count Syllables (And How to Fix them) ",
+  description:
+    "ChatGPT, Claude, and Gemini keep getting 5-7-5 wrong. Here's the real reason, and how to fix an AI haiku or lyric line by line.",
+  excerpt:
+    "AI chatbots can explain the 5-7-5 haiku rule perfectly, yet still produce lines with the wrong syllable count. Learn why tokens and sounds do not match, why AI-generated lyrics often fail to fit melodies, and how to fix the problem with an external syllable counter.",
+  image: "/blogs/free-syllable-counter.webp",
+  
+  category: "AI & Technology",
+  author: "Umair Tufail",
+  date: "2026-08-07",
+  readTime: "10 min read",
+  keywords: [
+    "AI syllable counter",
+    "why AI cannot count syllables",
+    "AI haiku generator",
+    "ChatGPT haiku syllables",
+    "AI-generated lyrics",
+    "AI writing patterns",
+    "5-7-5 haiku",
+    "haiku syllable counter",
+    "AI song lyrics",
+    "fix AI-generated haiku",
+    "AI Text Cleaner",
+    "AI Token Counter",
+    "keyword density checker",
+    "free word counter online"
+  ],
+  content: syllableCounter,
+  faqs: [
+    {
+      question: "Will newer AI models fix this on their own?",
+      answer:
+        "More likely not anytime soon. It is a problem in the architecture, not what the model has learned. Unless tokenization takes place on the basis of phonemes/syllables and not on fragments of words, this will continue to be an Achilles' heel for the model regardless of its other abilities."
+    },
+    {
+      question: 'Can I just tell the AI to "count carefully"?',
+      answer:
+        "Sometimes it nudges the output a little closer. It doesn't fix the blind spot underneath — the model is still guessing, just guessing a second time with more confidence in its voice. An outside counter is the only way to get an exact answer, not a more polite one."
+    },
+    {
+      question: "Does this affect other languages?",
+      answer:
+        "Yes, though the pattern shifts. Syllable structure varies a lot by language, and tokenizers behave differently for each one. English 5-7-5 haiku just happens to be the most documented, most argued-about case."
+    },
+    {
+      question: "Is this the same reason AI struggles with rhyme?",
+      answer:
+        "Related but not the same thing. Rhyme depends on the ending sound of a word, which tokenization also blurs. Syllable counting depends on the total number of sound units across a whole line — a separate task, guessed at independently."
+    },
+    {
+      question: "Is there an AI syllable counter that actually works?",
+      answer:
+        "Not one built on a language model — that would inherit the exact blind spot this whole article is about. What actually works runs the other way around: a pronunciation dictionary plus a vowel-sound algorithm, counting sounds directly instead of predicting them from text patterns. Call it a syllable counter, not a chatbot, and it holds up either way."
     }
   ]
 }

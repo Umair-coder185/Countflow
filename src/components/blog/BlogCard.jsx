@@ -23,7 +23,11 @@ function BlogCard({ post, priority = false }) {
       className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col hover:shadow-2xl transition-all w-full h-full min-h-[420px]"
     >
       {/* Featured Image */}
-      <div className="relative h-48 sm:h-48 md:h-56 lg:h-60 w-full overflow-hidden group">
+      <Link
+        href={href}
+        className="relative block h-48 sm:h-48 md:h-56 lg:h-60 w-full overflow-hidden group"
+        aria-label={`Open ${post?.title ?? "this post"}`}
+      >
         <Image
           src={post?.image}
           alt={post?.title ?? "Blog post image"}
@@ -35,7 +39,7 @@ function BlogCard({ post, priority = false }) {
           className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-2xl"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity rounded-t-2xl" />
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-2 sm:p-6 gap-2 justify-between">

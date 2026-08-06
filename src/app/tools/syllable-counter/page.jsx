@@ -113,7 +113,7 @@ export default function SyllableCounterPage() {
       <section className="max-w-4xl mx-auto px-4 md:px-8 py-10 md:py-14 text-center relative">
        
         <h1 className="text-2xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 ">
-          Syllable <span className="text-cyan-500">Counter</span>
+              Syllable <span className="text-cyan-500">Counter</span>
           <span className="block mt-3 text-lg md:text-2xl font-semibold text-gray-700 dark:text-gray-300">
             Count Syllables in Words, Sentences and Poems
           </span>

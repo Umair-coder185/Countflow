@@ -59,6 +59,19 @@ export default function SeoContent() {
         your browser, whether you paste one word or an entire chapter.
       </p>
 
+      <div className="rounded-2xl border border-cyan-200 bg-cyan-50/80 p-4 sm:p-5 dark:border-cyan-800 dark:bg-cyan-950/40 mb-6">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700 dark:text-cyan-300 mb-2">
+          Related article
+        </p>
+        <p className={pClass + " mb-0"}>
+          Want the deeper explanation behind why AI chatbots get haiku and lyric counts wrong? Read{" "}
+          <Link href="/blog/why-ai-chatbots-cant-count-syllables" className={linkClass}>
+            Why AI Chatbots Can&apos;t Count Syllables (And How to Fix Their Haikus and Lyrics)
+          </Link>
+          {" "}to see how tokenization and sound patterns create the mismatch.
+        </p>
+      </div>
+
       <h2 className={h2Class}>Three Ways to Count Syllables by Hand</h2>
       <p className={pClass}>
         The tool is faster, but the manual methods help you settle any count it flags:

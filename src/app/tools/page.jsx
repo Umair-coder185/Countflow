@@ -16,7 +16,7 @@ import {
 const SITE = "https://countflows.com";
 
 export const metadata = {
-  title: "Free Text Tools: Word, Character & Sentence Counters",
+  title: "Free Text Tools: Word, Character ,Sentence Counters , ai text cleaner, case converter, keyword density checker and syllable counter",
   description:
     "All CountFlows tools in one place: word, character, and sentence counters, reading time calculator, case converter, and keyword density checker. Free and private.",
   alternates: { canonical: `${SITE}/tools` },

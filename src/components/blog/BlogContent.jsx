@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { motion } from "@/lib/no-motion";
 import { Calendar, User, Clock, Tag } from "lucide-react";
 import BlogHeader from "@/components/blog/BlogHeader";
@@ -57,11 +58,13 @@ export default function BlogContent({ post }) {
           transition={{ duration: 0.5 }}
           className="relative h-56 sm:h-72 md:h-96 w-full bg-gray-100 overflow-hidden mb-8 sm:mb-12 md:mb-14 rounded-lg"
         >
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-full object-cover"
-          />
+          <Link href={`/blog/${post.slug}`} aria-label={`Open ${post.title}`} className="block h-full w-full">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          </Link>
         </motion.div>
 
         {/* Meta Info */}
