@@ -1,9 +1,7 @@
 const syllableCounter = `
 
 <article>
-  <header>
-    <h1>Why AI Chatbots Can't Count Syllables (And How to Fix Their Haikus and Lyrics)</h1>
-  </header>
+  
 
   <p>
     ChatGPT asked to generate a haiku and you'll get three lines without any delay whatsoever. Ask it to verify its syllables and it will often assure you that everything's fine. Usually, everything isn't. Count for yourself: four syllables in the first line, six in the last, not at all 5-7-5.
