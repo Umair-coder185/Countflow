@@ -26,6 +26,7 @@ const POETRY_FORMS = [
   { form: "Tanka", pattern: "5-7-5-7-7", lines: "5" },
   { form: "Limerick", pattern: "8-8-5-5-8 (approximate)", lines: "5" },
   { form: "Cinquain (American)", pattern: "2-4-6-8-2", lines: "5" },
+  { form: "Fibonacci poem", pattern: "1-1-2-3-5-8 (extend as far as you like)", lines: "6" },
   { form: "Nonet", pattern: "9-8-7-6-5-4-3-2-1", lines: "9" },
   { form: "Sonnet (iambic pentameter)", pattern: "10 per line", lines: "14" },
 ]
@@ -159,6 +160,26 @@ export default function SeoContent() {
         not English syllables — so many published English haiku run shorter than 17
         syllables. If your teacher asked for 5-7-5, this checker keeps you exact. If you write
         literary haiku, treat 17 as a ceiling, not a rule.
+      </p>
+
+      <h2 className={h2Class}>Fibonacci Poem Syllable Counter (1-1-2-3-5-8)</h2>
+      <p className={pClass}>
+        A Fibonacci poem, often just called a "Fib," sets its line lengths to the Fibonacci
+        sequence: 1, 1, 2, 3, 5, 8 — and you can keep going into 13 and 21 if you want a
+        longer piece. Poet Gregory K. Pincus popularized the six-line version in 2006, and it
+        stuck because it fits on an index card but still leaves room for a turn or a punchline
+        by the last line.
+      </p>
+      <p className={pClass}>
+        Pick <strong>Fibonacci</strong> from the poem pattern dropdown above and each line gets
+        checked against 1, 1, 2, 3, 5, 8 as you type. The two opening one-syllable lines are
+        usually the hardest part — a single word has to carry the whole line, so word choice
+        matters more here than in any other form on this page.
+      </p>
+      <p className={pClass}>
+        Want to extend past 8? Switch the dropdown to <strong>Custom pattern</strong> and type
+        your own sequence — 1,1,2,3,5,8,13 for a seven-line Fib, or further if you're feeling
+        ambitious.
       </p>
 
       <h2 className={h2Class}>Syllable Counter for Poems, Lyrics and Speeches</h2>

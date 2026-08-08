@@ -22,8 +22,10 @@ export default function SeoContent() {
           into the box above.
         </li>
         <li>
-          <strong>Toggle the cleaners you need</strong>: markdown symbols, em dashes,
-          invisible characters, smart quotes, extra spaces, bullets, or emojis.
+          <strong>Toggle the cleaners you need</strong>: markdown symbols, HTML tags and
+          entities, em dashes, invisible characters, smart quotes, punctuation spacing,
+          extra spaces, blank lines, bullets, emojis, diacritics, duplicate lines, Unicode
+          forms, or lookalike characters.
         </li>
         <li>
           <strong>Click Clean Text and copy the result</strong>: clean, plain text ready
@@ -48,6 +50,17 @@ export default function SeoContent() {
         pairs around links. This cleaner removes the markdown formatting from your text
         while keeping every word: **important** becomes important, ## Summary becomes
         Summary, and [our site](url) becomes our site.
+      </p>
+
+      <h3 className={h3Class}>HTML tags and HTML entities</h3>
+      <p className={pClass}>
+        Text copied from a rendered ChatGPT answer, a web page, or a CMS preview
+        sometimes brings its markup along with it: literal &lt;p&gt;, &lt;div&gt;, and
+        &lt;span&gt; tags sitting right in the plain text, or entity codes like &amp;amp;
+        and &amp;lt; where a real ampersand or less-than sign should be. Both cleaners run
+        together by default. Strip HTML tags removes every &lt;tag&gt; while keeping the
+        text inside it, and decode HTML entities turns &amp;amp; back into &amp; and
+        &amp;lt; back into &lt;, so the words you see are the words you get.
       </p>
 
       <h3 className={h3Class}>Em dashes (—)</h3>
@@ -76,6 +89,16 @@ export default function SeoContent() {
         pasting AI text into anything technical.
       </p>
 
+      <h3 className={h3Class}>Punctuation spacing</h3>
+      <p className={pClass}>
+        Once markdown symbols and dashes are stripped out, the punctuation around them
+        does not always land correctly on its own — a period can end up glued to the next
+        word, or a comma can pick up a stray space in front of it. This cleaner closes the
+        gap before .,;:!?)]{'}'} and makes sure there is a single space after each one, so
+        stripped-down text still reads like normal, evenly spaced prose instead of
+        something a find-and-replace pass left behind.
+      </p>
+
       <h3 className={h3Class}>Extra spaces and line breaks</h3>
       <p className={pClass}>
         AI answers love double spaces and triple line breaks. The whitespace cleaner trims
@@ -84,12 +107,74 @@ export default function SeoContent() {
         intentional paragraph structure.
       </p>
 
+      <h3 className={h3Class}>Remove all blank lines</h3>
+      <p className={pClass}>
+        Capping blank lines at one is usually enough, but sometimes you want the gaps gone
+        completely, for example when you are turning a spaced-out AI answer into a single
+        dense paragraph for a form field or a CSV cell. This is a separate, more aggressive
+        control from the whitespace cleaner above: it deletes every blank line rather than
+        just trimming them down, so it stays off by default and is there when you need it.
+      </p>
+
       <h3 className={h3Class}>Bullets and emojis (optional)</h3>
       <p className={pClass}>
         Two cleaners stay off by default because sometimes you want to keep them. Remove
         bullet points strips leading dashes, dots, and numbering when you are converting a
         list into prose. Remove emojis deletes every 🚀 and ✅ that chatbots sprinkle
         into professional text.
+      </p>
+
+      <h3 className={h3Class}>Strip diacritics (optional)</h3>
+      <p className={pClass}>
+        Accented letters like café, naïve, or résumé are correct in most writing, but they
+        can break URL slugs, filenames, and older systems that only expect plain ASCII.
+        This cleaner folds accented characters down to their unaccented equivalents,
+        café becomes cafe and naïve becomes naive. It stays off by default since the
+        accent is usually intentional; turn it on only when you are producing something
+        like a slug or a filename that needs to stay plain.
+      </p>
+
+      <h3 className={h3Class}>Duplicate lines</h3>
+      <p className={pClass}>
+        Long ChatGPT answers repeat themselves more often than people notice, a caution
+        restated at the end of a section it already appeared in, a bullet point pasted
+        twice into the same list, an FAQ answer that shows up under two different
+        headings. This cleaner reads your text line by line and keeps only the first copy
+        of each exact match, quietly dropping every repeat after it while leaving the rest
+        of the order untouched. It is a small fix, but it is the one most other free text
+        cleaners still leave out, and it is the difference between a usable list and one
+        you have to skim line by line yourself.
+      </p>
+
+      <h3 className={h3Class}>Unicode form normalization</h3>
+      <p className={pClass}>
+        Not everything that looks like a plain letter actually is one. Ask a chat model to
+        emphasize a word somewhere markdown will not render, and it sometimes reaches for
+        styled Unicode letters instead of real bold text, 𝐇𝐞𝐥𝐥𝐨 rather than Hello, or
+        fullwidth characters like Ｈｅｌｌｏ that slip in from a different input method.
+        Both read fine on screen but are not the ordinary ASCII characters your keyboard
+        types, which throws off word counts, search-and-replace, and anything that expects
+        an exact character match. This cleaner applies standard Unicode NFKC
+        normalization, folding those stylized and fullwidth variants back to the plain
+        form underneath.
+      </p>
+
+      <h3 className={h3Class}>Lookalike characters from other alphabets</h3>
+      <p className={pClass}>
+        Cyrillic and Greek both include letters that are visually identical to Latin ones
+        in most fonts, Cyrillic а next to Latin a, Greek Α next to Latin A. They can end
+        up in AI output when a model mixes scripts or when text has passed through a
+        translator, and because nothing looks wrong, the mismatch stays invisible until a
+        search, a form field, or a link quietly fails to match. This cleaner maps the
+        common Cyrillic and Greek lookalikes back to their Latin equivalents. It is off by
+        default on purpose: turning it on for text that is genuinely written in Russian or
+        Greek would do more harm than good.
+      </p>
+      <p className={pClass}>
+        Unicode form normalization and lookalike-character conversion both live under one
+        Advanced Unicode cleanup toggle, since they serve the same audience: anyone
+        pasting text that has passed through a PDF, a translator, or a different input
+        method before it reached them.
       </p>
 
       <h2 className={h2Class}>AI Text Cleaner Options at a Glance</h2>
@@ -115,6 +200,18 @@ export default function SeoContent() {
               <td className={tdClass}>On</td>
             </tr>
             <tr className={trClass}>
+              <td className={tdClass}>HTML tags</td>
+              <td className={tdClass}>Leftover &lt;p&gt;, &lt;div&gt;, &lt;span&gt; markup</td>
+              <td className={tdClass}>&lt;p&gt;Hello&lt;/p&gt; becomes Hello</td>
+              <td className={tdClass}>On</td>
+            </tr>
+            <tr className={trClass}>
+              <td className={tdClass}>HTML entities</td>
+              <td className={tdClass}>Encoded symbols from copied markup</td>
+              <td className={tdClass}>&amp;amp; becomes &amp;, &amp;lt; becomes &lt;</td>
+              <td className={tdClass}>On</td>
+            </tr>
+            <tr className={trClass}>
               <td className={tdClass}>Em dashes</td>
               <td className={tdClass}>Spaced dashes become commas, tight dashes become hyphens</td>
               <td className={tdClass}>fast — and free becomes fast, and free</td>
@@ -133,10 +230,22 @@ export default function SeoContent() {
               <td className={tdClass}>On</td>
             </tr>
             <tr className={trClass}>
+              <td className={tdClass}>Punctuation spacing</td>
+              <td className={tdClass}>Missing or extra spaces around .,;:!?)]&#125;</td>
+              <td className={tdClass}>word . Next becomes word. Next</td>
+              <td className={tdClass}>On</td>
+            </tr>
+            <tr className={trClass}>
               <td className={tdClass}>Extra spaces</td>
               <td className={tdClass}>Double spaces and stacked blank lines</td>
               <td className={tdClass}>Collapses gaps into single spaces and lines</td>
               <td className={tdClass}>On</td>
+            </tr>
+            <tr className={trClass}>
+              <td className={tdClass}>Blank lines</td>
+              <td className={tdClass}>All blank lines, not just extra ones</td>
+              <td className={tdClass}>Removes every empty line between paragraphs</td>
+              <td className={tdClass}>Off</td>
             </tr>
             <tr className={trClass}>
               <td className={tdClass}>Bullet points</td>
@@ -150,9 +259,37 @@ export default function SeoContent() {
               <td className={tdClass}>Done 🚀 ✅ becomes Done</td>
               <td className={tdClass}>Off</td>
             </tr>
+            <tr className={trClass}>
+              <td className={tdClass}>Diacritics</td>
+              <td className={tdClass}>Accented letters, for slugs and filenames</td>
+              <td className={tdClass}>café becomes cafe</td>
+              <td className={tdClass}>Off</td>
+            </tr>
+            <tr className={trClass}>
+              <td className={tdClass}>Duplicate lines</td>
+              <td className={tdClass}>Repeated lines or restated points</td>
+              <td className={tdClass}>Two identical lines collapse into one</td>
+              <td className={tdClass}>Off</td>
+            </tr>
+            <tr className={trClass}>
+              <td className={tdClass}>Unicode forms</td>
+              <td className={tdClass}>Fullwidth and styled character variants</td>
+              <td className={tdClass}>Ｈｅｌｌｏ becomes Hello</td>
+              <td className={tdClass}>Off</td>
+            </tr>
+            <tr className={trClass}>
+              <td className={tdClass}>Lookalike characters</td>
+              <td className={tdClass}>Cyrillic and Greek letters that mimic Latin</td>
+              <td className={tdClass}>Cyrillic а becomes Latin a</td>
+              <td className={tdClass}>Off</td>
+            </tr>
           </tbody>
         </table>
       </div>
+      <p className={pClass}>
+        Unicode forms and lookalike characters share a single Advanced Unicode cleanup
+        switch in the tool, so toggling one toggles the other.
+      </p>
 
       <h2 className={h2Class}>Why AI Text Looks Messy When You Paste It</h2>
       <p className={pClass}>

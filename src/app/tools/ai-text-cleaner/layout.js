@@ -3,7 +3,7 @@ export const metadata = {
   description:
     "Clean AI-generated text in one click. Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT, Claude, or Gemini output. 100% free \u2014 your text never leaves your browser.",
   keywords:
-    "ai text cleaner, chatgpt text cleaner, remove chatgpt formatting, remove markdown from text, clean ai text, ai text cleaner free, remove em dash from chatgpt, remove invisible characters from text, ai to plain text converter, clean up ai generated text, chatgpt formatting remover",
+    "ai text cleaner, chatgpt text cleaner, remove chatgpt formatting, remove markdown from text, clean ai text, ai text cleaner free, remove em dash from chatgpt, remove invisible characters from text, ai to plain text converter, clean up ai generated text, chatgpt formatting remover , eassy cheaner",
   openGraph: {
     title: "Free AI Text Cleaner - Remove ChatGPT Formatting",
     description:

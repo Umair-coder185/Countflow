@@ -43,6 +43,54 @@ export default function LimitsCheatSheet() {
             </tbody>
           </table>
         </div>
+        <div className="mt-10 rounded-3xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+          <div className="px-6 py-8 sm:px-8">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  Professional text tools for clean, accurate writing
+                </h3>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-600 dark:text-slate-400">
+                  After you confirm your character limits, the Syllable Counter helps you refine poems and spoken text,
+                  while the AI Text Cleaner removes hidden formatting, smart punctuation, and AI-generated artifacts.
+                </p>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <Link
+                href="/tools/syllable-counter"
+                className="rounded-3xl border border-slate-200 p-6 text-left transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-500 dark:hover:bg-slate-950"
+              >
+                <p className="text-base font-semibold text-gray-900 dark:text-white">
+                  Syllable Counter
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-slate-400">
+                  Count syllables in words, lines, and poems and validate haiku with live 5-7-5 checks.
+                </p>
+                <p className="mt-4 text-sm font-semibold text-blue-600 dark:text-blue-400">
+                  Try the Syllable Counter →
+                </p>
+              </Link>
+              <Link
+                href="/tools/ai-text-cleaner"
+                className="rounded-3xl border border-slate-200 p-6 text-left transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-500 dark:hover:bg-slate-950"
+              >
+                <p className="text-base font-semibold text-gray-900 dark:text-white">
+                  AI Text Cleaner
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-slate-400">
+                  Strip markdown, smart quotes, invisible characters, and AI formatting noise before finalizing your copy.
+                </p>
+                <p className="mt-3 text-sm text-gray-500 dark:text-slate-400">
+                  Helps reduce AI detection signals across formatted text.
+                </p>
+                <p className="mt-4 text-sm font-semibold text-blue-600 dark:text-blue-400">
+                  Try the AI Text Cleaner →
+                </p>
+              </Link>
+            </div>
+          </div>
+        </div>
         <p className="mt-6 text-center text-sm text-gray-600 dark:text-slate-400">
           Need every limit — X Premium, Quora, Threads, Bluesky, meta
           descriptions? See the full{" "}
