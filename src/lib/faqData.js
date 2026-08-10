@@ -302,6 +302,10 @@ export const aitokenCounterFAQs = [
       "Claude and GPT use different tokenizers. Anthropic built its own tokenizer for Claude, while OpenAI uses tiktoken. The same sentence can tokenize into slightly different numbers of tokens depending on which model's algorithm you use. Our tool shows GPT-exact counts and Claude estimates clearly labeled.",
   },
   {
+    question : "Is this also a token calculator?",
+    answer : "Yes — Countflows AI Token Counter also works as a token calculator. It counts tokens for GPT, Claude, and other LLMs, and calculates estimated API costs based on your token count, so you can use it for both token counting and cost calculation in one tool."
+  },
+  {
     question: "How many tokens is 1,000 words?",
     answer:
       "Approximately 700\u2013800 tokens for standard English text. Code and technical content can be higher. Non-English languages (especially Chinese, Japanese, Arabic) typically produce more tokens per word than English.",

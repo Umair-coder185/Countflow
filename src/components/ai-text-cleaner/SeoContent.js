@@ -14,6 +14,8 @@ const trClass = "border-t border-gray-200 dark:border-gray-700"
 export default function SeoContent() {
   return (
     <section className="max-w-4xl mx-auto px-4 md:px-8 py-8">
+      <h2 className={h2Class}>What is CountFlows AI Text Cleaner?</h2>
+      <p className={pClass}>CountFlows AI Text Cleaner is a free, browser-based tool that removes formatting artifacts from text copied out of ChatGPT, Claude, Gemini, Copilot, and other AI apps. It runs 14 independent, toggleable rules covering markdown, em dashes, invisible Unicode characters, smart quotes, HTML tags, duplicate lines, emojis, and bullets. No AI model is involved — every rule is a fixed pattern match, so cleaning is instant and nothing ever leaves your device.</p>
       <h2 className={h2Class}>How to Clean AI-Generated Text Online</h2>
       <p className={pClass}>You can clean up AI generated text in three simple steps:</p>
       <ol className="list-decimal pl-6 space-y-2 text-gray-600 dark:text-gray-300 mb-4 leading-7">
@@ -23,7 +25,7 @@ export default function SeoContent() {
         </li>
         <li>
           <strong>Toggle the cleaners you need</strong>: markdown symbols, HTML tags and
-          entities, em dashes, invisible characters, smart quotes, punctuation spacing,
+          entities, em dashes, hidden characters, smart quotes, punctuation spacing,
           extra spaces, blank lines, bullets, emojis, diacritics, duplicate lines, Unicode
           forms, or lookalike characters.
         </li>
@@ -36,8 +38,15 @@ export default function SeoContent() {
         There is no upload step and no processing delay. The cleaning happens instantly in
         your browser, whether you paste a two-line caption or a fifty-page report.
       </p>
+      <p className={pClass}>
+        If you are polishing an AI-assisted essay draft before submission, this guide also pairs well with our{" "}
+        <Link href="/blog/manage-essay-word-count" className={linkClass}>
+          Essay Word Count Guide
+        </Link>
+        , which explains how to trim and structure an essay without losing your main argument.
+      </p>
 
-      <h2 className={h2Class}>What This AI Text Cleaner Removes</h2>
+      <h2 className={h2Class}>What Countflows AI Text Cleaner  Removes</h2>
       <p className={pClass}>
         Each cleaner targets one specific artifact that AI chatbots leave behind. Toggle
         them individually, so you only remove what you actually want gone.
@@ -177,7 +186,7 @@ export default function SeoContent() {
         method before it reached them.
       </p>
 
-      <h2 className={h2Class}>AI Text Cleaner Options at a Glance</h2>
+      <h2 className={h2Class}>AI Cleaner Text Options at a Glance</h2>
       <p className={pClass}>
         Here is every cleaner in one place: what it fixes, a quick example, and whether it
         is switched on by default.

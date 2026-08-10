@@ -4,6 +4,8 @@ const blog21=`
 
 <p>The best speed reading application that you can use on a PC is Spreeder ($67 lifetime). It is because it combines a RSVP reader and 24 drills for training and tracking progress. The best free speed reading application is AccelaReader, the best browser extension is SwiftRead, and the best software for offline fast reading is FasterThanSight. First, test your reading speed, then practice for ten minutes a day, and re-test weekly.</p>
 
+<p>If you want a quick way to measure your own pace before trying these apps, use the <a href="/tools/reading-time">Reading Time Calculator</a> to estimate how long a passage takes to read at your current speed.</p>
+
 <h2>Key takeaways</h2>
 <ul>
   <li><strong>Best overall:</strong> Spreeder · <strong>Best free:</strong> AccelaReader · <strong>Best extension:</strong> SwiftRead · <strong>Best offline:</strong> FasterThanSight</li>

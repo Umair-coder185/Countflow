@@ -75,7 +75,7 @@ const blog4=`
 
 <h3>How Many Pages Is 2,000 Words?</h3>
 
-<p>Four pages single-spaced, eight pages double-spaced. At this length, small formatting choices compound: one font change or a margin tweak can move the total by a full page, which is why instructors set word limits instead of page limits. Our guide on <a href="/blog/manage-essay-word-count">managing essay word count</a> covers how to plan and trim at these lengths.</p>
+<p>Four pages single-spaced, eight pages double-spaced. At this length, small formatting choices compound: one font change or a margin tweak can move the total by a full page, which is why instructors set word limits instead of page limits. If you want the exact word count for your draft, use our <a href="/tools/word-counter">Word Counter</a>. If you want to turn that same length into a reading estimate, try the <a href="/tools/reading-time">Reading Time Calculator</a>. Our guide on <a href="/blog/manage-essay-word-count">managing essay word count</a> covers how to plan and trim at these lengths.</p>
 
 <h2>How Many Words Per Page in Microsoft Word?</h2>
 

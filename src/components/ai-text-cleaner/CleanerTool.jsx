@@ -1,6 +1,7 @@
 "use client"
 
 import { useCallback, useState, useRef } from "react"
+import Link from "next/link"
 import {
   Sparkles,
   Trash2,
@@ -25,6 +26,8 @@ import {
   Code2,
   List,
   Settings2,
+  Calculator,
+  Repeat,
 } from "lucide-react"
 
 /* ============================================================
@@ -185,6 +188,19 @@ export function cleanText(input, enabledOptions) {
 }
 
 /* ============================================================
+   Explore-more-tools links — real, live Countflows tool URLs.
+   Pulled straight from countflows.com/tools so slugs stay accurate.
+   ============================================================ */
+const EXPLORE_TOOLS = [
+  { name: "Case Converter", desc: "Fix capitalization after cleaning", href: "/tools/case-converter", icon: Type },
+  { name: "AI Token Counter", desc: "Check token cost before you send", href: "/tools/ai-token-counter", icon: Calculator },
+  { name: "Text Repeater", desc: "Duplicate text instantly", href: "/tools/text-repeater", icon: Repeat },
+]
+
+
+
+
+/* ============================================================
    Component
    ============================================================ */
 
@@ -298,6 +314,13 @@ export default function CleanerTool() {
         </div>
       )}
 
+      {/* ── Hero / AEO+GEO header ──
+          Single H1 for this page. Intro is written as one direct,
+          quotable definition sentence (what it is + what it removes +
+          free/private) so answer engines can lift it verbatim. The
+          feature list below is generated straight from CLEANING_OPTIONS
+          so it can never drift out of sync with what the tool actually does. */}
+     
       {/* ── Main Tool Card ── */}
       <div className="relative mx-auto max-w-6xl rounded-2xl border border-slate-200/60 bg-white/80 shadow-2xl shadow-slate-200/50 backdrop-blur-xl dark:border-slate-700/60 dark:bg-slate-900/80 dark:shadow-black/30 sm:rounded-3xl">
 
@@ -377,9 +400,12 @@ export default function CleanerTool() {
         {/* ── Cleaning Options ── */}
         <div className="border-t border-slate-100 bg-slate-50/50 px-4 py-5 dark:border-slate-700/50 dark:bg-slate-800/30 sm:px-6">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <Settings2 className="h-4 w-4 text-slate-500 dark:text-slate-400" />
-              <span className="text-sm font-bold text-slate-700 dark:text-slate-200">Cleaning Options</span>
+              <div>
+                
+                <span className="text-sm font-bold text-slate-700 dark:text-slate-200">Cleaning Options</span>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-500 shadow-sm dark:bg-slate-700 dark:text-slate-300">{activeCount}/{TOTAL_OPTIONS} active</span>
@@ -439,6 +465,36 @@ export default function CleanerTool() {
             <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
+
+        {/* ── Explore More Tools ──
+            Light, near-invisible borders on purpose (border-slate-100 /
+            dark:border-slate-800) so these read as a quiet footer
+            strip, not a competing card. Padding is explicit at every
+            breakpoint so it never collapses on mobile. */}
+        <div className="border-t border-slate-100/70 px-4 py-5 dark:border-slate-800/40 sm:px-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Explore more tools</p>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {EXPLORE_TOOLS.map((tool) => {
+              const Icon = tool.icon
+              return (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="group flex items-center gap-3 rounded-xl border border-slate-100 bg-white/60 p-3.5 transition-all hover:border-cyan-200 hover:bg-white hover:shadow-sm dark:border-slate-800/60 dark:bg-slate-900/40 dark:hover:border-cyan-500/20 sm:p-4"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-400 transition-colors group-hover:bg-cyan-50 group-hover:text-cyan-600 dark:bg-slate-800 dark:text-slate-500 dark:group-hover:bg-cyan-500/10 dark:group-hover:text-cyan-400">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-200">{tool.name}</h4>
+                    <p className="truncate text-xs text-slate-400 dark:text-slate-500">{tool.desc}</p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-cyan-500 dark:text-slate-600" />
+                </Link>
+              )
+            })}
+          </div>
+        </div>
       </div>
 
       {/* ── Feature Cards ── */}
@@ -461,6 +517,12 @@ export default function CleanerTool() {
           )
         })}
       </div>
+
+
+      
+
+
+      
     </div>
   )
 }

@@ -157,6 +157,23 @@ export const posts = [
     "3000 words in pages",
     "how to reduce word count in an essay",
   ],
+  relatedTools: [
+    {
+      name: "Word Counter",
+      href: "/tools/word-counter",
+      description: "Track your draft against the essay limit as you write.",
+    },
+    {
+      name: "Sentence Counter",
+      href: "/tools/sentence-counter",
+      description: "Trim long paragraphs and tighten weak sentences when you are over the limit.",
+    },
+    {
+      name: "AI Text Cleaner",
+      href: "/tools/ai-text-cleaner",
+      description: "Polish AI-assisted drafts before finalizing your essay.",
+    },
+  ],
   content: howToManageEssayWordCount,
   faqs: [
     {
@@ -561,6 +578,13 @@ export const posts = [
 
 
     ],
+    relatedTools: [
+      {
+        name: "Reading Time Calculator",
+        href: "/tools/reading-time",
+        description: "Estimate how long The Great Gatsby takes to read at your own pace.",
+      },
+    ],
     content: blog12,
     faqs: [
       {
@@ -801,7 +825,7 @@ export const posts = [
   id: 17,
   slug: "how-long-does-it-take-to-read-10000-words",
   title: "How Long Does It Take to Read 10,000 Words? (Full Guide)",
-  description: "Get accurate reading time estimates for 10,000 words across different speeds, styles, and formats — including silent reading, skimming, studying, and audiobooks.",
+  description: "Get accurate reading time estimates for 10,000 words across silent reading,studying, and audiobook speeds, based on real WPM averages.",
   excerpt: "Studying 10,000 words takes anywhere from 33 to 50 minutes for most adults, depending on pace. This guide breaks down reading times by speed, comprehension, genre, and mode of engagement.",
   category: "Reading & Writing",
   image: "/blogs/how long it take to read 10,000 words.png",
@@ -843,8 +867,8 @@ export const posts = [
 {
   id: 18,
   slug: "average-reading-speed",
-  title: "Average Reading Speed: What's Normal & How to Test Yours",
-  description: "Discover the real average reading speed, why sources disagree, how speed connects to comprehension, and how to test your own pace in under a minute.",
+  title: "Average Reading Speed (WPM): What's Normal & How to Test Yours",
+  description: "Find out how fast you read compared to the average of 238 WPM. Explore the speed-comprehension link, then take a fun 60-second reading test.",
   excerpt: "Adults typically read silently at 238 WPM with non-fiction and around 260 WPM with fiction. Out-loud reading drops to about 183 WPM. Anywhere from 175 to 300 WPM counts as normal.",
   category: "Reading & Writing",
   image: "/blogs/average reading speed.png",
@@ -857,6 +881,13 @@ export const posts = [
     "reading comprehension vs speed",
     "pages per hour reading",
     "literacy rate and reading speed"
+  ],
+  relatedTools: [
+    {
+      name: "Reading Time Calculator",
+      href: "/tools/reading-time",
+      description: "Measure your own reading pace and estimate how long a passage takes to finish.",
+    },
   ],
   content: readingspeed,
   faqs: [
@@ -1029,6 +1060,13 @@ export const posts = [
     "speed reading app",
     "RSVP reader",
     "increase reading speed online"
+  ],
+  relatedTools: [
+    {
+      name: "Reading Time Calculator",
+      href: "/tools/reading-time",
+      description: "Measure how long your reading or speaking draft takes at your own pace.",
+    },
   ],
   content: blog21,
   "faqs": [
@@ -1331,9 +1369,9 @@ export const posts = [
 {
   id: 27,
   slug: "camelcase-pascalcase-snake-case-explained",
-  title: "CamelCase, PascalCase & Snake_Case Explained",
+  title: "camelCase, PascalCase, snake_case & kebab-case Explained",
   description:
-    "Learn  free what  is camelCase, PascalCase, snake_case, and kebab-case , see real code examples, and discover which naming convention is best for your programming language or project.",
+    "Learn the difference between camelCase, PascalCase, snake_case, and kebab-case, with real code examples and when to use each naming convention.",
   excerpt:
     "Understand the differences between camelCase, PascalCase, snake_case, and kebab-case with practical examples from JavaScript, Python, TypeScript, HTML, and CSS.",
   image: "/blogs/snake_case-vs-camelCase.webp",

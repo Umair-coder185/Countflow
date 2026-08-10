@@ -3,7 +3,7 @@ const readingspeed =`
 
 <article>
  
-  <p>You see "250 words per minute" on one site and "300 WPM" on another, then a third claims the average is 200. None of them explain why the numbers don't match, so you're left with no real way to know if your reading speed is actually fine. This guide breaks down the real average reading speed, why sources disagree on the exact figure, how speed connects to reading comprehension, and how to find your own number in under a minute.</p>
+  <p>You see "250 words per minute" on one site and "300 WPM" on another, then a third claims the average is 200. None of them explain why the numbers don't match, so you're left with no real way to know if your reading speed is actually fine. This guide breaks down the real average reading speed, why sources disagree on the exact figure, how speed connects to reading comprehension, and how to find your own number in under a minute. For a quick personal estimate, try our <a href="/tools/reading-time" style="color:blue">Reading Time Calculator</a>.</p>
 
   <aside>
     ⚡ Quick Answer: Adults typically read silently at 238 words per minute with non-fiction material and around 260 WPM with fiction — figures drawn from Marc Brysbaert's Ghent University review of 190 separate studies covering 18,573 readers. Out-loud reading drops to about 183 WPM. Anywhere from 175 to 300 WPM counts as normal.

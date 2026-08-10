@@ -10,6 +10,8 @@ import {
   DollarSign,
   Wallet,
   AlertTriangle,
+  ShieldCheck,
+  ArrowDownUp,
 } from "lucide-react";
 import { MODELS } from "@/lib/modelPricing";
 
@@ -154,6 +156,30 @@ export default function TokenCounterTool() {
     return { totalTokens, cost, usagePercent, remainingTokens, exceedsWindow };
   }, [tokenCount, responsePreset, selectedModel]);
 
+  // Cost across every priced model for the current token count + expected
+  // response length, sorted cheapest to most expensive. Pure arithmetic on the
+  // already-computed tokenCount; no extra tokenization work.
+  const modelComparison = useMemo(() => {
+    const outputTokens = responsePreset.outputTokens;
+    return MODELS.filter((m) => m.hasFixedPricing)
+      .map((m) => {
+        const rates = getRates(m, tokenCount);
+        const inputCost = (tokenCount / 1_000_000) * rates.inputRate;
+        const outputCost = (outputTokens / 1_000_000) * rates.outputRate;
+        return {
+          id: m.id,
+          label: m.label,
+          totalCost: inputCost + outputCost,
+          isLongContext: rates.isLongContext,
+        };
+      })
+      .sort((a, b) => a.totalCost - b.totalCost);
+  }, [tokenCount, responsePreset]);
+
+  const cheapestModel = modelComparison[0] ?? null;
+  const priciestModel =
+    modelComparison.length > 0 ? modelComparison[modelComparison.length - 1] : null;
+
   const budgetModel = MODELS.find((m) => m.id === budgetModelId) ?? MODELS[0];
 
   const budgetPlan = useMemo(() => {
@@ -283,211 +309,280 @@ export default function TokenCounterTool() {
         )}
       </div>
 
-      {/* Token chip visualization */}
-      {text && (
-        <div className="mt-8">
-          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-3">Token breakdown</h3>
-          <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 max-h-64 overflow-y-auto">
-            <div className="flex flex-wrap gap-1">
-              {tokenChips.map((chip, i) => (
-                <span
-                  key={i}
-                  className={`inline-block px-1.5 py-0.5 rounded text-xs font-mono whitespace-pre ${chip.color}`}
-                >
-                  {chip.piece === "\n" ? "↵" : chip.piece}
-                </span>
-              ))}
-            </div>
-            <p className="text-xs text-gray-400 mt-3">
-              {pieces.length > 500
-                ? `Showing first 500 of ${pieces.length.toLocaleString()} approximate pieces.`
-                : "Approximate token breakdown — actual tokenization may split words differently."}
-            </p>
-          </div>
-        </div>
-      )}
+      {/* Trust line — directly under the textarea so it's seen immediately */}
+      <p className="mt-4 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+        <ShieldCheck className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
+        Your text stays in this browser — nothing is uploaded or stored.
+      </p>
 
-      {/* Cost estimate, context window usage, and budget planner —
-          always visible as soon as there's text/token estimate, no click needed */}
-      {text && (
-        <div className="mt-6 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-800">
-            <DollarSign className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-            <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
-              Cost estimate &amp; context window usage
-            </span>
-          </div>
-
-          <div className="p-4 space-y-5">
-            {/* Expected response length */}
-            <div>
-              <label
-                htmlFor="response-length"
-                className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1"
-              >
-                Expected response length (optional — for cost &amp; context estimate)
-              </label>
-              <div className="relative w-full sm:w-80">
-                <select
-                  id="response-length"
-                  value={responseLengthId}
-                  onChange={(e) => setResponseLengthId(e.target.value)}
-                  className="w-full appearance-none pl-3 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer"
-                >
-                  {RESPONSE_LENGTH_PRESETS.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.label}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+      {/* Token chip visualization — always rendered, empty-state message
+          when there's nothing to break down yet */}
+      <div className="mt-8">
+        <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-3">Token breakdown</h3>
+        <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 max-h-64 overflow-y-auto">
+          {tokenChips.length > 0 ? (
+            <>
+              <div className="flex flex-wrap gap-1">
+                {tokenChips.map((chip, i) => (
+                  <span
+                    key={i}
+                    className={`inline-block px-1.5 py-0.5 rounded text-xs font-mono whitespace-pre ${chip.color}`}
+                  >
+                    {chip.piece === "\n" ? "↵" : chip.piece}
+                  </span>
+                ))}
               </div>
-            </div>
-
-            {/* Cost estimate */}
-            <div className="rounded-lg bg-gray-50 dark:bg-gray-800 p-3">
-              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
-                Estimated cost — {selectedModel.label}
+              <p className="text-xs text-gray-400 mt-3">
+                {pieces.length > 500
+                  ? `Showing first 500 of ${pieces.length.toLocaleString()} approximate pieces.`
+                  : "Approximate token breakdown — actual tokenization may split words differently."}
               </p>
-              {insights.cost ? (
-                <>
-                  <p className="text-xl font-bold text-cyan-600 dark:text-cyan-400">
-                    {formatCost(insights.cost.totalCost)}
-                  </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    {formatCost(insights.cost.inputCost)} input
-                    {responseLengthId !== "none" && ` + ${formatCost(insights.cost.outputCost)} output`}
-                    {insights.cost.isLongContext && " · long-context rate applied"}
-                  </p>
-                </>
-              ) : (
-                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedModel.pricingNote}</p>
-              )}
-            </div>
-
-            {/* Context window usage */}
-            <div>
-              <div className="flex items-center justify-between text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
-                <span>Context window usage</span>
-                <span>{selectedModel.contextWindowTokens.toLocaleString()} tokens max</span>
-              </div>
-              <div className="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <div
-                  className={`h-full ${usageBarColor} transition-all`}
-                  style={{ width: `${Math.min(insights.usagePercent, 100)}%` }}
-                />
-              </div>
-              {insights.exceedsWindow ? (
-                <p className="mt-1.5 flex items-center gap-1 text-xs font-medium text-rose-600 dark:text-rose-400">
-                  <AlertTriangle className="h-3.5 w-3.5" />
-                  Exceeds {selectedModel.label}&apos;s context window by{" "}
-                  {Math.abs(insights.remainingTokens).toLocaleString()} tokens
-                </p>
-              ) : (
-                <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
-                  {insights.usagePercent.toFixed(1)}% used · {insights.remainingTokens.toLocaleString()} tokens
-                  remaining
-                </p>
-              )}
-            </div>
-
-            <p className="text-xs text-gray-400 dark:text-gray-500 border-t border-gray-200 dark:border-gray-700 pt-3">
-              Cost and context window estimates are calculated entirely in your browser from the token count
-              above — nothing is sent anywhere.
+            </>
+          ) : (
+            <p className="text-sm text-gray-400 dark:text-gray-500 text-center py-6">
+              Start typing or paste text above to see the token breakdown.
             </p>
+          )}
+        </div>
+      </div>
 
-            {/* Token Budget Planner — always visible alongside cost/context, no click needed */}
+      {/* Cost estimate, context window usage, model comparison, and budget planner —
+          always visible, no text required */}
+      <div className="mt-6 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-800">
+          <DollarSign className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+          <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+            Cost estimate &amp; context window usage
+          </span>
+        </div>
+
+        <div className="p-4 space-y-5">
+          {/* Expected response length */}
+          <div>
+            <label
+              htmlFor="response-length"
+              className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1"
+            >
+              Expected response length (optional — for cost &amp; context estimate)
+            </label>
+            <div className="relative w-full sm:w-80">
+              <select
+                id="response-length"
+                value={responseLengthId}
+                onChange={(e) => setResponseLengthId(e.target.value)}
+                className="w-full appearance-none pl-3 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer"
+              >
+                {RESPONSE_LENGTH_PRESETS.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {p.label}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+            </div>
+          </div>
+
+          {/* Cost estimate */}
+          <div className="rounded-lg bg-gray-50 dark:bg-gray-800 p-3">
+            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
+              Estimated cost — {selectedModel.label}
+            </p>
+            {insights.cost ? (
+              <>
+                <p className="text-xl font-bold text-cyan-600 dark:text-cyan-400">
+                  {formatCost(insights.cost.totalCost)}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  {formatCost(insights.cost.inputCost)} input
+                  {responseLengthId !== "none" && ` + ${formatCost(insights.cost.outputCost)} output`}
+                  {insights.cost.isLongContext && " · long-context rate applied"}
+                </p>
+              </>
+            ) : (
+              <p className="text-sm text-gray-600 dark:text-gray-300">{selectedModel.pricingNote}</p>
+            )}
+          </div>
+
+          {/* Cost comparison across every priced model, cheapest first */}
+          {modelComparison.length > 1 && (
             <div className="rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
               <div className="flex items-center gap-2 px-3 py-2.5 bg-gray-50 dark:bg-gray-800">
-                <Wallet className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+                <ArrowDownUp className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
                 <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
-                  Token budget planner
+                  Compare cost across models
                 </span>
               </div>
 
               <div className="p-3 space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label htmlFor="budget-model" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Model
-                    </label>
-                    <div className="relative">
-                      <select
-                        id="budget-model"
-                        value={budgetModelId}
-                        onChange={(e) => setBudgetModelId(e.target.value)}
-                        className="w-full appearance-none pl-3 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer"
-                      >
-                        {MODELS.map((m) => (
-                          <option key={m.id} value={m.id}>
-                            {m.label}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-                    </div>
+                  <div className="rounded-lg bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 p-3">
+                    <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                      Lowest estimated cost
+                    </p>
+                    <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 mt-1">
+                      {cheapestModel.label}
+                    </p>
+                    <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
+                      {formatCost(cheapestModel.totalCost)}
+                    </p>
                   </div>
-                  <div>
-                    <label htmlFor="monthly-budget" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Monthly budget (USD)
-                    </label>
-                    <input
-                      id="monthly-budget"
-                      type="number"
-                      min="0"
-                      step="1"
-                      value={monthlyBudget}
-                      onChange={(e) => setMonthlyBudget(Math.max(0, Number(e.target.value) || 0))}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="avg-input" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Avg. input tokens / request
-                    </label>
-                    <input
-                      id="avg-input"
-                      type="number"
-                      min="0"
-                      step="10"
-                      value={avgInputTokens}
-                      onChange={(e) => setAvgInputTokens(Math.max(0, Number(e.target.value) || 0))}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="avg-output" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Avg. output tokens / request
-                    </label>
-                    <input
-                      id="avg-output"
-                      type="number"
-                      min="0"
-                      step="10"
-                      value={avgOutputTokens}
-                      onChange={(e) => setAvgOutputTokens(Math.max(0, Number(e.target.value) || 0))}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                    />
+                  <div className="rounded-lg bg-rose-50 dark:bg-rose-900/20 border border-rose-100 dark:border-rose-800 p-3">
+                    <p className="text-xs font-medium text-rose-700 dark:text-rose-400">
+                      Highest estimated cost
+                    </p>
+                    <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 mt-1">
+                      {priciestModel.label}
+                    </p>
+                    <p className="text-lg font-bold text-rose-600 dark:text-rose-400">
+                      {formatCost(priciestModel.totalCost)}
+                    </p>
                   </div>
                 </div>
 
-                <p className="text-sm text-gray-700 dark:text-gray-200 bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-100 dark:border-cyan-800 rounded-lg px-3 py-2.5">
-                  {budgetPlan ? (
-                    <>
-                      At this rate, your budget covers approximately{" "}
-                      <strong>{budgetPlan.requestsPerMonth.toLocaleString()} requests/month</strong> on{" "}
-                      {budgetModel.label} ({formatCost(budgetPlan.costPerRequest)} per request).
-                    </>
-                  ) : (
-                    budgetModel.pricingNote ||
-                    "Enter a budget and average token counts to see how many requests it covers."
-                  )}
-                </p>
+                <ul className="divide-y divide-gray-100 dark:divide-gray-700">
+                  {modelComparison.map((m) => (
+                    <li
+                      key={m.id}
+                      className="flex items-center justify-between py-1.5 text-sm"
+                    >
+                      <span className="text-gray-600 dark:text-gray-300">
+                        {m.label}
+                        {m.isLongContext && (
+                          <span className="ml-1.5 text-xs text-gray-400">(long-context rate)</span>
+                        )}
+                      </span>
+                      <span className="font-medium text-gray-800 dark:text-gray-100">
+                        {formatCost(m.totalCost)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
+            </div>
+          )}
+
+          {/* Context window usage */}
+          <div>
+            <div className="flex items-center justify-between text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+              <span>Context window usage</span>
+              <span>{selectedModel.contextWindowTokens.toLocaleString()} tokens max</span>
+            </div>
+            <div className="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+              <div
+                className={`h-full ${usageBarColor} transition-all`}
+                style={{ width: `${Math.min(insights.usagePercent, 100)}%` }}
+              />
+            </div>
+            {insights.exceedsWindow ? (
+              <p className="mt-1.5 flex items-center gap-1 text-xs font-medium text-rose-600 dark:text-rose-400">
+                <AlertTriangle className="h-3.5 w-3.5" />
+                Exceeds {selectedModel.label}&apos;s context window by{" "}
+                {Math.abs(insights.remainingTokens).toLocaleString()} tokens
+              </p>
+            ) : (
+              <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+                {insights.usagePercent.toFixed(1)}% used · {insights.remainingTokens.toLocaleString()} tokens
+                remaining
+              </p>
+            )}
+          </div>
+
+          <p className="text-xs text-gray-400 dark:text-gray-500 border-t border-gray-200 dark:border-gray-700 pt-3">
+            Cost and context window estimates are calculated entirely in your browser from the token count
+            above — nothing is sent anywhere.
+          </p>
+
+          {/* Token Budget Planner — always visible alongside cost/context */}
+          <div className="rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <div className="flex items-center gap-2 px-3 py-2.5 bg-gray-50 dark:bg-gray-800">
+              <Wallet className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+              <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+                Token budget planner
+              </span>
+            </div>
+
+            <div className="p-3 space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label htmlFor="budget-model" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                    Model
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="budget-model"
+                      value={budgetModelId}
+                      onChange={(e) => setBudgetModelId(e.target.value)}
+                      className="w-full appearance-none pl-3 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer"
+                    >
+                      {MODELS.map((m) => (
+                        <option key={m.id} value={m.id}>
+                          {m.label}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="monthly-budget" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                    Monthly budget (USD)
+                  </label>
+                  <input
+                    id="monthly-budget"
+                    type="number"
+                    min="0"
+                    step="1"
+                    value={monthlyBudget}
+                    onChange={(e) => setMonthlyBudget(Math.max(0, Number(e.target.value) || 0))}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="avg-input" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                    Avg. input tokens / request
+                  </label>
+                  <input
+                    id="avg-input"
+                    type="number"
+                    min="0"
+                    step="10"
+                    value={avgInputTokens}
+                    onChange={(e) => setAvgInputTokens(Math.max(0, Number(e.target.value) || 0))}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="avg-output" className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                    Avg. output tokens / request
+                  </label>
+                  <input
+                    id="avg-output"
+                    type="number"
+                    min="0"
+                    step="10"
+                    value={avgOutputTokens}
+                    onChange={(e) => setAvgOutputTokens(Math.max(0, Number(e.target.value) || 0))}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  />
+                </div>
+              </div>
+
+              <p className="text-sm text-gray-700 dark:text-gray-200 bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-100 dark:border-cyan-800 rounded-lg px-3 py-2.5">
+                {budgetPlan ? (
+                  <>
+                    At this rate, your budget covers approximately{" "}
+                    <strong>{budgetPlan.requestsPerMonth.toLocaleString()} requests/month</strong> on{" "}
+                    {budgetModel.label} ({formatCost(budgetPlan.costPerRequest)} per request).
+                  </>
+                ) : (
+                  budgetModel.pricingNote ||
+                  "Enter a budget and average token counts to see how many requests it covers."
+                )}
+              </p>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

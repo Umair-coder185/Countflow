@@ -73,7 +73,7 @@ Check your text with <Link href="/tools/sentence-counter" className="text-blue-5
         <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
             Book & Article Time Estimation</h3>
         <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">You can estimate reading time for books or articles easily using the tool. Simply enter the word count, and it calculates how long it will take to read.Also, adjusting your reading speed gives more accurate results, helping you plan study or leisure reading efficiently.
-Use <Link href="/tools/word-counter" className="text-blue-500 hover:underline">Word Counter</Link>to check the word count of your article or book for accurate reading time.</p>
+Use <Link href="/tools/word-counter" className="text-blue-500 hover:underline">Word Counter</Link> to check the word count of your article or book for accurate reading time. If you want the page-count context behind a 2,000-word document, see our <Link href="/blog/how-many-pages-is-2000-words" className="text-blue-500 hover:underline">How Many Pages Is 2,000 Words?</Link> guide.</p>
 
         <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
             Speaking Time Estimation </h3>

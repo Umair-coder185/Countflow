@@ -66,7 +66,7 @@ const faqSchema = {
 }
 
 const FEATURES = [
-  { title: "7 cleaners, your rules", description: "Markdown, em dashes, invisible characters, smart quotes, whitespace, bullets, and emojis \u2014 toggle each one on or off." },
+  { title: "14 cleaners, your rules", description: "Markdown, em dashes, invisible characters, smart quotes, whitespace, bullets, and emojis \u2014 toggle each one on or off." },
   { title: "Instant and unlimited", description: "Clean a caption or a 50-page report. No word limit, no sign-up, no waiting." },
   { title: "100% private", description: "All cleaning happens in your browser. Your text is never uploaded, logged, or stored." },
 ]
@@ -114,13 +114,13 @@ export default function AiTextCleanerPage() {
   </h1>
 
   <p className="mx-auto mt-3 max-w-2xl text-lg font-semibold text-slate-600 dark:text-slate-300 sm:text-xl md:text-2xl">
-    Remove ChatGPT Formatting, Markdown & Hidden Characters
+    Remove ChatGPT Formatting, Markdown & Invisible Characters
   </p>
 
   <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-slate-500 dark:text-slate-400 sm:text-lg">
     Paste text from ChatGPT, Claude, or Gemini and clean it in one click. This free
     AI text cleaner removes markdown symbols like ** and ##, replaces em dashes,
-    strips invisible characters, and straightens smart quotes so your text pastes
+    strips hidden characters, and straightens smart quotes so your text pastes
     as clean, plain writing anywhere.
   </p>
 

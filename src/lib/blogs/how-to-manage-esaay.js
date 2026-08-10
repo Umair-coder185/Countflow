@@ -4,6 +4,8 @@ const howToManageEssayWordCount =`
 
 <p>A sharp 1,500-word essay beats a padded 1,800-word one in front of any marker. The fix is a word budget you set before you type, and a running check with a free <a href="/tools/word-counter">Word Counter</a> while you draft.</p>
 
+<p>If you're working against a strict limit, use the <a href="/tools/word-counter">online Word Counter</a> to track progress, the <a href="/tools/sentence-counter">Sentence Counter</a> to tighten overlong paragraphs, and the <a href="/tools/ai-text-cleaner">AI Text Cleaner</a> to polish AI-assisted drafts before you submit.</p>
+
 <p>This guide covers how long each type of essay should be, what actually counts toward the limit, and exactly what to cut or add when your draft misses the target.</p>
 
 <h2>How Long Is an Essay? Word Counts by Level</h2>

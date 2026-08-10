@@ -96,7 +96,7 @@ export default function AiTokenCounterPage() {
         <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mt-4">
           AI Token <span className="text-cyan-500">Counter</span>
           <span className="block mt-3 text-lg md:text-2xl font-semibold text-gray-700 dark:text-gray-300">
-            Free. Count tokens, estimate cost, and check context window usage for GPT-5.6, Claude, and Gemini instantly.
+            Free Count tokens, estimate cost, check context window and token budget planner usage for GPT-5.6, Claude, and Gemini instantly.
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">

@@ -27,6 +27,11 @@ export default function SEOContent() {
         <Link href="/blog/how-many-pages-is-2000-words" className={linkClass}>
           How Many Pages Is 2,000 Words?
         </Link>
+        . If you are also wondering how long that amount of text takes to read, the{" "}
+        <Link href="/tools/reading-time" className={linkClass}>
+          Reading Time Calculator
+        </Link>
+        {" "}is the natural next step.
       </p>
 
       <h2 className={h2Class}>How Many Words Should Your Writing Be?</h2>
@@ -37,7 +42,7 @@ export default function SEOContent() {
           <Link href="/blog/manage-essay-word-count" className={linkClass}>
             Essay Word Count Guide
           </Link>
-          .
+          . If you are trimming an essay to a strict limit, this guide also explains what counts toward the total and how to cut words without losing your argument.
         </li>
         <li>
           <strong>Blog posts:</strong> 1,000–2,000 words; in-depth guides often run longer — see{" "}

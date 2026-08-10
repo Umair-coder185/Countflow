@@ -100,6 +100,26 @@ export default function BlogContent({ post }) {
           </div>
         </div>
 
+        {post.relatedTools?.length > 0 && (
+          <div className="mb-10 rounded-xl border border-cyan-200 bg-cyan-50/80 p-4 sm:p-6 dark:border-cyan-900/60 dark:bg-cyan-950/40">
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300 mb-3">
+              Helpful tools for this guide
+            </p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {post.relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="rounded-lg border border-cyan-200 bg-white p-4 text-left shadow-sm transition hover:border-cyan-400 hover:shadow-md dark:border-cyan-800 dark:bg-gray-900"
+                >
+                  <p className="font-semibold text-gray-900 dark:text-white">{tool.name}</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Main Content */}
         <motion.div
           initial={false}
