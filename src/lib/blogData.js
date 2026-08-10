@@ -28,6 +28,7 @@ import snake_case from "./blogs/snake_case";
 import aiproblems from "./blogs/ai-problems";
 import emdashes from "./blogs/em-deshes";
 import syllableCounter from "./blogs/syllable-counter";
+import cleanSiteAlternative from "./blogs/cleansitealternative";
 
 
 
@@ -1606,22 +1607,56 @@ export const posts = [
       question: "Is there an AI syllable counter that actually works?",
       answer:
         "Not one built on a language model — that would inherit the exact blind spot this whole article is about. What actually works runs the other way around: a pronunciation dictionary plus a vowel-sound algorithm, counting sounds directly instead of predicting them from text patterns. Call it a syllable counter, not a chatbot, and it holds up either way."
+    },
+  ]
+},
+  {
+  id: 31,
+  slug:"cleanpaste-site-alternatives",
+  title: "5 Best CleanPaste.site Alternatives in 2026 (Free & Safe)",
+  description: "Explore 5 secure alternatives to CleanPaste.site that help you remove AI watermarks and invisible characters.Enjoy free access with no signup!",
+  excerpt: "CleanPaste.site has trust issues flagged by security scanners. Use one of these 5 safe, browser-based alternatives to remove AI watermarks and invisible characters — all free, no signup required.",
+  category: "Reading & Writing",
+  image:"/blogs/cleansitealternatives.png", 
+  author: "Umair Tufail",
+  date: "2026-08-10",
+  readTime: "7 min read",
+  keywords: [
+    "cleanpaste.site alternative",
+    
+    "remove AI watermarks",
+    "invisible character remover",
+    "text cleaner browser based",
+    "AI text cleaner free"
+  ],
+  content:cleanSiteAlternative ,
+  faqs: [
+    {
+      question: "What is a cleanpaste.site alternative?",
+      answer: "A cleanpaste.site alternative is any browser-based tool that removes invisible characters, AI formatting artifacts, and hidden Unicode from text — performing the same function without the security concerns flagged by multiple independent scanners."
+    },
+    {
+      question: "Why do security scanners flag CleanPaste.site?",
+      answer: "Three independent scanners — Scam Detector, Gridinsoft, and ScamAdviser — rate CleanPaste.site with low to extremely low trust scores, citing blacklist detections and risk signals. The exact technical cause isn't publicly detailed, but the consistency across separate scanners is the concern."
+    },
+    {
+      question: "Is the AI Text Cleaner on countflows.com free?",
+      answer: "Yes — completely free, no account required, no usage limits. It runs entirely in your browser with no server uploads."
+    },
+    {
+      question: "What are invisible characters and why do they matter?",
+      answer: "Invisible characters are non-printable Unicode sequences — zero-width spaces, soft hyphens, zero-width non-joiners — that hide inside copied text. They cause formatting failures in CMS platforms, trigger AI detection tools, and sometimes carry AI watermark information."
+    },
+    {
+      question: "Can a clean paste site remove ChatGPT watermarks?",
+      answer: "Yes. countflows text cleaner tool specifically target Unicode-based watermarking patterns embedded in AI-generated text and strip them during the cleaning process."
+    },
+    {
+      question: "Which cleanpaste.site alternative is best for sensitive content?",
+      answer: "The AI Text Cleaner at countflows.com — it processes everything locally in your browser, so your text never leaves your device.",
     }
   ]
 }
-
-
-
-
-  
- 
-
-
-  ];
-
-
-
-
-
+];
 
 export const blogs = posts;

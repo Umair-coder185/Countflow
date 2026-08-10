@@ -126,6 +126,20 @@ const CATEGORIES = [
       },
     ],
   },
+  {
+    name:"Text Generators",
+    blurb:"Generate text for social media, SMS, and more.",
+    tools:[
+      { 
+        name:"Text Repeater",
+        slug:"/tools/text-repeater",
+        icon:ListOrdered,
+        desc:"Repeat a word, phrase, or sentence any number of times, with or without a separator.",
+        best:"Social media, SMS, and copywriting"
+      },
+      
+    ]
+  }
 ];
 
 const COMING_NEXT = [ "Small Text Generator", "SMS Segment Counter"];
