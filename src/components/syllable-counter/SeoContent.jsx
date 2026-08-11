@@ -60,17 +60,26 @@ export default function SeoContent() {
         your browser, whether you paste one word or an entire chapter.
       </p>
 
-      <div className="rounded-2xl border border-cyan-200 bg-cyan-50/80 p-4 sm:p-5 dark:border-cyan-800 dark:bg-cyan-950/40 mb-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700 dark:text-cyan-300 mb-2">
-          Related article
-        </p>
-        <p className={pClass + " mb-0"}>
-          Want the deeper explanation behind why AI chatbots get haiku and lyric counts wrong? Read{" "}
-          <Link href="/blog/why-ai-chatbots-cant-count-syllables" className={linkClass}>
-            Why AI Chatbots Can&apos;t Count Syllables (And How to Fix Their Haikus and Lyrics)
+      <div className="relative mb-6 overflow-hidden rounded-3xl border border-amber-300 bg-gradient-to-br from-amber-50 via-orange-50 to-cyan-50 p-5 shadow-lg shadow-amber-200/70 dark:border-amber-700 dark:from-amber-950/60 dark:via-orange-950/40 dark:to-cyan-950/40 dark:shadow-none sm:p-6">
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-cyan-400/20 to-transparent" />
+        <div className="relative">
+          <p className="mb-3 inline-flex rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-amber-700 dark:bg-slate-900/60 dark:text-amber-300">
+            Today&apos;s article
+          </p>
+          <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-gray-100">
+            Syllable Division Rules: Split Words Like a Pro
+          </h3>
+          <p className={`${pClass} mb-4`}>
+            Learn the quick rules for VC/CV, V/CV, VC/V, vowel pairs, prefixes, suffixes, and
+            consonant + le endings with a simple chart and clear examples.
+          </p>
+          <Link
+            href="/blog/syllable-division-rules"
+            className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-cyan-600 dark:hover:bg-cyan-500"
+          >
+            Read the article →
           </Link>
-          {" "}to see how tokenization and sound patterns create the mismatch.
-        </p>
+        </div>
       </div>
 
       <h2 className={h2Class}>Three Ways to Count Syllables by Hand</h2>
@@ -94,6 +103,22 @@ export default function SeoContent() {
           as one syllable.
         </li>
       </ol>
+
+      <div className="mb-6 rounded-2xl border border-cyan-200 bg-white/80 p-4 shadow-sm dark:border-cyan-800 dark:bg-slate-900/50 sm:p-5">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700 dark:text-cyan-300">
+          Helpful guide
+        </p>
+        <p className="mb-3 text-gray-700 dark:text-gray-300">
+          If you are curious why AI tools sometimes miscount syllables in poems, lyrics, and
+          haikus, this article explains the reason clearly.
+        </p>
+        <Link
+          href="/blog/why-ai-chatbots-cant-count-syllables"
+          className="inline-flex items-center font-semibold text-cyan-700 transition hover:underline dark:text-cyan-300"
+        >
+          Read why AI chatbots struggle with syllables →
+        </Link>
+      </div>
 
       <h2 className={h2Class}>How the Syllable Counter Works</h2>
       <p className={pClass}>

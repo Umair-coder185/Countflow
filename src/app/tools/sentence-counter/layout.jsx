@@ -4,7 +4,7 @@ import { sentenceCounterToolSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "Free Sentence Counter - Analyze Sentence Structure & Readability",
-  description: "Count sentences and analyze readability with Countflow's free sentence counter. Get insights into sentence length, complexity, and writing quality. Perfect for writers, students, and content creators.",
+  description: "Use our free sentence counter to check your writing! Get insights on sentence length and quality. It's great for students, writers, and content creators!",
   keywords: "sentence counter, sentence analyzer, count sentences, sentence length analyzer, readability checker, writing quality analyzer, sentence structure tool",
   openGraph: {
     title: "Free Sentence Counter - Analyze Sentence Structure",

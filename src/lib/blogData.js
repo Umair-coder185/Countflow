@@ -29,8 +29,7 @@ import aiproblems from "./blogs/ai-problems";
 import emdashes from "./blogs/em-deshes";
 import syllableCounter from "./blogs/syllable-counter";
 import cleanSiteAlternative from "./blogs/cleansitealternative";
-
-
+import syllableCounters from "./blogs/syllable-counters";
 
 export const posts = [
   {
@@ -1656,7 +1655,58 @@ export const posts = [
       answer: "The AI Text Cleaner at countflows.com — it processes everything locally in your browser, so your text never leaves your device.",
     }
   ]
-}
+},
+
+
+
+{
+    id: 32,
+    slug: "syllable-division-rules",
+    title: "Syllable Division Rules: How to Split Words Into Syllables",
+    description: "Master easy syllable division rules to break down long words! Improve your reading, spelling, and writing skills with fun tips and tricks.",
+    excerpt: "Learn how to divide words into syllables using VC/CV, V/CV, VC/V, V/V, prefixes, suffixes, compound words, and consonant plus le patterns.",
+    category: "Reading & Writing",
+    image: "/blogs/syllable-division-rule.png",
+    author: "Umair Tufail",
+    date: "2026-08-11",
+    readTime: "8 min read",
+    keywords: [
+      "syllable division rules",
+      "how to split words into syllables",
+      "syllable types",
+      "syllable division chart",
+      "word syllable counter",
+      "reading and pronunciation"
+    ],
+    content: syllableCounters,
+    faqs: [
+      {
+        question: "What are syllable division rules?",
+        answer: "Syllable division rules help you divide a word into its smaller sound units. Common patterns include VC/CV, V/CV, VC/V, V/V, prefixes, suffixes, compound words, and consonant plus le endings."
+      },
+      {
+        question: "How do you divide words into syllables?",
+        answer: "Say the word aloud, listen for the separate vowel sounds, examine the consonants between the vowels, and apply the matching syllable division pattern. Then read the parts together to confirm the pronunciation."
+      },
+      {
+        question: "How do you split words with two consonants in the middle?",
+        answer: "Usually, divide between the two consonants. For example, rabbit becomes rab / bit and napkin becomes nap / kin. Keep digraphs and necessary blends together when they make one sound."
+      },
+      {
+        question: "What is the easiest syllable division rule to learn first?",
+        answer: "VC/CV is usually a good rule to learn first. It appears in common words such as napkin, basket, and rabbit, and often creates a closed syllable with a short vowel sound."
+      },
+      {
+        question: "What are the six syllable types?",
+        answer: "The six common syllable types are closed syllables, open syllables, silent e syllables, vowel team syllables, r-controlled syllables, and consonant plus le syllables."
+      },
+      {
+        question: "Are syllable division rules always correct?",
+        answer: "No. Syllable division rules are useful guides, but English has borrowed words, unusual spellings, pronunciation changes, and exceptions. Always say the word aloud and check a reliable dictionary when necessary."
+      }
+    ]
+  }
 ];
+
 
 export const blogs = posts;
