@@ -14,19 +14,26 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: post.title + " | Countflows Blogs",
+    title: post.title + " | CountFlows Blog",
+  description: post.description,
+
+  openGraph: {
+    title: post.title,
     description: post.description,
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      images: [post.image],
-      url: `https://countflows.com/blog/${slug}`,
-      type: "article",
-    },
-    alternates: {
-      canonical: `https://countflows.com/blog/${slug}`,
-    },
-  };
+    images: [
+      {
+        url: post.image,
+        alt: post.imageAlt || post.title,
+      },
+    ],
+    url: `https://countflows.com/blog/${slug}`,
+    type: "article",
+  },
+
+  alternates: {
+    canonical: `https://countflows.com/blog/${slug}`,
+  },
+};
 }
 
 export default async function BlogPost({ params }) {

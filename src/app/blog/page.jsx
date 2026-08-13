@@ -2,9 +2,11 @@ import { posts } from "@/lib/blogData";
 import BlogList from "@/components/blog/BlogList";
 
 export const metadata = {
-  title: "Word Count, Reading Time & Writing Guides | Countflows Blog",
+  title: "free Writing, SEO & AI Guides | CountFlows Blogs" ,
+
   description:
-    "Free guides on word counts, reading speed, essay length, and writing tips. Learn how many pages 2000 words is, how to read faster, and more on Countflows.",
+    "Explore CountFlows free guides on word count online , reading speed, syllables, SEO, AI writing, essay length, and practical tips to write and optimize content.",
+
   authors: [{ name: "Umair Tufail", url: "https://countflows.com/about" }],
   openGraph: {
     title: "Countflows Blog — Word Count Online & Writing Guides",
@@ -18,7 +20,7 @@ export const metadata = {
       {
         url: "https://countflows.com/blogs/blog2.png",
         width: 1200,
-        height: 630,
+        height:830,
         alt: "Countflows Blog — Writing and Word Count Guides",
       },
     ],

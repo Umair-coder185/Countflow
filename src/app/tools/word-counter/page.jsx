@@ -14,7 +14,7 @@ const appSchema = {
   name: "Word Counter - CountFlows",
   url: "https://countflows.com/tools/word-counter",
   description:
-    "Free online word counter that provides word, character, sentence, and paragraph counts plus goal tracking and readability tips.",
+    "Free word counter that provides word, character, sentence, and paragraph counts plus goal tracking and readability tips.",
   image: "https://countflows.com/og-image.png",
   applicationCategory: "ProductivityApplication",
   operatingSystem: "All",
@@ -143,7 +143,7 @@ export default function WordCounterPage() {
             aria-current="page"
             className="flex items-center font-medium text-gray-800 dark:text-gray-200 truncate max-w-[60vw] sm:max-w-none"
           >
-            Word Counter
+           Word Counter
           </li>
         </ol>
       </nav>

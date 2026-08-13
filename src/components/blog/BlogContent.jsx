@@ -56,12 +56,12 @@ export default function BlogContent({ post }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative h-56 sm:h-72 md:h-96 w-full bg-gray-100 overflow-hidden mb-8 sm:mb-12 md:mb-14 rounded-lg"
+          className="relative h-64 sm:h-72 md:h-96 w-full bg-gray-100 overflow-hidden mb-8 sm:mb-12 md:mb-14 rounded-lg"
         >
           <Link href={`/blog/${post.slug}`} aria-label={`Open ${post.title}`} className="block h-full w-full">
             <img
               src={post.image}
-              alt={post.title}
+              alt={post.imageAlt || post.title}
               className="w-full h-full object-cover"
             />
           </Link>

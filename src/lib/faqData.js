@@ -38,50 +38,81 @@ export const characterCounterFAQs = [
   {
     question: "Is this character counter free?",
     answer:
-      "Yes. Every CountFlows tool is completely free with no sign-up, no length limit, and no premium tier. The site is supported by ads, not subscriptions.",
+      "Yes. The CountFlows Character Counter is free to use with no sign-up required. You can count characters, words, Unicode text, platform limits, SMS segments, and other text statistics directly in your browser.",
   },
+
   {
-    question: "Do emoji count as one character?",
+    question: "Do spaces count as characters?",
     answer:
-      "Usually no. Most platforms, including X, count one emoji as 2 characters, and this tool counts them the same way. An emoji-heavy caption hits its limit faster than plain text.",
+      "Yes. Spaces normally count toward a character limit. CountFlows shows both characters with spaces and characters without spaces, so you can use the number required by your platform, form, or assignment.",
   },
+
   {
-    question: "Does punctuation count as characters?",
+    question: "Do emojis count as one character?",
     answer:
-      "Yes. Every visible symbol counts: letters, numbers, punctuation marks, spaces, and emoji. If a platform enforces a limit, it counts everything you can type.",
+      "It depends on the counting method. CountFlows treats a visible emoji as one grapheme in the main Unicode character count, while some platforms use different rules. For example, X normally gives an emoji a weight of 2 characters.",
   },
+
+  {
+    question: "What is a Unicode character counter?",
+    answer:
+      "A Unicode character counter is designed to handle modern text such as emoji, accented letters, and combined characters more accurately than a simple text-length calculation. CountFlows also shows UTF-16 units and UTF-8 bytes for platforms that use different counting methods.",
+  },
+
   {
     question: "How many words is 2,000 characters?",
     answer:
-      "About 300 to 350 words. Divide characters by 6 for a quick estimate. Academic writing lands lower, chat-style writing higher.",
+      "About 330 to 360 words is a useful estimate for typical English text, although the exact number depends on word length, spaces, and punctuation. For an exact result, paste your text into the counter.",
   },
+
   {
-    question: "How many characters can a tweet have?",
+    question: "How many characters can an X post have?",
     answer:
-      "280 characters on a free X account, up to 25,000 with X Premium. Links always count as 23 characters regardless of length, and most emoji count as 2.",
+      "A standard X post can contain up to 280 weighted characters. X Premium supports longer posts up to 25,000 characters. X uses weighted counting, and valid URLs normally count as 23 characters regardless of their original length.",
   },
+
   {
-    question: "How many characters is the UCAS personal statement?",
+    question: "What is the LinkedIn post character limit?",
     answer:
-      "4,000 characters including spaces, about 600 words. From 2026 entry it is split into three questions with a 350-character minimum each, but the overall cap is unchanged.",
+      "LinkedIn supports up to 3,000 characters for the text of a standard UGC post. Select the LinkedIn preset in the platform analyzer to see how many characters you have used and how many remain.",
   },
+
   {
-    question: "Why did my SMS split into two messages?",
+    question: "What is the TikTok caption character limit?",
     answer:
-      "A standard SMS holds 160 characters, but one emoji or curly quote switches the message to Unicode encoding, cutting the limit to 70. Longer messages split into segments of 153 (standard) or 67 (Unicode) characters, billed separately.",
+      "TikTok's Content Posting API allows up to 2,200 UTF-16 units for a video caption. CountFlows uses the UTF-16 count for its TikTok video caption preset instead of treating every visible character as identical.",
   },
+
   {
-    question: "Is it safe to paste private or confidential text?",
+    question: "How many characters can an SMS message have?",
     answer:
-      "Yes. Counting happens in your browser on your own device, and your text is never sent to our servers. Close the tab and it is gone.",
+      "A single GSM-7 SMS can normally contain up to 160 units. If the message requires Unicode encoding, the single-message limit is normally 70 units. Longer messages are usually split into segments of 153 GSM-7 units or 67 Unicode units.",
   },
+
+  {
+    question: "Why can one emoji increase my SMS segment count?",
+    answer:
+      "Many emojis and other characters are outside the GSM-7 character set. When one of these characters appears, an SMS may switch to Unicode encoding, reducing the available space from 160 units to 70 in a single segment. CountFlows detects the encoding and estimates the number of SMS segments automatically.",
+  },
+
+  {
+    question: "Is there a fixed Google title or meta description character limit?",
+    answer:
+      "No. Google does not specify a fixed character limit for title links or meta descriptions. CountFlows uses practical writing ranges for SEO titles and meta descriptions, but Google may truncate search results depending on the query, device, and available display space.",
+  },
+
+  {
+    question: "Is it safe to paste private text into the character counter?",
+    answer:
+      "The counting and text analysis in the Character Counter run directly in your browser and do not require an external counting API. Your text is not sent to CountFlows for these calculations.",
+  },
+
   {
     question: "Why does my character count differ from Word or Google Docs?",
     answer:
-      "Each program treats line breaks, hidden formatting characters, and special symbols slightly differently. A difference of a few characters on a long document is normal.",
+      "Different tools can count Unicode characters, line breaks, spaces, hidden formatting, and special symbols differently. CountFlows provides Unicode grapheme characters, UTF-16 units, UTF-8 bytes, and characters without spaces so you can see which measurement applies.",
   },
 ]
-
 const readingTimeFAQs = [
   {
     question: "How Long to Read a Book?",
