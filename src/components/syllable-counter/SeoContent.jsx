@@ -1,342 +1,404 @@
-// components/Syllable-counter-seo/SeoContent.jsx
-// SERVER component — koi "use client" nahi, koi motion nahi. Static SEO copy.
+// components/syllable-counter/SeoContent.jsx
+// SERVER component — static, people-first SEO content for the Syllable Counter.
+// Primary search intent: syllable counter
+// Strong secondary intent: syllable counter for poems, haiku syllable counter,
+// syllable counter for lyrics / songs, syllable checker.
 
 import Link from "next/link"
 
-// "How many syllables in X?" — Reddit/forums pe sab se zyada argued words.
-// Yeh table featured-snippet bait hai aur "fire syllable count" jaisi long-tail queries target karti hai.
 const TRICKY_WORDS = [
-  { word: "fire", count: "1 (often spoken as 2)", note: "Dictionaries count one gliding sound; many accents say FY-er" },
-  { word: "hour", count: "1 (often spoken as 2)", note: "Same glide as fire, and the h is silent" },
-  { word: "poem", count: "2", note: "po-em; saying it as pome is common but informal" },
-  { word: "chocolate", count: "2 or 3", note: "choc-late in speech, choc-o-late in dictionaries" },
-  { word: "every", count: "2 or 3", note: "ev-ry in speech, ev-e-ry when spoken carefully" },
-  { word: "different", count: "2 or 3", note: "diff-rent in speech, dif-fer-ent in dictionaries" },
-  { word: "interesting", count: "3 or 4", note: "in-tres-ting in speech, in-ter-est-ing formally" },
-  { word: "beautiful", count: "3", note: "beau-ti-ful; the eau makes one vowel sound" },
-  { word: "orange", count: "2", note: "or-ange; fast speech often squeezes it toward one" },
-  { word: "comfortable", count: "3 or 4", note: "comf-ter-ble in speech, com-for-ta-ble formally" },
-  { word: "business", count: "2", note: "biz-ness; the middle i is silent" },
-  { word: "rhythm", count: "2", note: "rhy-thm; the second syllable has no written vowel" },
+  {
+    word: "fire",
+    count: "1–2",
+    note: "Pronunciation varies by accent; some speakers compress it to one beat, others clearly use two.",
+  },
+  {
+    word: "hour",
+    count: "1–2",
+    note: "Often pronounced as one flowing beat, but two-syllable pronunciations also occur.",
+  },
+  {
+    word: "poem",
+    count: "2",
+    note: "Usually pronounced po-em.",
+  },
+  {
+    word: "chocolate",
+    count: "2–3",
+    note: "Everyday speech often compresses the middle vowel.",
+  },
+  {
+    word: "every",
+    count: "2–3",
+    note: "Many speakers say ev-ry; careful pronunciation may preserve three syllables.",
+  },
+  {
+    word: "different",
+    count: "2–3",
+    note: "Fast speech often compresses the middle syllable.",
+  },
+  {
+    word: "interesting",
+    count: "3–4",
+    note: "The count depends on whether the middle vowels are reduced in speech.",
+  },
+  {
+    word: "beautiful",
+    count: "3",
+    note: "Commonly pronounced beau-ti-ful.",
+  },
+  {
+    word: "comfortable",
+    count: "3–4",
+    note: "Natural speech often compresses one of the middle syllables.",
+  },
+  {
+    word: "business",
+    count: "2",
+    note: "Commonly pronounced biz-ness.",
+  },
+  {
+    word: "rhythm",
+    count: "2",
+    note: "The second syllable is heard even though it does not contain a standard written vowel.",
+  },
 ]
 
-// Fixed-syllable poetry forms — per-line breakdown in sab ke liye kaam karta hai
 const POETRY_FORMS = [
   { form: "Haiku", pattern: "5-7-5", lines: "3" },
   { form: "Tanka", pattern: "5-7-5-7-7", lines: "5" },
-  { form: "Limerick", pattern: "8-8-5-5-8 (approximate)", lines: "5" },
-  { form: "Cinquain (American)", pattern: "2-4-6-8-2", lines: "5" },
-  { form: "Fibonacci poem", pattern: "1-1-2-3-5-8 (extend as far as you like)", lines: "6" },
+  { form: "Cinquain", pattern: "2-4-6-8-2", lines: "5" },
+  { form: "Fibonacci poem", pattern: "1-1-2-3-5-8", lines: "6+" },
   { form: "Nonet", pattern: "9-8-7-6-5-4-3-2-1", lines: "9" },
-  { form: "Sonnet (iambic pentameter)", pattern: "10 per line", lines: "14" },
+  { form: "Sonnet", pattern: "Often ~10 syllables per line", lines: "14" },
 ]
 
 const h2Class =
-  "text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mt-12 mb-4"
-const pClass = "text-gray-600 dark:text-gray-300 leading-7 mb-4"
-const linkClass = "text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+  "mt-12 mb-4 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100"
+const h3Class =
+  "mt-7 mb-2 text-lg font-semibold text-gray-900 md:text-xl dark:text-gray-100"
+const pClass = "mb-4 leading-7 text-gray-600 dark:text-gray-300"
+const linkClass =
+  "font-medium text-cyan-600 hover:underline dark:text-cyan-400"
+const thClass =
+  "px-4 py-3 text-left font-semibold text-gray-900 dark:text-gray-100"
+const tdClass = "px-4 py-3 align-top"
+const trClass = "border-t border-gray-200 dark:border-gray-700"
 
 export default function SeoContent() {
   return (
-    <section className="max-w-4xl mx-auto px-4 md:px-8 py-8" aria-label="Syllable Counter Information">
-      <h2 className={h2Class}>How to Count Syllables Online</h2>
-      <p className={pClass}>You can count syllables online in three steps:</p>
-      <ol className="list-decimal pl-6 space-y-2 text-gray-600 dark:text-gray-300 mb-4 leading-7">
-        <li>
-          <strong>Paste your text</strong> into the box above — a single word, a poem, or a
-          whole speech.
-        </li>
-        <li>
-          <strong>Read the counts</strong> — the total at the top, line-by-line totals
-          underneath, and a per-word count on every word.
-        </li>
-        <li>
-          <strong>Check a form</strong> — turn on Haiku mode to validate the 5-7-5 pattern, or
-          use the per-line totals for sonnets, limericks, and lyrics.
-        </li>
-      </ol>
+    <section
+      className="mx-auto max-w-4xl px-4 py-8 md:px-8"
+      aria-label="Syllable Counter Information"
+    >
+      <h2 className={h2Class}>How to Use the Syllable Counter</h2>
+
       <p className={pClass}>
-        There is no upload step and no processing delay. The syllables counter updates live in
-        your browser, whether you paste one word or an entire chapter.
+        Use the free syllable counter above to check a single word, a sentence,
+        a full poem, haiku, or song lyrics. The result updates as you type, so
+        you can adjust a line and immediately see whether the syllable count
+        changed.
       </p>
 
-      <div className="relative mb-6 overflow-hidden rounded-3xl border border-amber-300 bg-gradient-to-br from-amber-50 via-orange-50 to-cyan-50 p-5 shadow-lg shadow-amber-200/70 dark:border-amber-700 dark:from-amber-950/60 dark:via-orange-950/40 dark:to-cyan-950/40 dark:shadow-none sm:p-6">
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-cyan-400/20 to-transparent" />
-        <div className="relative">
-          <p className="mb-3 inline-flex rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-amber-700 dark:bg-slate-900/60 dark:text-amber-300">
-            Today&apos;s article
-          </p>
-          <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-gray-100">
-            Syllable Division Rules: Split Words Like a Pro
-          </h3>
-          <p className={`${pClass} mb-4`}>
-            Learn the quick rules for VC/CV, V/CV, VC/V, vowel pairs, prefixes, suffixes, and
-            consonant + le endings with a simple chart and clear examples.
-          </p>
+      <ol className="mb-4 list-decimal space-y-2 pl-6 leading-7 text-gray-600 dark:text-gray-300">
+        <li>
+          <strong>Paste or type your text.</strong> Put each poem or lyric line
+          on a separate line if you want line-by-line results.
+        </li>
+        <li>
+          <strong>Check the totals.</strong> The tool shows total syllables,
+          words, lines, and a per-word breakdown.
+        </li>
+        <li>
+          <strong>Use Haiku mode when needed.</strong> The built-in 5-7-5
+          checker compares each of three lines with the target pattern.
+        </li>
+      </ol>
+
+      <p className={pClass}>
+        For other fixed forms, open the poetry-pattern options and choose
+        Tanka, Cinquain, Fibonacci, or a custom syllable pattern.
+      </p>
+
+      <h2 className={h2Class}>What Is a Syllable?</h2>
+
+      <p className={pClass}>
+        A syllable is a spoken beat within a word. Each syllable normally
+        contains one main vowel sound. For example, <em>cat</em> has one
+        syllable, <em>paper</em> has two, and <em>beautiful</em> has three.
+        Written vowels alone do not determine the count because English
+        spelling and pronunciation do not always match.
+      </p>
+
+      <p className={pClass}>
+        That is why counting syllables is useful for poetry, haiku, lyrics,
+        pronunciation practice, and any writing where rhythm matters.
+      </p>
+
+      <h2 className={h2Class}>How the Syllable Checker Works</h2>
+
+      <p className={pClass}>
+        CountFlows analyzes each word and returns both a total syllable count
+        and a line-by-line breakdown. Words recognized by the tool&apos;s
+        pronunciation data can be counted directly. Less common words, names,
+        slang, or invented words may require an estimated count based on
+        spelling and vowel patterns.
+      </p>
+
+      <p className={pClass}>
+        English pronunciation varies by accent and speaking style, so no
+        automatic syllable checker can resolve every word perfectly. The tool
+        marks estimated words differently so you can double-check them when one
+        syllable matters to the meter of your poem or lyric.
+      </p>
+
+      <div className="mb-6 rounded-2xl border border-cyan-200 bg-cyan-50/60 p-5 dark:border-cyan-900 dark:bg-cyan-950/20">
+        <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+          Need to understand the rules behind the count?
+        </p>
+        <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+          See our guide to{" "}
           <Link
             href="/blog/syllable-division-rules"
-            className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-cyan-600 dark:hover:bg-cyan-500"
+            className={linkClass}
           >
-            Read the article →
-          </Link>
+            syllable division rules
+          </Link>{" "}
+          for practical examples of splitting words into syllables.
+        </p>
+      </div>
+
+      <h2 className={h2Class}>
+        Syllable Counter for Poems, Haiku &amp; Song Lyrics
+      </h2>
+
+      <p className={pClass}>
+        The most useful part of a poetry syllable counter is not only the grand
+        total — it is the count for each line. A poem can have the right total
+        number of syllables and still miss its intended rhythm if one line is
+        too long or too short.
+      </p>
+
+      <p className={pClass}>
+        Paste your poem or lyrics with one line per verse. CountFlows shows the
+        syllable total beside each line and then breaks that line down word by
+        word. This makes it easier to spot exactly where the rhythm changes.
+      </p>
+
+      <h3 className={h3Class}>Haiku Syllable Counter: Check 5-7-5</h3>
+
+      <p className={pClass}>
+        If you are writing a classroom-style English haiku, turn on{" "}
+        <strong>Haiku 5-7-5</strong> mode. The checker compares line one with 5
+        syllables, line two with 7, and line three with 5. A matching line is
+        highlighted so you can revise the poem without recounting it manually.
+      </p>
+
+      <p className={pClass}>
+        English haiku is often taught with the 5-7-5 structure, although modern
+        English-language haiku does not always follow exactly 17 syllables. If
+        your assignment specifically requires 5-7-5, use the pattern checker as
+        your target.
+      </p>
+
+      <h3 className={h3Class}>Syllable Counter for Songs &amp; Lyrics</h3>
+
+      <p className={pClass}>
+        Songwriters can use the same line-by-line view to compare verses. If a
+        lyric fits the melody well, note its syllable count and compare the
+        corresponding line in the next verse. Similar counts can make phrasing
+        easier to keep consistent, although stress, tempo, and held notes also
+        affect how a lyric fits a melody.
+      </p>
+
+      <h2 className={h2Class}>Common Poetry Syllable Patterns</h2>
+
+      <p className={pClass}>
+        Different poetic forms use syllables in different ways. These common
+        patterns can be checked with the line-by-line results or the poetry
+        pattern controls above.
+      </p>
+
+      <div className="mb-6 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+        <table className="w-full min-w-[620px] text-sm md:text-base">
+          <thead className="bg-cyan-50 dark:bg-cyan-900/30">
+            <tr>
+              <th className={thClass}>Poetry form</th>
+              <th className={thClass}>Common syllable pattern</th>
+              <th className={thClass}>Lines</th>
+            </tr>
+          </thead>
+
+          <tbody className="text-gray-600 dark:text-gray-300">
+            {POETRY_FORMS.map((row) => (
+              <tr
+                key={row.form}
+                className={trClass}
+              >
+                <td className={`${tdClass} font-medium text-gray-800 dark:text-gray-200`}>
+                  {row.form}
+                </td>
+                <td className={tdClass}>{row.pattern}</td>
+                <td className={tdClass}>{row.lines}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p className={pClass}>
+        Not every poem follows a fixed syllable formula. In free verse and song
+        lyrics, use the line totals as a rhythm guide rather than as a strict
+        rule.
+      </p>
+
+      <h2 className={h2Class}>How Many Syllables? Tricky English Words</h2>
+
+      <p className={pClass}>
+        Some English words can sound different depending on accent, speed, or
+        speaking style. That is why two people may count the same word
+        differently. Here are several common examples:
+      </p>
+
+      <div className="mb-6 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+        <table className="w-full min-w-[680px] text-sm md:text-base">
+          <thead className="bg-gray-50 dark:bg-gray-800">
+            <tr>
+              <th className={thClass}>Word</th>
+              <th className={thClass}>Typical count</th>
+              <th className={thClass}>Why it can vary</th>
+            </tr>
+          </thead>
+
+          <tbody className="text-gray-600 dark:text-gray-300">
+            {TRICKY_WORDS.map((row) => (
+              <tr
+                key={row.word}
+                className={trClass}
+              >
+                <td className={`${tdClass} font-medium text-gray-800 dark:text-gray-200`}>
+                  {row.word}
+                </td>
+                <td className={tdClass}>{row.count}</td>
+                <td className={tdClass}>{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p className={pClass}>
+        When the count matters for poetry or songwriting, use the pronunciation
+        that fits the way the line is actually spoken or sung.
+      </p>
+
+      <h2 className={h2Class}>Three Simple Ways to Count Syllables by Hand</h2>
+
+      <p className={pClass}>
+        An online syllable counter is faster, but manual methods are useful when
+        you want to double-check an unusual pronunciation.
+      </p>
+
+      <ol className="mb-4 list-decimal space-y-3 pl-6 leading-7 text-gray-600 dark:text-gray-300">
+        <li>
+          <strong>Clap the beats.</strong> Say the word naturally and clap once
+          for every beat you hear.
+        </li>
+        <li>
+          <strong>Use the chin method.</strong> Place a hand lightly under your
+          chin and say the word; each noticeable jaw drop usually marks a
+          syllable.
+        </li>
+        <li>
+          <strong>Listen for vowel sounds.</strong> Count spoken vowel sounds,
+          not simply the number of written vowel letters.
+        </li>
+      </ol>
+
+      <h2 className={h2Class}>Who Uses a Syllable Counter?</h2>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
+          <p className="font-semibold text-gray-900 dark:text-gray-100">
+            Poets &amp; students
+          </p>
+          <p className="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">
+            Check haiku, tanka, cinquain, sonnets, and classroom poetry
+            assignments line by line.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
+          <p className="font-semibold text-gray-900 dark:text-gray-100">
+            Songwriters &amp; rappers
+          </p>
+          <p className="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">
+            Compare lyric lines and keep phrasing more consistent across verses
+            and bars.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
+          <p className="font-semibold text-gray-900 dark:text-gray-100">
+            Teachers &amp; English learners
+          </p>
+          <p className="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">
+            Demonstrate word pronunciation and make syllable structure easier
+            to see.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
+          <p className="font-semibold text-gray-900 dark:text-gray-100">
+            Speechwriters &amp; copywriters
+          </p>
+          <p className="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">
+            Compare spoken rhythm and simplify lines that feel difficult to say
+            naturally.
+          </p>
         </div>
       </div>
 
-      <h2 className={h2Class}>Three Ways to Count Syllables by Hand</h2>
-      <p className={pClass}>
-        The tool is faster, but the manual methods help you settle any count it flags:
-      </p>
-      <ol className="list-decimal pl-6 space-y-2 text-gray-600 dark:text-gray-300 mb-4 leading-7">
-        <li>
-          <strong>The chin method.</strong> Rest your hand under your chin and say the word out
-          loud. Your chin drops once for every syllable, because each syllable carries a vowel
-          sound that opens your jaw.
-        </li>
-        <li>
-          <strong>The clap method.</strong> Say the word slowly and clap on every beat:
-          po-et-ry gets three claps. Teachers use this one in class because it works at any
-          age.
-        </li>
-        <li>
-          <strong>The vowel-sound method.</strong> Count the vowel sounds you hear, not the
-          vowel letters you see. Make has two vowel letters but one vowel sound, so it counts
-          as one syllable.
-        </li>
-      </ol>
+      <h2 className={h2Class}>Your Text Stays in Your Browser</h2>
 
-      <div className="mb-6 rounded-2xl border border-cyan-200 bg-white/80 p-4 shadow-sm dark:border-cyan-800 dark:bg-slate-900/50 sm:p-5">
-        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700 dark:text-cyan-300">
-          Helpful guide
+      <p className={pClass}>
+        The CountFlows syllable counter processes your text in the browser.
+        Your poem, lyrics, or draft is not uploaded to CountFlows for syllable
+        analysis. There is no account required to use the tool.
+      </p>
+
+      <div className="mt-8 rounded-2xl border border-gray-200 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800/60">
+        <p className="font-semibold text-gray-900 dark:text-gray-100">
+          Related writing tools
         </p>
-        <p className="mb-3 text-gray-700 dark:text-gray-300">
-          If you are curious why AI tools sometimes miscount syllables in poems, lyrics, and
-          haikus, this article explains the reason clearly.
-        </p>
-        <Link
-          href="/blog/why-ai-chatbots-cant-count-syllables"
-          className="inline-flex items-center font-semibold text-cyan-700 transition hover:underline dark:text-cyan-300"
-        >
-          Read why AI chatbots struggle with syllables →
-        </Link>
+
+        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <Link
+            href="/tools/word-counter"
+            className={linkClass}
+          >
+            Word Counter
+          </Link>
+          <Link
+            href="/tools/sentence-counter"
+            className={linkClass}
+          >
+            Sentence Counter
+          </Link>
+          <Link
+            href="/tools/reading-time"
+            className={linkClass}
+          >
+            Reading Time Calculator
+          </Link>
+          <Link
+            href="/tools/character-counter"
+            className={linkClass}
+          >
+            Character Counter
+          </Link>
+        </div>
       </div>
-
-      <h2 className={h2Class}>How the Syllable Counter Works</h2>
-      <p className={pClass}>
-        The tool checks every word against a built-in pronunciation dictionary first. If a word is
-        not in the dictionary — a rare word, a name, or a made-up word — a vowel-group
-        algorithm estimates the count: each group of neighboring vowel sounds counts as one
-        syllable, and silent endings like the final “e” in <em>make</em> drop off.
-      </p>
-      <p className={pClass}>
-        Dictionary lookups are exact. Algorithm estimates fit most standard English words, but
-        English carries enough exceptions that no automatic counter is perfect — words like{" "}
-        <em>fire</em>, <em>hour</em>, and <em>chocolate</em> genuinely vary by accent and
-        dictionary. That is why the tool marks algorithm-counted words with a dashed border, so
-        you can double-check the ones that matter. When a single syllable decides your line, that
-        marker is your friend.
-      </p>
-
-      <h2 className={h2Class}>How Many Syllables? Words People Argue About</h2>
-      <p className={pClass}>
-        Whole forum threads argue over single words: is fire one syllable or two, does
-        chocolate keep its middle vowel, and why does poem trip everyone up? Here are the
-        counts for the words people look up and debate the most:
-      </p>
-      <div className="overflow-x-auto mb-4">
-        <table className="w-full border-collapse text-sm sm:text-base">
-          <thead>
-            <tr className="border-b border-gray-300 dark:border-gray-700 text-left">
-              <th className="px-3 py-3 font-semibold">Word</th>
-              <th className="px-3 py-3 font-semibold">Syllables</th>
-              <th className="px-3 py-3 font-semibold">Why people argue</th>
-            </tr>
-          </thead>
-          <tbody>
-            {TRICKY_WORDS.map((row) => (
-              <tr key={row.word} className="border-b border-gray-200 dark:border-gray-800">
-                <td className="px-3 py-3 font-medium">{row.word}</td>
-                <td className="px-3 py-3">{row.count}</td>
-                <td className="px-3 py-3 text-gray-600 dark:text-gray-400">{row.note}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p className={pClass}>
-        The rule for poetry: follow the meter of your line. The rule for speech: follow the
-        way you actually say the word. When a dictionary and your accent disagree, your poem
-        wins.
-      </p>
-
-      <h2 className={h2Class}>Haiku Syllable Counter (5-7-5 Checker)</h2>
-      <p className={pClass}>
-        A traditional English haiku runs three lines: five syllables, then seven, then five. Turn
-        on <strong>Haiku mode</strong> and this page becomes a dedicated haiku syllable counter
-        — each of your three lines gets its own live count against the 5-7-5 target, and a
-        line turns green the moment it fits.
-      </p>
-      <p className={pClass}>
-        Write your haiku directly in the box and watch the haiku syllable count update with every
-        word. You never count on your fingers, and you never retype your poem into a separate
-        haiku tool.
-      </p>
-      <p className={pClass}>
-        Strict 5-7-5 is the classroom standard, but Japanese haiku count sounds (<em>on</em>),
-        not English syllables — so many published English haiku run shorter than 17
-        syllables. If your teacher asked for 5-7-5, this checker keeps you exact. If you write
-        literary haiku, treat 17 as a ceiling, not a rule.
-      </p>
-
-      <h2 className={h2Class}>Fibonacci Poem Syllable Counter (1-1-2-3-5-8)</h2>
-      <p className={pClass}>
-        A Fibonacci poem, often just called a "Fib," sets its line lengths to the Fibonacci
-        sequence: 1, 1, 2, 3, 5, 8 — and you can keep going into 13 and 21 if you want a
-        longer piece. Poet Gregory K. Pincus popularized the six-line version in 2006, and it
-        stuck because it fits on an index card but still leaves room for a turn or a punchline
-        by the last line.
-      </p>
-      <p className={pClass}>
-        Pick <strong>Fibonacci</strong> from the poem pattern dropdown above and each line gets
-        checked against 1, 1, 2, 3, 5, 8 as you type. The two opening one-syllable lines are
-        usually the hardest part — a single word has to carry the whole line, so word choice
-        matters more here than in any other form on this page.
-      </p>
-      <p className={pClass}>
-        Want to extend past 8? Switch the dropdown to <strong>Custom pattern</strong> and type
-        your own sequence — 1,1,2,3,5,8,13 for a seven-line Fib, or further if you're feeling
-        ambitious.
-      </p>
-
-      <h2 className={h2Class}>Syllable Counter for Poems, Lyrics and Speeches</h2>
-      <p className={pClass}>
-        Meter is rhythm you can count. The per-line breakdown makes this a practical syllable
-        counter for poems of any form — iambic pentameter needs ten syllables a line, a
-        tanka runs 5-7-5-7-7, and a limerick leans on 8-8-5-5-8. Match your line totals to the
-        pattern, and the rhythm takes care of itself.
-      </p>
-      <div className="overflow-x-auto mb-4">
-        <table className="w-full border-collapse text-sm sm:text-base">
-          <thead>
-            <tr className="border-b border-gray-300 dark:border-gray-700 text-left">
-              <th className="px-3 py-3 font-semibold">Form</th>
-              <th className="px-3 py-3 font-semibold">Syllable pattern</th>
-              <th className="px-3 py-3 font-semibold">Lines</th>
-            </tr>
-          </thead>
-          <tbody>
-            {POETRY_FORMS.map((row) => (
-              <tr key={row.form} className="border-b border-gray-200 dark:border-gray-800">
-                <td className="px-3 py-3 font-medium">{row.form}</td>
-                <td className="px-3 py-3">{row.pattern}</td>
-                <td className="px-3 py-3">{row.lines}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p className={pClass}>
-        Songwriters use the same trick in reverse: when a lyric refuses to sit on the melody, the
-        syllable count is usually the reason. Count the line that works, then rewrite the line
-        that does not until the numbers match.
-      </p>
-      <p className={pClass}>
-        Writing for the ear rather than the page? Shorter words read faster and punch harder.
-        Pair this tool with the{" "}
-        <Link href="/tools/reading-time" className={linkClass}>Reading Time Calculator</Link> to
-        time your speech, and the{" "}
-        <Link href="/tools/word-counter" className={linkClass}>Word Counter</Link> to hit your
-        length target.
-      </p>
-
-      <h2 className={h2Class}>Do Syllable Counts Matter in Songwriting?</h2>
-      <p className={pClass}>
-        Songwriting forums ask this question constantly, and the honest answer is:
-        consistency beats any magic number. When line one of verse one carries eight
-        syllables, line one of verse two should land close to eight, so both verses sit on
-        the same melody without cramming or stretching.
-      </p>
-      <p className={pClass}>
-        Stressed syllables matter even more than totals. Two lines with the same count can
-        still fight the melody when the stresses fall in different places. Use the count to
-        get close, then sing the line to place the stresses.
-      </p>
-      <p className={pClass}>
-        The line-by-line breakdown above makes the comparison simple: paste verse one and
-        verse two together and read the numbers side by side, instead of counting each line
-        on your fingers.
-      </p>
-
-      <h2 className={h2Class}>Who Uses a Syllable Counter</h2>
-      <p className={pClass}>
-        <strong>Poets</strong> — check haiku, tanka, sonnets, and limericks against their
-        syllable patterns line by line, without counting on fingers.
-      </p>
-      <p className={pClass}>
-        <strong>Songwriters and rappers</strong> — match lyric lines to the melody's beat
-        count and keep verses even from bar to bar.
-      </p>
-      <p className={pClass}>
-        <strong>Students</strong> — finish the haiku assignment with an exact 5-7-5 count,
-        and learn how syllables work from the per-word breakdown.
-      </p>
-      <p className={pClass}>
-        <strong>Teachers</strong> — demonstrate syllable counting on the board in real time,
-        and let students self-check their poetry homework.
-      </p>
-      <p className={pClass}>
-        <strong>Copywriters and speechwriters</strong> — shorter, punchier lines are easier
-        to say and remember, and the syllable count is the fastest way to measure that. Keep your
-        sentences tight with the{" "}
-        <Link href="/tools/sentence-counter" className={linkClass}>Sentence Counter</Link>.
-      </p>
-      <p className={pClass}>
-        <strong>English learners</strong> — see how many syllables a new word has before
-        saying it out loud, and where the count differs from the spelling.
-      </p>
-
-      <h2 className={h2Class}>Your Text Never Leaves Your Browser</h2>
-      <p className={pClass}>
-        Like every CountFlows tool, the Syllable Counter runs entirely on your device. Your text
-        is never uploaded to a server, never logged, and never stored. Paste an unpublished poem
-        or a whole manuscript — close the tab, and it is gone. There is no word limit, no
-        sign-up wall, and no premium tier.
-      </p>
-
-      <h2 className={h2Class}>More Free Text Tools</h2>
-      <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 leading-7">
-        <li>
-          <Link href="/tools/word-counter" className={linkClass}>Word Counter</Link>{" "}
-          — count words, characters, and sentences as you type.
-        </li>
-        <li>
-          <Link href="/tools/character-counter" className={linkClass}>Character Counter</Link>{" "}
-          — check your text against platform character limits.
-        </li>
-        <li>
-          <Link href="/tools/sentence-counter" className={linkClass}>Sentence Counter</Link>{" "}
-          — check sentence count and average sentence length.
-        </li>
-        <li>
-          <Link href="/tools/reading-time" className={linkClass}>Reading Time Calculator</Link>{" "}
-          — see how long your text takes to read or speak aloud.
-        </li>
-        <li>
-          <Link href="/tools/case-converter" className={linkClass}>Case Converter</Link>{" "}
-          — fix capitalization in one click.</li>
-          <li>
-            <Link href="/tools/keyword-density-checker" className={linkClass}>Keyword Density Checker</Link>{" "}
-            - keep keyword usage natural before you publish.
-          </li>
-          <li>
-            <Link href="/tools/ai-text-cleaner" className={linkClass}>AI Text Cleaner</Link>{" "}
-            - remove AI artifacts, formatting, and spaces from your text.
-          </li>
-          <li>
-            <Link href="/tools/syllable-counter" className={linkClass}>Syllable Counter</Link>{" "}
-            - count syllables in words, sentences, and poems.
-          </li>
-
-      </ul>
     </section>
   )
 }

@@ -85,12 +85,12 @@ export default function Hero() {
 
         {/* SEO + user-focused intro */}
         <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
-          Use free online text tools to count{" "}
+          Use free online text and AI tools to count{" "}
           <strong className="font-semibold text-slate-800 dark:text-slate-100">
-            words, characters, sentences, syllables , Ai Text cleaner , AI tokens counter and cost calculator
+            words, characters, sentences and syllables
           </strong>
-          , check keyword density and reading time, and format
-          your text instantly.
+          , clean AI-generated text, calculate AI tokens and API costs, check
+          keyword density and reading time, and format your text instantly.
         </p>
 
         {/* Small reassurance */}
