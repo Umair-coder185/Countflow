@@ -1,310 +1,296 @@
-import Link from "next/link";
+// components/Sentence-counter-seo/seo-content.jsx
+// SERVER component — static, people-first SEO content.
+// Primary intent: sentence counter / sentence count
+// Strong secondary intent: sentence length checker / how many sentences are in this text
+// Keep the tool itself above this content as the main page experience.
 
-const wordToSentenceRows = [
-  { words: "50 words", short: "3–4", long: "2–3" },
-  { words: "100 words", short: "6–7", long: "5" },
-  { words: "150 words", short: "10", long: "7–8" },
-  { words: "200 words", short: "13", long: "10" },
-  { words: "250 words", short: "16–17", long: "12–13" },
-  { words: "300 words", short: "20", long: "15" },
-  { words: "500 words", short: "33", long: "25" },
-  { words: "1,000 words", short: "66", long: "50" },
-];
+import Link from "next/link"
 
-const sentenceLengthRows = [
-  { range: "Under 14 words", verdict: "Very easy — news style, high comprehension" },
-  { range: "15–20 words", verdict: "Clear and natural — the target for most writing" },
-  { range: "21–25 words", verdict: "Fairly difficult — fine in moderation" },
-  { range: "26–40 words", verdict: "Difficult — readers start re-reading" },
-  { range: "Over 40 words", verdict: "Very difficult — comprehension drops sharply" },
-];
+const WORD_TO_SENTENCE_ROWS = [
+  { words: "100 words", short: "6–7", medium: "5–6", long: "4–5" },
+  { words: "200 words", short: "13–14", medium: "10–12", long: "8–10" },
+  { words: "300 words", short: "20", medium: "15–18", long: "12–15" },
+  { words: "500 words", short: "33–34", medium: "25–30", long: "20–25" },
+  { words: "1,000 words", short: "66–67", medium: "50–59", long: "40–50" },
+]
 
 const h2Class =
-  "text-2xl md:text-3xl font-bold mb-6 mt-12 first:mt-0 text-gray-800 dark:text-gray-100";
+  "mt-12 mb-4 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100"
+
 const h3Class =
-  "text-xl md:text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300";
-const pClass = "text-gray-600 dark:text-gray-400 leading-relaxed mb-6";
+  "mt-7 mb-2 text-lg font-semibold text-gray-900 md:text-xl dark:text-gray-100"
+
+const pClass =
+  "mb-4 text-gray-600 leading-7 dark:text-gray-300"
+
 const linkClass =
-  "text-blue-600 dark:text-blue-400 hover:underline font-semibold";
-const tableWrapClass = "overflow-x-auto mb-6";
-const tableClass =
-  "w-full text-sm md:text-base border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden";
+  "font-medium text-cyan-600 hover:underline dark:text-cyan-400"
+
 const thClass =
-  "bg-cyan-50 dark:bg-gray-900 text-left px-4 py-3 font-semibold text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700";
+  "px-4 py-3 text-left font-semibold text-gray-900 dark:text-gray-100"
+
 const tdClass =
-  "px-4 py-3 text-gray-600 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800";
+  "px-4 py-3 align-top text-gray-600 dark:text-gray-300"
 
 export default function SEOContent() {
   return (
-    <section className="max-w-4xl mx-auto px-4 md:px-8 py-16 bg-gradient-to-b from-gray-50 to-cyan-100 dark:from-gray-900 dark:to-gray-800 rounded-2xl">
-      {/* What is a sentence counter */}
-      <h2 className={h2Class}>
-        What Is a Sentence Counter and How Do You Use It?
-      </h2>
+    <section
+      className="mx-auto max-w-4xl px-4 py-8 md:px-8"
+      aria-label="Sentence Counter Information"
+    >
+      <h2 className={h2Class}>How to Use the Sentence Counter</h2>
+
       <p className={pClass}>
-        A sentence counter shows how many sentences your text contains, along
-        with your average sentence length — the number that decides whether
-        your writing feels crisp or exhausting. Paste your draft into the box
-        above, or type directly, and the count updates in real time. There is
-        no button to press and no upload step: everything is counted in your
-        browser as you edit.
-      </p>
-      <p className={pClass}>
-        Alongside the sentence count, the tool shows your word count, your
-        longest sentence, and a readability score, so you can spot the exact
-        sentence that is dragging your paragraph down — not just know that one
-        exists.
+        Paste or type your text into the sentence counter above. The tool
+        instantly shows how many sentences are in your text, along with the word
+        count, average sentence length, longest sentence, shortest sentence, and
+        readability estimate.
       </p>
 
-      {/* What counts as a sentence */}
+      <ol className="mb-4 list-decimal space-y-2 pl-6 leading-7 text-gray-600 dark:text-gray-300">
+        <li>
+          <strong>Paste your text.</strong> Add a paragraph, essay, article,
+          report, or any other writing.
+        </li>
+        <li>
+          <strong>Read the sentence count.</strong> The main result tells you
+          exactly how many sentences the tool detected.
+        </li>
+        <li>
+          <strong>Check sentence length.</strong> Review the average, longest,
+          shortest, and line-by-line word counts to find sentences that stand
+          out.
+        </li>
+      </ol>
+
+      <p className={pClass}>
+        The results update as you edit, so you can shorten, combine, or rewrite
+        sentences and immediately see how the structure changes.
+      </p>
+
+      <h2 className={h2Class}>How Many Sentences Are in My Text?</h2>
+
+      <p className={pClass}>
+        The fastest way to answer “how many sentences is this?” is to paste the
+        text into the box above. CountFlows detects sentence boundaries and
+        displays the total immediately, without requiring you to count periods
+        by hand.
+      </p>
+
+      <p className={pClass}>
+        The sentence-by-sentence breakdown is useful when the total alone is
+        not enough. Each detected sentence appears separately with its own word
+        count, making it easier to compare short and long sentences in the same
+        passage.
+      </p>
+
+      <h2 className={h2Class}>Sentence Length Checker</h2>
+
+      <p className={pClass}>
+        Sentence count tells you how many sentences you wrote. Sentence length
+        tells you how those sentences are distributed. The checker reports the
+        average number of words per sentence and identifies the longest and
+        shortest sentences in your text.
+      </p>
+
+      <h3 className={h3Class}>Average Sentence Length</h3>
+
+      <p className={pClass}>
+        Average sentence length is calculated by dividing the total number of
+        words by the number of sentences. There is no single ideal number for
+        every type of writing. A news article, academic paper, legal document,
+        and short story can all use very different sentence rhythms.
+      </p>
+
+      <p className={pClass}>
+        Use the average as a comparison point rather than a strict rule. If one
+        sentence is far longer than the rest, the sentence-by-sentence
+        breakdown helps you find it quickly.
+      </p>
+
+      <h3 className={h3Class}>Longest and Shortest Sentences</h3>
+
+      <p className={pClass}>
+        Long sentences are not automatically bad, and short sentences are not
+        automatically better. The useful question is whether the sentence fits
+        the idea and remains easy to follow. CountFlows highlights length
+        differences so you can decide which sentences deserve another look.
+      </p>
+
       <h2 className={h2Class}>What Counts as a Sentence?</h2>
+
       <p className={pClass}>
-        The tool counts a sentence every time text ends with a period, question
-        mark, or exclamation point. That matches how most word processors
-        count, but no automatic counter is perfect: abbreviations like
-        &ldquo;Dr.&rdquo; or &ldquo;e.g.&rdquo; and decimal numbers can
-        register as extra sentence breaks in any tool of this kind. For an
-        essay with a hard requirement, treat the count as accurate to within a
-        sentence or two, and check the flagged longest sentence by eye.
-      </p>
-      <p className={pClass}>
-        This is also why your count here may differ slightly from Microsoft
-        Word or Grammarly — each tool draws sentence boundaries a little
-        differently, the same way word counts differ between programs.
+        A sentence usually ends with a period, question mark, or exclamation
+        mark, but real text is more complicated than simply counting
+        punctuation. Decimal numbers and common abbreviations can contain
+        periods without ending a sentence.
       </p>
 
-      {/* How many sentences is 100 words */}
-      <h2 className={h2Class}>How Many Sentences Is 100 Words?</h2>
       <p className={pClass}>
-        About 5 to 7 sentences. A typical written sentence runs 15 to 20
-        words, so 100 words divides into five longer sentences or seven
-        shorter ones. Here is the full conversion at both paces:
+        When the browser supports it, CountFlows uses browser-native sentence
+        segmentation. A punctuation-aware fallback is used when needed, with
+        handling for decimal numbers and common abbreviations. Because sentence
+        boundaries can still be ambiguous in unusual writing, quoted dialogue,
+        names, or unconventional punctuation, review the breakdown when an
+        exact count is critical.
       </p>
-      <div className={tableWrapClass}>
-        <table className={tableClass}>
-          <thead>
+
+      <h2 className={h2Class}>Sentence Count vs. Word Count</h2>
+
+      <p className={pClass}>
+        Word count measures the size of your text. Sentence count measures how
+        that text is divided. Two 500-word articles can have the same word count
+        but very different sentence structures if one uses short sentences and
+        the other uses long ones.
+      </p>
+
+      <p className={pClass}>
+        For a complete word total, use the{" "}
+        <Link
+          href="/tools/word-counter"
+          className={linkClass}
+        >
+          Word Counter
+        </Link>
+        . Then use this page to inspect how those words are distributed across
+        sentences.
+      </p>
+
+      <h2 className={h2Class}>
+        How Many Sentences Are 100, 200, 500 or 1,000 Words?
+      </h2>
+
+      <p className={pClass}>
+        There is no fixed conversion from words to sentences because sentence
+        length varies. The table below gives rough examples using short,
+        medium, and longer average sentence lengths. Use it for planning only;
+        paste the finished text into the counter for the actual sentence count.
+      </p>
+
+      <div className="mb-6 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+        <table className="w-full min-w-[700px] text-sm md:text-base">
+          <thead className="bg-cyan-50 dark:bg-cyan-900/30">
             <tr>
               <th className={thClass}>Word count</th>
-              <th className={thClass}>Sentences (short, ~15 words)</th>
-              <th className={thClass}>Sentences (long, ~20 words)</th>
+              <th className={thClass}>~15 words/sentence</th>
+              <th className={thClass}>~17–20 words/sentence</th>
+              <th className={thClass}>~20–25 words/sentence</th>
             </tr>
           </thead>
+
           <tbody>
-            {wordToSentenceRows.map((row) => (
-              <tr key={row.words}>
-                <td className={tdClass}>{row.words}</td>
+            {WORD_TO_SENTENCE_ROWS.map((row) => (
+              <tr
+                key={row.words}
+                className="border-t border-gray-200 dark:border-gray-700"
+              >
+                <td className={`${tdClass} font-medium text-gray-800 dark:text-gray-200`}>
+                  {row.words}
+                </td>
                 <td className={tdClass}>{row.short}</td>
+                <td className={tdClass}>{row.medium}</td>
                 <td className={tdClass}>{row.long}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
+      <h2 className={h2Class}>Sentence Counter for Essays and Articles</h2>
+
       <p className={pClass}>
-        Writing against a word limit instead? Check your total with the{" "}
-        <Link href="/tools/word-counter" className={linkClass}>
+        Students and writers can use the counter to inspect sentence structure
+        without changing the text. Paste an essay, blog post, report, or draft
+        to compare sentence lengths, find unusually long sentences, and see how
+        the writing is paced.
+      </p>
+
+      <p className={pClass}>
+        If you are working toward a specific length requirement, pair the
+        sentence count with the{" "}
+        <Link
+          href="/tools/word-counter"
+          className={linkClass}
+        >
           Word Counter
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/tools/character-counter"
+          className={linkClass}
+        >
+          Character Counter
         </Link>
-        , then come back to balance the sentences inside it.
+        .
       </p>
 
-      {/* Sentences per paragraph */}
-      <h2 className={h2Class}>How Many Sentences Are in a Paragraph?</h2>
+      <h2 className={h2Class}>Readability and Sentence Length</h2>
+
       <p className={pClass}>
-        Most paragraphs run 3 to 8 sentences, but the honest answer depends on
-        what you are writing. Purdue University&rsquo;s Online Writing Lab
-        recommends aiming for three to five or more sentences per paragraph,
-        with one main idea per paragraph. Academic essays stretch longer — six
-        to eight sentences is normal — while web writing and journalism drop
-        to one to three, because short paragraphs survive skimming.
-      </p>
-      <p className={pClass}>
-        The better rule: one idea per paragraph, however many sentences that
-        takes. If a paragraph holds eight sentences but makes one point twice,
-        it is not a long paragraph — it is two ideas short.
+        The tool also shows a readability estimate based on sentence length and
+        syllable counts. Treat that score as a signal rather than a judgment of
+        writing quality. Vocabulary, audience, subject matter, formatting, and
+        sentence variety can all affect how easy a passage feels to read.
       </p>
 
-      {/* Average sentence length */}
-      <h2 className={h2Class}>What Is a Good Average Sentence Length?</h2>
       <p className={pClass}>
-        Aim for an average of 15 to 20 words per sentence. Research by the
-        American Press Institute found that readers understand more than 90%
-        of what they read when the average sentence runs about 14 words — and
-        comprehension collapses to under 10% at 43 words. The New York Times
-        averages roughly 15 words per sentence for exactly this reason.
-      </p>
-      <div className={tableWrapClass}>
-        <table className={tableClass}>
-          <thead>
-            <tr>
-              <th className={thClass}>Average sentence length</th>
-              <th className={thClass}>How it reads</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sentenceLengthRows.map((row) => (
-              <tr key={row.range}>
-                <td className={tdClass}>{row.range}</td>
-                <td className={tdClass}>{row.verdict}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p className={pClass}>
-        Averages hide variety, though. Strong writing mixes a 5-word punch
-        with a 25-word explanation. If your average is 18 but every sentence
-        is exactly 18 words, the rhythm goes flat — that is what the
-        longest-sentence stat above is for.
+        A useful workflow is to start with the sentence breakdown, inspect the
+        longest sentences, and then use the readability estimate as additional
+        context. That keeps the analysis focused on specific sentences instead
+        of chasing a single score.
       </p>
 
-      {/* Run-on sentences */}
-      <h2 className={h2Class}>How to Spot and Fix a Run-On Sentence</h2>
+      <h2 className={h2Class}>Is the Sentence Counter Private?</h2>
+
       <p className={pClass}>
-        A run-on sentence is two complete sentences joined without the right
-        punctuation or connecting word. The most common type is the comma
-        splice: &ldquo;I love writing, it helps me relax.&rdquo; Both halves
-        could stand alone as sentences, so a comma alone cannot hold them
-        together.
-      </p>
-      <p className={pClass}>Three fixes, using that example:</p>
-      <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed">
-        <li>
-          <strong>Split it:</strong> I love writing. It helps me relax.
-        </li>
-        <li>
-          <strong>Add a conjunction:</strong> I love writing, because it helps
-          me relax.
-        </li>
-        <li>
-          <strong>Use a semicolon:</strong> I love writing; it helps me relax.
-        </li>
-      </ul>
-      <p className={pClass}>
-        A long sentence is not automatically a run-on — a grammatically
-        correct 35-word sentence is just a long sentence. But the two travel
-        together: when this tool flags your longest sentence at 40+ words,
-        read it aloud. If you run out of breath before the period, your reader
-        ran out of patience two clauses earlier.
+        Sentence analysis runs in your browser. Your text does not need to be
+        uploaded to CountFlows to calculate the sentence count, sentence
+        lengths, or readability result. This makes the tool practical for
+        drafts that you would rather not paste into a server-based analyzer.
       </p>
 
-      {/* US & UK essays */}
-      <h2 className={h2Class}>
-        Sentence Counts for Essays and Applications (US &amp; UK)
-      </h2>
-      <p className={pClass}>
-        Sentence counting matters most when a word or character limit is
-        breathing down your neck:
-      </p>
-      <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed">
-        <li>
-          <strong>US college essays:</strong> The Common App personal
-          statement caps at 650 words — roughly 35 to 43 sentences. Admissions
-          readers skim, so shorter sentences stretch that budget further.
-        </li>
-        <li>
-          <strong>UK personal statements:</strong> UCAS allows 4,000
-          characters including spaces — about 600 words, or 30 to 40
-          sentences. Character limits punish long sentences twice, since
-          connectives eat characters fast.
-        </li>
-        <li>
-          <strong>University essays:</strong> Most UK universities apply a 10%
-          leeway on word limits; US institutions vary. Either way, markers
-          reward a controlled average sentence length — it reads as clarity,
-          not padding.
-        </li>
-      </ul>
-      <p className={pClass}>
-        For full word-count targets by essay type, see our{" "}
-        <Link href="/blog/manage-essay-word-count" className={linkClass}>
-          Essay Word Count Guide
-        </Link>
-        . It is especially useful when you are tightening an essay paragraph by paragraph and need a practical way to cut words without losing clarity.
-      </p>
+      <div className="mt-8 rounded-2xl border border-gray-200 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800/60">
+        <p className="font-semibold text-gray-900 dark:text-gray-100">
+          Related text tools
+        </p>
 
-      {/* AI angle */}
-      <h2 className={h2Class}>
-        Why a Sentence Counter Matters in the Age of AI
-      </h2>
-      <p className={pClass}>
-        AI drafts have a tell: uniform sentences. Ask a chatbot for an essay
-        and you often get sentence after sentence in the same 18-to-22-word
-        band, which is exactly what makes AI text feel flat. Paste any AI
-        draft here and the pattern shows up immediately — a suspiciously
-        consistent average and no short sentences at all.
-      </p>
-      <p className={pClass}>
-        Editing AI output is now half of writing, and this tool makes the two
-        highest-value edits visible: break the monotone rhythm, and cut the
-        padded sentences. Unlike pasting your draft into another AI tool to
-        check it, nothing here is sent to a server, logged, or used for
-        training.
-      </p>
-
-      {/* Privacy */}
-      <h2 className={h2Class}>Your Text Never Leaves Your Browser</h2>
-      <p className={pClass}>
-        Like every CountFlows tool, the Sentence Counter runs entirely on your
-        device. Your text is never uploaded, never stored, and never read by
-        anyone. Paste a confidential report or an unpublished chapter — close
-        the tab, and it is gone. No sign-up, no word limit, no premium tier.
-      </p>
-
-      {/* Related tools */}
-      <h2 className={h2Class}>More Free CountFlows Tools</h2>
-      <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed">
-        <li>
-          <Link href="/tools/word-counter" className={linkClass}>
+        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <Link
+            href="/tools/word-counter"
+            className={linkClass}
+          >
             Word Counter
-          </Link>{" "}
-          — count words, characters, and reading time as you type.
-        </li>
-        <li>
-          <Link href="/tools/character-counter" className={linkClass}>
-            Character Counter
-          </Link>{" "}
-          — check your text against platform character limits.
-        </li>
-        <li>
-          <Link href="/tools/reading-time" className={linkClass}>
-            Reading Time Calculator
-          </Link>{" "}
-          — estimate reading and speaking time.
-        </li>
-        <li>
-          <Link href="/tools/keyword-density-checker" className={linkClass}>
-            Keyword Density Checker
-          </Link>{" "}
-          — keep keyword usage natural before you publish.
-        </li>
-        <li>
-          <Link href="/tools/case-converter" className={linkClass}>
-            Case Converter
-          </Link>{" "}
-          — fix capitalization in one click.
-        </li>
-      </ul>
+          </Link>
 
-      {/* Related guides */}
-      <h2 className={h2Class}>Related Guides</h2>
-      <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed">
-        <li>
-          <Link href="/blog/common-writing-mistakes" className={linkClass}>
-            11 Common Writing Mistakes That Kill Your Credibility
+          <Link
+            href="/tools/character-counter"
+            className={linkClass}
+          >
+            Character Counter
           </Link>
-        </li>
-        <li>
-          <Link href="/blog/manage-essay-word-count" className={linkClass}>
-            Essay Word Count Guide: How Long Is an Essay?
+
+          <Link
+            href="/tools/reading-time"
+            className={linkClass}
+          >
+            Reading Time Calculator
           </Link>
-        </li>
-        <li>
-          <Link href="/blog/how-long-should-a-blog-post-be" className={linkClass}>
-            How Long Should a Blog Post Be?
+
+          <Link
+            href="/tools/syllable-counter"
+            className={linkClass}
+          >
+            Syllable Counter
           </Link>
-        </li>
-      </ul>
+
+          <Link
+            href="/tools/ai-text-cleaner"
+            className={linkClass}
+          >
+            AI Text Cleaner
+          </Link>
+        </div>
+      </div>
     </section>
-  );
+  )
 }

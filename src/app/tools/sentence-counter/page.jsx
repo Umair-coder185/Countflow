@@ -1,223 +1,318 @@
-import Link from "next/link";
-import SentenceCounterTool from "@/components/Sentence-counter-seo/SentenceCounterTool";
-import SeoContent from "@/components/Sentence-counter-seo/seo-content";
-import FAQ from "@/components/FAQ";
-import { sentenceCounterFAQs } from "@/lib/faqData";
-import { ArrowRight, ChevronRight } from "lucide-react";
+// app/tools/sentence-counter/page.jsx
+// SERVER component — metadata stays in layout.js.
+// WebApplication, BreadcrumbList and FAQPage schemas are rendered here.
 
+import Link from "next/link"
+import {
+  ArrowRight,
+  BarChart3,
+  CheckCircle2,
+  ChevronRight,
+  Gauge,
+  ListChecks,
+} from "lucide-react"
 
+import SentenceCounterTool from "@/components/Sentence-counter-seo/SentenceCounterTool"
+import SeoContent from "@/components/Sentence-counter-seo/seo-content"
+import FAQ from "@/components/FAQ"
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "@id": "https://countflows.com/tools/sentence-counter",
-  name: "Sentence Counter – CountFlows",
-  url: "https://countflows.com/tools/sentence-counter",
-  description:
-    "Free sentence counter that shows sentence count, word count, longest sentence, average sentence length, and a readability score in real time.",
-  image: "https://countflows.com/og-image.png",
-  applicationCategory: "ProductivityApplication",
-  operatingSystem: "All",
-  inLanguage: "en-US",
-  datePublished: "2026-06-15",
-  dateModified: "2026-07-13",
-  author: {
-    "@type": "Organization",
-    name: "CountFlows",
-    url: "https://countflows.com",
-    logo: "https://countflows.com/logo.png",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CountFlows",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://countflows.com/logo.png",
-    },
-  },
-  potentialAction: {
-    "@type": "UseAction",
-    target: "https://countflows.com/tools/sentence-counter",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    availability: "https://schema.org/InStock",
-  },
-  isAccessibleForFree: true,
-};
+import { sentenceCounterFAQs } from "@/lib/faqData"
+import { sentenceCounterToolSchema } from "@/lib/schema"
+
+const SITE = "https://countflows.com"
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": `${SITE}/tools/sentence-counter#breadcrumb`,
+
   itemListElement: [
     {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://countflows.com",
+      item: SITE,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Tools",
-      item: "https://countflows.com/tools",
+      item: `${SITE}/tools`,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Sentence Counter",
-      item: "https://countflows.com/tools/sentence-counter",
+      item: `${SITE}/tools/sentence-counter`,
     },
   ],
-};
+}
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: sentenceCounterFAQs.map((f) => ({
-    "@type": "Question",
-    name: f.question.trim(),
-    acceptedAnswer: { "@type": "Answer", text: f.answer.trim() },
-  })),
-};
+  "@id": `${SITE}/tools/sentence-counter#faq`,
 
-const features = [
+  mainEntity: sentenceCounterFAQs.map((faq) => ({
+    "@type": "Question",
+
+    name: faq.question.trim(),
+
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer.trim(),
+    },
+  })),
+}
+
+const jsonLd = (obj) => ({
+  __html: JSON.stringify(obj).replace(/</g, "\\u003c"),
+})
+
+const FEATURES = [
   {
-    title: "Free Instant counting",
+    icon: ListChecks,
+
+    title: "Instant sentence count",
+
     description:
-      "See sentence count, words, and characters updated in real time.",
+      "Paste your text and see how many sentences and words it contains in real time.",
   },
+
   {
-    title: " Free Readability analysis",
+    icon: BarChart3,
+
+    title: "Sentence length checker",
+
     description:
-      "Get insights into sentence length and writing difficulty levels.",
+      "Check average sentence length and identify the longest sentences that may affect pacing.",
   },
+
   {
-    title: "Goal tracking free",
+    icon: Gauge,
+
+    title: "Readability insights",
+
     description:
-      "Set a target sentence count and watch your progress bar grow.",
+      "Use sentence-length and readability signals to spot writing that may feel dense or difficult to scan.",
   },
-];
+]
 
 export default function SentenceCounterPage() {
   return (
     <main
       id="sentence-counter-top"
-      className="relative overflow-hidden bg-gradient-to-b mt-12 md:mt-16 from-white to-cyan-50 dark:from-gray-950 dark:to-gray-800 min-h-screen md:mt-12 dark:text-white"
+      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-white to-cyan-50/70 pt-12 text-slate-950 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900 dark:text-white md:pt-16"
     >
-      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
-      <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-violet-200/30 blur-3xl dark:bg-violet-500/20" />
+      {/* Decorative background */}
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/35 blur-3xl dark:bg-cyan-500/15" />
 
+      <div className="pointer-events-none absolute right-[-4rem] top-[30rem] h-60 w-60 rounded-full bg-violet-200/25 blur-3xl dark:bg-violet-500/10" />
+
+      {/* =========================================
+          Structured Data
+          ========================================= */}
+
+      {/* Main WebApplication schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML= {{ __html: JSON.stringify(schema) }} 
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML= {{ __html: JSON.stringify(breadcrumbSchema) }} 
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML= {{ __html: JSON.stringify(faqSchema) }} 
+        dangerouslySetInnerHTML={jsonLd(sentenceCounterToolSchema)}
       />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbSchema)}
+      />
+
+      {/* FAQ schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(faqSchema)}
+      />
+
+      {/* =========================================
+          Breadcrumb
+          ========================================= */}
+
       <nav
         aria-label="Breadcrumb"
-        className="max-w-5xl mx-auto px-4 md:px-8 pt-8"
+        className="relative mx-auto max-w-5xl px-4 pt-6 md:px-8"
       >
-        <ol className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
           <li>
-            <Link href="/" className="hover:text-cyan-600 transition-colors">
+            <Link
+              href="/"
+              className="transition-colors hover:text-cyan-600"
+            >
               Home
             </Link>
           </li>
+
           <li aria-hidden="true">
             <ChevronRight className="h-4 w-4" />
           </li>
+
           <li>
             <Link
               href="/tools"
-              className="hover:text-cyan-600 transition-colors"
+              className="transition-colors hover:text-cyan-600"
             >
               Tools
             </Link>
           </li>
+
           <li aria-hidden="true">
             <ChevronRight className="h-4 w-4" />
           </li>
+
           <li
             aria-current="page"
-            className="font-medium text-gray-800 dark:text-gray-200"
+            className="font-medium text-gray-900 dark:text-gray-100"
           >
             Sentence Counter
           </li>
         </ol>
       </nav>
 
-      {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14 text-center relative">
-        <h1 className="text-2xl mt-4 md:text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-           Sentence <span className="text-cyan-500">Counter</span>
+      {/* =========================================
+          Hero
+          ========================================= */}
+
+      <section className="relative mx-auto max-w-5xl px-4 pb-8 pt-10 text-center md:px-8 md:pb-10 md:pt-14">
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50/90 px-3.5 py-1.5 text-xs font-semibold text-cyan-700 dark:border-cyan-800/60 dark:bg-cyan-950/40 dark:text-cyan-300">
+          <CheckCircle2 className="h-3.5 w-3.5" />
+
+          Free online sentence analysis
+        </div>
+
+        <h1 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl md:text-6xl dark:text-white">
+          Free Sentence Counter &amp;{" "}
+          <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+            Sentence Length Checker
+          </span>
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
-          Instantly count sentences, measure average sentence length, and
-          surface readability signals so you can improve clarity and pacing.
-          Ideal for essays, articles, and technical writing.
+
+        <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg md:leading-8 dark:text-slate-300">
+          Paste your text to instantly count sentences, check average sentence
+          length, find your longest sentences, and review readability signals
+          for clearer writing.
         </p>
+
+        <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
+          Wondering{" "}
+          <strong className="font-semibold text-slate-700 dark:text-slate-200">
+            how many sentences are in your text?
+          </strong>{" "}
+          Paste it below and get the answer instantly.
+        </p>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-slate-500 dark:text-slate-400">
+          <span className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+
+            Sentence count
+          </span>
+
+          <span className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+
+            Average sentence length
+          </span>
+
+          <span className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+
+            Readability signals
+          </span>
+        </div>
       </section>
 
-      {/* Interactive Tool (client component) */}
-      <SentenceCounterTool />
+      {/* =========================================
+          Interactive Tool
+          ========================================= */}
 
-      {/* Feature Cards */}
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
-        <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          {features.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/90 p-5 shadow-lg shadow-cyan-200/20 dark:shadow-black/20"
+      <section
+        aria-label="Sentence counter tool"
+        className="relative"
+      >
+        <SentenceCounterTool />
+      </section>
+
+      {/* =========================================
+          Features
+          ========================================= */}
+
+      <section className="relative mx-auto max-w-5xl px-4 py-10 md:px-8 md:py-14">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {FEATURES.map(({ icon: Icon, title, description }) => (
+            <article
+              key={title}
+              className="rounded-2xl border border-gray-200 bg-white/85 p-5 text-left shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/80"
             >
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                {item.description}
+              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-300">
+                <Icon
+                  className="h-4 w-4"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <h2 className="text-base font-bold text-gray-950 dark:text-white">
+                {title}
+              </h2>
+
+              <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">
+                {description}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* SEO Content */}
-      <SeoContent />
-        <p className="mt-10 text-center">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm shadow-slate-200 transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-950 dark:text-blue-300 dark:hover:border-blue-500 dark:hover:bg-slate-900"
-          >
-            All guides
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </p>
+      {/* =========================================
+          SEO Content
+          ========================================= */}
 
-      {/* FAQ */}
-      <div className="mb-20">
+      <SeoContent />
+
+      {/* Blog CTA */}
+
+      <div className="mx-auto mt-10 max-w-5xl px-4 text-center md:px-8">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-950 dark:text-blue-300 dark:hover:border-blue-500 dark:hover:bg-slate-900"
+        >
+          Writing guides
+
+          <ArrowRight
+            className="h-4 w-4"
+            aria-hidden="true"
+          />
+        </Link>
+      </div>
+
+      {/* =========================================
+          FAQ
+          ========================================= */}
+
+      <div className="mb-16 mt-8">
         <FAQ faqs={sentenceCounterFAQs} />
       </div>
 
-      {/* CTA */}
-      <div className="max-w-5xl mx-auto px-4 md:px-8 mb-12">
+      {/* =========================================
+          Back to top
+          ========================================= */}
+
+      <div className="mx-auto mb-12 max-w-5xl px-4 md:px-8">
         <Link
           href="#sentence-counter-top"
-          className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-cyan-600 px-5 py-3 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-700 transition-colors duration-200"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan-600 px-5 py-3 font-semibold text-white shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-700 sm:w-auto"
         >
           Back to top
+
           <ArrowRight className="h-5 w-5" />
         </Link>
       </div>
     </main>
-  );
+  )
 }

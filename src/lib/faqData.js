@@ -115,41 +115,68 @@ export const characterCounterFAQs = [
 ]
 const readingTimeFAQs = [
   {
-    question: "How Long to Read a Book?",
-    answer: "The time to read a book depends on its length and your reading speed. You can use a reading tool to get an instant estimate in minutes or hours."
+    question: "How is reading time calculated?",
+    answer:
+      "Reading time is estimated by dividing the total number of words by your reading speed in words per minute (WPM). For example, 1,000 words at 200 WPM takes about 5 minutes to read.",
   },
   {
-    question : "Can I Estimate Speaking Time?",
-    answer : "Yes, you can convert your text into speaking time. Tools calculate words per minute and show how long your speech will take"
+    question: "How long will my text take to read?",
+    answer:
+      "Paste your text into the calculator and it will estimate the reading time instantly. You can also change the reading speed to get a result that better matches your own pace.",
   },
   {
-    question : "Does It Work Offline?",
-
-    answer : "Most online calculators need the internet to work, but some apps let you use them offline. Always check the tool’s features before relying on it."
-  }
+    question: "What reading speed should I use?",
+    answer:
+      "If you know your reading speed, enter your own WPM for a more personal estimate. Otherwise, you can start with one of the available reading-speed presets and adjust it as needed.",
+  },
+  {
+    question: "Can I calculate speaking time too?",
+    answer:
+      "Yes. The calculator also estimates how long your text may take to speak aloud. You can adjust the speaking speed separately for speeches, presentations, scripts, and voiceovers.",
+  },
+  {
+    question: "Is the reading time estimate exact?",
+    answer:
+      "No. It is an estimate based on word count and the selected reading speed. Text difficulty, pauses, familiarity with the subject, and your reading purpose can affect the actual time.",
+  },
+  {
+    question: "Does CountFlows store my text?",
+    answer:
+      "No. The reading-time calculation runs in your browser, so your text does not need to be uploaded to CountFlows for processing.",
+  },
 ]
 
 
 const sentenceCounterFAQs = [
   {
-    question: "Is this sentence counter free?",
-    answer :"Yes, most sentence counter  are free to use. You can access basic features without paying anything."
-  },{
-    question: "Can it detect complex sentences?",
-    answer :"Yes, it can spot long or complex sentences. This  simplify your writing easily."
+    question: "Is the sentence counter free to use?",
+    answer:
+      "Yes. The CountFlows Sentence Counter is free to use and does not require sign-up.",
   },
   {
-    question: "Does it support multiple languages?",
-    answer :"Many tools support multiple languages. However, accuracy may vary depending on the language."
+    question: "How does the sentence counter work?",
+    answer:
+      "Paste or type your text into the tool. It automatically detects sentences and shows the total sentence count, word count, average sentence length, longest sentence, shortest sentence, and readability estimate.",
   },
   {
-    question: "Can I use it offline?",
-    answer :"Most sentence counters work online. Some tools may offer offline versions, but they are limited."
+    question: "What counts as a sentence?",
+    answer:
+      "A sentence usually ends with a period, question mark, or exclamation point. The tool also accounts for common abbreviations and decimal numbers so they are less likely to be counted as separate sentences.",
   },
   {
-    question: "Does it store my text?",
-
-    answer :"No, most tools do not store your text. They process it instantly and keep your data private."
+    question: "How can I check my sentence length?",
+    answer:
+      "The tool shows the average number of words per sentence and provides a sentence-by-sentence breakdown, making it easy to find unusually long or short sentences.",
+  },
+  {
+    question: "How accurate is the sentence counter?",
+    answer:
+      "The counter uses browser-based sentence detection and a punctuation-aware fallback. It works well for standard English text, although unusual punctuation, dialogue, or unconventional writing may occasionally require a manual check.",
+  },
+  {
+    question: "Does CountFlows store my text?",
+    answer:
+      "No. Sentence analysis runs in your browser, so your text is not uploaded to CountFlows for processing.",
   },
 ]
  const keywordDensityFAQs = [
