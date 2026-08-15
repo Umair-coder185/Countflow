@@ -1,26 +1,68 @@
 export const metadata = {
-  title: "Free AI Token Counter & Cost Calculator - GPT, Claude & Gemini | Countflows",
+  title: "Free AI Token Calculator & Counter | GPT, Claude, Gemini",
+
   description:
-    "Count tokens for GPT-5.6, Claude, and Gemini, estimate API cost, and track context window usage instantly. 100% free, runs in your browser — nothing uploaded.",
-  keywords:
-    "ai token counter, ai cost calculator, token budget calculator, context window calculator, gpt token counter, chatgpt token counter, openai token calculator, llm token counter, count tokens online, ai token estimator, gpt token limit checker, text to tokens converter, free ai token counter",
+    "Count AI tokens instantly, estimate GPT, Claude & Gemini API costs, check context limits, and find the cheapest model. Free and private.",
+
+  keywords: [
+    "ai token calculator",
+    "ai token counter",
+    "chatgpt token counter",
+    "gpt token counter",
+    "gpt token calculator",
+    "ai cost calculator",
+    "ai api cost calculator",
+    "token cost calculator",
+    "llm cost calculator",
+    "llm token counter",
+    "claude token counter",
+    "gemini token counter",
+    "openai token calculator",
+    "token budget calculator",
+    "context window calculator",
+    "prompt token counter",
+  ],
+
+  alternates: {
+    canonical: "https://countflows.com/tools/ai-token-counter",
+  },
+
   openGraph: {
-    title: "Free AI Token Counter & Cost Calculator - GPT, Claude & Gemini",
+    title: "Free AI Token Calculator & Counter | GPT, Claude, Gemini",
     description:
-      "Count tokens, estimate API cost, and track context window usage for GPT-5.6, Claude, and Gemini instantly. 100% free and private.",
+      "Count tokens, compare AI API costs, check context limits, and find the cheapest supported model across GPT, Claude, and Gemini.",
     url: "https://countflows.com/tools/ai-token-counter",
+    siteName: "CountFlows",
     type: "website",
+
     images: [
       {
         url: "https://countflows.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "CountFlows AI Token Counter",
+        alt: "CountFlows AI Token Calculator and Counter",
       },
     ],
   },
-  alternates: {
-    canonical: "https://countflows.com/tools/ai-token-counter",
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Free AI Token Calculator & Counter | CountFlows",
+    description:
+      "Count AI tokens, compare GPT, Claude & Gemini API costs, check context limits, and estimate your AI spend.",
+    images: ["https://countflows.com/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 }
 
