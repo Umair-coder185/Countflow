@@ -1,61 +1,114 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import BlogCard from "@/components/blog/BlogCard";
 import { BookOpen } from "lucide-react";
 
-export default function BlogListClient({ posts }) {
-  const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+export default function BlogListClient({
+  posts = [],
+  categories = ["All"],
+  selectedCategory = "All",
+  totalPosts = 0,
+}) {
+  const router = useRouter();
+  const [category, setCategory] = useState(selectedCategory);
 
-  const categories = useMemo(() => {
-    const set = new Set(posts.map((p) => p.category).filter(Boolean));
-    return ["All", ...Array.from(set)];
-  }, [posts]);
+  useEffect(() => {
+    setCategory(selectedCategory);
+  }, [selectedCategory]);
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const safePosts = Array.isArray(posts) ? posts : [];
+  const safeCategories = Array.isArray(categories)
+    ? categories
+    : ["All"];
 
-  const filteredPosts =
-    selectedCategory === "All"
-      ? sortedPosts
-      : sortedPosts.filter((p) => p.category === selectedCategory);
+  function handleCategoryChange(event) {
+    const nextCategory = event.target.value;
+    setCategory(nextCategory);
+
+    if (nextCategory === "All") {
+      router.push("/blog");
+      return;
+    }
+
+    router.push(
+      `/blog?category=${encodeURIComponent(nextCategory)}`
+    );
+  }
 
   return (
-    <main className="max-w-screen-xl px-2 sm:px-6 md:px-8 py-6 sm:py-14 lg:py-4 mx-auto">
+    <>
       <header className="mb-6 text-center">
-        <div className="flex justify-center mb-5">
-          <BookOpen className="w-10 h-10 text-blue-600 dark:text-cyan-400" />
+        <div
+          className="flex justify-center mb-2 "
+          aria-hidden="true"
+        >
+          <BookOpen className="w-10 h-10 text-blue-600 dark:text-cyan-400 mt--2" />
         </div>
+
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 dark:text-gray-100 leading-tight tracking-tight">
           📚 Blogs
         </h1>
+
         <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Discover expert writing tips, SEO strategies, and content creation guides — always updated with the latest articles first.
+          Discover expert writing tips, SEO strategies, AI guides,
+          reading resources, and practical content tutorials.
         </p>
       </header>
 
-      <div className="flex justify-end items-center mb-8 gap-3">
-        <label className="sr-only">Filter by category</label>
-        <select
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          className="px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border text-sm shadow-sm focus:outline-none"
-          aria-label="Filter posts by category"
-        >
-          {categories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 gap-3">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {totalPosts} {totalPosts === 1 ? "article" : "articles"}
+          {selectedCategory !== "All"
+            ? ` in ${selectedCategory}`
+            : ""}
+        </p>
+
+        <div className="flex items-center gap-3">
+          <label
+            htmlFor="blog-category-filter"
+            className="sr-only"
+          >
+            Filter by category
+          </label>
+
+          <select
+            id="blog-category-filter"
+            value={category}
+            onChange={handleCategoryChange}
+            className="px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-label="Filter posts by category"
+          >
+            {safeCategories.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
-      <section className="grid gap-6 sm:gap-10 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
-        {filteredPosts.map((post) => (
-          <div key={post.slug}>
-            <BlogCard post={post} />
-          </div>
-        ))}
-      </section>
-    </main>
+      {safePosts.length > 0 ? (
+        <section
+          className="grid gap-6 sm:gap-8 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          aria-label="Blog posts"
+        >
+          {safePosts.map((post, index) => (
+            <BlogCard
+              key={post.id || post.slug}
+              post={post}
+              priority={index < 3}
+            />
+          ))}
+        </section>
+      ) : (
+        <div className="py-16 text-center">
+          <p className="text-gray-600 dark:text-gray-400">
+            No articles are available in this category yet.
+          </p>
+        </div>
+      )}
+    </>
   );
 }

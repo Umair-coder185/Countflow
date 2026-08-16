@@ -1,140 +1,315 @@
-import { posts } from "@/lib/blogData";   
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ChevronRight } from "lucide-react";
+import { posts } from "@/lib/blogData";
 import BlogContent from "@/components/blog/BlogContent";
 
-export async function generateMetadata({ params }) {
-  const { slug: slugParam } = await params;
-  const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
-  const post = posts.find((p) => p.slug === slug);
+const SITE_URL = "https://countflows.com";
+const BLOG_URL = `${SITE_URL}/blog`;
 
-  if (!post) {
+function getSlug(slugParam) {
+  return Array.isArray(slugParam) ? slugParam[0] : slugParam;
+}
+
+function getPost(slug) {
+  return posts.find((post) => post?.slug === slug);
+}
+
+function absoluteUrl(value) {
+  if (!value) return undefined;
+
+  if (/^https?:\/\//i.test(value)) {
+    return value;
+  }
+
+  return `${SITE_URL}${value.startsWith("/") ? value : `/${value}`}`;
+}
+
+function toIsoDate(value) {
+  if (!value) return undefined;
+
+  const parsed = new Date(value);
+
+  return Number.isNaN(parsed.getTime())
+    ? undefined
+    : parsed.toISOString();
+}
+
+function authorSchema(author) {
+  const name = author?.trim() || "CountFlows Team";
+
+  if (
+    name.toLowerCase() === "countflows team" ||
+    name.toLowerCase() === "countflow team"
+  ) {
     return {
-      title: "Post Not Found",
-      description: "The blog post you are looking for does not exist.",
+      "@type": "Organization",
+      name: "CountFlows",
+      url: SITE_URL,
     };
   }
 
   return {
-    title: post.title + " | CountFlows Blog",
-  description: post.description,
+    "@type": "Person",
+    name,
+  };
+}
 
-  openGraph: {
-    title: post.title,
+function jsonLd(data) {
+  return {
+    __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+  };
+}
+
+export function generateStaticParams() {
+  return posts
+    .filter((post) => post?.slug)
+    .map((post) => ({
+      slug: post.slug,
+    }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug: slugParam } = await params;
+  const slug = getSlug(slugParam);
+  const post = getPost(slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found | CountFlows",
+      description:
+        "The CountFlows blog post you are looking for does not exist.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const canonical = `${BLOG_URL}/${slug}`;
+  const image = absoluteUrl(post.image);
+
+  return {
+    title: `${post.title} | CountFlows Blog`,
     description: post.description,
-    images: [
+    authors: [
       {
-        url: post.image,
-        alt: post.imageAlt || post.title,
+        name: post.author?.trim() || "CountFlows Team",
+        url: `${SITE_URL}/about`,
       },
     ],
-    url: `https://countflows.com/blog/${slug}`,
-    type: "article",
-  },
-
-  alternates: {
-    canonical: `https://countflows.com/blog/${slug}`,
-  },
-};
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: canonical,
+      siteName: "CountFlows",
+      type: "article",
+      locale: "en_US",
+      publishedTime: toIsoDate(post.date),
+      modifiedTime: toIsoDate(post.dateModified || post.updatedAt || post.date),
+      authors: post.author ? [post.author.trim()] : undefined,
+      images: image
+        ? [
+            {
+              url: image,
+              alt: post.imageAlt || post.title,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: image ? [image] : undefined,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
 }
 
 export default async function BlogPost({ params }) {
   const { slug: slugParam } = await params;
-  const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
-  const post = posts.find((p) => p.slug === slug);
+  const slug = getSlug(slugParam);
+  const post = getPost(slug);
 
   if (!post) {
-    return (
-      <main className="max-w-3xl mx-auto px-4 md:px-6 py-16">
-        <div className="p-10 text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Post not found</h1>
-          <a href="/blog" className="text-blue-600 hover:underline">
-            ← Back to Blog
-          </a>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
-  // Article Schema Markup
+  const canonical = `${BLOG_URL}/${slug}`;
+  const image = absoluteUrl(post.image);
+  const datePublished = toIsoDate(post.date);
+  const dateModified = toIsoDate(
+    post.dateModified || post.updatedAt || post.date
+  );
+
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": post.title,
-    "description": post.description,
-    "image": `https://countflows.com${post.image}`,
-    "url": `https://countflows.com/blog/${slug}`,
-    "datePublished": post.date,
-    "dateModified": post.date,
-    "author": {
-      "@type": "Person",
-      "name": post.author
+    "@type": "BlogPosting",
+    "@id": `${canonical}#article`,
+    headline: post.title,
+    description: post.description,
+    url: canonical,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical,
     },
-    "publisher": {
+    image: image
+      ? {
+          "@type": "ImageObject",
+          url: image,
+        }
+      : undefined,
+    datePublished,
+    dateModified,
+    author: authorSchema(post.author),
+    publisher: {
       "@type": "Organization",
-      "name": "Countflows",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://countflows.com/logo.png"
-      }
+      "@id": `${SITE_URL}/#organization`,
+      name: "CountFlows",
+      url: SITE_URL,
     },
-    "articleBody": post.excerpt
+    isPartOf: {
+      "@type": "Blog",
+      "@id": `${BLOG_URL}#blog`,
+      name: "CountFlows Blog",
+      url: BLOG_URL,
+    },
+    keywords:
+      Array.isArray(post.keywords) && post.keywords.length
+        ? post.keywords.filter(Boolean).join(", ")
+        : undefined,
   };
 
-  // Breadcrumb for the article
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@id": `${canonical}#breadcrumb`,
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://countflows.com"
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": "https://countflows.com/blog"
+        position: 2,
+        name: "Blog",
+        item: BLOG_URL,
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": post.title,
-        "item": `https://countflows.com/blog/${slug}`
-      }
-    ]
+        position: 3,
+        name: post.title,
+        item: canonical,
+      },
+    ],
   };
 
-  // FAQ Schema Markup (if FAQs exist in post)
-  const faqSchema = post.faqs ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": post.faqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  } : null;
+  const faqSchema =
+    Array.isArray(post.faqs) && post.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": `${canonical}#faq`,
+          mainEntity: post.faqs
+            .filter((faq) => faq?.question && faq?.answer)
+            .map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+        }
+      : null;
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={jsonLd(articleSchema)}
       />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={jsonLd(breadcrumbSchema)}
       />
-      {faqSchema && (
+
+      {faqSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={jsonLd(faqSchema)}
         />
-      )}
+      ) : null}
+
+      <nav
+  aria-label="Breadcrumb"
+  className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 pt-24 sm:pt-28 lg:pt-28"
+>
+  <div className="flex flex-wrap items-center justify-between gap-3">
+    <ol className="flex min-w-0 flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+      <li>
+        <Link
+          href="/"
+          className="hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
+        >
+          Home
+        </Link>
+      </li>
+
+      <li aria-hidden="true">
+        <ChevronRight className="h-4 w-4" />
+      </li>
+
+      <li>
+        <Link
+          href="/blog"
+          className="hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
+        >
+          Blog
+        </Link>
+      </li>
+
+      <li aria-hidden="true">
+        <ChevronRight className="h-4 w-4" />
+      </li>
+
+      <li
+        aria-current="page"
+        className="max-w-[220px] sm:max-w-[350px] lg:max-w-[520px] truncate font-medium text-gray-700 dark:text-gray-300"
+        title={post.title}
+      >
+        {post.title}
+      </li>
+    </ol>
+
+    {/* Tools shortcut */}
+    <Link
+      href="/tools"
+      className="shrink-0 rounded-lg border border-gray-200 dark:border-gray-700
+        px-3 py-1.5 text-sm font-semibold text-blue-600 dark:text-cyan-400
+        hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+    >
+      Explore Tools
+    </Link>
+  </div>
+</nav>
+
       <BlogContent post={post} />
     </>
   );
