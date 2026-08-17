@@ -1,46 +1,47 @@
 import Link from "next/link"
+import { ArrowUp, ChevronRight } from "lucide-react"
 
-import { ArrowRight, ChevronRight } from "lucide-react"
 import { wordCounterFAQs } from "@/lib/faqData"
 import FAQ from "@/components/FAQ"
 import SEOContent from "@/components/Word-counter-seo/SEOContent"
-import WordCounterTool from "@/components/word-counter/WordCounterTool"
+import WordCounterSection from "@/components/word-counter/WordCounterSection"
 
-// ---- JSON-LD (single source — layout.js se schema hata diya gaya hai) ----
+const jsonLd = (obj) => ({
+  __html: JSON.stringify(obj).replace(/</g, "\\u003c"),
+})
+
 const appSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "@id": "https://countflows.com/tools/word-counter",
-  name: "Word Counter - CountFlows",
+  "@id": "https://countflows.com/tools/word-counter#webapp",
+  name: "Free Online Word Counter - CountFlows",
   url: "https://countflows.com/tools/word-counter",
   description:
-    "Free word counter that provides word, character, sentence, and paragraph counts plus goal tracking and readability tips.",
+    "Free online word counter that instantly counts words, characters, sentences, and paragraphs, with writing goals, word frequency, and reading-time estimates.",
   image: "https://countflows.com/og-image.png",
   applicationCategory: "ProductivityApplication",
-  operatingSystem: "All",
+  operatingSystem: "Any",
   inLanguage: "en-US",
   datePublished: "2026-05-20",
-  dateModified: "2026-07-08",
+  dateModified: "2026-08-17",
   author: {
     "@type": "Organization",
     name: "CountFlows",
     url: "https://countflows.com",
-    logo: "https://countflows.com/logo.png",
   },
   publisher: {
     "@type": "Organization",
     name: "CountFlows",
-    logo: { "@type": "ImageObject", url: "https://countflows.com/logo.png" },
-  },
-  potentialAction: {
-    "@type": "UseAction",
-    target: "https://countflows.com/tools/word-counter",
+    url: "https://countflows.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://countflows.com/logo.png",
+    },
   },
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    availability: "https://schema.org/InStock",
   },
   isAccessibleForFree: true,
 }
@@ -49,8 +50,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://countflows.com" },
-    { "@type": "ListItem", position: 2, name: "Tools", item: "https://countflows.com/tools" },
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://countflows.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Tools",
+      item: "https://countflows.com/tools",
+    },
     {
       "@type": "ListItem",
       position: 3,
@@ -60,28 +71,38 @@ const breadcrumbSchema = {
   ],
 }
 
+const validFAQs = wordCounterFAQs.filter(
+  (faq) => faq?.question?.trim() && faq?.answer?.trim()
+)
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: wordCounterFAQs.map((f) => ({
+  mainEntity: validFAQs.map((faq) => ({
     "@type": "Question",
-    name: f.question.trim(),
-    acceptedAnswer: { "@type": "Answer", text: f.answer.trim() },
+    name: faq.question.trim(),
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer.trim(),
+    },
   })),
 }
 
 const features = [
   {
-    title: "Word tracking",
-    description: "Count words and sentences as you write with real-time updates.",
+    title: "Instant text counts",
+    description:
+      "See words, characters, sentences, and paragraphs update as you type or paste.",
   },
   {
-    title: "Goal-driven",
-    description: "Set a target word count and watch your progress bar grow.",
+    title: "Writing goal tracker",
+    description:
+      "Set a target word count and monitor your progress while you write.",
   },
   {
-    title: "Writer-friendly",
-    description: "Focus mode to minimize distractions and maximize productivity.",
+    title: "Private in your browser",
+    description:
+      "Your text is counted locally in the browser and is not uploaded for analysis.",
   },
 ]
 
@@ -89,120 +110,111 @@ export default function WordCounterPage() {
   return (
     <main
       id="word-counter-top"
-      className="relative overflow-hidden bg-gradient-to-b from-white to-cyan-50 dark:from-gray-950 dark:to-gray-800 min-h-screen mt-12 md:mt-16 dark:text-white"
+      className="relative mt-12 min-h-screen overflow-hidden bg-gradient-to-b from-white to-cyan-50 dark:from-gray-950 dark:to-gray-800 dark:text-white md:mt-16"
     >
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-500/20" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-500/20" />
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
+        dangerouslySetInnerHTML={jsonLd(appSchema)}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={jsonLd(breadcrumbSchema)}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={jsonLd(faqSchema)}
       />
 
-
-
-
-      {/* Visible breadcrumb — matches BreadcrumbList JSON-LD */}
-      {/* Visible breadcrumb — matches BreadcrumbList JSON-LD */}
       <nav
         aria-label="Breadcrumb"
-        className="max-w-5xl mx-auto px-4 md:px-8 pt-6 md:pt-8"
+        className="relative mx-auto max-w-6xl px-4 pt-6 md:px-8 md:pt-8"
       >
-        <ol className="flex flex-wrap items-center gap-y-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+        <ol className="flex flex-wrap items-center gap-y-1 text-xs text-gray-500 dark:text-gray-400 sm:text-sm">
           <li className="flex items-center">
             <Link
               href="/"
-              className="inline-flex items-center min-h-[44px] sm:min-h-0 px-1 -mx-1 hover:text-cyan-600 transition-colors"
+              className="-mx-1 inline-flex min-h-[44px] items-center px-1 transition-colors hover:text-cyan-600 sm:min-h-0"
             >
               Home
             </Link>
           </li>
-          <li aria-hidden="true" className="flex items-center shrink-0 px-0.5">
+          <li aria-hidden="true" className="flex shrink-0 items-center px-0.5">
             <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </li>
           <li className="flex items-center">
             <Link
               href="/tools"
-              className="inline-flex items-center min-h-[44px] sm:min-h-0 px-1 -mx-1 hover:text-cyan-600 transition-colors"
+              className="-mx-1 inline-flex min-h-[44px] items-center px-1 transition-colors hover:text-cyan-600 sm:min-h-0"
             >
               Tools
             </Link>
           </li>
-          <li aria-hidden="true" className="flex items-center shrink-0 px-0.5">
+          <li aria-hidden="true" className="flex shrink-0 items-center px-0.5">
             <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </li>
           <li
             aria-current="page"
-            className="flex items-center font-medium text-gray-800 dark:text-gray-200 truncate max-w-[60vw] sm:max-w-none"
+            className="flex max-w-[60vw] items-center truncate font-medium text-gray-800 dark:text-gray-200 sm:max-w-none"
           >
-           Word Counter
+            Word Counter
           </li>
         </ol>
       </nav>
-      {/* Hero — server-rendered */}
-      <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-14 text-center relative">
-        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mt-4">
-          Free Word <span className="text-cyan-500">Counter</span>
+
+      <section className="relative mx-auto max-w-5xl px-4 py-10 text-center md:px-8 md:py-12">
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 md:text-5xl">
+          Free Online <span className="text-cyan-500">Word Counter</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-gray-600 dark:text-gray-300 text-base md:text-lg leading-8">
-          This free Word Counter instantly shows how many words, characters, sentences, and
-          paragraphs are in your text — no signup required. Use it to track progress against
-          targets, improve readability, and export your draft when you're finished.
+        <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-gray-600 dark:text-gray-300 md:text-lg md:leading-8">
+          Count words, characters, sentences, and paragraphs instantly. Paste or
+          type your text below to check your word count online for free, track a
+          writing goal, and review useful text statistics with no signup.
         </p>
       </section>
 
-      {/* Interactive tool — the ONLY client island on this page */}
-      <WordCounterTool />
+      <WordCounterSection />
 
-      {/* Feature cards — server-rendered, static */}
-      <section className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 text-center relative">
-        <div className="mt-2 grid gap-4 sm:grid-cols-3">
+      <section
+        aria-labelledby="word-counter-features"
+        className="relative mx-auto max-w-5xl px-4 py-10 text-center md:px-8 md:py-14"
+      >
+        <h2 id="word-counter-features" className="sr-only">
+          Word Counter features
+        </h2>
+
+        <div className="grid gap-4 sm:grid-cols-3">
           {features.map((item) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/90 p-5 shadow-lg shadow-cyan-200/20 dark:shadow-black/20"
+              className="rounded-3xl border border-gray-200 bg-white/80 p-5 shadow-lg shadow-cyan-200/20 dark:border-gray-700 dark:bg-gray-900/90 dark:shadow-black/20"
             >
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
+              <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SEO Content — server-rendered */}
       <SEOContent />
-        <p className="mt-10 text-center">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 rounded-full border border-blue-300 bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm shadow-slate-200 transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-950 dark:text-blue-300 dark:hover:border-blue-500 dark:hover:bg-slate-900"
-          >
-            All guides
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </p>
 
-      {/* FAQ */}
       <div className="mb-20">
-        <FAQ faqs={wordCounterFAQs} />
+        <FAQ faqs={validFAQs} />
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-8 mb-12">
+      <div className="mx-auto mb-12 max-w-5xl px-4 md:px-8">
         <Link
           href="#word-counter-top"
-          className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-cyan-600 px-5 py-3 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-700 transition-colors duration-200"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan-600 px-5 py-3 font-semibold text-white shadow-lg shadow-cyan-500/20 transition-colors duration-200 hover:bg-cyan-700 sm:w-auto"
         >
           Back to top
-          <ArrowRight className="h-5 w-5" />
+          <ArrowUp className="h-5 w-5" aria-hidden="true" />
         </Link>
       </div>
     </main>

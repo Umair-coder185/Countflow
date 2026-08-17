@@ -1,7 +1,9 @@
 export const metadata = {
-  title: "Free Word Counter - Instant Word, Character & Sentence Count",
-  description:
-   "Use our free word counter to quickly analyze words, characters, and sentences. Perfect for writers and students needing real-time insights.",
+
+  
+  title: "Free Word Counter Online – Count Words, Characters & Sentences | CountFlows",
+   description:
+   "Use our free online word counter to instantly count words, characters, sentences and paragraphs. Check your word count, track writing goals and analyze text with no signup.",
   openGraph: {
     title: "Free Word Counter - Instant Word, Character & Sentence Count",
     description:

@@ -1,57 +1,48 @@
-import { motion } from "@/lib/no-motion"
-import { Type, Hash, Clock, Mic, AlignLeft, List } from "lucide-react"
+import { Clock, Hash, ListTree, Mic } from "lucide-react"
 
-export default function StatsCard({ text }) {
-  const words = text.trim().split(/\s+/).filter(Boolean).length
-  const characters = text.length
-  const charactersNoSpaces = text.replace(/\s/g, "").length
-  const sentences = text.split(/[.!?]+/).filter(Boolean).length
-  const paragraphs = text.split(/\n+/).filter(Boolean).length
+const statsConfig = [
+  { key: "charactersNoSpaces", label: "Characters, no spaces", icon: Hash },
+  { key: "readingTime", label: "Reading time", icon: Clock },
+  { key: "speakingTime", label: "Speaking time", icon: Mic },
+  { key: "avgSentenceLength", label: "Avg. sentence", icon: ListTree },
+]
 
-  const readingTime = Math.ceil(words / 200)
-  const speakingTime = Math.ceil(words / 150)
-
-  const stats = [
-    { label: "Words", value: words, icon: Type },
-    { label: "Characters", value: characters, icon: Hash },
-    { label: "No Spaces", value: charactersNoSpaces, icon: Hash },
-    { label: "Reading Time", value: readingTime + " min", icon: Clock },
-    { label: "Speaking Time", value: speakingTime + " min", icon: Mic },
-    { label: "Sentences", value: sentences, icon: List },
-    { label: "Paragraphs", value: paragraphs, icon: AlignLeft }
-  ]
+export default function StatsCard({
+  charactersNoSpaces,
+  readingTime,
+  speakingTime,
+  avgSentenceLength,
+}) {
+  const values = {
+    charactersNoSpaces: charactersNoSpaces.toLocaleString(),
+    readingTime,
+    speakingTime,
+    avgSentenceLength: `${avgSentenceLength} words`,
+  }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
-      {stats.map((item, index) => {
+    <div className="mt-7 grid grid-cols-2 gap-3 md:grid-cols-4">
+      {statsConfig.map((item) => {
         const Icon = item.icon
 
         return (
-          <motion.div
-            key={index}
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.05 }}
-            className="relative p-4 rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm hover:shadow-xl flex items-center gap-3 transition group"
+          <div
+            key={item.key}
+            className="flex min-w-0 items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3.5 dark:border-gray-700 dark:bg-gray-900"
           >
-            {/* Glow layer */}
-            <div
-              className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-lg"
+            <Icon
+              className="h-5 w-5 shrink-0 text-cyan-600 dark:text-cyan-400"
+              aria-hidden="true"
             />
-
-            {/* Content */}
-            <div className="relative z-10 flex items-center gap-3">
-              <Icon className="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
-              <div>
-                <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400">
-                  {item.label}
-                </p>
-                <p className="font-bold text-sm sm:text-base md:text-lg">
-                  {item.value}
-                </p>
-              </div>
+            <div className="min-w-0">
+              <p className="truncate text-xs text-gray-500 dark:text-gray-400">
+                {item.label}
+              </p>
+              <p className="mt-0.5 truncate text-sm font-bold tabular-nums text-gray-900 dark:text-gray-100">
+                {values[item.key]}
+              </p>
             </div>
-          </motion.div>
+          </div>
         )
       })}
     </div>

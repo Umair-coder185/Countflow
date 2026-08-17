@@ -778,11 +778,12 @@ export const posts = [
     id: 16,
     slug: "how-to-calculate-words-per-minute-reading",
     title: "How to Calculate Words Per Minute Reading (Formula + Examples)",
-    description: "Learn how to calculate your true reading speed in words per minute (WPM) with formulas, worked examples, and common mistakes explained.",
+    description: "Calculate your reading speed in WPM with a simple formula, worked examples, WCPM, timing tips, and average adult reading speed benchmarks.",
     excerpt: "This guide walks you through exactly how to calculate words per minute reading — your true reading speed measured in words per minute — using one straightforward formula, examples worked out end to end, and the single conversion slip that silently wrecks almost everyone's numbers.",
  
     category: "Reading & Writing",
     image: "/blogs/How to Calculate Words Per Minute Reading.png",
+    imageAlt :" how to calculate words per minute reading",
     author: "Umair Tufail",
     date: "2026-07-01",
     readTime: "8 min read",
@@ -811,14 +812,14 @@ export const posts = [
       },
 
       {
-        question: "What is a good reading speed in words per minute?",
-        answer: "Most adults sit near 238 WPM for silent non-fiction and around 260 WPM for fiction, per the Rayner et al. meta-analysis of 190 studies. Anywhere between 200 and 300 WPM with solid comprehension is a strong, sustainable pace."
-
+        question: "What is a good reading speed for adults?",
+        answer: "Most adults read silent non-fiction at around 238 WPM and fiction at around 260 WPM, based on Brysbaert's meta-analysis of 190 studies."
       },
       {
-        question: "Does calculating WPM account for comprehension?",
-        answer: "Raw WPM doesn't. Words correct per minute does, because it removes misread or skipped words from the total before the division."
-      }
+        question:"Does calculating WPM account for comprehension?",
+         answer:     "Raw WPM does not measure comprehension. It only measures how many words you move through per minute. WCPM adds reading accuracy by subtracting misread or skipped words, but it still does not directly measure how well you understood or remembered the passage.",
+  
+      }     
     ]
   },
 
@@ -1873,13 +1874,6 @@ export const posts = [
         "No. Similar formatting issues can appear when copying text from Claude, Gemini, Copilot, and other AI tools."
     }
   ]
-},
-
-
-{
-
-
-
 },
 
 
