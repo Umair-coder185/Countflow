@@ -33,6 +33,7 @@ import syllableCounters from "./blogs/syllable-counters";
 import sonnet from "./blogs/blog33";
 import removeGpt from "./blogs/removegpt";
 import stressAndUnstressed from "./blogs/stress_unstressed";
+import textRepeater from "./blogs/text-repeater";
 
 export const posts = [
   {
@@ -1924,7 +1925,59 @@ export const posts = [
       answer: "Yes. In some English words, moving the stress accompanies a change in grammatical function or meaning, such as noun–verb pairs."
     }
   ]
+},
+
+
+
+  {
+  id: 36,
+  slug: "repeat-a-word-100-times",
+  title: "7 Easy Steps to Repeat a Word 100 Times Fast",
+  description: "Repeat a word 100 times without manual copy and paste. Follow 7 quick steps, choose a separator, and copy your repeated text instantly.",
+  excerpt: "Discover the fastest way to repeat a word 100 times or 1000 times using text repeaters, with tips on separators, sentences, emojis, and formatting.",
+  category: "Reading & Writing",
+  image: "/blogs/repeat-word-100-times.webp",
+  imageAlt: "Repeat a Word 100 Times Fast",
+  author: "Umair Tufail",
+  date: "2026-08-18",
+  readTime: "8 min read",
+  keywords: [
+    "repeat a word 100 times",
+    "copy paste 100 times",
+    "text repeater",
+    "repeat text 1000 times",
+    "word repeater online",
+    "repeat hi 100 times"
+  ],
+  content: textRepeater,
+  faqs: [
+    {
+      question: "How do I repeat a word 100 times?",
+      answer: "Enter your word into a text repeater, set the repetition count to 100, choose a separator, and generate the output. Then copy the complete block at once."
+    },
+    {
+      question: "Can I copy and paste a word 100 times at once?",
+      answer: "Yes. Generate all 100 repetitions first, then copy the complete result instead of copying the original word repeatedly."
+    },
+    {
+      question: "How do I repeat text 1,000 times?",
+      answer: "Change the repeat count from 100 to 1,000 before generating your text. Choose the separator carefully because 1,000 repetitions can create a very large output."
+    },
+    {
+      question: "Can I repeat Hi 1000 times?",
+      answer: "Yes. Enter Hi, choose 1,000 repetitions, generate the text, and copy the result. This is faster than looking for a static hi 1000 times copy and paste list."
+    },
+    {
+      question: "Can I repeat a whole sentence?",
+      answer: "Yes. Paste the sentence into the repeater exactly as you want it to appear. The tool can treat that sentence as the repeated unit."
+    },
+    {
+      question: "Can I repeat emojis?",
+      answer: "Yes. You can repeat an emoji or a combination of emojis in the same way as ordinary text. Check the final character count if you plan to paste it into a platform with limits."
+    }
+  ]
 }
+
 
 
 
