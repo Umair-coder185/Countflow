@@ -28,7 +28,7 @@ import {
 } from "lucide-react"
 
 import FAQ from "@/components/FAQ"
-import SEOContent from "@/components/Text-compare-seo/SEOContent"
+import SEOContent from "@/components/text-compare-seo/SEOContent"
 import TextCompareTool from "@/components/text-compare/TextCompareTool"
 
 import {
