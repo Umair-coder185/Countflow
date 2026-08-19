@@ -123,6 +123,14 @@ const CATEGORIES = [
         best: "Pasted text cleanup",
         gradient: "from-lime-500 to-green-400",
       },
+      {
+        name : "Online Text Compare",
+        slug : "/tools/online-text-compare",
+        icon : Repeat,
+        desc : "Compare two pieces of text side by side and highlight the differences.",
+        best : "Text comparison and proofreading",
+        gradient : "from-cyan-500 to-blue-400",
+      }
     ],
   },
   {

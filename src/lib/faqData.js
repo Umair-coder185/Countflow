@@ -444,6 +444,33 @@ export const removeLineBreaksFAQs = [
 
 
 
+export const textCompareFAQs = [
+  { question: "How can I compare two texts online?", answer: "Paste the original text into the first box and the changed version into the second box, choose Word, Character, or Line mode, and click Compare Text. The tool highlights added and removed content and shows a summary of the differences." },
+
+  { question: "Is the Text Compare tool free?", answer: "Yes. CountFlows Text Compare is free to use and does not require an account or signup. You can compare text directly in your browser within the tool's browser-performance limits." },
+
+  { question: "Is online text comparison safe and private?", answer: "The comparison runs in your browser and does not require sending your pasted text to a remote comparison API. Supported local text files are also read by your browser. You should still follow your organization's security policy when working with confidential or regulated information." },
+
+  { question: "Can I compare two text files online?", answer: "Yes. You can load supported text-based files such as TXT, Markdown, CSV, JSON, HTML, CSS, JavaScript, TypeScript, XML, YAML, and YML. The files are read locally in your browser and are subject to the tool's file-size and character limits." },
+
+  { question: "What is the difference between Word, Character, and Line comparison?", answer: "Word mode is best for articles, essays, reports, and other writing. Character mode shows very small changes such as spelling, numbers, symbols, and punctuation. Line mode is useful for code, lists, configuration files, logs, and larger documents where each line matters." },
+
+  { question: "Can I ignore capitalization and whitespace when comparing text?", answer: "Yes. You can ignore capitalization when comparing two texts. Word and Line modes can also ignore whitespace differences, which helps reduce unnecessary changes caused only by spaces or formatting." },
+
+  { question: "What does the similarity percentage mean?", answer: "The similarity percentage estimates how much unchanged text the two versions share. A higher percentage means more of the content is the same. It is a comparison aid only and should not be interpreted as a plagiarism, AI detection, authorship, or semantic similarity score." },
+
+  { question: "Does Text Compare check for plagiarism?", answer: "No. Text Compare only compares the two texts you provide and identifies their differences. It does not search the web, check external sources, detect AI writing, determine authorship, or provide a plagiarism score." },
+
+  { question: "Can I see added and removed words separately?", answer: "Yes. The comparison results highlight additions and removals and show statistics such as added words, removed words, original word count, changed word count, and character changes." },
+
+  { question: "Can I compare long documents?", answer: "Yes, within the tool's browser-performance limits. Line mode is recommended for larger documents because character-level and word-level comparisons require more processing. If a comparison is too complex, the tool will ask you to use Line mode or compare smaller sections." },
+
+  { question: "Can I view text differences side by side?", answer: "Yes. You can switch between Side-by-Side and Inline views. Side-by-Side view separates the original and changed text, while Inline view displays additions and removals within one comparison result." },
+
+  { question: "How do I find changes in a long text?", answer: "After comparing the two texts, use the Previous and Next Difference controls to jump directly between detected changes instead of manually scanning the entire document." },
+]
+
+
 export const textRepeaterFAQs = [
   {
     question: "What does a text repeater do?",
@@ -495,4 +522,4 @@ export const textRepeaterFAQs = [
 
 
 
-export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs,aitokenCounterFAQs , removeLineBreaksFAQs, textRepeaterFAQs }
+export { wordCounterFAQs, characterCounterFAQs, readingTimeFAQs, sentenceCounterFAQs , keywordDensityFAQs, caseConverterFAQs, aiTextCleanerFAQs, syllableCounterFAQs,aitokenCounterFAQs , removeLineBreaksFAQs, textRepeaterFAQs , textCompareFAQs}

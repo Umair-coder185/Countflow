@@ -14,7 +14,8 @@ import {
   Eraser,
   Repeat2,
   Sparkles,
-  Hash
+  Hash,
+  GitCompareArrows,
 } from "lucide-react";
 export const toolCategories = [
   {
@@ -117,6 +118,14 @@ export const toolCategories = [
          "Strip unwanted line breaks from text pasted out of PDFs and emails instantly.",
        live: true, // NEW: flip to true when the tool page ships
        },
+         {
+      name: "Text Compare",
+      href: "/tools/text-compare",
+      icon: GitCompareArrows,
+      description:
+        "Compare two texts online and instantly highlight added, removed, and changed words, characters, or lines.",
+      live: true,
+    },
     ],
   },
  

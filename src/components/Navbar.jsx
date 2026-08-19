@@ -1,58 +1,91 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
 import {
-  Menu, X, BookOpen, FileText, Clock, TextSearch,
-  CaseSensitive, ChevronDown, Mail, Info, LayoutGrid,Type, Sparkles, AlignLeft, Music4,Hash, Eraser, Repeat
+  AlignLeft,
+  BookOpen,
+  CaseSensitive,
+  ChevronDown,
+  Clock,
+  Eraser,
+  FileText,
+  GitCompareArrows,
+  Hash,
+  Info,
+  LayoutGrid,
+  Mail,
+  Menu,
+  Music4,
+  Repeat,
+  Sparkles,
+  TextSearch,
+  Type,
+  X,
 } from "lucide-react"
-import { motion, AnimatePresence } from "@/lib/no-motion"
-import { useState, useEffect, useRef } from "react"
+import { AnimatePresence, motion } from "@/lib/no-motion"
+import { useEffect, useRef, useState } from "react"
 import ThemeToggle from "./ThemeToggle"
 
 const toolItems = [
   { href: "/tools/word-counter", label: "Word Counter", icon: FileText },
-  { href: "/tools/reading-time", label: "Reading Time", icon: Clock },
-  { href: "/tools/case-converter", label: "Case Converter", icon: CaseSensitive },
-  { href: "/tools/keyword-density-checker", label: "Keyword Density Checker", icon: TextSearch },
   { href: "/tools/character-counter", label: "Character Counter", icon: Type },
-{ href: "/tools/sentence-counter", label: "Sentence Counter", icon: AlignLeft },
-{href : "/tools/ai-text-cleaner",label: "AI Text Cleaner" , icon :  Sparkles,},
-{href : "/tools/syllable-counter" , label : "Syllable Counter" , icon : Music4},
-{href :"/tools/ai-token-counter" ,label :"AI Token Counter" , icon : Hash},
-{href :"/tools/remove-line-breaks" ,label :"Remove Line Breaks" , icon : Eraser},
-{href :"/tools/text-repeater" ,label :"Text Repeater" , icon : Repeat}
-  // 👇 add new tools here as they go live
+  { href: "/tools/sentence-counter", label: "Sentence Counter", icon: AlignLeft },
+  { href: "/tools/reading-time", label: "Reading Time", icon: Clock },
+  { href: "/tools/keyword-density-checker", label: "Keyword Density Checker", icon: TextSearch },
+  { href: "/tools/case-converter", label: "Case Converter", icon: CaseSensitive },
+  { href: "/tools/ai-text-cleaner", label: "AI Text Cleaner", icon: Sparkles },
+  { href: "/tools/ai-token-counter", label: "AI Token Counter", icon: Hash },
+  { href: "/tools/syllable-counter", label: "Syllable Counter", icon: Music4 },
+  { href: "/tools/remove-line-breaks", label: "Remove Line Breaks", icon: Eraser },
+  { href: "/tools/text-repeater", label: "Text Repeater", icon: Repeat },
+  { href: "/tools/text-compare", label: "Online Text Compare", icon: GitCompareArrows },
 ]
 
 const navItems = [
   { href: "/blog", label: "Blog", icon: BookOpen },
-  { href: "/about", label: "About", icon: Info },
+  { href: "/about-us", label: "About", icon: Info },
   { href: "/contact", label: "Contact", icon: Mail },
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [toolsOpen, setToolsOpen] = useState(false)       // desktop dropdown
-  const [mobileToolsOpen, setMobileToolsOpen] = useState(false) // mobile accordion
+  const [toolsOpen, setToolsOpen] = useState(false)
+  const [mobileToolsOpen, setMobileToolsOpen] = useState(false)
   const dropdownRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener("scroll", handleScroll)
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Close desktop dropdown on outside click
   useEffect(() => {
-    const handleClick = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+    const handlePointerDown = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setToolsOpen(false)
       }
     }
-    document.addEventListener("mousedown", handleClick)
-    return () => document.removeEventListener("mousedown", handleClick)
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setToolsOpen(false)
+        setIsOpen(false)
+        setMobileToolsOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handlePointerDown)
+    document.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown)
+      document.removeEventListener("keydown", handleKeyDown)
+    }
   }, [])
 
   const closeAll = () => {
@@ -63,205 +96,257 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 dark:bg-slate-950/80 shadow-lg backdrop-blur-xl border-b border-gray-200 dark:border-white/10"
-          : "bg-gradient-to-b from-white/40 dark:from-slate-950/40 to-transparent backdrop-blur-sm"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
+    className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+    scrolled
+      ? "border-b border-gray-200/80 bg-white/90 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/90"
+      : "border-b border-transparent bg-transparent shadow-none"
+  }`}
+>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+        {/* Brand */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-bold text-xl sm:text-2xl bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-transparent hover:opacity-80 transition"
+          onClick={closeAll}
+          className="flex shrink-0 items-center gap-2.5 transition-opacity hover:opacity-90"
+          aria-label="CountFlows home"
         >
-          <Image
-            src="/favicon.png"
-            alt="Countflows logo"
-            width={24}
-            height={32}
-            className="rounded-md"
-            style= {{width: "auto", height: "auto" }}
-            priority
-          />
-          Countflows
+          <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-[9px] ring-1 ring-black/5 dark:ring-white/10">
+            <Image
+              src="/images/countflows-logo.png"
+              alt=""
+              fill
+              sizes="36px"
+              className="object-cover"
+              priority
+            />
+          </span>
+
+          <span className="bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-xl font-bold text-transparent sm:text-2xl">
+            CountFlows
+          </span>
         </Link>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-1">
-          {/* Tools Dropdown */}
+        {/* Desktop navigation */}
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
           <div className="relative" ref={dropdownRef}>
             <button
-              onClick={() => setToolsOpen(!toolsOpen)}
+              type="button"
+              onClick={() => setToolsOpen((open) => !open)}
               aria-expanded={toolsOpen}
               aria-haspopup="true"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-900 dark:text-white hover:bg-cyan-100/50 dark:hover:bg-white/10 transition group"
+              aria-controls="desktop-tools-menu"
+              className="group flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium text-gray-800 transition hover:bg-cyan-50 hover:text-gray-950 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"
             >
-              <LayoutGrid size={16} className="text-cyan-500 dark:text-cyan-400 group-hover:scale-110 transition" />
+              <LayoutGrid
+                size={16}
+                className="text-cyan-500 transition-transform group-hover:scale-110 dark:text-cyan-400"
+                aria-hidden="true"
+              />
               Tools
               <ChevronDown
                 size={14}
                 className={`transition-transform duration-200 ${toolsOpen ? "rotate-180" : ""}`}
+                aria-hidden="true"
               />
             </button>
 
             <AnimatePresence>
               {toolsOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
+                  id="desktop-tools-menu"
+                  initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.98 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute left-0 mt-2 w-64 rounded-xl bg-white dark:bg-slate-900 shadow-xl border border-gray-200 dark:border-white/10 p-2"
+                  className="absolute left-0 mt-2 w-[560px] overflow-hidden rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-slate-900 dark:shadow-black/30"
                 >
-                  {toolItems.map((item, idx) => {
-                    const Icon = item.icon
-                    return (
-                      <Link
-                        key={idx}
-                        href={item.href}
-                        onClick={closeAll}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-900 dark:text-white hover:bg-cyan-100/50 dark:hover:bg-white/10 transition group"
-                      >
-                        <Icon size={16} className="text-cyan-500 dark:text-cyan-400 group-hover:scale-110 transition" />
-                        {item.label}
-                      </Link>
-                    )
-                  })}
-                  <div className="mt-1 pt-1 border-t border-gray-200 dark:border-white/10">
+                  <div className="mb-2 px-2 pt-1">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-slate-400">
+                      Text, SEO & AI Tools
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-1">
+                    {toolItems.map((item) => {
+                      const Icon = item.icon
+
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={closeAll}
+                          className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 transition hover:bg-cyan-50 hover:text-gray-950 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"
+                        >
+                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-50 text-cyan-600 transition group-hover:bg-cyan-100 dark:bg-cyan-950/50 dark:text-cyan-300 dark:group-hover:bg-cyan-900/50">
+                            <Icon size={16} aria-hidden="true" />
+                          </span>
+                          <span className="min-w-0 leading-5">{item.label}</span>
+                        </Link>
+                      )
+                    })}
+                  </div>
+
+                  <div className="mt-3 border-t border-gray-200 pt-3 dark:border-white/10">
                     <Link
                       href="/tools"
                       onClick={closeAll}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-cyan-600 dark:text-cyan-400 hover:bg-cyan-100/50 dark:hover:bg-white/10 transition"
+                      className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-cyan-600 transition hover:bg-cyan-50 dark:text-cyan-400 dark:hover:bg-white/10"
                     >
-                      Browse All Tools →
+                      <span>Browse all tools</span>
+                      <span aria-hidden="true">→</span>
                     </Link>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-          
 
-          {/* Blog / About / Contact */}
-          {navItems.map((item, idx) => {
+          {navItems.map((item) => {
             const Icon = item.icon
+
             return (
               <Link
-                key={idx}
+                key={item.href}
                 href={item.href}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-900 dark:text-white hover:bg-cyan-100/50 dark:hover:bg-white/10 transition group"
+                onClick={closeAll}
+                className="group flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium text-gray-800 transition hover:bg-cyan-50 hover:text-gray-950 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"
               >
-                <Icon size={16} className="text-cyan-500 dark:text-cyan-400 group-hover:scale-110 transition" />
+                <Icon
+                  size={16}
+                  className="text-cyan-500 transition-transform group-hover:scale-110 dark:text-cyan-400"
+                  aria-hidden="true"
+                />
                 {item.label}
               </Link>
             )
           })}
         </nav>
 
-        {/* Desktop Right Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Desktop actions */}
+        <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
+
           <Link
-            href="/tools/word-counter"
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 transition hover:scale-105"
+            href="/tools"
+            className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/30"
           >
-            Get Started
+            Explore Tools
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-3">
+        {/* Mobile actions */}
+        <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
+
           <button
-            className="p-2 rounded-lg text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-white/10 transition"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            className="rounded-lg p-2 text-gray-700 transition hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-white/10"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10, height: 0 }}
+            id="mobile-navigation"
+            initial={{ opacity: 0, y: -8, height: 0 }}
             animate={{ opacity: 1, y: 0, height: "auto" }}
-            exit={{ opacity: 0, y: -10, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 px-4 pb-6"
+            exit={{ opacity: 0, y: -8, height: 0 }}
+            transition={{ duration: 0.18 }}
+            className="border-t border-gray-200 bg-white/95 px-4 pb-5 pt-3 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/95 md:hidden"
           >
-            <div className="space-y-2">
-              {/* Tools accordion */}
+            <div className="mx-auto max-w-7xl space-y-1">
               <button
-                onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
+                type="button"
+                onClick={() => setMobileToolsOpen((open) => !open)}
                 aria-expanded={mobileToolsOpen}
-                className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium text-gray-900 dark:text-white hover:bg-cyan-100/50 dark:hover:bg-white/10 transition"
+                aria-controls="mobile-tools-menu"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-gray-900 transition hover:bg-cyan-50 dark:text-white dark:hover:bg-white/10"
               >
                 <span className="flex items-center gap-3">
-                  <LayoutGrid size={18} className="text-cyan-500 dark:text-cyan-400" />
+                  <LayoutGrid size={18} className="text-cyan-500 dark:text-cyan-400" aria-hidden="true" />
                   Tools
                 </span>
+
                 <ChevronDown
                   size={16}
                   className={`transition-transform duration-200 ${mobileToolsOpen ? "rotate-180" : ""}`}
+                  aria-hidden="true"
                 />
               </button>
 
-              {mobileToolsOpen && (
-                <div className="pl-4 space-y-1">
-                  {toolItems.map((item, idx) => {
-                    const Icon = item.icon
-                    return (
-                      <Link
-                        key={idx}
-                        href={item.href}
-                        onClick={closeAll}
-                        className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-gray-700 dark:text-slate-300 hover:bg-cyan-100/50 dark:hover:bg-white/10 transition"
-                      >
-                        <Icon size={16} className="text-cyan-500 dark:text-cyan-400" />
-                        {item.label}
-                      </Link>
-                    )
-                  })}
-                  <Link
-                    href="/tools"
-                    onClick={closeAll}
-                    className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-cyan-600 dark:text-cyan-400 hover:bg-cyan-100/50 dark:hover:bg-white/10 transition"
+              <AnimatePresence>
+                {mobileToolsOpen && (
+                  <motion.div
+                    id="mobile-tools-menu"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="overflow-hidden"
                   >
-                    Browse All Tools →
-                  </Link>
-                </div>
-              )}
+                    <div className="grid grid-cols-1 gap-1 pb-2 pl-3 sm:grid-cols-2">
+                      {toolItems.map((item) => {
+                        const Icon = item.icon
 
-              {/* Blog / About / Contact */}
-              {navItems.map((item, idx) => {
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={closeAll}
+                            className="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-cyan-50 dark:text-slate-300 dark:hover:bg-white/10"
+                          >
+                            <Icon size={16} className="text-cyan-500 dark:text-cyan-400" aria-hidden="true" />
+                            {item.label}
+                          </Link>
+                        )
+                      })}
+
+                      <Link
+                        href="/tools"
+                        onClick={closeAll}
+                        className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-cyan-600 transition hover:bg-cyan-50 dark:text-cyan-400 dark:hover:bg-white/10 sm:col-span-2"
+                      >
+                        Browse all tools
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {navItems.map((item) => {
                 const Icon = item.icon
+
                 return (
                   <Link
-                    key={idx}
+                    key={item.href}
                     href={item.href}
                     onClick={closeAll}
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium text-gray-900 dark:text-white hover:bg-cyan-100/50 dark:hover:bg-white/10 transition"
+                    className="flex items-center gap-3 rounded-xl px-4 py-3 text-base font-medium text-gray-900 transition hover:bg-cyan-50 dark:text-white dark:hover:bg-white/10"
                   >
-                    <Icon size={18} className="text-cyan-500 dark:text-cyan-400" />
+                    <Icon size={18} className="text-cyan-500 dark:text-cyan-400" aria-hidden="true" />
                     {item.label}
                   </Link>
                 )
               })}
 
-              <div className="pt-2 border-t border-gray-200 dark:border-white/10">
+              <div className="mt-2 border-t border-gray-200 pt-3 dark:border-white/10">
                 <Link
-                  href="/tools/word-counter"
+                  href="/tools"
                   onClick={closeAll}
-                  className="flex items-center justify-center w-full px-4 py-3 mt-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold hover:shadow-lg transition"
+                  className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-3 text-sm font-semibold text-white shadow-md shadow-cyan-500/20 transition hover:shadow-lg"
                 >
-                  Get Started
+                  Explore Tools
                 </Link>
               </div>
-              
             </div>
           </motion.div>
         )}

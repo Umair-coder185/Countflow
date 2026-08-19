@@ -14,6 +14,10 @@ import BlogHeader from "@/components/blog/BlogHeader";
 import authors from "@/lib/authors";
 import { posts } from "@/lib/blogData";
 
+const UMAIR_AUTHOR_IMAGE = "/images/umair-tufail.webp";
+
+
+
 
 const TOOL_LIBRARY = {
   wordCounter: {
@@ -362,6 +366,11 @@ export default function BlogContent({ post }) {
 
   const relatedPosts = getRelatedPosts(post);
   const authorInfo = getAuthorInfo(post?.author);
+  const authorImage =
+    authorInfo?.image ||
+    (authorInfo?.name?.trim().toLowerCase() === "umair tufail"
+      ? UMAIR_AUTHOR_IMAGE
+      : null);
 
   const imageSrc =
     typeof post?.image === "string" && post.image.trim()
@@ -522,28 +531,45 @@ export default function BlogContent({ post }) {
           <RelatedArticlesMobile relatedPosts={relatedPosts} />
 
           {/* Author Section */}
-          <div className="mt-16 pt-10 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex flex-col sm:flex-row gap-6 items-start justify-between">
-              <div className="flex gap-4 items-start">
+          <div className="mt-16 border-t border-gray-200 pt-10 dark:border-gray-700">
+            <div className="flex flex-col items-start justify-between gap-6 sm:flex-row">
+
+              {/* Author information */}
+              <div className="flex items-start gap-4">
                 {authorInfo ? (
                   <>
-                    <div
-                      className="w-16 h-16 shrink-0 flex items-center justify-center rounded-full bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold text-lg"
-                      aria-hidden="true"
-                    >
-                      {authorInfo.name
-                        .split(" ")
-                        .map((part) => part[0])
-                        .slice(0, 2)
-                        .join("")}
-                    </div>
+                    {/* Author image */}
+                    {authorImage ? (
+                      <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-white bg-gray-100 shadow-sm ring-1 ring-gray-200 dark:border-gray-900 dark:bg-gray-800 dark:ring-gray-700">
+                        <Image
+                          src={authorImage}
+                          alt={`${authorInfo.name}${authorInfo.role ? `, ${authorInfo.role}` : ""} at CountFlows`}
+                          fill
+                          sizes="64px"
+                          className="object-cover object-[50%_16%]"
+                        />
+                      </div>
+                    ) : (
+                      /* Fallback initials */
+                      <div
+                        className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-blue-50 text-lg font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300"
+                        aria-hidden="true"
+                      >
+                        {authorInfo.name
+                          .split(" ")
+                          .map((part) => part[0])
+                          .slice(0, 2)
+                          .join("")}
+                      </div>
+                    )}
 
+                    {/* Author text */}
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         Written by
                       </p>
 
-                      <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
+                      <p className="text-base font-bold text-gray-900 dark:text-gray-100 sm:text-lg md:text-xl">
                         {authorInfo.name}
                       </p>
 
@@ -554,18 +580,20 @@ export default function BlogContent({ post }) {
                       ) : null}
 
                       {authorInfo.bio ? (
-                        <p className="mt-2 text-sm text-gray-700 dark:text-gray-300 max-w-xl">
+                        <p className="mt-2 max-w-xl text-sm leading-6 text-gray-700 dark:text-gray-300">
                           {authorInfo.bio}
                         </p>
                       ) : null}
 
                       {authorInfo.twitter || authorInfo.linkedin ? (
-                        <div className="mt-3 flex gap-3">
+                        <div className="mt-3 flex gap-4">
                           {authorInfo.twitter ? (
                             <a
                               href={authorInfo.twitter}
-                              className="text-blue-600 dark:text-cyan-400 hover:underline text-sm"
+                              target="_blank"
                               rel="noopener noreferrer"
+                              aria-label={`${authorInfo.name} on X`}
+                              className="text-sm font-medium text-blue-600 hover:underline dark:text-cyan-400"
                             >
                               Twitter
                             </a>
@@ -574,8 +602,10 @@ export default function BlogContent({ post }) {
                           {authorInfo.linkedin ? (
                             <a
                               href={authorInfo.linkedin}
-                              className="text-blue-600 dark:text-cyan-400 hover:underline text-sm"
+                              target="_blank"
                               rel="noopener noreferrer"
+                              aria-label={`${authorInfo.name} on LinkedIn`}
+                              className="text-sm font-medium text-blue-600 hover:underline dark:text-cyan-400"
                             >
                               LinkedIn
                             </a>
@@ -589,19 +619,22 @@ export default function BlogContent({ post }) {
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Written by
                     </p>
-                    <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
+
+                    <p className="text-base font-bold text-gray-900 dark:text-gray-100 sm:text-lg md:text-xl">
                       {post?.author || "CountFlows Team"}
                     </p>
                   </div>
                 )}
               </div>
 
+              {/* Blog CTA */}
               <Link
                 href="/blog"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 sm:py-3 px-5 sm:px-6 rounded-lg transition-colors text-sm sm:text-base md:text-lg"
+                className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base md:text-lg"
               >
                 ← Read More Articles
               </Link>
+
             </div>
           </div>
         </article>

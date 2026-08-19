@@ -16,6 +16,7 @@ export async function GET() {
     "/tools/ai-token-counter",
     "/tools/remove-line-breaks",
     "/tools/text-repeater",
+    "/tools/text-compare",
     "/blog",
     "/about-us",
     "/contact",

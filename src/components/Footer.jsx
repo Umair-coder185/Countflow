@@ -1,191 +1,178 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
-import { Mail, Github, Twitter, Linkedin, ArrowRight } from "lucide-react"
+import { Twitter, Linkedin, ArrowUpRight } from "lucide-react"
+
+const featuredTools = [
+  { name: "Word Counter", href: "/tools/word-counter" },
+  { name: "AI Text Cleaner", href: "/tools/ai-text-cleaner" },
+  { name: "Online Text Compare", href: "/tools/text-compare" },
+  { name: "Keyword Density Checker", href: "/tools/keyword-density-checker" },
+  { name: "AI Token Counter", href: "/tools/ai-token-counter" },
+  { name: "Syllable Counter", href: "/tools/syllable-counter" },
+]
+
+const companyLinks = [
+  { name: "About Us", href: "/about-us" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact Us", href: "/contact" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms & Conditions", href: "/terms" },
+]
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-black text-slate-100">
-      {/* Decorative background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl" />
+    <footer className="relative overflow-hidden border-t border-white/10 bg-slate-950 text-slate-100">
+      {/* Subtle brand background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-32 left-1/4 h-72 w-72 rounded-full bg-cyan-500/5 blur-3xl" />
+        <div className="absolute -bottom-40 right-1/4 h-80 w-80 rounded-full bg-violet-500/5 blur-3xl" />
       </div>
 
-      <div className="relative z-10">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-            {/* Brand Section */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent mb-3">
-                Countflows
-              </h2>
-              <p className="text-sm text-slate-400 leading-relaxed mb-5">
-                Premium writing tools for creators, writers, and professionals. Count words, analyze readability, and optimize your content instantly.
-              </p>
-              <div className="flex gap-3">
-                <a href="https://twitter.com/umairrbuilds" target="_blank"  className="inline-flex p-2 rounded-lg bg-white/5 hover:bg-white/10 transition">
-                  <Twitter size={18} />
-                </a>
-                <a href="https://www.linkedin.com/in/umair-nextjs-dev" target="_blank" rel="noopener noreferrer" className="inline-flex p-2 rounded-lg bg-white/5 hover:bg-white/10 transition">
-                  <Linkedin size={18} />
-                </a>
-               
-              </div>
-            </div>
-
-            {/* Tools Section */}
-            <div>
-              <h3 className="font-semibold text-base mb-5 text-white">Tools</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/tools/word-counter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Word Counter</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/character-counter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Character Counter</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/reading-time" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Reading Time</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/sentence-counter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Sentence Counter</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/keyword-density-checker" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Keyword Density Checker</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/case-converter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Case Converter</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/ai-text-cleaner" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Ai Text Cleaner</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/syllable-counter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Syllable Counter</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/ai-token-counter" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">AI Token counter</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/remove-line-breaks" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Remove Line Breaks</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/text-repeater" className="text-sm text-slate-400 hover:text-cyan-400 transition flex items-center gap-2 group">
-                    <span className="group-hover:translate-x-1 transition">Text Repeater</span>
-                  </Link>
-                </li>
-
-              </ul>
-            </div>
-
-            {/* Resources Section */}
-            <div>
-              <h3 className="font-semibold text-base mb-5 text-white">Resources</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/blog" className="text-sm text-slate-400 hover:text-cyan-400 transition">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-sm text-slate-400 hover:text-cyan-400 transition">
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy-policy" className="text-sm text-slate-400 hover:text-cyan-400 transition">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-sm text-slate-400 hover:text-cyan-400 transition">
-                    Terms & Conditions
-                  </Link>
-                </li>
-                 <li>
-                  <Link href="/about-us" className="text-sm text-slate-400 hover:text-cyan-400 transition">
-                    About us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Newsletter Section */}
-            <div>
-              <h3 className="font-semibold text-base mb-5 text-white">Stay Updated</h3>
-              <p className="text-sm text-slate-400 mb-4">
-                Get writing tips and tool updates delivered to your inbox.
-              </p>
-              <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-slate-500 outline-none focus:border-cyan-400 focus:bg-white/10 transition"
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-14 lg:px-8">
+        {/* Main footer */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr] lg:gap-14">
+          {/* Brand */}
+          <div className="max-w-md">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-3 transition-opacity hover:opacity-90"
+              aria-label="CountFlows home"
+            >
+              <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl ring-1 ring-white/10">
+                <Image
+                  src="/images/countflows-logo.png"
+                  alt="CountFlows logo"
+                  fill
+                  sizes="40px"
+                  className="object-cover"
                 />
-                <button className="px-4 py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-500 text-white text-sm font-semibold hover:from-cyan-400 hover:to-violet-400 transition flex items-center justify-center gap-2">
-                  Subscribe
-                  <ArrowRight size={16} />
-                </button>
-              </form>
+              </span>
+
+              <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-2xl font-bold text-transparent">
+                CountFlows
+              </span>
+            </Link>
+
+            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
+              Free browser-based tools for writing, text analysis, SEO, and AI workflows.
+              Fast, practical, and built to help you work with text more efficiently.
+            </p>
+
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href="https://twitter.com/umairrbuilds"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="CountFlows on X"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-400 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
+              >
+                <Twitter size={17} aria-hidden="true" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/umair-nextjs-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="CountFlows on LinkedIn"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-400 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
+              >
+                <Linkedin size={17} aria-hidden="true" />
+              </a>
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="border-t border-white/10 my-8 md:my-12" />
+          {/* Featured tools */}
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-200">
+              Popular Tools
+            </h2>
 
-          {/* Bottom Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <div className="text-sm text-slate-400 text-center md:text-left">
-              <p>© {new Date().getFullYear()} Countflows. All rights reserved.</p>
-              <p className="mt-2 text-xs text-slate-500">
-                Made with <span className="text-cyan-400">❤</span> for writers and creators
-              </p>
-            </div>
+            <ul className="mt-5 space-y-3">
+              {featuredTools.map((tool) => (
+                <li key={tool.href}>
+                  <Link
+                    href={tool.href}
+                    className="group inline-flex items-center gap-1.5 text-sm text-slate-400 transition hover:text-cyan-300"
+                  >
+                    <span>{tool.name}</span>
+                    <ArrowUpRight
+                      size={13}
+                      className="opacity-0 transition group-hover:opacity-100"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
-            {/* Quick Links */}
-            <div className="flex flex-wrap justify-center md:justify-end gap-4 text-xs text-slate-400">
-              <Link href="/privacy-policy" className="hover:text-cyan-400 transition">
-                Privacy
-              </Link>
-              <span className="text-white/20">•</span>
-              <Link href="/terms" className="hover:text-cyan-400 transition">
-                Terms
-              </Link>
-              <span className="text-white/20">•</span>
-              <a href="mailto:contact@countflow.com" className="hover:text-cyan-400 transition">
+            <Link
+              href="/tools"
+              className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 transition hover:text-cyan-300"
+            >
+              View all tools
+              <ArrowUpRight size={14} aria-hidden="true" />
+            </Link>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-200">
+              Company
+            </h2>
+
+            <ul className="mt-5 space-y-3">
+              {companyLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-slate-400 transition hover:text-cyan-300"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 border-t border-white/10 pt-5">
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
                 Support
+              </p>
+              <a
+                href="mailto:contact@countflows.com"
+                className="mt-2 inline-block text-sm text-slate-400 transition hover:text-cyan-300"
+              >
+                contact@countflows.com
               </a>
             </div>
           </div>
         </div>
 
-        {/* Disclaimer for AdSense */}
-        <div className="bg-white/5 border-t border-white/10 px-4 sm:px-6 lg:px-8 py-4">
-          <p className="max-w-7xl mx-auto text-xs text-slate-500 text-center">
-            Countflows is an independent service. We are not affiliated with any third parties. This site may contain affiliate links and advertisements.
+        {/* Bottom bar */}
+        <div className="mt-10 border-t border-white/10 pt-6 md:mt-12">
+          <div className="flex flex-col gap-4 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+            <p>© {new Date().getFullYear()} CountFlows. All rights reserved.</p>
+
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <Link href="/privacy-policy" className="transition hover:text-slate-300">
+                Privacy
+              </Link>
+              <Link href="/terms" className="transition hover:text-slate-300">
+                Terms
+              </Link>
+              <Link href="/contact" className="transition hover:text-slate-300">
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          <p className="mt-4 max-w-4xl text-xs leading-5 text-slate-600">
+            CountFlows is an independent online tools platform. Some pages may contain
+            advertisements or affiliate links, which help support the site without affecting
+            how our tools work.
           </p>
         </div>
       </div>
     </footer>
-  )
-}
+  )}
