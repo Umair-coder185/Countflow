@@ -125,7 +125,7 @@ const CATEGORIES = [
       },
       {
         name : "Online Text Compare",
-        slug : "/tools/online-text-compare",
+        slug : "/tools/text-compare",
         icon : Repeat,
         desc : "Compare two pieces of text side by side and highlight the differences.",
         best : "Text comparison and proofreading",

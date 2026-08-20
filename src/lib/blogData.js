@@ -35,6 +35,7 @@ import removeGpt from "./blogs/removegpt";
 import stressAndUnstressed from "./blogs/stress_unstressed";
 import textRepeater from "./blogs/text-repeater";
 import removeLineBreaks from "./blogs/remove-line-breaks";
+import essayWordCount from "./blogs/essay-word-count";
 
 export const posts = [
   {
@@ -2030,7 +2031,67 @@ export const posts = [
       answer: "Yes. Large copied sections benefit most because manual deletion becomes slow and error prone. Process manageable sections and review the result as you go."
     }
   ]
+},
+
+
+
+
+
+
+
+{
+  id: 38,
+  slug: "count-words-in-an-essay",
+  title: "7 Smart Rules to Count Words in an Essay Accurately",
+  description: "Count words in an essay accurately, check what counts, and avoid citation mistakes. Follow 7 simple rules before you submit.",
+  excerpt: "Discover the 7 essential rules for counting words in an essay accurately, including citations, references, headings, and avoiding common mistakes.",
+  category: "Writing $ Editing",
+  image: "/blogs/count-words-in-essay.webp",
+  imageAlt: "Count Words in an Essay Accurately",
+  author: "Umair Tufail",
+  date: "2026-08-20",
+  readTime: "9 min read",
+  keywords: [
+    "count words in an essay",
+    "essay word count",
+    "word count rules",
+    "do citations count in word count",
+    "essay word limit",
+    "academic word count"
+  ],
+  content: essayWordCount,
+  faqs: [
+    {
+      question: "Do citations count in an essay word count?",
+      answer: "Many institutions count in-text citations but exclude the final references. However, academic policies differ, so follow your assignment or department guidance rather than a universal rule."
+    },
+    {
+      question: "Does the bibliography count toward the word limit?",
+      answer: "A bibliography or final reference list often sits outside the main limit. Your module instructions can override that convention, so confirm the rule before submitting."
+    },
+    {
+      question: "Do headings count in an essay?",
+      answer: "Sometimes. Universities and departments handle headings differently, so check the assessment guidance instead of automatically including or excluding them."
+    },
+    {
+      question: "Does Google Docs count footnotes?",
+      answer: "Google Docs says its normal word count excludes headers, footers, and footnotes. Your academic rules may still require footnote content in the official assignment total."
+    },
+    {
+      question: "Can Microsoft Word count only part of an essay?",
+      answer: "Yes. Highlight the section you want to measure, and Word can show the word count for that selection along with the document total."
+    },
+    {
+      question: "Why is my word count different between tools?",
+      answer: "Programs can treat punctuation, symbols, URLs, hyphenated terms, and document elements differently. For a strict assignment, use the method your instructor or submission system specifies."
+    },
+    {
+      question: "What is the fastest way to count words in an essay?",
+      answer: "Paste the required essay text into an online word counter for an immediate total. Then compare that number with your assignment rules before treating it as the final submitted count."
+    }
+  ]
 }
+
 
 
 
