@@ -39,6 +39,7 @@ import essayWordCount from "./blogs/essay-word-count";
 import makeEssayLonger from "./blogs/make-essay-long";
 import millionToken from "./blogs/One-million-token";
 import tokenToWords from "./blogs/token-to-words";
+import millionTokenPrice from "./blogs/ai-token-price";
 
 export const posts = [
 
@@ -2279,6 +2280,63 @@ export const posts = [
     {
       "question": "Can I Calculate Tokens From Characters?",
       "answer": "For common English, about four characters per token is a useful planning rule. OpenAI and Google both provide four characters per token as a rough guide, but the real result depends on the content and model."
+    }
+  ]
+},
+{
+  "id": 42,
+  "slug": "how-much-does-1-million-tokens-cost",
+  "title": "How Much Does 1 Million Tokens Cost? 7 Real Examples",
+  "description": "How much does 1 million tokens cost? Compare GPT, Claude, and Gemini input and output prices, with real API cost examples and savings tips.",
+  "excerpt": "Learn how much 1 million AI tokens cost across GPT, Claude, and Gemini models. Compare input and output rates, caching, batch pricing, and real API bill examples.",
+  "category": "AI & Tokens",
+  "image": "/blogs/1-million-tokens-cost.webp",
+  "imageAlt": "How Much Does 1 Million Tokens Cost AI Pricing Guide",
+  "author": "Umair Tufail",
+  "date": "2026-08-25",
+  "readTime": "8 min read",
+  "keywords": [
+    "how much does 1 million tokens cost",
+    "1 million tokens cost",
+    "AI token pricing",
+    "API token cost calculator",
+    "GPT token cost",
+    "Claude token pricing",
+    "Gemini token pricing"
+  ],
+  "content": millionTokenPrice,
+  "faqs": [
+    {
+      "question": "How Much Does 1 Million Tokens Cost?",
+      "answer": "There is no single price for 1 million tokens. Current GPT, Claude, and Gemini models in this guide range from $0.20 to $5 for 1 million input tokens and from $1.20 to $25 for 1 million output tokens."
+    },
+    {
+      "question": "How Much Does OpenAI Charge for 1 Million Tokens?",
+      "answer": "OpenAI pricing depends on the model. In the examples covered here, GPT-5.6 Luna costs $0.20 per million input tokens and $1.20 per million output tokens, while GPT-5.6 Terra costs $2 and $12."
+    },
+    {
+      "question": "How Much Does Claude Cost per Million Tokens?",
+      "answer": "Claude pricing varies by model. Claude Opus 4.8 costs $5 per million input tokens and $25 per million output tokens, while Claude Haiku 4.5 costs $1 and $5."
+    },
+    {
+      "question": "How Much Does Gemini Cost per Million Tokens?",
+      "answer": "Gemini pricing depends on the model and processing mode. Gemini 3.6 Flash Standard costs $1.50 per million input tokens and $7.50 per million output tokens in the examples covered here."
+    },
+    {
+      "question": "Are Input and Output Tokens Charged at the Same Rate?",
+      "answer": "Usually not. AI providers generally charge separate rates for input and output tokens, and generated output is often more expensive. Long responses can therefore increase your API bill significantly."
+    },
+    {
+      "question": "How Do I Calculate the Cost of 1 Million Tokens?",
+      "answer": "Divide the number of tokens by 1,000,000 and multiply by the provider's rate. Calculate input and output costs separately, then add them together. For example, 1 million input tokens at $2 per MTok costs $2."
+    },
+    {
+      "question": "Can Prompt Caching Reduce AI Token Costs?",
+      "answer": "Yes. Some providers offer lower prices for cached input when the same instructions, documents, or context are reused. However, caching rules vary by provider and model, so check the applicable pricing terms."
+    },
+    {
+      "question": "Does ChatGPT Plus Include API Token Usage?",
+      "answer": "No. ChatGPT subscriptions and API usage are separate products. API costs are charged according to the selected model, token usage, and any additional services or tools used."
     }
   ]
 }
