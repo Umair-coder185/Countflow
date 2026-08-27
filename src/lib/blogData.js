@@ -41,6 +41,7 @@ import millionToken from "./blogs/One-million-token";
 import tokenToWords from "./blogs/token-to-words";
 import millionTokenPrice from "./blogs/ai-token-price";
 import bestTokenCounter from "./blogs/best-token-counter";
+import searchKeywords from "./blogs/search-keywords";
 
 export const posts = [
 
@@ -834,49 +835,98 @@ export const posts = [
 
 
   
-    {
+{
   id: 17,
-  slug: "how-long-does-it-take-to-read-10000-words",
-  title: "How Long Does It Take to Read 10,000 Words? (Full Guide)",
-  description: "Get accurate reading time estimates for 10,000 words across silent reading,studying, and audiobook speeds, based on real WPM averages.",
-  excerpt: "Studying 10,000 words takes anywhere from 33 to 50 minutes for most adults, depending on pace. This guide breaks down reading times by speed, comprehension, genre, and mode of engagement.",
-  category: "Reading & Writing",
-  image: "/blogs/how long it take to read 10,000 words.png",
-  author: "Umair Tufail",
-  date: "2026-07-02",
-  readTime: "9 min read",
-  keywords: [
-    "how long to read 10000 words loud",
-    "reading speed calculator online",
 
-   
-    "check the skimming vs studying ",
+  slug: "how-long-does-it-take-to-read-10000-words",
+
+  title: "How Long Does It Take to Read 10,000 Words? 40 Minutes",
+
+  description:
+    "10,000 words takes about 40 minutes to read at 250 WPM. Compare slow, average, fast, studying, and aloud reading times.",
+
+  excerpt:
+    "Reading 10,000 words takes about 40 minutes at 250 WPM. See how the time changes for slower reading, fast reading, studying, skimming, and reading aloud.",
+
+  category: "Reading & Writing",
+
+  image: "/blogs/how long it take to read 10,000 words.png",
+
+  author: "Umair Tufail",
+
+  date: "2026-07-02",
+
+  readTime: "9 min read",
+
+  keywords: [
+    "how long does it take to read 10000 words",
+    "how long to read 10000 words",
+    "how long does it take to read 10k words",
+    "how long to read 10k words",
+    "how long does it take to read 10,000 words",
+    "how long to read 10,000 words",
+    "10000 words reading time",
+    "10k words reading time",
+    "time to read 10000 words",
+    "how long does 10000 words take to read",
+    "how long would it take to read 10000 words",
+    "how long to read 10000 words aloud",
+    "how long does it take to read 10000 words out loud",
+    "reading speed 10000 words",
+    "10000 words at 250 WPM",
+    "reading speed calculator",
+    "reading time calculator",
+    "skimming vs studying",
     "audiobook length 10000 words"
   ],
+
   content: blog17,
+
   faqs: [
     {
-      question: "How long does it take to read 10,000 words at 250 WPM?",
-      answer: "About 40 minutes at a 250 words per minute pace, which is the average silent reading speed for adults."
+      question: "How long does it take to read 10,000 words?",
+      answer:
+        "It takes about 40 minutes to read 10,000 words at 250 words per minute. A slower reader at 200 WPM may need about 50 minutes, while a faster reader at 300 WPM can finish in about 33 minutes."
     },
     {
-      question: "Is 10,000 words a long book?",
-      answer: "No. It's closer to a long short story or a short novella, roughly 40 double-spaced pages."
+      question: "How long does it take to read 10,000 words at 250 WPM?",
+      answer:
+        "At 250 words per minute, 10,000 words takes about 40 minutes to read."
     },
     {
       question: "How long does it take to read 10,000 words out loud?",
-      answer: "Around 55 minutes, since reading aloud averages 183 WPM, about 23% slower than silent reading."
+      answer:
+        "Reading 10,000 words aloud takes about 55 minutes at around 183 words per minute. Pauses, emphasis, and presentation style can make it take longer."
+    },
+    {
+      question: "How long does it take to read 10k words at 200 WPM?",
+      answer:
+        "At 200 words per minute, reading 10,000 words takes about 50 minutes."
+    },
+    {
+      question: "How long does it take to read 10k words at 300 WPM?",
+      answer:
+        "At 300 words per minute, 10,000 words takes about 33 minutes to read."
+    },
+    {
+      question: "Is 10,000 words a long book?",
+      answer:
+        "No. A 10,000-word text is closer to a long short story or short novella than a full-length book."
     },
     {
       question: "What's a good reading speed?",
-      answer: "Anywhere from 200 to 300 WPM with solid comprehension counts as a strong, sustainable pace for most adults."
+      answer:
+        "Around 200 to 300 words per minute with good comprehension is a common reading range for many adults, although speed varies with the difficulty of the text."
     },
     {
-      question: "Does skimming count as reading 10,000 words?",
-      answer: "It gets you through the text faster, but comprehension drops sharply. Skimming and full reading produce very different recall outcomes even for the same word count."
+      question: "Does skimming 10,000 words take less time?",
+      answer:
+        "Yes. Skimming can reduce the time considerably, but you usually retain less detail than when reading carefully or studying the same text."
     }
   ]
 },
+
+
 {
   id: 18,
   slug: "average-reading-speed",
@@ -1381,27 +1431,47 @@ export const posts = [
 
 {
   id: 27,
+
   slug: "camelcase-pascalcase-snake-case-explained",
-  title: "camelCase, PascalCase, snake_case & kebab-case Explained",
+
+  title: "camelCase vs PascalCase vs snake_case: Key Differences",
+
   description:
-    "Learn the difference between camelCase, PascalCase, snake_case, and kebab-case, with real code examples and when to use each naming convention.",
+    "Compare camelCase, PascalCase and snake_case with clear examples, common uses, programming language rules and key differences.",
+
   excerpt:
-    "Understand the differences between camelCase, PascalCase, snake_case, and kebab-case with practical examples from JavaScript, Python, TypeScript, HTML, and CSS.",
+    "Learn the key differences between camelCase, PascalCase, snake_case, and kebab-case, with practical examples and common programming uses.",
+
   image: "/blogs/snake_case-vs-camelCase.webp",
+
   imageAlt:
-    "Comparison of camelCase, PascalCase, snake_case, and kebab-case naming conventions",
+    "camelCase vs PascalCase vs snake_case naming convention comparison",
+
   category: "Programming",
+
   author: "Umair Tufail",
+
   date: "2026-07-25",
+
   readTime: "8 min read",
+
   keywords: [
+    "camelCase vs PascalCase vs snake_case",
+    "camelCase vs PascalCase",
+    "PascalCase vs camelCase",
+    "camelCase vs snake_case",
+    "snake_case vs PascalCase",
     "camelCase",
     "PascalCase",
     "snake_case",
     "kebab-case",
+    "Pascal notation",
+    "Pascal casing",
+    "snake_case meaning",
     "naming conventions",
-    "case styles",
-    "JavaScript naming conventions",
+    "programming naming conventions",
+    "variable naming conventions",
+    "JavaScript camelCase",
     "Python snake_case",
     "TypeScript PascalCase",
     "React component naming",
@@ -1410,45 +1480,60 @@ export const posts = [
     "variable naming",
     "function naming",
     "class naming",
-    "programming style guide",
     "PEP 8",
     "code naming standards",
     "case converter",
     "convert camelCase to snake_case"
-
   ],
-  content:snake_case,
 
+  content: snake_case,
 
-
-
-    faqs: [
+  faqs: [
     {
       question: "Is snake_case the same as underscore case?",
       answer:
-        "Yes. snake_case and underscore case refer to the same naming convention where all words are lowercase and separated by underscores, such as task_title."
+        "Yes. snake_case and underscore case usually refer to the same naming style where lowercase words are separated by underscores, such as task_title."
+    },
+    {
+      question: "What does snake_case mean?",
+      answer:
+        "snake_case is a naming convention that separates lowercase words with underscores. For example, user account becomes user_account."
     },
     {
       question: "What naming style does Python use?",
       answer:
-        "Python's official style guide (PEP 8) recommends using snake_case for variables and functions, while classes should use PascalCase."
+        "Python's PEP 8 style guide recommends snake_case for variables and functions, while class names normally use PascalCase."
     },
     {
       question: "Can I mix naming styles in one project?",
       answer:
-        "You can, and your code will usually still run because naming style is a convention rather than a language rule. However, mixing styles makes code harder to read, often fails linter checks, and reduces consistency across a project."
+        "The code may still run, but inconsistent naming makes a project harder to read and can fail linting or style checks. Following one convention also makes collaboration easier."
     },
     {
       question: "What's the difference between camelCase and PascalCase?",
       answer:
-        "The only difference is the first letter. camelCase starts with a lowercase letter (taskTitle), while PascalCase starts with an uppercase letter (TaskTitle). Every following word begins with a capital letter in both styles."
+        "The main difference is the first letter. camelCase starts lowercase, like taskTitle, while PascalCase starts with a capital letter, like TaskTitle."
+    },
+    {
+      question: "Is PascalCase the same as Pascal notation?",
+      answer:
+        "Yes. PascalCase, Pascal casing, and Pascal notation usually describe the same naming style where each word begins with a capital letter and no separator appears between words."
+    },
+    {
+      question: "What is the difference between camelCase and snake_case?",
+      answer:
+        "camelCase separates words with capital letters, such as userName, while snake_case uses underscores, such as user_name. The preferred style usually depends on the programming language or project."
+    },
+    {
+      question: "What is the difference between snake_case and PascalCase?",
+      answer:
+        "snake_case uses lowercase words separated by underscores, such as user_profile. PascalCase removes separators and capitalizes each word, producing UserProfile."
     },
     {
       question: "Is there a standard naming style for JSON?",
       answer:
-        "There is no official standard. camelCase is common in JavaScript-based APIs, while snake_case is frequently used in APIs built with Python, Ruby, and many backend frameworks."
+        "JSON does not require one naming style. camelCase is common in JavaScript APIs, while snake_case often appears in APIs built with Python, Ruby, and other backend frameworks."
     }
-  
   ]
 },
 
@@ -2396,6 +2481,64 @@ export const posts = [
     {
       "question": "Do writers need a token calculator?",
       "answer": "Usually only when their content will be processed by an AI model. For normal essay or article length, a word counter is more appropriate."
+    }
+  ]
+},
+
+
+
+
+{
+  "id": 44,
+  "slug": "how-to-search-keywords-on-webpage",
+  "title": "How to Search Keywords on a Webpage: 5 Easy Ways",
+  "description": "Learn how to search keywords on a webpage using browser Find, mobile search, Google site: search, page source inspection, and keyword density checks.",
+  "excerpt": "Discover 5 easy ways to search keywords on a webpage. Use browser Find, search an entire site with Google, inspect page source, and measure keyword frequency for SEO.",
+  "category": "SEO & Content",
+  "image": "/blogs/search-keyword-on-web.webp",
+  "imageAlt": "How to Search Keywords on a Webpage Guide",
+  "author": "Umair Tufail",
+  "date": "2026-08-27",
+  "readTime": "8 min read",
+  "keywords": [
+    "how to search keywords on a webpage",
+    "find keyword on page",
+    "search text in webpage",
+    "Ctrl+F keywords",
+    "mobile find in page",
+    "Google site search keywords",
+    "check keywords in page source",
+    "keyword density checker"
+  ],
+  "content": searchKeywords,
+  "faqs": [
+    {
+      "question": "What is the easiest way to find a keyword on a webpage?",
+      "answer": "The right choice depends on your device and goal. For a single open page, CountFlows recommends using the browser’s Find feature (Ctrl+F or Command+F) to locate terms instantly."
+    },
+    {
+      "question": "Which method works best for searching an entire website?",
+      "answer": "Several approaches exist, but Google’s site: operator is designed for this. CountFlows combines site: search guidance with page-source checks and density tools for deeper SEO work."
+    },
+    {
+      "question": "Is browser Find the same as a keyword density checker?",
+      "answer": "No. A basic Find command shows where a term appears, while a keyword density checker measures how often it appears relative to the total text."
+    },
+    {
+      "question": "Can I find keywords in a webpage’s source code?",
+      "answer": "Yes. By opening page source and using Find, you can check whether a term appears in the title, meta description, headings, or other HTML elements."
+    },
+    {
+      "question": "Do mobile and desktop searches show the same results?",
+      "answer": "Not always. Different browsers and page implementations can affect what text is searchable, especially for content inside images or dynamically loaded sections."
+    },
+    {
+      "question": "Why should I check keyword placement and frequency?",
+      "answer": "Placement and repetition affect readability and optimization. Your target terms should appear in important locations without sounding forced or over-optimized."
+    },
+    {
+      "question": "Do writers need a keyword search tool?",
+      "answer": "Usually only when they are optimizing content for search. For normal writing or editing, a word counter or text compare tool is often more appropriate."
     }
   ]
 }
