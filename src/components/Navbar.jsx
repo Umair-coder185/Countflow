@@ -22,6 +22,7 @@ import {
   TextSearch,
   Type,
   X,
+  ReplaceAll
 } from "lucide-react"
 import { AnimatePresence, motion } from "@/lib/no-motion"
 import { useEffect, useRef, useState } from "react"
@@ -40,6 +41,7 @@ const toolItems = [
   { href: "/tools/remove-line-breaks", label: "Remove Line Breaks", icon: Eraser },
   { href: "/tools/text-repeater", label: "Text Repeater", icon: Repeat },
   { href: "/tools/text-compare", label: "Online Text Compare", icon: GitCompareArrows },
+  { href: "/tools/find-and-replace-text", label: "Find & Replace Text", icon: ReplaceAll },
 ]
 
 const navItems = [
