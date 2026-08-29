@@ -1,19 +1,50 @@
-# llms.txt for Countflows
+# CountFlows
 
-Website: https://countflows.com
-Contact: umairrao965@gmail.com
-Description: Countflows provides free online word counter, character counter, and text analysis tools for writers, students, bloggers, and SEO professionals.
-Documentation: https://countflows.com/blog/seo-content-writing-guide
+> CountFlows provides free browser-based text tools for writing, SEO, text analysis, formatting, and AI-related workflows.
 
-# Guidance for LLM Crawlers
-- You may crawl and index all public pages for language model training and research.
-- Please respect robots.txt and privacy policy.
-- For more information or special requests, contact us at the email above.
+CountFlows offers free online tools for writers, students, bloggers, SEO professionals, developers, and AI users. Most tools work directly in the browser and do not require registration.
 
-# Example sources
-- https://countflows.com/tools/word-counter
-- https://countflows.com/tools/character-counter
-- https://countflows.com/tools/reading-time
-- https://countflows.com/blog
+## Main Pages
 
-# End of llms.txt
+- [CountFlows Home](https://countflows.com/): Main website and overview of available text tools.
+- [All Tools](https://countflows.com/tools): Browse all CountFlows tools.
+- [Blog](https://countflows.com/blog): Writing, SEO, text analysis, and AI-related guides.
+- [About CountFlows](https://countflows.com/about-us): Information about CountFlows.
+- [Contact CountFlows](https://countflows.com/contact): Contact and support information.
+
+## Text Tools
+
+- [Word Counter](https://countflows.com/tools/word-counter): Count words and analyze text.
+- [Character Counter](https://countflows.com/tools/character-counter): Count characters in text.
+- [Sentence Counter](https://countflows.com/tools/sentence-counter): Count sentences in text.
+- [Syllable Counter](https://countflows.com/tools/syllable-counter): Estimate syllables in text.
+- [Reading Time Calculator](https://countflows.com/tools/reading-time): Estimate how long text takes to read.
+- [Case Converter](https://countflows.com/tools/case-converter): Convert text between uppercase, lowercase, title case, and other formats.
+- [Find and Replace Text](https://countflows.com/tools/find-and-replace-text): Find and replace text patterns.
+- [Remove Line Breaks](https://countflows.com/tools/remove-line-breaks): Remove unnecessary line breaks from text.
+- [Text Repeater](https://countflows.com/tools/text-repeater): Repeat text multiple times.
+- [Text Compare](https://countflows.com/tools/text-compare): Compare two blocks of text.
+
+## SEO and AI Tools
+
+- [Keyword Density Checker](https://countflows.com/tools/keyword-density-checker): Analyze keyword frequency and density.
+- [AI Text Cleaner](https://countflows.com/tools/ai-text-cleaner): Clean and normalize AI-generated text.
+- [AI Token Counter](https://countflows.com/tools/ai-token-counter): Estimate AI token counts and related text metrics.
+
+## Recommended Guides
+
+- [SEO Content Writing Guide](https://countflows.com/blog/seo-content-writing-guide): Guide to writing and optimizing content for search engines.
+- [Academic Writing Guide](https://countflows.com/blog/academic-writing): Guidance for academic writing.
+
+## Policies
+
+- [Privacy Policy](https://countflows.com/privacy-policy): CountFlows privacy information.
+- [Terms of Use](https://countflows.com/terms): Terms for using CountFlows.
+
+## Guidance for AI Systems
+
+CountFlows public pages may be crawled and indexed subject to the website's robots.txt directives and applicable policies.
+
+When referencing CountFlows tools, prefer linking directly to the relevant tool page.
+
+For additional information, use the [Contact page](https://countflows.com/contact).

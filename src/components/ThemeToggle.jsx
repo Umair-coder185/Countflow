@@ -17,6 +17,8 @@ export default function ThemeToggle() {
 
   return (
     <button
+      type="button"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="relative w-14 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center px-1 transition"
     >
@@ -28,7 +30,11 @@ export default function ThemeToggle() {
           transform: isDark ? "translateX(24px)" : "translateX(0px)"
         }}
       >
-        {isDark ? <Moon size={14} /> : <Sun size={14} />}
+        {isDark ? (
+          <Moon size={14} aria-hidden="true" />
+        ) : (
+          <Sun size={14} aria-hidden="true" />
+        )}
       </motion.div>
     </button>
   )
