@@ -1,192 +1,379 @@
 const cleanSiteAlternative = `
 
-
-
-
 <article>
-        
 
-        <p>You're searching for a clean paste site — something that strips invisible characters, removes AI formatting artifacts, and gives you plain, usable text. Simple enough request. But here's the problem nobody mentions upfront: the most commonly recommended tool for this job has a trust problem.</p>
+  <p>
+    If you're looking for a CleanPaste.site alternative, the main things to
+    compare are privacy, browser-based processing, hidden-character removal,
+    formatting cleanup, and whether the tool requires an account.
+  </p>
 
-        <p>Multiple independent security scanners have flagged CleanPaste.site with alarmingly low scores. Scam Detector rates it 45.7 — "doubtful" and medium-risk. A separate scanner gives it a 1/100 trust score with 13 active blacklist detections. ScamAdviser independently rates its trust score as extremely low, calling it a strong indicator the site may not be safe. These aren't opinions — they're published scanner findings you can verify yourself.</p>
+  <p>
+    CleanPaste.site is one option for cleaning copied text, but users may also
+    want alternatives that process text locally in the browser and provide
+    more control over Markdown, hidden Unicode characters, spacing, and
+    punctuation.
+  </p>
 
-        <p>That's a genuine reason to look for a the flagged site alternative. This guide gives you five safe, browser-based options that do the job just as well, without the risk.</p>
+  <h2>Quick Answer: What Is the Best CleanPaste.site Alternative?</h2>
 
-        <h2>Is CleanPaste.site Actually Safe?</h2>
+  <p>
+    If your priority is free browser-based text cleaning with no signup,
+    <a href="https://countflows.com/tools/ai-text-cleaner">CountFlows AI Text Cleaner</a>
+    is a strong option. It can remove Markdown, hidden Unicode characters,
+    unwanted spacing, HTML, and selected punctuation while keeping the
+    original wording intact.
+  </p>
 
-        <p>Three independent security scanners have flagged it, and their findings are consistent enough to take seriously.</p>
+  <p>
+    Other useful alternatives include GPTCLEANUP AI, TextCleanr, UnicodeClean,
+    and TextCleaner.io. The best choice depends on whether you need general
+    formatting cleanup, invisible-character inspection, or AI-text cleanup.
+  </p>
 
-        <p>Scam Detector gives it a 45.7/100 trust score, placing it firmly in "doubtful" territory. Gridinsoft's online scanner returns a 1/100 trust score alongside 13 blacklist detections, flagging the site as suspicious. ScamAdviser independently assigns it an extremely low trust rating — the category it specifically describes as a strong scam signal.</p>
+  <h2>Is CleanPaste.site Actually Safe?</h2>
 
-        <p>To be fair, the picture isn't uniformly bad: ScamDoc rates it a more moderate 60% "average" trust score, and DNSFilter confirms a valid SSL certificate. But when the majority of independent scanners land in the dangerous-to-doubtful range, that's a pattern worth respecting — especially for a tool you're pasting client work, private drafts, or proprietary content into.</p>
+  <p>
+    Third-party reputation services can report different trust signals for
+    websites, and those ratings may change over time. If you plan to paste
+    private drafts, client work, or other sensitive content into any online
+    text-cleaning service, check its current privacy policy, processing method,
+    and reputation independently before using it.
+  </p>
 
-        <h2>What to Look for in a Clean Paste Site</h2>
+  <p>
+    For sensitive text, a useful preference is local browser-based processing,
+    where the text is handled inside your browser rather than being submitted
+    to a remote server.
+  </p>
 
-        <p>Not all text cleaners are equal. Before picking one, check for these four things:</p>
+  <h2>What to Look for in a Clean Paste Site</h2>
 
-        <ul>
-            <li><strong>Browser-based processing</strong> — your text should never leave your device. When a tool processes on a remote server instead, that text is handled somewhere you don't control, by a company you've never evaluated, under a privacy policy you've probably never read. Browser-based tools process everything inside your tab — nothing is transmitted anywhere, which is the only acceptable baseline for anything sensitive.</li>
-            <li><strong>No signup required</strong> — a legitimate utility tool doesn't need your email address to remove a space character.</li>
-            <li><strong>Invisible character removal</strong> — the tool must strip zero-width spaces, zero-width non-joiners, soft hyphens, and other hidden Unicode characters that cause real formatting damage downstream.</li>
-            <li><strong>Formatting normalization</strong> — smart quotes, em dashes, markdown asterisks, and non-standard punctuation should all convert to plain text equivalents.</li>
-        </ul>
+  <p>Before choosing a text cleaner, check these four things:</p>
 
-        <p>If a tool ticks all four, it's worth using. If it misses even one — especially the first — think twice.</p>
+  <ul>
+    <li>
+      <strong>Browser-based processing</strong> — local processing can reduce
+      the need to send text to a remote server.
+    </li>
 
-        <h2>Quick Comparison Table</h2>
+    <li>
+      <strong>No signup required</strong> — simple utility tools should not
+      require unnecessary account creation.
+    </li>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Tool</th>
-                    <th>Browser-Based</th>
-                    <th>Signup Required</th>
-                    <th>Invisible Char Removal</th>
-                    <th>Formatting Cleanup</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>free cleanup tool at  (countflows.com)</td>
-                    <td>✓</td>
-                    <td>✗</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td>CleanPaste.site</td>
-                    <td>✓</td>
-                    <td>✗</td>
-                    <td>Partial</td>
-                    <td>Partial</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td>GPTCLEANUP AI</td>
-                    <td>✓</td>
-                    <td>✗</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td>TextCleanr</td>
-                    <td>✓</td>
-                    <td>✗</td>
-                    <td>Partial</td>
-                    <td>✓</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td>UnicodeClean</td>
-                    <td>✓</td>
-                    <td>✗*</td>
-                    <td>✓</td>
-                    <td>Limited</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td>TextCleaner.io</td>
-                    <td>✓</td>
-                    <td>✗*</td>
-                    <td>✗</td>
-                    <td>✓</td>
-                    <td>Free</td>
-                </tr>
-            </tbody>
-        </table>
+    <li>
+      <strong>Invisible character removal</strong> — a useful cleaner should
+      handle zero-width spaces, soft hyphens, and other hidden Unicode
+      characters that can cause formatting problems.
+    </li>
 
-        <p><em>*Signup requirement not explicitly confirmed on either site's public pages at time of writing — verify directly before publishing.</em></p>
+    <li>
+      <strong>Formatting normalization</strong> — Markdown, smart punctuation,
+      repeated spacing, HTML, and other copy-paste artifacts should be easy to
+      clean when needed.
+    </li>
+  </ul>
 
-        <p>The gap is clear. This tool covers every column without compromise — and without the trust score baggage.</p>
+  <h2>Quick Comparison Table</h2>
 
-        <h2>5 Best CleanPaste.site Alternatives</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tool</th>
+        <th>Browser-Based</th>
+        <th>Signup Required</th>
+        <th>Invisible Char Removal</th>
+        <th>Formatting Cleanup</th>
+        <th>Price</th>
+      </tr>
+    </thead>
 
-        <p>Full disclosure: the cleanup tool is our own tool. This comparison exists because CleanPaste.site's security flags are real and worth knowing about — not as a pretext to promote ourselves.</p>
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://countflows.com/tools/ai-text-cleaner">
+            CountFlows AI Text Cleaner
+          </a>
+        </td>
+        <td>✓</td>
+        <td>✗</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>Free</td>
+      </tr>
 
-        <h3>1. AI Text Cleaner (countflows.com) — Best Overall</h3>
+      <tr>
+        <td>CleanPaste.site</td>
+        <td>✓</td>
+        <td>✗</td>
+        <td>Partial</td>
+        <td>Partial</td>
+        <td>Free</td>
+      </tr>
 
-        <p>The strongest alternative available right now. The <a href="https://countflows.com/tools/ai-text-cleaner">AI Text Cleaner</a> runs entirely inside your browser — your text never touches a server, which immediately solves the privacy concern that makes this site risky. It strips invisible Unicode characters, removes AI watermark tokens, normalizes smart quotes, em dashes, markdown symbols, and delivers clean, portable plain text in under a second.</p>
+      <tr>
+        <td>GPTCLEANUP AI</td>
+        <td>✓</td>
+        <td>✗</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>Free</td>
+      </tr>
 
-        <p>No account. No upload. No risk. It handles zero-width space removal, ChatGPT formatting artifacts, and non-standard punctuation in one pass — more than most single tools on this list cover individually.</p>
+      <tr>
+        <td>TextCleanr</td>
+        <td>✓</td>
+        <td>✗</td>
+        <td>Partial</td>
+        <td>✓</td>
+        <td>Free</td>
+      </tr>
 
-        <p><strong>Best for:</strong> Bloggers, copywriters, and anyone cleaning ChatGPT or AI-generated text before publishing. <strong>Limitation:</strong> Interface is utility-focused — minimal, but that's a feature for most users.</p>
+      <tr>
+        <td>UnicodeClean</td>
+        <td>✓</td>
+        <td>✗*</td>
+        <td>✓</td>
+        <td>Limited</td>
+        <td>Free</td>
+      </tr>
 
-        <h3>2. GPTCLEANUP AI — Best for AI-Specific Output</h3>
+      <tr>
+        <td>TextCleaner.io</td>
+        <td>✓</td>
+        <td>✗*</td>
+        <td>✗</td>
+        <td>✓</td>
+        <td>Free</td>
+      </tr>
+    </tbody>
+  </table>
 
-        <p>GPTCLEANUP AI is purpose-built for cleaning AI-generated text, which gives it a natural edge over general-purpose tools. It specifically targets the formatting patterns large language models produce — invisible character sequences, inconsistent spacing, and structural artifacts from prompt-based generation.</p>
+  <p>
+    <em>
+      *Features and signup requirements can change. Verify the current product
+      pages before relying on any comparison.
+    </em>
+  </p>
 
-        <p>It's free, browser-based, and doesn't require an account. Output is reliable for standard ChatGPT, Claude, and Gemini-generated text. Where it falls slightly short is advanced normalization options — less granular control over what gets stripped versus preserved compared to the countflows cleaner tool.</p>
+  <h2>5 Best CleanPaste.site Alternatives</h2>
 
-        <p><strong>Best for:</strong> Users cleaning output from multiple AI platforms. <strong>Limitation:</strong> Fewer toggle options than countflows.com's tool.</p>
+  <p>
+    Full disclosure: the CountFlows AI Text Cleaner is our own tool. The goal
+    of this comparison is to show the main differences between browser-based
+    text cleaners so you can choose the option that fits your workflow.
+  </p>
 
-        <h3>3. TextCleanr — Best for Formatting-Heavy Cleanup</h3>
+  <h3>1. AI Text Cleaner (CountFlows) — Best Overall</h3>
 
-        <p>TextCleanr has been around long enough to earn a solid reputation for one specific use case: bulk formatting cleanup. Remove extra line breaks, strip HTML tags, normalize punctuation, convert case — it handles the cosmetic layer of text cleaning well.</p>
+  <p>
+    The
+    <a href="https://countflows.com/tools/ai-text-cleaner">
+      CountFlows AI Text Cleaner
+    </a>
+    runs inside your browser and is designed for cleaning copied AI-generated
+    and formatted text. It can remove hidden Unicode characters, Markdown,
+    HTML, repeated spacing, smart punctuation, and other formatting artifacts
+    without rewriting the original sentences.
+  </p>
 
-        <p>It's lighter on the invisible Unicode character front. If your primary concern is hidden AI watermark tokens or zero-width characters, TextCleanr won't catch everything. For general formatting cleanup where you already know there are no hidden characters, it's a reliable, no-nonsense option.</p>
+  <p>
+    No account is required. It is especially useful when text copied from
+    ChatGPT, Claude, Gemini, or another AI tool contains several formatting
+    problems at once.
+  </p>
 
-        <p><strong>Best for:</strong> General formatting cleanup, HTML stripping, whitespace normalization. <strong>Limitation:</strong> Weaker on invisible Unicode and AI watermark removal.</p>
+  <p>
+    <strong>Best for:</strong> Bloggers, writers, editors, students, and anyone
+    cleaning AI-generated text before publishing.
+    <strong>Limitation:</strong> It focuses on cleanup rather than rewriting or
+    paraphrasing.
+  </p>
 
-        <h3>4. UnicodeClean — Best for Technical Unicode Inspection</h3>
+  <h3>2. GPTCLEANUP AI — Best for AI-Specific Output</h3>
 
-        <p>UnicodeClean is built for users who want to see exactly what's hiding in their text before removing it. It identifies over 100 types of invisible Unicode characters across six categories — control, spacing, formatting, combining, variation, and private-use — and highlights each one with its code point and description before you clean.</p>
+  <p>
+    GPTCLEANUP AI is designed specifically for cleaning AI-generated text. It
+    focuses on formatting patterns that can appear in text copied from tools
+    such as ChatGPT, Claude, and Gemini.
+  </p>
 
-        <p>It offers four cleaning levels (Basic, Intermediate, Advanced, Custom), plus report exports in JSON, CSV, TXT, and XML for documentation purposes. Everything runs locally in your browser. It's lighter on formatting normalization — it targets invisible characters specifically, not smart quotes, em dashes, or markdown symbols.</p>
+  <p>
+    It can be useful when your main goal is quick cleanup rather than detailed
+    control over individual formatting options.
+  </p>
 
-        <p><strong>Best for:</strong> Developers, editors, and anyone who wants to verify exactly what was removed, not just get a clean output. <strong>Limitation:</strong> No formatting normalization; character-level focus only.</p>
+  <p>
+    <strong>Best for:</strong> Users cleaning output from multiple AI platforms.
+    <strong>Limitation:</strong> May provide fewer granular cleanup controls
+    than a toggle-based cleaner.
+  </p>
 
-        <h3>5. TextCleaner.io — Best for Multi-Tool Formatting Suite</h3>
+  <h3>3. TextCleanr — Best for Formatting-Heavy Cleanup</h3>
 
-        <p>TextCleaner.io takes a modular approach instead of one do-everything tool — dedicated mini-tools for each formatting problem: removing line breaks, stripping HTML, normalizing whitespace, converting case, deduplicating lines. Useful when you know exactly what's wrong with a piece of text and want a single-purpose fix rather than a toggle-heavy all-in-one.</p>
+  <p>
+    TextCleanr is useful for general formatting tasks such as removing extra
+    line breaks, stripping HTML, normalizing whitespace, and converting text
+    formatting.
+  </p>
 
-        <p>It's fully browser-based, with no uploads and no data stored. It doesn't target AI watermark tokens or zero-width characters specifically, so pair it with a dedicated Unicode tool if that's your primary concern.</p>
+  <p>
+    It is better suited to visible formatting cleanup than detailed inspection
+    of hidden Unicode characters.
+  </p>
 
-        <p><strong>Best for:</strong> Cleaning general copy-paste formatting issues from PDFs, websites, or documents. <strong>Limitation:</strong> Not built for AI watermark or invisible-character removal specifically.</p>
+  <p>
+    <strong>Best for:</strong> General formatting cleanup, HTML stripping, and
+    whitespace normalization.
+    <strong>Limitation:</strong> Less focused on hidden-character inspection.
+  </p>
 
-        <h2>How to Clean AI generated Text in 3 Steps</h2>
+  <h3>4. UnicodeClean — Best for Technical Unicode Inspection</h3>
 
-        <p>Using countflows toolkit takes less time than reading this sentence twice.</p>
+  <p>
+    Unicode-focused cleaners are useful when you want to inspect invisible
+    characters before removing them. These tools can help identify control,
+    spacing, formatting, combining, or other Unicode characters that are not
+    visible in normal text.
+  </p>
 
-        <p><strong>Step 1 — Paste your raw text.</strong> Open the <a href="https://countflows.com/tools/ai-text-cleaner">AI Text Cleaner</a> and paste your ChatGPT or AI-generated text directly into the input field. Don't pre-edit — let the tool see the raw output.</p>
+  <p>
+    This type of tool is especially useful for developers, editors, and users
+    who want to understand exactly what is being removed.
+  </p>
 
-        <p><strong>Step 2 — Select what to remove.</strong> Toggle the options relevant to your use case: invisible characters, AI watermark tokens, markdown symbols, smart quotes, em dashes. Each toggle is clearly labelled.</p>
+  <p>
+    <strong>Best for:</strong> Technical Unicode inspection.
+    <strong>Limitation:</strong> Usually less focused on Markdown, punctuation,
+    and general formatting cleanup.
+  </p>
 
-        <p><strong>Step 3 — Copy the clean output.</strong> Hit Clean. The tool processes everything locally in your browser. Copy the output — it's now stripped of every hidden character and formatting artifact.</p>
+  <h3>5. TextCleaner.io — Best for Multi-Tool Formatting Tasks</h3>
 
-        <p>Three steps, under five seconds, zero data risk.</p>
+  <p>
+    TextCleaner.io takes a modular approach, offering separate tools for tasks
+    such as removing line breaks, stripping HTML, normalizing whitespace,
+    converting case, and cleaning repeated lines.
+  </p>
 
-        <h2>FAQs</h2>
+  <p>
+    This can work well when you already know exactly which formatting problem
+    you need to fix.
+  </p>
 
-        <h3>What is a cleanpaste.site alternative?</h3>
-        <p>A cleanpaste.site alternative is any browser-based tool that removes invisible characters, AI formatting artifacts, and hidden Unicode from text — performing the same function without the security concerns flagged by multiple independent scanners.</p>
+  <p>
+    <strong>Best for:</strong> General copy-paste formatting issues.
+    <strong>Limitation:</strong> Less focused on hidden Unicode cleanup.
+  </p>
 
-        <h3>Why do security scanners flag CleanPaste.site?</h3>
-        <p>Three independent scanners — Scam Detector, Gridinsoft, and ScamAdviser — rate this platform with low to extremely low trust scores, citing blacklist detections and risk signals. The exact technical cause isn't publicly detailed, but the consistency across separate scanners is the concern.</p>
+  <h2>How to Clean AI-Generated Text in 3 Steps</h2>
 
-        <h3>Is the AI Text Cleaner on countflows.com free?</h3>
-        <p>Yes — completely free, no account required, no usage limits. It runs entirely in your browser with no server uploads.</p>
+  <p>
+    If your main problem is Markdown, strange spacing, or formatting copied
+    from ChatGPT, see our
+    <a href="https://countflows.com/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text">
+      guide to removing ChatGPT formatting
+    </a>
+    for additional manual and automated cleanup methods.
+  </p>
 
-        <h3>What are invisible characters and why do they matter?</h3>
-        <p>Invisible characters are non-printable Unicode sequences — zero-width spaces, soft hyphens, zero-width non-joiners — that hide inside copied text. They cause formatting failures in CMS platforms, trigger AI detection tools, and sometimes carry AI watermark information.</p>
+  <p>
+    <strong>Step 1 — Paste your raw text.</strong>
+    Open the
+    <a href="https://countflows.com/tools/ai-text-cleaner">
+      AI Text Cleaner
+    </a>
+    and paste your copied text directly into the input field.
+  </p>
 
-        <h3>Can a clean paste site remove ChatGPT watermarks?</h3>
-        <p>Yes. Tools like the countflows AI Text Cleaner specifically target Unicode-based watermarking patterns embedded in AI-generated text and strip them during the cleaning process.</p>
+  <p>
+    <strong>Step 2 — Select what to remove.</strong>
+    Choose the cleanup options relevant to your text, such as hidden
+    characters, Markdown, HTML, repeated spacing, smart punctuation, or
+    unwanted dashes.
+  </p>
 
-        <h3>Which cleanpaste.site alternative is best for sensitive content?</h3>
-        <p>The AI Text Cleaner at countflows.com — it processes everything locally in your browser, so your text never leaves your device.</p>
+  <p>
+    <strong>Step 3 — Copy the clean output.</strong>
+    Run the cleaner, review the result, and copy the cleaned text into Word,
+    Google Docs, your CMS, email, or another editor.
+  </p>
 
-        
+  <h2>FAQs</h2>
 
-        <h2>Conclusion</h2>
+  <h3>What is a CleanPaste.site alternative?</h3>
 
-        <p>Finding a safe cleanpaste.site alternative shouldn't take research, scanner checks, and a trust score deep-dive. It should just work — cleanly, privately, and immediately.</p>
+  <p>
+    A CleanPaste.site alternative is another text-cleaning tool that can remove
+    unwanted formatting, hidden Unicode characters, Markdown, spacing issues,
+    or other copy-paste artifacts.
+  </p>
 
-        <p>For the best combination of coverage, privacy, and zero friction, the AI Text Cleaner at countflows.com is the clear pick: it strips invisible Unicode characters, removes AI watermark tokens, and normalizes formatting — all inside your browser, all in one click, all for free.</p>
+  <h3>Which CleanPaste.site alternative is best?</h3>
 
-        <p><a href="https://countflows.com/tools/ai-text-cleaner">Try the countflows AI Text Cleaner →</a></p>
-    </article>
+  <p>
+    The best option depends on your needs. CountFlows AI Text Cleaner is a good
+    choice when you want browser-based cleanup with controls for Markdown,
+    hidden characters, HTML, spacing, and punctuation. Unicode-focused tools
+    may be better when you need detailed character inspection.
+  </p>
+
+  <h3>Is the AI Text Cleaner on CountFlows free?</h3>
+
+  <p>
+    Yes. The CountFlows AI Text Cleaner is free to use and does not require an
+    account.
+  </p>
+
+  <h3>What are invisible characters?</h3>
+
+  <p>
+    Invisible characters are Unicode characters that do not display normally
+    on screen, such as zero-width spaces or soft hyphens. They can sometimes
+    create unexpected formatting, copying, searching, or publishing problems.
+  </p>
+
+  <h3>Can a text cleaner remove ChatGPT formatting?</h3>
+
+  <p>
+    Yes. A formatting-focused text cleaner can remove Markdown symbols, hidden
+    characters, repeated spacing, HTML, and other unwanted formatting from
+    copied ChatGPT text without necessarily changing the wording.
+  </p>
+
+  <h3>Which alternative is best for sensitive text?</h3>
+
+  <p>
+    If privacy is important, look for a tool that clearly states that text is
+    processed locally in the browser and review its current privacy
+    documentation before pasting sensitive information.
+  </p>
+
+  <h2>Conclusion</h2>
+
+  <p>
+    A good CleanPaste.site alternative should make copied text easier to use
+    without adding unnecessary friction. The most useful features are
+    browser-based processing, hidden-character removal, Markdown cleanup,
+    spacing normalization, and clear control over what gets changed.
+  </p>
+
+  <p>
+    For users who want those features in one free tool, the CountFlows AI Text
+    Cleaner provides browser-based cleanup for hidden Unicode characters,
+    Markdown, HTML, spacing, punctuation, and other common formatting
+    artifacts.
+  </p>
+
+  <p>
+    <a href="https://countflows.com/tools/ai-text-cleaner">
+      Try the CountFlows AI Text Cleaner →
+    </a>
+  </p>
+
+</article>
+
 `
+
 export default cleanSiteAlternative;

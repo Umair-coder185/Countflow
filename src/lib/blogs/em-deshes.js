@@ -1,95 +1,298 @@
 const emdashes = `
 
-
 <article>
-  
 
-  <p>If you've been deleting every em dash from your writing out of fear someone will think it's AI-generated, you can stop. New research says you've been watching the wrong punctuation mark.</p>
+  <p>
+    An em dash (—) is a punctuation mark used to create a strong pause,
+    interruption, or aside in a sentence. Seeing an em dash in writing does
+    <strong>not</strong> automatically mean the text was written by AI.
+  </p>
 
-  <p>For the last two years, the em dash has been treated as the ultimate AI writing tell. Teachers flag it, editors side-eye it, and writers have started avoiding a perfectly good piece of punctuation because they're scared of being mistaken for a chatbot. But a widely discussed 2026 analysis from The Economist — covered by <a href="https://www.fastcompany.com/91584243/how-to-identify-ai-generated-writing-viral-report-has-surprising-new-clues-economist" target="_blank" rel="noopener noreferrer">Fast Company</a> and <a href="https://dataconomy.com/2026/08/04/how-to-spot-ai-writing/" target="_blank" rel="noopener noreferrer">Dataconomy</a> — found something surprising: of the major AI models tested, only Claude actually used em dashes more often than human writers do. ChatGPT, which used to lean on the em dash constantly, now uses it less than the average human writer.</p>
+  <p>
+    AI tools such as ChatGPT and Claude can use em dashes because they learn
+    writing patterns from large amounts of published text, where the punctuation
+    mark is common. But human writers use em dashes too, so the mark by itself
+    is not a reliable way to identify AI-generated text.
+  </p>
 
-  <p>So if the em dash isn't the giveaway anymore, what is? This guide breaks down does an em dash mean AI writing, what actually triggers AI detectors in 2026, and how to clean up your text either way — including a free tool that does it in one click.</p>
+  <h2>Quick Answer: Is an Em Dash a Sign of AI?</h2>
 
-  <h2>Where the "em dash AI detector" myth came from</h2>
+  <p>
+    No. An em dash can appear in both human and AI-generated writing.
+    Different AI models also use punctuation differently, and their writing
+    patterns change over time. That makes a single punctuation mark a weak
+    signal for deciding whether text was written by AI.
+  </p>
 
-  <p>The em dash didn't become suspicious by accident. AI language models are trained on huge volumes of published writing — books, journalism, essays — where the em dash shows up constantly. Everyday writing (texts, emails, quick notes) barely uses it at all, which made the mark stand out the moment AI tools started generating that everyday-style writing at scale. <a href="https://blog.mdpi.com/2025/10/09/ai-and-the-em-dash/" target="_blank" rel="noopener noreferrer">MDPI's writing blog</a> traces this exact pattern: the em dash is common in polished, literary writing and rare in casual writing, so its sudden appearance in casual contexts felt like a red flag.</p>
+  <p>
+    If you simply want to remove em dashes from copied AI text for style or
+    formatting reasons, you can replace them manually or use a
+    <a href="https://countflows.com/tools/ai-text-cleaner">
+      free AI Text Cleaner
+    </a>
+    to clean them along with Markdown, smart punctuation, and other unwanted
+    formatting.
+  </p>
 
-  <p>From there, the idea spread fast. Screenshots, Reddit threads, and even a viral moment where social media accused a major brand's marketing post of being AI-written — just because of a dash — turned "em dash AI myth" into common knowledge almost overnight, according to <a href="https://news.fiu.edu/2026/why-does-ai-use-so-many-em-dashes-an-expert-explains" target="_blank" rel="noopener noreferrer">FIU News's interview with AI researcher Mustafa Ocal</a>.</p>
+  <h2>What Is an Em Dash?</h2>
 
-  <p>The problem: it was never a reliable signal, and it's an even weaker one now.</p>
+  <p>
+    An em dash is the long dash symbol <strong>—</strong>. It is longer than a
+    hyphen (-) and an en dash (–), and writers commonly use it to add emphasis,
+    interrupt a sentence, or insert an additional thought.
+  </p>
 
-  <h2>Why does ChatGPT use em dashes? (And why it's changing)</h2>
+  <p>
+    For example:
+  </p>
 
-  <p>Language models don't think in punctuation rules — they predict the next most likely piece of text based on patterns in their training data. Early GPT models leaned hard on the em dash because it showed up often in the high-quality writing samples used to train them.</p>
+  <p>
+    <em>The final draft — after three revisions — was much clearer.</em>
+  </p>
 
-  <p>That's changing model by model:</p>
+  <p>
+    This punctuation existed long before generative AI and remains a normal
+    part of edited human writing.
+  </p>
+
+  <h2>Why Are Em Dashes Associated With AI Writing?</h2>
+
+  <p>
+    The association grew because AI-generated writing often appeared polished,
+    structured, and editorial in style. Em dashes are common in books,
+    journalism, essays, and other professionally edited text, so they naturally
+    appeared in some AI-generated responses as well.
+  </p>
+
+  <p>
+    Over time, screenshots and social-media discussions turned the em dash into
+    a popular shorthand for “AI writing.” But punctuation alone cannot show who
+    or what wrote a sentence.
+  </p>
+
+  <p>
+    Commentary on AI writing has also pointed out that punctuation patterns
+    vary between models and versions. That means even if one model uses em
+    dashes frequently at one point in time, another model — or a newer version
+    of the same model — may behave differently.
+  </p>
+
+  <h2>Why Does AI Use Em Dashes?</h2>
+
+  <p>
+    AI language models generate text by predicting likely words and punctuation
+    from patterns learned during training. Because em dashes appear frequently
+    in polished English writing, a model may reproduce the same pattern when it
+    generates essays, explanations, marketing copy, or long-form answers.
+  </p>
+
+  <p>
+    The important point is that AI does not “own” the em dash. It is simply
+    reproducing a punctuation pattern that already exists throughout human
+    writing.
+  </p>
+
+  <p>
+    Different models can also have different writing styles. Prompt
+    instructions, model updates, system settings, and the type of content being
+    generated can all influence punctuation choices.
+  </p>
+
+  <h2>Does ChatGPT Use Em Dashes?</h2>
+
+  <p>
+    ChatGPT can use em dashes, but not every response contains them and their
+    presence is not evidence that ChatGPT wrote the text.
+  </p>
+
+  <p>
+    You can also ask ChatGPT to avoid em dashes or use a different punctuation
+    style. Because AI output changes depending on instructions and model
+    behavior, punctuation is too variable to work as a dependable AI test.
+  </p>
+
+  <h2>Can an Em Dash Be Used as an AI Detector?</h2>
+
+  <p>
+    No single punctuation mark should be treated as an AI detector. Human
+    writers may use many em dashes, while AI-generated text may contain none.
+  </p>
+
+  <p>
+    Writing style is influenced by editing habits, education, language,
+    audience, genre, and personal preference. AI models are similarly variable.
+    Looking at one dash ignores all of that context.
+  </p>
+
+  <p>
+    This is also why accusing a writer of using AI based only on punctuation
+    can produce false conclusions.
+  </p>
+
+  <h2>What Can Make AI-Generated Writing Feel Recognizable?</h2>
+
+  <p>
+    Instead of focusing on one punctuation mark, readers often notice broader
+    writing patterns. These can include:
+  </p>
+
   <ul>
-    <li>ChatGPT (GPT-5.1 and later): Now suppresses em dashes in most default outputs. According to the Economist analysis, it uses them less than human writers do.</li>
-    <li>Claude: Still the one model that reliably out-dashes humans, per the same report.</li>
-    <li>Gemini and others: Trending downward, following the same pattern as ChatGPT.</li>
+    <li>Repeated sentence structures.</li>
+    <li>Similar sentence lengths throughout a paragraph.</li>
+    <li>Overuse of transition phrases.</li>
+    <li>Unnecessary repetition of the same idea.</li>
+    <li>Generic examples or conclusions.</li>
+    <li>Highly predictable list and paragraph structures.</li>
   </ul>
 
-  <p>That alone should tell you why building a detection habit around one punctuation mark is a losing strategy — the models keep moving the target.</p>
+  <p>
+    None of these patterns proves that text was written by AI either. They are
+    better treated as editing signals rather than evidence of authorship.
+  </p>
 
-  <h2>AI detector false positives in 2026: what's actually happening</h2>
+  <h2>How to Remove Em Dashes From ChatGPT Text</h2>
 
-  <p>Here's the part that matters more than any punctuation mark: real people are getting flagged for writing that sounds "too AI," and it's causing genuine problems — students called into academic-integrity meetings, freelancers losing clients over a false accusation. <a href="https://www.plagiarismtoday.com/2025/06/26/em-dashes-hyphens-and-spotting-ai-writing/" target="_blank" rel="noopener noreferrer">Plagiarism Today's breakdown of em dash usage across models</a> found wildly inconsistent dash usage between tools — some AI models barely use the em dash at all — which means anyone using "lots of dashes" as their detection method is going to be wrong constantly, in both directions.</p>
+  <p>
+    If you prefer not to use em dashes in your writing, there are several easy
+    ways to remove them.
+  </p>
 
-  <h2>Signs of AI-generated text that actually hold up</h2>
-
-  <p>If punctuation isn't the answer, what is? Based on the Economist research and existing detection literature, a few patterns are far more consistent than any single character:</p>
   <ul>
-    <li>Light punctuation overall. AI-generated text tends to use fewer commas, semicolons, and parentheses than human writing — the opposite of the em dash myth.</li>
-    <li>Long, uniform sentences. Instead of varying sentence length the way people naturally do, AI text often runs long sentences back to back — a pattern researchers call "burstiness" when it's missing.</li>
-    <li>Overreliance on "and." The Economist report specifically flagged AI's tendency to string ideas together with "and" instead of varying sentence structure.</li>
-    <li>Verbosity and rare words. AI-written text tends to run longer than necessary and reach for fancier vocabulary — polysyllabic words, scientific-sounding phrasing, and nominalizations (turning verbs into noun phrases) — more often than people do.</li>
-    <li>Predictable rhetorical patterns. Phrases like "it's not X, it's Y" and rule-of-three lists show up far more often in AI writing than in natural human writing.</li>
+    <li>
+      <strong>Replace them manually.</strong>
+      Depending on the sentence, use a comma, period, colon, semicolon, or
+      parentheses.
+    </li>
+
+    <li>
+      <strong>Use Find and Replace.</strong>
+      Search for the em dash character and replace it throughout the document.
+    </li>
+
+    <li>
+      <strong>Ask the AI to avoid them.</strong>
+      Add a style instruction such as “Do not use em dashes.”
+    </li>
+
+    <li>
+      <strong>Use a text cleaner.</strong>
+      This is useful when you also need to clean Markdown, hidden characters,
+      smart punctuation, or other copied formatting.
+    </li>
   </ul>
 
-  <p>None of these are perfect on their own either — but together, they're a far more honest picture of how to spot AI writing in 2026 than counting dashes ever was.</p>
+  <p>
+    The
+    <a href="https://countflows.com/tools/ai-text-cleaner">
+      CountFlows AI Text Cleaner
+    </a>
+    can clean em dashes and other selected formatting without requiring you to
+    search through a long draft manually.
+  </p>
 
-  <h2>How to remove em dashes from ChatGPT text (if you still want to)</h2>
+  <p>
+    If your text was copied directly from ChatGPT and contains Markdown,
+    unusual spacing, headings, or other formatting, see our
+    <a href="https://countflows.com/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text">
+      guide to removing ChatGPT formatting
+    </a>
+    for additional cleanup methods.
+  </p>
 
-  <p>Even though the em dash isn't the smoking gun it used to be, plenty of writers still want a cleaner, more natural-sounding draft before publishing — especially if a teacher, editor, or client still associates dashes with AI. A few ways to do it:</p>
+  <h2>What Should You Use Instead of an Em Dash?</h2>
+
+  <p>
+    The best replacement depends on what the sentence is doing:
+  </p>
+
   <ul>
-    <li>Manually swap them out. Replace with a comma, a period and new sentence, or parentheses, depending on what the sentence needs.</li>
-    <li>Ask the AI tool itself. Most chat tools will follow a style instruction like "avoid em dashes" — though it doesn't always stick for long.</li>
-    <li>Use a text cleaner. This is the fastest option if you're editing a full draft rather than one sentence at a time.</li>
+    <li>
+      <strong>Comma:</strong> for a light pause.
+    </li>
+    <li>
+      <strong>Period:</strong> when the second idea works better as a new
+      sentence.
+    </li>
+    <li>
+      <strong>Colon:</strong> when the second part explains or introduces the
+      first.
+    </li>
+    <li>
+      <strong>Semicolon:</strong> for two closely related independent clauses.
+    </li>
+    <li>
+      <strong>Parentheses:</strong> when the information is secondary.
+    </li>
   </ul>
 
-  <p>That's exactly what our free <a href="https://countflows.com/tools/ai-text-cleaner" target="_blank" rel="noopener noreferrer">AI Text Cleaner</a> is built for — it strips em dashes, markdown symbols, smart quotes, and other AI-formatting leftovers from ChatGPT or Claude output in one click, right in your browser. Nothing is uploaded or stored.</p>
+  <p>
+    You do not need to remove every em dash simply because AI tools sometimes
+    use them. Change the punctuation only when another option fits your style
+    or sentence better.
+  </p>
 
-  <h2>How to make ChatGPT text sound human (beyond punctuation)</h2>
+  <h2>FAQs</h2>
 
-  <p>Since punctuation isn't the real fix, focus on the patterns that actually matter:</p>
-  <ul>
-    <li>Vary your sentence length on purpose. Mix short, punchy sentences with longer ones instead of letting everything run at a similar length.</li>
-    <li>Read it out loud. Uniform, monotone rhythm is easier to hear than to see on the page.</li>
-    <li>Cut unnecessary words. AI drafts tend to run long — run your draft through a <a href="https://countflows.com/tools/word-counter" target="_blank" rel="noopener noreferrer">Word Counter</a> and look for sentences that repeat an idea already covered.</li>
-    <li>Check your keyword and phrase repetition. Overused connector words and repeated phrasing are a giveaway — our <a href="https://countflows.com/tools/keyword-density-checker" target="_blank" rel="noopener noreferrer">Keyword Density Checker</a> will show you exactly which words and phrases you're leaning on too hard.</li>
-    <li>Rewrite the predictable patterns. If you spot an "it's not X, it's Y" line or a rule-of-three list you didn't consciously choose, that's a sign the draft needs a human pass.</li>
-  </ul>
+  <h3>Is an em dash a sign of AI?</h3>
 
-  <h2>FAQ</h2>
+  <p>
+    No. Em dashes are used by both human writers and AI systems. Their presence
+    alone cannot reliably identify AI-generated writing.
+  </p>
 
-  <h3>Is the em dash still an AI tell in 2026?</h3>
-  <p>Not a reliable one. Of the major models tested in the 2026 Economist analysis, only Claude used em dashes more than human writers — ChatGPT now uses them less often than people do.</p>
+  <h3>Why does AI use em dashes?</h3>
 
-  <h3>What actually triggers AI detectors?</h3>
-  <p>Detection tools weigh dozens of signals, but the strongest ones identified so far are light punctuation overall, long and uniform sentence structure, overuse of "and," excess verbosity, and predictable rhetorical patterns like rule-of-three lists.</p>
+  <p>
+    AI models learn patterns from existing written language. Because em dashes
+    are common in professionally edited English, models may reproduce them when
+    generating similar types of writing.
+  </p>
 
-  <h3>How do I remove em dashes from text online for free?</h3>
-  <p>Paste your text into our <a href="https://countflows.com/tools/ai-text-cleaner" target="_blank" rel="noopener noreferrer">AI Text Cleaner</a> — it removes em dashes, smart quotes, and markdown formatting instantly, with nothing uploaded or saved.</p>
+  <h3>Why does ChatGPT use so many em dashes?</h3>
 
-  <h3>Do AI detectors give false positives?</h3>
-  <p>Yes, regularly — especially when a detector (or a person) relies on a single signal like punctuation. That's part of why relying on the em dash alone as evidence of AI writing has caused real problems for human writers.</p>
+  <p>
+    ChatGPT's punctuation style depends on the model, prompt, and type of
+    response being generated. It may use em dashes in some outputs and few or
+    none in others, so the pattern is not consistent enough to identify
+    ChatGPT-written text.
+  </p>
+
+  <h3>Can I check text for em dashes?</h3>
+
+  <p>
+    Yes. You can search for the <strong>—</strong> character using your
+    editor's Find feature or use a text-cleaning tool to locate and replace
+    unwanted punctuation in a longer document.
+  </p>
+
+  <h3>How do I remove em dashes from text online?</h3>
+
+  <p>
+    Paste your text into the
+    <a href="https://countflows.com/tools/ai-text-cleaner">
+      CountFlows AI Text Cleaner
+    </a>,
+    select the relevant cleanup option, run the cleaner, and copy the resulting
+    text.
+  </p>
+
+  <h3>Does using an em dash mean I used ChatGPT?</h3>
+
+  <p>
+    No. The em dash is a standard punctuation mark that has been used by human
+    writers for generations. It is not evidence that ChatGPT or another AI
+    system wrote the text.
+  </p>
 
   <h3>What should I use instead of an em dash?</h3>
-  <p>Depends on the sentence: a comma or semicolon for a related thought, a period and new sentence for a cleaner break, or parentheses if the aside is truly secondary.</p>
 
-  <p>Related guides: <a href="https://countflows.com/blog/how-long-should-a-blog-post-be" target="_blank" rel="noopener noreferrer">How Long Should a Blog Post Be?</a> · <a href="https://countflows.com/blog/how-many-pages-is-2000-words" target="_blank" rel="noopener noreferrer">How Many Words Per Page?</a> · <a href="https://countflows.com/blog/average-reading-speed" target="_blank" rel="noopener noreferrer">Average Reading Speed Explained</a></p>
+  <p>
+    Use a comma for a lighter pause, a period for a stronger break, parentheses
+    for an aside, or a colon or semicolon when the sentence structure calls for
+    one.
+  </p>
 
-  <p>Tools used in this guide: <a href="https://countflows.com/tools/ai-text-cleaner" target="_blank" rel="noopener noreferrer">AI Text Cleaner</a> · <a href="https://countflows.com/tools/word-counter" target="_blank" rel="noopener noreferrer">Word Counter</a> · <a href="https://countflows.com/tools/keyword-density-checker" target="_blank" rel="noopener noreferrer">Keyword Density Checker</a> · <a href="https://countflows.com/tools/ai-token-counter" target="_blank" rel="noopener noreferrer">AI Token Counter</a></p>
+
 </article>
 
 `

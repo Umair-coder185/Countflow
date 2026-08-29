@@ -148,6 +148,15 @@ function getRelatedPosts(post) {
     (item) => item?.slug && item?.title && item.slug !== post.slug
   );
 
+  // If a post defines relatedPosts manually, show those first.
+  // Missing/invalid slugs are ignored, then the existing automatic
+  // category/keyword logic fills any remaining slots.
+  const manualRelatedPosts = Array.isArray(post?.relatedPosts)
+    ? post.relatedPosts
+        .map((slug) => validPosts.find((item) => item.slug === slug))
+        .filter(Boolean)
+    : [];
+
   const sameCategory = validPosts.filter(
     (item) => item.category && item.category === post.category
   );
@@ -168,7 +177,13 @@ function getRelatedPosts(post) {
     );
   });
 
-  const combined = [...sameCategory, ...sameKeyword, ...validPosts];
+  const combined = [
+    ...manualRelatedPosts,
+    ...sameCategory,
+    ...sameKeyword,
+    ...validPosts,
+  ];
+
   const seen = new Set();
 
   return combined

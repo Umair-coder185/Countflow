@@ -1,6 +1,3 @@
-
-
-
 import Link from "next/link"
 
 const h2Class =
@@ -39,10 +36,11 @@ export default function SeoContent() {
       <p className={pClass}>
         An <strong>AI text cleaner</strong> removes unwanted formatting and
         copy-paste artifacts from AI-generated text without rewriting the
-        message. CountFlows can clean markdown, hidden Unicode characters,
-        smart punctuation, HTML, awkward spacing, em and en dashes, duplicate
-        lines, emojis, bullets, and other text artifacts from content copied
-        from ChatGPT, Claude, Gemini, Copilot, and similar tools.
+        message. CountFlows is a <strong>free AI text cleaner</strong> for
+        cleaning text copied from ChatGPT, Claude, Gemini, Copilot, and similar
+        tools. It can remove markdown, hidden Unicode characters, smart
+        punctuation, HTML, awkward spacing, em and en dashes, duplicate lines,
+        emojis, bullets, and other text artifacts.
       </p>
 
       <p className={pClass}>
@@ -56,7 +54,7 @@ export default function SeoContent() {
       {/* -------------------------------------------------------------- */}
 
       <h2 className={h2Class}>
-        How to Clean AI-Generated Text
+        How to Clean AI Text Without Rewriting It
       </h2>
 
       <ol className="mb-4 list-decimal space-y-2 pl-6 leading-7 text-gray-600 dark:text-gray-300">
@@ -202,7 +200,10 @@ export default function SeoContent() {
       </p>
 
       <figure>
-        <img src="/blogs/ai-text-cleaner.png" alt="Cleanup Report" />
+        <img
+          src="/blogs/ai-text-cleaner.png"
+          alt="AI Text Cleaner cleanup report showing text changes"
+        />
       </figure>
 
       {/* -------------------------------------------------------------- */}
@@ -225,6 +226,24 @@ export default function SeoContent() {
       <p className={pClass}>
         CountFlows does not try to make AI writing “undetectable” and it does
         not rewrite sentences. It is a formatting and text-cleanup utility.
+      </p>
+
+      <p className={pClass}>
+        If your main issue is formatting copied from ChatGPT, see our{" "}
+        <Link
+          href="/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text"
+          className={linkClass}
+        >
+          guide to removing ChatGPT formatting
+        </Link>
+        . You can also read why{" "}
+        <Link
+          href="/blog/em-dash-ai-tell"
+          className={linkClass}
+        >
+          an em dash is not reliable proof of AI writing
+        </Link>
+        .
       </p>
 
       {/* -------------------------------------------------------------- */}
@@ -298,6 +317,17 @@ export default function SeoContent() {
         for a server response.
       </p>
 
+      <p className={pClass}>
+        If you are comparing browser-based text cleaners, see our guide to{" "}
+        <Link
+          href="/blog/cleanpaste-site-alternatives"
+          className={linkClass}
+        >
+          CleanPaste.site alternatives
+        </Link>
+        .
+      </p>
+
       {/* -------------------------------------------------------------- */}
       {/* RELATED TOOL                                                   */}
       {/* -------------------------------------------------------------- */}
@@ -319,4 +349,5 @@ export default function SeoContent() {
       </p>
 
     </section>
-  )}
+  )
+}
