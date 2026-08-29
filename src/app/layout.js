@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { Providers } from "./Providers"
 
-import { Inter, Poppins } from "next/font/google"
+import { Inter } from "next/font/google"
 import Script from "next/script"
 
 import {
@@ -22,13 +22,6 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-})
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-  variable: "--font-poppins",
 })
 
 /* -------------------------------------------------------------------------- */
@@ -188,7 +181,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${poppins.variable}`}
+      className={inter.variable}
     >
       <body
         className="
