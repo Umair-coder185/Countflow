@@ -255,7 +255,7 @@ export default function RootLayout({ children }) {
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5H9EXT0X10"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <Script
