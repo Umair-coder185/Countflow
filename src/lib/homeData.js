@@ -3,20 +3,7 @@
 // The `faqs` array feeds BOTH the visible FAQ section and the FAQPage
 // JSON-LD schema, so they can never drift out of sync.
 
-import {
-  FileText,
-  Type,
-  ListOrdered,
-  Music4,
-  Clock3,
-  SearchCheck,
-  CaseSensitive,
-  Eraser,
-  Repeat2,
-  Sparkles,
-  Hash,
-  GitCompareArrows,
-} from "lucide-react";
+import { FileText, Type, ListOrdered, Music4, Hash, Clock3, SearchCheck, CaseSensitive, Sparkles, Eraser, GitCompareArrows, Repeat2, ReplaceAll, ScanSearch } from "lucide-react";
 export const toolCategories = [
   {
     category: "Counting Tools",
@@ -25,46 +12,40 @@ export const toolCategories = [
         name: "Word Counter",
         href: "/tools/word-counter",
         icon: FileText,
-        description:
-          "Count words, characters, and sentences as you type, with a word goal tracker and readability score.",
+        description: "Count words, characters, and sentences as you type, with a word goal tracker and readability score.",
         live: true,
       },
       {
         name: "Character Counter",
         href: "/tools/character-counter",
         icon: Type,
-        description:
-          "Count characters with and without spaces, plus letters, lines, and paragraphs.",
+        description: "Count characters with and without spaces, plus letters, lines, and paragraphs.",
         live: true,
       },
       {
         name: "Sentence Counter",
         href: "/tools/sentence-counter",
         icon: ListOrdered,
-        description:
-          "Count sentences and check your average sentence length for readability.",
+        description: "Count sentences and check your average sentence length for readability.",
         live: true,
       },
       {
         name: "Syllable Counter",
         href: "/tools/syllable-counter",
         icon: Music4,
-        description:
-          "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
-        live: true, // NEW: flip to true when the tool page ships
+        description: "Count syllables in any word, line, or poem, including the 5-7-5 haiku pattern.",
+        live: true,
       },
-      
       {
         name: "AI Token Counter",
         href: "/tools/ai-token-counter",
         icon: Hash,
-        description:
-         " Count tokens for GPT-5, Claude, and Gemini instantly. See word, character, and token counts side by side. 100% free, runs in your browser — nothing uploaded.",
+        description: "Count tokens for GPT-5, Claude, and Gemini instantly, with word and character counts side by side.",
         live: true,
       },
     ],
-  
   },
+
   {
     category: "Reading and Speech",
     tools: [
@@ -72,12 +53,12 @@ export const toolCategories = [
         name: "Reading Time Calculator",
         href: "/tools/reading-time",
         icon: Clock3,
-        description:
-          "Estimate reading and speaking time using research-based averages (238 words per minute for silent reading).",
+        description: "Estimate reading and speaking time using research-based reading speed averages.",
         live: true,
       },
     ],
   },
+
   {
     category: "SEO Tools",
     tools: [
@@ -85,12 +66,12 @@ export const toolCategories = [
         name: "Keyword Density Checker",
         href: "/tools/keyword-density-checker",
         icon: SearchCheck,
-        description:
-          "Check keyword density by word and phrase, and catch over-optimization before Google does.",
+        description: "Check keyword density by word and phrase, and review repeated keyword usage before publishing.",
         live: true,
       },
     ],
   },
+
   {
     category: "Text Cleaning and Formatting",
     tools: [
@@ -98,59 +79,60 @@ export const toolCategories = [
         name: "Case Converter",
         href: "/tools/case-converter",
         icon: CaseSensitive,
-        description:
-          "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
+        description: "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
         live: true,
       },
       {
         name: "AI Text Cleaner",
         href: "/tools/ai-text-cleaner",
         icon: Sparkles,
-        description:
-          "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
+        description: "Clean Markdown, formatting, unusual spacing, punctuation, and common artifacts from AI-generated text.",
         live: true,
       },
-       {
-       name: "Remove Line Breaks",
+      {
+        name: "ChatGPT Watermark Remover",
+        href: "/tools/chatgpt-watermark-remover",
+        icon: ScanSearch,
+        description: "Scan ChatGPT text for hidden Unicode, zero-width characters, unusual spaces, and copy-paste artifacts.",
+        live: true,
+      },
+      {
+        name: "Find & Replace Text",
+        href: "/tools/find-and-replace-text",
+        icon: ReplaceAll,
+        description: "Find and replace words, phrases, characters, or multiple text values with advanced matching options.",
+        live: true,
+      },
+      {
+        name: "Remove Line Breaks",
         href: "/tools/remove-line-breaks",
-         icon: Eraser,
-       description:
-         "Strip unwanted line breaks from text pasted out of PDFs and emails instantly.",
-       live: true, // NEW: flip to true when the tool page ships
-       },
-         {
-      name: "Text Compare",
-      href: "/tools/text-compare",
-      icon: GitCompareArrows,
-      description:
-        "Compare two texts online and instantly highlight added, removed, and changed words, characters, or lines.",
-      live: true,
-    },
+        icon: Eraser,
+        description: "Strip unwanted line breaks from text pasted from PDFs, emails, documents, and websites.",
+        live: true,
+      },
+      {
+        name: "Text Compare",
+        href: "/tools/text-compare",
+        icon: GitCompareArrows,
+        description: "Compare two texts online and instantly highlight added, removed, and changed text.",
+        live: true,
+      },
     ],
   },
- 
-   {
-   category: "Text Generators",
+
+  {
+    category: "Text Generators",
     tools: [
-       {
+      {
         name: "Text Repeater",
         href: "/tools/text-repeater",
-         icon: Repeat2,
-        description:
-          "Repeat any word or phrase as many times as you need, with custom separators.",
-        live: true, // NEW: flip to true when the tool page ships
+        icon: Repeat2,
+        description: "Repeat any word or phrase as many times as you need, with custom separators.",
+        live: true,
       },
-      //  {
-  //       name: "Small Text Generator",
-  //       href: "/tools/small-text-generator",
-  //       icon: Sparkles,
-  //       description:
-  //         "Turn normal text into tiny Unicode text and small caps for bios and comments.",
-  //       live: false, // NEW: flip to true when the tool page ships
-  //     },
-     ],
+    ],
   },
-];
+]
 
 export const comingNext = [ "Small Text Generator",
   "SMS Segment Counter",];

@@ -22,7 +22,8 @@ import {
   TextSearch,
   Type,
   X,
-  ReplaceAll
+  ReplaceAll,
+  ScanSearch
 } from "lucide-react"
 import { AnimatePresence, motion } from "@/lib/no-motion"
 import { useEffect, useRef, useState } from "react"
@@ -42,6 +43,7 @@ const toolItems = [
   { href: "/tools/text-repeater", label: "Text Repeater", icon: Repeat },
   { href: "/tools/text-compare", label: "Online Text Compare", icon: GitCompareArrows },
   { href: "/tools/find-and-replace-text", label: "Find & Replace Text", icon: ReplaceAll },
+  { href: "/tools/chatgpt-watermark-remover", label: "ChatGPT Watermark Remover", icon: ScanSearch },
 ]
 
 const navItems = [
