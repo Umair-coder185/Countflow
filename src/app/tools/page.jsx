@@ -13,6 +13,7 @@ import {
   Eraser,
   Cpu,
   Repeat,
+  EyeOff,
 } from "lucide-react";
 
 const SITE = "https://countflows.com";
@@ -114,6 +115,14 @@ const CATEGORIES = [
         desc: "Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT and AI text in one click.",
         best: "AI Text issues cleanup",
         gradient: "from-fuchsia-500 to-pink-400",
+      },
+      {
+        name: "Invisible Character Detector",
+        slug: "/tools/invisible-character-detector",
+        icon: EyeOff,
+        desc: "Spot zero-width spaces, non-breaking characters, and other hidden Unicode marks before they damage copy, SEO, or formatting.",
+        best: "Hidden characters and cleanup checks",
+        gradient: "from-slate-500 to-gray-400",
       },
       {
         name: "Remove Line Breaks",

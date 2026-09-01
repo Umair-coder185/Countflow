@@ -114,10 +114,10 @@ export default function Hero() {
           </a>
 
           <Link
-            href="/tools/word-counter"
+            href="/tools/ai-text-cleaner"
             className="group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/90 px-7 py-3.5 text-sm font-bold text-slate-800 shadow-sm transition-all duration-300 hover:border-purple-300 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-purple-700 sm:w-auto"
           >
-            Try Word Counter
+            Try AI Text Cleaner
 
             <ArrowRight
               className="h-4 w-4 text-purple-500 transition-transform duration-300 group-hover:translate-x-1"

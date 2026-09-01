@@ -2,6 +2,7 @@
 
 import Hero from "@/components/home/Hero"
 import ToolGrid from "@/components/home/ToolGrid"
+import ToolComparison from "@/components/home/ToolComparison"
 import LimitsCheatSheet from "@/components/home/LimitsCheatSheet"
 import WhyCountFlows from "@/components/home/WhyCountFlows"
 import BlogStrip from "@/components/home/BlogStrip"
@@ -60,6 +61,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ToolGrid />
+        <ToolComparison />
         <LimitsCheatSheet />
         <WhyCountFlows />
         <BlogStrip />

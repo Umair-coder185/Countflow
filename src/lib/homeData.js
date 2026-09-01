@@ -3,8 +3,89 @@
 // The `faqs` array feeds BOTH the visible FAQ section and the FAQPage
 // JSON-LD schema, so they can never drift out of sync.
 
-import { FileText, Type, ListOrdered, Music4, Hash, Clock3, SearchCheck, CaseSensitive, Sparkles, Eraser, GitCompareArrows, Repeat2, ReplaceAll, ScanSearch } from "lucide-react";
+import { FileText, Type, ListOrdered, Music4, Hash, Clock3, SearchCheck, CaseSensitive, Sparkles, Eraser, GitCompareArrows, Repeat2, ReplaceAll, ScanSearch, EyeOff } from "lucide-react";
 export const toolCategories = [
+  {
+    category: "Text Cleaning and Formatting",
+    tools: [
+      {
+        name: "AI Text Cleaner",
+        href: "/tools/ai-text-cleaner",
+        icon: Sparkles,
+        description: "Clean Markdown, formatting, unusual spacing, punctuation, and common artifacts from AI-generated text.",
+        live: true,
+      },
+      {
+        name: "Invisible Character Detector",
+        href: "/tools/invisible-character-detector",
+        icon: EyeOff,
+        description: "Detect zero-width, non-breaking, and hidden Unicode characters that can silently break text and SEO content.",
+        live: true,
+      },
+      {
+        name: "ChatGPT Watermark Remover",
+        href: "/tools/chatgpt-watermark-remover",
+        icon: ScanSearch,
+        description: "Scan ChatGPT text for hidden Unicode, zero-width characters, unusual spaces, and copy-paste artifacts.",
+        live: true,
+      },
+      {
+        name: "Find & Replace Text",
+        href: "/tools/find-and-replace-text",
+        icon: ReplaceAll,
+        description: "Find and replace words, phrases, characters, or multiple text values with advanced matching options.",
+        live: true,
+      },
+      {
+        name: "Text Compare",
+        href: "/tools/text-compare",
+        icon: GitCompareArrows,
+        description: "Compare two texts online and instantly highlight added, removed, and changed text.",
+        live: true,
+      },
+      {
+        name: "Remove Line Breaks",
+        href: "/tools/remove-line-breaks",
+        icon: Eraser,
+        description: "Strip unwanted line breaks from text pasted from PDFs, emails, documents, and websites.",
+        live: true,
+      },
+      {
+        name: "Case Converter",
+        href: "/tools/case-converter",
+        icon: CaseSensitive,
+        description: "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
+        live: true,
+      },
+    ],
+  },
+
+  {
+    category: "Reading and Speech",
+    tools: [
+      {
+        name: "Reading Time Calculator",
+        href: "/tools/reading-time",
+        icon: Clock3,
+        description: "Estimate reading and speaking time using research-based reading speed averages.",
+        live: true,
+      },
+    ],
+  },
+
+  {
+    category: "SEO Tools",
+    tools: [
+      {
+        name: "Keyword Density Checker",
+        href: "/tools/keyword-density-checker",
+        icon: SearchCheck,
+        description: "Check keyword density by word and phrase, and review repeated keyword usage before publishing.",
+        live: true,
+      },
+    ],
+  },
+
   {
     category: "Counting Tools",
     tools: [
@@ -41,80 +122,6 @@ export const toolCategories = [
         href: "/tools/ai-token-counter",
         icon: Hash,
         description: "Count tokens for GPT-5, Claude, and Gemini instantly, with word and character counts side by side.",
-        live: true,
-      },
-    ],
-  },
-
-  {
-    category: "Reading and Speech",
-    tools: [
-      {
-        name: "Reading Time Calculator",
-        href: "/tools/reading-time",
-        icon: Clock3,
-        description: "Estimate reading and speaking time using research-based reading speed averages.",
-        live: true,
-      },
-    ],
-  },
-
-  {
-    category: "SEO Tools",
-    tools: [
-      {
-        name: "Keyword Density Checker",
-        href: "/tools/keyword-density-checker",
-        icon: SearchCheck,
-        description: "Check keyword density by word and phrase, and review repeated keyword usage before publishing.",
-        live: true,
-      },
-    ],
-  },
-
-  {
-    category: "Text Cleaning and Formatting",
-    tools: [
-      {
-        name: "Case Converter",
-        href: "/tools/case-converter",
-        icon: CaseSensitive,
-        description: "Convert text to sentence case, Title Case, UPPERCASE, or lowercase in one click.",
-        live: true,
-      },
-      {
-        name: "AI Text Cleaner",
-        href: "/tools/ai-text-cleaner",
-        icon: Sparkles,
-        description: "Clean Markdown, formatting, unusual spacing, punctuation, and common artifacts from AI-generated text.",
-        live: true,
-      },
-      {
-        name: "ChatGPT Watermark Remover",
-        href: "/tools/chatgpt-watermark-remover",
-        icon: ScanSearch,
-        description: "Scan ChatGPT text for hidden Unicode, zero-width characters, unusual spaces, and copy-paste artifacts.",
-        live: true,
-      },
-      {
-        name: "Find & Replace Text",
-        href: "/tools/find-and-replace-text",
-        icon: ReplaceAll,
-        description: "Find and replace words, phrases, characters, or multiple text values with advanced matching options.",
-        live: true,
-      },
-      {
-        name: "Remove Line Breaks",
-        href: "/tools/remove-line-breaks",
-        icon: Eraser,
-        description: "Strip unwanted line breaks from text pasted from PDFs, emails, documents, and websites.",
-        live: true,
-      },
-      {
-        name: "Text Compare",
-        href: "/tools/text-compare",
-        icon: GitCompareArrows,
-        description: "Compare two texts online and instantly highlight added, removed, and changed text.",
         live: true,
       },
     ],

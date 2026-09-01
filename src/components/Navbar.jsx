@@ -43,6 +43,7 @@ const toolItems = [
   { href: "/tools/text-repeater", label: "Text Repeater", icon: Repeat },
   { href: "/tools/text-compare", label: "Online Text Compare", icon: GitCompareArrows },
   { href: "/tools/find-and-replace-text", label: "Find & Replace Text", icon: ReplaceAll },
+  { href: "/tools/invisible-character-detector", label: "Invisible Character Detector", icon: ScanSearch },
   { href: "/tools/chatgpt-watermark-remover", label: "ChatGPT Watermark Remover", icon: ScanSearch },
 ]
 
