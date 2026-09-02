@@ -295,10 +295,10 @@ export default function PrivacyPolicyContent() {
           <li>
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:contact@countflows.com"
+              href="mailto:urao96333@gmail.com"
               className="text-blue-600"
             >
-              contact@countflows.com
+              urao96333@gmail.com
             </a>
           </li>
 

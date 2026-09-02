@@ -183,6 +183,18 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
       className={inter.variable}
     >
+      <head>
+        {/* -------------------------------------------------------------- */}
+        {/* GOOGLE ADSENSE VERIFICATION                                    */}
+        {/* -------------------------------------------------------------- */}
+
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4043970460592255"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+
       <body
         className="
           min-h-screen
