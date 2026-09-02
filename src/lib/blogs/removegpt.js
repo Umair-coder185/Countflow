@@ -109,7 +109,11 @@ const removeGpt = `
 
   <h3>3. Remove AI Formatting in Microsoft Word</h3>
 
-  <p>After copying your AI response paste it into Word and choose Keep Text Only from the paste options. This removes much of the original styling and lets the text adopt your document's formatting.</p>
+  <p>
+  After copying your AI response, paste it into Word and choose Keep Text Only
+  from the paste options. This removes much of the original styling and lets
+  the text adopt your document's formatting.
+</p>
 
   <p>If the text is already pasted, select it and use Clear All Formatting from the Home tab.</p>
 
@@ -129,7 +133,10 @@ const removeGpt = `
 
   <p>A plain-text editor can act as an intermediate step.</p>
 
-  <p>Copy the ChatGPT response paste it into the Notepad or another plain-text editor copy it again and paste it into your final destination.</p>
+ <p>
+  Copy the ChatGPT response, paste it into Notepad or another plain-text editor,
+  copy it again, and then paste it into your final destination.
+</p> 
 
   <p>This strips most rich-text styling, although visible Markdown such as **bold** or ## Heading can still remain.</p>
 
@@ -246,7 +253,7 @@ Easier collaboration</code></pre>
 
   <p>Paste the response into a text cleaner with Markdown removal enabled. It can remove heading markers, bold and italic syntax, links, code markers, and other Markdown characters while keeping the readable text.</p>
 
-  <h3>How do we remove free AI formatting in Word?</h3>
+ <h3>How do I remove AI formatting in Word for free?</h3>
 
   <p>Use Word's Keep Text Only paste option or Clear All Formatting. If raw markdown or unusual characters remain then clean the text before pasting it into Word.</p>
 
