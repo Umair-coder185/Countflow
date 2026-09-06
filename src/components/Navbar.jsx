@@ -118,7 +118,7 @@ export default function Navbar() {
           <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-[9px] ring-1 ring-black/5 dark:ring-white/10">
             <Image
               src="/images/countflows-logo.png"
-              alt=""
+              alt="CountFlows"
               fill
               sizes="36px"
               className="object-cover"
