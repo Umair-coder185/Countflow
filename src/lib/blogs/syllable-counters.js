@@ -3,8 +3,7 @@ const syllableCounters=`
 
 
 
-<article>
-  <h1>Syllable Division Rules: How to Split Words Into Syllables</h1>
+
 
   <nav aria-label="Table of contents">
     <h2>Table of Contents</h2>
@@ -302,7 +301,6 @@ const syllableCounters=`
 
     <p>Syllable division rules make it easy for the reader to divide, read, and pronounce unfamiliar and long words. You should first identify the vowels and then apply VC/CV, V/CV, VC/V, vowel pairs, prefixes, suffixes, and C + <em>le</em> rules, among others. Take advantage of these rules and pronounce the words aloud.</p>
   </section>
-</article>
 
 
 

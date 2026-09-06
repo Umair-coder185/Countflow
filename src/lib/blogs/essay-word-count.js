@@ -201,7 +201,7 @@ Google Docs also includes a built-in counter under Tools &gt; Word count. Google
   
   <p>Not every assignment asks for words. Application forms, abstracts, personal statements, and short responses can use a character check instead, and spaces may matter.</p>
   
-  <p>When the instructions specify characters, use the <a href="https://countflows.com/tools/character-counter?utm_source=chatgpt.com">Character Counter</a> instead of estimating characters from the word total. A 500-word passage can vary considerably in character length because vocabulary and sentence style change the ratio.</p>
+  <p>When the instructions specify characters, use the <a href="/tools/character-counter">Character Counter</a> instead of estimating characters from the word total. A 500-word passage can vary considerably in character length because vocabulary and sentence style change the ratio.</p>
   
   <h2 id="use-one-counter-for-your-final-total">Common mistakes when checking your essay total</h2>
   

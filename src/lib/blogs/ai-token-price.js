@@ -138,13 +138,31 @@ const millionTokenPrice = `
     </p>
 
     <p>
-      For the latest provider rates, check the official
-      <a href="https://developers.openai.com/api/docs/models/compare?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">OpenAI model pricing</a>,
-      <a href="https://platform.claude.com/docs/en/about-claude/pricing?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Anthropic pricing documentation</a>,
-      and
-      <a href="https://ai.google.dev/gemini-api/docs/pricing?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Google Gemini API pricing</a>
-      before making a production budget.
-    </p>
+  For the latest provider rates, check the official
+  <a
+    href="https://developers.openai.com/api/docs/models/compare"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    OpenAI model pricing
+  </a>,
+  <a
+    href="https://platform.claude.com/docs/en/about-claude/pricing"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Anthropic pricing documentation
+  </a>,
+  and
+  <a
+    href="https://ai.google.dev/gemini-api/docs/pricing"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Google Gemini API pricing
+  </a>
+  before making a production budget.
+</p>
   </section>
 
   <section>

@@ -272,7 +272,7 @@ const searchKeywords = `
       <p>
         Next, inspect the title and headings if placement matters. After editing, use the density checker to catch repeated wording. You can also use the{" "}
         <a
-          href="https://countflows.com/tools/word-counter?utm_source=chatgpt.com"
+          href="/tools/word-counter"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -280,7 +280,7 @@ const searchKeywords = `
         </a>{" "}
         to check overall length and{" "}
         <a
-          href="https://countflows.com/tools/text-compare?utm_source=chatgpt.com"
+          href="/tools/text-compare"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -291,7 +291,7 @@ const searchKeywords = `
       <p>
         If the article began as AI-generated text, the{" "}
         <a
-          href="https://countflows.com/tools/ai-text-cleaner?utm_source=chatgpt.com"
+          href="/tools/ai-text-cleaner"
           target="_blank"
           rel="noopener noreferrer"
         >

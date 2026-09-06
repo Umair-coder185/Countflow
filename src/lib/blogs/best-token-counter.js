@@ -121,8 +121,7 @@ const bestTokenCounter = `
   
   <p><strong>Best for combining GPT, Claude and Gemini token estimates with cost and budget planning</strong></p>
 
-  <p>The <a href="https://countflows.com/tools/ai-token-counter?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">CountFlows AI Token Counter & Cost Calculator</a> combines real-time counting with API cost estimates, context-window usage, model comparison, and a monthly Token Budget Planner. It supports current AI options without requiring an account.</p>
-
+  <p>The <a href="/tools/ai-token-counter">CountFlows AI Token Counter & Cost Calculator</a> combines real-time counting with API cost estimates, context-window usage, model comparison, and a monthly Token Budget Planner. It supports current AI options without requiring an account.</p>
   <p>A useful difference is its transparency around accuracy. CountFlows uses the tiktoken family for supported GPT counting, while Claude and Gemini results are clearly presented as estimates. The calculations run inside your browser, so the pasted prompt isn't uploaded to CountFlows for counting or cost calculations.</p>
 
   <h3>Key features:</h3>
@@ -226,7 +225,7 @@ const bestTokenCounter = `
   
   <p>Knowing that a prompt contains 2,000 tokens doesn't tell you the whole story. Two models can charge different rates, and generated responses can cost more per token than the text you send.</p>
 
-  <p>That is where an AI token cost calculator becomes more useful than a basic counter. You can test the actual prompt in the <a href="https://countflows.com/tools/ai-token-counter?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">CountFlows AI Token Counter</a>, choose a model, set an expected response size, and estimate both cost and context usage before making an API request.</p>
+  <p>That is where an AI token cost calculator becomes more useful than a basic counter. You can test the actual prompt in the <a href="/tools/ai-token-counter">CountFlows AI Token Counter</a>, choose a model, set an expected response size, and estimate both cost and context usage before making an API request.</p>
 
   <h2 id="faqs">Frequently Asked Questions</h2>
   

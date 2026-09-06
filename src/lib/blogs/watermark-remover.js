@@ -175,7 +175,7 @@ const watermarkRemover =`
 <li>Copy the normalized version.</li>
 <li>Compare the result with the original text.</li>
 </ol>
-<p>For longer documents, first check the content length with the<a href="https://countflows.com/tools/word-counter?utm_source=chatgpt.com"> Word Counter</a> or<a href="https://countflows.com/tools/character-counter"> Character Counter</a>. This helps confirm that cleanup has not unexpectedly removed visible content.</p>
+<p>For longer documents, first check the content length with the <a href="/tools/word-counter"> Word Counter</a> or<a href="/tools/character-counter"> Character Counter</a>. This helps confirm that cleanup has not unexpectedly removed visible content.</p>
 <p>The key is transparency. A useful tool should show what changed rather than claiming that every suspicious character was a secret ChatGPT marker.</p>
 
 <h2>Does Removing Hidden Characters Change Your Writing?</h2>

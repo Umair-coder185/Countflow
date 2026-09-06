@@ -1,7 +1,7 @@
 const aiproblems =`
 
 <div>
-<h1>Why ChatGPT, Claude, and Gemini Stop Mid-Sentence (And How to Fix It)</h1>
+
 <p>You're watching ChatGPT write out a good answer, and it just... stops. Mid-word, mid-thought, no error message. Or Claude tells you your message is too long when your prompt looked short. Or the response you were reading a second ago vanishes and reappears as "network error." These look like the same bug. They're actually three unrelated problems, and each one has a different fix.</p>
 <h2>It's Not One Problem — It's Three</h2>
 <p>Most guides treat "the AI stopped talking" as a single issue and hand you one generic tip: type "continue." That works for exactly one of the three causes below and does nothing for the other two.</p>

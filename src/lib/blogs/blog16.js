@@ -190,7 +190,7 @@ const blog16 = `
   
   <p>Land anywhere from around 200 to 300 WPM while still understanding what you read, and that's a strong, sustainable pace for everyday reading.</p>
   
-  <p>Want to see how your result compares with typical readers? See the <a href="https://countflows.com/blog/average-reading-speed?utm_source=chatgpt.com">Average Reading Speed</a> guide for adult WPM benchmarks, reading types, and speed ranges.</p>
+  <p>Want to see how your result compares with typical readers? See the <a href="/blog/average-reading-speed">Average Reading Speed</a> guide for adult WPM benchmarks, reading types, and speed ranges.</p>
   
   <h2>Worked Example: Full Calculation</h2>
   
@@ -226,7 +226,7 @@ const blog16 = `
   
   <p>If the gap becomes much wider, it may mean you're moving through the text faster than you can read it accurately.</p>
   
-  <p>Before calculating anything, you can run your passage through the <a href="https://countflows.com/tools/word-counter?utm_source=chatgpt.com">Word Counter</a> so you start with an accurate total word count.</p>
+  <p>Before calculating anything, you can run your passage through the <a href="/tools/word-counter">Word Counter</a> so you start with an accurate total word count.</p>
   
   <h2>Frequently Asked Questions</h2>
   

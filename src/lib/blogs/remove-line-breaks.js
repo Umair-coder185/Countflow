@@ -93,7 +93,7 @@ const removeLineBreaks = `
   
   <p>Another common problem appears when both lines already contain spaces around the break. Joining them may create double or uneven spacing. A quick second pass can reduce repeated spaces to one without changing normal word boundaries.</p>
   
-  <p>If the copied PDF contains additional formatting problems such as hidden Unicode, smart quotes, or unwanted markup, the <a href="https://countflows.com/tools/ai-text-cleaner?utm_source=chatgpt.com">AI Text Cleaner</a> can handle broader text cleanup after the line endings are fixed.</p>
+  <p>If the copied PDF contains additional formatting problems such as hidden Unicode, smart quotes, or unwanted markup, the <a href="/tools/ai-text-cleaner">AI Text Cleaner</a> can handle broader text cleanup after the line endings are fixed.</p>
   
   <h3>Before and after</h3>
   
@@ -144,7 +144,7 @@ and   irregular spacing.</pre>
   
   <p>Once the unwanted breaks are gone, the text becomes easier to reuse in documents, emails, website editors, notes, forms, AI prompts, and spreadsheets. Clean text also makes searching and editing easier because sentences no longer stop at arbitrary visual line endings.</p>
   
-  <p>If length matters after cleanup, use the Word Counter. For fields with strict limits, the <a href="https://countflows.com/tools/character-counter?utm_source=chatgpt.com">Character Counter</a> can check the cleaned output before you paste it into the destination.</p>
+  <p>If length matters after cleanup, use the Word Counter. For fields with strict limits, the <a href="/tools/character-counter">Character Counter</a> can check the cleaned output before you paste it into the destination.</p>
   
   <h2 id="faqs">Frequently Asked Questions</h2>
   

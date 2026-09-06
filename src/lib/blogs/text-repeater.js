@@ -1,8 +1,6 @@
 const textRepeater = `
 
 
-<article>
-  <h1>7 Easy Steps to Repeat a Word 100 Times Fast</h1>
   
   <p>Copying the same word again and again gets annoying fast. You can lose count, create uneven spaces, or paste the wrong number of copies. If you need to repeat a word 100 times, there is no reason to press Ctrl+V another hundred times. A text repeater can generate the complete block for you with the count and formatting already under control.</p>
   
@@ -128,7 +126,7 @@ const textRepeater = `
   
   <p>A repeater does not need to work with a single word. You can repeat text multiple times even when the input contains a complete sentence. For example, you might repeat "Thank you for your help" ten times or create repeated placeholder sentences while testing a layout.</p>
   
-  <p>Emojis work in the same general way. You can repeat a heart, star, check mark, or another symbol just as you would repeat a word. After generating your output, use the <a href="https://countflows.com/tools/character-counter?utm_source=chatgpt.com">Character Counter</a> if the destination has a strict character limit.</p>
+  <p>Emojis work in the same general way. You can repeat a heart, star, check mark, or another symbol just as you would repeat a word. After generating your output, use the <a href="/tools/character-counter">Character Counter</a> if the destination has a strict character limit.</p>
   
   <h3>Repeat a sentence</h3>
   
@@ -197,8 +195,8 @@ const textRepeater = `
   
   <p>Large jobs become even easier. Whether you need 10 copies, 100 copies, or repeat text 1000 times, the same process applies. Choose the text, set the count, select the layout, and copy the output.</p>
   
-  <p>Finally, keep the result appropriate for its destination. Use the Word Counter for text length, the <a href="https://countflows.com/tools/ai-text-cleaner?utm_source=chatgpt.com">AI Text Cleaner</a> when copied text contains unwanted formatting, and the Text Repeater when you need exact duplication without the repetitive work.</p>
-</article>
+  <p>Finally, keep the result appropriate for its destination. Use the Word Counter for text length, the <a href="/tools/ai-text-cleaner">AI Text Cleaner</a> when copied text contains unwanted formatting, and the Text Repeater when you need exact duplication without the repetitive work.</p>
+
 
 
 
