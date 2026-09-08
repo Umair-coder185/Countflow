@@ -6,7 +6,7 @@ export const metadata = {
   title: "Free Syllable Counter for Poems, Haiku & Lyrics | CountFlows",
 
   description:
-    "Count syllables instantly in words, poems, haiku and song lyrics. Check each line and validate 5-7-5 haiku patterns with our free online syllable counter.",
+    "Free syllable counter to count syllables instantly in words, poems, haiku and song lyrics. See line-by-line counts and check 5-7-5 haiku patterns online.",
 
   alternates: {
     canonical: "https://countflows.com/tools/syllable-counter",
