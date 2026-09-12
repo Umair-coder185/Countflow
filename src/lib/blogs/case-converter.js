@@ -1,183 +1,739 @@
-const caseConverter=
-`
+const caseConverter = `
 
 <article>
 
+  <p>
+    Excel can change text to uppercase, lowercase, or proper case without
+    retyping a column manually. For most worksheets, use
+    <strong>UPPER</strong>, <strong>LOWER</strong>, or
+    <strong>PROPER</strong>. Flash Fill is useful when you want a no-formula
+    option, while Power Query is better for transformations you need to repeat.
+  </p>
+
+  <p>
+    Sentence-style capitalization needs more care because Excel does not have a
+    built-in SENTENCE function. A formula can handle a simple one-sentence
+    cell, but proper nouns, acronyms, multiple sentences, and unusual brand
+    names still need review.
+  </p>
 
 
-<p>Someone sends you a spreadsheet with 800 names typed in caps lock. Your deadline is close, and retyping every cell would eat your whole afternoon. Here is the good news: you can convert case in Excel in under a minute. This guide shows you five ways, from simple formulas to AI, including one method almost no Excel guide mentions.</p>
+  <section>
+    <h2 id="quick-answer">How to Convert Case in Excel: Quick Answer</h2>
 
-<h2>Quick Answer: The Three Formulas You Need</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Goal</th>
+          <th>Method</th>
+          <th>Example</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>What you want</th>
-      <th>Formula to use</th>
-      <th>Example result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ALL CAPS</td>
-      <td>=UPPER(A2)</td>
-      <td>JOHN SMITH</td>
-    </tr>
-    <tr>
-      <td>all lowercase</td>
-      <td>=LOWER(A2)</td>
-      <td>john smith</td>
-    </tr>
-    <tr>
-      <td>Title Case</td>
-      <td>=PROPER(A2)</td>
-      <td>John Smith</td>
-    </tr>
-    <tr>
-      <td>Sentence case</td>
-      <td>=UPPER(LEFT(A2,1))&amp;LOWER(RIGHT(A2,LEN(A2)-1))</td>
-      <td>John smith went home.</td>
-    </tr>
-  </tbody>
-</table>
+      <tbody>
+        <tr>
+          <td>Convert text to UPPERCASE</td>
+          <td><code>=UPPER(A2)</code></td>
+          <td>JOHN SMITH</td>
+        </tr>
 
-<p>Keep reading for the exact steps, because each formula has one trap that can ruin your data if you skip it.</p>
+        <tr>
+          <td>Convert text to lowercase</td>
+          <td><code>=LOWER(A2)</code></td>
+          <td>john smith</td>
+        </tr>
 
-<h2>Method 1: UPPER, LOWER, and PROPER Formulas</h2>
-<figure><img src="/blogs/excel-functions.webp" alt="excel functions "></figure>
+        <tr>
+          <td>Capitalize each word</td>
+          <td><code>=PROPER(A2)</code></td>
+          <td>John Smith</td>
+        </tr>
 
-<p>Excel gives you three built-in functions to change text case. They work the same way, so once you learn one, you know all three. Microsoft documents them in its official <a href="https://support.microsoft.com/en-us/excel/change-the-case-of-text">Change the case of text</a> guide.</p>
+        <tr>
+          <td>Simple sentence-style text</td>
+          <td>
+            <code>=IF(A2="","",UPPER(LEFT(A2,1))&amp;LOWER(MID(A2,2,LEN(A2))))</code>
+          </td>
+          <td>John smith went home.</td>
+        </tr>
 
-<h3>Excel Convert Lower Case to Upper Case with UPPER</h3>
+        <tr>
+          <td>No formula</td>
+          <td>Flash Fill</td>
+          <td>Type one example, then use Ctrl+E</td>
+        </tr>
 
-<ol>
-  <li>Click an empty cell next to your text, for example B2.</li>
-  <li>Type <strong>=UPPER(A2)</strong> and press Enter.</li>
-  <li>Drag the fill handle down to copy the formula for every row.</li>
-</ol>
+        <tr>
+          <td>Repeat the cleanup regularly</td>
+          <td>Power Query</td>
+          <td>Save the transformation and refresh it later</td>
+        </tr>
+      </tbody>
+    </table>
 
-<p>Every letter in the cell turns into a capital. Numbers, spaces, and symbols stay exactly as they are.</p>
+    <p>
+      Microsoft documents UPPER, LOWER, and PROPER as Excel's standard
+      worksheet functions for changing capitalization.
+      <a
+        href="https://support.microsoft.com/en-us/excel/change-the-case-of-text"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Microsoft: Change the case of text in Excel
+      </a>.
+    </p>
+  </section>
 
-<h3>Excel Convert Upper Case to Lower Case with LOWER</h3>
 
-<p>Use <strong>=LOWER(A2)</strong> the same way. This is the fastest fix for text that arrives in full caps from an old database or a form export.</p>
+  <section>
+    <h2 id="table-of-contents">Table of Contents</h2>
 
-<h3>Convert to Title Case in Excel with PROPER</h3>
+    <ol>
+      <li><a href="#method-selector">Which method should you use?</a></li>
+      <li><a href="#upper-lower-proper">Method 1: UPPER, LOWER, and PROPER</a></li>
+      <li><a href="#paste-values">How to replace the original text safely</a></li>
+      <li><a href="#flash-fill">Method 2: Flash Fill without formulas</a></li>
+      <li><a href="#sentence-case">Method 3: Sentence-style capitalization</a></li>
+      <li><a href="#power-query">Method 4: Power Query for repeat jobs</a></li>
+      <li><a href="#online-converter">Method 5: Browser-based case conversion</a></li>
+      <li><a href="#proper-limitations">Why PROPER sometimes gives strange results</a></li>
+      <li><a href="#numbers-dates">What happens to numbers and dates?</a></li>
+      <li><a href="#troubleshooting">Common Excel case-conversion problems</a></li>
+      <li><a href="#quality-check">The CountFlows 4-point quality check</a></li>
+    </ol>
+  </section>
 
-<p>Type <strong>=PROPER(A2)</strong> to capitalize the first letter of every word. It is perfect for name lists and address columns.</p>
 
-<p><strong>The trap:</strong> your new column holds formulas, not text. If you delete column A now, your results break. Fix it in three steps: select the formula cells, press Ctrl+C, then right-click and choose Paste, then Values. Now the text is real, and you can delete the helper column safely.</p>
+  <section>
+    <h2 id="method-selector">Which Excel Case Conversion Method Should You Use?</h2>
 
-<h2>Method 2: Flash Fill, the No-Formula Way</h2>
+    <p>
+      Do not choose a method only because it looks shortest. Choose it based on
+      what you need to do with the data afterward.
+    </p>
 
-<p>If formulas make you nervous, <a href="https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel">Flash Fill</a> does the work by watching your pattern.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Situation</th>
+          <th>Recommended Method</th>
+          <th>Why</th>
+        </tr>
+      </thead>
 
-<ol>
-  <li>In the cell next to your first entry, type the text the way you want it, for example "John Smith" next to "JOHN SMITH".</li>
-  <li>Press Enter, then press <strong>Ctrl+E</strong>.</li>
-  <li>Excel fills the whole column, matching your pattern instantly.</li>
-</ol>
+      <tbody>
+        <tr>
+          <td>A normal column that needs uppercase or lowercase</td>
+          <td>UPPER or LOWER</td>
+          <td>Simple, predictable, and easy to fill down</td>
+        </tr>
 
-<p>Flash Fill feels like magic the first time you use it. It also handles mixed jobs, like proper-case names with uppercase state codes in the same cell, which formulas cannot do alone.</p>
+        <tr>
+          <td>Names or ordinary words need initial capitals</td>
+          <td>PROPER, followed by review</td>
+          <td>Fast, but special spellings can need correction</td>
+        </tr>
 
-<h2>Method 3: The Sentence Case Formula Excel Forgot</h2>
+        <tr>
+          <td>You do not want formulas</td>
+          <td>Flash Fill</td>
+          <td>Excel learns the pattern from an example</td>
+        </tr>
 
-<p>Here is something strange: Excel has no built-in sentence case function. There is no =SENTENCE() and most guides never tell you.</p>
+        <tr>
+          <td>You receive the same report every week</td>
+          <td>Power Query</td>
+          <td>The transformation can become part of a refreshable workflow</td>
+        </tr>
 
-<p>Use this formula instead:</p>
+        <tr>
+          <td>You need several capitalization styles outside Excel</td>
+          <td>Case Converter</td>
+          <td>Useful for quick copy-and-paste transformations</td>
+        </tr>
 
-<p>=UPPER(LEFT(A2,1))&amp;LOWER(RIGHT(A2,LEN(A2)-1))</p>
+        <tr>
+          <td>Text contains proper nouns, acronyms, and multiple sentences</td>
+          <td>Convert, then manually review</td>
+          <td>Capitalization can depend on meaning, not just characters</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-<p>It capitalizes the first letter of the cell and makes everything else lowercase. It works well for single sentences, like product descriptions or survey answers. For text with several sentences per cell, Method 5 below handles it better in one click.</p>
 
-<h2>Method 4: Power Query for Big, Repeating Jobs</h2>
+  <section>
+    <h2 id="upper-lower-proper">Method 1: Use UPPER, LOWER, and PROPER</h2>
 
-<p>When you clean the same report every week, stop fixing it by hand. Power Query can convert text to upper case, lower case, or title case as a saved step.</p>
+    <figure>
+      <img
+        src="/blogs/excel-functions.webp"
+        alt="UPPER LOWER and PROPER functions for changing text case in Excel"
+      />
+    </figure>
 
-<ol>
-  <li>Select your data and go to <strong>Data, then From Table/Range</strong>.</li>
-  <li>Right-click the column, choose <strong>Transform</strong>, then pick <strong>UPPERCASE</strong>, <strong>lowercase</strong>, or <strong>Capitalize Each Word</strong>.</li>
-  <li>Click <strong>Close &amp; Load</strong>.</li>
-</ol>
+    <p>
+      Excel has three main built-in functions for basic capitalization changes.
+      Add a temporary column next to the original data and apply the function
+      there.
+    </p>
 
-<p>Next week, paste the new data and press Refresh. The case fixes itself. This method rewards you every single week after the five minutes it takes to set up.</p>
 
-<h2>Method 5: Skip Formulas Completely, Use a Free Case Converter</h2>
+    <h3>Convert lowercase text to uppercase</h3>
 
-<p>Sometimes you do not want formulas, helper columns, or paste-values gymnastics. You want the text fixed now.</p>
+    <p>
+      If your original value is in cell A2, enter:
+    </p>
 
-<p>Copy your cells then paste them into our <strong>free Case Converter tool</strong>. Click on the style you need. Then paste the result back into Excel.</p>
+    <p><code>=UPPER(A2)</code></p>
 
-<p>The tool can handle styles.These include:</p>
+    <p>
+      Example:
+    </p>
 
-<ul>
-  <li>Sentence case</li>
-  <li>Title Case</li>
-  <li>UPPERCASE</li>
-  <li>lowercase</li>
-  <li>Even some styles Excel cannot do, like aLtErNaTiNg case.</li>
-</ul>
+    <p>
+      <strong>Input:</strong> project alpha<br />
+      <strong>Result:</strong> PROJECT ALPHA
+    </p>
 
-<p>Everything happens in your browser.So your data never gets. Stored anywhere.This method also solves the -sentence problem from another method.The tool finds every sentence. Capitalizes each one correctly.While you are using the tool you can also check your text with our Character Counter or Word Counter.</p>
+    <p>
+      Then drag or double-click the fill handle to apply the formula to the
+      remaining rows.
+    </p>
 
-<p>This helps you know the length of your text before putting it into a report or a web page.</p>
 
-<h2>How to Convert Case in Excel with AI Tools</h2>
+    <h3>Convert uppercase text to lowercase</h3>
 
-<p>People are searching for AI help with spreadsheets more.Gartner says that worldwide AI spending will reach $2.52 trillion in 2026.This is up 44% from the year.Microsoft reports that over 450 million people use its Copilot assistant for work.This change also affects how people fix text.Using Copilot in Excel.If you have Copilot in Excel you can skip using formulas.</p>
+    <p>
+      Use:
+    </p>
 
-<p>just type a request like this:</p>
+    <p><code>=LOWER(A2)</code></p>
 
-<p>"Convert column A, to proper case and put the result in column B."</p>
+    <p>
+      Example:
+    </p>
 
-<p>Copilot will write and apply the formula for you.Using ChatGPT.</p>
+    <p>
+      <strong>Input:</strong> CUSTOMER SUPPORT<br />
+      <strong>Result:</strong> customer support
+    </p>
 
-<p>ChatGPT works in a way.you describe your data. Ask for the formula.Then you paste the formula into Excel yourself.you can use Copilot or ChatGPT to convert case in Excel.Both tools make it easy to change the case of your text.</p>
 
-<p><strong>One honest warning.</strong> AI assistants sometimes pick the wrong range or misread your pattern, and they need a subscription or an internet connection. For a five-second job like case conversion, a free browser tool or a simple =UPPER() is still faster than writing a prompt. Use AI when the job is complex, and use the direct methods above when it is not.</p>
+    <h3>Capitalize the beginning of each word</h3>
 
-<h2>Common Problems When You Convert Case in Excel</h2>
+    <p>
+      Use:
+    </p>
 
-<p><strong>The formula just sits there as text.</strong> Your column is formatted as Text. Change it to General (Home tab, Number format menu), then press F2 and Enter on the cell.</p>
+    <p><code>=PROPER(A2)</code></p>
 
-<p><strong>PROPER ruins acronyms and apostrophes.</strong> PROPER turns NASA into Nasa and don't into Don'T, because it capitalizes any letter that follows a non-letter character. Fix the few broken entries with Find &amp; Replace, or run the text through a smarter <a href="https://countflows.com/tools/case-converter">Case Converter</a> that handles apostrophes correctly.</p>
+    <p>
+      Example:
+    </p>
 
-<p><strong>You see a #NAME? error.</strong> You misspelled the function, for example =UPER instead of =UPPER. Retype the formula and the error disappears.</p>
+    <p>
+      <strong>Input:</strong> john smith<br />
+      <strong>Result:</strong> John Smith
+    </p>
 
-<p><strong>Your sentences run together after conversion.</strong> Split long cells first. Our <a href="https://countflows.com/tools/sentence-counter">Sentence Counter</a> shows you how many sentences each block of text really contains before you convert it.</p>
+    <p>
+      PROPER is convenient, but do not assume the result is automatically
+      correct for every person's name, company, abbreviation, or technical
+      term.
+    </p>
+  </section>
 
-<h2>FAQs</h2>
 
-<h3>What is the shortcut to change case in Excel?</h3>
+  <section>
+    <h2 id="paste-values">How to Replace the Original Text Without Breaking It</h2>
 
-<p>Excel has no direct keyboard shortcut like Word's Shift+F3. The closest thing is Flash Fill with Ctrl+E, which copies the case pattern you type in the first cell.</p>
+    <p>
+      A common Excel mistake happens after the formula works perfectly.
+      Users delete the original column and discover that the converted cells
+      depended on it.
+    </p>
 
-<h3>How do I convert case in Excel without formulas?</h3>
+    <p>
+      The new column contains formulas such as:
+    </p>
 
-<p>Use Flash Fill (Ctrl+E), Power Query, or copy your cells into a free online case converter and paste the result back.</p>
+    <p><code>=UPPER(A2)</code></p>
 
-<h3>Does converting case change my numbers or dates?</h3>
+    <p>
+      It does not yet contain independent text.
+    </p>
 
-<p>No. UPPER, LOWER, and PROPER only touch letters. Numbers, dates, and symbols pass through unchanged.</p>
+    <p>
+      To make the converted results permanent:
+    </p>
 
-<h3>How do I convert an entire column at once?</h3>
+    <ol>
+      <li>Select the converted cells.</li>
+      <li>Press <strong>Ctrl+C</strong>.</li>
+      <li>Choose <strong>Paste Special</strong> or the Paste menu.</li>
+      <li>Select <strong>Values</strong>.</li>
+      <li>Verify the pasted text.</li>
+      <li>Delete the old helper column only after checking the result.</li>
+    </ol>
 
-<p>Enter the formula in the first row, then double-click the small square at the bottom-right corner of the cell. Excel copies the formula down the whole column instantly.</p>
+    <p>
+      Microsoft recommends the same values-only step when replacing the
+      original text after a case formula.
+    </p>
+  </section>
 
-<h3>Which method is fastest for a one-time fix?</h3>
 
-<p>For a handful of cells, Flash Fill wins. For hundreds of mixed cells with multiple sentences, pasting into a browser case converter is usually the fastest route.</p>
+  <section>
+    <h2 id="flash-fill">Method 2: Change Text Case with Flash Fill</h2>
 
-<h2>Final Thoughts</h2>
+    <p>
+      Flash Fill is useful when your desired result follows a recognizable
+      pattern and you do not want a worksheet formula.
+    </p>
 
-<p>Nobody should spend an afternoon retyping text that Excel can fix in seconds. Start with UPPER, LOWER, and PROPER for quick jobs, move to Flash Fill when you want zero formulas, and set up Power Query for reports you clean every week. When you need sentence case, special styles, or a no-formula fix, you now know how to convert case in Excel the smart way, and our free <a href="https://countflows.com/tools/case-converter">Case Converter</a> is one paste away. Writers polishing the finished text can also check phrase usage with our <a href="https://countflows.com/tools/keyword-density-checker">Keyword Density Checker</a> before publishing.</p>
+    <p>
+      Suppose A2 contains:
+    </p>
+
+    <p><strong>MUHAMMAD ALI</strong></p>
+
+    <p>
+      In B2, manually type:
+    </p>
+
+    <p><strong>Muhammad Ali</strong></p>
+
+    <p>
+      Then:
+    </p>
+
+    <ol>
+      <li>Press Enter after typing the example.</li>
+      <li>Select the next cell in the output column if needed.</li>
+      <li>Go to <strong>Data &gt; Flash Fill</strong>, or press <strong>Ctrl+E</strong> on Windows.</li>
+      <li>Review several results before accepting the whole column as correct.</li>
+    </ol>
+
+    <p>
+      Microsoft describes Flash Fill as a feature that detects a pattern from
+      the example you provide and fills the remaining data accordingly.
+      <a
+        href="https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Microsoft Flash Fill documentation
+      </a>.
+    </p>
+
+    <h3>When Flash Fill is especially useful</h3>
+
+    <ul>
+      <li>reformatting names</li>
+      <li>combining or separating text while changing capitalization</li>
+      <li>cleaning one-time imports</li>
+      <li>applying a pattern that is awkward to express with one formula</li>
+    </ul>
+
+    <p>
+      Flash Fill is pattern-based, so always inspect the output when the source
+      data contains inconsistent formats.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="sentence-case">Method 3: Create Simple Sentence Case in Excel</h2>
+
+    <p>
+      Excel does not provide a built-in SENTENCE function equivalent to its
+      UPPER, LOWER, and PROPER functions.
+    </p>
+
+    <p>
+      For a simple single-sentence cell, you can use:
+    </p>
+
+    <p>
+      <code>=IF(A2="","",UPPER(LEFT(A2,1))&amp;LOWER(MID(A2,2,LEN(A2))))</code>
+    </p>
+
+    <p>
+      If A2 contains:
+    </p>
+
+    <p><strong>WELCOME TO THE NEW OFFICE</strong></p>
+
+    <p>
+      the result becomes:
+    </p>
+
+    <p><strong>Welcome to the new office</strong></p>
+
+
+    <h3>Important limitation</h3>
+
+    <p>
+      This formula changes characters mechanically. It does not understand
+      language.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <p>
+      <strong>Input:</strong> WELCOME TO GOOGLE IN NEW YORK
+    </p>
+
+    <p>
+      could become:
+    </p>
+
+    <p>
+      <strong>Welcome to google in new york</strong>
+    </p>
+
+    <p>
+      That is not fully correct because Google and New York are proper names.
+    </p>
+
+    <p>
+      The formula also does not automatically capitalize the beginning of every
+      new sentence inside a multi-sentence cell.
+    </p>
+
+    <p>
+      Use it when the data is simple and predictable. For prose containing
+      names, brands, acronyms, or several sentences, review the result manually.
+    </p>
+
+    <p>
+      See our
+      <a href="/blog/what-is-sentence-case">sentence case guide</a>
+      for capitalization rules and examples.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="power-query">Method 4: Use Power Query for Repeatable Cleanup</h2>
+
+    <p>
+      Formulas are convenient for one worksheet. Power Query becomes more
+      useful when the same data-cleaning process happens repeatedly.
+    </p>
+
+    <p>
+      A typical workflow is:
+    </p>
+
+    <ol>
+      <li>Select the source data.</li>
+      <li>Choose <strong>Data &gt; From Table/Range</strong>.</li>
+      <li>Select the text column in Power Query.</li>
+      <li>Apply the required capitalization transformation.</li>
+      <li>Choose <strong>Close &amp; Load</strong>.</li>
+    </ol>
+
+    <p>
+      Power Query's underlying text functions include:
+    </p>
+
+    <ul>
+      <li><code>Text.Upper</code></li>
+      <li><code>Text.Lower</code></li>
+      <li><code>Text.Proper</code></li>
+    </ul>
+
+    <p>
+      Microsoft documents these transformations in its Power Query M text
+      function reference.
+      <a
+        href="https://learn.microsoft.com/en-us/powerquery-m/text-functions"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Microsoft Power Query text functions
+      </a>.
+    </p>
+
+    <p>
+      The main advantage is repeatability. Once the transformation is part of
+      the query, new source data can go through the same cleanup process when
+      the query is refreshed.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="online-converter">Method 5: Use a Browser-Based Case Converter</h2>
+
+    <p>
+      A spreadsheet is not always the fastest workspace when you simply have a
+      block of text that needs a different capitalization style.
+    </p>
+
+    <p>
+      You can copy the text, paste it into the
+      <a href="/tools/case-converter">CountFlows Case Converter</a>,
+      choose the required style, and paste the result back into Excel.
+    </p>
+
+    <p>
+      Available transformations include common options such as:
+    </p>
+
+    <ul>
+      <li>UPPERCASE</li>
+      <li>lowercase</li>
+      <li>Title Case</li>
+      <li>Sentence case</li>
+      <li>other stylistic case transformations supported by the tool</li>
+    </ul>
+
+    <p>
+      CountFlows performs its text-tool processing in the browser rather than
+      requiring the text to be sent to a text-processing API.
+    </p>
+
+    <p>
+      Even so, automatic case conversion should be treated as a mechanical
+      transformation. Check proper nouns, brand names, acronyms, and specialist
+      terms after conversion.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="proper-limitations">Why Excel PROPER Can Produce Unexpected Capitalization</h2>
+
+    <p>
+      This is one of the most useful limitations to know before cleaning a
+      large name list.
+    </p>
+
+    <p>
+      Microsoft explains that PROPER capitalizes the first letter in a string
+      and letters that follow characters other than letters. It converts other
+      letters to lowercase.
+    </p>
+
+    <p>
+      That behavior can create unexpected results in special text.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Source Type</th>
+          <th>Possible Problem</th>
+          <th>What to Do</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Acronym</td>
+          <td>NASA can become Nasa</td>
+          <td>Restore the established acronym</td>
+        </tr>
+
+        <tr>
+          <td>Brand styling</td>
+          <td>iPhone or eBay may lose official capitalization</td>
+          <td>Restore the brand's preferred form</td>
+        </tr>
+
+        <tr>
+          <td>Names with punctuation</td>
+          <td>Characters after punctuation may be capitalized unexpectedly</td>
+          <td>Review names manually</td>
+        </tr>
+
+        <tr>
+          <td>Technical identifiers</td>
+          <td>Case-sensitive terms may be altered</td>
+          <td>Do not apply PROPER blindly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Microsoft documents this exact behavior in its
+      <a
+        href="https://support.microsoft.com/en-us/excel/proper-function"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        PROPER function reference
+      </a>.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="numbers-dates">Does Changing Case Affect Numbers or Dates?</h2>
+
+    <p>
+      UPPER, LOWER, and PROPER are text functions. Non-letter characters inside
+      a text string are not converted into uppercase or lowercase.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <p>
+      <strong>Input:</strong> invoice 2026-104<br />
+      <strong>UPPER result:</strong> INVOICE 2026-104
+    </p>
+
+    <p>
+      The digits and hyphen remain while the letters change.
+    </p>
+
+    <p>
+      However, do not apply text-case formulas blindly to columns that contain
+      real Excel dates, numeric values, IDs, or other data types. Excel stores
+      dates internally as numbers, and converting data through text functions
+      can change how the result behaves or displays.
+    </p>
+
+    <p>
+      Apply case conversion only to columns intended to contain text.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="troubleshooting">Common Problems When Changing Case in Excel</h2>
+
+
+    <h3>The formula appears instead of the result</h3>
+
+    <p>
+      The cell may be formatted as Text, or formula display may be enabled.
+      Change the cell format to General if appropriate, then re-enter the
+      formula.
+    </p>
+
+
+    <h3>You get a #NAME? error</h3>
+
+    <p>
+      Check the function spelling. For example:
+    </p>
+
+    <p>
+      <strong>Wrong:</strong> <code>=UPER(A2)</code><br />
+      <strong>Correct:</strong> <code>=UPPER(A2)</code>
+    </p>
+
+
+    <h3>The result disappears after deleting the source column</h3>
+
+    <p>
+      The converted cells still contain formulas linked to that source.
+      Copy the results and paste them as values before removing the original
+      data.
+    </p>
+
+
+    <h3>PROPER damages an acronym or brand name</h3>
+
+    <p>
+      This is a limitation of mechanical capitalization. Correct exceptional
+      names manually or use Find and Replace when the same term appears many
+      times.
+    </p>
+
+
+    <h3>Flash Fill guesses the wrong pattern</h3>
+
+    <p>
+      Give Excel another example that better represents the desired result, or
+      use a formula if the transformation follows a simple rule.
+    </p>
+
+
+    <h3>Sentence case lowercases proper names</h3>
+
+    <p>
+      A basic formula does not know that words such as Google, Pakistan, NASA,
+      or iPhone have special capitalization. Restore those terms after the
+      conversion or use a workflow designed for context-sensitive text.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="quality-check">The CountFlows 4-Point Case Conversion Check</h2>
+
+    <p>
+      Before replacing hundreds of original cells, inspect the converted output
+      using four checks:
+    </p>
+
+    <ol>
+      <li>
+        <strong>Pattern:</strong>
+        Did the method apply the capitalization style you intended?
+      </li>
+
+      <li>
+        <strong>Exceptions:</strong>
+        Are names, brands, acronyms, and technical terms still correct?
+      </li>
+
+      <li>
+        <strong>Data type:</strong>
+        Did you limit the transformation to actual text rather than dates or
+        numeric fields?
+      </li>
+
+      <li>
+        <strong>Replacement:</strong>
+        If formulas were used, did you paste the final results as values before
+        deleting the source column?
+      </li>
+    </ol>
+
+    <p>
+      Checking a few rows at the top, middle, and bottom of a long dataset can
+      catch pattern problems before they affect the entire worksheet.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="bottom-line">Bottom Line</h2>
+
+    <p>
+      For basic Excel text cleanup, start with UPPER, LOWER, or PROPER. Use
+      Flash Fill when a pattern is easier to demonstrate than to write as a
+      formula, and use Power Query when the same transformation needs to run
+      repeatedly.
+    </p>
+
+    <p>
+      Sentence-style capitalization is more complicated because Excel has no
+      dedicated sentence-case function and formulas cannot understand proper
+      nouns or context automatically.
+    </p>
+
+    <p>
+      For quick copy-and-paste transformations, the
+      <a href="/tools/case-converter">CountFlows Case Converter</a>
+      provides another option. Whichever method you choose, review exceptional
+      names and paste formula results as values before removing the original
+      data.
+    </p>
+  </section>
 
 </article>
 
+`;
 
-
-
-
-
-`
 export default caseConverter;

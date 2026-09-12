@@ -1,175 +1,751 @@
-const sentencecase=`
+const sentencecase = `
+
+<article>
+
+  <p>
+    Sentence case is a capitalization style in which you capitalize the first
+    word and any words that normally require capitals, such as proper nouns,
+    brand names, and many acronyms. Most other words remain lowercase.
+  </p>
+
+  <p>
+    For example:
+  </p>
+
+  <p>
+    <strong>How Google Docs counts words in a document</strong>
+  </p>
+
+  <p>
+    "How" is capitalized because it begins the heading, while "Google Docs"
+    keeps its official capitalization because it is a product name.
+  </p>
+
+  <p>
+    The basic rule is simple, but real documents create edge cases involving
+    subtitles, colons, acronyms, hyphenated words, APA references, product
+    names, and automated case converters. This guide covers those cases with
+    practical examples.
+  </p>
 
 
+  <section>
+    <h2 id="quick-answer">Sentence case: Quick answer</h2>
 
-<p>It looks insignificant when you have your heading incorrectly capitalized, but graders and editors will spot that right away. Every style manual is different and selecting the wrong one will deduct points from your assignment or make your article less professional. Sentence case eliminates this problem by having one single rule rather than a list of exceptions.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>What to Do</th>
+        </tr>
+      </thead>
 
-<h2>What Sentence Case Actually Means</h2>
+      <tbody>
+        <tr>
+          <td>First word</td>
+          <td>Capitalize it</td>
+        </tr>
 
-<p>In sentence case, only the opening word of a sentence, title or heading gets a capital letter along with any proper noun that happens to fall inside it.Nothing else changes case.</p>
+        <tr>
+          <td>Ordinary words</td>
+          <td>Usually lowercase</td>
+        </tr>
 
-<p>You already use this rule every time you type a normal sentence."The bus leaves at nine" only has one capital because "The" opens the line — sentence case just carries that same habit into titles, subject lines, and page headings instead of reserving it for paragraphs.</p>
+        <tr>
+          <td>Proper nouns</td>
+          <td>Keep their required capitals</td>
+        </tr>
 
-<p>Most writers use this style daily without ever naming it.It's the default for text messages, emails, and everyday articles across English writing, which is exactly why it reads as more natural than other capitalization systems.</p>
+        <tr>
+          <td>Brand and product names</td>
+          <td>Preserve official capitalization</td>
+        </tr>
 
+        <tr>
+          <td>Acronyms and initialisms</td>
+          <td>Keep established capitalization, such as SEO or NASA</td>
+        </tr>
 
+        <tr>
+          <td>Pronoun "I"</td>
+          <td>Always capitalize</td>
+        </tr>
 
+        <tr>
+          <td>Subtitle after a colon</td>
+          <td>Depends on the style guide; APA has a specific rule</td>
+        </tr>
+      </tbody>
+    </table>
 
-<h2>Sentence Case Compared to Title Case</h2>
-
-<figure><img src="/blogs/Sentence-case-vs-title-case.png" alt="sentence case vs title case"></figure>
-
-<p>People usually land on this topic while trying to figure out how it differs from title case. The two share a first-glance resemblance, but the logic underneath is not the same.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>What's Capitalized</th>
-      <th>Sentence Case</th>
-      <th>Title Case</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>First word</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Remaining words</td>
-      <td>Lowercase, except proper nouns</td>
-      <td>Most major words capitalized</td>
-    </tr>
-    <tr>
-      <td>Small words (a, of, the, in)</td>
-      <td>Lowercase</td>
-      <td>Lowercase unless first or last</td>
-    </tr>
-    <tr>
-      <td>Typical home</td>
-      <td>Emails, blog body text, AP downstyle headlines</td>
-      <td>Book titles, MLA/Chicago headings</td>
-    </tr>
-    <tr>
-      <td>Sample</td>
-      <td>Freelancing tips for Pakistani students</td>
-      <td>Freelancing Tips for Pakistani Students</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Notice how the sentence-case version needs exactly one capital letter — the title-case version capitalizes both major words instead.</p>
-
-<p>Neither system beats the other on merit. It depends entirely on which guide governs the document you're writing, not personal taste.</p>
-
-<h2>The Rules, in Order</h2>
-
-<p>The full logic fits in five lines:</p>
-
-<ol>
-  <li>Capitalize the first letter of the first word.</li>
-  <li>Capitalize proper nouns anywhere in the line — names, places, brand names.</li>
-  <li>Capitalize the pronoun "I" every time it shows up.</li>
-  <li>Leave every other word lowercase, including articles and prepositions.</li>
-  <li>Capitalize the word right after a colon only when it launches a new independent clause.</li>
-</ol>
-
-<p>That's the whole system. Title case forces you to memorize which conjunctions and prepositions count as "minor words" — sentence case skips that entirely, which is why it's easier to apply consistently across a 2,000-word document.</p>
+    <p>
+      The short version is: lowercase ordinary words, but do not lowercase
+      words that have an independent reason to remain capitalized.
+    </p>
+  </section>
 
 
+  <section>
+    <h2 id="table-of-contents">Table of Contents</h2>
 
-<h2>A Few Working Examples</h2>
-
-<ul>
-  <li>The quarterly report is due next Friday.</li>
-  <li>Messi moved to barcelona to start his football career.</li>
-  <li>How to check word count in Google Docs.</li>
-  <li>The new PUBG update improves performance on older devices.</li>
-  <li>Why remote teams struggle with time zones.</li>
-</ul>
-
-<p>Only the opening word and the proper nouns — "Messi," "Barcelona," "Google Docs," "PUBG" — pick up a capital letter. Everything else stays lowercase, even nouns that would be capitalized under title case.</p>
-
-<h2>Why APA Uses This Format — and Where It Came From</h2>
-
-<p>APA's reference-list rule is the single biggest reason people land on this topic, and there's a specific history behind it. According to APA's own style team, the requirement traces back to a 1929 manuscript-preparation guideline published in <em>Psychological Bulletin</em> long before the modern <em>Publication Manual</em> existed, and it stuck because it makes reference titles easier to scan and easier for editors to check against the original source, regardless of how the title was capitalized on the actual cover of the book or journal (<a href="https://apastyle.apa.org/blog/sentence-case-capitalization-in-apa-style-references" target="_blank" rel="noopener noreferrer">APA Style – Sentence Case Capitalization</a>).</p>
-
-<p>That rule applies specifically to the title of the source inside a reference-list entry—a journal article, book, report, or webpage. It does not apply to the title of your own paper, which APA still expects in title case on the cover page (<a href="https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case" target="_blank" rel="noopener noreferrer">APA Style – Title Case Capitalization</a>). A reference entry might read "The effects of sleep on memory retention," while the exact same phrase, cited elsewhere in your paper as your own paper's title, could appear as "The Effects of Sleep on Memory Retention." APA's guidance confirms proper nouns are the only exception inside a sentence-case reference title (<a href="https://apastyle.apa.org/style-grammar-guidelines/capitalization/sentence-case" target="_blank" rel="noopener noreferrer">APA Style – Sentence Case</a>).</p>
-
-<p>Students mix these two up constantly. Before you capitalize anything, check whether you're formatting a reference-list entry or a heading inside the body of the paper — APA treats them differently.</p>
+    <ol>
+      <li><a href="#definition">What sentence case means</a></li>
+      <li><a href="#rules">The capitalization rules</a></li>
+      <li><a href="#examples">Correct examples</a></li>
+      <li><a href="#title-case">Sentence case vs title case</a></li>
+      <li><a href="#apa">Sentence case in APA references</a></li>
+      <li><a href="#colon">What happens after a colon?</a></li>
+      <li><a href="#proper-nouns">Proper nouns, brands, and acronyms</a></li>
+      <li><a href="#hyphenated">Hyphenated words</a></li>
+      <li><a href="#ui-writing">Sentence-style capitalization in digital products</a></li>
+      <li><a href="#converter">How to convert text safely</a></li>
+      <li><a href="#mistakes">Common capitalization mistakes</a></li>
+      <li><a href="#checklist">The CountFlows 5-point check</a></li>
+    </ol>
+  </section>
 
 
+  <section>
+    <h2 id="definition">What Does Sentence Case Mean?</h2>
 
-<h2>Why It's Easier to Read</h2>
+    <p>
+      Sentence case applies the capitalization pattern used in normal prose to
+      a title, heading, label, or other short piece of text.
+    </p>
 
-<p>There's a readability reason this format keeps showing up outside academic writing too. A heading with a single capital letter reads closer to natural speech, so your eye moves through it without snagging on every word. Fully capitalized title case forces the eye to register each word as its own unit, which slows down scanning — especially on longer headlines.</p>
+    <p>
+      Instead of capitalizing most major words, you normally capitalize the
+      opening word and preserve capitals that are required for another reason.
+    </p>
 
-<p>This isn't unique to sentence case, either. Wire services and many digital newsrooms rely on a similar approach — often called AP downstyle — that keeps a headline lowercase except for its first word and any proper nouns, while some corporate press pages switch to full title case for a more polished, branded look (<a href="https://www.pjbstories.com/ap-style-guide/" target="_blank" rel="noopener noreferrer">PBJ Stories — AP Style Guide</a>). Style guides genuinely disagree on this point, which is part of why so many teams end up needing a written rule they can point to instead of relying on memory (<a href="https://en.wikipedia.org/wiki/Title_case" target="_blank" rel="noopener noreferrer">Wikipedia — Title case</a>).</p>
+    <p>
+      For example:
+    </p>
 
-<h2>Mistakes That Show Up Again and Again</h2>
+    <p>
+      <strong>Improving customer service with better response templates</strong>
+    </p>
 
-<ul>
-  <li>Capitalizing the word after a colon when it isn't a full independent clause.</li>
-  <li>Missing a proper noun buried in the middle of a heading.</li>
-  <li>Switching between this format and title case within the same document.</li>
-  <li>Capitalizing "I" inconsistently instead of every single time.</li>
-  <li>Assuming the word after a hyphen automatically needs a capital — it doesn't.</li>
-</ul>
+    <p>
+      Only "Improving" needs a capital here because the remaining words are
+      ordinary common nouns and modifiers.
+    </p>
 
-<p>A single mismatched heading stands out to an editor immediately, even before they can articulate exactly why it looks wrong. Consistency matters more than which system you pick.</p>
+    <p>
+      Now compare:
+    </p>
 
-<h2>Skip the Manual Retyping</h2>
+    <p>
+      <strong>Improving customer service with Microsoft Teams</strong>
+    </p>
 
-<p>Rewriting a paragraph by hand gets tedious fast, especially once proper nouns are scattered through it. The Online Case Converter on Countflows switches any block of text between sentence case, title case, uppercase, or lowercase in one click — no retyping required.You can also learn how to change text formatting in spreadsheets with our guide on <a href="/blog/how-to-convert-case-in-excel">how to convert case in Excel</a></p>
+    <p>
+      "Microsoft Teams" remains capitalized because it is a product name.
+      The capitalization style does not override the spelling of a proper name.
+    </p>
+  </section>
 
-<p>It doubles as a quick lowercase to uppercase converter (or the reverse, for text that landed in ALL CAPS by accident), and it works as a title case converter too, so you're not bouncing between five separate tools for five different formats.</p>
 
-<p>Once the text is formatted, run it through the <a href="/tools/word-counter">Word Counter</a> to confirm you're still inside a length requirement, or the <a href="/tools/character-counter">Character Counter</a> for platforms with hard limits like meta descriptions. If you're polishing a full draft, the <a href="/tools/syllable-counter">Syllable Counter</a> is worth a pass before you publish.</p>
+  <section>
+    <h2 id="rules">The Main Sentence Case Rules</h2>
+
+    <ol>
+      <li>
+        <strong>Capitalize the first word.</strong>
+        The first ordinary word of a heading or title begins with a capital
+        letter.
+      </li>
+
+      <li>
+        <strong>Keep proper nouns capitalized.</strong>
+        Names of people, countries, cities, organizations, and other proper
+        nouns retain their capitals.
+      </li>
+
+      <li>
+        <strong>Preserve official brand and product capitalization.</strong>
+        Examples include Google Docs, Microsoft Word, iPhone, YouTube, and
+        ChatGPT.
+      </li>
+
+      <li>
+        <strong>Keep established acronyms and initialisms intact.</strong>
+        Do not turn SEO into "Seo" or NASA into "Nasa" simply because the
+        surrounding title uses lowercase words.
+      </li>
+
+      <li>
+        <strong>Capitalize the pronoun "I."</strong>
+        It remains uppercase wherever it appears.
+      </li>
+
+      <li>
+        <strong>Lowercase ordinary words unless another rule applies.</strong>
+        Nouns, verbs, adjectives, articles, conjunctions, and prepositions do
+        not receive capitals merely because they appear in a heading.
+      </li>
+    </ol>
+
+    <p>
+      Style guides can add special rules, particularly for subtitles and
+      references, so context still matters.
+    </p>
+  </section>
 
 
-<h2>Frequently Asked Questions</h2>
+  <section>
+    <h2 id="examples">Sentence Case Examples</h2>
 
-<h3>What is sentence case?</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Input or Idea</th>
+          <th>Sentence-Style Version</th>
+          <th>Why</th>
+        </tr>
+      </thead>
 
-<p>A capitalization rule where only the first word of a sentence or heading — plus any proper nouns — gets capitalized, and everything else stays lowercase.</p>
+      <tbody>
+        <tr>
+          <td>A guide about remote teams</td>
+          <td>How remote teams manage different time zones</td>
+          <td>Only the opening word requires a capital</td>
+        </tr>
 
-<h3>How is it different from title case?</h3>
+        <tr>
+          <td>A Google Docs tutorial</td>
+          <td>How to check word count in Google Docs</td>
+          <td>Google Docs is a product name</td>
+        </tr>
 
-<p>Sentence case capitalizes just the first word and proper nouns. Title case capitalizes most major words throughout the heading, including nouns, verbs, and adjectives.</p>
+        <tr>
+          <td>A Pakistan example</td>
+          <td>Freelancing opportunities for students in Pakistan</td>
+          <td>Pakistan is a proper noun</td>
+        </tr>
 
-<h3>Does APA require sentence case or title case?</h3>
+        <tr>
+          <td>An SEO article</td>
+          <td>How SEO affects content planning</td>
+          <td>SEO keeps its established uppercase form</td>
+        </tr>
 
-<p>Both, depending on where the title appears. Reference-list entries use sentence case; the paper's own title on the cover page uses title case.</p>
+        <tr>
+          <td>An iPhone guide</td>
+          <td>How to change privacy settings on an iPhone</td>
+          <td>iPhone keeps Apple's official capitalization</td>
+        </tr>
 
-<h3>Can you give a quick example?</h3>
+        <tr>
+          <td>A personal statement</td>
+          <td>Why I changed my research method</td>
+          <td>The pronoun I remains uppercase</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-<p>"The rise of remote work in Pakistan" is correct — only "The" and the proper noun "Pakistan" are capitalized.</p>
 
-<h3>Is this just normal writing capitalization?</h3>
+  <section>
+    <h2 id="title-case">Sentence Case vs Title Case</h2>
 
-<p>Yes. It's the same rule you already use in everyday sentences, applied to headings and titles instead of paragraphs.</p>
+    <p>
+      The main difference is how many words receive capitals.
+    </p>
 
-<h3>Do developers use the term differently?</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Sentence Case</th>
+          <th>Title Case</th>
+        </tr>
+      </thead>
 
-<p>Loosely, yes — "sentence casing" often shows up in UI copy, button labels, and error messages, but the underlying rule is identical.</p>
+      <tbody>
+        <tr>
+          <td>First word</td>
+          <td>Capitalized</td>
+          <td>Capitalized</td>
+        </tr>
 
-<h3>Is there a tool that converts text automatically?</h3>
+        <tr>
+          <td>Major words</td>
+          <td>Usually lowercase unless independently capitalized</td>
+          <td>Usually capitalized</td>
+        </tr>
 
-<p>Yes — The Online Case Converter on Countflows switches any block of text between sentence case, title case, uppercase, or lowercase in one click. If you also work with spreadsheets, you can follow our guide on <a href="/blog/how-to-convert-case-in-excel">how to convert case in Excel</a> to format text faster across different workflows.</p>
+        <tr>
+          <td>Proper nouns</td>
+          <td>Capitalized</td>
+          <td>Capitalized</td>
+        </tr>
 
-<h2>The Short Version</h2>
+        <tr>
+          <td>Articles and short prepositions</td>
+          <td>Normally lowercase</td>
+          <td>Rules vary by style guide</td>
+        </tr>
 
-<p>Capitalize the first word, capitalize proper nouns, leave the rest lowercase. That's the entire rule it's the format everyday writing already follows, APA requires it for reference lists specifically, and plenty of modern headlines use it for the same readability reason.</p>
+        <tr>
+          <td>Example</td>
+          <td>How to improve your writing skills</td>
+          <td>How to Improve Your Writing Skills</td>
+        </tr>
+      </tbody>
+    </table>
 
-<ul>
-  <li>Only the first word and proper nouns get capitalized.</li>
-  <li>Title case capitalizes most major words instead — the two aren't interchangeable.</li>
-  <li>APA's requirement applies to reference-list titles, not your paper's own title.</li>
-  <li>Picking one style and sticking to it matters more than which one you choose.</li>
-</ul>
+    <p>
+      Title case is not one universal formula. APA, Chicago, MLA, and other
+      style systems have their own details about which words count as major or
+      minor.
+    </p>
 
-<p>Need to reformat text fast? The <a href="/tools/case-converter">Case Converter</a> does it instantly — and you can double-check keyword usage with the <a href="/tools/keyword-density-checker">Keyword Density Checker</a> or sentence count with the <a href="/tools/sentence-counter">Sentence Counter</a> before you hit publish.</p>
+    <p>
+      That is why a document should follow the style guide that actually
+      governs it instead of switching capitalization based on personal
+      preference.
+    </p>
+  </section>
 
-`
+
+  <section>
+    <h2 id="apa">How APA Uses Sentence Case in References</h2>
+
+    <p>
+      APA makes an important distinction between the title of a work and the
+      name of a periodical that contains that work.
+    </p>
+
+    <p>
+      In APA reference entries, titles of works such as journal articles,
+      books, reports, and webpages generally use sentence case.
+    </p>
+
+    <p>
+      Periodical names, such as journal and magazine titles, retain title case.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Reference Element</th>
+          <th>Capitalization</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Journal article title</td>
+          <td>Sentence case</td>
+          <td>The effects of sleep on memory</td>
+        </tr>
+
+        <tr>
+          <td>Book title</td>
+          <td>Sentence case</td>
+          <td>Understanding digital communication</td>
+        </tr>
+
+        <tr>
+          <td>Webpage title</td>
+          <td>Sentence case</td>
+          <td>How students use online learning tools</td>
+        </tr>
+
+        <tr>
+          <td>Journal name</td>
+          <td>Title case</td>
+          <td>Journal of Educational Psychology</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      APA also capitalizes the first word of a subtitle. If a colon separates
+      a title and subtitle, the first word after the colon receives a capital.
+    </p>
+
+    <p>
+      Example:
+    </p>
+
+    <p>
+      <strong>Digital learning habits: A study of university students</strong>
+    </p>
+
+    <p>
+      "A" begins the subtitle, so it is capitalized in an APA reference title.
+    </p>
+
+    <p>
+      The official
+      <a
+        href="https://apastyle.apa.org/style-grammar-guidelines/capitalization/sentence-case"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        APA Style capitalization guidance
+      </a>
+      should take priority when you are formatting an APA paper.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="colon">Should You Capitalize the Word After a Colon?</h2>
+
+    <p>
+      There is no single answer for every context.
+    </p>
+
+    <p>
+      If the colon introduces a subtitle in an APA reference title, capitalize
+      the first word after it.
+    </p>
+
+    <p>
+      For ordinary prose, another style guide may use a different rule.
+      Google, for example, distinguishes normal prose after a colon from
+      titles and subheadings.
+    </p>
+
+    <p>
+      The safest approach is:
+    </p>
+
+    <ul>
+      <li>identify whether you are writing prose, a heading, or a reference title</li>
+      <li>check the style guide governing that document</li>
+      <li>apply the same rule consistently throughout</li>
+    </ul>
+
+    <p>
+      Avoid using the shortcut "always capitalize after a colon" or "never
+      capitalize after a colon." Both are too broad.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="proper-nouns">Proper Nouns, Brands, and Acronyms</h2>
+
+    <p>
+      One of the most common errors is converting every word except the first
+      one to lowercase.
+    </p>
+
+    <p>
+      That would turn:
+    </p>
+
+    <p>
+      <strong>How NASA uses Google Cloud for research</strong>
+    </p>
+
+    <p>
+      into:
+    </p>
+
+    <p>
+      <strong>How nasa uses google cloud for research</strong>
+    </p>
+
+    <p>
+      The second version is incorrect because capitalization required by names
+      and abbreviations still applies.
+    </p>
+
+    <p>
+      Watch especially for:
+    </p>
+
+    <ul>
+      <li>people: Albert Einstein</li>
+      <li>places: New York, Saudi Arabia, Pakistan</li>
+      <li>companies: Microsoft, OpenAI, Google</li>
+      <li>products: Google Docs, Microsoft Word, ChatGPT</li>
+      <li>brands with unusual styling: iPhone, eBay</li>
+      <li>acronyms and initialisms: SEO, HTML, PDF, NASA</li>
+      <li>technical identifiers whose case has meaning</li>
+    </ul>
+  </section>
+
+
+  <section>
+    <h2 id="hyphenated">What About Hyphenated Words?</h2>
+
+    <p>
+      Do not automatically capitalize the second part of every hyphenated word.
+      In sentence-style text, ordinary components generally remain lowercase
+      unless another rule requires capitalization.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <p>
+      <strong>Evidence-based strategies for student learning</strong>
+    </p>
+
+    <p>
+      "based" does not need a capital simply because it follows a hyphen.
+    </p>
+
+    <p>
+      However, brand names, proper nouns, and specialist terms may have their
+      own official spelling. Preserve that spelling rather than forcing the
+      text through a generic capitalization rule.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="ui-writing">Sentence-Style Capitalization in Apps and Documentation</h2>
+
+    <p>
+      This capitalization style is not limited to essays and references.
+      It is also widely used in digital interfaces and technical
+      documentation.
+    </p>
+
+    <p>
+      Microsoft's current writing guidance uses sentence-style capitalization
+      for most titles, headings, labels, and other interface text. Its basic
+      rule is to capitalize the first word and proper nouns.
+    </p>
+
+    <p>
+      Google also instructs writers to use sentence case for headings and
+      titles in its developer documentation.
+    </p>
+
+    <p>
+      These examples show why you may encounter headings such as:
+    </p>
+
+    <ul>
+      <li>Create a new project</li>
+      <li>Change account settings</li>
+      <li>Manage API access</li>
+      <li>Connect to Google Cloud</li>
+    </ul>
+
+    <p>
+      References:
+      <a
+        href="https://learn.microsoft.com/en-us/style-guide/capitalization"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Microsoft Style Guide
+      </a>
+      and
+      <a
+        href="https://developers.google.com/style/headings"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Google developer documentation style guide
+      </a>.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="converter">How to Convert Text to Sentence Case</h2>
+
+    <p>
+      For a short heading, manual conversion is straightforward:
+    </p>
+
+    <ol>
+      <li>Capitalize the opening word.</li>
+      <li>Lowercase ordinary words.</li>
+      <li>Restore proper nouns and official names.</li>
+      <li>Restore acronyms and initialisms.</li>
+      <li>Check any subtitle or style-guide-specific rule.</li>
+    </ol>
+
+    <p>
+      For longer text, use the
+      <a href="/tools/case-converter">CountFlows Case Converter</a>
+      to change capitalization quickly.
+    </p>
+
+    <h3>Important limitation of automatic conversion</h3>
+
+    <p>
+      Case conversion looks simple to software, but meaning is not always
+      obvious from the letters alone.
+    </p>
+
+    <p>
+      A converter may not automatically know that "eBay," "iPhone," "NASA,"
+      a person's surname, or an unusual product name requires special
+      capitalization.
+    </p>
+
+    <p>
+      After automatic conversion, do one manual scan for proper nouns, brands,
+      acronyms, and technical terms. This takes only a few seconds and prevents
+      the most noticeable capitalization errors.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="mistakes">Common Sentence Case Mistakes</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mistake</th>
+          <th>Wrong</th>
+          <th>Better</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Using title case by habit</td>
+          <td>How To Improve Your Writing Skills</td>
+          <td>How to improve your writing skills</td>
+        </tr>
+
+        <tr>
+          <td>Lowercasing a proper noun</td>
+          <td>Working remotely from pakistan</td>
+          <td>Working remotely from Pakistan</td>
+        </tr>
+
+        <tr>
+          <td>Changing an acronym</td>
+          <td>How Seo tools analyze content</td>
+          <td>How SEO tools analyze content</td>
+        </tr>
+
+        <tr>
+          <td>Changing brand styling</td>
+          <td>How to back up your Iphone</td>
+          <td>How to back up your iPhone</td>
+        </tr>
+
+        <tr>
+          <td>Applying one colon rule everywhere</td>
+          <td>Assuming the next word is always lowercase</td>
+          <td>Follow the governing style guide</td>
+        </tr>
+
+        <tr>
+          <td>Mixing styles on one page</td>
+          <td>Some Headings Look Like This</td>
+          <td>Keep the chosen heading style consistent</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <section>
+    <h2 id="checklist">The CountFlows 5-Point Sentence Case Check</h2>
+
+    <p>
+      Before publishing a title, label, heading, or reference entry, scan it
+      from left to right using these five checks:
+    </p>
+
+    <ol>
+      <li>
+        <strong>Start:</strong>
+        Is the opening word capitalized correctly?
+      </li>
+
+      <li>
+        <strong>Names:</strong>
+        Are people, places, organizations, products, and brands preserved?
+      </li>
+
+      <li>
+        <strong>Special terms:</strong>
+        Are acronyms, initialisms, and technical identifiers still correct?
+      </li>
+
+      <li>
+        <strong>Subtitle:</strong>
+        If there is a colon or dash, does your style guide require the next
+        word to be capitalized?
+      </li>
+
+      <li>
+        <strong>Consistency:</strong>
+        Are ordinary words lowercase throughout the rest of the text?
+      </li>
+    </ol>
+
+    <p>
+      This catches most errors that a simple lowercase conversion can miss.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="choose-case">When Should You Use Sentence Case?</h2>
+
+    <p>
+      Use it when your organization's style guide requires it or when the
+      content system you are writing for follows sentence-style headings,
+      labels, or titles.
+    </p>
+
+    <p>
+      Common examples include:
+    </p>
+
+    <ul>
+      <li>ordinary sentences</li>
+      <li>many website and app interface labels</li>
+      <li>technical documentation that follows a sentence-style guide</li>
+      <li>some website headings</li>
+      <li>titles of works in APA reference entries</li>
+    </ul>
+
+    <p>
+      Do not assume it is correct for every title. Book publishing,
+      newspapers, academic styles, brands, and organizations may follow
+      different conventions.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="bottom-line">Bottom Line</h2>
+
+    <p>
+      Sentence-style capitalization is simple at its core: capitalize the
+      opening word, preserve words that legitimately require capitals, and
+      lowercase ordinary words.
+    </p>
+
+    <p>
+      The details matter when proper nouns, acronyms, brands, subtitles,
+      references, or technical terms appear. APA also adds specific rules for
+      reference titles, while organizations such as Microsoft and Google use
+      sentence-style conventions in digital content.
+    </p>
+
+    <p>
+      If you are converting a large block of text, use the
+      <a href="/tools/case-converter">Case Converter</a>
+      for the mechanical change, then perform the five-point check above to
+      catch names and terms that software may not understand from context.
+    </p>
+  </section>
+
+</article>
+
+`;
 
 export default sentencecase;

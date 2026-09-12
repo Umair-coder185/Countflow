@@ -1,206 +1,467 @@
 const textRepeater = `
 
+<article>
 
-  
-  <p>Copying the same word again and again gets annoying fast. You can lose count, create uneven spaces, or paste the wrong number of copies. If you need to repeat a word 100 times, there is no reason to press Ctrl+V another hundred times. A text repeater can generate the complete block for you with the count and formatting already under control.</p>
-  
-  <p>The process takes only a few moments. You type the word once, choose how many repetitions you want, select the spacing style, and copy the result. That works for a single word, a sentence, an emoji, or almost any short piece of text.</p>
-  
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href="#how-to-repeat-a-word-100-times-online">How to repeat a word 100 times online</a></li>
-    <li><a href="#why-manual-copy-and-paste-causes-problems">Why manual copy and paste causes problems</a></li>
-    <li><a href="#repeat-hi-yes-please-or-any-word">Repeat Hi, Yes, Please, or any word</a></li>
-    <li><a href="#how-to-repeat-text-1000-times">How to repeat text 1,000 times</a></li>
-    <li><a href="#choose-the-right-separator">Choose the right separator</a></li>
-    <li><a href="#repeat-sentences-and-emojis">Repeat sentences and emojis</a></li>
-    <li><a href="#copy-and-use-your-repeated-text">Copy and use your repeated text</a></li>
-    <li><a href="#frequently-asked-questions">Frequently asked questions</a></li>
-  </ul>
-  
-  <h2 id="how-to-repeat-a-word-100-times-online">How to Repeat a Word 100 Times Online</h2>
-  
-  <p>Using an online word repeater is the easiest method when you want an exact number of copies. Open the <a href="https://countflows.com/tools/text-repeater">CountFlows Text Repeater</a>, enter the word you want to duplicate, set the repetition count to 100, choose how the results should appear, and generate the text.</p>
-  
-  <p>Follow these seven steps:</p>
-  <ol>
-    <li>Enter your word or phrase.</li>
-    <li>Set the repeat count to 100.</li>
-    <li>Choose a space, line break, or other separator.</li>
-    <li>Generate the repeated text.</li>
-    <li>Check the output.</li>
-    <li>Copy the complete result.</li>
-    <li>Paste it wherever you need it.</li>
-  </ol>
-  
-  <p>Once the output appears, you do not need to count every copy manually. This is the main advantage of using a text repeater online instead of trying to copy and paste 100 times by hand.</p>
-  
-  <h2 id="why-manual-copy-and-paste-causes-problems">Why Copying and Pasting 100 Times Manually Is a Bad Method</h2>
-  
-  <p>Manual repetition looks easy when you need five copies. At 100 copies, however, the method becomes tedious. You can accidentally paste 98 or 103 copies and never notice the difference. Repeated spaces, missing line breaks, and accidental extra text can also enter the result.</p>
-  
-  <p>Every extra repetition creates another chance for a small mistake. A repeat text tool handles the repetitive part for you while you decide what the final output should look like. You stay focused on the text instead of counting Ctrl+V presses.</p>
-  
-  <h3>Exact count matters</h3>
-  
-  <p>Accuracy becomes especially useful when you need an exact quantity for testing, formatting, a design pattern, or a repeated message. A generator makes it much easier to repeat a word 100 times without checking every line one by one.</p>
-  
-  <h2 id="repeat-hi-yes-please-or-any-word">Repeat Hi, Yes, Please, or Any Word 100 Times</h2>
-  
-  <p>Common searches such as copy paste 100 times, "please 100 times," and "yes 100 times" show a simple intent. People often want a ready block of one short word. You can create the same result with any word instead of searching for a separate page for each phrase.</p>
-  
-  <p>For example, type Hi, select 100 repetitions, and generate the result. You can do the same with Yes, Please, Hello, a name, or another short phrase. Using a word repeater gives you control over both the word and the exact number.</p>
-  
-  <h3>Hi 100 times</h3>
-  
-  <p>Enter Hi once and set the count to 100. The generator creates the repeated block, allowing you to copy everything together instead of typing or pasting Hi manually.</p>
-  
-  <h3>Please 100 times</h3>
-  
-  <p>Type Please, choose 100, and generate your preferred layout. This method also answers searches such as please 100 times copy and paste without filling the page itself with hundreds of low value repetitions.</p>
-  
-  <h3>Yes 100 times</h3>
-  
-  <p>Use the same process for Yes. Keeping examples short makes the page easier to read while the actual tool handles the large output.</p>
-  
-  <h2 id="how-to-repeat-text-1000-times">How to Repeat Text 1,000 Times</h2>
-  
-  <p>Sometimes 100 repetitions are not enough. Searches such as hi 1000 times copy and paste and copy and paste 1000 times show that users also want much larger blocks. The process stays almost identical. Enter your text once and change the repeat count from 100 to 1,000.</p>
-  
-  <p>Larger outputs can become difficult to inspect visually, so check your chosen separator before generating them. A compact same line format creates a dense block, while a new line format creates a much taller result. Use the format that fits your final destination.</p>
-  
-  <h3>Hi 1000 times</h3>
-  
-  <p>Instead of publishing Hi one thousand times on a web page, generate it when you actually need it. Type Hi, select 1,000 repetitions, and copy the generated result.</p>
-  
-  <h3>Hello 1000 times</h3>
-  
-  <p>The same approach works for searches such as hello 1000 times. You do not need a special generator for every word because a general text repeater can duplicate whatever you enter.</p>
-  
-  <h2 id="choose-the-right-separator">Choose the Right Separator for Repeated Text</h2>
-  
-  <p>Formatting matters almost as much as the repetition count. If every copy runs together, the result may become difficult to read. If every copy starts on a separate line, the output can become unnecessarily long. Choosing the right text separator keeps the repeated block useful.</p>
-  
-  <p>Different formats suit different jobs:</p>
-  
-  <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-    <thead>
-      <tr style="background-color: #f4f4f4;">
-        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Separator</th>
-        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Example</th>
-        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Best for</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 12px;">Space</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Hi Hi Hi</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Short words and compact text</td>
-      </tr>
-      <tr style="background-color: #fafafa;">
-        <td style="border: 1px solid #ddd; padding: 12px;">New line</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Hi↵Hi↵Hi</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Lists and readable blocks</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 12px;">Comma</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Hi, Hi, Hi</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Simple sequences</td>
-      </tr>
-      <tr style="background-color: #fafafa;">
-        <td style="border: 1px solid #ddd; padding: 12px;">No space</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">HiHiHi</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Patterns and testing</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 12px;">Custom</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Hi | Hi | Hi</td>
-        <td style="border: 1px solid #ddd; padding: 12px;">Special layouts</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <p>A new line separator works well when you need each repeated item to remain easy to count or inspect. A space works better for short phrases where vertical length would become inconvenient. Choose the layout before you create 100 or 1,000 copies.</p>
-  
-  <h2 id="repeat-sentences-and-emojis">Can You Repeat a Sentence or Emoji Instead of One Word?</h2>
-  
-  <p>A repeater does not need to work with a single word. You can repeat text multiple times even when the input contains a complete sentence. For example, you might repeat "Thank you for your help" ten times or create repeated placeholder sentences while testing a layout.</p>
-  
-  <p>Emojis work in the same general way. You can repeat a heart, star, check mark, or another symbol just as you would repeat a word. After generating your output, use the <a href="/tools/character-counter">Character Counter</a> if the destination has a strict character limit.</p>
-  
-  <h3>Repeat a sentence</h3>
-  
-  <p>Paste the entire sentence into the input instead of one word. The repeater treats the sentence as one unit and duplicates that complete unit according to the number you select.</p>
-  
-  <h3>Repeat emojis</h3>
-  
-  <p>Enter one or more emojis and choose the count. Keep the destination platform in mind because very large emoji blocks can become difficult to read or may exceed a platform limit.</p>
-  
-  <h2 id="copy-and-use-your-repeated-text">Where Can You Use Repeated Text?</h2>
-  
-  <p>People use repeated text in documents, messages, social posts, test data, formatting experiments, placeholders, and simple creative patterns. You generate the block first, copy it, and then paste it into the application where you need it.</p>
-  
-  <p>Messages deserve a little restraint. A repeated block can be useful for emphasis or fun, but sending extremely large messages repeatedly may annoy recipients or run into platform restrictions. Generate the text you need, then decide whether the size suits the place where you plan to paste it.</p>
-  
-  <h2>How to Clean or Adjust Repeated Text</h2>
-  
-  <p>Sometimes you generate a large block and later decide that the line breaks or capitalization do not look right. The <a href="https://countflows.com/tools/remove-line-breaks">Remove Line Breaks</a> tool can help when a vertical list needs to become a continuous block.</p>
-  
-  <p>Capitalization problems are also easy to fix. Use the <a href="https://countflows.com/tools/case-converter">Case Converter</a> if you need uppercase, lowercase, sentence case, or another capitalization style after generating your repeated content.</p>
-  
-  <h2>Why Use a Text Repeater Instead of Copy and Paste?</h2>
-  
-  <p>Speed is the obvious benefit, but accuracy matters just as much. When you repeat a word 100 times manually, you must keep track of both the text and the count. A repeater removes the counting problem and lets you concentrate on the finished format.</p>
-  
-  <p>Convenience becomes even more important with larger counts. Creating repeat text 1000 times output by hand would require hundreds of repetitive actions. A generator performs the repetitive work while you control the input, count, and layout.</p>
-  
-  <h3>You avoid miscounting</h3>
-  
-  <p>Choosing an exact count reduces the chance of ending with too many or too few copies. That matters whenever the quantity itself is important.</p>
-  
-  <h3>You control the layout</h3>
-  
-  <p>Selecting spaces, line breaks, or another separator before generation produces more consistent output than editing hundreds of pasted copies afterward.</p>
-  
-  <h3>You can reuse any text</h3>
-  
-  <p>A general repeater works with words, phrases, sentences, numbers, and symbols. You do not need a separate page for every phrase you want to duplicate.</p>
-  
-  <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
-  
-  <h3>How do I repeat a word 100 times?</h3>
-  <p>Enter your word into a text repeater, set the repetition count to 100, choose a separator, and generate the output. Then copy the complete block at once.</p>
-  
-  <h3>Can I copy and paste a word 100 times at once?</h3>
-  <p>Yes. Generate all 100 repetitions first, then copy the complete result instead of copying the original word repeatedly.</p>
-  
-  <h3>How do I repeat text 1,000 times?</h3>
-  <p>Change the repeat count from 100 to 1,000 before generating your text. Choose the separator carefully because 1,000 repetitions can create a very large output.</p>
-  
-  <h3>Can I repeat Hi 1000 times?</h3>
-  <p>Yes. Enter Hi, choose 1,000 repetitions, generate the text, and copy the result. This is faster than looking for a static hi 1000 times copy and paste list.</p>
-  
-  <h3>Can I repeat a whole sentence?</h3>
-  <p>Yes. Paste the sentence into the repeater exactly as you want it to appear. The tool can treat that sentence as the repeated unit.</p>
-  
-  <h3>Can I repeat emojis?</h3>
-  <p>Yes. You can repeat an emoji or a combination of emojis in the same way as ordinary text. Check the final character count if you plan to paste it into a platform with limits.</p>
-  
-  <h3>Is repeating text the same as sending multiple messages?</h3>
-  <p>No. A text repeater creates repeated content for you to copy. It does not automatically send messages to other people.</p>
-  
-  <h2>The Fastest Way to Repeat Text Without Manual Copying</h2>
-  
-  <p>The simplest method is to type once and let the tool handle the repetition. If your goal is to repeat a word 100 times, set an exact count instead of relying on manual copy and paste.</p>
-  
-  <p>Large jobs become even easier. Whether you need 10 copies, 100 copies, or repeat text 1000 times, the same process applies. Choose the text, set the count, select the layout, and copy the output.</p>
-  
-  <p>Finally, keep the result appropriate for its destination. Use the Word Counter for text length, the <a href="/tools/ai-text-cleaner">AI Text Cleaner</a> when copied text contains unwanted formatting, and the Text Repeater when you need exact duplication without the repetitive work.</p>
+  <p>
+    To repeat a word 100 times, you do not need to copy and paste it manually.
+    Enter the word once in a text repeater, set the count to 100, choose how
+    each copy should be separated, and generate the complete block.
+  </p>
+
+  <p>
+    The same method works for phrases, sentences, numbers, symbols, and emojis.
+    You can also change the count to 10, 500, 1,000, or another value without
+    changing the basic process.
+  </p>
 
 
+  <section>
+    <h2 id="quick-answer">Repeat a Word 100 Times: Quick Answer</h2>
+
+    <ol>
+      <li>
+        Open the
+        <a href="/tools/text-repeater">CountFlows Text Repeater</a>.
+      </li>
+      <li>Enter the word, phrase, or emoji you want to duplicate.</li>
+      <li>Set the repetition count to <strong>100</strong>.</li>
+      <li>Choose a separator such as a space, new line, comma, or none.</li>
+      <li>Generate the output.</li>
+      <li>Check the first and last few repetitions.</li>
+      <li>Copy the complete result.</li>
+    </ol>
+
+    <p>
+      For example, repeating <strong>Hi</strong> five times with spaces gives:
+    </p>
+
+    <p>
+      <code>Hi Hi Hi Hi Hi</code>
+    </p>
+
+    <p>
+      Set the same input to 100 and the tool generates all 100 copies at once.
+    </p>
+  </section>
 
 
+  <section>
+    <h2 id="table-of-contents">Table of Contents</h2>
 
-`
+    <ul>
+      <li><a href="#quick-answer">Quick answer</a></li>
+      <li><a href="#why-use-repeater">Why use a text repeater?</a></li>
+      <li><a href="#separator">How to choose a separator</a></li>
+      <li><a href="#output-size">How large will the output be?</a></li>
+      <li><a href="#repeat-1000">How to repeat text 1,000 times</a></li>
+      <li><a href="#sentences-emojis">Sentences, emojis, and symbols</a></li>
+      <li><a href="#practical-uses">Practical uses for repeated text</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#checklist">CountFlows repeat-text checklist</a></li>
+    </ul>
+  </section>
+
+
+  <section>
+    <h2 id="why-use-repeater">Why Use a Text Repeater Instead of Copy and Paste?</h2>
+
+    <p>
+      Manual copying works when you need two or three copies. It becomes
+      unreliable when the exact number matters.
+    </p>
+
+    <p>
+      If you press Ctrl+V repeatedly, it is easy to lose count, insert an extra
+      space, skip a line, or accidentally duplicate part of the text twice.
+    </p>
+
+    <p>
+      A repeater separates two decisions:
+    </p>
+
+    <ul>
+      <li><strong>what</strong> should be repeated</li>
+      <li><strong>how many times</strong> it should appear</li>
+    </ul>
+
+    <p>
+      You enter each value once and let the browser generate the final block.
+      This is especially useful when you need 100, 1,000, or more repetitions.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="separator">Choose the Right Separator Before You Generate the Text</h2>
+
+    <p>
+      The repetition count is only half of the job. The separator controls how
+      the finished block looks.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Separator</th>
+          <th>3-Repetition Example</th>
+          <th>Useful For</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Space</td>
+          <td><code>Hi Hi Hi</code></td>
+          <td>Compact phrases and words</td>
+        </tr>
+
+        <tr>
+          <td>New line</td>
+          <td>
+            <code>Hi<br />Hi<br />Hi</code>
+          </td>
+          <td>Lists, testing, and easy visual checking</td>
+        </tr>
+
+        <tr>
+          <td>Comma + space</td>
+          <td><code>Hi, Hi, Hi</code></td>
+          <td>Delimited lists</td>
+        </tr>
+
+        <tr>
+          <td>No separator</td>
+          <td><code>HiHiHi</code></td>
+          <td>Patterns and repeated strings</td>
+        </tr>
+
+        <tr>
+          <td>Custom</td>
+          <td><code>Hi | Hi | Hi</code></td>
+          <td>Custom test data or layouts</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Choose the separator before generating a large result. Fixing the
+      formatting after 1,000 repetitions takes much longer than choosing the
+      correct layout first.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="output-size">How Large Will 100 Repetitions Be?</h2>
+
+    <p>
+      Large repeated blocks can become much bigger than expected. You can
+      estimate the final character count before generating them.
+    </p>
+
+    <p>
+      If:
+    </p>
+
+    <ul>
+      <li><strong>L</strong> = number of characters in your input</li>
+      <li><strong>N</strong> = number of repetitions</li>
+      <li><strong>S</strong> = number of characters in the separator</li>
+    </ul>
+
+    <p>
+      then the approximate output length is:
+    </p>
+
+    <p>
+      <strong>(L × N) + [S × (N - 1)]</strong>
+    </p>
+
+    <h3>Example: Repeat "Hi" 100 times with spaces</h3>
+
+    <p>
+      "Hi" contains 2 characters. A normal space contains 1 character.
+    </p>
+
+    <p>
+      <strong>(2 × 100) + (1 × 99) = 299 characters</strong>
+    </p>
+
+    <p>
+      So 100 copies of "Hi" separated by single spaces contain approximately
+      299 characters.
+    </p>
+
+    <h3>Example: Repeat "Hello" 1,000 times with spaces</h3>
+
+    <p>
+      "Hello" contains 5 characters:
+    </p>
+
+    <p>
+      <strong>(5 × 1,000) + (1 × 999) = 5,999 characters</strong>
+    </p>
+
+    <p>
+      This calculation is useful when the destination has an input or character
+      limit.
+    </p>
+
+    <p>
+      You can also paste the generated result into the
+      <a href="/tools/character-counter">Character Counter</a>
+      when you want an exact count.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="repeat-1000">How to Repeat Text 1,000 Times</h2>
+
+    <p>
+      You do not need a different method for 1,000 repetitions.
+    </p>
+
+    <ol>
+      <li>Enter the text once.</li>
+      <li>Change the repetition count to 1,000.</li>
+      <li>Select the separator.</li>
+      <li>Generate the block.</li>
+      <li>Check its size and formatting before copying it.</li>
+    </ol>
+
+    <p>
+      Larger counts make separator choice more important. One thousand items on
+      separate lines create 1,000 lines, while the same output separated by
+      spaces remains one continuous block.
+    </p>
+
+    <p>
+      If your destination has a character or message-size limit, check the
+      generated length before pasting.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="sentences-emojis">Can You Repeat Sentences, Emojis, or Symbols?</h2>
+
+    <p>
+      Yes. A text repeater treats the complete input as one unit.
+    </p>
+
+    <h3>Sentence example</h3>
+
+    <p>
+      Input:
+    </p>
+
+    <p>
+      <code>Thank you for your help.</code>
+    </p>
+
+    <p>
+      Repeating it three times with line breaks produces:
+    </p>
+
+    <p>
+      <code>
+        Thank you for your help.<br />
+        Thank you for your help.<br />
+        Thank you for your help.
+      </code>
+    </p>
+
+    <h3>Emoji example</h3>
+
+    <p>
+      Input:
+    </p>
+
+    <p><code>❤️</code></p>
+
+    <p>
+      Set the desired count and choose either spaces or no separator depending
+      on the pattern you want.
+    </p>
+
+    <p>
+      The same principle works with numbers, punctuation, symbols, short
+      phrases, and multi-word text.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="practical-uses">What Is Repeated Text Actually Useful For?</h2>
+
+    <p>
+      Repeated text is not limited to playful copy-and-paste messages. It can
+      also be useful for testing and formatting work.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Use Case</th>
+          <th>Example</th>
+          <th>Useful Separator</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>UI testing</td>
+          <td>Fill a text area and see how it wraps or scrolls</td>
+          <td>Space or new line</td>
+        </tr>
+
+        <tr>
+          <td>Input-limit testing</td>
+          <td>Create a long string for a form field</td>
+          <td>No separator</td>
+        </tr>
+
+        <tr>
+          <td>Sample rows</td>
+          <td>Create repeated placeholder values</td>
+          <td>New line</td>
+        </tr>
+
+        <tr>
+          <td>Delimited test data</td>
+          <td>Generate repeated values for simple import testing</td>
+          <td>Comma or custom separator</td>
+        </tr>
+
+        <tr>
+          <td>Formatting experiments</td>
+          <td>Test how repeated labels look in a design</td>
+          <td>Depends on layout</td>
+        </tr>
+
+        <tr>
+          <td>Creative patterns</td>
+          <td>Repeat words, symbols, or emojis</td>
+          <td>Space or none</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Current text-repeater tools across the web similarly emphasize practical
+      uses such as placeholder content, layout testing, text-field testing,
+      repeated strings, and sample data rather than only manual copy-and-paste
+      replacement.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="mistakes">Common Mistakes When Repeating Text</h2>
+
+    <h3>1. Choosing the separator after generating the output</h3>
+
+    <p>
+      Decide whether you want spaces, new lines, commas, or no separator before
+      creating hundreds of copies.
+    </p>
+
+    <h3>2. Generating much more text than you need</h3>
+
+    <p>
+      A short phrase repeated 1,000 or 10,000 times can create a surprisingly
+      large output. Start with the actual quantity you need.
+    </p>
+
+    <h3>3. Forgetting the destination's limits</h3>
+
+    <p>
+      Websites, forms, messaging apps, spreadsheets, and databases may impose
+      their own input or message-size limits.
+    </p>
+
+    <h3>4. Assuming every symbol has one character</h3>
+
+    <p>
+      Visible characters and technical character counts are not always the
+      same. Some emoji and Unicode sequences can contain multiple underlying
+      code points. If an exact limit matters, measure the finished output
+      rather than estimating it visually.
+    </p>
+
+    <h3>5. Sending huge repeated messages unnecessarily</h3>
+
+    <p>
+      Generating repeated content and sending repeated messages are different
+      actions. Keep the final output appropriate for the application and the
+      people receiving it.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="checklist">The CountFlows 4-Point Repeat-Text Check</h2>
+
+    <p>
+      Before copying a large block, check four things:
+    </p>
+
+    <ol>
+      <li>
+        <strong>Input:</strong>
+        Is the word, sentence, or symbol exactly what you want repeated?
+      </li>
+
+      <li>
+        <strong>Count:</strong>
+        Is the repetition number correct?
+      </li>
+
+      <li>
+        <strong>Separator:</strong>
+        Should copies use spaces, new lines, commas, no separator, or a custom
+        string?
+      </li>
+
+      <li>
+        <strong>Destination:</strong>
+        Is the final output small enough and formatted appropriately for where
+        you plan to paste it?
+      </li>
+    </ol>
+
+    <p>
+      Checking those four settings before generation prevents most repeat-text
+      formatting problems.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="bottom-line">Bottom Line</h2>
+
+    <p>
+      The simplest way to duplicate the same word many times is to enter it
+      once, choose an exact repetition count, select a separator, and let a
+      text repeater generate the complete output.
+    </p>
+
+    <p>
+      Use spaces for compact text, new lines for lists, no separator for
+      continuous patterns, and custom separators when you need a specific
+      format.
+    </p>
+
+    <p>
+      If you need 100 or 1,000 copies, use the
+      <a href="/tools/text-repeater">CountFlows Text Repeater</a>
+      instead of manually keeping track of repeated copy-and-paste actions.
+    </p>
+  </section>
+
+</article>
+
+`;
 
 export default textRepeater;
