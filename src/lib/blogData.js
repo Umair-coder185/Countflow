@@ -881,56 +881,93 @@ export const posts = [
     ]
   },
 
-  {
-    id: 13,
-    slug: "how-to-read-faster",
-    title: "How to Read Faster Without Losing Comprehension",
-    description: "Learn proven techniques to read faster without sacrificing comprehension, test your real reading speed, and build a faster reading habit that finally sticks.",
+ {
+  id: 13,
 
-    excerpt: "Most adults read at 200–300 words per minute — these six research-backed techniques push that number up without sacrificing comprehension.",
-    image: "/blogs/how-to-read-faster.png",
-    imageAlt: "Techniques for reading faster without losing comprehension",
-    category: "Books & Literature",
-    author: "Umair Tufail",
-    date: "June 22, 2026",
-    readTime: "7 min read",
-    keywords: [
-      "how to read faster",
-      "how to read and comprehend faster",
-      "how to read a book fast",
+  slug: "how-to-read-faster",
 
+  title: "How to Read Faster Without Losing Comprehension",
 
+  description:
+    "Learn how to read faster without losing comprehension using research-backed techniques, a 7-day practice plan, and WPM plus recall tracking.",
 
-      "improve reading comprehension",
-      "reading techniques",
-    ],
-    content: blog13,
-    faqs: [
-      {
-        question: "How to read faster without losing comprehension?",
-        answer: "Preview before you read, cut regressions, read in word groups, and match your pace to how hard the material is. None of these require silencing your inner voice — they work with your reading process instead of against it."
-      },
-      {
-        question: "Is speed reading real, or is it a myth?",
-        answer: "Modest gains are real and well documented — research shows speed improvements of up to 50% with consistent practice. Extreme claims of 1,000+ words per minute with full comprehension don't hold up once researchers test detailed recall rather than general impressions."
-      },
-      {
-        question: "What's a good reading speed in words per minute?",
-        answer: "Most adults silently read non-fiction at around 238 words per minute and fiction at around 260, based on a large multi-study analysis. Anything in the 200–300 range with solid comprehension counts as a strong, sustainable pace."
-      },
-      {
-        question: "Can I read a 300-page book in one day?",
-        answer: "It depends on the book's actual word count and your speed. A 300-page novel runs roughly 75,000–90,000 words; at 260 words per minute, that's around 5 hours of pure reading time, plus breaks."
-      },
-      {
-        question: "Does subvocalizing — hearing the words in your head — actually slow you down?",
-        answer: "It places a rough ceiling on extreme speed, but trying to force it away usually backfires on harder material. The better approach is reducing it naturally through practice, not suppressing it through willpower."
-      }
-    ]
+  excerpt:
+    "Reading faster is not about chasing extreme WPM. Learn how to adjust your pace, practice efficiently, measure comprehension, and improve with research-backed methods.",
 
+  image: "/blogs/how-to-read-faster.png",
 
+  imageAlt:
+    "Research-based techniques for reading faster without losing comprehension",
 
-  },
+  category: "Reading & Writing",
+
+  author: "Umair Tufail",
+
+  date: "June 22, 2026",
+
+  readTime: "11 min read",
+
+  keywords: [
+    "how to read faster",
+    "how to read faster without losing comprehension",
+    "how to read and comprehend faster",
+    "improve reading speed",
+    "reading comprehension",
+    "speed reading techniques"
+  ],
+
+  content: blog13,
+
+  faqs: [
+    {
+      question: "How can I read faster without losing comprehension?",
+      answer:
+        "Measure your current speed and comprehension, choose a pace that matches your reading goal, preview longer texts, reduce unnecessary rereading, build vocabulary and background knowledge, and practice while checking recall. Improvement should be measured using both WPM and comprehension."
+    },
+
+    {
+      question: "What is the average adult reading speed?",
+      answer:
+        "A 2019 meta-analysis of 190 studies involving 18,573 participants estimated average adult English silent reading at about 238 WPM for non-fiction and 260 WPM for fiction. Average oral reading was about 183 WPM."
+    },
+
+    {
+      question: "Is speed reading scientifically proven?",
+      answer:
+        "Research supports modest improvements through practice, but it does not support the idea that most readers can suddenly double or triple their normal reading speed while maintaining the same level of detailed comprehension."
+    },
+
+    {
+      question: "Is 1,000 words per minute possible with full comprehension?",
+      answer:
+        "Research does not support 1,000 WPM as a realistic careful-reading target for most people while maintaining ordinary detailed comprehension. Very high rates usually involve more selective processing or skimming."
+    },
+
+    {
+      question: "Should I stop subvocalizing to read faster?",
+      answer:
+        "Trying to eliminate inner speech completely is not a well-supported shortcut. Language processing contributes to comprehension, especially with difficult material. Focus on overall reading efficiency rather than forcing the inner voice to disappear."
+    },
+
+    {
+      question: "Should I avoid rereading when trying to read faster?",
+      answer:
+        "No. Unnecessary rereading caused by lost attention can slow you down, but deliberate rereading is useful when a sentence is difficult or when important information needs clarification."
+    },
+
+    {
+      question: "How should I measure reading improvement?",
+      answer:
+        "Track both words per minute and comprehension on passages of similar difficulty. A higher WPM score is useful only when your understanding remains adequate for your reading goal."
+    },
+
+    {
+      question: "How quickly can I improve my reading speed?",
+      answer:
+        "There is no reliable universal timeline or percentage. Progress depends on your starting level, language skill, vocabulary, material difficulty, practice, and the level of comprehension you need."
+    }
+  ]
+},
 
   {
     id: 14,
@@ -985,57 +1022,94 @@ export const posts = [
     ]
   },
 
+{
+  id: 15,
 
+  slug: "how-to-check-keyword-density",
 
-  {
-    id: 15,
-    slug: "how-to-check-keyword-density",
-    title: "How to Check Keyword Density of Any Web Page",
-    description: " Want to boost your SEO? Learn to check keyword density in seconds with our free online tool and see real examples of effective fixes!",
-    excerpt: "You've probably already tried counting words by hand and lost track. This guide shows the real formula, a free tool to check any page instantly, and why density is more guardrail than ranking factor.",
-    image: "/blogs/keyword-density-free-check.png",
-    imageAlt: "How to check keyword density on a web page",
-    category: "SEO & Content",
-    author: "Umair Tufail",
-    date: "June 29, 2026",
-    readTime: "10 min read",
-    keywords: [
-      " free keyword density checker",
-      "check keyword density online",
-      "keyword stuffing google",
-      "seo keyword density formula",
-      "keyword prominence vs density",
-      "how to check keyword density",
-      "keyword density tool ai",
-      "google keyword stuffing policy",
-      "word counter ai ",
-      "keyword optimization guide"
-    ],
-    content: blog15,
-    faqs: [
-      {
-        question: "What is a good keyword density percentage?",
-        answer: "Most well-optimized pages land between 0.5% and 2.5%. There's no official number Google enforces, so treat this as a sanity check rather than a target to hit exactly."
-      },
-      {
-        question: "How do I check keyword density without a tool?",
-        answer: "Copy the page text, count the total words with a word counter, search the keyword with Ctrl+F to get the match count, then divide matches by total words and multiply by 100."
-      },
-      {
-        question: "Does Google penalize high keyword density?",
-        answer: "Google penalizes keyword stuffing, which is the behavior, not a specific density percentage. A page can have unnatural repetition at 3% or read perfectly naturally at 4%, depending on how the keyword is used."
-      },
-      {
-        question: "What's the difference between keyword density and keyword stuffing?",
-        answer: "Density is just a measurement. Stuffing happens when you force the keyword into the text repeatedly instead of writing it naturally."
-      },
-      {
-        question: "Should I check density for every page on my site?",
-        answer: "It's most useful on pages targeting a specific keyword where you've already noticed repetitive-sounding sentences. Running it on every page as a routine habit usually isn't worth the time."
-      }
+  title: "How to Check Keyword Density: Formula, Examples & Tool",
 
-    ]
-  },
+  description:
+    "Learn how to check keyword density manually or with a free tool, calculate exact-match frequency, compare phrase-count methods, and spot keyword stuffing.",
+
+  excerpt:
+    "Calculate keyword frequency correctly, understand why tools can show different percentages, and use a practical repetition audit instead of chasing an arbitrary SEO target.",
+
+  image: "/blogs/keyword-density-free-check.png",
+
+  imageAlt:
+    "Keyword density formula and web page content audit example",
+
+  category: "SEO & Content",
+
+  author: "Umair Tufail",
+
+  date: "June 29, 2026",
+
+  readTime: "11 min read",
+
+  keywords: [
+    "how to check keyword density",
+    "keyword density formula",
+    "keyword density checker",
+    "keyword stuffing",
+    "keyword frequency",
+    "web page keyword density"
+  ],
+
+  content: blog15,
+
+  faqs: [
+    {
+      question: "What is keyword density?",
+      answer:
+        "Keyword density measures how frequently a specific word or phrase appears relative to the total number of words in a piece of content. It is a frequency measurement, not a Google quality or ranking score."
+    },
+
+    {
+      question: "How do I calculate keyword density?",
+      answer:
+        "For a basic exact-match calculation, divide the number of times the target term appears by the total word count and multiply by 100. For example, 10 exact matches in 1,000 words equals 1% using the occurrence-based method."
+    },
+
+    {
+      question: "What is a good keyword density percentage for SEO?",
+      answer:
+        "Google does not publish an ideal keyword density percentage. Instead of targeting a fixed number, use the calculation to identify unnatural repetition and make sure every use of the term is useful and natural in context."
+    },
+
+    {
+      question: "Is 2% keyword density good?",
+      answer:
+        "A 2% result is neither automatically good nor bad. The correct interpretation depends on the term, page length, content type, counting method, and whether the repetitions read naturally."
+    },
+
+    {
+      question: "Does Google penalize high keyword density?",
+      answer:
+        "Google's spam policies address keyword stuffing, which is unnatural or manipulative repetition. Google does not publish a percentage at which a page automatically becomes keyword stuffing."
+    },
+
+    {
+      question: "Why do different keyword density tools show different results?",
+      answer:
+        "Tools may count multi-word phrases, plurals, punctuation, headings, variants, and total words differently. For meaningful comparisons, use the same counting method for each page."
+    },
+
+    {
+      question: "Should I use synonyms to lower keyword density?",
+      answer:
+        "Only when the alternative wording sounds natural and keeps the meaning clear. Replacing accurate terminology with awkward synonyms just to change a percentage can make the content worse."
+    },
+
+    {
+      question: "Does keyword density help with AI Overviews or AI Mode?",
+      answer:
+        "Google does not publish a separate density target for AI Overviews or AI Mode. Its current guidance says the same foundational SEO and people-first content practices used for regular Search also apply to AI features."
+    }
+  ]
+},
+
 
 {
     id: 16,
@@ -2378,158 +2452,213 @@ export const posts = [
 },
 
 
+{
+  id: 32,
+
+  slug: "syllable-division-rules",
+
+  title: "Syllable Division Rules: Patterns, Examples & Practice",
+
+  description:
+    "Learn syllable division rules with VCCV, VCV, vowel patterns, consonant + le, word parts, worked examples, exceptions, and a 10-word practice test.",
+
+  excerpt:
+    "Learn how to split longer words using VCCV, VCV, vowel, consonant + le, compound-word, and word-part patterns, with worked examples and practice.",
+
+  category: "Reading & Writing",
+
+  image: "/blogs/syllable-division-rule.png",
+
+  imageAlt:
+    "Syllable division rules showing VCCV, VCV and consonant plus le examples",
+
+  author: "Umair Tufail",
+
+  date: "2026-08-11",
+
+  readTime: "10 min read",
+
+  keywords: [
+    "syllable division rules",
+    "how to divide words into syllables",
+    "VCV syllable division",
+    "VCCV syllable division",
+    "syllable types",
+    "syllable division examples"
+  ],
+
+  content: syllableCounters,
+
+  faqs: [
+    {
+      question: "What are syllable division rules?",
+      answer:
+        "Syllable division rules are patterns used to break longer written words into manageable parts for decoding. Common patterns include VCCV, VCV, VV, consonant plus le, compound words, and meaningful word parts."
+    },
+
+    {
+      question: "How do you divide a word into syllables?",
+      answer:
+        "Find the vowels and consonants, check for vowel teams, digraphs and recognizable word parts, apply the most likely division pattern, read each part, and blend the complete word. If the pronunciation sounds wrong, test another valid pattern."
+    },
+
+    {
+      question: "What is the VCCV syllable division rule?",
+      answer:
+        "When two consonants occur between vowels, a useful first approach is usually to divide between the consonants, as in nap/kin and rab/bit. Digraphs and other spelling units may need to stay together."
+    },
+
+    {
+      question: "What is the VCV syllable division rule?",
+      answer:
+        "With one consonant between vowels, try dividing before the consonant first, as in o/pen. If that does not produce the expected word, try dividing after the consonant, as in cab/in."
+    },
+
+    {
+      question: "What are the six common syllable types?",
+      answer:
+        "The six common types used in structured literacy are closed, open, vowel-consonant-e, vowel team, vowel-r or r-controlled, and consonant-le syllables. Terminology can vary slightly between teaching programs."
+    },
+
+    {
+      question: "Are syllable division rules always correct?",
+      answer:
+        "No. They are decoding guides rather than absolute laws. English pronunciation, stress, word history, spelling patterns and morphology can create exceptions, so difficult words may need to be checked in a reliable dictionary."
+    },
+
+    {
+      question: "Are syllable division and syllable types the same thing?",
+      answer:
+        "No. Division patterns help determine where a longer word may be broken for decoding. Syllable types describe spelling patterns within those parts and can help predict vowel pronunciation."
+    },
+
+    {
+      question: "Can dictionary word breaks differ from syllable division?",
+      answer:
+        "Yes. Spoken syllables, instructional decoding divisions and dictionary or line-break conventions can differ. Check what type of division a dictionary or teaching resource is displaying."
+    }
+  ]
+},
+
+
+
+
+
+
 
 {
-    id: 32,
-    slug: "syllable-division-rules",
-    title: "Syllable Division Rules: How to Split Words Into Syllables",
-    description: "Master easy syllable division rules to break down long words! Improve your reading, spelling, and writing skills with fun tips and tricks.",
-    excerpt: "Learn how to divide words into syllables using VC/CV, V/CV, VC/V, V/V, prefixes, suffixes, compound words, and consonant plus le patterns.",
-    category: "Reading & Writing",
-    image: "/blogs/syllable-division-rule.png",
-    imageAlt: "Syllable division rules and word-splitting guide",
-    author: "Umair Tufail",
-    date: "2026-08-11",
-    readTime: "8 min read",
-    keywords: [
-      "syllable division rules",
-      "how to split words into syllables",
-      "syllable types",
-      "syllable division chart",
-      "word syllable counter",
-      "reading and pronunciation"
-    ],
-    content: syllableCounters,
-    faqs: [
-      {
-        question: "What are syllable division rules?",
-        answer: "Syllable division rules help you divide a word into its smaller sound units. Common patterns include VC/CV, V/CV, VC/V, V/V, prefixes, suffixes, compound words, and consonant plus le endings."
-      },
-      {
-        question: "How do you divide words into syllables?",
-        answer: "Say the word aloud, listen for the separate vowel sounds, examine the consonants between the vowels, and apply the matching syllable division pattern. Then read the parts together to confirm the pronunciation."
-      },
-      {
-        question: "How do you split words with two consonants in the middle?",
-        answer: "Usually, divide between the two consonants. For example, rabbit becomes rab / bit and napkin becomes nap / kin. Keep digraphs and necessary blends together when they make one sound."
-      },
-      {
-        question: "What is the easiest syllable division rule to learn first?",
-        answer: "VC/CV is usually a good rule to learn first. It appears in common words such as napkin, basket, and rabbit, and often creates a closed syllable with a short vowel sound."
-      },
-      {
-        question: "What are the six syllable types?",
-        answer: "The six common syllable types are closed syllables, open syllables, silent e syllables, vowel team syllables, r-controlled syllables, and consonant plus le syllables."
-      },
-      {
-        question: "Are syllable division rules always correct?",
-        answer: "No. Syllable division rules are useful guides, but English has borrowed words, unusual spellings, pronunciation changes, and exceptions. Always say the word aloud and check a reliable dictionary when necessary."
-      }
-    ]
-  },
+  id: 33,
+
+  slug: "how-many-lines-are-in-a-sonnet",
+
+  title: "How Many Lines Are in a Sonnet? 14-Line Structure Explained",
+
+  description:
+    "A traditional sonnet has 14 lines. Compare Shakespearean, Petrarchan and Spenserian structures, rhyme schemes, meter, syllables, the volta, and how to check your own poem.",
+
+  excerpt:
+    "A traditional sonnet has 14 lines, but line count is only the beginning. Learn how rhyme, meter, structure, and the volta turn those fourteen lines into a sonnet.",
+
+  category: "Reading & Writing",
+
+  image: "/blogs/How-Many-Lines-Are-in-a-Sonnet.png",
+
+  imageAlt:
+    "Fourteen-line sonnet structure with Shakespearean and Petrarchan forms",
+
+  author: "Umair Tufail",
+
+  date: "2026-08-13",
+
+  readTime: "10 min read",
+
+  keywords: [
+    "how many lines are in a sonnet",
+    "14 line poem",
+    "sonnet structure",
+    "Shakespearean sonnet",
+    "Petrarchan sonnet",
+    "sonnet rhyme scheme"
+  ],
+
+  content: sonnet,
+
+  faqs: [
+
+    {
+      question: "How many lines are in a sonnet?",
+      answer:
+        "A traditional sonnet contains 14 lines. Shakespearean, Petrarchan, and Spenserian sonnets all use the fourteen-line framework, although they organize those lines differently."
+    },
+
+    {
+      question: "Is every 14-line poem a sonnet?",
+      answer:
+        "No. Fourteen lines provide the traditional sonnet length, but traditional sonnets also use recognizable structural, thematic, rhythmic, or rhyme conventions. Modern poets may deliberately modify those conventions."
+    },
+
+    {
+      question: "How many lines are in a Shakespearean sonnet?",
+      answer:
+        "A Shakespearean sonnet has 14 lines arranged as three four-line quatrains followed by a two-line rhyming couplet."
+    },
+
+    {
+      question: "How many lines are in a Petrarchan sonnet?",
+      answer:
+        "A Petrarchan sonnet has 14 lines divided into an eight-line octave and a six-line sestet."
+    },
+
+    {
+      question: "What is the Shakespearean sonnet rhyme scheme?",
+      answer:
+        "The traditional Shakespearean rhyme scheme is ABAB CDCD EFEF GG."
+    },
+
+    {
+      question: "What is the Petrarchan sonnet rhyme scheme?",
+      answer:
+        "The octave commonly follows ABBAABBA. The sestet is more flexible and may use patterns such as CDECDE, CDCDCD, or CDEDCE."
+    },
+
+    {
+      question: "How many syllables are in a sonnet?",
+      answer:
+        "There is no universal total. A completely regular 14-line English sonnet with 10 syllables in every line would contain 140 syllables, but real sonnets can use metrical and pronunciation variations."
+    },
+
+    {
+      question: "Are sonnets always written in iambic pentameter?",
+      answer:
+        "Traditional English sonnets are strongly associated with iambic pentameter, but not every sonnet tradition or modern sonnet follows it strictly."
+    },
+
+    {
+      question: "Is 10 syllables the same as iambic pentameter?",
+      answer:
+        "No. Ten syllables describes quantity. Iambic pentameter also requires a rhythmic pattern built around five metrical feet, so a ten-syllable line can still fail to sound iambic."
+    },
+
+    {
+      question: "What is the volta in a sonnet?",
+      answer:
+        "The volta is the poem's turn, where its argument, emotion, perspective, or interpretation changes. In a Petrarchan sonnet it is commonly associated with the transition from octave to sestet."
+    },
+
+    {
+      question: "Can a sonnet have more than 14 lines?",
+      answer:
+        "Traditional sonnets contain 14 lines, but poets have created variations such as stretched sonnets that deliberately extend the form. These are modifications of the traditional sonnet rather than the standard structure."
+    }
+
+  ]
+},
 
 
 
 
 
 
-
-
-
-
-
-
-
-  {
-    id: 33,
-    slug: "how-many-lines-are-in-a-sonnet",
-    title: "How Many Lines Are in a Sonnet? 14-Line Poem Structure Explained",
-    description:
-      "Learn how many lines are in a sonnet and understand the structure, rhyme schemes, stanzas, syllables, meter, and volta of Shakespearean, Petrarchan, and Spenserian sonnets.",
-    excerpt:
-      "A traditional sonnet contains 14 lines, but its structure also depends on rhyme, meter, stanzas, and the volta. Explore Shakespearean, Petrarchan, and Spenserian sonnet forms.",
-    category: "Reading & Writing",
-    image: "/blogs/How-Many-Lines-Are-in-a-Sonnet.png",
-    imageAlt:"How many lines are in a sonnet?",
-    author: "Umair Tufail",
-    date: "2026-08-13",
-    readTime: "10 min read",
-    keywords: [
-      "how many lines are in a sonnet",
-      "14 line poem",
-      "sonnet structure",
-      "Shakespearean sonnet",
-      "Petrarchan sonnet",
-      "Spenserian sonnet",
-      "sonnet rhyme scheme",
-      "iambic pentameter",
-      "volta in a sonnet",
-      "how to write a sonnet"
-    ],
-    content: sonnet,
-    faqs: [
-      {
-        question: "How many lines are in a sonnet?",
-        answer:
-          "A traditional sonnet contains 14 lines. The most common forms, including Shakespearean, Petrarchan, and Spenserian sonnets, all use fourteen lines."
-      },
-      {
-        question: "What is a poem with 14 lines called?",
-        answer:
-          "A poem with fourteen lines that follows recognizable sonnet conventions is called a sonnet."
-      },
-      {
-        question: "How many lines are in a Shakespearean sonnet?",
-        answer:
-          "A Shakespearean sonnet contains 14 lines arranged as three quatrains followed by a final rhyming couplet."
-      },
-      {
-        question: "How many lines are in a Petrarchan sonnet?",
-        answer:
-          "A Petrarchan sonnet contains 14 lines divided into an eight-line octave and a six-line sestet."
-      },
-      {
-        question: "What is the Shakespearean sonnet rhyme scheme?",
-        answer:
-          "The traditional Shakespearean sonnet rhyme scheme is ABAB CDCD EFEF GG."
-      },
-      {
-        question: "What is the Petrarchan sonnet rhyme scheme?",
-        answer:
-          "The octave of a Petrarchan sonnet commonly follows the ABBAABBA rhyme scheme. The sestet may use patterns such as CDECDE, CDCDCD, or CDEDCE."
-      },
-      {
-        question: "How many stanzas are in a sonnet?",
-        answer:
-          "A Shakespearean sonnet is usually divided into three quatrains and one couplet. A Petrarchan sonnet is divided into an octave and a sestet."
-      },
-      {
-        question: "How many syllables are in a sonnet?",
-        answer:
-          "There is no universal syllable count for every sonnet. A regular English sonnet written in iambic pentameter may have about 10 syllables per line, resulting in approximately 140 syllables across 14 lines."
-      },
-      {
-        question: "Do sonnets have 10 syllables per line?",
-        answer:
-          "Traditional English sonnets commonly use iambic pentameter, which usually produces around 10 syllables per line. However, syllable count and meter can vary."
-      },
-      {
-        question: "What is iambic pentameter?",
-        answer:
-          "Iambic pentameter is a poetic meter made of five iambs. Each iamb usually contains an unstressed syllable followed by a stressed syllable, creating a pattern similar to da-DUM."
-      },
-      {
-        question: "What is the volta in a sonnet?",
-        answer:
-          "The volta is the turning point or shift in a sonnet. It may change the poem's emotion, argument, perspective, tone, or interpretation."
-      },
-      {
-        question: "Are all 14-line poems sonnets?",
-        answer:
-          "No. A poem may contain fourteen lines without being a traditional sonnet. Sonnets usually also follow recognizable patterns of structure, rhyme, meter, or poetic development."
-      }
-    ]
-  },
 
 {
   id: 34,
@@ -2832,56 +2961,96 @@ export const posts = [
 
 
 
-
 {
   id: 38,
+
   slug: "count-words-in-an-essay",
-  title: "7 Smart Rules to Count Words in an Essay Accurately",
-  description: "Count words in an essay accurately, check what counts, and avoid citation mistakes. Follow 7 simple rules before you submit.",
-  excerpt: "Discover the 7 essential rules for counting words in an essay accurately, including citations, references, headings, and avoiding common mistakes.",
-  category: "Writing $ Editing",
+
+  title: "How to Count Words in an Essay: Rules, Citations & Examples",
+
+  description:
+    "Learn how to count words in an essay correctly, including citations, references, headings, footnotes, Word vs Google Docs, and a worked 1,500-word example.",
+
+  excerpt:
+    "Learn what usually counts toward an essay limit, why university rules can differ, how Word and Google Docs count text, and how to verify your final total before submission.",
+
+  category: "Writing & Editing",
+
   image: "/blogs/count-words-in-essay.webp",
-  imageAlt: "Count Words in an Essay Accurately",
+
+  imageAlt:
+    "Essay word count guide showing citations, references and counted sections",
+
   author: "Umair Tufail",
+
   date: "2026-08-20",
-  readTime: "9 min read",
+
+  readTime: "11 min read",
+
   keywords: [
     "count words in an essay",
     "essay word count",
-    "word count rules",
+    "essay word count rules",
     "do citations count in word count",
-    "essay word limit",
+    "does bibliography count in word count",
     "academic word count"
   ],
+
   content: essayWordCount,
+
   faqs: [
     {
-      question: "Do citations count in an essay word count?",
-      answer: "Many institutions count in-text citations but exclude the final references. However, academic policies differ, so follow your assignment or department guidance rather than a universal rule."
+      question: "How do I count words in an essay accurately?",
+      answer:
+        "First check which sections your assignment says are included. Then count only those sections using the required or most appropriate tool, and repeat the check on the final version before submission."
     },
+
+    {
+      question: "Do citations count in an essay word count?",
+      answer:
+        "They often do, particularly in-text citations, but there is no universal academic rule. Some universities include in-text citations while excluding the reference list, so your assignment or institutional policy should decide."
+    },
+
     {
       question: "Does the bibliography count toward the word limit?",
-      answer: "A bibliography or final reference list often sits outside the main limit. Your module instructions can override that convention, so confirm the rule before submitting."
+      answer:
+        "Bibliographies and reference lists are often excluded, but this varies by institution and assessment. Do not exclude them unless your assignment or academic policy allows it."
     },
+
     {
-      question: "Do headings count in an essay?",
-      answer: "Sometimes. Universities and departments handle headings differently, so check the assessment guidance instead of automatically including or excluding them."
+      question: "Do headings count in an essay word count?",
+      answer:
+        "Sometimes. Headings and subheadings are included under some academic policies and excluded or treated differently under others. Check the rules for the specific assessment."
     },
+
     {
       question: "Does Google Docs count footnotes?",
-      answer: "Google Docs says its normal word count excludes headers, footers, and footnotes. Your academic rules may still require footnote content in the official assignment total."
+      answer:
+        "Google's current documentation says its normal document word count excludes headers, footers, and footnotes. Your university may still require footnote text to be included in the assessed word limit."
     },
+
     {
       question: "Can Microsoft Word count only part of an essay?",
-      answer: "Yes. Highlight the section you want to measure, and Word can show the word count for that selection along with the document total."
+      answer:
+        "Yes. Select the text you want to measure and Microsoft Word can show the count for that selection as well as the document total."
     },
+
     {
-      question: "Why is my word count different between tools?",
-      answer: "Programs can treat punctuation, symbols, URLs, hyphenated terms, and document elements differently. For a strict assignment, use the method your instructor or submission system specifies."
+      question: "Why do Word and Google Docs show different word counts?",
+      answer:
+        "Programs can treat document elements differently. Google Docs excludes headers, footers, and footnotes from its normal document count, while Microsoft also notes that Word for the web can omit some document areas. Compare what each tool is actually measuring before changing your essay."
     },
+
     {
-      question: "What is the fastest way to count words in an essay?",
-      answer: "Paste the required essay text into an online word counter for an immediate total. Then compare that number with your assignment rules before treating it as the final submitted count."
+      question: "Can I always go 10% over an essay word limit?",
+      answer:
+        "No. There is no universal 10% allowance. Some institutions provide a tolerance while others enforce the stated maximum or apply their own penalty. Follow the rule for your specific assessment."
+    },
+
+    {
+      question: "Should I use the Word count or an online word counter for submission?",
+      answer:
+        "Use online counters for convenient drafting checks, but for the final submission follow the method specified by your lecturer, module, institution, or submission process."
     }
   ]
 },

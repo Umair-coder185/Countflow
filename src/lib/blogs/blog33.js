@@ -1,344 +1,216 @@
-const sonnet =`
-
+const sonnet = `
 
 <article>
- 
 
-  <p>A traditional sonnet has 14 lines.</p>
+<p>
+  <strong>Quick answer:</strong> a traditional sonnet has
+  <strong>14 lines</strong>. What changes from one sonnet form to another is
+  how those fourteen lines are organized.
+</p>
 
-  <p>That answers the most common question: how many lines are in a sonnet? but the number fourteen only gives you the framework. What makes a sonnet interesting is what the poet does inside those fourteen lines.</p>
+<p>
+  A Shakespearean sonnet usually uses three four-line sections followed by a
+  two-line couplet. A Petrarchan sonnet divides the poem into an eight-line
+  octave and a six-line sestet. A Spenserian sonnet also uses fourteen lines,
+  but links its quatrains through an interlocking rhyme scheme.
+</p>
 
-  <p>A Shakespearean sonnet is a form of poetry where there are three stanzas with four lines each, followed by one stanza with two lines. The Petrarchan sonnet does this in a different fashion, where the poetry is divided into eight and six lines. The factor that distinguishes each sonnet is to as the volta.</p>
+<p>
+  Line count is only the starting point. If you are reading, studying, or
+  writing a sonnet, you also need to look at the poem's
+  <strong>rhyme, meter, turn of thought, and development of its central idea</strong>.
+</p>
 
-  <p>If you are writing your own poem with fourteen lines, the <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a> can check the syllables in each line while you work on rhythm and meter.</p>
+
+<nav aria-label="Table of contents">
 
   <h2>Table of Contents</h2>
 
   <ul>
-    <li><a href="#how-many-lines-sonnet">How Many Lines Are in a Sonnet?</a></li>
-    <li><a href="#14-line-poem-called">What Is a 14-Line Poem Called?</a></li>
-    <li><a href="#what-makes-poem-sonnet">What Makes a Poem a Sonnet?</a></li>
-    <li><a href="#sonnet-structure-glance">Sonnet Structure at a Glance</a></li>
-    <li><a href="#shakespearean-sonnet-structure">Shakespearean Sonnet Structure</a></li>
-    <li><a href="#petrarchan-sonnet-structure">Petrarchan Sonnet Structure</a></li>
-    <li><a href="#spenserian-sonnet-structure">Spenserian Sonnet Structure</a></li>
-    <li><a href="#shakespearean-vs-petrarchan">Shakespearean vs. Petrarchan Sonnets</a></li>
-    <li><a href="#sonnet-rhyme-schemes">Sonnet Rhyme Schemes Explained</a></li>
-    <li><a href="#syllables-sonnet">How Many Syllables Are in a Sonnet?</a></li>
-    <li><a href="#sonnets-10-syllables">Do Sonnets Have 10 Syllables Per Line?</a></li>
-    <li><a href="#iambic-pentameter">What Is Iambic Pentameter?</a></li>
-    <li><a href="#volta-sonnet">What Is the Volta in a Sonnet?</a></li>
-    <li><a href="#sonnet-example">A 14-Line Sonnet Example, Explained</a></li>
-    <li><a href="#stanzas-sonnet">How Many Stanzas Are in a Sonnet?</a></li>
-    <li><a href="#write-sonnet-7-steps">How to Write a Sonnet in 7 Steps</a></li>
-    <li><a href="#check-sonnet-countflows">How to Check a Sonnet With CountFlows</a></li>
-    <li><a href="#common-sonnet-mistakes">Common Sonnet-Writing Mistakes</a></li>
-    <li><a href="#sonnet-checklist">Sonnet Checklist</a></li>
-    <li><a href="#faq">Frequently Asked Questions</a></li>
+    <li><a href="#quick-structure">Sonnet Structure at a Glance</a></li>
+    <li><a href="#fourteen-lines">Why 14 Lines?</a></li>
+    <li><a href="#is-it-sonnet">Is Every 14-Line Poem a Sonnet?</a></li>
+    <li><a href="#forms">Three Major Sonnet Forms Compared</a></li>
+    <li><a href="#shakespearean">Shakespearean Sonnet</a></li>
+    <li><a href="#petrarchan">Petrarchan Sonnet</a></li>
+    <li><a href="#spenserian">Spenserian Sonnet</a></li>
+    <li><a href="#volta">What Is the Volta?</a></li>
+    <li><a href="#syllables">How Many Syllables Are in a Sonnet?</a></li>
+    <li><a href="#meter">Syllables vs Iambic Pentameter</a></li>
+    <li><a href="#line-map">What Should Each Part of a Sonnet Do?</a></li>
+    <li><a href="#diagnostic">Is My 14-Line Poem Actually a Sonnet?</a></li>
+    <li><a href="#write">How to Write One Without Forcing It</a></li>
+    <li><a href="#check">How to Check Your Draft</a></li>
+    <li><a href="#modern">Do Modern Sonnets Have to Follow Every Rule?</a></li>
+    <li><a href="#sources">Sources and Method</a></li>
   </ul>
 
-  <h2 id="how-many-lines-sonnet">How Many Lines Are in a Sonnet?</h2>
+</nav>
 
-  <p>A traditional sonnet contains 14 lines.</p>
 
-  <p>That line count remains consistent across the best-known traditional forms although the way those lines are arranged changes.</p>
+<section id="quick-structure">
+
+  <h2>Sonnet Structure at a Glance</h2>
 
   <table>
     <thead>
       <tr>
-        <th>Sonnet Type</th>
-        <th>Total Lines</th>
+        <th>Form</th>
+        <th>Lines</th>
         <th>Typical Structure</th>
         <th>Common Rhyme Scheme</th>
       </tr>
     </thead>
+
     <tbody>
+
       <tr>
         <td>Shakespearean</td>
         <td>14</td>
-        <td>3 quatrains + couplet</td>
+        <td>4 + 4 + 4 + 2</td>
         <td>ABAB CDCD EFEF GG</td>
       </tr>
+
       <tr>
         <td>Petrarchan</td>
         <td>14</td>
-        <td>Octave + sestet</td>
+        <td>8 + 6</td>
         <td>ABBAABBA + variable sestet</td>
       </tr>
+
       <tr>
         <td>Spenserian</td>
         <td>14</td>
-        <td>3 linked quatrains + couplet</td>
+        <td>4 + 4 + 4 + 2</td>
         <td>ABAB BCBC CDCD EE</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p>
+    If you only need the answer for homework or a quiz, remember:
+  </p>
+
+  <p>
+    <strong>Traditional sonnet = 14 lines.</strong>
+  </p>
+
+</section>
+
+
+<section id="fourteen-lines">
+
+  <h2>Why Does a Sonnet Have 14 Lines?</h2>
+
+  <p>
+    The fourteen-line structure comes from the historical development of the
+    form rather than from a general rule about poetry.
+  </p>
+
+  <p>
+    The sonnet originated in Italy. The word comes from
+    <em>sonetto</em>, meaning a small song or sound. The form later developed
+    into several traditions, particularly the Italian or Petrarchan sonnet and
+    the English or Shakespearean sonnet.
+  </p>
+
+  <p>
+    Poetry Foundation describes the sonnet as a fourteen-line poetic form with
+    a variable rhyme scheme. The Academy of American Poets likewise describes
+    the traditional form as fourteen lines, usually organized through a tight
+    thematic structure.
+  </p>
+
+  <p>
+    What is interesting is not merely that poets accepted a fourteen-line
+    limit. It is what that limit forces them to do.
+  </p>
+
+  <p>
+    There is very little room to wander. A poet usually has to establish an
+    idea, develop it, introduce some kind of change, and reach an ending within
+    a small space.
+  </p>
+
+</section>
+
+
+<section id="is-it-sonnet">
+
+  <h2>Is Every 14-Line Poem a Sonnet?</h2>
+
+  <p>
+    No. Having fourteen lines makes a poem
+    <strong>sonnet-length</strong>, but line count alone does not necessarily
+    make it a traditional sonnet.
+  </p>
+
+  <p>
+    Consider two poems:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Poem A</th>
+        <th>Poem B</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>14 lines</td>
+        <td>14 lines</td>
+      </tr>
+
+      <tr>
+        <td>No planned structure</td>
+        <td>Organized into quatrains and a couplet</td>
+      </tr>
+
+      <tr>
+        <td>No consistent rhyme or meter</td>
+        <td>Uses a recognizable rhyme pattern</td>
+      </tr>
+
+      <tr>
+        <td>Same thought continues throughout</td>
+        <td>Develops an idea and introduces a turn</td>
       </tr>
     </tbody>
   </table>
 
-  <p>The easiest formulas to remember are:</p>
+  <p>
+    Poem B is much closer to a traditional sonnet.
+  </p>
 
-  <p>Shakespearean:</p>
-  <p>4 + 4 + 4 + 2 = 14</p>
+  <p>
+    Modern poetry complicates this distinction because poets deliberately bend
+    established forms. So the better question is not simply:
+  </p>
 
-  <p>Petrarchan:</p>
-  <p>8 + 6 = 14</p>
+  <p>
+    <em>Does this poem have fourteen lines?</em>
+  </p>
 
-  <p>Thus, the response to the question "How many lines does a sonnet have?" is fourteen lines.</p>
+  <p>
+    Ask:
+  </p>
 
-  <p>But there is much more in a well-crafted sonnet than just fourteen vertical sentences.</p>
+  <p>
+    <strong>
+      What sonnet conventions is this poem using, modifying, or deliberately
+      rejecting?
+    </strong>
+  </p>
 
-  <h2 id="14-line-poem-called">What Is a 14-Line Poem Called?</h2>
+</section>
 
-  <p>A 14-line poem that follows sonnet conventions is called a sonnet.</p>
 
-  <p>This means that several common questions have essentially the same answer:</p>
+<section id="forms">
 
-  <p>What poem has 14 lines?</p>
-  <p>A sonnet.</p>
-
-  <p>What is a poem with fourteen lines called?</p>
-  <p>A sonnet.</p>
-
-  <p>What is the name of a 14-line poem?</p>
-  <p>Most likely, a sonnet.</p>
-
-  <p>There is one criterion to keep in mind.</p>
-
-  <p>Not all poems that happen to have fourteen lines necessarily become a sonnet. There are identifiable patterns of structure, rhyme, meter, argument or development in classical sonnets as well.</p>
-
-  <p>Consider fourteen lines as the vessel. Wherein the structure and development happen, there is a sonnet.</p>
-
-  <h2 id="what-makes-poem-sonnet">What Makes a Poem a Sonnet?</h2>
-
-  <p>Traditional sonnets tend to share several characteristics:</p>
-
-  <ul>
-    <li>fourteen lines</li>
-    <li>one focused subject, emotion, argument, or question</li>
-    <li>an organized structure</li>
-    <li>a deliberate rhyme scheme</li>
-    <li>controlled rhythm or meter</li>
-    <li>a change in perspective called the volta</li>
-    <li>a conclusion, response, or new insight</li>
-  </ul>
-
-  <p>These restrictions are not merely decorative rules.</p>
-
-  <p>They force the writer to make decisions.</p>
-
-  <p>A poem might begin with love, loss, time, nature, beauty, or conflict. Instead of describing the same subject for fourteen lines, the writer normally develops the idea until something changes.</p>
-
-  <p>That change gives the poem momentum.</p>
-
-  <p>The result is closer to a compact argument than a collection of unrelated verses.</p>
-
-  <h2 id="sonnet-structure-glance">Sonnet Structure at a Glance</h2>
-
-  <p>The major sonnet forms share a fourteen-line foundation but organize the lines differently.</p>
-
-  <h3 id="shakespearean-sonnet-structure">Shakespearean Form</h3>
-
-  <p>4 + 4 + 4 + 2</p>
-
-  <p>Three quatrains followed by a rhyming couplet.</p>
-
-  <h3 id="petrarchan-form">Petrarchan Form</h3>
-
-  <p>8 + 6</p>
-
-  <p>An octave followed by a sestet.</p>
-
-  <h3 id="spenserian-form">Spenserian Form</h3>
-
-  <p>4 + 4 + 4 + 2</p>
-
-  <p>Undoubtedly, it is a sonnet.</p>
-
-  <p>This is the one thing that we must consider.</p>
-
-  <p>All poems consisting of fourteen lines do not have to be a sonnet. All classical sonnets have a certain pattern of construction, rhyme scheme, meter, or development too.</p>
-
-  <p>Take fourteen lines as a vessel.</p>
-
-  <p>The place where construction and development take place is the sonnet.</p>
-
-  <h2 id="shakespearean-sonnet-structure-main">Shakespearean Sonnet Structure</h2>
-
-  <p>A Shakespearean sonnet, also called an English sonnet, traditionally consists of:</p>
-
-  <ul>
-    <li>first quatrain — 4 lines</li>
-    <li>second quatrain — 4 lines</li>
-    <li>third quatrain — 4 lines</li>
-    <li>final couplet — 2 lines</li>
-  </ul>
-
-  <p>Together:</p>
-
-  <p>4 + 4 + 4 + 2 = 14 lines</p>
-
-  <p>The sections can work almost like stages in a short argument.</p>
-
-  <h3 id="first-quatrain">First Quatrain: Introduce</h3>
-
-  <p>The first four lines establish the subject.</p>
-
-  <p>The poet might present:</p>
-
-  <ul>
-    <li>a question</li>
-    <li>a comparison</li>
-    <li>a conflict</li>
-    <li>an image</li>
-    <li>an emotional situation</li>
-  </ul>
-
-  <h3 id="second-quatrain">Second Quatrain: Develop</h3>
-
-  <p>The next four lines deepen that idea.</p>
-
-  <p>A new example, contrast, consequence, or perspective may appear.</p>
-
-  <h3 id="third-quatrain">Third Quatrain: Complicate</h3>
-
-  <p>Lines nine through twelve often move the thought in another direction or prepare the reader for the conclusion.</p>
-
-  <h3 id="final-couplet">Final Couplet: Resolve or Surprise</h3>
-
-  <p>The final two lines frequently deliver the strongest statement.</p>
-
-  <p>The couplet might:</p>
-
-  <ul>
-    <li>resolve the argument</li>
-    <li>challenge what came before</li>
-    <li>reveal irony</li>
-    <li>summarize an insight</li>
-    <li>introduce an unexpected conclusion</li>
-  </ul>
-
-  <p>This compact ending is one reason the English sonnet remains such a recognizable poetic form.</p>
-
-  <h2 id="shakespearean-rhyme-scheme">Shakespearean Sonnet Rhyme Scheme</h2>
-
-  <p>The traditional Shakespearean sonnet rhyme scheme is:</p>
-
-  <p>ABAB CDCD EFEF GG</p>
-
-  <p>The letters represent end rhymes.</p>
-
-  <p>Lines 1 and 3 rhyme.</p>
-
-  <p>Lines 2 and 4 rhyme.</p>
-
-  <p>Then a new pair of sounds begins in the next quatrain.</p>
-
-  <p>The structure looks like this:</p>
-
-  <pre>A
-B
-A
-B
-C
-D
-C
-D
-E
-F
-E
-F
-G
-G</pre>
-
-  <p>The final GG creates the closing couplet.</p>
-
-  <p>That couplet can sound especially decisive because the rhyme arrives immediately in two consecutive lines.</p>
-
-  <h2 id="petrarchan-sonnet-structure">Petrarchan Sonnet Structure</h2>
-
-  <p>The Petrarchan sonnet, or Italian sonnet, divides its fourteen lines into two larger sections rather than four smaller ones.</p>
-
-  <h3 id="octave">Octave — 8 Lines</h3>
-
-  <p>The octave usually introduces the main idea.</p>
-
-  <p>It might present:</p>
-
-  <ul>
-    <li>a problem</li>
-    <li>a desire</li>
-    <li>a question</li>
-    <li>a conflict</li>
-    <li>an observation</li>
-    <li>a proposition</li>
-  </ul>
-
-  <h3 id="sestet">Sestet — 6 Lines</h3>
-
-  <p>The sestet responds to what the octave established.</p>
-
-  <p>The poet may:</p>
-
-  <ul>
-    <li>reconsider the problem</li>
-    <li>introduce a solution</li>
-    <li>shift perspective</li>
-    <li>contradict the opening</li>
-    <li>reach a realization</li>
-  </ul>
-
-  <p>The basic structure is therefore:</p>
-
-  <p>8 + 6 = 14 lines</p>
-
-  <p>This creates a natural turning point between the two sections.</p>
-
-  <h2 id="petrarchan-rhyme-scheme">Petrarchan Sonnet Rhyme Scheme</h2>
-
-  <p>A traditional Petrarchan octave commonly follows:</p>
-
-  <p>ABBAABBA</p>
-
-  <p>The final six lines are more flexible.</p>
-
-  <p>Possible sestet patterns include:</p>
-
-  <ul>
-    <li>CDECDE</li>
-    <li>CDCDCD</li>
-    <li>CDEDCE</li>
-  </ul>
-
-  <p>The exact pattern can vary, but the octave/sestet division remains central to the form.</p>
-
-  <h2 id="spenserian-sonnet-structure">Spenserian Sonnet Structure</h2>
-
-  <p>In addition, the Spenserian sonnet has fourteen lines.</p>
-
-  <p>The rhyme pattern is as follows:</p>
-
-  <p>ABAB BCBC CDCD EE</p>
-
-  <p>It seems that initially, this kind of sonnet is like the Shakespearean one.</p>
-
-  <p>However, there is a significant difference in the way rhymes are connected across quatrains.</p>
-
-  <p>The B rhyme from the first quatrain continues into the second:</p>
-
-  <p>ABAB → BCBC</p>
-
-  <p>Then the C rhyme continues into the third:</p>
-
-  <p>BCBC → CDCD</p>
-
-  <p>Finally, the poem ends with:</p>
-
-  <p>EE</p>
-
-  <p>This interlocking pattern connects the sections more tightly.</p>
-
-  <h2 id="shakespearean-vs-petrarchan">Shakespearean vs. Petrarchan Sonnets</h2>
-
-  <p>Both forms use fourteen lines, but they organize thought differently.</p>
+  <h2>Shakespearean, Petrarchan, and Spenserian Sonnets Compared</h2>
 
   <table>
     <thead>
@@ -346,650 +218,926 @@ G</pre>
         <th>Feature</th>
         <th>Shakespearean</th>
         <th>Petrarchan</th>
+        <th>Spenserian</th>
       </tr>
     </thead>
+
     <tbody>
+
       <tr>
-        <td>Total lines</td>
+        <td>Lines</td>
+        <td>14</td>
         <td>14</td>
         <td>14</td>
       </tr>
+
       <tr>
-        <td>Structure</td>
+        <td>Main division</td>
         <td>3 quatrains + couplet</td>
         <td>Octave + sestet</td>
+        <td>3 linked quatrains + couplet</td>
       </tr>
+
       <tr>
-        <td>Division</td>
+        <td>Basic formula</td>
         <td>4 + 4 + 4 + 2</td>
         <td>8 + 6</td>
+        <td>4 + 4 + 4 + 2</td>
       </tr>
+
       <tr>
-        <td>Common rhyme</td>
+        <td>Typical rhyme</td>
         <td>ABAB CDCD EFEF GG</td>
         <td>ABBAABBA + variable sestet</td>
+        <td>ABAB BCBC CDCD EE</td>
       </tr>
+
       <tr>
-        <td>Final couplet</td>
+        <td>Closing couplet</td>
         <td>Yes</td>
         <td>Usually no</td>
+        <td>Yes</td>
       </tr>
+
       <tr>
-        <td>Typical turn</td>
-        <td>Around line 9 and/or near ending</td>
-        <td>Often near line 9</td>
+        <td>Typical movement</td>
+        <td>Idea develops through three stages, then closes</td>
+        <td>Opening proposition or problem followed by response</td>
+        <td>Quatrains flow into one another through linked rhymes</td>
       </tr>
-      <tr>
-        <td>Development</td>
-        <td>Multi-stage progression</td>
-        <td>Problem-and-response movement</td>
-      </tr>
+
     </tbody>
   </table>
 
-  <p>Neither is inherently superior.</p>
+</section>
 
-  <p>They simply give poets different ways to control pacing, argument, and emotion.</p>
 
-  <h2 id="sonnet-rhyme-schemes">Sonnet Rhyme Schemes Explained</h2>
+<section id="shakespearean">
 
-  <p>If you only remember three rhyme patterns, remember these:</p>
+  <h2>How Is a Shakespearean Sonnet Structured?</h2>
 
-  <h3 id="rhyme-shakespearean">Shakespearean</h3>
-  <p>ABAB CDCD EFEF GG</p>
-
-  <h3 id="rhyme-petrarchan">Petrarchan</h3>
-  <p>Often:</p>
-  <p>ABBAABBA CDECDE</p>
-
-  <h3 id="rhyme-spenserian">Spenserian</h3>
-  <p>ABAB BCBC CDCD EE</p>
-
-  <h2 id="syllables-sonnet">How Many Syllables Are in a Sonnet?</h2>
-
-  <p>One frequent query concerns the number of syllables in a sonnet.</p>
-
-  <p>In truth, there is no set number of syllables for all sonnets.</p>
-
-  <p>English sonnets can be composed in iambic pentameter, resulting in about 10 syllables per line.</p>
-
-  <p>For a sonnet of 14 lines with precisely 10 syllables in each line:</p>
-
-  <p>14 × 10 = 140 syllables</p>
-
-  <p>This implies a perfectly regular sonnet would have 140 syllables.</p>
-
-  <p>Nevertheless, it does not necessarily follow that every sonnet should be made up of precisely 140 syllables.</p>
-
-  <p>Poets can use:</p>
-
-  <ul>
-    <li>metrical substitutions</li>
-    <li>contractions</li>
-    <li>feminine endings</li>
-    <li>pronunciation variations</li>
-    <li>intentional rhythmic changes</li>
-  </ul>
-
-  <p>Therefore, the more accurate rule is:</p>
-
-  <p>140 syllables is a useful reference for a completely regular 14-line English sonnet, not an absolute requirement for every sonnet.</p>
-
-  <p>If you are checking your own poem, paste it into the <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a> to see the syllable count of each line.</p>
-
-  <p>For a deeper explanation of how English words divide into spoken units, read the <a href="https://countflows.com/blog/syllable-division-rules">syllable division rules guide</a>.</p>
-
-  <h2 id="sonnets-10-syllables">Do Sonnets Have 10 Syllables Per Line?</h2>
-
-  <p>A typical English sonnet usually tries to achieve ten syllables per line due to iambic pentameter.</p>
-
-  <p>However, ten syllables per line will not necessarily imply that it is an iambic line.</p>
-
-  <p>This is very important.</p>
-
-  <p>Syllables indicate the number of speech sounds in a line.</p>
-
-  <p>Meter indicates the stress patterns of those sounds.</p>
-
-  <p>Look at two possible lines of ten syllables each.</p>
-
-  <p>Both can have the same number of syllables, but one will sound more natural than the other.</p>
-
-  <p>That is why good sonnet writing involves two checks:</p>
-
-  <p>First: count the syllables.</p>
-
-  <p>Second: read the line aloud.</p>
-
-  <p>The <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a> can handle the first task. Your ear remains important for the second.</p>
-
-  <h2 id="iambic-pentameter">What Is Iambic Pentameter?</h2>
-
-  <p>Iambic pentameter is the meter most strongly associated with traditional English sonnets.</p>
-
-  <p>An iamb is usually described as two syllables arranged:</p>
-
-  <p>unstressed → stressed</p>
-
-  <p>It can be represented approximately as:</p>
-
-  <p>da-DUM</p>
-
-  <p>Pentameter refers to five metrical feet.</p>
-
-  <p>A regular line therefore resembles:</p>
-
-  <p>da-DUM | da-DUM | da-DUM | da-DUM | da-DUM</p>
-
-  <p>The iambic pentameter has five iambs to produce lines of about ten syllables.</p>
-
-  <p>However, the English language is not always exact mathematically.</p>
-
-  <p>Sometimes poets tend to make slight changes for the lines to sound natural, and not mechanical.</p>
-
-  <p>That is also the reason why counting syllables might be harder than counting vowels in the words.</p>
-
-  <p>If you want to understand why automated systems can struggle with this, read <a href="https://countflows.com/blog/why-ai-chatbots-cant-count-syllables">Why AI Chatbots Can't Reliably Count Syllables</a>.</p>
-
-  <h2 id="volta-sonnet">What Is the Volta in a Sonnet?</h2>
-
-  <p>The volta is the turning point of the poem.</p>
-
-  <p>The word means a turn or shift.</p>
-
-  <p>That change may occur in:</p>
-
-  <ul>
-    <li>emotion</li>
-    <li>argument</li>
-    <li>perspective</li>
-    <li>tone</li>
-    <li>interpretation</li>
-    <li>expectation</li>
-  </ul>
-
-  <p>Imagine a poem beginning with the idea:</p>
-
-  <p>Time destroys everything beautiful.</p>
-
-  <p>The poet develops that thought for several lines.</p>
-
-  <p>Then the poem changes direction:</p>
-
-  <p>But memory or poetry can preserve what physical time destroys.</p>
-
-  <p>The subject has not completely changed.</p>
-
-  <p>The perspective has.</p>
-
-  <p>That is the volta.</p>
-
-  <h3 id="volta-location">Where Does the Volta Occur?</h3>
-
-  <p>In a Petrarchan form, the volta often takes place at the boundary between the octave and the sestet at about line 9.</p>
-
-  <p>In an English sonnet, there can be a significant shift at about line 9, while the last two lines can also offer another turning point.</p>
-
-  <p>The volta must never appear to be a mere switch that is necessary to fulfill the requirements of the form.</p>
-
-  <p>An effective volta should cause the reader to read what came before in a different light.</p>
-
-  <h2 id="sonnet-example">A 14-Line Sonnet Example, Explained</h2>
-
-  <p>Here is an original structure-first example showing how a poem with fourteen lines can develop.</p>
-
-  <ol>
-    <li>The morning opens silver on the sea — A</li>
-    <li>A patient moon retreats before the light — B</li>
-    <li>The waking shore returns its voice to me — A</li>
-    <li>And gulls divide the silence of the night — B</li>
-    <li>I thought that time could wash away the rain — C</li>
-    <li>And leave no mark upon the weathered stone — D</li>
-    <li>Yet every calm remembers former pain — C</li>
-    <li>And every road recalls who walked alone — D</li>
-    <li>But now I see the dark can feed a fire — E</li>
-    <li>A broken day can teach the heart to fly — F</li>
-    <li>What once was loss can sharpen my desire — E</li>
-    <li>To meet the dawn beneath an open sky — F</li>
-    <li>So let the passing hours refuse to stay — G</li>
-    <li>What matters most will not be swept away — G</li>
-  </ol>
-
-  <p>Now examine what is happening.</p>
-
-  <h3 id="example-line-count">Line Count</h3>
-
-  <p>There are exactly:</p>
+  <p>
+    The Shakespearean, or English, sonnet has:
+  </p>
 
   <ul>
     <li>14 lines</li>
+    <li>3 quatrains of 4 lines each</li>
+    <li>1 final couplet of 2 lines</li>
+    <li>a traditional rhyme scheme of ABAB CDCD EFEF GG</li>
+    <li>traditionally, iambic pentameter</li>
   </ul>
 
-  <h3 id="example-rhyme-scheme">Rhyme Scheme</h3>
+  <p>
+    In numbers:
+  </p>
 
-  <p>The ending words follow:</p>
+  <p>
+    <strong>4 + 4 + 4 + 2 = 14</strong>
+  </p>
 
-  <p>ABAB CDCD EFEF GG</p>
 
-  <p>That is the classic Shakespearean pattern.</p>
+  <h3>Lines 1 to 4: establish</h3>
 
-  <h3 id="example-structure">Structure</h3>
+  <p>
+    The first quatrain normally gives the reader something to work with. It may
+    introduce a comparison, question, image, conflict, memory, or argument.
+  </p>
 
-  <p>Lines 1–4 form the first quatrain.</p>
 
-  <p>Lines 5–8 form the second.</p>
+  <h3>Lines 5 to 8: develop</h3>
 
-  <p>Lines 9–12 form the third.</p>
+  <p>
+    The second quatrain does more than repeat the opening. It can add evidence,
+    complicate the original thought, change the image, or push the argument
+    further.
+  </p>
 
-  <p>Lines 13–14 form the final couplet.</p>
 
-  <h3 id="example-volta">Volta</h3>
+  <h3>Lines 9 to 12: shift or deepen</h3>
 
-  <p>The word “But” at the beginning of line 9 signals a clear change.</p>
+  <p>
+    The third quatrain often brings a new pressure into the poem. Something may
+    change in the speaker's understanding, even when the major turn comes
+    later.
+  </p>
 
-  <p>The first eight lines focus on loss and memory.</p>
 
-  <p>From line 9 onward, the speaker begins to see hardship differently.</p>
+  <h3>Lines 13 to 14: make the couplet matter</h3>
 
-  <p>That is a functional volta.</p>
+  <p>
+    The final two lines are not simply a summary box.
+  </p>
 
-  <h3 id="example-meter">Meter</h3>
+  <p>
+    A strong couplet can resolve the argument, expose an irony, overturn an
+    earlier assumption, or leave the reader with a sharper version of the
+    poem's central idea.
+  </p>
 
-  <p>Rhyme and line count alone do not prove that every line follows perfect iambic pentameter.</p>
+</section>
 
-  <p>If you were revising this example into a strict metrical sonnet, the next step would be to run the poem through a <a href="https://countflows.com/tools/syllable-counter">syllable counter</a>, identify long or short lines, and then read each line aloud to refine the stress pattern.</p>
 
-  <p>This is an important distinction because 14 lines + rhyme does not automatically equal perfect meter.</p>
+<section id="petrarchan">
 
-  <h2 id="stanzas-sonnet">How Many Stanzas Are in a Sonnet?</h2>
+  <h2>How Is a Petrarchan Sonnet Structured?</h2>
 
-  <p>The answer depends on the type of sonnet.</p>
+  <p>
+    The Petrarchan, or Italian, sonnet also has fourteen lines, but its internal
+    architecture is different:
+  </p>
 
-  <h3 id="stanzas-shakespearean">Shakespearean Form</h3>
+  <p>
+    <strong>8 + 6 = 14</strong>
+  </p>
 
-  <p>Conventionally organized into:</p>
+  <p>
+    The first eight lines form the <strong>octave</strong>. The final six lines
+    form the <strong>sestet</strong>.
+  </p>
+
+
+  <h3>The octave</h3>
+
+  <p>
+    The octave often establishes a situation such as:
+  </p>
 
   <ul>
-    <li>3 quatrains + 1 couplet</li>
+    <li>a problem;</li>
+    <li>a desire;</li>
+    <li>a contradiction;</li>
+    <li>a question;</li>
+    <li>an emotional conflict;</li>
+    <li>or a proposition.</li>
   </ul>
 
-  <p>A quatrain contains four lines.</p>
+  <p>
+    A common rhyme scheme is:
+  </p>
 
-  <p>A couplet contains two.</p>
+  <p>
+    <strong>ABBAABBA</strong>
+  </p>
 
-  <h3 id="stanzas-petrarchan">Petrarchan Form</h3>
 
-  <p>Organized into:</p>
+  <h3>The sestet</h3>
+
+  <p>
+    The final six lines respond to what came before. The speaker might rethink
+    the problem, offer an answer, accept something, reject an earlier belief,
+    or look at the subject from a new angle.
+  </p>
+
+  <p>
+    Common sestet patterns include:
+  </p>
 
   <ul>
-    <li>1 octave + 1 sestet</li>
+    <li>CDECDE</li>
+    <li>CDCDCD</li>
+    <li>CDEDCE</li>
   </ul>
 
-  <p>The octave contains eight lines.</p>
+  <p>
+    The sestet rhyme is more flexible than the octave.
+  </p>
 
-  <p>The sestet contains six.</p>
+</section>
 
-  <p>Printed poems do not always place blank spaces between these sections, so structural sections can sometimes be a more accurate description than visible stanzas.</p>
 
-  <h2 id="write-sonnet-7-steps">How to Write a Sonnet in 7 Steps</h2>
+<section id="spenserian">
 
-  <h3 id="choose-sonnet-form">1. Choose the Sonnet Form</h3>
+  <h2>What Makes a Spenserian Sonnet Different?</h2>
 
-  <p>Start by deciding whether you want to write a:</p>
+  <p>
+    The Spenserian form resembles the Shakespearean form in its overall
+    division:
+  </p>
 
-  <ul>
-    <li>Shakespearean sonnet</li>
-    <li>Petrarchan sonnet</li>
-    <li>Spenserian sonnet</li>
-    <li>modern variation</li>
-  </ul>
+  <p>
+    <strong>4 + 4 + 4 + 2</strong>
+  </p>
 
-  <p>For beginners, the English form is usually straightforward because the three quatrains provide clear stages for developing an idea.</p>
+  <p>
+    But its rhyme scheme is:
+  </p>
 
-  <h3 id="choose-sonnet-form">2. Choose One Focused Subject</h3>
+  <p>
+    <strong>ABAB BCBC CDCD EE</strong>
+  </p>
 
-  <p>Fourteen lines disappear quickly.</p>
+  <p>
+    The key feature is the way one quatrain passes a rhyme into the next:
+  </p>
 
-  <p>Choose one central subject such as:</p>
+  <p>
+    <strong>ABAB → BCBC → CDCD → EE</strong>
+  </p>
 
-  <ul>
-    <li>love</li>
-    <li>memory</li>
-    <li>time</li>
-    <li>beauty</li>
-    <li>nature</li>
-    <li>loss</li>
-    <li>identity</li>
-    <li>ambition</li>
-    <li>friendship</li>
-    <li>mortality</li>
-  </ul>
+  <p>
+    That interlocking pattern can make the poem feel more continuously woven
+    together than a Shakespearean sonnet, where each quatrain introduces a new
+    rhyme pair.
+  </p>
 
-  <p>Then go one step further.</p>
+</section>
 
-  <p>Do not merely decide what the poem is about.</p>
 
-  <p>Decide what you want to say about it.</p>
+<section id="volta">
 
-  <p>“Time” is a topic.</p>
+  <h2>What Is the Volta in a Sonnet?</h2>
 
-  <p>“Time destroys physical beauty, but memory preserves emotional meaning” is an argument.</p>
+  <p>
+    The <strong>volta</strong> is the turn in the poem: the point where the
+    thought, emotion, argument, or perspective changes.
+  </p>
 
-  <p>The second gives you something to develop.</p>
+  <p>
+    Imagine the first part of a poem arguing:
+  </p>
 
-  <h3 id="plan-14-lines">3. Plan Your 14 Lines</h3>
+  <p>
+    <em>Time destroys everything beautiful.</em>
+  </p>
 
-  <p>For an English sonnet, a useful outline is:</p>
+  <p>
+    Then the poem changes direction:
+  </p>
 
-  <ul>
-    <li>Lines 1–4: introduce the central idea</li>
-    <li>Lines 5–8: complicate or develop it</li>
-    <li>Lines 9–12: introduce a shift or deeper perspective</li>
-    <li>Lines 13–14: conclude or transform the argument</li>
-  </ul>
+  <p>
+    <em>But poetry can preserve what time destroys.</em>
+  </p>
 
-  <p>For a Petrarchan poem:</p>
+  <p>
+    The subject is still time and beauty. What changed is the speaker's
+    understanding of them.
+  </p>
 
-  <ul>
-    <li>Lines 1–8: establish the problem or proposition</li>
-    <li>Lines 9–14: respond to it</li>
-  </ul>
+  <p>
+    That is a volta.
+  </p>
 
-  <p>A small amount of planning prevents the finished poem from becoming fourteen disconnected statements.</p>
+  <p>
+    In a Petrarchan sonnet, the turn is strongly associated with the movement
+    from octave to sestet, around line 9. In English sonnets, an important
+    shift can also occur around line 9, while the final couplet may create an
+    additional turn or conclusion.
+  </p>
 
-  <h3 id="choose-rhyme-scheme">4. Choose the Rhyme Scheme</h3>
+  <p>
+    Poetry Foundation describes the sonnet in terms of this proposition and
+    resolution movement, with the volta separating the two stages.
+  </p>
 
-  <p>If you are writing a Shakespearean form:</p>
+</section>
 
-  <p>ABAB CDCD EFEF GG</p>
 
-  <p>For a traditional Italian-style structure:</p>
+<section id="syllables">
 
-  <p>ABBAABBA followed by an appropriate sestet pattern.</p>
+  <h2>How Many Syllables Are in a Sonnet?</h2>
 
-  <p>Choose rhyme words carefully.</p>
+  <p>
+    There is no universal total number of syllables that every sonnet must
+    contain.
+  </p>
 
-  <p>Do not begin by finding fourteen unrelated words that happen to rhyme.</p>
+  <p>
+    A traditional English sonnet written in regular iambic pentameter often
+    has about ten syllables per line.
+  </p>
 
-  <p>Start with meaning, then revise your line endings.</p>
+  <p>
+    If all fourteen lines contain exactly ten syllables:
+  </p>
 
-  <h3 id="build-volta">5. Build Toward the Volta</h3>
+  <p>
+    <strong>14 × 10 = 140 syllables</strong>
+  </p>
 
-  <p>Ask:</p>
+  <p>
+    So 140 is a useful mathematical reference for a completely regular
+    ten-syllable, fourteen-line poem.
+  </p>
 
-  <p>What changes during my poem?</p>
+  <p>
+    It is not a universal sonnet rule.
+  </p>
 
-  <p>Possible turns include:</p>
+  <p>
+    Historical poems can contain metrical substitutions, contractions,
+    pronunciation differences, and occasional extra syllables.
+  </p>
 
-  <ul>
-    <li>despair → hope</li>
-    <li>certainty → doubt</li>
-    <li>love → disappointment</li>
-    <li>fear → acceptance</li>
-    <li>appearance → reality</li>
-    <li>question → answer</li>
-    <li>memory → realization</li>
-  </ul>
+  <p>
+    If you are checking your own draft, use the
+    <a href="/tools/syllable-counter">CountFlows Syllable Counter</a>
+    to identify lines that deserve closer inspection.
+  </p>
 
-  <p>This change is often what makes the poem memorable.</p>
+</section>
 
-  <h3 id="check-syllables">6. Check Syllables and Meter</h3>
 
-  <p>If you are aiming for a traditional English meter, check every line.</p>
+<section id="meter">
 
-  <p>Suppose your draft produces:</p>
+  <h2>Ten Syllables Is Not the Same Thing as Iambic Pentameter</h2>
+
+  <p>
+    This distinction is easy to miss.
+  </p>
+
+  <p>
+    <strong>Syllable count</strong> tells you roughly how many spoken units are
+    in a line.
+  </p>
+
+  <p>
+    <strong>Meter</strong> tells you how those syllables are rhythmically
+    stressed.
+  </p>
+
+  <p>
+    An iamb normally moves from an unstressed syllable to a stressed one:
+  </p>
+
+  <p>
+    <strong>da-DUM</strong>
+  </p>
+
+  <p>
+    Pentameter means five metrical feet, so a regular iambic line can be
+    represented approximately as:
+  </p>
+
+  <p>
+    <strong>
+      da-DUM | da-DUM | da-DUM | da-DUM | da-DUM
+    </strong>
+  </p>
+
+  <p>
+    Folger Shakespeare Library notes that Shakespeare's sonnets are generally
+    based on iambic pentameter while also showing considerable rhythmic
+    variation inside that pattern.
+  </p>
+
+  <p>
+    This gives you a useful editing rule:
+  </p>
+
+  <p>
+    <strong>Count the syllables, then read the line aloud.</strong>
+  </p>
+
+  <p>
+    A line can contain ten syllables and still sound nothing like convincing
+    iambic pentameter.
+  </p>
+
+</section>
+
+
+<section id="line-map">
+
+  <h2>A Practical 14-Line Map for Writing a Shakespearean Sonnet</h2>
+
+  <p>
+    Instead of beginning with rhyme words, plan what the poem needs to
+    accomplish.
+  </p>
 
   <table>
     <thead>
       <tr>
-        <th>Line</th>
-        <th>Syllables</th>
-        <th>What to Do</th>
+        <th>Lines</th>
+        <th>Structural Job</th>
+        <th>Question to Ask Yourself</th>
       </tr>
     </thead>
+
     <tbody>
+
       <tr>
-        <td>1</td>
-        <td>10</td>
-        <td>Check stress</td>
+        <td>1–2</td>
+        <td>Open the subject</td>
+        <td>What question, image, or tension makes this worth reading?</td>
       </tr>
+
       <tr>
-        <td>2</td>
-        <td>12</td>
-        <td>Consider shortening</td>
+        <td>3–4</td>
+        <td>Complete the opening thought</td>
+        <td>What does the reader need to understand before I move on?</td>
       </tr>
+
       <tr>
-        <td>3</td>
-        <td>10</td>
-        <td>Check stress</td>
+        <td>5–8</td>
+        <td>Develop or complicate</td>
+        <td>What makes the opening idea less simple than it first appeared?</td>
       </tr>
+
       <tr>
-        <td>4</td>
-        <td>9</td>
-        <td>Review pronunciation</td>
+        <td>9–12</td>
+        <td>Turn or deepen</td>
+        <td>What changes in the speaker's understanding?</td>
       </tr>
+
+      <tr>
+        <td>13–14</td>
+        <td>Close with consequence</td>
+        <td>What can I now say that I could not have said in line 1?</td>
+      </tr>
+
     </tbody>
   </table>
 
-  <p>Instead of repeatedly counting by hand, paste the poem into the <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a>.</p>
+  <p>
+    That last question is particularly useful.
+  </p>
 
-  <p>The tool can show you which lines deserve another look.</p>
+  <p>
+    If the final couplet could have appeared at the beginning without changing
+    anything, the poem probably has not developed enough.
+  </p>
 
-  <p>Then read those lines aloud.</p>
+</section>
 
-  <p>Remember:</p>
 
-  <p>10 syllables ≠ automatically perfect iambic pentameter.</p>
+<section id="diagnostic">
 
-  <h3 id="ending-place">7. Make the Ending Earn Its Place</h3>
+  <h2>Is My 14-Line Poem Actually Working as a Sonnet?</h2>
 
-  <p>The final lines should not simply repeat the introduction.</p>
+  <p>
+    Use this diagnostic instead of checking the line count alone.
+  </p>
 
-  <p>A strong ending can:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Check</th>
+        <th>Question</th>
+        <th>If the Answer Is No</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Line count</td>
+        <td>Am I intentionally working with the traditional 14-line frame?</td>
+        <td>Decide whether you are writing a sonnet or a variation on one.</td>
+      </tr>
+
+      <tr>
+        <td>Form</td>
+        <td>Can I identify the structural pattern I am using?</td>
+        <td>Choose Shakespearean, Petrarchan, Spenserian, or a deliberate modern variation.</td>
+      </tr>
+
+      <tr>
+        <td>Development</td>
+        <td>Does the poem move somewhere rather than repeat one idea?</td>
+        <td>Give each section a different job.</td>
+      </tr>
+
+      <tr>
+        <td>Volta</td>
+        <td>Does something meaningful change?</td>
+        <td>Find the moment where the speaker learns, questions, rejects, or reinterprets something.</td>
+      </tr>
+
+      <tr>
+        <td>Rhyme</td>
+        <td>If I am using formal rhyme, does it support the sentence rather than distort it?</td>
+        <td>Rewrite the thought before forcing a rhyme word into place.</td>
+      </tr>
+
+      <tr>
+        <td>Meter</td>
+        <td>If I am aiming for meter, does the line sound natural aloud?</td>
+        <td>Check stress, not just the syllable total.</td>
+      </tr>
+
+      <tr>
+        <td>Ending</td>
+        <td>Does the ending add something the opening did not know?</td>
+        <td>Strengthen the consequence of the volta.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p>
+    A poem does not have to pass every traditional check to have value. The
+    point of this diagnostic is to help you distinguish an intentional
+    variation from an accidental one.
+  </p>
+
+</section>
+
+
+<section id="write">
+
+  <h2>How to Write a Sonnet Without Making It Sound Forced</h2>
+
+
+  <h3>1. Choose the argument before the rhyme</h3>
+
+  <p>
+    "Love," "time," or "nature" is a subject, not yet a poem.
+  </p>
+
+  <p>
+    A more useful starting idea might be:
+  </p>
+
+  <p>
+    <em>
+      Time changes physical things, but memory changes what those losses mean.
+    </em>
+  </p>
+
+  <p>
+    Now you have something that can develop across fourteen lines.
+  </p>
+
+
+  <h3>2. Choose a form that suits the thought</h3>
+
+  <p>
+    If you want several stages followed by a sharp closing statement, a
+    Shakespearean structure may fit naturally.
+  </p>
+
+  <p>
+    If your idea works as problem followed by response, the octave-and-sestet
+    architecture of a Petrarchan sonnet may be more useful.
+  </p>
+
+
+  <h3>3. Plan the volta before polishing line 1</h3>
+
+  <p>
+    Ask yourself what the speaker believes near the beginning and what the
+    speaker understands differently near the end.
+  </p>
+
+  <p>
+    That gives the poem movement before you start worrying about perfect rhyme.
+  </p>
+
+
+  <h3>4. Draft for meaning first</h3>
+
+  <p>
+    Forced rhymes often happen because the writer chooses the rhyme before
+    deciding what the sentence actually needs to say.
+  </p>
+
+  <p>
+    Draft the thought. Then adjust sentence order, vocabulary, and line endings
+    until the rhyme works without sounding imported from another poem.
+  </p>
+
+
+  <h3>5. Check syllables, then stress</h3>
+
+  <p>
+    If you are aiming for traditional English meter, use the
+    <a href="/tools/syllable-counter">Syllable Counter</a>
+    to flag unexpectedly short or long lines.
+  </p>
+
+  <p>
+    Then read those lines aloud.
+  </p>
+
+  <p>
+    The tool can help with quantity. Your ear is still needed for rhythm.
+  </p>
+
+
+  <h3>6. Rewrite the ending separately</h3>
+
+  <p>
+    Give the final couplet or sestet its own editing pass.
+  </p>
+
+  <p>
+    Ask whether it merely restates the poem or whether it changes the reader's
+    understanding of what came before.
+  </p>
+
+</section>
+
+
+<section id="check">
+
+  <h2>A Better Way to Check a Sonnet Draft</h2>
+
+  <p>
+    Do not try to verify everything in one pass.
+  </p>
+
+  <p>
+    Use four separate checks.
+  </p>
+
+  <ol>
+
+    <li>
+      <strong>Structure check:</strong>
+      count the lines and identify the sections.
+    </li>
+
+    <li>
+      <strong>Rhyme check:</strong>
+      label the end sounds A, B, C, and so on.
+    </li>
+
+    <li>
+      <strong>Rhythm check:</strong>
+      inspect syllables, then read the poem aloud for stress.
+    </li>
+
+    <li>
+      <strong>Meaning check:</strong>
+      identify the opening idea, the turn, and what has changed by the end.
+    </li>
+
+  </ol>
+
+  <p>
+    The fourth check is the one mechanical tools cannot fully do for you.
+  </p>
+
+  <p>
+    A poem can contain exactly fourteen lines, follow a perfect rhyme scheme,
+    and hit ten syllables on every line while still having no meaningful
+    development.
+  </p>
+
+  <p>
+    Technical correctness and poetic movement are related, but they are not the
+    same thing.
+  </p>
+
+</section>
+
+
+<section id="modern">
+
+  <h2>Do Modern Sonnets Have to Follow All of These Rules?</h2>
+
+  <p>
+    No.
+  </p>
+
+  <p>
+    Traditional definitions give you a stable baseline: fourteen lines,
+    recognizable structure, meter or rhyme conventions, and some form of
+    turn.
+  </p>
+
+  <p>
+    But poets have been modifying the form for a long time.
+  </p>
+
+  <p>
+    Folger explicitly notes that sonnet writers have been bending and breaking
+    the form for centuries. Poetry Foundation also documents variations such
+    as Spenserian sonnets, sonnet sequences, submerged sonnets, crowns of
+    sonnets, and stretched forms that extend beyond the standard length.
+  </p>
+
+  <p>
+    This creates an important distinction:
+  </p>
+
+  <p>
+    <strong>
+      A traditional sonnet follows recognizable conventions. A modern sonnet
+      may deliberately alter them while remaining in conversation with the
+      form.
+    </strong>
+  </p>
+
+  <p>
+    Breaking a rule intentionally is different from not knowing the rule
+    existed.
+  </p>
+
+</section>
+
+
+<section>
+
+  <h2>Common Mistakes When Learning or Writing Sonnets</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Mistake</th>
+        <th>Better Understanding</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Every 14-line poem is automatically a traditional sonnet</td>
+        <td>Line count is only one feature of the form.</td>
+      </tr>
+
+      <tr>
+        <td>Every sonnet contains exactly 140 syllables</td>
+        <td>140 assumes fourteen lines of exactly ten syllables each.</td>
+      </tr>
+
+      <tr>
+        <td>Ten syllables automatically means iambic pentameter</td>
+        <td>Meter depends on stress as well as syllable quantity.</td>
+      </tr>
+
+      <tr>
+        <td>The volta must always occur in exactly one location</td>
+        <td>Its typical location depends on the form and poem.</td>
+      </tr>
+
+      <tr>
+        <td>A Shakespearean couplet just summarizes the poem</td>
+        <td>It can resolve, reverse, complicate, or sharpen the argument.</td>
+      </tr>
+
+      <tr>
+        <td>The rhyme scheme matters more than meaning</td>
+        <td>Formal accuracy cannot rescue an idea that never develops.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</section>
+
+
+<section>
+
+  <h2>The CountFlows 5-Part Sonnet Check</h2>
+
+  <p>
+    When reviewing a sonnet, use these five questions:
+  </p>
+
+  <ol>
+
+    <li>
+      <strong>Frame:</strong>
+      Does the poem use the intended line structure?
+    </li>
+
+    <li>
+      <strong>Pattern:</strong>
+      Does its rhyme or sectional organization fit the chosen form?
+    </li>
+
+    <li>
+      <strong>Pulse:</strong>
+      Does the intended meter work when the lines are spoken?
+    </li>
+
+    <li>
+      <strong>Turn:</strong>
+      Can you identify what changes in the poem?
+    </li>
+
+    <li>
+      <strong>Payoff:</strong>
+      Does the ending make the journey through those fourteen lines worthwhile?
+    </li>
+
+  </ol>
+
+  <p>
+    This is a practical CountFlows editing framework, not a historical rule of
+    sonnet composition.
+  </p>
+
+</section>
+
+
+<section id="sources">
+
+  <h2>Sources and Method</h2>
+
+  <p>
+    The traditional structures in this guide are based on established poetry
+    references rather than a single modern SEO definition.
+  </p>
 
   <ul>
-    <li>answer the opening question</li>
-    <li>reverse the argument</li>
-    <li>expose an irony</li>
-    <li>introduce a consequence</li>
-    <li>summarize a deeper realization</li>
-    <li>transform the reader's understanding</li>
+
+    <li>
+      <a
+        href="https://www.poetryfoundation.org/education/glossary/sonnet"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Poetry Foundation: Sonnet
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://www.poetryfoundation.org/articles/70051/learning-the-sonnet"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Poetry Foundation: Learning the Sonnet
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://poets.org/glossary/sonnet"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Academy of American Poets: Sonnet
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://www.folger.edu/explore/write-a-sonnet/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Folger Shakespeare Library: Write a Sonnet
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://www.folger.edu/explore/shakespeares-works/shakespeares-sonnets/reading-shakespeares-language-sonnets/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Folger Shakespeare Library: Reading Shakespeare's Sonnets
+      </a>
+    </li>
+
   </ul>
 
-  <p>In a Shakespearean structure, the final couplet is especially valuable because two consecutive rhymes naturally create emphasis.</p>
+</section>
+
+
+<section>
+
+  <h2>Bottom Line</h2>
+
+  <p>
+    A traditional sonnet has <strong>14 lines</strong>.
+  </p>
+
+  <p>
+    For the Shakespearean form, remember:
+  </p>
+
+  <p>
+    <strong>
+      14 lines → 3 quatrains + couplet → ABAB CDCD EFEF GG
+    </strong>
+  </p>
+
+  <p>
+    For the Petrarchan form:
+  </p>
+
+  <p>
+    <strong>
+      14 lines → octave + sestet → ABBAABBA + variable sestet
+    </strong>
+  </p>
+
+  <p>
+    But if you are analyzing or writing a sonnet, do not stop at fourteen.
+    Look for the movement of the poem: how the idea begins, where it turns, and
+    what becomes possible by the final line that was not possible in the first.
+  </p>
+
+  <p>
+    If you are writing your own poem, use the
+    <a href="/tools/syllable-counter">CountFlows Syllable Counter</a>
+    to check line length and the
+    <a href="/blog/stressed-and-unstressed-syllables">
+      stressed and unstressed syllables guide
+    </a>
+    when you need help thinking about rhythm.
+  </p>
+
+</section>
 
-  <p>Use that emphasis for something worth remembering.</p>
-
-  <h2 id="check-sonnet-countflows">How to Check a Sonnet With CountFlows</h2>
-
-  <p>A useful editing process is:</p>
-
-  <h3 id="step-1-paste">Step 1: Paste the Complete Poem</h3>
-
-  <p>Open the <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a> and enter the full draft.</p>
-
-  <h3 id="step-2-review">Step 2: Review Each Line</h3>
-
-  <p>Look for lines that fall above or below your intended syllable target.</p>
-
-  <p>If you are aiming for approximately ten syllables, a line containing twelve or thirteen deserves attention.</p>
-
-  <h3 id="step-3-difficult-words">Step 3: Check Difficult Words</h3>
-
-  <p>English pronunciation can make syllable counting unexpectedly complicated.</p>
-
-  <p>If you are unsure why a word divides in a particular way, see the guide to <a href="https://countflows.com/blog/syllable-division-rules">syllable division rules</a>.</p>
-
-  <h3 id="step-4-read-aloud">Step 4: Read the Corrected Line Aloud</h3>
-
-  <p>Numbers cannot fully judge rhythm.</p>
-
-  <p>Listen for awkward stresses and unnatural phrasing.</p>
-
-  <h3 id="step-5-recheck">Step 5: Recheck After Editing</h3>
-
-  <p>Changing one word can change both syllable count and rhythm.</p>
-
-  <p>Run the revised version again before considering the poem finished.</p>
-
-  <p>This creates a better workflow than relying on guesswork alone.</p>
-
-  <h2 id="common-sonnet-mistakes">Common Sonnet-Writing Mistakes</h2>
-
-  <h3 id="mistake-14-line-traditional">Treating Every 14-Line Poem as Automatically Traditional</h3>
-
-  <p>The fourteen-line framework matters, but recognized sonnet forms also rely on structure and development.</p>
-
-  <h3 id="mistake-140-syllables">Assuming Every Sonnet Contains Exactly 140 Syllables</h3>
-
-  <p>That figure assumes ten syllables in every single line.</p>
-
-  <p>It is a useful mathematical reference, not a universal law.</p>
-
-  <h3 id="mistake-syllable-meter">Confusing Syllable Count With Meter</h3>
-
-  <p>A ten-syllable line can still have awkward stresses.</p>
-
-  <p>Count first. Listen second.</p>
-
-  <h3 id="mistake-forcing-rhymes">Forcing Rhymes</h3>
-
-  <p>A technically correct rhyme scheme is not worth destroying natural language.</p>
-
-  <h3 id="mistake-forgetting-volta">Forgetting the Volta</h3>
-
-  <p>Fourteen lines repeating the same thought often feel flat.</p>
-
-  <p>A meaningful turn gives the poem movement.</p>
-
-  <h3 id="mistake-counting-vowels">Counting Vowels Instead of Spoken Sounds</h3>
-
-  <p>Syllables depend on pronunciation, not simply spelling.</p>
-
-  <h3 id="mistake-final-couplet">Making the Final Couplet a Repetition</h3>
-
-  <p>The ending should develop the poem, not merely summarize the opening.</p>
-
-  <h2 id="sonnet-checklist">Sonnet Checklist</h2>
-
-  <p>Before publishing or submitting your poem, ask:</p>
-
-  <ul>
-    <li>Does the poem contain the intended 14-line structure?</li>
-    <li>Have I chosen a clear sonnet form?</li>
-    <li>Does the rhyme scheme fit that form?</li>
-    <li>Is there one central idea?</li>
-    <li>Does that idea develop?</li>
-    <li>Is there a meaningful volta?</li>
-    <li>Are my syllable counts reasonably consistent?</li>
-    <li>Does the meter sound natural when spoken?</li>
-    <li>Do the rhymes feel unforced?</li>
-    <li>Does the ending add something new?</li>
-  </ul>
-
-  <p>For the mechanical check, use the <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a>.</p>
-
-  <p>For pronunciation questions, consult the <a href="https://countflows.com/blog/syllable-division-rules">syllable division rules</a>.</p>
-
-  <h2 id="faq">Frequently Asked Questions</h2>
-
-  <h3 id="faq-how-many-lines">How many lines are in a sonnet?</h3>
-
-  <p>A traditional sonnet has 14 lines.</p>
-
-  <h3 id="faq-how-many-lines-does">How many lines does a sonnet have?</h3>
-
-  <p>The standard sonnet form contains fourteen lines.</p>
-
-  <h3 id="faq-what-is-14-line">What is a poem with 14 lines called?</h3>
-
-  <p>A fourteen-line poem that follows sonnet conventions is called a sonnet.</p>
-
-  <h3 id="faq-what-is-14-line-fourteen">What is a poem with fourteen lines called?</h3>
-
-  <p>The best-known poem with fourteen lines is the sonnet.</p>
-
-  <h3 id="faq-are-all-14-line">Are all 14-line poems sonnets?</h3>
-
-  <p>Not automatically. Traditional sonnets also follow recognizable structural, rhythmic, rhyming, or argumentative conventions.</p>
-
-  <h3 id="faq-lines-shakespearean">How many lines are in a Shakespearean sonnet?</h3>
-
-  <p>A traditional Shakespearean sonnet contains 14 lines: three four-line quatrains followed by a two-line couplet.</p>
-
-  <h3 id="faq-lines-petrarchan">How many lines are in a Petrarchan sonnet?</h3>
-
-  <p>A Petrarchan sonnet also contains 14 lines, divided into an eight-line octave and a six-line set.</p>
-
-  <h3 id="faq-syllables-sonnet">How many syllables are in a sonnet?</h3>
-
-  <p>A completely regular English sonnet with ten syllables in each of fourteen lines would contain 140 syllables. Actual sonnets may use metrical variations.</p>
-
-  <h3 id="faq-10-syllables-line">Do sonnets have 10 syllables per line?</h3>
-
-  <p>Traditional English sonnets commonly use iambic pentameter, which usually produces approximately 10 syllables per line. This is not universal across every sonnet tradition.</p>
-
-  <h3 id="faq-rhyme-shakespearean">What is the Shakespearean sonnet rhyme scheme?</h3>
-
-  <p>The traditional pattern is:</p>
-
-  <p>ABAB CDCD EFEF GG</p>
-
-  <h3 id="faq-rhyme-petrarchan">What is the Petrarchan sonnet rhyme scheme?</h3>
-
-  <p>The octave commonly follows:</p>
-
-  <p>ABBAABBA</p>
-
-  <p>The sestet can use patterns such as CDECDE or CDCDCD.</p>
-
-  <h3 id="faq-four-line-section">What is a four-line section called?</h3>
-
-  <p>A four-line poetic section is called a quatrain.</p>
-
-  <h3 id="faq-final-two-lines">What are the final two lines of a Shakespearean sonnet called?</h3>
-
-  <p>They form the couplet.</p>
-
-  <h3 id="faq-first-eight-lines">What are the first eight lines of a Petrarchan sonnet called?</h3>
-
-  <p>They form the octave.</p>
-
-  <h3 id="faq-final-six-lines">What are the final six lines called?</h3>
-
-  <p>They form the sestet.</p>
-
-  <h3 id="faq-volta-occur">Where does the volta occur in a sonnet?</h3>
-
-  <p>In a Petrarchan form, it commonly occurs around line 9, where the octave becomes the sestet. In English sonnets, a turn can occur around line 9 or near the final couplet.</p>
-
-  <h3 id="faq-check-syllables">How can I check the syllables in my sonnet?</h3>
-
-  <p>Paste your draft into the <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a>. Review each line's syllable count, then read the poem aloud to judge its stress pattern and rhythm.</p>
-
-  <h2 id="final-thoughts">Final Thoughts</h2>
-
-  <p>So, how many lines are in a sonnet?</p>
-
-  <p>Traditionally, 14.</p>
-
-  <p>But fourteen lines are only the framework.</p>
-
-  <p>A successful sonnet uses that limited space to develop an idea through structure, rhyme, rhythm, and a meaningful turn in thought.</p>
-
-  <p>For the Shakespearean form, remember:</p>
-
-  <p>14 lines → 3 quatrains + couplet → ABAB CDCD EFEF GG</p>
-
-  <p>For the Petrarchan form:</p>
-
-  <p>14 lines → octave + sestet → ABBAABBA + variable sestet</p>
-
-  <p>If you are writing your own 14-line poem, begin with meaning rather than mathematics. Decide what the poem is trying to say, build toward the volta, and then refine the technical details.</p>
-
-  <p>Use the <a href="https://countflows.com/tools/syllable-counter">CountFlows Syllable Counter</a> to check line length, the <a href="https://countflows.com/blog/syllable-division-rules">syllable division rules guide</a> when pronunciation is unclear, and the explanation of <a href="https://countflows.com/blog/why-ai-chatbots-cant-count-syllables">why AI chatbots struggle to count syllables</a> if you want to understand the problem in greater depth.</p>
 </article>
 
-`
+`;
 
 export default sonnet;

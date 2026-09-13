@@ -1,278 +1,1000 @@
 const essayWordCount = `
 
-
-
-
-
 <article>
-  
-  
-  <p>Your essay looks finished but the word count can create one last problem. Microsoft Word, Google Docs and online counters may show slightly different totals, while assignment rules can treat citations, headings, and references differently. That makes a simple number surprisingly easy to get wrong. If you need to count words in an essay accurately, these seven rules will help before you submit.</p>
-  
+
+<p>
+  <strong>Quick answer:</strong> to count words in an essay accurately, first
+  check what your assignment says must be included. Then count only those
+  sections using the same method you expect to rely on at submission.
+  Microsoft Word, Google Docs, and online counters can show different totals
+  because they do not always treat document elements in the same way.
+</p>
+
+<p>
+  The safest rule is simple:
+  <strong>your assignment policy decides what counts; software only measures
+  the text it can see.</strong>
+</p>
+
+<p>
+  If you want a quick independent total while editing, paste the relevant
+  section into the
+  <a href="/tools/word-counter">CountFlows Word Counter</a>.
+  Then compare the result with your course rules before treating it as your
+  official submission total.
+</p>
+
+
+<nav aria-label="Table of contents">
   <h2>Table of Contents</h2>
+
   <ul>
-    <li><a href="#how-to-count-words-in-an-essay-quickly">How to count words in an essay quickly</a></li>
-    <li><a href="#check-the-assignment-rules-first">Check the assignment rules first</a></li>
-    <li><a href="#count-the-essay-body-not-everything-blindly">Count the essay body, not everything blindly</a></li>
-    <li><a href="#know-whether-citations-count">Know whether citations count</a></li>
-    <li><a href="#check-references-and-bibliography-separately">Check references and bibliography separately</a></li>
-    <li><a href="#watch-headings-footnotes-and-quotations">Watch headings, footnotes, and quotations</a></li>
-    <li><a href="#use-one-counter-for-your-final-total">Use one counter for your final total</a></li>
-    <li><a href="#why-word-and-google-docs-can-disagree">Why Word and Google Docs can disagree</a></li>
-    <li><a href="#common-essay-word-count-mistakes">Common mistakes when checking your essay total</a></li>
-    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#quick-method">How to Count an Essay Quickly</a></li>
+    <li><a href="#rule-hierarchy">Which Word-Count Rule Takes Priority?</a></li>
+    <li><a href="#seven-rules">7 Rules for an Accurate Essay Word Count</a></li>
+    <li><a href="#what-counts">What Usually Counts?</a></li>
+    <li><a href="#citations">Do Citations and References Count?</a></li>
+    <li><a href="#tools">Microsoft Word vs Google Docs vs Online Counters</a></li>
+    <li><a href="#worked-example">Worked 1,500-Word Essay Example</a></li>
+    <li><a href="#ten-percent">Is There Always a 10% Allowance?</a></li>
+    <li><a href="#differences">Why Two Counters Can Disagree</a></li>
+    <li><a href="#final-file">Check the File You Will Actually Submit</a></li>
+    <li><a href="#over-limit">What to Do If You Are Over or Under the Limit</a></li>
+    <li><a href="#characters">Words, Characters, and AI Tokens Are Different</a></li>
+    <li><a href="#protocol">CountFlows Final Submission Check</a></li>
+    <li><a href="#sources">Sources and Method</a></li>
   </ul>
-  
-  <h2 id="how-to-count-words-in-an-essay-quickly">How to Count Words in an Essay Quickly</h2>
-  
-  <p>The fastest method is simple: copy your essay, paste it into the CountFlows Word Counter, and check the total. A word counter removes the need to count manually and gives you an immediate number while you edit.</p>
-  
-  <p>However, that number answers only one question: how many words does the text contain? Your university or teacher decides which parts actually belong inside the official essay word count. That distinction matters more than most students realize.</p>
-  
-  <p><strong>Quick rule:</strong> Use a counter to measure the text. Use your assignment instructions to decide what should count.</p>
-  
-  <h2 id="check-the-assignment-rules-first">7 Rules for an Accurate Essay Word Count</h2>
-  
-  <p>Getting the number right isn't only about checking the total in Microsoft Word. You also need to know exactly which text your instructor expects you to include.</p>
-  
-  <p>These seven rules cover the parts that create most confusion, including citations, references, headings, footnotes, quotations, and differences between counting tools.</p>
-  
-  <h3>1. Check Your Word Limit Before You Start Counting</h3>
-  
-  <p>Read the assignment brief before changing a single sentence. A 1,500-word maximum means something different from a 1,500-word target, and you shouldn't assume that an unofficial percentage above the limit is acceptable unless your course guidance says so.</p>
-  
-  <h3>2. Count the Main Essay Body First</h3>
-  
-  <p>Select your introduction, body paragraphs, and final section before checking the count when your document contains extra material. Microsoft Word can calculate the words in a selected text section instead of forcing you to use the total for the entire document.</p>
-  
-  <h3>3. Don't Assume Every Citation Is Excluded</h3>
-  
-  <p>Many academic guidelines include in-text citations in the submitted word total while excluding the final reference list. The University of Southampton, for example, says in-text references normally count while the bibliography normally does not. UWE Bristol gives similar guidance, but your own assignment rules still take priority.</p>
-  
-  <h3>4. Treat the Reference List Separately</h3>
-  
-  <p>Your reference list or bibliography often sits outside the main essay limit, but don't make that decision from a general internet rule. Universities can set different requirements by module, department, or assessment, so check the brief before removing hundreds of reference words from your total.</p>
-  
-  <h3>5. Check Headings, Footnotes, and Tables</h3>
-  
-  <p>These elements cause more confusion because institutions don't treat them consistently. One university may count headings and table text, while another assignment may exclude certain footnotes, appendices, or captions. The University of Huddersfield's thesis rules, for example, include headings and many other textual elements but exclude the bibliography and appendices.</p>
-  
-  <h3>6. Expect Small Differences Between Counters</h3>
-  
-  <p>A term such as evidence-based, a URL, a number, or unusual punctuation can make two programs interpret a word differently. Don't keep switching between counters when you're working against a strict word limit. Pick the counting method required by your instructor and use it for the final check.</p>
-  
-  <h3>7. Check the Final Version, Not an Earlier Draft</h3>
-  
-  <p>Count again after proofreading because every deleted sentence, added citation, rewritten heading, and last-minute correction changes the total. Your draft might sit perfectly at 1,498 words, then quietly cross the limit after you add evidence during the final edit.</p>
-  
-  <h2 id="count-the-essay-body-not-everything-blindly">What Usually Counts Toward an Essay Limit?</h2>
-  
-  <p>Most students ask one question: "Does this part count?" Unfortunately, academic institutions don't follow one universal rule. That is why your course instructions must outrank a generic online answer.</p>
-  
-  <p>Still, the following table gives you a useful starting point. University guidance shows that the main body and quotations commonly count, while reference lists commonly don't, but headings, notes, tables, and other elements can vary.</p>
-  
+</nav>
+
+
+<section id="quick-method">
+
+  <h2>How to Count Words in an Essay Quickly</h2>
+
+  <ol>
+    <li>Open the assignment brief.</li>
+    <li>Find the exact word-limit rule.</li>
+    <li>Identify which sections count and which are excluded.</li>
+    <li>Select or copy only the required text.</li>
+    <li>Check the total in Word, Google Docs, or a word counter.</li>
+    <li>Count again after your final edit.</li>
+  </ol>
+
+  <p>
+    Do not start by asking, "What does Microsoft Word say?"
+  </p>
+
+  <p>
+    Start by asking:
+    <strong>"What does my assessment rule say should be counted?"</strong>
+  </p>
+
+  <p>
+    A document can contain 2,100 words while the official assessed total is
+    1,750 if the policy excludes references, appendices, or other sections.
+    The reverse can also happen if your software leaves out text that the
+    institution expects you to include.
+  </p>
+
+</section>
+
+
+<section id="rule-hierarchy">
+
+  <h2>Which Word-Count Rule Takes Priority?</h2>
+
+  <p>
+    When different sources give you different answers, use this order.
+  </p>
+
   <table>
     <thead>
       <tr>
-        <th>Essay element</th>
-        <th>Common treatment</th>
-        <th>What you should do</th>
+        <th>Priority</th>
+        <th>Source</th>
+        <th>Why It Matters</th>
       </tr>
     </thead>
+
+    <tbody>
+
+      <tr>
+        <td>1</td>
+        <td>Specific assignment brief or rubric</td>
+        <td>It applies directly to the work you are submitting.</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Module or department guidance</td>
+        <td>It may define assessment-specific counting rules.</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>University or institution policy</td>
+        <td>It provides the wider academic rule.</td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>Instructor clarification</td>
+        <td>Useful when the written instructions are genuinely unclear.</td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>Software or online word counter</td>
+        <td>It measures text but does not create your academic policy.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p>
+    This prevents a common mistake: finding a general rule online and using it
+    even though the assignment brief says something different.
+  </p>
+
+</section>
+
+
+<section id="seven-rules">
+
+  <h2>7 Rules for an Accurate Essay Word Count</h2>
+
+
+  <h3>1. Read the wording of the limit carefully</h3>
+
+  <p>
+    A <strong>maximum</strong>, a <strong>target</strong>, and a
+    <strong>range</strong> are not the same instruction.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Instruction</th>
+        <th>How to Read It</th>
+      </tr>
+    </thead>
+
     <tbody>
       <tr>
-        <td>Introduction</td>
-        <td>Usually counts</td>
-        <td>Include it</td>
+        <td>Maximum 2,000 words</td>
+        <td>Do not assume you may exceed 2,000 unless the policy explicitly allows it.</td>
       </tr>
+
       <tr>
-        <td>Body paragraphs</td>
-        <td>Usually count</td>
-        <td>Include them</td>
+        <td>1,800 to 2,000 words</td>
+        <td>Stay inside the stated range.</td>
       </tr>
+
       <tr>
-        <td>Conclusion</td>
-        <td>Usually counts</td>
-        <td>Include it</td>
-      </tr>
-      <tr>
-        <td>Direct quotations</td>
-        <td>Usually count</td>
-        <td>Include unless told otherwise</td>
-      </tr>
-      <tr>
-        <td>In-text citations</td>
-        <td>Often count</td>
-        <td>Check assignment rules</td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td>Varies</td>
-        <td>Check your brief</td>
-      </tr>
-      <tr>
-        <td>Headings</td>
-        <td>Varies</td>
-        <td>Check your brief</td>
-      </tr>
-      <tr>
-        <td>Footnotes</td>
-        <td>Varies considerably</td>
-        <td>Check your referencing rules</td>
-      </tr>
-      <tr>
-        <td>Reference list</td>
-        <td>Often excluded</td>
-        <td>Confirm before removing</td>
-      </tr>
-      <tr>
-        <td>Bibliography</td>
-        <td>Often excluded</td>
-        <td>Confirm before removing</td>
-      </tr>
-      <tr>
-        <td>Tables and captions</td>
-        <td>Varies</td>
-        <td>Follow course guidance</td>
-      </tr>
-      <tr>
-        <td>Appendices</td>
-        <td>Often treated separately</td>
-        <td>Check the assessment rules</td>
+        <td>Approximately 2,000 words</td>
+        <td>Check whether the module defines a permitted tolerance.</td>
       </tr>
     </tbody>
   </table>
-  
-  <p>The key difference is simple: your software shows the document total, while your institution decides which words count toward the assessed limit.Those numbers don't always mean the same thing.</p>
-  
-  <h2 id="know-whether-citations-count">Microsoft Word vs Google Docs Word Count</h2>
-  
-  <p>Microsoft Word updates the count while you type and lets you highlight part of a document to see a count for that selection. That makes selection particularly useful when you need to measure only the essay body and leave the bibliography outside the calculation.</p>
-  
- <p>
-Google Docs also includes a built-in counter under Tools &gt; Word count. Google's documentation notes that the standard total excludes headers, footers, and footnotes, so its result can differ from another counting method.
-</p> 
+
+  <p>
+    Do not invent an allowance simply because another course or university
+    uses one.
+  </p>
+
+
+  <h3>2. Separate the document total from the assessed total</h3>
+
+  <p>
+    Your file may contain a title page, essay body, quotations, citations,
+    references, tables, notes, and appendices.
+  </p>
+
+  <p>
+    The total shown by your editor may include some of those items even when
+    your academic policy excludes them.
+  </p>
+
+  <p>
+    Think of these as two different numbers:
+  </p>
+
+  <ul>
+    <li><strong>Document total:</strong> what the software counts.</li>
+    <li><strong>Assessed total:</strong> what your assignment rules say counts.</li>
+  </ul>
+
+
+  <h3>3. Do not automatically remove citations</h3>
+
+  <p>
+    In-text citations commonly form part of the assessed text at some
+    universities. UWE Bristol, for example, currently states that in-text
+    citations and quotations are included in the assignment word count.
+  </p>
+
+  <p>
+    Southampton also advises that in-text references and citations normally
+    count while the final reference list normally does not.
+  </p>
+
+  <p>
+    These are useful examples, not universal rules. Your own assessment
+    instructions still take priority.
+  </p>
+
+
+  <h3>4. Treat references, footnotes, headings, tables, and appendices separately</h3>
+
+  <p>
+    These are the sections most likely to create confusion because policies
+    vary.
+  </p>
+
+  <p>
+    Do not assume that a bibliography is excluded just because another
+    university excludes it. Likewise, do not automatically count every
+    heading, table caption, note, or appendix.
+  </p>
+
+  <p>
+    Check each category against the actual assessment instructions.
+  </p>
+
+
+  <h3>5. Use the submission environment as your final reference point</h3>
+
+  <p>
+    During drafting, you can use any reliable counter that helps you edit.
+    For the final check, however, it makes sense to use the format and software
+    closest to the method required by the assignment.
+  </p>
+
+  <p>
+    If you must submit a Word document and your course expects a Microsoft Word
+    count, verify the final <em>.docx</em> in Word. If the instructions specify
+    another method, follow that method instead.
+  </p>
+
+
+  <h3>6. Do not panic over a small difference between tools</h3>
+
+  <p>
+    Counting systems can disagree because they may process document elements,
+    punctuation, special formatting, or non-body text differently.
+  </p>
+
+  <p>
+    A difference does not automatically mean one tool is broken. First identify
+    what each program is actually counting.
+  </p>
+
+
+  <h3>7. Recount the final submitted version</h3>
+
+  <p>
+    The count from yesterday's draft is irrelevant if you later added two
+    citations, removed a paragraph, changed a heading, or rewrote the
+    conclusion.
+  </p>
+
+  <p>
+    Run the check again after the final proofread and before uploading the file.
+  </p>
+
+</section>
+
+
+<section id="what-counts">
+
+  <h2>What Usually Counts Toward an Essay Word Limit?</h2>
+
+  <p>
+    There is no universal academic rule covering every institution. The table
+    below is therefore a <strong>starting point, not a policy</strong>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Essay Element</th>
+        <th>Common Treatment</th>
+        <th>Safest Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Introduction</td>
+        <td>Usually included</td>
+        <td>Count it</td>
+      </tr>
+
+      <tr>
+        <td>Main body</td>
+        <td>Usually included</td>
+        <td>Count it</td>
+      </tr>
+
+      <tr>
+        <td>Conclusion</td>
+        <td>Usually included</td>
+        <td>Count it</td>
+      </tr>
+
+      <tr>
+        <td>Direct quotations</td>
+        <td>Commonly included</td>
+        <td>Check course guidance</td>
+      </tr>
+
+      <tr>
+        <td>In-text citations</td>
+        <td>Often included</td>
+        <td>Check course guidance</td>
+      </tr>
+
+      <tr>
+        <td>Title</td>
+        <td>Varies</td>
+        <td>Check the brief</td>
+      </tr>
+
+      <tr>
+        <td>Headings and subheadings</td>
+        <td>Varies</td>
+        <td>Check the brief</td>
+      </tr>
+
+      <tr>
+        <td>Tables</td>
+        <td>Varies</td>
+        <td>Check whether table text is assessed</td>
+      </tr>
+
+      <tr>
+        <td>Figure or table captions</td>
+        <td>Varies</td>
+        <td>Check the policy</td>
+      </tr>
+
+      <tr>
+        <td>Footnotes</td>
+        <td>Varies</td>
+        <td>Check both academic policy and software behavior</td>
+      </tr>
+
+      <tr>
+        <td>Reference list</td>
+        <td>Often excluded</td>
+        <td>Confirm before excluding it</td>
+      </tr>
+
+      <tr>
+        <td>Bibliography</td>
+        <td>Often excluded</td>
+        <td>Confirm before excluding it</td>
+      </tr>
+
+      <tr>
+        <td>Appendices</td>
+        <td>Often treated separately</td>
+        <td>Check the assessment instructions</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</section>
+
+
+<section id="citations">
+
+  <h2>Do Citations Count in an Essay Word Count?</h2>
+
+  <p>
+    They can.
+  </p>
+
+  <p>
+    The phrase "citations don't count" is too broad because several different
+    things may be described as citations.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Example</th>
+        <th>Possible Treatment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>In-text citation</td>
+        <td>(Smith, 2025)</td>
+        <td>Often counted, but verify locally</td>
+      </tr>
+
+      <tr>
+        <td>Narrative citation</td>
+        <td>Smith (2025) argues...</td>
+        <td>Often part of the sentence and count</td>
+      </tr>
+
+      <tr>
+        <td>Direct quotation</td>
+        <td>Quoted text inside the essay</td>
+        <td>Commonly counted</td>
+      </tr>
+
+      <tr>
+        <td>Reference entry</td>
+        <td>Full source in final reference list</td>
+        <td>Often excluded</td>
+      </tr>
+
+      <tr>
+        <td>Reference-only footnote</td>
+        <td>Source information in a footnote</td>
+        <td>Varies by institution</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p>
+    The safest question is therefore not "Do citations count?"
+  </p>
+
+  <p>
+    Ask:
+    <strong>"Which type of citation does my assignment policy include?"</strong>
+  </p>
+
+</section>
+
+
+<section id="tools">
+
+  <h2>Microsoft Word vs Google Docs vs an Online Word Counter</h2>
+
+  <p>
+    All three can be useful, but they are not interchangeable in every
+    situation.
+  </p>
+
   <table>
     <thead>
       <tr>
         <th>Method</th>
-        <th>Fast?</th>
-        <th>Selected text?</th>
-        <th>Best use</th>
+        <th>Useful Feature</th>
+        <th>Important Limitation</th>
       </tr>
     </thead>
+
     <tbody>
+
       <tr>
-        <td>CountFlows Word Counter</td>
-        <td>Yes</td>
-        <td>Paste only what you need</td>
-        <td>Quick independent check</td>
+        <td>Microsoft Word desktop</td>
+        <td>Counts the document and selected text</td>
+        <td>Your university may still exclude parts Word has counted</td>
       </tr>
+
       <tr>
-        <td>Microsoft Word</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Final Word assignments</td>
+        <td>Word for the web</td>
+        <td>Convenient live count</td>
+        <td>Microsoft says its web count can be approximate for some document areas</td>
       </tr>
+
       <tr>
         <td>Google Docs</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Essays written in Docs</td>
+        <td>Document and selected-text counting</td>
+        <td>Normal count excludes headers, footers, and footnotes</td>
       </tr>
+
       <tr>
-        <td>Manual counting</td>
-        <td>No</td>
-        <td>Yes</td>
-        <td>Very short text only</td>
+        <td>CountFlows Word Counter</td>
+        <td>You control exactly what text you paste</td>
+        <td>It cannot know your university's assessment policy</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <h3>Microsoft Word</h3>
+
+  <p>
+    Microsoft Word shows the document count while you type. You can also select
+    one section and see the count for that selection, which is useful when the
+    bibliography should not be included.
+  </p>
+
+  <p>
+    Microsoft also notes an important distinction for Word for the web. Its
+    count can be approximate because some areas, including text boxes, headers,
+    footers, and SmartArt, may not be included. For a strict requirement in a
+    complex Word document, check the desktop file rather than assuming the web
+    count is identical.
+  </p>
+
+
+  <h3>Google Docs</h3>
+
+  <p>
+    In Google Docs, open <strong>Tools &gt; Word count</strong>. You can also
+    select a section first when you only want that portion measured.
+  </p>
+
+  <p>
+    Google's current documentation says that, unless you select a specific
+    section, the normal count applies to the document except for
+    <strong>headers, footers, and footnotes</strong>.
+  </p>
+
+  <p>
+    This creates an important academic distinction. Google Docs may omit
+    footnotes from its displayed total even if your course policy says those
+    footnotes belong inside the assessed limit.
+  </p>
+
+
+  <h3>CountFlows Word Counter</h3>
+
+  <p>
+    A pasted-text counter is useful when you want full control over the
+    material being measured.
+  </p>
+
+  <p>
+    For example, if your instructions say to count the essay body and in-text
+    citations but exclude the reference list, copy exactly those required
+    sections into the
+    <a href="/tools/word-counter">Word Counter</a>.
+  </p>
+
+</section>
+
+
+<section id="worked-example">
+
+  <h2>Worked Example: A 1,500-Word Essay</h2>
+
+  <p>
+    Imagine your final document contains:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Words</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Main essay prose</td>
+        <td>1,420</td>
+      </tr>
+
+      <tr>
+        <td>In-text citations</td>
+        <td>42</td>
+      </tr>
+
+      <tr>
+        <td>Headings</td>
+        <td>18</td>
+      </tr>
+
+      <tr>
+        <td>Reference list</td>
+        <td>310</td>
+      </tr>
+
+      <tr>
+        <td>Appendix</td>
+        <td>180</td>
       </tr>
     </tbody>
   </table>
-  
-  <p>The lesson isn't that one counter is automatically "wrong." Different programs can follow different counting rules. If your lecturer specifically requires a Word document, use the Word total for the final submission.</p>
-  
-  <h2 id="check-references-and-bibliography-separately">How to Count Only the Essay Body</h2>
-  
-  <p>Start by selecting everything from the first sentence of your introduction through the final sentence of your main response. Leave out sections that your instructions explicitly exclude, then check that selection rather than the entire file.</p>
-  
-  <p>Next, run the same text through the online Word calculator when you want a quick second check. If the two numbers differ slightly, inspect unusual elements such as hyphenated words, URLs, symbols, citations, or special formatting before assuming either tool failed.</p>
-  
-  <h2 id="watch-headings-footnotes-and-quotations">What If Your Essay Uses a Character Limit?</h2>
-  
-  <p>Not every assignment asks for words. Application forms, abstracts, personal statements, and short responses can use a character check instead, and spaces may matter.</p>
-  
-  <p>When the instructions specify characters, use the <a href="/tools/character-counter">Character Counter</a> instead of estimating characters from the word total. A 500-word passage can vary considerably in character length because vocabulary and sentence style change the ratio.</p>
-  
-  <h2 id="use-one-counter-for-your-final-total">Common mistakes when checking your essay total</h2>
-  
-  <p>The biggest mistakes rarely come from arithmetic.They happen when students calculate  the wrong section, follow an assumed academic rule, or rely on an outdated draft.</p>
-  
-  <p>Watch for these problems before submitting:</p>
+
+  <p>
+    The complete document contains:
+  </p>
+
+  <p>
+    <strong>1,420 + 42 + 18 + 310 + 180 = 1,970 words</strong>
+  </p>
+
+  <p>
+    But suppose your specific assessment says:
+  </p>
+
   <ul>
-    <li>Counting the bibliography when the brief excludes it</li>
-    <li>Removing in-text citations without checking the rules</li>
-    <li>Assuming every university gives extra room above the stated limit</li>
-    <li>Counting an old draft instead of the submitted version</li>
-    <li>Switching between different counters during the final edit</li>
-    <li>Confusing a word limit with a character limit</li>
-    <li>Forgetting text inside headings, tables, or notes</li>
-    <li>Manually estimating a long essay instead of checking the actual text</li>
+    <li>main prose counts;</li>
+    <li>in-text citations count;</li>
+    <li>headings count;</li>
+    <li>references are excluded;</li>
+    <li>appendices are excluded.</li>
   </ul>
-  
-  <p>Editing can also change more than the total. Run the final draft through the <a href="https://countflows.com/tools/sentence-counter">Sentence Counter</a> if cutting words leaves awkwardly long or fragmented sentences.</p>
-  
-  <h2 id="why-word-and-google-docs-can-disagree">Why the Final Total Should Match Your Submission Method</h2>
-  
-  <p>Imagine your assignment requires a .docx file and the lecturer checks it in Microsoft Word. In that situation, the Word total matters more than the number from another editor because it matches the environment used to review the submission.</p>
-  
-  <p>Meanwhile, an online counter works especially well during drafting.You can paste a section, test a shorter version, compare changes, and check your essay total words without changing the original file.</p>
-  
-  <p>If you want to plan the overall length before editing, <a href="https://countflows.com/blog/manage-essay-word-count">CountFlows Essay Word Counts Guide</a> can help you judge how much space to give each section.</p>
-  
-  <h2 id="common-essay-word-count-mistakes">A Better Way to Work With a Strict Word Limit</h2>
-  
-  <p>Suppose your essay sits at 1,670 words against a 1,500-word maximum. Don't randomly delete 170 words. First find the section that uses too much space, then cut repeated explanations, weak examples, and sentences that restate the same point.</p>
-  
-  <p>Conversely, an essay below the target usually needs more substance rather than longer sentences. Add evidence, interpretation, examples, or a missing counterargument. Then check again instead of guessing how many words you added.</p>
-  
-  <p>For presentations or written material that you also need to read aloud, the Reading Time Calculator can give you a separate time estimate without confusing reading length with the academic word limit.</p>
-  
-  <h2>Final Check Before You Submit</h2>
-  
-  <p>To calculate words in an essay accurately, first decide which parts your assignment requires. Then count only those sections and use the same method for your final check.</p>
-  
-  <p>Your software tells you how much text exists. Your course rules tell you how much of that text actually calculate. Keeping those two ideas separate prevents most word-count mistakes.</p>
-  
-  <p>Finally, check the submitted version one last time after proofreading. A ten-second count is cheaper than discovering after submission that a final citation, heading, or paragraph pushed you past the allowed limit.</p>
-  
-  <h2 id="faqs">Frequently Asked Questions</h2>
-  
-  <h3>Do citations count in an essay word count?</h3>
-  <p>Many institutions count in-text citations but exclude the final references. However, academic policies differ, so follow your assignment or department guidance rather than a universal rule.</p>
-  
-  <h3>Does the bibliography count toward the word limit?</h3>
-  <p>A bibliography or final reference list often sits outside the main limit. Your module instructions can override that convention, so confirm the rule before submitting.</p>
-  
-  <h3>Are headings included in an essay's word limit?</h3>
-  <p>Sometimes. Universities and departments handle headings differently, so check the assessment guidance instead of automatically including or excluding them.</p>
-  
-  <h3>Does Google Docs calculate footnotes?</h3>
-  <p>Google Docs says its normal word calculator excludes headers, footers, and footnotes. Your academic rules may still require footnote content in the official assignment total.</p>
-  
-<h3>Can Microsoft Word check only part of an essay?</h3>
-  <p>Yes. Highlight the section you want to measure, and Word can show the total for that selection along with the document total.</p>
-  
-  <h3>Why is my word counter tool different between tools?</h3>
-  <p>Programs can treat punctuation, symbols, URLs, hyphenated terms, and document elements differently. For a strict assignment, use the method your instructor or submission system specifies.</p>
 
-  <h3>What is the fastest way to check your essay length?</h3>
+  <p>
+    Your assessed total would therefore be:
+  </p>
 
-<p>
-Paste the required essay text into an online tool to see the total number of words instantly. Then compare the result with your assignment's required limit before submitting.
-</p>
+  <p>
+    <strong>1,420 + 42 + 18 = 1,480 words</strong>
+  </p>
+
+  <p>
+    The document is 1,970 words long, but the assessed count is 1,480.
+  </p>
+
+  <p>
+    This example shows why blindly copying the number in your editor's status
+    bar can give you the wrong answer for an assignment.
+  </p>
+
+</section>
+
+
+<section id="ten-percent">
+
+  <h2>Can You Automatically Go 10% Over the Word Limit?</h2>
+
+  <p>
+    No universal rule gives every student an automatic 10% allowance.
+  </p>
+
+  <p>
+    Some courses may provide a tolerance. Others may define the stated maximum
+    as a hard limit or apply a specific penalty when it is exceeded.
+  </p>
+
+  <p>
+    If your assignment says "maximum 2,000 words," do not turn that into
+    "2,200 words is fine" unless your institution explicitly says so.
+  </p>
+
+  <p>
+    The same principle applies to being under the limit. A tolerance used by
+    one university does not become a general academic writing rule.
+  </p>
+
+</section>
+
+
+<section id="differences">
+
+  <h2>Why Can Two Word Counters Show Different Numbers?</h2>
+
+  <p>
+    Different results are possible because programs may not process every
+    document feature in exactly the same way.
+  </p>
+
+  <p>
+    When two totals disagree, investigate in this order:
+  </p>
+
+  <ol>
+    <li>Make sure both tools are measuring the same text.</li>
+    <li>Check whether headers, footers, or footnotes are included.</li>
+    <li>Check tables, text boxes, captions, and other special elements.</li>
+    <li>Make sure one version does not contain an older paragraph or citation.</li>
+    <li>Use the method required by your assessment for the final decision.</li>
+  </ol>
+
+  <p>
+    Do not waste time repeatedly changing your essay until every program shows
+    exactly the same number. The relevant question is whether your final count
+    follows the required academic method.
+  </p>
+
+</section>
+
+
+<section id="final-file">
+
+  <h2>Check the File You Will Actually Submit</h2>
+
+  <p>
+    Modern assignments often move through several formats:
+  </p>
+
+  <p>
+    Google Docs &rarr; Microsoft Word &rarr; PDF &rarr; online submission.
+  </p>
+
+  <p>
+    Do your final check after the document has reached the format you actually
+    intend to submit.
+  </p>
+
+  <p>
+    Open that file and confirm:
+  </p>
+
+  <ul>
+    <li>the correct version was exported;</li>
+    <li>no paragraph disappeared during conversion;</li>
+    <li>tables and footnotes remain where expected;</li>
+    <li>the reference list is complete;</li>
+    <li>the file opens normally;</li>
+    <li>the final assessed total still meets the rule.</li>
+  </ul>
+
+  <p>
+    This catches a different class of mistake from ordinary proofreading:
+    submitting the wrong version of an otherwise correct essay.
+  </p>
+
+</section>
+
+
+<section id="over-limit">
+
+  <h2>What If Your Essay Is Over or Under the Limit?</h2>
+
+
+  <h3>If you are over the maximum</h3>
+
+  <p>
+    Do not delete random adjectives until the number fits.
+  </p>
+
+  <p>
+    Look first for:
+  </p>
+
+  <ul>
+    <li>two sentences making the same point;</li>
+    <li>background information the question did not ask for;</li>
+    <li>examples that repeat an earlier example;</li>
+    <li>long quotations that could be paraphrased appropriately;</li>
+    <li>over-explained transitions;</li>
+    <li>evidence that is introduced but never analyzed.</li>
+  </ul>
+
+  <p>
+    For a structured editing method, see
+    <a href="/blog/manage-essay-word-count">how to manage an essay word count</a>.
+  </p>
+
+
+  <h3>If you are well below the target</h3>
+
+  <p>
+    Do not stretch short sentences into longer ones purely to increase the
+    number.
+  </p>
+
+  <p>
+    Ask whether the essay needs:
+  </p>
+
+  <ul>
+    <li>stronger evidence;</li>
+    <li>deeper analysis;</li>
+    <li>a missing counterargument;</li>
+    <li>better explanation of the connection between evidence and your claim;</li>
+    <li>a more complete response to part of the question.</li>
+  </ul>
+
+  <p>
+    Useful depth is better than filler.
+  </p>
+
+</section>
+
+
+<section id="characters">
+
+  <h2>Words, Characters, and AI Tokens Are Not the Same Measurement</h2>
+
+  <p>
+    In current digital writing workflows, these three measurements are easy to
+    confuse.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Measurement</th>
+        <th>Used For</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Words</td>
+        <td>Essays, reports, dissertations, and many academic assignments</td>
+      </tr>
+
+      <tr>
+        <td>Characters</td>
+        <td>Forms, applications, abstracts, and short-answer limits</td>
+      </tr>
+
+      <tr>
+        <td>AI tokens</td>
+        <td>How many language-model systems process and price text</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p>
+    If your brief gives a character limit, use the
+    <a href="/tools/character-counter">Character Counter</a>.
+    Do not estimate characters from the number of words.
+  </p>
+
+  <p>
+    Likewise, an AI token count is not an academic essay word count. Even if
+    you used an AI tool during an allowed part of your workflow, the assignment
+    limit is still determined by the measurement stated in your academic
+    instructions.
+  </p>
+
+</section>
+
+
+<section id="protocol">
+
+  <h2>The CountFlows Final Submission Check</h2>
+
+  <p>
+    Before you upload the essay, use this five-step check:
+  </p>
+
+  <ol>
+
+    <li>
+      <strong>Rule:</strong>
+      Read the exact word-limit instruction one last time.
+    </li>
+
+    <li>
+      <strong>Scope:</strong>
+      Identify which sections are included and excluded.
+    </li>
+
+    <li>
+      <strong>Count:</strong>
+      Measure the required text using the appropriate software.
+    </li>
+
+    <li>
+      <strong>Compare:</strong>
+      If another counter differs, determine why rather than automatically
+      editing the essay.
+    </li>
+
+    <li>
+      <strong>Verify:</strong>
+      Open the final submission file and check the total again.
+    </li>
+
+  </ol>
+
+  <p>
+    This separates the two questions students often mix together:
+  </p>
+
+  <p>
+    <strong>How many words are in this file?</strong>
+  </p>
+
+  <p>
+    and
+  </p>
+
+  <p>
+    <strong>How many of those words count toward my assignment limit?</strong>
+  </p>
+
+</section>
+
+
+<section id="sources">
+
+  <h2>Sources and Method</h2>
+
+  <p>
+    The software details in this guide are based on current official
+    documentation from Google and Microsoft.
+  </p>
+
+  <ul>
+
+    <li>
+      <a
+        href="https://support.google.com/docs/answer/39003"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Google Docs Editors Help: Count the words in a document
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://support.microsoft.com/en-us/word/training/show-word-count"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Microsoft Support: Show word count
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://www.uwe.ac.uk/study/study-support/study-skills/reading-and-writing/writing/formatting"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        UWE Bristol: Formatting your work
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://www.southampton.ac.uk/englishforengineers/understanding_assessed_tasks/essays/frequently_asked_questions.page"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        University of Southampton: Essay FAQs
+      </a>
+    </li>
+
+  </ul>
+
+  <p>
+    University examples are included to demonstrate how academic policies work,
+    not to create a universal counting rule. Always use the requirements for
+    your own assessment.
+  </p>
+
+</section>
+
+
+<section>
+
+  <h2>Bottom Line</h2>
+
+  <p>
+    Counting an essay accurately is not just a matter of finding the number at
+    the bottom of Microsoft Word.
+  </p>
+
+  <p>
+    First determine what your assignment includes. Then count those sections
+    consistently, understand the limitations of the software you are using,
+    and verify the final file after your last edit.
+  </p>
+
+  <p>
+    If you remember one rule, make it this:
+    <strong>the assignment defines the count; the counter measures it.</strong>
+  </p>
+
+  <p>
+    For a quick independent check, paste the required text into the
+    <a href="/tools/word-counter">CountFlows Word Counter</a>.
+  </p>
+
+</section>
+
 </article>
 
-
-`
+`;
 
 export default essayWordCount;
