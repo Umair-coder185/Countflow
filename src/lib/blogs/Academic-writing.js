@@ -21,9 +21,35 @@ const academicwriting = `
     appropriate tone, and edit a draft before submission.
   </p>
 
+  <div class="toc" id="table-of-contents">
+    <p><strong>In this guide:</strong></p>
+    <ul>
+      <li><a href="#at-a-glance">Academic Writing at a Glance</a></li>
+      <li><a href="#what-is-academic-writing">What Is Academic Writing?</a></li>
+      <li><a href="#four-types">The 4 Main Types of Academic Writing</a></li>
+      <li><a href="#decode-assignment">Decode the Assignment Question Before You Write</a></li>
+      <li><a href="#discipline-differences">Academic Style Changes Across Disciplines</a></li>
+      <li><a href="#strong-paragraph">How to Build a Strong Academic Paragraph</a></li>
+      <li><a href="#weak-vs-strong">Weak Paragraph vs Strong Paragraph</a></li>
+      <li><a href="#citations">What Needs a Citation?</a></li>
+      <li><a href="#academic-voice">Academic Writing Does Not Mean Removing Your Voice</a></li>
+      <li><a href="#structure">Academic Writing Structure</a></li>
+      <li><a href="#seven-step-workflow">A 7-Step Academic Writing Workflow</a></li>
+      <li><a href="#planning-2000-word-essay">Example: Planning a 2,000-Word Essay</a></li>
+      <li><a href="#citation-style">How to Choose a Citation Style</a></li>
+      <li><a href="#weak-sentences-revisions">Weak Academic Sentences and Better Revisions</a></li>
+      <li><a href="#common-mistakes">Common Academic Writing Mistakes</a></li>
+      <li><a href="#five-pass-editing">A Five-Pass Editing Method</a></li>
+      <li><a href="#ai-tools">Using AI Tools in Academic Work</a></li>
+      <li><a href="#academic-vs-creative">Academic Writing vs Creative Writing</a></li>
+      <li><a href="#final-checklist">Final Submission Checklist</a></li>
+      <li><a href="#bottom-line">Bottom Line</a></li>
+    </ul>
+  </div>
+
 
   <section>
-    <h2>Academic Writing at a Glance</h2>
+    <h2 id="at-a-glance">Academic Writing at a Glance</h2>
 
     <table>
       <thead>
@@ -78,7 +104,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>What Is Academic Writing?</h2>
+    <h2 id="what-is-academic-writing">What Is Academic Writing?</h2>
 
     <p>
       Academic writing is the style used to communicate ideas, arguments,
@@ -97,7 +123,7 @@ const academicwriting = `
       The University of Sydney notes that different subjects use different
       structures and conventions. Some disciplines accept first-person
       constructions, while others prefer more impersonal phrasing.
-      <a
+      
         href="https://www.sydney.edu.au/students/study-skills/writing.html"
         target="_blank"
         rel="noopener noreferrer"
@@ -110,7 +136,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>The 4 Main Types of Academic Writing</h2>
+    <h2 id="four-types">The 4 Main Types of Academic Writing</h2>
 
     <p>
       The University of Sydney groups university writing into four broad
@@ -171,7 +197,7 @@ const academicwriting = `
     <p>
       The four-type framework above follows current University of Sydney study
       guidance:
-      <a
+      
         href="https://www.sydney.edu.au/students/study-skills/writing/types-of-academic-writing.html"
         target="_blank"
         rel="noopener noreferrer"
@@ -183,7 +209,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Decode the Assignment Question Before You Write</h2>
+    <h2 id="decode-assignment">Decode the Assignment Question Before You Write</h2>
 
     <p>
       One of the easiest ways to write the wrong paper is to understand the
@@ -259,7 +285,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Academic Style Changes Across Disciplines</h2>
+    <h2 id="discipline-differences">Academic Style Changes Across Disciplines</h2>
 
     <p>
       There is no single writing style that applies identically to every
@@ -316,7 +342,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>How to Build a Strong Academic Paragraph</h2>
+    <h2 id="strong-paragraph">How to Build a Strong Academic Paragraph</h2>
 
     <p>
       A useful paragraph does more than contain several sentences about the
@@ -358,7 +384,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Weak Paragraph vs Strong Paragraph</h2>
+    <h2 id="weak-vs-strong">Weak Paragraph vs Strong Paragraph</h2>
 
     <p>
       Consider a fictional essay about remote work.
@@ -399,7 +425,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>What Needs a Citation?</h2>
+    <h2 id="citations">What Needs a Citation?</h2>
 
     <p>
       Not every sentence needs a reference. The important question is whether
@@ -465,7 +491,7 @@ const academicwriting = `
       The University of Sydney emphasizes that different disciplines rely on
       different forms of evidence and that evidence should directly support the
       claim being made.
-      <a
+      
         href="https://www.sydney.edu.au/students/study-skills/writing/referencing.html"
         target="_blank"
         rel="noopener noreferrer"
@@ -477,7 +503,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Academic Writing Does Not Mean Removing Your Voice</h2>
+    <h2 id="academic-voice">Academic Writing Does Not Mean Removing Your Voice</h2>
 
     <p>
       Advice such as "never use I" is too broad.
@@ -503,7 +529,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Academic Writing Structure</h2>
+    <h2 id="structure">Academic Writing Structure</h2>
 
     <p>
       Essays commonly use an introduction, main body, and conclusion, but
@@ -538,7 +564,7 @@ const academicwriting = `
       The University of Sydney notes that structure can also follow chronology,
       process, problem and solution, argument and counterargument, or other
       patterns depending on the task.
-      <a
+      
         href="https://www.sydney.edu.au/students/study-skills/writing/structuring-writing.html"
         target="_blank"
         rel="noopener noreferrer"
@@ -550,7 +576,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>A 7-Step Academic Writing Workflow</h2>
+    <h2 id="seven-step-workflow">A 7-Step Academic Writing Workflow</h2>
 
     <ol>
       <li>
@@ -597,7 +623,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Example: Planning a 2,000-Word Essay</h2>
+    <h2 id="planning-2000-word-essay">Example: Planning a 2,000-Word Essay</h2>
 
     <p>
       Word allocation should follow the argument, not a fixed universal
@@ -661,7 +687,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>How to Choose a Citation Style</h2>
+    <h2 id="citation-style">How to Choose a Citation Style</h2>
 
     <p>
       Do not choose a citation system simply because you prefer it. Follow the
@@ -701,7 +727,7 @@ const academicwriting = `
     <p>
       These are common associations rather than universal rules. Purdue OWL
       maintains detailed references for APA, MLA, and Chicago:
-      <a
+      
         href="https://owl.purdue.edu/owl"
         target="_blank"
         rel="noopener noreferrer"
@@ -713,7 +739,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Weak Academic Sentences and Better Revisions</h2>
+    <h2 id="weak-sentences-revisions">Weak Academic Sentences and Better Revisions</h2>
 
     <table>
       <thead>
@@ -783,7 +809,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Common Academic Writing Mistakes</h2>
+    <h2 id="common-mistakes">Common Academic Writing Mistakes</h2>
 
     <ul>
       <li>
@@ -832,7 +858,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>A Five-Pass Editing Method</h2>
+    <h2 id="five-pass-editing">A Five-Pass Editing Method</h2>
 
     <p>
       Instead of proofreading everything at once, review the paper five times
@@ -898,7 +924,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Using AI Tools in Academic Work</h2>
+    <h2 id="ai-tools">Using AI Tools in Academic Work</h2>
 
     <p>
       Rules for generative AI differ between universities, courses, journals,
@@ -921,7 +947,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Academic Writing vs Creative Writing</h2>
+    <h2 id="academic-vs-creative">Academic Writing vs Creative Writing</h2>
 
     <table>
       <thead>
@@ -962,7 +988,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Final Submission Checklist</h2>
+    <h2 id="final-checklist">Final Submission Checklist</h2>
 
     <ul>
       <li>Have I answered the actual assignment question?</li>
@@ -982,7 +1008,7 @@ const academicwriting = `
 
 
   <section>
-    <h2>Bottom Line</h2>
+    <h2 id="bottom-line">Bottom Line</h2>
 
     <p>
       Strong academic writing is not about using the longest words or removing

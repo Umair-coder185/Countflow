@@ -6,7 +6,24 @@ const seoContent = `
 
 <p>This guide fixes that. It walks through the full process, from keyword research to on-page SEO, and answers the questions writers are asking in 2026: AI Overviews, E-E-A-T, and whether SEO writing is still worth learning. Short answer: it is, but the rules have changed.</p>
 
-<h2>What Is SEO Content Writing?</h2>
+
+<div class="toc" id="table-of-contents">
+  <p><strong>In this guide:</strong></p>
+  <ul>
+    <li><a href="#what-is-seo-content-writing">What Is SEO Content Writing?</a></li>
+    <li><a href="#ai-search-2026">How AI Search Changed the Rules in 2026</a></li>
+    <li><a href="#keyword-research">Step 1: Keyword Research and Search Intent</a></li>
+    <li><a href="#write-content-google-rewards">Step 2: Write Content Google Actually Rewards</a></li>
+    <li><a href="#on-page-seo">Step 3: On-Page SEO in Ten Minutes</a></li>
+    <li><a href="#how-long-should-seo-content-be">How Long Should SEO Content Be?</a></li>
+    <li><a href="#common-mistakes">Common SEO Writing Mistakes to Avoid</a></li>
+    <li><a href="#trending-questions-2026">Trending Questions Writers Are Asking in 2026</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#bottom-line">The Bottom Line</a></li>
+  </ul>
+</div>
+
+<h2 id="what-is-seo-content-writing">What Is SEO Content Writing?</h2>
 
 <p>SEO content writing is the process of planning, writing, and structuring content so search engines can understand it and searchers find it useful. It rests on three things: a keyword people actually search for, content that satisfies the intent behind that keyword, and a structure that makes the answer easy to find.</p>
 
@@ -46,7 +63,7 @@ const seoContent = `
   </tbody>
 </table>
 
-<h2>How AI Search Changed the Rules in 2026</h2>
+<h2 id="ai-search-2026">How AI Search Changed the Rules in 2026</h2>
 
 <p>Search no longer ends at ten blue links. AI Overviews, ChatGPT, and Perplexity now answer many questions directly, and users often never click through. That shift created two new terms: AEO (answer engine optimization) and GEO (generative engine optimization).</p>
 
@@ -59,7 +76,7 @@ const seoContent = `
   <li>Back claims with named sources, because AI engines favor verifiable pages.</li>
 </ul>
 
-<h2>Step 1: Keyword Research and Search Intent</h2>
+<h2 id="keyword-research">Step 1: Keyword Research and Search Intent</h2>
 
 <p>Every post starts with one primary keyword and a handful of related terms. Before writing a word, search your keyword and study the first page. The results tell you exactly what Google believes searchers want.</p>
 
@@ -99,7 +116,7 @@ const seoContent = `
 
 <p>Writing a beautiful guide for a transactional keyword fails, and so does the reverse. Intent mismatch is the quietest killer of good content.</p>
 
-<h2>Step 2: Write Content Google Actually Rewards</h2>
+<h2 id="write-content-google-rewards">Step 2: Write Content Google Actually Rewards</h2>
 
 <h3>Answer First, Explain Second</h3>
 
@@ -117,7 +134,7 @@ const seoContent = `
 
 <p>Short sentences win. Keep paragraphs between two and four sentences, prefer active voice, and cut every word that does not earn its place. A quick pass through a <a href="/tools/reading-time">Reading Time Calculator</a> shows how long your post takes to read, which helps you spot bloated sections before your readers do.</p>
 
-<h2>Step 3: On-Page SEO in Ten Minutes</h2>
+<h2 id="on-page-seo">Step 3: On-Page SEO in Ten Minutes</h2>
 
 <p>On-page SEO is a checklist, not a mystery. Run it on every post before publishing:</p>
 
@@ -130,7 +147,7 @@ const seoContent = `
   <li>Link to 2 or 3 credible external sources that support your claims.</li>
 </ul>
 
-<h2>How Long Should SEO Content Be?</h2>
+<h2 id="how-long-should-seo-content-be">How Long Should SEO Content Be?</h2>
 
 <p>Long enough to satisfy the intent, and not a paragraph more. For competitive guides and how-tos, 1,500 to 2,500 words is the practical range. For simple questions, 600 words can outrank 3,000.</p>
 
@@ -138,7 +155,7 @@ const seoContent = `
 
 <p>So stop padding. Write the complete answer, check the count, and cut ten percent. For a deeper breakdown by content type, see our guide on <a href="/blog/how-long-should-a-blog-post-be">how long a blog post should be</a>.</p>
 
-<h2>Common SEO Writing Mistakes to Avoid</h2>
+<h2 id="common-mistakes">Common SEO Writing Mistakes to Avoid</h2>
 
 <ul>
   <li><strong>Keyword stuffing.</strong> Forcing the keyword into every paragraph reads as spam to users and to Google. Use it naturally in the title, intro, one heading, and the conclusion, then write like a human.</li>
@@ -148,7 +165,7 @@ const seoContent = `
   <li><strong>Publishing the first draft.</strong> Editing is where average posts become rankable. Read it aloud once; your ear catches what your eye forgives.</li>
 </ul>
 
-<h2>Trending Questions Writers Are Asking in 2026</h2>
+<h2 id="trending-questions-2026">Trending Questions Writers Are Asking in 2026</h2>
 
 <h3>Is SEO dead now that AI answers questions?</h3>
 
@@ -166,7 +183,7 @@ const seoContent = `
 
 <p>Yes, with a condition. Blogs that summarize what everyone already knows are losing clicks to AI answers. Blogs that publish original data, honest reviews, and first-hand experience are gaining, because both readers and AI engines have to come to the source.</p>
 
-<h2>FAQs</h2>
+<h2 id="faqs">FAQs</h2>
 
 <h3>How do I start SEO content writing as a beginner?</h3>
 
@@ -184,7 +201,7 @@ const seoContent = `
 
 <p>SEO writing attracts and informs people who are searching; copywriting persuades people who have arrived. One earns the visit, the other converts it. Strong content teams use both on the same page.</p>
 
-<h2>The Bottom Line</h2>
+<h2 id="bottom-line">The Bottom Line</h2>
 
 <p>SEO content writing in 2026 comes down to one habit: pick a query people search, answer it faster and more completely than anyone else, and prove your claims. Structure the page so both a scanning human and a quoting AI can lift the answer cleanly.</p>
 

@@ -21,9 +21,35 @@ const blog9 = `
     information they came for.
   </p>
 
+ 
+
+  <div class="toc" id="table-of-contents">
+    <p><strong>In this guide:</strong></p>
+    <ul>
+      <li><a href="#quick-answer">Blog Post Length: The Quick Answer</a></li>
+      <li><a href="#ideal-length">What Is the Ideal Blog Post Length?</a></li>
+      <li><a href="#four-question-test">The CountFlows 4-Question Blog Length Test</a></li>
+      <li><a href="#length-for-seo">How Long Should a Blog Post Be for SEO?</a></li>
+      <li><a href="#2026-update">2026 Update: The Ranking Signal Was Never Word Count</a></li>
+      <li><a href="#copy-competitors">Should You Copy the Word Count of Top-Ranking Pages?</a></li>
+      <li><a href="#when-short">When Should a Blog Post Be Short?</a></li>
+      <li><a href="#when-longer">When Does a Topic Need a Longer Article?</a></li>
+      <li><a href="#500-words">Is 500 Words Too Short for a Blog Post?</a></li>
+      <li><a href="#4000-words">Is a 4,000-Word Blog Post Too Long?</a></li>
+      <li><a href="#ai-search">Does Blog Post Length Matter for AI Search?</a></li>
+      <li><a href="#estimate-length">How to Estimate the Right Length Before You Write</a></li>
+      <li><a href="#measure-word-count">How to Measure Your Blog Post Word Count</a></li>
+      <li><a href="#remove-filler">A Practical Editing Method for Removing Filler</a></li>
+      <li><a href="#length-by-intent">Blog Length Examples by Search Intent</a></li>
+      <li><a href="#high-quality">What Makes a Blog Post High Quality?</a></li>
+      <li><a href="#when-finished">How to Know When Your Blog Post Is Finished</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+  </div>
+
 
   <section>
-    <h2>Blog Post Length: The Quick Answer</h2>
+    <h2 id="quick-answer">Blog Post Length: The Quick Answer</h2>
 
     <p>
       There is <strong>no universal ideal blog post length</strong>. Use the
@@ -93,7 +119,7 @@ const blog9 = `
 
 
   <section>
-    <h2>What Is the Ideal Blog Post Length?</h2>
+    <h2 id="ideal-length">What Is the Ideal Blog Post Length?</h2>
 
     <p>
       The ideal length is the shortest length that allows you to answer the
@@ -117,7 +143,7 @@ const blog9 = `
     <p>
       Google Search Central also advises publishers not to write to a particular
       word count because they believe Google prefers one.
-      <a
+      
         href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
         target="_blank"
         rel="noopener noreferrer"
@@ -130,7 +156,7 @@ const blog9 = `
 
 
   <section>
-    <h2>The CountFlows 4-Question Blog Length Test</h2>
+    <h2 id="four-question-test">The CountFlows 4-Question Blog Length Test</h2>
 
     <p>
       Instead of choosing a word count first, answer these four questions before
@@ -171,7 +197,7 @@ const blog9 = `
 
 
   <section>
-    <h2>How Long Should a Blog Post Be for SEO?</h2>
+    <h2 id="length-for-seo">How Long Should a Blog Post Be for SEO?</h2>
 
     <p>
       There is no minimum or maximum word count required for SEO. Content
@@ -206,7 +232,48 @@ const blog9 = `
 
 
   <section>
-    <h2>Should You Copy the Word Count of Top-Ranking Pages?</h2>
+    <h2 id="2026-update">2026 Update: The Ranking Signal Was Never Word Count</h2>
+
+    <p>
+      In March 2024, Google folded its Helpful Content System into the core
+      ranking algorithm. Before that, helpful-content assessments ran as
+      separate, occasional updates. Now the evaluation is continuous, and it
+      looks at a site as a whole rather than scoring one article in isolation.
+    </p>
+
+    <p>
+      That shift matters for the word count question specifically. A single
+      2,000-word article surrounded by thin, duplicate, or auto-generated
+      pages elsewhere on the same site does not read as helpful just because
+      that one article is long. The reverse is also true: a short, focused
+      page can rank well if the rest of the site consistently delivers
+      complete, original answers.
+    </p>
+
+    <p>
+      In practice, this means length decisions still belong at the article
+      level, the way the rest of this guide describes, but quality checks now
+      need to happen site-wide. A few patterns tend to signal low value no
+      matter how long or short any individual post is:
+    </p>
+
+    <ul>
+      <li>multiple pages or URL variants covering the same narrow question</li>
+      <li>pages that exist mainly to insert one more keyword variation</li>
+      <li>sections padded out to hit a target word count rather than to answer something new</li>
+      <li>content that reads as generated rather than reviewed by someone who understands the topic</li>
+    </ul>
+
+    <p>
+      None of these are word-count problems on their own. They are coverage
+      and originality problems, and they just happen to show up most often
+      in either very thin pages or very padded ones.
+    </p>
+  </section>
+
+
+  <section>
+    <h2 id="copy-competitors">Should You Copy the Word Count of Top-Ranking Pages?</h2>
 
     <p>
       Competitor pages are useful for understanding search intent, but their
@@ -234,7 +301,7 @@ const blog9 = `
 
 
   <section>
-    <h2>When Should a Blog Post Be Short?</h2>
+    <h2 id="when-short">When Should a Blog Post Be Short?</h2>
 
     <p>
       Short content is appropriate when the reader's question has a short
@@ -260,7 +327,7 @@ const blog9 = `
 
 
   <section>
-    <h2>When Does a Topic Need a Longer Article?</h2>
+    <h2 id="when-longer">When Does a Topic Need a Longer Article?</h2>
 
     <p>
       Longer articles make sense when the subject contains several meaningful
@@ -292,7 +359,7 @@ const blog9 = `
 
 
   <section>
-    <h2>Is 500 Words Too Short for a Blog Post?</h2>
+    <h2 id="500-words">Is 500 Words Too Short for a Blog Post?</h2>
 
     <p>
       No. Five hundred words can be enough for a narrow topic.
@@ -317,7 +384,7 @@ const blog9 = `
 
 
   <section>
-    <h2>Is a 4,000-Word Blog Post Too Long?</h2>
+    <h2 id="4000-words">Is a 4,000-Word Blog Post Too Long?</h2>
 
     <p>
       Not automatically.
@@ -339,7 +406,7 @@ const blog9 = `
 
 
   <section>
-    <h2>Does Blog Post Length Matter for AI Search?</h2>
+    <h2 id="ai-search">Does Blog Post Length Matter for AI Search?</h2>
 
     <p>
       There is no established ideal word count for appearing in AI-generated
@@ -361,7 +428,7 @@ const blog9 = `
 
 
   <section>
-    <h2>How to Estimate the Right Length Before You Write</h2>
+    <h2 id="estimate-length">How to Estimate the Right Length Before You Write</h2>
 
     <p>
       Start with an outline instead of a target word count.
@@ -395,7 +462,7 @@ const blog9 = `
 
 
   <section>
-    <h2>How to Measure Your Blog Post Word Count</h2>
+    <h2 id="measure-word-count">How to Measure Your Blog Post Word Count</h2>
 
     <p>
       Once the article is drafted, measure its actual length rather than trying
@@ -427,7 +494,7 @@ const blog9 = `
 
 
   <section>
-    <h2>A Practical Editing Method for Removing Filler</h2>
+    <h2 id="remove-filler">A Practical Editing Method for Removing Filler</h2>
 
     <p>
       Once the first draft is finished, review every section and ask whether it
@@ -460,7 +527,7 @@ const blog9 = `
 
 
   <section>
-    <h2>Blog Length Examples by Search Intent</h2>
+    <h2 id="length-by-intent">Blog Length Examples by Search Intent</h2>
 
     <table>
       <thead>
@@ -513,7 +580,7 @@ const blog9 = `
 
 
   <section>
-    <h2>What Makes a Blog Post High Quality?</h2>
+    <h2 id="high-quality">What Makes a Blog Post High Quality?</h2>
 
     <p>
       Length is only one visible characteristic of an article. Quality depends
@@ -541,7 +608,7 @@ const blog9 = `
 
 
   <section>
-    <h2>How to Know When Your Blog Post Is Finished</h2>
+    <h2 id="when-finished">How to Know When Your Blog Post Is Finished</h2>
 
     <p>
       Before publishing, use this final test:
@@ -565,7 +632,7 @@ const blog9 = `
 
 
   <section>
-    <h2>Conclusion</h2>
+    <h2 id="conclusion">Conclusion</h2>
 
     <p>
       There is no single ideal blog post length for SEO, readers, or AI search.
