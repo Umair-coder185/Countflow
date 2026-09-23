@@ -8,10 +8,10 @@ import blog7 from "./blogs/blog7";
 import blog8 from "./blogs/blog8";
 import blog9 from "./blogs/blog9";
 import blog10 from "./blogs/blog10";
-import blog11 from "./blogs/blog11";
+
 import blog12 from "./blogs/blog12";
 import blog13 from "./blogs/blog13";
-import blog14 from "./blogs/blog14";
+
 import blog15 from "./blogs/blog15";
 import blog16 from "./blogs/blog16";
 import blog17 from "./blogs/blog17";
@@ -718,100 +718,7 @@ export const posts = [
     ]
   },
 
-{
-  id: 11,
 
-  slug: "how-to-read-military-time",
-
-  title: "How to Read Military Time Easily: Simple 24-Hour Clock Guide",
-
-  description:
-    "Learn how to read military time with two simple rules, a full conversion chart, examples, pronunciation tips, and easy 12-hour to 24-hour conversions.",
-
-  excerpt:
-    "Learn military time with two simple rules, a full conversion chart, practical examples, common mistakes, and quick 12-hour to 24-hour conversions.",
-
-  image: "/blogs/blog11-1.png",
-
-  imageAlt:
-    "Guide showing how to read and convert military time using the 24-hour clock",
-
-  category: "Time & Tools",
-
-  author: "Umair Tufail",
-
-  date: "June 18, 2026",
-
-  readTime: "8 min read",
-
-  keywords: [
-    "how to read military time",
-    "how to read military time easily",
-    "military time",
-    "military time chart",
-    "24-hour clock",
-    "convert military time",
-    "military time conversion"
-  ],
-
-  content: blog11,
-
-  faqs: [
-    {
-      question: "What is military time?",
-      answer:
-        "Military time is based on the 24-hour clock and commonly uses four-digit notation such as 0730 or 1845. It does not require AM or PM because each time of day has a unique hour value."
-    },
-
-    {
-      question: "How do I convert 1530 to standard time?",
-      answer:
-        "For military times from 1300 onward, subtract 12 from the hour and keep the minutes unchanged. For 1530, 15 minus 12 equals 3, so 1530 is 3:30 PM."
-    },
-
-    {
-      question: "What is 1300 in military time?",
-      answer:
-        "1300 military time is 1:00 PM. For times from 1300 onward, subtract 12 from the hour to convert them to standard PM time."
-    },
-
-    {
-      question: "What is 1700 in military time?",
-      answer:
-        "1700 military time is 5:00 PM."
-    },
-
-    {
-      question: "What is 2100 in military time?",
-      answer:
-        "2100 military time is 9:00 PM."
-    },
-
-    {
-      question: "Is midnight 0000 or 2400?",
-      answer:
-        "0000 is commonly used for midnight at the start of a new day. In some contexts, 2400 may be used to mark the exact end of the previous calendar day."
-    },
-
-    {
-      question: "Does military time use AM and PM?",
-      answer:
-        "No. Military time uses a 24-hour system, so AM and PM are not needed."
-    },
-
-    {
-      question: "Where is military time commonly used?",
-      answer:
-        "Military-style time notation is commonly used in defense, healthcare, aviation, emergency services, meteorology, and technical systems where precise time communication is important."
-    },
-
-    {
-      question: "How should I pronounce military time?",
-      answer:
-        "Common examples include 0700 as 'zero seven hundred,' 1200 as 'twelve hundred,' 1545 as 'fifteen forty-five,' and 0000 as 'zero hundred' or 'midnight.' Pronunciation can vary by organization."
-    }
-  ]
-},
 
 
   {
@@ -969,58 +876,7 @@ export const posts = [
   ]
 },
 
-  {
-    id: 14,
-    slug: "where-was-the-hobbit-filmed",
-    title: "Where Was The Hobbit Filmed? Complete Location Guide",
-    description: "Scene-by-scene breakdown of The Hobbit filming locations across New Zealand and the UK, with visit status, costs, and insider production details.",
-    excerpt: "You've watched the films a dozen times. But you still couldn't say which scene was shot where, whether you're allowed to stand there, or why one of the most famous locations isn't even in New Zealand. This guide fixes that — scene by scene, with a clear visit status for every spot and the real production story behind it.",
-    image: "/blogs/where-was-the-hobbit-filmed-location.png",
-    imageAlt: "The Hobbit filming locations in New Zealand and the UK",
-    category: "Travel & Film",
-    author: "Umair Tufail",
-    date: "June 25, 2026",
-    readTime: "12 min read",
-    keywords: [
-      "hobbit filming locations",
-      "where was the hobbit filmed",
-      "hobbiton matamata",
-      "pelorus river barrel scene",
-      "lake pukaki laketown",
-      "rivendell pinewood studios",
-      "new zealand film tourism",
-      "lord of the rings filming sites",
-      "best time to visit hobbiton",
-      "mountain victoria"
-    ],
-    content: blog14,
-    faqs: [
-      {
-        question: "Was The Hobbit filmed entirely in New Zealand?",
-        answer: "Almost. Every exterior and most interiors were shot across the North and South Islands. The lone exception is Rivendell's interior council scenes and the older Bilbo prologue, filmed at Pinewood Studios in Buckinghamshire, UK."
-      },
-      {
-        question: "Can you visit Hobbiton from The Hobbit?",
-        answer: "Yes. The Hobbiton Movie Set near Matamata is open year-round with daily tours. Book ahead — especially between December and February."
-      },
-      {
-        question: "Where was the barrel scene filmed in The Hobbit?",
-        answer: "On the Pelorus River near Nelson, South Island. Walk the riverside trail for free, or take a guided kayak tour down the same stretch Jackson used in The Desolation of Smaug."
-      },
-      {
-        question: "Which Hobbit locations are on the South Island?",
-        answer: "Most of them — Earnslaw Burn, Lake Pukaki, Pass Burn, Twizel, Queenstown, and the Pelorus River. The South Island carried nearly all of Middle-earth's dramatic alpine and wilderness terrain."
-      },
-      {
-        question: "Where exactly is Hobbiton?",
-        answer: "On Alexander Farm in Matamata, Waikato — State Highway 27 between Hamilton and Rotorua, North Island. GPS coordinates are on the Hobbiton Movie Set website."
-      },
-      {
-        question: "Did Peter Jackson use a studio for any scenes?",
-        answer: "Yes. Pinewood Studios in Iver Heath, Buckinghamshire was used for Rivendell interiors and the older Bilbo scenes — mainly because Christopher Lee and Ian Holm both lived in the UK and couldn't make the trip."
-      }
-    ]
-  },
+  
 
 {
   id: 15,
