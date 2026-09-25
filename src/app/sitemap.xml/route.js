@@ -9,6 +9,7 @@ export async function GET() {
     "/tools/character-counter",
     "/tools/reading-time",
     "/tools/sentence-counter",
+    "/tools/sentence-calculator",
     "/tools/keyword-density-checker",
     "/tools/case-converter",
     "/tools/ai-text-cleaner",
@@ -17,6 +18,9 @@ export async function GET() {
     "/tools/remove-line-breaks",
     "/tools/text-repeater",
     "/tools/text-compare",
+    "/tools/find-and-replace-text",
+    // TODO: add ChatGPT Watermark Remover's real route here once confirmed
+    // e.g. "/tools/chatgpt-watermark-remover",
     "/blog",
     "/about-us",
     "/contact",
