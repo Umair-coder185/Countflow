@@ -64,6 +64,8 @@ const nextConfig = {
       { source: '/blog/does-chatgpt-watermark-text-7-facts-you-need-to-know', destination: '/blog/does-chatgpt-watermark-text', permanent: true },
       { source: '/blog/does-chatvpn-watermark-text', destination: '/blog/does-chatgpt-watermark-text', permanent: true },
 
+      { source: '/blog/does-chatgpt-watermark-text-7-facts-you-need-to-know/', destination: '/blog/does-chatgpt-watermark-text', permanent: true },
+      { source: '/blog/does-chatgpt-watermark-text/', destination: '/blog/does-chatgpt-watermark-text', permanent: true },
       // ---------- Cluster: "How many words in a novel" ----------
       { source: '/blog/how-many-words-in-a-novel-7-genre-counts-revealed', destination: '/blog/how-many-words-in-a-novel', permanent: true },
       { source: '/blog/how-a-novel-7-genre-counts-revealed', destination: '/blog/how-many-words-in-a-novel', permanent: true },
@@ -71,13 +73,13 @@ const nextConfig = {
       // ---------- Cluster: "Remove ChatGPT formatting from copied AI text" (protected page — content untouched, sirf inbound duplicates merge kar rahe hain) ----------
       { source: '/blog/how-to-remove-chatgpt-formatting-from-coppied-ai-text', destination: '/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text', permanent: true },
       { source: '/blog/how-to-remove-chatgpt-from-copied-ai-text', destination: '/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text', permanent: true },
-
+      { source: '/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text/', destination: '/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text', permanent: true },
       // ---------- Tools: confirmed typo/format duplicates ----------
       { source: '/tools/syllable_counter', destination: '/tools/syllable-counter', permanent: true }, // underscore typo
       { source: '/tools/text-repeat', destination: '/tools/text-repeater', permanent: true },
       { source: '/tools/text-reperter', destination: '/tools/text-repeater', permanent: true }, // typo
 
-            // ---------- Tools: canonical slugs confirmed ----------
+      // ---------- Tools: canonical slugs confirmed ----------
       { source: '/tools/and-replace-text', destination: '/tools/find-and-replace-text', permanent: true },
       { source: '/tools/ai-token-context', destination: '/tools/ai-token-counter', permanent: true },
       { source: '/tools/ai-target-counter', destination: '/tools/ai-token-counter', permanent: true },
