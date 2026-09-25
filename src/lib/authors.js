@@ -7,9 +7,9 @@ const authors = {
     twitter: "https://twitter.com/umairrbuilds",
   },
   "countflows-team": {
-    name: "Countflows Team",
+    name: "CountFlows Team",
     role: "Editorial Team",
-    bio: "Countflows Team produces practical guides, tools, and tutorials to help writers and creators produce better content faster.",
+    bio: "CountFlows Team produces practical guides, tools, and tutorials to help writers and creators produce better content faster.",
   },
 };
 

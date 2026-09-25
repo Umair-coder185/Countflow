@@ -221,20 +221,20 @@ export const posts = [
     },
   ],
 },
-  {
+{
   id: 3,
   slug: "manage-essay-word-count",
   title: "Essay Word Count Guide: How Long Is an Essay? (By Level)",
   description:
-    "Master your essay word count! Get tips on length by academic level, what counts, the 10% rule, and how to trim or expand your writing effectively.",
+    "Essay word count by academic level, what counts, the 10% rule with exact numbers, paragraph length, and where to put your word count.",
   excerpt:
-    "Word count problems start at the outline stage, not the writing stage. Learn essay lengths by level, what counts toward the limit, and how to cut or add words without losing marks.",
+    "Word count problems start at the outline stage, not the writing stage. Learn essay lengths by level, paragraph word counts, the exact 10% rule for common lengths, and where your word count actually goes.",
   image: "/blogs/blog2.png",
   imageAlt: "Essay word count and length guide",
   category: "Academic Writing",
   author: "Umair Tufail",
   date: "May 17, 2026",
-  readTime: "9 min read",
+  readTime: "10 min read",
   keywords: [
     "essay word count",
     "how long is an essay",
@@ -243,6 +243,11 @@ export const posts = [
     "10 percent rule word count",
     "3000 words in pages",
     "how to reduce word count in an essay",
+    "how many words are in a paragraph",
+    "where to put word count on essay",
+    "how to add word count to an essay",
+    "10 percent of 1500 word essay",
+    "10 percent of 2000 word essay",
   ],
   relatedTools: [
     {
@@ -274,6 +279,21 @@ export const posts = [
         "Often yes, because many universities allow 10 percent above or below the stated limit. Never assume it, though. Some markers penalize any overage, and a few stop reading at the limit, so check your module handbook first.",
     },
     {
+      question: "How many words are in a paragraph?",
+      answer:
+        "Typically 100 to 200 words for an academic paragraph. A three-paragraph essay body usually lands around 300 to 600 words before you add an introduction and conclusion.",
+    },
+    {
+      question: "Where do you put the word count on an essay?",
+      answer:
+        "Usually on the title page, under the title, unless your style guide says otherwise. MLA essays that require one add it in the top-right corner of the first page; APA essays place it on the title page when requested. Check your brief if it doesn't say.",
+    },
+    {
+      question: "What is 10 percent of a 1,500-word essay?",
+      answer:
+        "150 words, which puts your safe range at 1,350 to 1,650 words. For other common lengths, see the 10 percent table in the article.",
+    },
+    {
       question: "How many words is a 2 minute speech?",
       answer:
         "About 260 words at an average speaking pace of 130 words per minute. Speaking speed, not typing speed, sets this number. See our full guide to speech word counts for every length from 3 to 15 minutes.",
@@ -285,32 +305,21 @@ export const posts = [
     },
   ],
 },
+ // ya jahan bhi aapka blog4 content stored hai
+
+// Blog Object for "how-many-pages-is-2000-words"
 {
   id: 4,
-
   slug: "how-many-pages-is-2000-words",
-
   title: "How Many Pages Is 2,000 Words? Single & Double Spaced",
-
-  description:
-    "2,000 words is about 4 pages single-spaced or 8 pages double-spaced. See page estimates for 300, 500, 1,000, 2,000 and 5,000 words.",
-
-  excerpt:
-    "A standard page holds about 500 words single-spaced or 250 words double-spaced. See page estimates for essays, books, handwriting, speeches, and common word counts.",
-
+  description: "2,000 words is about 4 pages single-spaced or 8 pages double-spaced. See page estimates for 300, 500, 1,000, 2,000 and 5,000 words.",
+  excerpt: "A standard page holds about 500 words single-spaced or 250 words double-spaced. See page estimates for essays, books, handwriting, speeches, and common word counts.",
   image: "/blogs/blog4-1.png",
-
-  imageAlt:
-    "How many pages is 2000 words single spaced and double spaced",
-
+  imageAlt: "How many pages is 2000 words single spaced and double spaced",
   category: "Academic Writing",
-
   author: "Umair Tufail",
-
   date: "June 2, 2026",
-
   readTime: "7 min read",
-
   keywords: [
     "how many pages is 2000 words",
     "2000 words to pages",
@@ -320,46 +329,39 @@ export const posts = [
     "how many pages is 1000 words",
     "words per page double spaced",
     "words per page single spaced",
-    "words per A4 page"
+    "words per A4 page",
+    "300 words in pages",
+    "how many words is 2 pages double spaced"
   ],
-
   content: blog4,
-
   faqs: [
     {
       question: "How many pages is 2,000 words?",
-      answer:
-        "About four pages single-spaced or eight pages double-spaced using 12pt Times New Roman, one-inch margins, and standard page formatting."
+      answer: "About four pages single-spaced or eight pages double-spaced using 12pt Times New Roman, one-inch margins, and standard page formatting."
     },
     {
       question: "How many pages is 1,000 words?",
-      answer:
-        "About two pages single-spaced or four pages double-spaced using 12pt Times New Roman with one-inch margins. Larger fonts or wider margins increase the page count."
+      answer: "About two pages single-spaced or four pages double-spaced using 12pt Times New Roman with one-inch margins. Larger fonts or wider margins increase the page count."
     },
     {
       question: "How many words fit on one page?",
-      answer:
-        "A standard page holds about 500 words single-spaced or 250 words double-spaced when using 12pt Times New Roman and one-inch margins."
+      answer: "A standard page holds about 500 words single-spaced or 250 words double-spaced when using 12pt Times New Roman and one-inch margins."
     },
     {
       question: "How many words fit on a double-spaced page?",
-      answer:
-        "About 250 words fit on a standard double-spaced page using 12pt Times New Roman and one-inch margins. Font, margins, and paragraph spacing can change the exact number."
+      answer: "About 250 words fit on a standard double-spaced page using 12pt Times New Roman and one-inch margins. Font, margins, and paragraph spacing can change the exact number."
     },
     {
       question: "How many words fit on an A4 page?",
-      answer:
-        "About 500 words single-spaced or 250 words double-spaced with 12pt font and standard margins. At 1.5 spacing, an A4 page generally holds around 350 to 400 words."
+      answer: "About 500 words single-spaced or 250 words double-spaced with 12pt font and standard margins. At 1.5 spacing, an A4 page generally holds around 350 to 400 words."
     },
     {
       question: "How many words is a 300-page book?",
-      answer:
-        "A 300-page book may contain roughly 75,000 to 90,000 words. Using an estimate of 275 words per printed page gives about 82,500 words."
+      answer: "A 300-page book may contain roughly 75,000 to 90,000 words. Using an estimate of 275 words per printed page gives about 82,500 words."
     },
     {
       question: "How many handwritten pages is 500 words?",
-      answer:
-        "About two handwritten pages is a reasonable estimate for 500 words with average-sized handwriting, although larger handwriting may require three pages."
+      answer: "About two handwritten pages is a reasonable estimate for 500 words with average-sized handwriting, although larger handwriting may require three pages."
     }
   ]
 },
@@ -372,7 +374,7 @@ export const posts = [
     image: "/blogs/blog5-2.png",
     imageAlt: "Cover letter word count and length guide",
     category: "Career Development",
-    author: "Countflows Team",
+    author: "CountFlows Team",
     date: "June 5, 2026",
     readTime: "8 min read",
     keywords: [
@@ -1126,6 +1128,10 @@ export const posts = [
 
   category: "Reading & Writing",
 
+  // FIXED: original path was "/blogs/average reading speed.png" — the literal
+  // spaces almost certainly don't match the actual filename on disk/CDN and
+  // will 404 or silently fail to load depending on how the asset is served.
+  // Confirm the real filename and update this path before shipping.
   image: "/blogs/average reading speed.png",
 
   imageAlt:
@@ -1197,6 +1203,30 @@ export const posts = [
     },
 
     {
+      question: "Is reading 100 pages an hour fast?",
+      answer:
+        "Yes. That pace works out to well over 400 WPM for a typical paperback, above the average adult reading speed, so it's worth checking comprehension alongside it rather than assuming it held up."
+    },
+
+    {
+      question: "Is 30 pages an hour slow?",
+      answer:
+        "Not necessarily. It corresponds to roughly 125–180 WPM on a typical paperback, which is normal for dense non-fiction, a second language, or unfamiliar material."
+    },
+
+    {
+      question: "Is 2 minutes per page slow?",
+      answer:
+        "It works out to roughly 125–150 WPM, slower than the 238 WPM adult average but a normal pace for technical material or careful study reading."
+    },
+
+    {
+      question: "Is reading 400 WPM fast?",
+      answer:
+        "Yes. It's faster than the average adult pace of 238 WPM and close to the point where research shows comprehension typically starts to decline, so a comprehension check matters at that speed."
+    },
+
+    {
       question: "Is reading 20 pages an hour slow?",
       answer:
         "Not necessarily. Twenty pages per hour can be reasonable for dense, technical, academic, or unfamiliar material. Page count alone does not measure comprehension."
@@ -1234,7 +1264,6 @@ export const posts = [
     }
   ]
 },
-
 
 
 {

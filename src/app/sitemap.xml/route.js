@@ -9,7 +9,6 @@ export async function GET() {
     "/tools/character-counter",
     "/tools/reading-time",
     "/tools/sentence-counter",
-    "/tools/sentence-calculator",
     "/tools/keyword-density-checker",
     "/tools/case-converter",
     "/tools/ai-text-cleaner",

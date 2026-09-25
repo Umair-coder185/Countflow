@@ -11,7 +11,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${siteUrl}#organization`,
-  name: "Countflows",
+  name: "CountFlows",
   url: siteUrl,
   logo: {
     "@type": "ImageObject",
@@ -33,7 +33,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${siteUrl}#website`,
-  name: "Countflows",
+  name: "CountFlows",
   url: siteUrl,
   publisher: { "@id": `${siteUrl}#organization` },
 };
@@ -46,7 +46,7 @@ function createToolSchema({ name, description, path, features }) {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "@id": `${siteUrl}${path}#webapp`,
-    name: `${name} - Countflows`,
+    name: `${name} - CountFlows`,
     description,
     url: `${siteUrl}${path}`,
     applicationCategory: "UtilitiesApplication",
@@ -174,18 +174,18 @@ export const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is Countflows?",
+      name: "What is CountFlows?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Countflows is a suite of free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer. Perfect for writers, students, bloggers, and content creators.",
+        text: "CountFlows is a suite of free online writing analysis tools including word counter, character counter, reading time calculator, and sentence analyzer. Perfect for writers, students, bloggers, and content creators.",
       },
     },
     {
       "@type": "Question",
-      name: "Is Countflows free to use?",
+      name: "Is CountFlows free to use?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Countflows is completely free to use. No registration or subscription required.",
+        text: "Yes, CountFlows is completely free to use. No registration or subscription required.",
       },
     },
     {

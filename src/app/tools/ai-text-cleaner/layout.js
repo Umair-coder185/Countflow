@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Free AI Text Cleaner - Remove ChatGPT Formatting | Countflows",
+  title: "Free AI Text Cleaner - Remove ChatGPT Formatting | CountFlows",
   description:
     "Clean AI-generated text in one click. Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT, Claude, or Gemini output. 100% free \u2014 your text never leaves your browser.",
   keywords:

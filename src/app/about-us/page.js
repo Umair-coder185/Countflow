@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 const description =
-  "CountFlows is a free, private suite of writing tools built by Umair Tufail — six counters and converters that run entirely in your browser, no sign-up needed.";
+  "CountFlows is a free, private suite of 15 writing tools built by Umair Tufail that run entirely in your browser, with no sign-up needed.";
 
 export const metadata = {
   title: "About CountFlows",
@@ -191,7 +191,7 @@ export default function AboutUs() {
         
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">Our tools</h2>
-        <p className="mb-4">Six tools are live today, with more on the roadmap:</p>
+        <p className="mb-4">15 tools are live today, with more on the roadmap:</p>
         <ul className="list-disc pl-6 space-y-2">
           {tools.map((tool) => (
             <li key={tool.href}>

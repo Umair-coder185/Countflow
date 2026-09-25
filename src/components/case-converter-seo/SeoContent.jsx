@@ -236,7 +236,7 @@ export default function SeoContent() {
                 gone. There is no word limit, no sign-up wall, and no premium tier.
             </p>
 
-            <h2 className={h2Class}>More Free Countflows Tools</h2>
+            <h2 className={h2Class}>More Free CountFlows Tools</h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 leading-7">
                 <li>
                     <Link href="/tools/word-counter" className={linkClass}>

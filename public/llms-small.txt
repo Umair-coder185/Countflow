@@ -1,4 +1,4 @@
-# llms-small.txt for Countflows
+# llms-small.txt for CountFlows
 
 Website: https://countflows.com
 Contact: umairrao965@gmail.com

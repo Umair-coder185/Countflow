@@ -16,9 +16,6 @@ import { posts } from "@/lib/blogData";
 
 const UMAIR_AUTHOR_IMAGE = "/images/umair-tufail.webp";
 
-
-
-
 const TOOL_LIBRARY = {
   wordCounter: {
     name: "Word Counter",
@@ -58,7 +55,6 @@ function getAutomaticTools(post) {
     .join(" ")
     .toLowerCase();
 
-  // AI Text Cleaner is intentionally included in every article.
   if (
     /syllable|poetry|poem|haiku|sonnet|lyrics|pronunciation|meter/.test(
       searchText
@@ -109,8 +105,6 @@ function getRelatedTools(post) {
 
   const automaticTools = getAutomaticTools(post);
 
-  // Keep AI Text Cleaner guaranteed in every article, then respect
-  // article-specific manual tools, then fill any remaining slots automatically.
   const combined = [
     TOOL_LIBRARY.aiTextCleaner,
     ...manualTools,
@@ -148,9 +142,6 @@ function getRelatedPosts(post) {
     (item) => item?.slug && item?.title && item.slug !== post.slug
   );
 
-  // If a post defines relatedPosts manually, show those first.
-  // Missing/invalid slugs are ignored, then the existing automatic
-  // category/keyword logic fills any remaining slots.
   const manualRelatedPosts = Array.isArray(post?.relatedPosts)
     ? post.relatedPosts
         .map((slug) => validPosts.find((item) => item.slug === slug))
@@ -195,6 +186,35 @@ function getRelatedPosts(post) {
     .slice(0, 3);
 }
 
+// 👇 AUTOMATIC TOC FUNCTION ADDED HERE 👇
+function processHtmlAndToc(html) {
+  if (!html) return { toc: [], htmlWithIds: "" };
+
+  const toc = [];
+  const regex = /<(h[23])([^>]*)>(.*?)<\/\1>/gi;
+  const hasManualToc = /table\s*of\s*content|toc\b/i.test(html);
+
+  const htmlWithIds = html.replace(regex, (match, tag, attributes, content) => {
+    const cleanText = content.replace(/<[^>]+>/g, "").trim();
+    let id = cleanText.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+    const idMatch = attributes.match(/id=["']([^"']+)["']/i);
+    if (idMatch) {
+      id = idMatch[1];
+    } else {
+      attributes = `${attributes} id="${id}"`;
+    }
+
+    if (!hasManualToc) {
+      toc.push({ level: tag.toLowerCase() === "h2" ? 2 : 3, text: cleanText, id });
+    }
+    return `<${tag}${attributes}>${content}</${tag}>`;
+  });
+
+  return { toc, htmlWithIds };
+}
+// 👆 FUNCTION ENDS 👆
+
 function RelatedArticlesMobile({ relatedPosts }) {
   if (!relatedPosts.length) return null;
 
@@ -230,6 +250,7 @@ function RelatedArticlesMobile({ relatedPosts }) {
           <Link
             key={relatedPost.slug}
             href={`/blog/${relatedPost.slug}`}
+            prefetch={false} // Performance Fix: Don't preload all sidebar links instantly
             className="group rounded-xl border border-gray-200 dark:border-gray-700 p-4 transition hover:border-blue-300 dark:hover:border-cyan-700 hover:shadow-md"
           >
             {relatedPost.category ? (
@@ -286,6 +307,7 @@ function DesktopSidebar({ relatedPosts, relatedTools }) {
                 <Link
                   key={relatedPost.slug}
                   href={`/blog/${relatedPost.slug}`}
+                  prefetch={false} // Performance Fix
                   className="group block rounded-lg border border-gray-100 p-3 transition hover:border-blue-200 hover:bg-blue-50/60 dark:border-gray-800 dark:hover:border-cyan-900 dark:hover:bg-cyan-950/20"
                 >
                   <div className="flex gap-3">
@@ -343,6 +365,7 @@ function DesktopSidebar({ relatedPosts, relatedTools }) {
                 <Link
                   key={tool.href}
                   href={tool.href}
+                  prefetch={false} // Performance Fix
                   className="group block rounded-lg border border-cyan-200 bg-white p-3 transition hover:border-cyan-400 hover:shadow-sm dark:border-cyan-800 dark:bg-gray-900"
                 >
                   <p className="text-sm font-bold text-gray-900 group-hover:text-cyan-700 dark:text-gray-100 dark:group-hover:text-cyan-300">
@@ -378,7 +401,6 @@ export default function BlogContent({ post }) {
     : [];
 
   const relatedTools = getRelatedTools(post);
-
   const relatedPosts = getRelatedPosts(post);
   const authorInfo = getAuthorInfo(post?.author);
   const authorImage =
@@ -392,14 +414,11 @@ export default function BlogContent({ post }) {
       ? post.image.trim()
       : null;
 
+  // 👇 HTML AND TOC PROCESSING EXECUTED HERE 👇
+  const { toc, htmlWithIds } = processHtmlAndToc(post?.content || "");
+
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 lg:py-12">
-      {/*
-        Structured data is intentionally NOT rendered here.
-        BlogPosting, BreadcrumbList, and FAQPage JSON-LD are handled once
-        in app/blog/[slug]/page.jsx to avoid duplicate schemas.
-      */}
-
       <div className="max-w-5xl mx-auto">
         <BlogHeader
           title={post.title}
@@ -408,7 +427,8 @@ export default function BlogContent({ post }) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] xl:grid-cols-[minmax(0,1fr)_320px] gap-8 xl:gap-10 items-start">
-        <article className="min-w-0 bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden px-6 sm:px-8 md:px-10 xl:px-12 py-8 sm:py-12 md:py-16">
+        {/* Scroll-smooth class added here for TOC anchor links */}
+        <article className="scroll-smooth min-w-0 bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden px-6 sm:px-8 md:px-10 xl:px-12 py-8 sm:py-12 md:py-16">
           {/* Featured Image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -521,7 +541,30 @@ export default function BlogContent({ post }) {
             </section>
           ) : null}
 
-          {/* Main Content */}
+          {/* 👇 AUTOMATIC TOC RENDERED HERE (Only if 2 or more headings exist) 👇 */}
+          {toc.length >= 2 && (
+            <div className="bg-slate-50 dark:bg-slate-800/40 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 mb-10">
+              <h2 className="text-xl sm:text-2xl font-bold mt-0 mb-4 border-none text-slate-900 dark:text-slate-100">Table of Contents</h2>
+              <ul className="list-none pl-0 space-y-3 mt-0 mb-0">
+                {toc.map((item, index) => (
+                  <li 
+                    key={index} 
+                    className={`m-0 leading-tight ${item.level === 3 ? 'ml-6 sm:ml-8 text-sm' : 'text-base font-medium'}`}
+                  >
+                    <a 
+                      href={`#${item.id}`} 
+                      className="text-blue-600 dark:text-cyan-400 hover:text-blue-800 dark:hover:text-cyan-300 hover:underline transition-colors no-underline"
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Main Content with Injected Auto IDs */}
+          {/* Enhanced Prose styling for Better Table of Contents and Captions */}
           <motion.div
             initial={false}
             animate={{ opacity: 1, y: 0 }}
@@ -532,28 +575,25 @@ export default function BlogContent({ post }) {
               prose-h3:text-lg sm:prose-h3:text-xl md:prose-h3:text-2xl xl:prose-h3:text-3xl
               prose-p:text-gray-800 dark:prose-p:text-gray-300 prose-p:leading-relaxed
               prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:my-4
-              prose-ul:list-disc prose-ul:ml-5 prose-ul:my-3
+              prose-figcaption:text-center prose-figcaption:text-sm prose-figcaption:text-gray-500
+              prose-ul:list-disc prose-ul:ml-5 prose-ul:my-3 prose-li:my-1
               prose-ol:list-decimal prose-ol:ml-5 prose-ol:my-3
               prose-table:w-full prose-table:my-4 prose-table:text-sm sm:prose-table:text-base
               prose-th:p-2 sm:prose-th:p-3 prose-td:p-2 sm:prose-td:p-3
               prose-a:text-cyan-600 dark:prose-a:text-cyan-400
               prose-a:underline prose-a:font-medium
               hover:prose-a:text-cyan-700 dark:hover:prose-a:text-cyan-300"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: htmlWithIds }}
           />
 
-          {/* Mobile/tablet only: Related Articles stay below article */}
           <RelatedArticlesMobile relatedPosts={relatedPosts} />
 
           {/* Author Section */}
           <div className="mt-16 border-t border-gray-200 pt-10 dark:border-gray-700">
             <div className="flex flex-col items-start justify-between gap-6 sm:flex-row">
-
-              {/* Author information */}
               <div className="flex items-start gap-4">
                 {authorInfo ? (
                   <>
-                    {/* Author image */}
                     {authorImage ? (
                       <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-white bg-gray-100 shadow-sm ring-1 ring-gray-200 dark:border-gray-900 dark:bg-gray-800 dark:ring-gray-700">
                         <Image
@@ -565,10 +605,10 @@ export default function BlogContent({ post }) {
                         />
                       </div>
                     ) : (
-                      /* Fallback initials */
                       <div
                         className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-blue-50 text-lg font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300"
-                        aria-hidden="true"
+                        aria-label={`Author initials for ${authorInfo.name}`}
+                        role="img"
                       >
                         {authorInfo.name
                           .split(" ")
@@ -578,28 +618,23 @@ export default function BlogContent({ post }) {
                       </div>
                     )}
 
-                    {/* Author text */}
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         Written by
                       </p>
-
                       <p className="text-base font-bold text-gray-900 dark:text-gray-100 sm:text-lg md:text-xl">
                         {authorInfo.name}
                       </p>
-
                       {authorInfo.role ? (
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           {authorInfo.role}
                         </p>
                       ) : null}
-
                       {authorInfo.bio ? (
                         <p className="mt-2 max-w-xl text-sm leading-6 text-gray-700 dark:text-gray-300">
                           {authorInfo.bio}
                         </p>
                       ) : null}
-
                       {authorInfo.twitter || authorInfo.linkedin ? (
                         <div className="mt-3 flex gap-4">
                           {authorInfo.twitter ? (
@@ -613,7 +648,6 @@ export default function BlogContent({ post }) {
                               Twitter
                             </a>
                           ) : null}
-
                           {authorInfo.linkedin ? (
                             <a
                               href={authorInfo.linkedin}
@@ -634,7 +668,6 @@ export default function BlogContent({ post }) {
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Written by
                     </p>
-
                     <p className="text-base font-bold text-gray-900 dark:text-gray-100 sm:text-lg md:text-xl">
                       {post?.author || "CountFlows Team"}
                     </p>
@@ -642,19 +675,16 @@ export default function BlogContent({ post }) {
                 )}
               </div>
 
-              {/* Blog CTA */}
               <Link
                 href="/blog"
                 className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base md:text-lg"
               >
                 ← Read More Articles
               </Link>
-
             </div>
           </div>
         </article>
 
-        {/* Desktop only: Related Articles + Related Tools */}
         <DesktopSidebar
           relatedPosts={relatedPosts}
           relatedTools={relatedTools}
