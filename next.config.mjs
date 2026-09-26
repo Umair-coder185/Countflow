@@ -52,36 +52,29 @@ const nextConfig = {
       // ---------- Blog: "Remove ChatGPT formatting" AI-Generated / Fake Links ----------
       { source: '/blog/how-to-remove-chatgpt-formatting-from-coppied-ai-text', destination: '/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text', permanent: true },
       { source: '/blog/how-to-remove-chatgpt-from-copied-ai-text', destination: '/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text', permanent: true },
-      { source: '/blog/how-to-remove-chatgpt-formatting', destination: '/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text', permanent: true },
 
-      // ---------- Blog: "Average Reading Speed" AI-Generated / Fake Links ----------
-      { source: '/blog/average-religion-speed', destination: '/blog/average-reading-speed', permanent: true },
-      { source: '/blog/average-reading-speed-whats-normal-how-to-test-yours', destination: '/blog/average-reading-speed', permanent: true },
-      { source: '/blog/average-reading-speed-wpm-whats-normal-how-to-test-yours', destination: '/blog/average-reading-speed', permanent: true },
-      { source: '/blog/average-reading-speed/average-adult-silent-reading-rate-words-per-minute-source', destination: '/blog/average-reading-speed', permanent: true },
+      // ---------- Tools: confirmed typo/format duplicates ----------
+      { source: '/tools/syllable_counter', destination: '/tools/syllable-counter', permanent: true }, // underscore typo
+      { source: '/tools/text-repeat', destination: '/tools/text-repeater', permanent: true },
+      { source: '/tools/text-reperter', destination: '/tools/text-repeater', permanent: true }, // typo
 
-      // ---------- Blog: Misc Redirects & Broken Links ----------
-      { source: '/blog/what-is-camelcase', destination: '/blog/camelcase-pascalcase-snake-case-explained', permanent: true },
-      { source: '/https\\:/countflows.com/blog/best-speed-reading-programs', destination: '/blog/best-speed-reading-programs', permanent: true },
-      { source: '/blog/how-many-words-in-a-novel-7-genre-counts-revealed', destination: '/blog/how-many-words-in-a-novel', permanent: true },
-      { source: '/blog/how-a-novel-7-genre-counts-revealed', destination: '/blog/how-many-words-in-a-novel', permanent: true },
-      { source: '/blog/best-speed-reading-apps', destination: '/blog/best-speed-reading-apps-for-pc', permanent: true },
-      { source: '/blog/best-speed-reading-pc', destination: '/blog/best-speed-reading-apps-for-pc', permanent: true },
-      { source: '/blog/1-million-token-to-words', destination: '/blog/1-million-tokens-to-words', permanent: true },
-      { source: '/blog/how-much-does-1-million-tokens-cost-7-real-examples', destination: '/blog/how-much-does-1-million-tokens-cost', permanent: true },
-      { source: '/blog/keyboard-shift-g-word-count', destination: '/blog/keyboard-shortcut-word-count', permanent: true },
-      { source: '/blog/how-long-does-it-take-to-read-10,000-words', destination: '/blog/how-long-does-it-take-to-read-10000-words', permanent: true },
-      { source: '/blog/where-was-the-filmed', destination: '/blog/where-was-the-hobbit-filmed', permanent: true },
+            // ---------- Tools: canonical slugs confirmed ----------
+      { source: '/tools/and-replace-text', destination: '/tools/find-and-replace-text', permanent: true },
+      { source: '/tools/ai-token-context', destination: '/tools/ai-token-counter', permanent: true },
+      { source: '/tools/ai-target-counter', destination: '/tools/ai-token-counter', permanent: true },
+      { source: '/tools/countflows-reading-time-calculator', destination: '/tools/reading-time', permanent: true },
+      { source: '/tools/reading-time-this-text', destination: '/tools/reading-time', permanent: true },
 
-      // ---------- ROOT-CAUSE FIX: Trailing Slash Duplicate Bug ----------
+      // ---------- Off-topic broken slug ----------
+      { source: '/blog/where-was-the-filmed', destination: '/blog/where-was-the-hobbit-filmed', permanent: true }, // truncated slug fix; final fate of this page (rework/redirect elsewhere) abhi decide karna baaki hai
+
+      // ---------- ROOT-CAUSE FIX: koi bhi trailing-slash duplicate (ab + future) ----------
+      // Waja: /text-repeater/, /syllable-counter/, /reading-time-calculator/, /does-chatgpt-watermark-text/
+      // waghera sab isi ek rule se 301 ho jayenge — ab har naye trailing-slash variant ke liye
+      // alag se entry likhne ki zaroorat nahi.
       {
-        source: '/blog/:path*/',
-        destination: '/blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/tools/:path*/',
-        destination: '/tools/:path*',
+        source: '/:path((?!_next|api).*)/',
+        destination: '/:path',
         permanent: true,
       },
     ];

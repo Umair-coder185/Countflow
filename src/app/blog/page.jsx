@@ -233,7 +233,7 @@ export default async function BlogPage({ searchParams }) {
         description:
           "Practical guides about writing, SEO, AI, reading, text analysis, and content creation.",
         publisher: {
-          "@id": `${SITE_URL}/#organization`,
+          "@id": `${SITE_URL}#organization`,
         },
       },
       {

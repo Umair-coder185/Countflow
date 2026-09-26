@@ -1,9 +1,12 @@
 // src/app/about-us/page.jsx
 
 import Link from "next/link";
+import { ALL_TOOLS } from "@/app/tools/page";
+
+const totalTools = ALL_TOOLS.length;
 
 const description =
-  "CountFlows is a free, private suite of 15 writing tools built by Umair Tufail that run entirely in your browser, with no sign-up needed.";
+  `CountFlows is a free, private suite of ${totalTools} writing tools built by Umair Tufail — counters and converters that run entirely in your browser, no sign-up needed.`;
 
 export const metadata = {
   title: "About CountFlows",
@@ -19,42 +22,7 @@ export const metadata = {
   twitter: { card: "summary", title: "About CountFlows", description },
 };
 
-// Verify each href against the live slugs in homeData.js before shipping.
-const tools = [
-  {
-    name: "Word Counter",
-    href: "/tools/word-counter",
-    blurb: "Count words instantly for blogs, essays, and SEO content.",
-  },
-  {
-    name: "Character Counter",
-    href: "/tools/character-counter",
-    blurb:
-      "Track characters with and without spaces for captions, ads, and meta tags.",
-  },
-  {
-    name: "Sentence Counter",
-    href: "/tools/sentence-counter",
-    blurb: "Measure sentence count and average length to keep writing readable.",
-  },
-  {
-    name: "Reading Time Calculator",
-    href: "/tools/reading-time",
-    blurb: "Estimate reading and speaking time using research-based averages.",
-  },
-  {
-    name: "Case Converter",
-    href: "/tools/case-converter",
-    blurb:
-      "Switch text between UPPERCASE, lowercase, Title Case, and more in one click.",
-  },
-  {
-    name: "Keyword Density Checker",
-    href: "/tools/keyword-density-checker",
-    blurb:
-      "See which words and phrases you repeat most, with percentages for SEO.",
-  },
-];
+// Imported ALL_TOOLS from /tools/page instead of hardcoding.
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
@@ -191,17 +159,17 @@ export default function AboutUs() {
         
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">Our tools</h2>
-        <p className="mb-4">15 tools are live today, with more on the roadmap:</p>
+        <p className="mb-4">{totalTools} tools are live today, with more on the roadmap:</p>
         <ul className="list-disc pl-6 space-y-2">
-          {tools.map((tool) => (
-            <li key={tool.href}>
+          {ALL_TOOLS.map((tool) => (
+            <li key={tool.slug}>
               <Link
-                href={tool.href}
+                href={tool.slug}
                 className="font-medium text-blue-500 hover:underline"
               >
                 {tool.name}
               </Link>
-              : {tool.blurb}
+              : {tool.desc}
             </li>
           ))}
         </ul>

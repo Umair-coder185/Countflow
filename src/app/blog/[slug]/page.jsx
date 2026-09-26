@@ -176,7 +176,7 @@ export default async function BlogPost({ params }) {
     author: authorSchema(post.author),
     publisher: {
       "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
+      "@id": `${SITE_URL}#organization`,
       name: "CountFlows",
       url: SITE_URL,
     },
