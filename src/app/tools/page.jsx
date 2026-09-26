@@ -14,6 +14,8 @@ import {
   Cpu,
   Repeat,
   EyeOff,
+  ReplaceAll,
+  ScanSearch,
 } from "lucide-react";
 
 const SITE = "https://countflows.com";
@@ -32,7 +34,7 @@ export const metadata = {
   },
 };
 
-const CATEGORIES = [
+export const CATEGORIES = [
   {
     name: "Counting Tools",
     slug: "counting",
@@ -139,6 +141,22 @@ const CATEGORIES = [
         desc : "Compare two pieces of text side by side and highlight the differences.",
         best : "Text comparison and proofreading",
         gradient : "from-cyan-500 to-blue-400",
+      },
+      {
+        name: "Find & Replace Text",
+        slug: "/tools/find-and-replace-text",
+        icon: ReplaceAll,
+        desc: "Find and replace words, phrases, characters, or multiple values with regex, live preview, and smart conflict checks.",
+        best: "Advanced text replacement",
+        gradient: "from-cyan-500 to-blue-400",
+      },
+      {
+        name: "ChatGPT Watermark Remover",
+        slug: "/tools/chatgpt-watermark-remover",
+        icon: ScanSearch,
+        desc: "Scan ChatGPT text for hidden Unicode, zero-width characters, unusual spaces, and copy-paste artifacts before cleaning them.",
+        best: "AI Text issues cleanup",
+        gradient: "from-fuchsia-500 to-pink-400",
       }
     ],
   },
@@ -182,7 +200,7 @@ const GUIDES = [
   { title: "How Long Should a Blog Post Be?", href: "/blog/how-long-should-a-blog-post-be" },
 ];
 
-const ALL_TOOLS = CATEGORIES.flatMap((c) => c.tools);
+export const ALL_TOOLS = CATEGORIES.flatMap((c) => c.tools);
 
 function schemaProps() {
   const data = {

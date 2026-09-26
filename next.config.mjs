@@ -83,9 +83,10 @@ const nextConfig = {
       { source: '/tools/ai-target-counter', destination: '/tools/ai-token-counter', permanent: true },
       { source: '/tools/countflows-reading-time-calculator', destination: '/tools/reading-time', permanent: true },
       { source: '/tools/reading-time-this-text', destination: '/tools/reading-time', permanent: true },
+      { source: '/hiddentextcleaner', destination: '/tools/invisible-character-detector', permanent: true },
 
       // ---------- Off-topic broken slug ----------
-      { source: '/blog/where-was-the-filmed', destination: '/blog/where-was-the-hobbit-filmed', permanent: true }, // truncated slug fix; final fate of this page (rework/redirect elsewhere) abhi decide karna baaki hai
+      // The Hobbit post was deleted. Removed redirect to let it 404 correctly.
 
       // ---------- ROOT-CAUSE FIX: koi bhi trailing-slash duplicate (ab + future) ----------
       // Waja: /text-repeater/, /syllable-counter/, /reading-time-calculator/, /does-chatgpt-watermark-text/

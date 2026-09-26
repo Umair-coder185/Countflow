@@ -1,22 +1,11 @@
 import { posts } from "@/lib/blogData";
+import { ALL_TOOLS } from "@/app/tools/page";
 
 export async function GET() {
   const baseUrl = "https://countflows.com";
   const staticRoutes = [
     "/",
     "/tools",
-    "/tools/word-counter",
-    "/tools/character-counter",
-    "/tools/reading-time",
-    "/tools/sentence-counter",
-    "/tools/keyword-density-checker",
-    "/tools/case-converter",
-    "/tools/ai-text-cleaner",
-    "/tools/syllable-counter",
-    "/tools/ai-token-counter",
-    "/tools/remove-line-breaks",
-    "/tools/text-repeater",
-    "/tools/text-compare",
     "/blog",
     "/about-us",
     "/contact",
@@ -24,8 +13,9 @@ export async function GET() {
     "/terms",
   ];
 
+  const toolsRoutes = ALL_TOOLS.map((tool) => tool.slug);
   const blogRoutes = posts.map((post) => `/blog/${post.slug}`);
-  const routes = [...staticRoutes, ...blogRoutes];
+  const routes = [...staticRoutes, ...toolsRoutes, ...blogRoutes];
   const lastmod = new Date().toISOString().split("T")[0];
 
   const urls = routes

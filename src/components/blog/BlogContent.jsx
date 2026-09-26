@@ -414,20 +414,21 @@ export default function BlogContent({ post }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative h-64 sm:h-72 md:h-96 w-full bg-gray-100 dark:bg-gray-800 overflow-hidden mb-8 sm:mb-12 md:mb-14 rounded-lg"
+            className="w-full bg-gray-100 dark:bg-gray-800 mb-8 sm:mb-12 md:mb-14 rounded-lg"
           >
             {imageSrc ? (
               <Image
                 src={imageSrc}
                 alt={post?.imageAlt || post.title}
-                fill
+                width={1200}
+                height={630}
                 priority
                 sizes="(max-width: 1023px) 100vw, (max-width: 1279px) calc(100vw - 380px), calc(100vw - 440px)"
-                className="object-cover"
+                className="w-full h-auto rounded-lg object-contain"
               />
             ) : (
               <div
-                className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-50 to-cyan-100 dark:from-slate-800 dark:to-slate-900"
+                className="w-full aspect-[1200/630] flex items-center justify-center bg-gradient-to-br from-blue-50 to-cyan-100 dark:from-slate-800 dark:to-slate-900 rounded-lg"
                 aria-hidden="true"
               >
                 <ImageIcon className="h-12 w-12 text-blue-400 dark:text-cyan-500" />
