@@ -1,5 +1,4 @@
 const syllableCounters = `
-
 <article>
 
   <p>
@@ -22,32 +21,6 @@ const syllableCounters = `
     syllables, but they use different division patterns.
   </p>
 
-
-  <nav aria-label="Table of contents">
-    <h2>Table of Contents</h2>
-
-    <ul>
-      <li><a href="#quick-answer">Syllable Division in 30 Seconds</a></li>
-      <li><a href="#what-is-syllable">What Is a Syllable?</a></li>
-      <li><a href="#three-differences">Three Things People Often Confuse</a></li>
-      <li><a href="#how-to-divide">How to Divide a Word Into Syllables</a></li>
-      <li><a href="#rules-chart">Syllable Division Rules Chart</a></li>
-      <li><a href="#vccv">VCCV Rule</a></li>
-      <li><a href="#vcv">VCV Rules</a></li>
-      <li><a href="#vv">Vowel-to-Vowel Rule</a></li>
-      <li><a href="#cle">Consonant + LE Rule</a></li>
-      <li><a href="#word-parts">Compound Words, Prefixes, and Suffixes</a></li>
-      <li><a href="#types">Six Common Syllable Types</a></li>
-      <li><a href="#examples">Worked Examples</a></li>
-      <li><a href="#practice">10-Word Practice Test</a></li>
-      <li><a href="#mistakes">Common Mistakes</a></li>
-      <li><a href="#counter">When to Use a Syllable Counter</a></li>
-      <li><a href="#sources">Sources and Method</a></li>
-    </ul>
-  </nav>
-
-
-  <section id="quick-answer">
     <h2>Syllable Division in 30 Seconds</h2>
 
     <p>
@@ -70,10 +43,10 @@ const syllableCounters = `
       vowels and consonants, watch for digraphs and blends, divide the word,
       identify syllable types, and blend the word again.
     </p>
-  </section>
 
 
-  <section id="what-is-syllable">
+
+
     <h2>What Is a Syllable?</h2>
 
     <p>
@@ -122,10 +95,10 @@ const syllableCounters = `
       together to represent one vowel sound. For example, <em>rain</em> contains
       two vowel letters but only one syllable.
     </p>
-  </section>
 
 
-  <section id="three-differences">
+
+  
     <h2>Spoken Syllables, Reading Divisions, and Dictionary Breaks Are Not Always the Same</h2>
 
     <p>
@@ -180,10 +153,8 @@ const syllableCounters = `
       differently without one of them necessarily being wrong. Always check
       what kind of division the source is showing.
     </p>
-  </section>
+ 
 
-
-  <section id="how-to-divide">
     <h2>How to Divide a Word Into Syllables</h2>
 
     <p>
@@ -231,10 +202,8 @@ const syllableCounters = `
         reasonable division or check a dictionary pronunciation.
       </li>
     </ol>
-  </section>
+ 
 
-
-  <section id="rules-chart">
     <h2>Syllable Division Rules Chart</h2>
 
     <table>
@@ -301,10 +270,7 @@ const syllableCounters = `
       These are decoding guides, not mathematical laws. English spelling,
       stress, word history, and pronunciation create exceptions.
     </p>
-  </section>
 
-
-  <section id="vccv">
     <h2>Rule 1: VCCV Usually Divides Between the Consonants</h2>
 
     <p>
@@ -317,6 +283,10 @@ const syllableCounters = `
       <li><strong>nap / kin</strong></li>
       <li><strong>pic / nic</strong></li>
       <li><strong>bas / ket</strong></li>
+      <li><strong>muf / fin</strong></li>
+      <li><strong>sum / mer</strong></li>
+      <li><strong>win / dow</strong></li>
+      <li><strong>doc / tor</strong></li>
     </ul>
 
     <p>
@@ -329,10 +299,8 @@ const syllableCounters = `
       letters form a digraph or another spelling unit that should remain
       together.
     </p>
-  </section>
 
 
-  <section id="vcv">
     <h2>Rule 2: With VCV, Try Both Possible Divisions</h2>
 
     <p>
@@ -347,6 +315,9 @@ const syllableCounters = `
       <li>ti / ger</li>
       <li>mu / sic</li>
       <li>pa / per</li>
+      <li>ba / by</li>
+      <li>spi / der</li>
+      <li>ro / bot</li>
     </ul>
 
     <p>
@@ -360,16 +331,17 @@ const syllableCounters = `
       <li>lem / on</li>
       <li>riv / er</li>
       <li>vis / it</li>
+      <li>cam / el</li>
+      <li>sev / en</li>
+      <li>liz / ard</li>
     </ul>
 
     <p>
       For example, reading <em>cabin</em> as <em>ca / bin</em> would suggest
       the wrong first-vowel sound. <em>cab / in</em> matches the familiar word.
     </p>
-  </section>
 
 
-  <section id="vv">
     <h2>Rule 3: Split Adjacent Vowels Only When They Belong to Different Syllables</h2>
 
     <p>
@@ -384,8 +356,8 @@ const syllableCounters = `
     <table>
       <thead>
         <tr>
-          <th>Separate Syllables</th>
-          <th>One Vowel Pattern</th>
+          <th>Separate Syllables (Divided)</th>
+          <th>One Vowel Pattern (Kept Together)</th>
         </tr>
       </thead>
 
@@ -404,6 +376,21 @@ const syllableCounters = `
           <td>po / em</td>
           <td>team</td>
         </tr>
+
+        <tr>
+          <td>gi / ant</td>
+          <td>peach</td>
+        </tr>
+
+        <tr>
+          <td>ne / on</td>
+          <td>spoil</td>
+        </tr>
+
+        <tr>
+          <td>ru / in</td>
+          <td>train</td>
+        </tr>
       </tbody>
     </table>
 
@@ -412,10 +399,8 @@ const syllableCounters = `
       is, "Do these letters represent one vowel sound or separate syllables in
       this word?"
     </p>
-  </section>
 
 
-  <section id="cle">
     <h2>Rule 4: Recognize the Final Consonant + LE Pattern</h2>
 
     <p>
@@ -428,6 +413,10 @@ const syllableCounters = `
       <li>lit / tle</li>
       <li>puz / zle</li>
       <li>can / dle</li>
+      <li>ap / ple</li>
+      <li>tur / tle</li>
+      <li>bub / ble</li>
+      <li>cir / cle</li>
     </ul>
 
     <p>
@@ -435,10 +424,8 @@ const syllableCounters = `
       literacy. It is useful because the final syllable is easy to recognize
       once you know what to look for.
     </p>
-  </section>
 
 
-  <section id="word-parts">
     <h2>Rule 5: Use Compound Words and Meaningful Word Parts</h2>
 
     <p>
@@ -459,6 +446,9 @@ const syllableCounters = `
       <li>foot / ball</li>
       <li>rain / coat</li>
       <li>bed / room</li>
+      <li>base / ball</li>
+      <li>snow / man</li>
+      <li>pan / cake</li>
     </ul>
 
     <h3>Prefixes and suffixes</h3>
@@ -468,16 +458,17 @@ const syllableCounters = `
       <li>un / happy</li>
       <li>help / ing</li>
       <li>care / less</li>
+      <li>pre / view</li>
+      <li>kind / ness</li>
+      <li>teach / er</li>
     </ul>
 
     <p>
       One caution: a morpheme is not automatically a separate spoken syllable.
       Use word structure as a clue, then confirm the pronunciation.
     </p>
-  </section>
 
 
-  <section id="types">
     <h2>The Six Common Syllable Types</h2>
 
     <p>
@@ -540,10 +531,8 @@ const syllableCounters = `
       categories in literacy instruction. Terminology can vary slightly between
       teaching programs.
     </p>
-  </section>
 
 
-  <section id="examples">
     <h2>Worked Syllable Division Examples</h2>
 
     <h3>Rabbit</h3>
@@ -593,10 +582,84 @@ const syllableCounters = `
       Start with the two complete words inside the compound:
       <strong>sun / set</strong>.
     </p>
-  </section>
 
+    <h2>50+ Common Words Divided Into Syllables</h2>
+    
+    <p>
+      To help you master these patterns, here is a quick reference list of everyday words correctly divided into syllables. These examples demonstrate the rules in action across different word lengths.
+    </p>
 
-  <section id="practice">
+    <table>
+      <thead>
+        <tr>
+          <th>2 Syllables</th>
+          <th>3 Syllables</th>
+          <th>4+ Syllables</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <li>ap / ple</li>
+              <li>ba / by</li>
+              <li>pe / tal</li>
+              <li>tur / tle</li>
+              <li>win / dow</li>
+              <li>doc / tor</li>
+              <li>yel / low</li>
+              <li>mon / key</li>
+              <li>den / tist</li>
+              <li>sum / mer</li>
+              <li>puz / zle</li>
+              <li>can / dle</li>
+              <li>win / ter</li>
+              <li>morn / ing</li>
+              <li>sis / ter</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>a / ni / mal</li>
+              <li>ba / na / na</li>
+              <li>com / pu / ter</li>
+              <li>e / le / phant</li>
+              <li>fa / mi / ly</li>
+              <li>ho / li / day</li>
+              <li>im / por / tant</li>
+              <li>to / mor / row</li>
+              <li>um / brel / la</li>
+              <li>won / der / ful</li>
+              <li>me / mo / ry</li>
+              <li>a / maz / ing</li>
+            
+              <li>hos / pi / tal</li>
+              <li>beau / ti / ful</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>a / me / ri / ca</li>
+              <li>e / du / ca / tion</li>
+              <li>in / for / ma / tion</li>
+              <li>wa / ter / me / lon</li>
+              <li>vo / ca / bu / la / ry</li>
+              <li>un / be / liev / a / ble</li>
+              <li>in / tel / li / gent</li>
+              <li>te / le / vi / sion</li>
+              <li>ap / pre / ci / a / tion</li>
+              <li>con / gra / tu / la / tions</li>
+              <li>e / co / no / my</li>
+              <li>ge / o / gra / phy</li>
+              <li>in / de / pen / dent</li>
+              <li>pho / to / gra / phy</li>
+              <li>u / ni / ver / si / ty</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
     <h2>10-Word Syllable Division Practice</h2>
 
     <p>
@@ -638,10 +701,8 @@ const syllableCounters = `
       Was it VCCV, VCV, two separate vowel sounds, a compound word, or a stable
       final syllable?
     </p>
-  </section>
 
 
-  <section id="mistakes">
     <h2>Common Syllable Division Mistakes</h2>
 
     <table>
@@ -684,10 +745,8 @@ const syllableCounters = `
         </tr>
       </tbody>
     </table>
-  </section>
 
 
-  <section>
     <h2>The CountFlows Hear, Mark, Divide, Verify Check</h2>
 
     <p>
@@ -722,10 +781,8 @@ const syllableCounters = `
       This is a practical CountFlows workflow for applying established
       syllable-decoding principles. It is not a separate linguistic rule.
     </p>
-  </section>
 
 
-  <section id="counter">
     <h2>When Should You Use a Syllable Counter?</h2>
 
     <p>
@@ -758,10 +815,8 @@ const syllableCounters = `
       </a>
       if your goal is poetry, pronunciation, or rhythm.
     </p>
-  </section>
 
 
-  <section id="sources">
     <h2>Sources and Method</h2>
 
     <p>
@@ -813,10 +868,8 @@ const syllableCounters = `
         </a>
       </li>
     </ul>
-  </section>
 
 
-  <section>
     <h2>Bottom Line</h2>
 
     <p>
@@ -832,10 +885,8 @@ const syllableCounters = `
       Most importantly, use the rules to help you read the word. Do not force
       the pronunciation to fit a rule that clearly does not work.
     </p>
-  </section>
 
 </article>
-
 `;
 
 export default syllableCounters;

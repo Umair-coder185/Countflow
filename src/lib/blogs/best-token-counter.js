@@ -8,24 +8,7 @@ const bestTokenCounter = `
   
   <p>A token counter becomes much more useful when it answers more than one question. You may need to know how many tokens a prompt contains, whether it fits a model, and what an API request could cost. The best AI token counters now combine counting with pricing, context checks, model comparison, privacy, or budget planning.</p>
 
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href="#quick-comparison">Quick comparison</a></li>
-    <li><a href="#how-these-tools-were-compared">How these tools were compared</a></li>
-    <li><a href="#countflows">CountFlows</a></li>
-    <li><a href="#tokencalculator-app">TokenCalculator.app</a></li>
-    <li><a href="#tokencalculator-com">TokenCalculator.com</a></li>
-    <li><a href="#aicalc-tools">AIcalc.tools</a></li>
-    <li><a href="#softzar">SoftZaR</a></li>
-    <li><a href="#tooljunction">ToolJunction</a></li>
-    <li><a href="#vortenza">Vortenza</a></li>
-    <li><a href="#which-tool-should-you-choose">Which tool should you choose?</a></li>
-    <li><a href="#why-token-totals-differ">Why token totals differ</a></li>
-    <li><a href="#features-that-actually-matter">Features that actually matter</a></li>
-    <li><a href="#faqs">FAQs</a></li>
-  </ul>
-
-  <h2 id="quick-comparison">Quick Comparison</h2>
+  <h2>Quick Comparison</h2>
   
   <p>Not every AI token calculator solves the same problem. Some focus on model coverage, while others are better for cost planning or simple token estimates.</p>
 
@@ -111,13 +94,13 @@ const bestTokenCounter = `
 
   <p><em>Features were checked against the public tool pages on August 26, 2026. AI models, prices, context limits, and tool features can change, so important production costs should always be checked against the provider's current pricing.</em></p>
 
-  <h2 id="how-these-tools-were-compared">How These AI Token Calculators Were Compared</h2>
+  <h2>How These AI Token Calculators Were Compared</h2>
   
   <p>Each tool was reviewed using the same practical criteria: supported model families, token-counting method, API cost estimation, context-window information, model comparison, privacy, budget tools, and pricing transparency. No arbitrary numerical scores were used because a tool that suits one workflow may not suit another.</p>
 
   <p>Accuracy also received extra attention. GPT, Claude, and Gemini don't necessarily tokenize identical text in the same way. A useful calculator should tell you whether its result comes from a model-matched tokenizer or an estimate.</p>
 
-  <h2 id="countflows">1. CountFlows AI Token Counter & Cost Calculator</h2>
+  <h2>1. CountFlows AI Token Counter & Cost Calculator</h2>
   
   <p><strong>Best for combining GPT, Claude and Gemini token estimates with cost and budget planning</strong></p>
 
@@ -140,7 +123,7 @@ const bestTokenCounter = `
 
   <p>This combination suits developers, prompt engineers, writers, and teams who want to answer three questions together: How large is my prompt, will it fit, and what could it cost?</p>
 
-  <h2 id="tokencalculator-app">2. TokenCalculator.app</h2>
+  <h2>2. TokenCalculator.app</h2>
   
   <p><strong>Best for wider model coverage</strong></p>
 
@@ -148,7 +131,7 @@ const bestTokenCounter = `
 
   <p>Its broader model selection makes it useful if your work regularly moves outside AI. It also offers token visualization and pricing comparison features, which can help developers understand both prompt size and expected spending.</p>
 
-  <h2 id="tokencalculator-com">3. TokenCalculator.com</h2>
+  <h2>3. TokenCalculator.com</h2>
   
   <p><strong>Best for exploring a large model pricing catalog</strong></p>
 
@@ -156,7 +139,7 @@ const bestTokenCounter = `
 
   <p>That depth works well when you're comparing many providers or checking less common models. However, users who only need a fast AI model check may prefer a simpler interface with fewer pricing rows.</p>
 
-  <h2 id="aicalc-tools">4. AIcalc.tools</h2>
+  <h2>4. AIcalc.tools</h2>
   
   <p><strong>Best for business budget planning</strong></p>
 
@@ -164,7 +147,7 @@ const bestTokenCounter = `
 
   <p>For example, a founder planning a support bot may care more about thousands of monthly requests than a single prompt. A budget-focused LLM cost calculator can make that type of planning easier.</p>
 
-  <h2 id="softzar">5. SoftZaR AI Token Cost Calculator</h2>
+  <h2>5. SoftZaR AI Token Cost Calculator</h2>
   
   <p><strong>Best for monthly API usage comparisons</strong></p>
 
@@ -172,7 +155,7 @@ const bestTokenCounter = `
 
   <p>That is useful because a tiny per-request price can look harmless. Multiply it by 10,000 or 100,000 requests, however, and small model-price differences can become significant.</p>
 
-  <h2 id="tooljunction">6. ToolJunction LLM Token Counter</h2>
+  <h2>6. ToolJunction LLM Token Counter</h2>
   
   <p><strong>Best for a simple private estimate</strong></p>
 
@@ -180,7 +163,7 @@ const bestTokenCounter = `
 
   <p>Its browser-focused approach is useful when you don't need advanced budget planning. Users who only want to check a prompt before sending it may prefer this lighter interface over a large pricing dashboard.</p>
 
-  <h2 id="vortenza">7. Vortenza AI Token Counter</h2>
+  <h2>7. Vortenza AI Token Counter</h2>
   
   <p><strong>Best for writers who also want text statistics</strong></p>
 
@@ -188,7 +171,7 @@ const bestTokenCounter = `
 
   <p>That makes it more relevant to writers and content teams than a developer-only pricing calculator. Developers working with current production models may still prefer a tool that puts model pricing, context capacity, and budget planning at the center.</p>
 
-  <h2 id="which-tool-should-you-choose">Which AI Token Counter Should You Choose?</h2>
+  <h2>Which AI Token Counter Should You Choose?</h2>
   
   <p>Start with your actual task. If you're checking GPT, Gemini prompts and also need context usage, cost comparison, privacy, and monthly planning, CountFlows gives you those functions on one page.</p>
 
@@ -196,13 +179,13 @@ const bestTokenCounter = `
 
   <p><strong>Simple rule:</strong> Choose the tool that answers the next question you will ask after seeing the token total.</p>
 
-  <h2 id="why-token-totals-differ">Why Can Token Counters Show Different Results?</h2>
+  <h2>Why Can Token Counters Show Different Results?</h2>
   
   <p>Tokenizers don't treat text exactly like a word counter. A token may represent a complete word, part of a word, punctuation, a number, or another text unit. Different model families can also divide the same text differently.</p>
 
   <p>Content type matters too. Code, JSON, URLs, technical terms, formatting, and non-English text can change the ratio. If you're starting from document length, the guide on <a href="https://countflows.com/blog/how-many-tokens-is-1000-words" target="_blank" rel="noopener noreferrer">how many tokens are in 1,000 words</a> explains why word-based conversion remains an estimate.</p>
 
-  <h2 id="features-that-actually-matter">What Features Actually Matter?</h2>
+  <h2>What Features Actually Matter?</h2>
   
   <p>A raw token total is enough for casual checking. API users usually need more information before making a decision.</p>
 
@@ -227,7 +210,7 @@ const bestTokenCounter = `
 
   <p>That is where an AI token cost calculator becomes more useful than a basic counter. You can test the actual prompt in the <a href="/tools/ai-token-counter">CountFlows AI Token Counter</a>, choose a model, set an expected response size, and estimate both cost and context usage before making an API request.</p>
 
-  <h2 id="faqs">Frequently Asked Questions</h2>
+  <h2>Frequently Asked Questions</h2>
   
   <h3>What is the best free AI token counter?</h3>
   <p>The right choice depends on your models and workflow. CountFlows is designed for users who want LLM token estimates together with cost, context, comparison, and budget planning.</p>

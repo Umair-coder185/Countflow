@@ -187,8 +187,9 @@ function getRelatedPosts(post) {
 }
 
 // 👇 AUTOMATIC TOC FUNCTION ADDED HERE 👇
-function processHtmlAndToc(html) {
+function processHtmlAndToc(html, enabled = true) {
   if (!html) return { toc: [], htmlWithIds: "" };
+  if (!enabled) return { toc: [], htmlWithIds: html };
 
   const toc = [];
   const regex = /<(h[23])([^>]*)>(.*?)<\/\1>/gi;
@@ -415,7 +416,10 @@ export default function BlogContent({ post }) {
       : null;
 
   // 👇 HTML AND TOC PROCESSING EXECUTED HERE 👇
-  const { toc, htmlWithIds } = processHtmlAndToc(post?.content || "");
+  const { toc, htmlWithIds } = processHtmlAndToc(
+    post?.content || "",
+    post?.showToc !== false
+  );
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 lg:py-12">
@@ -542,7 +546,7 @@ export default function BlogContent({ post }) {
           ) : null}
 
           {/* 👇 AUTOMATIC TOC RENDERED HERE (Only if 2 or more headings exist) 👇 */}
-          {toc.length >= 2 && (
+          {post?.showToc !== false && toc.length >= 2 && (
             <div className="bg-slate-50 dark:bg-slate-800/40 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 mb-10">
               <h2 className="text-xl sm:text-2xl font-bold mt-0 mb-4 border-none text-slate-900 dark:text-slate-100">Table of Contents</h2>
               <ul className="list-none pl-0 space-y-3 mt-0 mb-0">

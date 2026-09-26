@@ -34,7 +34,7 @@ import sonnet from "./blogs/blog33";
 import removeGpt from "./blogs/removegpt";
 import stressAndUnstressed from "./blogs/stress_unstressed";
 import textRepeater from "./blogs/text-repeater";
-import removeLineBreaks from "./blogs/remove-line-breaks";
+
 import essayWordCount from "./blogs/essay-word-count";
 import makeEssayLonger from "./blogs/make-essay-long";
 import millionToken from "./blogs/One-million-token";
@@ -1577,7 +1577,7 @@ export const posts = [
     "sentence case in excel",
     "excel change case shortcut"
   ],
-
+  showToc: true,
   content: caseConverter,
 
   faqs: [
@@ -1641,47 +1641,49 @@ export const posts = [
 
 
 
-
 {
   id: 24,
 
   slug: "how-to-remove-ai-detection-from-text",
 
-  title: "How to Edit AI-Generated Content Before Publishing",
+  title: "How to Remove AI Detection From Text (What Actually Works)",
 
   description:
-    "Review AI-generated text for accuracy, citations, originality, style and formatting before publishing with this practical checklist.",
+    "Searching how to remove AI detection from text? See what AI humanizer tools really do, real Turnitin false-positive data, and the review process that actually holds up.",
 
   excerpt:
-    "Learn how to review AI-generated text before publishing by checking facts, verifying citations, rewriting weak sections, adding original evidence, and cleaning unwanted formatting.",
+    "Learn what actually happens when you try to remove AI detection from text — including whether humanizer tools work, real false-positive data from Turnitin, and the honest review process that holds up under scrutiny.",
 
   category: "Reading & Writing",
 
   image: "/blogs/ai-detection.webp",
 
   imageAlt:
-    "How to review and edit AI-generated text before publishing",
+    "How to remove AI detection from text before publishing",
 
   author: "Umair Tufail",
 
   date: "2026-07-19",
 
-  readTime: "10 min read",
+  readTime: "11 min read",
 
   keywords: [
+    "how to remove ai detection from text",
+    "remove ai detection",
+    "ai detection remover",
+    "remove ai generated text",
+    "ai remover from text",
+    "how to hide ai generated text",
+    "ai humanizer tools",
+    "does ai humanizer work",
     "how to edit AI-generated content",
     "review AI-generated text",
-    "AI-generated text before publishing",
-    "edit AI-generated text",
-    "review AI-assisted writing",
     "AI content review",
     "fact check AI-generated content",
     "verify AI citations",
     "clean AI-generated text",
     "AI writing checklist",
-    "AI-assisted writing",
-    "AI text formatting",
-    "how to remove ai detection from text"
+    "AI text formatting"
   ],
 
   relatedTools: [
@@ -1716,7 +1718,12 @@ export const posts = [
     {
       question: "Can I remove AI detection from text?",
       answer:
-        "No method can guarantee that every AI detector will return a particular result. Focus instead on accuracy, original contribution, verified sources, clear writing, and the rules that apply to your work."
+        "Not reliably. No method guarantees that every AI detector will return a particular result. Focus instead on accuracy, original contribution, verified sources, clear writing, and the rules that apply to your work."
+    },
+    {
+      question: "Do AI humanizer or bypass tools actually work?",
+      answer:
+        "They can shift a detector's score by increasing sentence variation and lowering predictability, but the effect isn't reliable across detectors or over time, and the rewritten text often loses quality or accuracy in the process."
     },
     {
       question: "Why can human writing be flagged as AI?",
@@ -1745,7 +1752,6 @@ export const posts = [
     }
   ]
 },
-
 
 {
   id: 25,
@@ -2372,6 +2378,7 @@ export const posts = [
     "syllable division examples"
   ],
 
+  showToc: false,
   content: syllableCounters,
 
   faqs: [
@@ -2792,54 +2799,7 @@ export const posts = [
 
 
 
-{
-  id: 37,
-  slug: "remove-line-breaks-from-pdf-text",
-  title: "5 Easy Steps to Remove Line Breaks from PDF Text",
-  description: "Learn how to remove line breaks from PDF text in 5 easy steps. Fix broken paragraphs, hyphenated words, and extra spaces automatically.",
-  excerpt: "Discover the fastest way to remove line breaks from PDF text while preserving paragraphs, fixing hyphenated words, and cleaning extra spaces.",
-  category: "Reading & Writing",
-  image: "/blogs/remove-line-breaks-pdf.webp",
-  imageAlt: "Remove Line Breaks from PDF Text",
-  author: "Umair Tufail",
-  date: "2026-08-19",
-  readTime: "7 min read",
-  keywords: [
-    "remove line breaks from PDF",
-    "PDF text cleanup",
-    "remove line breaks online",
-    "fix PDF copy paste",
-    "clean PDF text",
-    "remove newlines from PDF"
-  ],
-  content: removeLineBreaks,
-  faqs: [
-    {
-      question: "Why does copied PDF text break at every line?",
-      answer: "Many PDFs preserve a fixed page layout, and copied text can carry those visual line endings into the clipboard. The result may contain hard breaks inside sentences."
-    },
-    {
-      question: "How do I remove line breaks from copied PDF text?",
-      answer: "Copy the text, paste it into a line break remover, process the unwanted newlines, then review paragraph boundaries before copying the result."
-    },
-    {
-      question: "Can I remove PDF line breaks without losing paragraphs?",
-      answer: "Yes, but review blank lines and paragraph boundaries carefully. Remove breaks inside paragraphs while keeping meaningful separation between sections."
-    },
-    {
-      question: "Why do some words stay broken after removing line breaks?",
-      answer: "The PDF may have split a word with a hyphen at the end of a line. Joining lines doesn't always remove that hyphen correctly."
-    },
-    {
-      question: "Does removing line breaks change the words?",
-      answer: "A basic line break cleanup should change formatting rather than rewrite the content. Always compare important material with the original source."
-    },
-    {
-      question: "Can I clean a large amount of PDF text?",
-      answer: "Yes. Large copied sections benefit most because manual deletion becomes slow and error prone. Process manageable sections and review the result as you go."
-    }
-  ]
-},
+
 
 
 
@@ -3039,6 +2999,7 @@ export const posts = [
     "tokens to characters",
     "AI token calculator"
   ],
+  showToc: true,
   content: millionToken, // your imported MDX/HTML content for this article
   faqs: [
     {
@@ -3098,6 +3059,7 @@ export const posts = [
     "GPT token calculator",
     "Claude token count"
   ],
+  showToc: true,
   content: tokenToWords,
   faqs: [
     {
@@ -3147,6 +3109,7 @@ export const posts = [
     "Claude token pricing",
     "Gemini token pricing"
   ],
+  "showToc": true,
   "content": millionTokenPrice,
   "faqs": [
     {
@@ -3208,6 +3171,7 @@ export const posts = [
     "LLM token counter",
     "AI API cost calculator"
   ],
+  showToc: false,
 
   content: bestTokenCounter,
    "faqs": [

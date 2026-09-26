@@ -25,6 +25,7 @@ const nextConfig = {
       { source: '/tools/reading-time-this-text', destination: '/tools/reading-time', permanent: true },
       { source: '/tools/reading-time-calculator', destination: '/tools/reading-time', permanent: true },
       { source: '/blog/countflows-ai-text-cleaner', destination: '/tools/ai-text-cleaner', permanent: true },
+      { source: '/blog/remove-line-breaks-from-pdf-text', destination: '/tools/remove-line-breaks', permanent: true },
 
       // ---------- Static Pages ----------
       { source: '/about', destination: '/about-us', permanent: true },

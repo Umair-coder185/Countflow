@@ -4,7 +4,7 @@ const caseConverter = `
 
   <p>
     Excel can change text to uppercase, lowercase, or proper case without
-    retyping a column manually. For most worksheets, use
+    manually retyping every cell. For most worksheets, use
     <strong>UPPER</strong>, <strong>LOWER</strong>, or
     <strong>PROPER</strong>. Flash Fill is useful when you want a no-formula
     option, while Power Query is better for transformations you need to repeat.
@@ -18,8 +18,7 @@ const caseConverter = `
   </p>
 
 
-  <section>
-    <h2 id="quick-answer">How to Convert Case in Excel: Quick Answer</h2>
+    <h2>How to Convert Case in Excel: Quick Answer</h2>
 
     <table>
       <thead>
@@ -74,7 +73,7 @@ const caseConverter = `
     <p>
       Microsoft documents UPPER, LOWER, and PROPER as Excel's standard
       worksheet functions for changing capitalization.
-      <a
+      
         href="https://support.microsoft.com/en-us/excel/change-the-case-of-text"
         target="_blank"
         rel="noopener noreferrer"
@@ -82,30 +81,7 @@ const caseConverter = `
         Microsoft: Change the case of text in Excel
       </a>.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="table-of-contents">Table of Contents</h2>
-
-    <ol>
-      <li><a href="#method-selector">Which method should you use?</a></li>
-      <li><a href="#upper-lower-proper">Method 1: UPPER, LOWER, and PROPER</a></li>
-      <li><a href="#paste-values">How to replace the original text safely</a></li>
-      <li><a href="#flash-fill">Method 2: Flash Fill without formulas</a></li>
-      <li><a href="#sentence-case">Method 3: Sentence-style capitalization</a></li>
-      <li><a href="#power-query">Method 4: Power Query for repeat jobs</a></li>
-      <li><a href="#online-converter">Method 5: Browser-based case conversion</a></li>
-      <li><a href="#proper-limitations">Why PROPER sometimes gives strange results</a></li>
-      <li><a href="#numbers-dates">What happens to numbers and dates?</a></li>
-      <li><a href="#troubleshooting">Common Excel case-conversion problems</a></li>
-      <li><a href="#quality-check">The CountFlows 4-point quality check</a></li>
-    </ol>
-  </section>
-
-
-  <section>
-    <h2 id="method-selector">Which Excel Case Conversion Method Should You Use?</h2>
+    <h2>Which Excel Case Conversion Method Should You Use?</h2>
 
     <p>
       Do not choose a method only because it looks shortest. Choose it based on
@@ -159,11 +135,7 @@ const caseConverter = `
         </tr>
       </tbody>
     </table>
-  </section>
-
-
-  <section>
-    <h2 id="upper-lower-proper">Method 1: Use UPPER, LOWER, and PROPER</h2>
+    <h2>Method 1: Use UPPER, LOWER, and PROPER</h2>
 
     <figure>
       <img
@@ -242,11 +214,7 @@ const caseConverter = `
       correct for every person's name, company, abbreviation, or technical
       term.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="paste-values">How to Replace the Original Text Without Breaking It</h2>
+    <h2>How to Replace the Original Text Without Breaking It</h2>
 
     <p>
       A common Excel mistake happens after the formula works perfectly.
@@ -261,7 +229,7 @@ const caseConverter = `
     <p><code>=UPPER(A2)</code></p>
 
     <p>
-      It does not yet contain independent text.
+      It does not yet contain independent text — it still depends on cell A2.
     </p>
 
     <p>
@@ -278,14 +246,11 @@ const caseConverter = `
     </ol>
 
     <p>
-      Microsoft recommends the same values-only step when replacing the
-      original text after a case formula.
+      This is the standard way to convert a formula's output into plain,
+      independent text in Excel, so the result survives even after the source
+      column is removed.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="flash-fill">Method 2: Change Text Case with Flash Fill</h2>
+    <h2>Method 2: Change Text Case with Flash Fill</h2>
 
     <p>
       Flash Fill is useful when your desired result follows a recognizable
@@ -318,7 +283,7 @@ const caseConverter = `
     <p>
       Microsoft describes Flash Fill as a feature that detects a pattern from
       the example you provide and fills the remaining data accordingly.
-      <a
+      
         href="https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel"
         target="_blank"
         rel="noopener noreferrer"
@@ -340,11 +305,7 @@ const caseConverter = `
       Flash Fill is pattern-based, so always inspect the output when the source
       data contains inconsistent formats.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="sentence-case">Method 3: Create Simple Sentence Case in Excel</h2>
+    <h2>Method 3: Create Simple Sentence Case in Excel</h2>
 
     <p>
       Excel does not provide a built-in SENTENCE function equivalent to its
@@ -414,11 +375,7 @@ const caseConverter = `
       <a href="/blog/what-is-sentence-case">sentence case guide</a>
       for capitalization rules and examples.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="power-query">Method 4: Use Power Query for Repeatable Cleanup</h2>
+    <h2>Method 4: Use Power Query for Repeatable Cleanup</h2>
 
     <p>
       Formulas are convenient for one worksheet. Power Query becomes more
@@ -450,7 +407,7 @@ const caseConverter = `
     <p>
       Microsoft documents these transformations in its Power Query M text
       function reference.
-      <a
+      
         href="https://learn.microsoft.com/en-us/powerquery-m/text-functions"
         target="_blank"
         rel="noopener noreferrer"
@@ -464,11 +421,7 @@ const caseConverter = `
       the query, new source data can go through the same cleanup process when
       the query is refreshed.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="online-converter">Method 5: Use a Browser-Based Case Converter</h2>
+    <h2>Method 5: Use a Browser-Based Case Converter</h2>
 
     <p>
       A spreadsheet is not always the fastest workspace when you simply have a
@@ -499,15 +452,23 @@ const caseConverter = `
     </p>
 
     <p>
-      Even so, automatic case conversion should be treated as a mechanical
+      If the text you're pasting into Excel was copied from ChatGPT or another
+      AI tool, it can carry Markdown symbols, invisible characters, or other
+      formatting artifacts that interfere with PROPER, Flash Fill, or a
+      sentence-case formula. Clean it first with the
+      <a href="/tools/ai-text-cleaner">AI Text Cleaner</a>, or see the
+      <a href="/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text">
+        guide to removing ChatGPT formatting
+      </a>
+      for more methods.
+    </p>
+
+    <p>
+      Even after cleanup, treat automatic case conversion as a mechanical
       transformation. Check proper nouns, brand names, acronyms, and specialist
       terms after conversion.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="proper-limitations">Why Excel PROPER Can Produce Unexpected Capitalization</h2>
+    <h2>Why Excel PROPER Can Produce Unexpected Capitalization</h2>
 
     <p>
       This is one of the most useful limitations to know before cleaning a
@@ -521,7 +482,11 @@ const caseConverter = `
     </p>
 
     <p>
-      That behavior can create unexpected results in special text.
+      That behavior can create unexpected results in special text. Microsoft's
+      own documentation shows this with <code>2-cent's worth</code>, which
+      PROPER converts to <code>2-Cent'S Worth</code> — the letter right after
+      the apostrophe gets capitalized too, since PROPER treats the apostrophe
+      as a non-letter break point.
     </p>
 
     <table>
@@ -547,9 +512,9 @@ const caseConverter = `
         </tr>
 
         <tr>
-          <td>Names with punctuation</td>
-          <td>Characters after punctuation may be capitalized unexpectedly</td>
-          <td>Review names manually</td>
+          <td>Names or words with an apostrophe</td>
+          <td>O'brien or Cent's Worth may capitalize the letter after the apostrophe</td>
+          <td>Review names and possessives manually</td>
         </tr>
 
         <tr>
@@ -562,7 +527,7 @@ const caseConverter = `
 
     <p>
       Microsoft documents this exact behavior in its
-      <a
+      
         href="https://support.microsoft.com/en-us/excel/proper-function"
         target="_blank"
         rel="noopener noreferrer"
@@ -570,11 +535,7 @@ const caseConverter = `
         PROPER function reference
       </a>.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="numbers-dates">Does Changing Case Affect Numbers or Dates?</h2>
+    <h2>Does Changing Case Affect Numbers or Dates?</h2>
 
     <p>
       UPPER, LOWER, and PROPER are text functions. Non-letter characters inside
@@ -604,11 +565,7 @@ const caseConverter = `
     <p>
       Apply case conversion only to columns intended to contain text.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="troubleshooting">Common Problems When Changing Case in Excel</h2>
+    <h2>Common Problems When Changing Case in Excel</h2>
 
 
     <h3>The formula appears instead of the result</h3>
@@ -641,7 +598,7 @@ const caseConverter = `
     </p>
 
 
-    <h3>PROPER damages an acronym or brand name</h3>
+    <h3>PROPER damages an acronym, brand name, or possessive</h3>
 
     <p>
       This is a limitation of mechanical capitalization. Correct exceptional
@@ -665,11 +622,7 @@ const caseConverter = `
       or iPhone have special capitalization. Restore those terms after the
       conversion or use a workflow designed for context-sensitive text.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="quality-check">The CountFlows 4-Point Case Conversion Check</h2>
+    <h2>The CountFlows 4-Point Case Conversion Check</h2>
 
     <p>
       Before replacing hundreds of original cells, inspect the converted output
@@ -704,11 +657,38 @@ const caseConverter = `
       Checking a few rows at the top, middle, and bottom of a long dataset can
       catch pattern problems before they affect the entire worksheet.
     </p>
-  </section>
+    <h2>Frequently Asked Questions</h2>
 
+    <h3>How do I capitalize all text in Excel?</h3>
+    <p>
+      Use <code>=UPPER(A2)</code> to convert a cell's text to all capital
+      letters, then fill the formula down the column. Paste the results as
+      values if you need to remove the original column afterward.
+    </p>
 
-  <section>
-    <h2 id="bottom-line">Bottom Line</h2>
+    <h3>How do I use a case formula in Excel?</h3>
+    <p>
+      Enter the formula in a new cell referencing the text you want to
+      convert — <code>=UPPER(A2)</code>, <code>=LOWER(A2)</code>, or
+      <code>=PROPER(A2)</code> — then press Enter and drag the fill handle
+      down to apply it to the rest of the column.
+    </p>
+
+    <h3>Can you convert uppercase to lowercase in Excel?</h3>
+    <p>
+      Yes. Use <code>=LOWER(A2)</code>, where A2 is the cell containing the
+      uppercase text. The result appears in the new cell without changing the
+      original.
+    </p>
+
+    <h3>How do I change case in Excel without a formula?</h3>
+    <p>
+      Use Flash Fill. Type the result you want for the first cell manually,
+      then select <strong>Data &gt; Flash Fill</strong> or press
+      <strong>Ctrl+E</strong>. Excel detects the pattern and fills the rest of
+      the column automatically.
+    </p>
+    <h2>Bottom Line</h2>
 
     <p>
       For basic Excel text cleanup, start with UPPER, LOWER, or PROPER. Use
@@ -730,8 +710,6 @@ const caseConverter = `
       names and paste formula results as values before removing the original
       data.
     </p>
-  </section>
-
 </article>
 
 `;
