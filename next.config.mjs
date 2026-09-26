@@ -67,15 +67,13 @@ const nextConfig = {
       // ---------- Off-topic broken slug ----------
       { source: '/blog/where-was-the-filmed', destination: '/blog/where-was-the-hobbit-filmed', permanent: true }, // truncated slug fix; final fate of this page (rework/redirect elsewhere) abhi decide karna baaki hai
 
-      // ---------- ROOT-CAUSE FIX: Trailing Slash Duplicate Bug ----------
+      // ---------- ROOT-CAUSE FIX: koi bhi trailing-slash duplicate (ab + future) ----------
+      // Waja: /text-repeater/, /syllable-counter/, /reading-time-calculator/, /does-chatgpt-watermark-text/
+      // waghera sab isi ek rule se 301 ho jayenge — ab har naye trailing-slash variant ke liye
+      // alag se entry likhne ki zaroorat nahi.
       {
-        source: '/blog/:path*/',
-        destination: '/blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/tools/:path*/',
-        destination: '/tools/:path*',
+        source: '/:path((?!_next|api).*)/',
+        destination: '/:path',
         permanent: true,
       },
     ];
