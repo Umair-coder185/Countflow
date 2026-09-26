@@ -1,5 +1,6 @@
+import { cache } from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { posts } from "@/lib/blogData";
 import BlogList from "@/components/blog/BlogList";
@@ -7,6 +8,33 @@ import BlogList from "@/components/blog/BlogList";
 const SITE_URL = "https://countflows.com";
 const BLOG_URL = `${SITE_URL}/blog`;
 const POSTS_PER_PAGE = 12;
+
+// --- OPTIMIZATION: React Cache ---
+// Is function se sorting aur filtering sirf 1 dafa hogi per request.
+// Metadata aur Page component dono isi cached data ko use karenge.
+const getBlogData = cache(() => {
+  const valid = posts.filter((post) => post?.slug && post?.title);
+  
+  const sorted = [...valid].sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+
+    if (Number.isNaN(dateA) && Number.isNaN(dateB)) return 0;
+    if (Number.isNaN(dateA)) return 1;
+    if (Number.isNaN(dateB)) return -1;
+
+    return dateB - dateA;
+  });
+
+  const categories = [
+    "All",
+    ...Array.from(
+      new Set(sorted.map((post) => post.category).filter(Boolean))
+    ).sort((a, b) => a.localeCompare(b)),
+  ];
+
+  return { sortedPosts: sorted, categories };
+});
 
 function firstValue(value) {
   return Array.isArray(value) ? value[0] : value;
@@ -17,41 +45,13 @@ function parsePage(value) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
 }
 
-function getValidPosts() {
-  return posts.filter((post) => post?.slug && post?.title);
-}
-
-function getSortedPosts(list) {
-  return [...list].sort((a, b) => {
-    const dateA = new Date(a.date).getTime();
-    const dateB = new Date(b.date).getTime();
-
-    if (Number.isNaN(dateA) && Number.isNaN(dateB)) return 0;
-    if (Number.isNaN(dateA)) return 1;
-    if (Number.isNaN(dateB)) return -1;
-
-    return dateB - dateA;
-  });
-}
-
-function getCategories(list) {
-  return [
-    "All",
-    ...Array.from(
-      new Set(list.map((post) => post.category).filter(Boolean))
-    ).sort((a, b) => a.localeCompare(b)),
-  ];
-}
-
 function resolveCategory(rawCategory, categories) {
   const category = firstValue(rawCategory);
-
   if (!category) return "All";
 
   const match = categories.find(
     (item) => item.toLowerCase() === category.toLowerCase()
   );
-
   return match || null;
 }
 
@@ -74,12 +74,8 @@ function buildBlogUrl(page = 1, category = "All", absolute = true) {
 
 function toIsoDate(date) {
   if (!date) return undefined;
-
   const parsed = new Date(date);
-
-  return Number.isNaN(parsed.getTime())
-    ? undefined
-    : parsed.toISOString();
+  return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString();
 }
 
 function jsonLd(data) {
@@ -90,8 +86,7 @@ function jsonLd(data) {
 
 export async function generateMetadata({ searchParams }) {
   const params = await searchParams;
-  const validPosts = getValidPosts();
-  const categories = getCategories(validPosts);
+  const { categories } = getBlogData(); // Cached data ka use
 
   const requestedPage = parsePage(params?.page);
   const resolvedCategory = resolveCategory(params?.category, categories);
@@ -120,7 +115,7 @@ export async function generateMetadata({ searchParams }) {
     authors: [
       {
         name: "Umair Tufail",
-        url: `${SITE_URL}/about`,
+        url: `${SITE_URL}/about-us`,
       },
     ],
     alternates: {
@@ -164,9 +159,8 @@ export async function generateMetadata({ searchParams }) {
 export default async function BlogPage({ searchParams }) {
   const params = await searchParams;
 
-  const validPosts = getValidPosts();
-  const sortedPosts = getSortedPosts(validPosts);
-  const categories = getCategories(sortedPosts);
+  // Cached data ka use (dobara sort nahi hoga)
+  const { sortedPosts, categories } = getBlogData();
 
   const requestedPage = parsePage(params?.page);
   const category = resolveCategory(params?.category, categories);
@@ -268,7 +262,7 @@ export default async function BlogPage({ searchParams }) {
             datePublished: toIsoDate(post.date),
             author: {
               "@type":
-                post.author === "Countflows Team" ||
+                post.author === "CountFlows Team" ||
                 post.author === "CountFlows Team"
                   ? "Organization"
                   : "Person",
@@ -305,7 +299,6 @@ export default async function BlogPage({ searchParams }) {
         dangerouslySetInnerHTML={jsonLd(structuredData)}
       />
 
-      {/* Visible breadcrumb + separate Tools shortcut */}
       <nav
         aria-label="Breadcrumb"
         className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-28 lg:pt-28"
@@ -335,11 +328,20 @@ export default async function BlogPage({ searchParams }) {
 
           <Link
             href="/tools"
-            className="shrink-0 rounded-lg border border-gray-200 dark:border-gray-700
-              px-3 py-1.5 text-sm font-semibold text-blue-600 dark:text-cyan-400
-              hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-lg
+              bg-gradient-to-r from-blue-600 to-cyan-600 px-4 py-2 text-sm
+              font-semibold text-white shadow-md shadow-blue-600/20
+              transition duration-200 hover:-translate-y-0.5 hover:from-blue-700
+              hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-600/25
+              focus-visible:outline-none focus-visible:ring-2
+              focus-visible:ring-cyan-500 focus-visible:ring-offset-2
+              dark:focus-visible:ring-offset-slate-950"
           >
             Explore Tools
+            <ArrowRight
+              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
           </Link>
         </div>
       </nav>

@@ -4,6 +4,11 @@ import { ChevronRight } from "lucide-react";
 import { posts } from "@/lib/blogData";
 import BlogContent from "@/components/blog/BlogContent";
 
+// 👇 YEH HAI SABSE IMPORTANT FIX 👇
+// Is line ka matlab hai ke agar URL generateStaticParams mein nahi mila, 
+// to instantly 404 return kar do. Koi garbage URL render nahi hoga.
+export const dynamicParams = false;
+
 const SITE_URL = "https://countflows.com";
 const BLOG_URL = `${SITE_URL}/blog`;
 
@@ -61,6 +66,7 @@ function jsonLd(data) {
   };
 }
 
+// Ye function batayega ke Next.js ne konsa URLs bananay hain
 export function generateStaticParams() {
   return posts
     .filter((post) => post?.slug)
@@ -74,16 +80,9 @@ export async function generateMetadata({ params }) {
   const slug = getSlug(slugParam);
   const post = getPost(slug);
 
+  // Agar post nahi milti to page load hi mat karo
   if (!post) {
-    return {
-      title: "Post Not Found | CountFlows",
-      description:
-        "The CountFlows blog post you are looking for does not exist.",
-      robots: {
-        index: false,
-        follow: false,
-      },
-    };
+    notFound(); 
   }
 
   const canonical = `${BLOG_URL}/${slug}`;
@@ -95,7 +94,7 @@ export async function generateMetadata({ params }) {
     authors: [
       {
         name: post.author?.trim() || "CountFlows Team",
-        url: `${SITE_URL}/about`,
+        url: `${SITE_URL}/about-us`,
       },
     ],
     alternates: {
@@ -238,6 +237,24 @@ export default async function BlogPost({ params }) {
         }
       : null;
 
+  // 👇 NEW: HOWTO SCHEMA ADDED HERE 👇
+  const howToSchema =
+    Array.isArray(post.howToSteps) && post.howToSteps.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "@id": `${canonical}#howto`,
+          name: post.title,
+          description: post.description,
+          step: post.howToSteps.map((step, index) => ({
+            "@type": "HowToStep",
+            position: index + 1,
+            name: step.title,
+            text: step.text,
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
@@ -257,58 +274,66 @@ export default async function BlogPost({ params }) {
         />
       ) : null}
 
+      {/* 👇 NEW: HOWTO SCRIPT INJECTED HERE 👇 */}
+      {howToSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLd(howToSchema)}
+        />
+      ) : null}
+
       <nav
-  aria-label="Breadcrumb"
-  className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 pt-24 sm:pt-28 lg:pt-28"
->
-  <div className="flex flex-wrap items-center justify-between gap-3">
-    <ol className="flex min-w-0 flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
-      <li>
-        <Link
-          href="/"
-          className="hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
-        >
-          Home
-        </Link>
-      </li>
-
-      <li aria-hidden="true">
-        <ChevronRight className="h-4 w-4" />
-      </li>
-
-      <li>
-        <Link
-          href="/blog"
-          className="hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
-        >
-          Blog
-        </Link>
-      </li>
-
-      <li aria-hidden="true">
-        <ChevronRight className="h-4 w-4" />
-      </li>
-
-      <li
-        aria-current="page"
-        className="max-w-[220px] sm:max-w-[350px] lg:max-w-[520px] truncate font-medium text-gray-700 dark:text-gray-300"
-        title={post.title}
+        aria-label="Breadcrumb"
+        className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 pt-24 sm:pt-28 lg:pt-28"
       >
-        {post.title}
-      </li>
-    </ol>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ol className="flex min-w-0 flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+            <li>
+              <Link
+                href="/"
+                className="hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
+              >
+                Home
+              </Link>
+            </li>
 
-    {/* Tools shortcut */}
-    <Link
-      href="/tools"
-      className="shrink-0 rounded-lg border border-gray-200 dark:border-gray-700
+            <li aria-hidden="true">
+              <ChevronRight className="h-4 w-4" />
+            </li>
+
+            <li>
+              <Link
+                href="/blog"
+                className="hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
+              >
+                Blog
+              </Link>
+            </li>
+
+            <li aria-hidden="true">
+              <ChevronRight className="h-4 w-4" />
+            </li>
+
+            <li
+              aria-current="page"
+              className="max-w-[220px] sm:max-w-[350px] lg:max-w-[520px] truncate font-medium text-gray-700 dark:text-gray-300"
+              title={post.title}
+            >
+              {post.title}
+            </li>
+          </ol>
+
+          {/* Tools shortcut */}
+          <Link
+            href="/tools"
+            className="shrink-0 rounded-lg border border-gray-200 dark:border-gray-700
         px-3 py-1.5 text-sm font-semibold text-blue-600 dark:text-cyan-400
         hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
-    >
-      Explore Tools
-    </Link>
-  </div>
-</nav>
+          >
+            Explore Tools
+          </Link>
+        </div>
+      </nav>
 
       <BlogContent post={post} />
     </>

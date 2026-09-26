@@ -361,7 +361,7 @@ export const aitokenCounterFAQs = [
   },
   {
     question : "Is this also a token calculator?",
-    answer : "Yes — Countflows AI Token Counter also works as a token calculator. It counts tokens for GPT, Claude, and other LLMs, and calculates estimated API costs based on your token count, so you can use it for both token counting and cost calculation in one tool."
+    answer : "Yes — CountFlows AI Token Counter also works as a token calculator. It counts tokens for GPT, Claude, and other LLMs, and calculates estimated API costs based on your token count, so you can use it for both token counting and cost calculation in one tool."
   },
   {
     question: "How many tokens is 1,000 words?",

@@ -1,5 +1,7 @@
 const howToManageEssayWordCount =`
 
+<p>Most essays fall somewhere between 300 and 6,000 words, and the exact number always comes from your assignment brief: 300 to 1,000 for a high school essay, 250 to 650 for a college application, 1,500 to 5,000 for undergraduate work, and 2,500 to 6,000 for a graduate essay.</p>
+
 <p>Every writing guide says the same thing: stay within the word count. None of them explain why that is hard, or how to cut 300 words without cutting your best argument. The truth is that word count problems are rarely writing problems. They are planning problems, and they start at the outline stage.</p>
 
 <p>A sharp 1,500-word essay beats a padded 1,800-word one in front of any marker. The fix is a word budget you set before you type, and a running check with a free <a href="/tools/word-counter">Word Counter</a> while you draft.</p>
@@ -44,6 +46,12 @@ const howToManageEssayWordCount =`
   </tbody>
 </table>
 
+<h2>How Many Words Are in a Paragraph?</h2>
+
+<p>A standard academic paragraph runs 100 to 200 words: enough for one topic sentence, two or three pieces of supporting evidence, and a closing line that ties back to your thesis. At that length, a three-paragraph essay comes out to roughly 300 to 600 words for the body alone, which is why short assignments built on the three- or five-paragraph model rarely pass 1,000 words once you add an introduction and conclusion.</p>
+
+<p>These are working averages, not rules. A paragraph that needs more evidence can run longer, and a transition paragraph can be shorter, as long as each one stays focused on a single idea.</p>
+
 <h2>What Actually Counts in the Word Count?</h2>
 
 <p>This is the question students get wrong most often, and it can swing a submission by hundreds of words. Most universities follow the same convention: everything in the main body counts, and everything around it does not.</p>
@@ -56,6 +64,47 @@ const howToManageEssayWordCount =`
 <p>The University of Worcester and UWE Bristol both state this rule in their assessment policies, and most institutions copy the same pattern. Always check your own module handbook, because exceptions exist and they will be written in the brief.</p>
 
 <p>The second convention is the 10 percent leeway. Many universities accept anything within 10 percent above or below the stated limit. A 2,000-word essay is safe between 1,800 and 2,200 words. Treat this as a cushion, not a target, and never assume it applies without checking, because some markers stop reading at the limit.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Essay word limit</th>
+      <th>10% in words</th>
+      <th>Safe range (±10%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>500 words</td><td>50 words</td><td>450–550 words</td></tr>
+    <tr><td>1,000 words</td><td>100 words</td><td>900–1,100 words</td></tr>
+    <tr><td>1,500 words</td><td>150 words</td><td>1,350–1,650 words</td></tr>
+    <tr><td>2,000 words</td><td>200 words</td><td>1,800–2,200 words</td></tr>
+    <tr><td>2,500 words</td><td>250 words</td><td>2,250–2,750 words</td></tr>
+    <tr><td>3,000 words</td><td>300 words</td><td>2,700–3,300 words</td></tr>
+  </tbody>
+</table>
+
+<h2>Where Do You Put the Word Count on an Essay?</h2>
+
+<p>Placement depends on the style guide your course follows, and getting it wrong is an easy way to lose easy marks before a marker even reads your argument.</p>
+
+<ul>
+  <li><strong>Most university essays:</strong> the word count goes on the title page or cover sheet, usually on its own line under the title ("Word count: 2,150").</li>
+  <li><strong>MLA format:</strong> there's no standard word count line; if one is required, it's added in the top-right corner of the first page alongside your name and course details.</li>
+  <li><strong>APA format:</strong> word count isn't a standard element, but when requested, it typically sits on the title page below the author note.</li>
+  <li><strong>Online submission portals</strong> (Turnitin, Moodle, Canvas) often calculate and display the count automatically, so check the platform before adding your own.</li>
+</ul>
+
+<p>When in doubt, check your assignment brief or ask your instructor. It takes one email and avoids a deduction for a formatting error that has nothing to do with your writing.</p>
+
+<h2>How to Add a Word Count to Your Essay in Word or Google Docs</h2>
+
+<p>Both platforms track this automatically, but their built-in counters include headings, footnotes, and sometimes citations, which isn't always what your university counts toward the limit.</p>
+
+<ul>
+  <li><strong>Microsoft Word:</strong> open the Review tab and select Word Count, or check the live count in the status bar at the bottom of the window.</li>
+  <li><strong>Google Docs:</strong> go to Tools &gt; Word Count, or use the shortcut Ctrl+Shift+C (Cmd+Shift+C on Mac).</li>
+  <li><strong>For an exact count that matches your brief:</strong> paste just the body text (no title page, references, or appendices) into the <a href="/tools/word-counter">Word Counter</a> to see the number your marker is likely to use.</li>
+</ul>
 
 <h2>Set a Word Budget Before You Write</h2>
 
@@ -154,7 +203,7 @@ const howToManageEssayWordCount =`
 
 <p>One strong example per point beats three weak ones. Keep the example that connects most directly to your thesis and delete the rest.</p>
 
-<h2>3,000 Words in Practice: Pages and Writing Time</h2>
+<h2>How Long Is a 3,000-Word Essay? Pages and Writing Time</h2>
 
 <p>A 3,000-word essay runs about 6 pages single-spaced or 12 pages double-spaced with 12-point Times New Roman and one-inch margins. Change the font, spacing, or margins and the page count moves, which is why instructors set word limits instead of page limits.</p>
 
@@ -169,6 +218,18 @@ const howToManageEssayWordCount =`
 <h3>Can I go 10 percent over the word limit?</h3>
 
 <p>Often yes, because many universities allow 10 percent above or below the stated limit. Never assume it, though. Some markers penalize any overage, and a few stop reading at the limit, so check your module handbook first.</p>
+
+<h3>How many words are in a paragraph?</h3>
+
+<p>Typically 100 to 200 words for an academic paragraph. A three-paragraph essay body usually lands around 300 to 600 words before you add an introduction and conclusion.</p>
+
+<h3>Where do you put the word count on an essay?</h3>
+
+<p>Usually on the title page, under the title, unless your style guide says otherwise. MLA essays that require one add it in the top-right corner of the first page; APA essays place it on the title page when requested. Check your brief if it doesn't say.</p>
+
+<h3>What is 10 percent of a 1,500-word essay?</h3>
+
+<p>150 words, which puts your safe range at 1,350 to 1,650 words. For other common lengths, see the 10 percent table earlier in this guide.</p>
 
 <h3>How many words is a 2 minute speech?</h3>
 

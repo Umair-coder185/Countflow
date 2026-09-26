@@ -2,7 +2,7 @@ import {keywordDensityToolSchema } from "@/lib/schema";
 export const metadata = {
   title: "Free Keyword Density Checker - Analyze Keyword Frequency & Density",
   description:
-    "Use free Countflows to analyze keyword density for free! Get quick insights on phrase frequency and density to improve your content creation skills.",
+    "Use free CountFlows to analyze keyword density for free! Get quick insights on phrase frequency and density to improve your content creation skills.",
   keywords:
     "keyword density checker, free keyword density tool, keyword frequency counter, seo keyword analyzer, word density checker, keyword density calculator, on page seo tool",
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata = {
         url: "https://countflows.com/blogs/blog3-2.png",
         width: 1200,
         height: 630,
-        alt: "Countflows Keyword Density Checker",
+        alt: "CountFlows Keyword Density Checker",
       },
     ],
   },

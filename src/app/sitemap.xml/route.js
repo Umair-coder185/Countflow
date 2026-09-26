@@ -6,6 +6,7 @@ export async function GET() {
   const staticRoutes = [
     "/",
     "/tools",
+
     "/blog",
     "/about-us",
     "/contact",

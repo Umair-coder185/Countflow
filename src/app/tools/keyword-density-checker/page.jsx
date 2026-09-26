@@ -9,7 +9,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "@id": "https://countflows.com/tools/keyword-density-checker",
-  name: "Keyword Density Checker - Countflows",
+  name: "Keyword Density Checker - CountFlows",
   url: "https://countflows.com/tools/keyword-density-checker",
   description:
     "Free online keyword density checker that analyzes single words and 2–3 word phrases with frequency and density percentages.",
@@ -21,13 +21,13 @@ const schema = {
   dateModified: "2026-07-08",
   author: {
     "@type": "Organization",
-    name: "Countflows",
+    name: "CountFlows",
     url: "https://countflows.com",
     logo: "https://countflows.com/logo.png",
   },
   publisher: {
     "@type": "Organization",
-    name: "Countflows",
+    name: "CountFlows",
     logo: {
       "@type": "ImageObject",
       url: "https://countflows.com/logo.png",

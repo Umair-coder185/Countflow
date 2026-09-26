@@ -1,4 +1,4 @@
-# .well-known/ai.txt for Countflows
+# .well-known/ai.txt for CountFlows
 
 contact: umairrao965@gmail.com
 policy: https://countflows.com/llms-full.txt

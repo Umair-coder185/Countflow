@@ -38,7 +38,7 @@ export default function HomeJsonLd() {
         "@type": "WebPage",
         "@id": `${SITE}#webpage`,
         url: `${SITE}`,
-        name: "Countflows: Free Word & Character Counter Tools",
+        name: "CountFlows: Free Word & Character Counter Tools",
         description: DESCRIPTION,
         isPartOf: { "@id": `${SITE}#website` },
         breadcrumb: { "@id": `${SITE}#breadcrumb` },

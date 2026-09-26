@@ -6,7 +6,7 @@ const blog4=`
 
 <p>The safe baseline: a standard page holds about 500 words single-spaced or 250 words double-spaced, with 12-point Times New Roman and one-inch margins. Everything below builds on that baseline, and a free <a href="/tools/word-counter">Word Counter</a> gives you the exact figure for any text in seconds.</p>
 
-<p><em>Last updated: September 2026. Added a font-by-font page count comparison and an update on which fonts word processors actually default to now.</em></p>
+
 
 <nav aria-label="Table of contents" class="blog-toc" id="table-of-contents">
   <h2>In this guide:</h2>

@@ -25,7 +25,7 @@ export const metadata = {
   description:
     "All CountFlows tools : free word and character counter, sentence counters, , keyword density checker , Ai text cleaner and Ai token counter.",
   openGraph: {
-    title: "Free Word, Character & Sentence Counters - Countflows tools",
+    title: "Free Word, Character & Sentence Counters - CountFlows tools",
     description:
       "Every CountFlows text tool on one page. Pick a tool, paste your text, get instant results. Nothing is uploaded.",
     url: `${SITE}/tools`,

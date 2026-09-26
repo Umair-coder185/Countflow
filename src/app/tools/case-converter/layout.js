@@ -6,7 +6,7 @@ import {
 
 
 export const metadata = {
-  title: "Free Case Converter - Convert Text Case Online | Countflows",
+  title: "Free Case Converter - Convert Text Case Online | CountFlows",
   description:
     "Free online Convert text to UPPERCASE, lowercase, Title Case, or Sentence case in one click. Free, runs in your browser \u2014 your text is never uploaded or stored.",
   keywords:

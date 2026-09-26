@@ -6,7 +6,7 @@ import {
 } from "lucide-react"
 
 export const metadata = {
-  title: "Page Not Found — Countflows",
+  title: "Page Not Found — CountFlows",
   robots: { index: false, follow: true },
 }
 
