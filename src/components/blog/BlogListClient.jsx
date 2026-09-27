@@ -47,13 +47,25 @@ export default function BlogListClient({
           <BookOpen className="w-10 h-10 text-blue-600 dark:text-cyan-400 mt--2" />
         </div>
 
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 dark:text-gray-100 leading-tight tracking-tight">
-          📚 Blogs
-        </h1>
+        {selectedCategory === "All" ? (
+          <>
+            <h1 className="mx-auto mb-2 max-w-5xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+              <span className="premium-gradient">CountFlows Blog</span>
+            </h1>
+            <h2 className="mx-auto mb-4 max-w-4xl text-2xl font-bold leading-tight text-gray-900 dark:text-gray-100">
+              Master Text Formatting, AI Tools, and Writing Productivity
+            </h2>
+          </>
+        ) : (
+          <h1 className="mx-auto mb-4 max-w-5xl text-4xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-gray-100">
+            {selectedCategory} Guides
+          </h1>
+        )}
 
-        <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Discover expert writing tips, SEO strategies, AI guides,
-          reading resources, and practical content tutorials.
+        <p className="mx-auto max-w-3xl text-base leading-relaxed text-gray-600 dark:text-gray-400">
+          {selectedCategory === "All"
+            ? "Welcome to the CountFlows blog, your ultimate resource for text analysis, AI formatting fixes, and professional writing conventions. Whether you are learning how to accurately count syllables, fixing ChatGPT formatting glitches, or mastering programming naming styles like camelCase and snake_case, our research-backed guides provide the clear, practical answers you need. Pair our tutorials with our suite of free online tools to write, format, and analyze text faster."
+            : `Explore CountFlows ${selectedCategory} guides, practical tutorials, examples, and related free tools.`}
         </p>
       </header>
 

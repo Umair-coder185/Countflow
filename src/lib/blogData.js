@@ -44,7 +44,7 @@ import bestTokenCounter from "./blogs/best-token-counter";
 import searchKeywords from "./blogs/search-keywords";
 import watermarkRemover from "./blogs/watermark-remover";
 
-export const posts = [
+const rawPosts = [
 
  {
   id: 1,
@@ -374,7 +374,7 @@ export const posts = [
     image: "/blogs/blog5-2.png",
     imageAlt: "Cover letter word count and length guide",
     category: "Career Development",
-    author: "CountFlows Team",
+    author: "Umair Tufail",
     date: "June 5, 2026",
     readTime: "8 min read",
     keywords: [
@@ -416,13 +416,13 @@ export const posts = [
   slug: "common-writing-mistakes",
 
   title:
-    "11 Common Writing Mistakes That Hurt Clarity (and How to Fix Them)",
+    "11 Common Writing Mistakes (Plus AI Draft Red Flags to Fix)",
 
   description:
-    "Fix 11 common writing mistakes with before-and-after examples, practical editing checks, and a 3-pass method for clearer sentences, structure, tone, and claims.",
+    "Fix 11 common writing mistakes with before-and-after examples, a 3-pass editing method, and a guide to spotting the same issues in AI-generated drafts.",
 
   excerpt:
-    "Learn how to fix 11 frequent writing problems, from vague wording and run-on sentences to repetition, weak structure, unsupported claims, and inconsistent tone.",
+    "Learn how to fix 11 frequent writing problems, from vague wording and run-on sentences to repetition, weak structure, and inconsistent tone, plus how these same issues show up when editing ChatGPT or Claude drafts.",
 
   image: "/blogs/blog6-1.png",
 
@@ -435,7 +435,7 @@ export const posts = [
 
   date: "June 6, 2026",
 
-  readTime: "12 min read",
+  readTime: "15 min read",
 
   keywords: [
     "common writing mistakes",
@@ -444,7 +444,12 @@ export const posts = [
     "editing checklist",
     "passive voice",
     "run-on sentences",
-    "proofreading tips"
+    "proofreading tips",
+    "signs of ai generated text",
+    "why does chatgpt sound robotic",
+    "remove chatgpt formatting",
+    "editing ai generated text",
+    "ai text cleaner"
   ],
 
   content: blog6,
@@ -496,6 +501,36 @@ export const posts = [
       question: "Does reading a draft aloud help?",
       answer:
         "It can. Reading aloud slows the review process and may make awkward rhythm, missing words, repetition, or complicated sentences easier to notice. It should be used alongside structural and factual editing."
+    },
+
+    {
+      question: "Why does ChatGPT text sound robotic?",
+      answer:
+        "Language models tend to default to safe, predictable word choices and even sentence lengths. That combination reads as smooth but flat, which is why AI drafts often need a specificity and rhythm pass before publishing."
+    },
+
+    {
+      question: "What are the most common signs of AI-generated text?",
+      answer:
+        "Frequent em dashes, phrasing like 'not only X, but also Y,' Markdown formatting such as bold headers and bullet points in plain-text contexts, and a repeated rule-of-three pattern are among the most recognizable signs."
+    },
+
+    {
+      question: "Is passive voice always a mistake, even in AI writing?",
+      answer:
+        "No. Passive voice is useful when the actor is unknown or unimportant. The problem is when it replaces a clear statement of who did what, which AI drafts tend to do more often than human writers."
+    },
+
+    {
+      question: "How do I remove ChatGPT formatting when I paste it into a document?",
+      answer:
+        "Running the text through a dedicated AI text cleaner tool before pasting removes stray Markdown, smart punctuation, and hidden characters in one step. It can also be cleaned manually by checking for leftover hash symbols, asterisks, and non-breaking spaces."
+    },
+
+    {
+      question: "Do I still need to proofread a document after using an AI humanizer or cleaner tool?",
+      answer:
+        "Yes. Formatting and tone tools fix surface issues, but they do not verify facts, catch weak structure, or confirm the document matches its intended reader. A structure and sentence pass is still worth doing."
     }
   ]
 },
@@ -690,7 +725,7 @@ export const posts = [
     id: 10,
     slug: "check-word-count-in-google-docs",
     title: "How to Check Word Count in Google Docs (Complete Guide)",
-    description: "Complete guide to check word count in Google Docs on desktop, mobile, and selected text, with keyboard shortcuts and tips.",
+    description: "Check word count in Google Docs on desktop, mobile & selected text. Includes keyboard shortcuts, what's excluded, and why AI-pasted text miscounts.",
     excerpt: "Learn how to view word count in Google Docs on desktop, mobile and for selected text, plus keyboard shortcuts and live counter tips.",
     image: "/blogs/blog10-1.png",
     imageAlt: "How to check word count in Google Docs",
@@ -3332,5 +3367,22 @@ export const posts = [
 
 ];
 
+const CATEGORY_GROUPS = {
+  "AI & Technology": "AI",
+  "AI & Tokens": "AI",
+  "AI Tools": "AI Tools",
+  "Academic Writing": "Writing & Education",
+  "Books & Literature": "Writing & Education",
+  "Reading & Writing": "Writing & Education",
+  "Writing & Editing": "Writing & Education",
+  SEO: "SEO & Content",
+  "SEO & Content": "SEO & Content",
+  "Content Marketing": "SEO & Content",
+};
+
+export const posts = rawPosts.map((post) => ({
+  ...post,
+  category: CATEGORY_GROUPS[post.category] || "Other",
+}));
 
 export const blogs = posts;

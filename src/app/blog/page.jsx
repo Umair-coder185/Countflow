@@ -8,6 +8,23 @@ import BlogList from "@/components/blog/BlogList";
 const SITE_URL = "https://countflows.com";
 const BLOG_URL = `${SITE_URL}/blog`;
 const POSTS_PER_PAGE = 12;
+const BLOG_FAQS = [
+  {
+    question: "What kind of tutorials and guides can I find here?",
+    answer:
+      "We publish in-depth guides covering text formatting, grammar rules, AI tool limitations, and developer naming conventions. Popular topics include syllable division rules, removing AI markdown, and understanding token limits in large language models.",
+  },
+  {
+    question: "Are the text tools featured in the articles free to use?",
+    answer:
+      "Yes! Every tool mentioned in our blog—from the Case Converter to the AI Text Cleaner and Syllable Counter—is 100% free. They run entirely in your browser, ensuring your text is processed securely and instantly without being sent to external servers.",
+  },
+  {
+    question: "How can I fix messy AI-generated text formatting?",
+    answer:
+      "Our blog features comprehensive guides on identifying and removing AI artifacts like overused em dashes, bold asterisks, and non-breaking spaces. We recommend pairing these guides with our AI Text Cleaner to automate the formatting process.",
+  },
+];
 
 // --- OPTIMIZATION: React Cache ---
 // Is function se sorting aur filtering sirf 1 dafa hogi per request.
@@ -271,6 +288,23 @@ export default async function BlogPage({ searchParams }) {
           },
         })),
       },
+      ...(category === "All" && currentPage === 1
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${BLOG_URL}#faqpage`,
+              url: BLOG_URL,
+              mainEntity: BLOG_FAQS.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            },
+          ]
+        : []),
       {
         "@type": "BreadcrumbList",
         "@id": breadcrumbId,
@@ -353,6 +387,7 @@ export default async function BlogPage({ searchParams }) {
         currentPage={currentPage}
         totalPages={totalPages}
         totalPosts={categoryPosts.length}
+        faqs={category === "All" && currentPage === 1 ? BLOG_FAQS : []}
       />
     </>
   );

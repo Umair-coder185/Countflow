@@ -17,9 +17,17 @@ const blog6 = `
     reports, emails, blog posts, and professional documents.
   </p>
 
+  <p>
+    This list has become more relevant, not less, now that most first drafts
+    start with ChatGPT, Claude, or another AI tool. The same 11 problems still
+    apply to a document whether a human typed every word or an AI generated
+    the first pass. The difference is how each mistake shows up. A separate
+    section further down maps these classic issues directly onto the tells
+    that give away an unedited AI draft, so you can catch them faster.
+  </p>
 
-  <section>
-    <h2 id="writing-mistakes-at-a-glance">Writing Mistakes at a Glance</h2>
+
+    <h2>Writing Mistakes at a Glance</h2>
 
     <table>
       <thead>
@@ -98,74 +106,7 @@ const blog6 = `
         </tr>
       </tbody>
     </table>
-  </section>
-
-
-  <section>
-    <h2 id="table-of-contents">Table of Contents</h2>
-
-    <ol>
-      <li>
-        <a href="#unclear-purpose">Mistake 1: Writing Without a Clear Purpose</a>
-      </li>
-
-      <li>
-        <a href="#passive-voice">Mistake 2: Overusing Passive Voice</a>
-      </li>
-
-      <li>
-        <a href="#run-on-sentences">Mistake 3: Run-On Sentences and Comma Splices</a>
-      </li>
-
-      <li>
-        <a href="#vague-word-choice">Mistake 4: Using Vague Words Instead of Specific Details</a>
-      </li>
-
-      <li>
-        <a href="#paragraph-structure">Mistake 5: Giving a Paragraph Too Many Jobs</a>
-      </li>
-
-      <li>
-        <a href="#repetition">Mistake 6: Repeating the Same Point</a>
-      </li>
-
-      <li>
-        <a href="#inconsistent-tone">Mistake 7: Letting the Tone Shift Without a Reason</a>
-      </li>
-
-      <li>
-        <a href="#unsupported-claims">Mistake 8: Making Claims Stronger Than the Evidence</a>
-      </li>
-
-      <li>
-        <a href="#reader-needs">Mistake 9: Writing Without Considering the Reader</a>
-      </li>
-
-      <li>
-        <a href="#filler">Mistake 10: Adding Words That Do Not Add Information</a>
-      </li>
-
-      <li>
-        <a href="#editing">Mistake 11: Trying to Edit Everything in One Pass</a>
-      </li>
-
-      <li>
-        <a href="#before-after">Before-and-After Writing Examples</a>
-      </li>
-
-      <li>
-        <a href="#three-pass-edit">The CountFlows 3-Pass Editing Method</a>
-      </li>
-
-      <li>
-        <a href="#final-checklist">Final Writing Checklist</a>
-      </li>
-    </ol>
-  </section>
-
-
-  <section>
-    <h2 id="unclear-purpose">Mistake 1: Writing Without a Clear Purpose</h2>
+    <h2>Mistake 1: Writing Without a Clear Purpose</h2>
 
     <p>
       A sentence can be grammatically correct and still feel unnecessary.
@@ -206,11 +147,7 @@ const blog6 = `
     <p>
       The second version tells the reader what the document will actually do.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="passive-voice">Mistake 2: Overusing Passive Voice</h2>
+    <h2>Mistake 2: Overusing Passive Voice</h2>
 
     <p>
       Passive voice is not automatically incorrect. The real question is
@@ -271,11 +208,7 @@ const blog6 = `
       Do not chase an arbitrary percentage of passive sentences. Read each
       sentence and ask whether the actor needs to be clear.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="run-on-sentences">Mistake 3: Run-On Sentences and Comma Splices</h2>
+    <h2>Mistake 3: Run-On Sentences and Comma Splices</h2>
 
     <p>
       A run-on sentence occurs when independent clauses are joined without the
@@ -315,11 +248,7 @@ const blog6 = `
       and a short sentence can be confusing. Focus on whether clauses are
       connected logically and punctuated correctly.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="vague-word-choice">Mistake 4: Using Vague Words Instead of Specific Details</h2>
+    <h2>Mistake 4: Using Vague Words Instead of Specific Details</h2>
 
     <p>
       Words such as "good," "bad," "things," "very," and "a lot" are not
@@ -367,11 +296,7 @@ const blog6 = `
       Do not delete them automatically. Ask whether a more precise detail would
       make the sentence more useful.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="paragraph-structure">Mistake 5: Giving a Paragraph Too Many Jobs</h2>
+    <h2>Mistake 5: Giving a Paragraph Too Many Jobs</h2>
 
     <p>
       A paragraph becomes difficult to follow when it begins with one point,
@@ -406,11 +331,7 @@ const blog6 = `
       customer complaints, then ends with employee training. Those may all be
       useful topics, but they probably need separate paragraphs.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="repetition">Mistake 6: Repeating the Same Point</h2>
+    <h2>Mistake 6: Repeating the Same Point</h2>
 
     <p>
       Repetition often enters a draft because the writer is thinking while
@@ -451,11 +372,7 @@ const blog6 = `
       <a href="/tools/word-counter">CountFlows Word Counter</a>.
       Word count is a measurement, not a quality score.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="inconsistent-tone">Mistake 7: Letting the Tone Shift Without a Reason</h2>
+    <h2>Mistake 7: Letting the Tone Shift Without a Reason</h2>
 
     <p>
       Tone tells the reader what kind of relationship the document is trying
@@ -499,11 +416,7 @@ const blog6 = `
     <p>
       Then check whether each section still sounds like the same document.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="unsupported-claims">Mistake 8: Making Claims Stronger Than the Evidence</h2>
+    <h2>Mistake 8: Making Claims Stronger Than the Evidence</h2>
 
     <p>
       Specific numbers can make writing more convincing, but only when they
@@ -545,11 +458,7 @@ const blog6 = `
       The same rule applies to words such as "always," "never," "everyone,"
       "proves," and "guarantees." Strong claims need strong support.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="reader-needs">Mistake 9: Writing Without Considering the Reader</h2>
+    <h2>Mistake 9: Writing Without Considering the Reader</h2>
 
     <p>
       The same information should not always be explained in the same way.
@@ -581,11 +490,7 @@ const blog6 = `
       examples, errors, and response formats. A first-time user of the same
       product may simply need to know which button to press.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="filler">Mistake 10: Adding Words That Do Not Add Information</h2>
+    <h2>Mistake 10: Adding Words That Do Not Add Information</h2>
 
     <p>
       Filler is not simply "long writing." A 3,000-word guide can be concise if
@@ -634,11 +539,7 @@ const blog6 = `
         </tr>
       </tbody>
     </table>
-  </section>
-
-
-  <section>
-    <h2 id="editing">Mistake 11: Trying to Edit Everything in One Pass</h2>
+    <h2>Mistake 11: Trying to Edit Everything in One Pass</h2>
 
     <p>
       Proofreading for commas while also deciding whether an entire section
@@ -660,11 +561,111 @@ const blog6 = `
     <p>
       A better approach is to give each editing pass a specific purpose.
     </p>
-  </section>
+    <h2>AI Draft Red Flags: How These Mistakes Show Up in ChatGPT and Claude Text</h2>
 
+    <p>
+      "Writing" increasingly means editing a draft that started with ChatGPT,
+      Claude, or another AI tool. The 11 mistakes above do not disappear when
+      an AI writes the first version, they just wear a different disguise.
+      Knowing the AI-specific version of each mistake makes it faster to spot
+      during a sentence-level editing pass.
+    </p>
 
-  <section>
-    <h2 id="before-after">Before-and-After Writing Examples</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Classic Mistake</th>
+          <th>How It Shows Up in AI-Generated Text</th>
+          <th>What to Do</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Overused passive voice</td>
+          <td>Flat, hedged, detached phrasing rather than true passive voice, the pattern that makes ChatGPT text sound robotic</td>
+          <td>Read it aloud and rewrite anything that sounds like it is avoiding a direct statement</td>
+        </tr>
+
+        <tr>
+          <td>Run-on sentences</td>
+          <td>The opposite problem: short, choppy fragments stitched together with an em dash, one of the most recognizable signs of AI-generated text</td>
+          <td>Replace repeated em dashes with periods, commas, or a conjunction where it fits</td>
+        </tr>
+
+        <tr>
+          <td>Vague word choice</td>
+          <td>Synonym-swapping instead of specificity, the same idea restated as "essential," "vital," "crucial," and "fundamental"</td>
+          <td>Pick the one word that is actually accurate and delete the rest</td>
+        </tr>
+
+        <tr>
+          <td>Weak paragraph structure</td>
+          <td>Markdown formatting inserted where a plain sentence would do: bold headers, hash symbols, and bullet points for a single idea</td>
+          <td>Convert decorative formatting back into normal sentences and paragraphs</td>
+        </tr>
+
+        <tr>
+          <td>Repetition</td>
+          <td>The same point restated in the intro, again in the body, then a third time in the conclusion, often in groups of three</td>
+          <td>Keep one version and delete the other two</td>
+        </tr>
+
+        <tr>
+          <td>Inconsistent tone</td>
+          <td>A visible seam where your own edited paragraphs meet an untouched AI paragraph</td>
+          <td>Read the full draft in one pass and smooth the tone at the seams</td>
+        </tr>
+
+        <tr>
+          <td>Unsupported claims</td>
+          <td>Confident statistics, studies, or quotes that cannot be traced back to a real source</td>
+          <td>Verify every number and citation before publishing</td>
+        </tr>
+
+        <tr>
+          <td>Ignoring the reader</td>
+          <td>A generic, universal voice with no persona, written for everyone and no one in particular</td>
+          <td>Add the specific audience and goal back into the draft</td>
+        </tr>
+
+        <tr>
+          <td>Unnecessary filler</td>
+          <td>Stock openers such as "It's important to note that," "In today's fast-paced world," or "Let's dive in"</td>
+          <td>Delete the opener and start with the actual point</td>
+        </tr>
+
+        <tr>
+          <td>One-pass editing</td>
+          <td>Publishing the AI output with no editing pass at all</td>
+          <td>Run at least the structure and sentence passes described above</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Why Pasted AI Text Looks "Off" in Google Docs or Word</h3>
+
+    <p>
+      Beyond tone and phrasing, ChatGPT and Claude output often carries
+      formatting that was meant for a chat window, not a document. Markdown
+      symbols such as ## for headings or ** for bold can paste in as literal
+      characters instead of rendering, em dashes and curly quotes can arrive
+      as the wrong character encoding, and invisible characters like
+      non-breaking spaces can hide inside the text. All of this can make a
+      document look unpolished even after the wording itself has been edited.
+    </p>
+
+    <p>
+      The practical fix is to clean the text before it reaches your document,
+      not after you have already formatted around it. Running pasted AI
+      content through the
+      <a href="/tools/ai-text-cleaner">AI Text Cleaner</a>
+      strips out stray Markdown, smart punctuation, and hidden characters in
+      one step. For the full breakdown of what causes this and how to fix it
+      manually, see the guide on
+      <a href="/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text">how to remove ChatGPT formatting from copied AI text</a>.
+    </p>
+    <h2>Before-and-After Writing Examples</h2>
 
     <table>
       <thead>
@@ -742,11 +743,7 @@ const blog6 = `
         </tr>
       </tbody>
     </table>
-  </section>
-
-
-  <section>
-    <h2 id="three-pass-edit">The CountFlows 3-Pass Editing Method</h2>
+    <h2>The CountFlows 3-Pass Editing Method</h2>
 
     <p>
       Instead of trying to fix an entire draft at once, review it in three
@@ -824,11 +821,7 @@ const blog6 = `
       This order prevents you from spending time polishing a paragraph that
       you later decide to delete.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="read-aloud">Should You Read Your Draft Aloud?</h2>
+    <h2>Should You Read Your Draft Aloud?</h2>
 
     <p>
       Reading aloud can be useful because it forces you to move through the
@@ -840,11 +833,7 @@ const blog6 = `
       It is not a replacement for structural editing or factual checking.
       Treat it as one additional review technique.
     </p>
-  </section>
-
-
-  <section>
-    <h2 id="final-checklist">Final Writing Checklist</h2>
+    <h2>Final Writing Checklist</h2>
 
     <p>
       Before publishing or submitting a document, ask:
@@ -863,6 +852,7 @@ const blog6 = `
       <li>Have I qualified claims that are not universal?</li>
       <li>Have I removed filler without removing useful context?</li>
       <li>Have I checked spelling, punctuation, links, numbers, and names?</li>
+      <li>If this started as an AI draft, have I checked for em dashes, stray Markdown, and stock openers?</li>
     </ul>
 
     <p>
@@ -871,11 +861,46 @@ const blog6 = `
       after the final edit to verify the total rather than estimating it from
       the number of pages.
     </p>
-  </section>
+    <h2>FAQs</h2>
 
+    <p>
+      <strong>Why does ChatGPT text sound robotic?</strong><br>
+      Language models default to safe, predictable word choices and even
+      sentence lengths. That combination reads as smooth but flat, which is
+      why AI drafts often need a specificity and rhythm pass before
+      publishing.
+    </p>
 
-  <section>
-    <h2 id="bottom-line">Bottom Line</h2>
+    <p>
+      <strong>What are the most common signs of AI-generated text?</strong><br>
+      Frequent em dashes, "not only X, but also Y" phrasing, Markdown
+      formatting like bold headers and bullet points in plain-text contexts,
+      and a repeated rule-of-three pattern are among the most recognizable
+      tells.
+    </p>
+
+    <p>
+      <strong>Is passive voice always a mistake, even in AI writing?</strong><br>
+      No. Passive voice is useful when the actor is unknown or unimportant.
+      The problem is when it replaces a clear statement of who did what,
+      which AI drafts do by default more often than human writers.
+    </p>
+
+    <p>
+      <strong>How do I remove ChatGPT formatting when I paste it into a document?</strong><br>
+      Run the text through the
+      <a href="/tools/ai-text-cleaner">AI Text Cleaner</a>
+      before pasting, or clean it manually using the steps in
+      <a href="/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text">how to remove ChatGPT formatting from copied AI text</a>.
+    </p>
+
+    <p>
+      <strong>Do I still need to proofread a document after using an AI humanizer or cleaner tool?</strong><br>
+      Yes. Formatting and tone tools fix surface issues, but they do not
+      verify facts, catch weak structure, or confirm the document matches its
+      intended reader. A structure and sentence pass is still worth doing.
+    </p>
+    <h2>Bottom Line</h2>
 
     <p>
       Better writing does not come from banning passive voice, making every
@@ -892,10 +917,10 @@ const blog6 = `
     <p>
       Then edit in layers: structure first, sentences second, surface details
       last. That process catches more meaningful problems than simply running
-      a spell checker and calling the draft finished.
+      a spell checker and calling the draft finished. The same layered process
+      works whether you wrote the first draft yourself or started from an
+      AI-generated one, only the specific tells you are hunting for change.
     </p>
-  </section>
-
 </article>
 
 `;
