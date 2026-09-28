@@ -24,6 +24,28 @@ const exampleLabelClass =
 const exampleBoxClass =
   "rounded-xl border border-gray-200 bg-white p-4 text-sm leading-7 text-gray-700 dark:border-gray-700 dark:bg-gray-950/70 dark:text-gray-300"
 
+const faqItems = [
+  {
+    q: "Is this text compare tool actually free?",
+    a: "Yes. Text Compare is free with no sign-up, no account, and no limit on how many comparisons you run. There's no paid tier that unlocks extra comparison modes — Word, Character, and Line comparison are all available by default.",
+  },
+  {
+    q: "What's the difference between text comparison and text matching?",
+    a: "Text comparison, what this tool does, is an exact diff between two specific pieces of text you provide — it shows precisely what was added, removed, or changed. Text matching usually refers to something broader: fuzzy or pattern-based matching used to find similar strings or near-duplicate records, often across a larger dataset rather than two fixed inputs.",
+  },
+  {
+    q: "Can I compare two text files instead of pasting content?",
+    a: "Yes. You can load supported text-based files directly, including TXT, Markdown, CSV, JSON, HTML, CSS, JavaScript, TypeScript, XML, YAML, and YML, and the browser reads them as text before comparing.",
+  },
+  {
+    q: "Does the similarity percentage mean the two texts are plagiarized?",
+    a: "No. The similarity score only summarizes how much of the two texts you provided are unchanged relative to each other. It isn't a plagiarism score, an AI-detection score, or a check against any outside source — for that, a plagiarism checker is the right tool.",
+  },
+  {
+    q: "Which comparison mode should I use for a long document?",
+    a: "Line mode is usually the most efficient for long or structured documents, since it groups changes by line instead of evaluating every character. Word mode is better suited to shorter prose where you want to see exact wording changes.",
+  },
+]
 
 export default function SEOContent() {
   return (
@@ -368,6 +390,32 @@ export default function SEOContent() {
 
 
       {/* ==================================================
+          TEXT MATCHING DISTINCTION
+      ================================================== */}
+
+      <h2 className={h2Class}>
+        Text Compare vs. Text Matching
+      </h2>
+
+      <p className={pClass}>
+        &quot;Text matching&quot; and &quot;text comparison&quot; often get used
+        interchangeably, but they usually solve different problems. Text
+        matching typically means fuzzy or pattern-based matching — finding
+        similar strings, spotting near-duplicate records, or matching entries
+        across a larger dataset, often tolerating small variations in wording.
+      </p>
+
+      <p className={pClass}>
+        Text Compare does something more exact: a direct, text-to-text
+        comparison between two specific pieces of content you provide, down to
+        the word, character, or line. If you already have two versions of the
+        same document and need to know precisely what changed between them,
+        that&apos;s a comparison task, not a fuzzy-matching one — and it&apos;s
+        what this tool is built for.
+      </p>
+
+
+      {/* ==================================================
           PRIVACY
       ================================================== */}
 
@@ -425,6 +473,13 @@ export default function SEOContent() {
         </li>
       </ul>
 
+
+      {/* ==================================================
+          FAQ
+      ================================================== */}
+
+    
+      
 
       {/* ==================================================
           INTERNAL LINKS

@@ -54,8 +54,8 @@ const rawPosts = [
   title:
     "Academic Writing Guide: Structure, Examples & Tips for Students",
 
-  description:
-    "Learn academic writing with practical examples, structure guides, assignment command words, paragraph techniques, citation tips, and a submission checklist.",
+ description:
+    "Academic writing guide for students: structure, examples, assignment command words, paragraph technique, citation tips, and a submission checklist.",
 
   excerpt:
     "A practical guide to academic writing, including structure, evidence, paragraph building, assignment command words, examples, citations, and editing.",
@@ -158,7 +158,7 @@ const rawPosts = [
   slug: "seo-content-writing-guide",
   title: "SEO Content Writing: The 2026 Guide to Ranking on Google",
   description:
-    "Learn SEO content writing step by step: keyword research, search intent, E-E-A-T, ideal length, and how to get cited in AI Overviews and ChatGPT in 2026.",
+  "Learn SEO content writing: keyword research, search intent, E-E-A-T, ideal length, and how to rank on Google and get cited in AI Overviews and ChatGPT.",
   excerpt:
     "A practical SEO content writing guide covering keyword research, search intent, E-E-A-T, content length data, on-page SEO, and AI search visibility.",
   image: "/blogs/seo-keyword-research.png",
@@ -221,12 +221,17 @@ const rawPosts = [
     },
   ],
 },
+
+
+
 {
   id: 3,
   slug: "manage-essay-word-count",
   title: "Essay Word Count Guide: How Long Is an Essay? (By Level)",
+
   description:
-    "Essay word count by academic level, what counts, the 10% rule with exact numbers, paragraph length, and where to put your word count.",
+    "Essay word count by academic level (high school to grad school), what counts, the 10% rule, paragraph length, and where to put your word count.",
+
   excerpt:
     "Word count problems start at the outline stage, not the writing stage. Learn essay lengths by level, paragraph word counts, the exact 10% rule for common lengths, and where your word count actually goes.",
   image: "/blogs/blog2.png",
@@ -410,6 +415,7 @@ const rawPosts = [
       }
     ]
   },
+
 {
   id: 6,
 
@@ -538,7 +544,7 @@ const rawPosts = [
     id: 7,
     slug: "how-many-words-in-a-novel",
     title: "How Many Words in a Novel? 7 Genre Counts Revealed",
-    description: "Discover typical novel word counts by genre, chapter/page guidance, and practical tips to hit your target length.",
+ description: "Wondering how many words are in a novel? See average word counts for 7 genres, plus chapter and page guidance to help you hit your ideal length.",
     excerpt: "How many words should a novel be? Learn genre targets, chapter lengths, and practical writing tips to hit your ideal manuscript length.",
     image: "/blogs/blog7-1.png",
     imageAlt: "Novel word count by genre guide",
@@ -584,7 +590,7 @@ const rawPosts = [
     id: 8,
     slug: "keyboard-shortcut-word-count",
     title: "Keyboard Shortcut for Word Count in Text, Docs & Vim",
-    description: "Learn the keyboard shortcuts for checking word count in Microsoft Word, Google Docs, Vim, and other platforms—quick tips to stay focused while you write.",
+   description: "Learn the keyboard shortcut for word count in Microsoft Word, Google Docs, Vim, and other platforms, plus quick tips to stay focused while you write.",
     excerpt: "One-press shortcuts for word count across Word, Google Docs and Vim—how to view live counts and dialog boxes quickly.",
     image: "/blogs/blog8-2.png",
     imageAlt: "Keyboard shortcuts for checking word count",
@@ -642,7 +648,7 @@ const rawPosts = [
   title: "How Long Should a Blog Post Be? A Practical 2026 Guide",
 
   description:
-    "There is no universal ideal blog post length. Learn how to choose the right word count based on search intent, topic depth, audience needs, and content type.",
+  "How long should a blog post be? There's no universal answer. Learn how search intent, topic depth, audience needs, and content type shape your ideal word count.",
 
   excerpt:
     "There is no universal ideal blog post length. The right word count depends on search intent, topic complexity, audience needs, and how much useful information the post requires.",
@@ -721,6 +727,8 @@ const rawPosts = [
     }
   ]
 },
+
+
   {
     id: 10,
     slug: "check-word-count-in-google-docs",
@@ -762,7 +770,7 @@ const rawPosts = [
     id: 12,
     slug: "the-great-gatsby",
     title: "How Long Does It Take to Read The Great Gatsby?",
-    description: "Find out how long The Great Gatsby takes to read slow, average, and fast speeds ,chapter breakdown, audiobook time, and a free student planner.",
+   description: "Find out how long it takes to read The Great Gatsby at slow, average, and fast speeds, plus a chapter breakdown, audiobook time, and a free student planner.",
 
     excerpt: "At 47,094 words, The Great Gatsby can be finished in a single afternoon or spread across a week — depending on your reading speed.",
     image: "/blogs/blog12-1.png",
@@ -825,16 +833,14 @@ const rawPosts = [
     ]
   },
 
+
  {
   id: 13,
 
   slug: "how-to-read-faster",
 
   title: "How to Read Faster Without Losing Comprehension",
-
-  description:
-    "Learn how to read faster without losing comprehension using research-backed techniques, a 7-day practice plan, and WPM plus recall tracking.",
-
+description: "Learn how to read faster without losing comprehension using research-backed techniques, a 7-day practice plan, and free WPM plus recall tracking tools.",
   excerpt:
     "Reading faster is not about chasing extreme WPM. Learn how to adjust your pace, practice efficiently, measure comprehension, and improve with research-backed methods.",
 
@@ -1008,7 +1014,7 @@ const rawPosts = [
     id: 16,
     slug: "how-to-calculate-words-per-minute-reading",
     title: "How to Calculate Words Per Minute Reading (Formula + Examples)",
-    description: "Calculate your reading speed in WPM with a simple formula, worked examples, WCPM, timing tips, and average adult reading speed benchmarks.",
+   description: "Learn how to calculate words per minute (WPM) reading speed with a simple formula, worked examples, WCPM, timing tips, and average adult reading benchmarks.",
     excerpt: "This guide walks you through exactly how to calculate words per minute reading — your true reading speed measured in words per minute — using one straightforward formula, examples worked out end to end, and the single conversion slip that silently wrecks almost everyone's numbers.",
  
     category: "Reading & Writing",
@@ -1155,9 +1161,8 @@ const rawPosts = [
   title:
     "Average Reading Speed (WPM): What's Normal & How to Test Yours",
 
-  description:
-    "Average adult silent reading speed is about 238 WPM, or roughly 40–55 pages per hour for a typical book. Compare WPM, comprehension, age and reading pace.",
-
+ description:
+    "Average adult reading speed is about 238 WPM, or roughly 40–55 pages per hour for a typical book. See how you compare by age, and test your own speed.",
   excerpt:
     "Adults typically read silent non-fiction at about 238 WPM and fiction at around 260 WPM. See typical reading speeds, pages per hour, age ranges, and comprehension differences.",
 
@@ -1306,12 +1311,11 @@ const rawPosts = [
 
   slug: "best-speed-reading-programs",
 
-  title:
-    "Best Speed Reading Programs: Free Courses, Paid Classes, and What Actually Works",
+ title:
+    "Best Speed Reading Programs: Free, Paid & What Works",
 
   description:
-    "Compare the best speed reading programs in 2026, including free courses, paid classes, live options, formats, pricing, and realistic results.",
-
+    "Compare the best speed reading programs in 2026, including free courses, paid classes, live options, formats, pricing, and what actually works in practice.",
   excerpt:
     "Compare leading speed reading programs, including Iris Reading, ReadSpeeder, live classes, and free courses, with realistic expectations for speed and comprehension.",
 
@@ -1791,9 +1795,9 @@ const rawPosts = [
 {
   id: 25,
   slug: "how-long-to-read-verity",
-  title: "How Long to Read Verity by Colleen Hoover? Word Count, Genre & Reading Time Explained",
-  description:
-    "Learn how many words are in Verity by Colleen Hoover, how long it takes to read, its page count, audiobook length, publication history, and whether it's a romance, thriller, or both.",
+ title: "How Long to Read Verity by Colleen Hoover? Word Count & Time",
+description:
+  "Learn how long it takes to read Verity by Colleen Hoover, its word count, page count, audiobook length, and whether it's a romance, thriller, or both.",
   excerpt:
     "Verity by Colleen Hoover contains an estimated 80,000 to 100,000 words and takes about 6 to 7.5 hours to read. Discover its page count, audiobook length, genre, and whether you should read it before the movie.",
   category: "Reading & Writing",
@@ -2054,8 +2058,8 @@ const rawPosts = [
   {
     id: 28,
     slug:"why-ai-tools-stop-mid-sentence",
-    title: "Why ChatGPT, Claude, and Gemini Stop Mid-Sentence ",
-    description: "Learn why ChatGPT, Claude, and Gemini stop mid-sentence, hit output caps, or throw context window errors, and find out how to fix each specific cause.",
+    title: "Why ChatGPT, Claude, and Gemini Stop Mid-Sentence",
+description: "Learn why ChatGPT, Claude, and Gemini stop mid-sentence, hit output caps, or throw context window errors, and get the exact fix for each specific cause.",
     excerpt: "Discover the three unrelated reasons AI models stop mid-sentence and the exact steps to fix output caps, context window overflows, and connection issues.",
     image: "/blogs/ai-mid-sentence-cutoffs.png",
     imageAlt: "Comparison of ChatGPT, Claude, and Gemini stopping mid-sentence and their token limits",
@@ -2105,6 +2109,7 @@ const rawPosts = [
       }
     ]
   },
+
 
 
  {
@@ -2211,9 +2216,9 @@ const rawPosts = [
   id: 30,
   slug:"why-ai-chatbots-cant-count-syllables",
   title:
-    "Why AI Chatbots Can't Count Syllables (And How to Fix them) ",
+    "Why AI Chatbots Can't Count Syllables (And How to Fix Them)",
   description:
-    "ChatGPT, Claude, and Gemini keep getting 5-7-5 wrong. Here's the real reason, and how to fix an AI haiku or lyric line by line.",
+    "ChatGPT, Claude, and Gemini keep getting 5-7-5 wrong. Learn why AI chatbots can't count syllables accurately, and how to fix an AI haiku or lyric line by line.",
   excerpt:
     "AI chatbots can explain the 5-7-5 haiku rule perfectly, yet still produce lines with the wrong syllable count. Learn why tokens and sounds do not match, why AI-generated lyrics often fail to fit melodies, and how to fix the problem with an external syllable counter.",
   image: "/blogs/free-syllable-counter.webp",
@@ -2593,9 +2598,9 @@ const rawPosts = [
   slug: "how-to-remove-chatgpt-formatting-from-copied-ai-text",
 
   title: "How to Remove ChatGPT Formatting from Copied AI Text",
-
+ 
   description:
-    "Remove ChatGPT formatting, markdown, hidden characters, and weird spacing in seconds. Learn 5 easy methods or clean AI text online for free.",
+    "Remove ChatGPT formatting, markdown, and hidden characters from copied AI text. Try 5 easy methods or clean it instantly with a free online tool.",
 
   excerpt:
     "Discover five easy ways to remove ChatGPT formatting using an AI text cleaner, plain-text paste options, Microsoft Word, Google Docs, and Notepad.",
@@ -2749,9 +2754,8 @@ const rawPosts = [
   title:
     "Repeat a Word 100 Times: Fast Copy & Paste Method",
 
-  description:
-    "Repeat any word 100 times without manual copy and paste. Choose 100 repetitions, select a separator, generate the text, and copy the full result instantly.",
-
+ description:
+    "Repeat any word 100 times in one click. Choose a separator, generate the text, and copy the full result instantly, with no manual copy and paste.",
   excerpt:
     "Enter a word once, set the count to 100, choose a space, new line, comma, or custom separator, and generate all repetitions at once.",
 
@@ -3017,7 +3021,7 @@ const rawPosts = [
   slug: "1-million-tokens-to-words",
   title: "1 Million Tokens to Words: 7 Useful Conversions",
   description:
-    "Convert 1 million tokens to words, pages, and characters.Learn how tokenization works across models and when to use a calculator instead of estimates.",
+    "1 million tokens is about 750,000 words or 1,500 pages. See character counts, how models differ, and use the free calculator for exact numbers.",
   excerpt:
     "Discover how many words, pages, and characters are in 1 million tokens, why estimates vary by model and language, and when to measure real text instead of guessing.",
   category: "AI & Tokens",
@@ -3077,7 +3081,8 @@ const rawPosts = [
   "id": 41,
   "slug": "how-many-tokens-is-1000-words",
   "title": "How Many Tokens Is 1,000 Words? 7 Useful Examples",
-  "description": "Convert 1,000 words to tokens, learn how tokenization works across models, and discover when to use estimates versus real measurement for AI prompts and API planning.",
+"description": "1,000 words is about 1,300 tokens in English. See examples across models, why counts vary, and use the free calculator for exact numbers.",
+ 
   "excerpt": "Discover how many tokens are in 1,000 words, why estimates vary by model and content type, and when precise measurement matters for context limits and API costs.",
   "category": "AI & Tokens",
   "image": "/blogs/how-many-tokens-is-1000-words.webp",
@@ -3248,7 +3253,7 @@ const rawPosts = [
   "id": 44,
   "slug": "how-to-search-keywords-on-webpage",
   "title": "How to Search Keywords on a Webpage: 5 Easy Ways",
-  "description": "Learn how to search keywords on a webpage using browser Find, mobile search, Google site: search, page source inspection, and keyword density checks.",
+  "description": "Search any webpage for a word or keyword using Ctrl+F, mobile browser Find, Google site: search, page source, and keyword density checks.",
   "excerpt": "Discover 5 easy ways to search keywords on a webpage. Use browser Find, search an entire site with Google, inspect page source, and measure keyword frequency for SEO.",
   "category": "SEO & Content",
   "image": "/blogs/search-keyword-on-web.webp",
@@ -3305,8 +3310,8 @@ const rawPosts = [
 {
   "id": 45,
   "slug": "does-chatgpt-watermark-text",
-  "title": "Does ChatGPT Watermark Text? 7 Facts You Need to Know",
-  "description": "Learn whether ChatGPT watermarks text with invisible characters, hidden Unicode, or formatting artifacts. Discover how to detect and remove unusual characters safely.",
+ "title": "Does ChatGPT Watermark Text? 7 Facts & How to Check",
+"description": "Does ChatGPT watermark text? Not officially, but copied output can contain hidden Unicode and odd spacing. Learn how to detect and remove it.",
   "excerpt": "Discover if ChatGPT watermarks text in 2026. Learn about invisible Unicode characters, formatting artifacts, and how to check copied AI text safely.",
   "category": "AI Tools",
   "image": "/blogs/does-chatgpt-watermark-text.webp",

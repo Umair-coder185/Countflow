@@ -1,28 +1,28 @@
 // src/app/about-us/page.jsx
 
 import Link from "next/link";
+// TODO: move ALL_TOOLS into a shared file (e.g. "@/data/tools") and import it
+// from both this page and /tools/page. Page files should only export the page.
 import { ALL_TOOLS } from "@/app/tools/page";
 
 const totalTools = ALL_TOOLS.length;
 
-const description =
-  `CountFlows is a free, private suite of ${totalTools} writing tools built by Umair Tufail — counters and converters that run entirely in your browser, no sign-up needed.`;
+const title = "About CountFlows: Free & Private Writing Tools";
+const description = `Free, private writing tools by Umair Tufail: ${totalTools} counters and converters that run in your browser. No sign-up needed.`;
 
 export const metadata = {
-  title: "About CountFlows",
+  title,
   description,
   alternates: { canonical: "https://countflows.com/about-us" },
   openGraph: {
-    title: "About CountFlows",
+    title,
     description,
     url: "https://countflows.com/about-us",
     siteName: "CountFlows",
     type: "website",
   },
-  twitter: { card: "summary", title: "About CountFlows", description },
+  twitter: { card: "summary", title, description },
 };
-
-// Imported ALL_TOOLS from /tools/page instead of hardcoding.
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
@@ -34,12 +34,14 @@ const aboutJsonLd = {
     name: "Umair Tufail",
     jobTitle: "Founder",
     url: "https://countflows.com/about-us",
-    // Keep only profiles that are real and active. Delete the rest.
-    sameAs: ["https://www.linkedin.com/in/REPLACE-ME"],
+    worksFor: {
+      "@type": "Organization",
+      name: "CountFlows",
+      url: "https://countflows.com",
+    },
+    sameAs: ["https://www.linkedin.com/in/umair-next-js"],
   },
 };
-
-const jsonLdProps = { __html: JSON.stringify(aboutJsonLd) };
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
@@ -60,6 +62,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const jsonLdProps = { __html: JSON.stringify(aboutJsonLd) };
 const breadcrumbProps = { __html: JSON.stringify(breadcrumbJsonLd) };
 
 // Hand-picked guides (same byline: Umair Tufail). Verify slugs against your blog.
@@ -84,7 +87,7 @@ const posts = [
 
 export default function AboutUs() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16 text-gray-800 dark:text-slate-200 mt-12 md:mt-16">
+    <main className="mx-auto mt-12 max-w-4xl px-6 py-16 text-gray-800 dark:text-slate-200 md:mt-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdProps}
@@ -93,6 +96,7 @@ export default function AboutUs() {
         type="application/ld+json"
         dangerouslySetInnerHTML={breadcrumbProps}
       />
+
       <nav
         aria-label="Breadcrumb"
         className="mb-6 text-sm text-gray-500 dark:text-slate-400"
@@ -112,55 +116,57 @@ export default function AboutUs() {
           </li>
         </ol>
       </nav>
-      <article>
-        <h1 className="text-4xl font-bold mb-8 text-center">About CountFlows</h1>
 
-        <p className="mb-6">
-          <strong>CountFlows</strong> is a free suite of writing tools —
+      <article>
+        <h1 className="mb-8 text-4xl font-bold text-gray-900 dark:text-white">
+          About CountFlows
+        </h1>
+
+        <p className="mb-6 leading-7">
+          <strong>CountFlows</strong> is a free suite of writing tools:
           counters, converters, and calculators that give you instant answers
-          while you type. There are no accounts, no paywalls, and no uploads:
-          every tool runs inside your browser, so your text never leaves your
+          while you type. There are no accounts, no paywalls, and no uploads.
+          Every tool runs inside your browser, so your text never leaves your
           device.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">Why this site exists</h2>
-        <p className="mb-6">
+        <h2 className="mb-4 mt-10 text-2xl font-semibold">
+          Why this site exists
+        </h2>
+        <p className="mb-6 leading-7">
           CountFlows started with a simple annoyance: checking a word count
           online usually meant slow pages, pop-ups, and tools that quietly sent
           your text to a server. Tools this small should be instant, honest,
-          and private. So I built one that was — then kept going. Every tool
+          and private. So I built one that was, then kept going. Every tool
           since has followed the same three rules: it is free, it works the
           moment you paste, and your text stays on your device.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">Meet the founder</h2>
-        
-          <div>
-            <p className="mb-4">
-              I&apos;m <strong>Umair Tufail</strong>, a web developer and
-              writer, and the person who builds, tests, and maintains every
-              tool on CountFlows. I also write the guides on the blog — the
-              same name you see in the article bylines. When a tool here quotes
-              a number, it is backed by published research or documented
-              platform limits, because I rely on these tools for my own writing
-              every day.
-            </p>
-            <p>
-              <a
-                href="https://www.linkedin.com/in/umair-next-js"
-                rel="me noopener noreferrer"
-                target="_blank"
-                className="text-blue-500 hover:underline"
-              >
-                Connect with me on LinkedIn
-              </a>
-            </p>
-          </div>
-        
+        <h2 className="mb-4 mt-10 text-2xl font-semibold">Meet the founder</h2>
+        <p className="mb-4 leading-7">
+          I&apos;m <strong>Umair Tufail</strong>, a web developer and writer,
+          and the person who builds, tests, and maintains every tool on
+          CountFlows. I also write the guides on the blog, under the same name
+          you see in the article bylines. When a tool here quotes a number, it
+          is backed by published research or documented platform limits,
+          because I rely on these tools for my own writing every day.
+        </p>
+        <p className="mb-6">
+          <a
+            href="https://www.linkedin.com/in/umair-next-js"
+            rel="me noopener noreferrer"
+            target="_blank"
+            className="text-blue-500 hover:underline"
+          >
+            Connect with me on LinkedIn
+          </a>
+        </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">Our tools</h2>
-        <p className="mb-4">{totalTools} tools are live today, with more on the roadmap:</p>
-        <ul className="list-disc pl-6 space-y-2">
+        <h2 className="mb-4 mt-10 text-2xl font-semibold">Our tools</h2>
+        <p className="mb-4">
+          {totalTools} tools are live today, with more on the roadmap:
+        </p>
+        <ul className="list-disc space-y-2 pl-6">
           {ALL_TOOLS.map((tool) => (
             <li key={tool.slug}>
               <Link
@@ -174,8 +180,8 @@ export default function AboutUs() {
           ))}
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">What we stand for</h2>
-        <ul className="list-disc pl-6 space-y-2 mb-6">
+        <h2 className="mb-4 mt-10 text-2xl font-semibold">What we stand for</h2>
+        <ul className="mb-6 list-disc space-y-2 pl-6">
           <li>
             <strong>Free, always:</strong> no accounts, no premium tiers, no
             limits on how much text you can check.
@@ -183,11 +189,18 @@ export default function AboutUs() {
           <li>
             <strong>Private by design:</strong> all counting happens in your
             browser. Your text is never sent to our servers, so there is
-            nothing for us to store, read, or share.
+            nothing for us to store, read, or share. Details are in our{" "}
+            <Link
+              href="/privacy-policy"
+              className="text-blue-500 hover:underline"
+            >
+              Privacy Policy
+            </Link>
+            .
           </li>
           <li>
-            <strong>Instant results:</strong> counts update as you type — no
-            submit button, no waiting.
+            <strong>Instant results:</strong> counts update as you type, with
+            no submit button and no waiting.
           </li>
           <li>
             <strong>Honest numbers:</strong> reading speeds, platform limits,
@@ -196,12 +209,12 @@ export default function AboutUs() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">From the blog</h2>
-        <p className="mb-4">
+        <h2 className="mb-4 mt-10 text-2xl font-semibold">From the blog</h2>
+        <p className="mb-4 leading-7">
           Alongside the tools, I publish research-backed writing guides. A few
           worth starting with:
         </p>
-        <ul className="list-disc pl-6 space-y-2 mb-6">
+        <ul className="mb-6 list-disc space-y-2 pl-6">
           {posts.map((post) => (
             <li key={post.href}>
               <Link
@@ -221,22 +234,24 @@ export default function AboutUs() {
           .
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">Data and accuracy</h2>
-        <p className="mb-6">
+        <h2 className="mb-4 mt-10 text-2xl font-semibold">
+          Data and accuracy
+        </h2>
+        <p className="mb-6 leading-7">
           Our calculators are built on researched formulas and published
-          averages — for example, reading time uses 238 words per minute for
+          averages. For example, reading time uses 238 words per minute for
           silent reading (Brysbaert, 2019). Results are accurate for typical
           text, but averages are starting points: your own pace and context may
           vary.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">Contact</h2>
-        <p>
+        <h2 className="mb-4 mt-10 text-2xl font-semibold">Contact</h2>
+        <p className="leading-7">
           Found a bug, or want a tool we haven&apos;t built yet? Head to the{" "}
           <Link href="/contact" className="text-blue-500 hover:underline">
             contact page
-          </Link>{" "}
-          — feature requests genuinely shape the roadmap.
+          </Link>
+          . Feature requests genuinely shape the roadmap.
         </p>
       </article>
     </main>

@@ -3,7 +3,7 @@
 export const metadata={
   title: "Free Text Repeater — Repeat Text Up to 10,000 Times | CountFlows",
   description:
-    "Free online text repeater. Repeat any text, word, or emoji up to 10,000 times with five separator styles. No sign-up, no limits — everything stays in your browser.",
+    "Free online text repeater — repeat any text, word, or emoji up to 10,000 times with custom separators. Instant results, no sign-up, runs in your browser.",
   alternates: { canonical: "https://countflows.com/tools/text-repeater" },
   openGraph: {
     title: "Free Text Repeater — Repeat Text Up to 10,000 Times | CountFlows",

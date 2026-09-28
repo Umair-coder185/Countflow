@@ -1,8 +1,8 @@
 export const metadata = {
   title: "Free Sentence Counter & Sentence Length Checker | CountFlows",
 
-  description:
-    "Count sentences instantly and check average sentence length, longest and shortest sentences, and word count. Free online sentence counter with no sign-up.",
+ description:
+    "Free online sentence counter that checks average sentence length, longest and shortest sentences, and total word count — instant results, no sign-up.",
 
   alternates: {
     canonical: "https://countflows.com/tools/sentence-counter",

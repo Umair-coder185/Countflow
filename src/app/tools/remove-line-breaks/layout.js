@@ -1,7 +1,8 @@
 export const metadata = {
   title: "Free Remove Line Breaks Online – Clean Text in Seconds",
   description:
-    "Remove line breaks online for free. Three modes: remove all, preserve paragraphs, or replace with a custom separator. Paste, clean, copy — nothing leaves your browser.",
+  
+    "Free tool to remove line breaks from text copied out of PDFs, Word docs, or emails. Three cleanup modes, instant results — nothing leaves your browser.",
   openGraph: {
     title: "Free Remove Line Breaks Online – Clean Text in Seconds",
     description:

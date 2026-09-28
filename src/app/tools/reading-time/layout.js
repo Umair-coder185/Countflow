@@ -3,7 +3,7 @@ export const metadata = {
     "Free Reading Time Calculator: How Long to Read This Text? | CountFlows",
 
   description:
-    "Paste any article, essay, or script to instantly estimate how long it will take to read or speak. Get reading and speaking time from your text in seconds.",
+    "Free reading time calculator: paste any article, essay, or script and get an instant reading and speaking time estimate in seconds — no sign-up needed.",
 
   alternates: {
     canonical: "https://countflows.com/tools/reading-time",

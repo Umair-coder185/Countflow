@@ -2,7 +2,8 @@ export const metadata = {
   title: "Free AI Token Calculator & Counter | GPT, Claude, Gemini",
 
   description:
-    "Count AI tokens instantly, estimate GPT, Claude & Gemini API costs, check context limits, and find the cheapest model. Free and private.",
+  
+    "Free AI Token Counter for GPT, Claude & Gemini. Count tokens, estimate API costs, check context limits, and find the cheapest model — 100% private.",
 
   keywords: [
     "ai token calculator",

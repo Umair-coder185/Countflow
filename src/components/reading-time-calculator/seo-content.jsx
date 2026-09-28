@@ -10,6 +10,16 @@ const readingTimeRows = [
   { words: "10,000 words", at200: "50 min", at250: "40 min", speaking130: "1 hr 16 min 55 sec" },
 ]
 
+const readingSpeedByReader = [
+  { group: "Early elementary (1st–3rd grade)", wpm: "50–110 WPM (read aloud)", note: "Still decoding word by word" },
+  { group: "Upper elementary (5th grade)", wpm: "~150 WPM (silent)", note: "Silent reading starts overtaking oral" },
+  { group: "Middle / high school", wpm: "200–230 WPM (silent)", note: "Approaching the adult range" },
+  { group: "Average adult — non-fiction", wpm: "238 WPM (silent)", note: "Brysbaert (2019) meta-analysis baseline" },
+  { group: "Average adult — fiction", wpm: "260 WPM (silent)", note: "Shorter average word length" },
+  { group: "Adult reading aloud, solo", wpm: "183 WPM", note: "Same Brysbaert (2019) dataset" },
+  { group: "Older adult (65+)", wpm: "~220 WPM (silent)", note: "Gradual slowdown, still fluent" },
+]
+
 const h2Class =
   "text-2xl md:text-3xl font-bold mb-5 mt-12 first:mt-0 text-gray-800 dark:text-gray-100"
 
@@ -157,6 +167,54 @@ export default function SEOContent() {
         .
       </p>
 
+      <h2 className={h2Class}>What's a Realistic Reading Speed to Use?</h2>
+
+      <p className={pClass}>
+        Most reading-time tools default to a round number like 200 or 250 words
+        per minute, but neither figure comes from a specific study — they're
+        rounded conventions. The most thorough research on this question comes
+        from Marc Brysbaert's 2019 meta-analysis in the{" "}
+        <em>Journal of Memory and Language</em>, which pooled 190 separate
+        reading-speed studies. It found that adults silently read English
+        non-fiction at an average of 238 WPM and fiction at 260 WPM — both a
+        little lower than the 200–300 WPM range you'll see quoted in older or
+        less rigorous sources.
+      </p>
+
+      <p className={pClass}>
+        Reading speed also shifts with age and reading experience. The table
+        below combines Brysbaert's adult baseline with commonly cited oral
+        fluency benchmarks for younger readers:
+      </p>
+
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full min-w-[640px] text-sm md:text-base border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+          <thead>
+            <tr>
+              <th className={thClass}>Reader</th>
+              <th className={thClass}>Typical speed</th>
+              <th className={thClass}>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {readingSpeedByReader.map((row) => (
+              <tr key={row.group}>
+                <td className={`${tdClass} font-semibold`}>{row.group}</td>
+                <td className={tdClass}>{row.wpm}</td>
+                <td className={tdClass}>{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p className={pClass}>
+        If you want a more research-backed default than the standard 200 WPM
+        preset, try entering 238 into the calculator's custom speed field above
+        — it's a closer match to how most adults actually read non-fiction text
+        in silence.
+      </p>
+
       <h2 className={h2Class}>Reading Time and Speaking Time</h2>
 
       <p className={pClass}>
@@ -164,6 +222,18 @@ export default function SEOContent() {
         so the calculator provides separate controls for each. This is useful
         when the same text will be used as a speech, presentation, script,
         voiceover, lesson, or recording.
+      </p>
+
+      <p className={pClass}>
+        These aren't the same "aloud" speed, either. Reading a passage aloud
+        alone, with no audience, averages close to 183 WPM — the oral reading
+        rate from the same Brysbaert dataset above. Speaking to an audience is
+        usually slower, typically 120–150 WPM, because pauses, emphasis, and
+        pacing for comprehension all eat into speed. That's why this
+        calculator's speaking estimate defaults to 130 WPM rather than the
+        faster solo-reading-aloud rate — it's built around how a script
+        actually gets delivered, not how fast one person can read text out
+        loud alone.
       </p>
 
       <p className={pClass}>
@@ -206,7 +276,14 @@ export default function SEOContent() {
         translated into time. Bloggers can estimate how long a post takes to
         read, students can plan study sessions, editors can compare article
         lengths, and speakers can check whether a script fits a presentation
-        window.
+        window. If your draft started out as an AI-generated outline, run it
+        through our{" "}
+        <Link href="/tools/ai-text-cleaner" className={linkClass}>
+          AI Text Cleaner
+        </Link>{" "}
+        first to tighten the phrasing, then check the cleaned version here to
+        see how long the final piece will actually take readers to get
+        through.
       </p>
 
       <p className={pClass}>

@@ -3,9 +3,9 @@ export const metadata = {
     absolute:
       "Online Text Compare – Compare Two Texts Instantly | CountFlows",
   },
-
-  description:
-    "Compare two texts online and instantly highlight added, removed, and changed words, characters, or lines. Free, private, browser-based, and no signup.",
+description:
+    "Free online Text Compare tool. Highlight added, removed & changed words, characters, or lines between two texts — private, browser-based, no sign-up.",
+ 
 
   alternates: {
     canonical:

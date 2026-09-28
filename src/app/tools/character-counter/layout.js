@@ -3,8 +3,8 @@
 export const metadata = {
   title: "Free Character Counter – With & Without Spaces | CountFlows",
 
-  description:
-    "Free character counter to count characters with and without spaces. Check Unicode, X, LinkedIn, TikTok, SEO and SMS limits instantly in your browser.",
+ description:
+    "Free character counter — count characters with and without spaces. Check Twitter/X, Instagram, LinkedIn, TikTok, SEO & SMS limits. No sign-up.",
 
   alternates: {
     canonical: "https://countflows.com/tools/character-counter",
