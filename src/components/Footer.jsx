@@ -140,10 +140,10 @@ export default function Footer() {
                 Support
               </p>
               <a
-                href="mailto:contact@countflows.com"
+                href="mailto:umairnextjs@gmail.com"
                 className="mt-2 inline-block text-sm text-slate-400 transition hover:text-cyan-300"
               >
-                contact@countflows.com
+                umairnextjs@gmail.com
               </a>
             </div>
           </div>

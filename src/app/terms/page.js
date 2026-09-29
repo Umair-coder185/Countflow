@@ -378,10 +378,10 @@ export default function TermsAndConditions() {
             <li>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:contact@countflows.com"
+                href="mailto:umairnextjs@gmail.com"
                 className="text-blue-500 hover:underline"
               >
-                contact@countflows.com
+                umairnextjs@gmail.com
               </a>
             </li>
 

@@ -84,7 +84,7 @@ export default function ContactPage() {
 
           <div className="mb-10 flex flex-wrap gap-3">
             <a
-              href="mailto:contact@countflows.com"
+              href="mailto:umairnextjs@gmail.com"
               className="rounded-lg bg-cyan-600 px-5 py-3 font-semibold text-white transition hover:bg-cyan-700"
             >
               Email CountFlows
@@ -109,10 +109,10 @@ export default function ContactPage() {
           <p className="mb-6 leading-7">
             Contact us directly at{" "}
             <a
-              href="mailto:contact@countflows.com"
+              href="mailto:umairnextjs@gmail.com"
               className="font-medium text-cyan-700 hover:underline dark:text-cyan-300"
             >
-              contact@countflows.com
+              umairnextjs@gmail.com
             </a>
             . Every message is read, and feedback helps shape the roadmap.
           </p>
