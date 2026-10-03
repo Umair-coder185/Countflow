@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import BlogCard from "@/components/blog/BlogCard";
+import { blogPath } from "@/lib/blogUrls";
 import { BookOpen } from "lucide-react";
 
 export default function BlogListClient({
@@ -26,15 +27,7 @@ export default function BlogListClient({
   function handleCategoryChange(event) {
     const nextCategory = event.target.value;
     setCategory(nextCategory);
-
-    if (nextCategory === "All") {
-      router.push("/blog");
-      return;
-    }
-
-    router.push(
-      `/blog?category=${encodeURIComponent(nextCategory)}`
-    );
+    router.push(blogPath(1, nextCategory));
   }
 
   return (

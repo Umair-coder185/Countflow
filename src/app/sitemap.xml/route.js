@@ -1,6 +1,8 @@
 import { posts } from "@/lib/blogData";
 import { ALL_TOOLS } from "@/app/tools/page";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const baseUrl = "https://countflows.com";
   const staticRoutes = [

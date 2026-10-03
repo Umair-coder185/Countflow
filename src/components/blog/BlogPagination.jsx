@@ -1,23 +1,13 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { blogPath } from "@/lib/blogUrls";
 
 function buildHref(page, selectedCategory) {
-  const params = new URLSearchParams();
-
-  if (
-    selectedCategory &&
-    selectedCategory !== "All"
-  ) {
-    params.set("category", selectedCategory);
+  if (selectedCategory && selectedCategory !== "All") {
+    return blogPath(1, selectedCategory);
   }
 
-  if (page > 1) {
-    params.set("page", String(page));
-  }
-
-  const query = params.toString();
-
-  return `/blog${query ? `?${query}` : ""}`;
+  return blogPath(page, "All");
 }
 
 export default function BlogPagination({

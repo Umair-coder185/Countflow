@@ -1,0 +1,53 @@
+# ---------- Core Tools ----------
+/tools/sentence-calculator /tools/sentence-counter 301
+/syllable-counter /tools/syllable-counter 301
+/tools/syllable_counter /tools/syllable-counter 301
+/chatgpt-watermark-remover /tools/chatgpt-watermark-remover 301
+/tools/text-repeat /tools/text-repeater 301
+/tools/text-reperter /tools/text-repeater 301
+/text-repeater /tools/text-repeater 301
+/tools/char-counter /tools/character-counter 301
+/tools/invisible-text-detector /tools/invisible-character-detector 301
+/tools/overview /tools 301
+/tools/read /tools/reading-time 301
+/tools/and-replace-text /tools/find-and-replace-text 301
+/tools/ai-token-context /tools/ai-token-counter 301
+/tools/ai-target-counter /tools/ai-token-counter 301
+/tools/countflows-reading-time-calculator /tools/reading-time 301
+/tools/reading-time-this-text /tools/reading-time 301
+/tools/reading-time-calculator /tools/reading-time 301
+/blog/countflows-ai-text-cleaner /tools/ai-text-cleaner 301
+/blog/remove-line-breaks-from-pdf-text /tools/remove-line-breaks 301
+
+# ---------- Static Pages ----------
+/about /about-us 301
+
+# ---------- Blog: 2000 words -> pages ----------
+/blog/how-many-words-per-page /blog/how-many-pages-is-2000-words 301
+/blog/how-many-words-per-page-2000-words /blog/how-many-pages-is-2000-words 301
+/blog/how-many-words-per-page-essay-books-documents /blog/how-many-pages-is-2000-words 301
+/blog/how-many-words-per-page-essays-books-documents /blog/how-many-pages-is-2000-words 301
+/blog/how-many-words-per-page/essays-books-documents /blog/how-many-pages-is-2000-words 301
+/blog/how-many-pages-is-2-000-words /blog/how-many-pages-is-2000-words 301
+/blog/how-much-words-per-page-double-spaced /blog/how-many-pages-is-2000-words 301
+/blog/how-mais-is-2000-words /blog/how-many-pages-is-2000-words 301
+/blog/how-many-pages-is-2000-wordshow-many-pages-is-1000-wordswords-per-page-double-spacedhow-many-words-s-a-300-page-bookwords-per-a4-pagehandwritten-words-per-page /blog/how-many-pages-is-2000-words 301
+/blog/how-many-pages-is-2000-wordshow-many-words-is-1000-wordswords-besides-double-spaced /blog/how-many-pages-is-2000-words 301
+/blog/what-edges-is-2000-wordshow-many-pages-is-1000-wordswords-per-page-double-spacedhow-many-words-is-a-300-page-bookwords-per-a4-pagehandwritten-words-per-page /blog/how-many-pages-is-2000-words 301
+
+# ---------- Blog: ChatGPT watermark ----------
+/blog/does-chatgpt-watermark-text-7-facts-you-need-to-know /blog/does-chatgpt-watermark-text 301
+/blog/does-chatvpn-watermark-text /blog/does-chatgpt-watermark-text 301
+/blog/does-agent-watermark-text /blog/does-chatgpt-watermark-text 301
+
+# ---------- Blog: remove ChatGPT formatting ----------
+/blog/how-to-remove-chatgpt-formatting-from-coppied-ai-text /blog/how-to-remove-chatgpt-formatting-from-copied-ai-text 301
+/blog/how-to-remove-chatgpt-from-copied-ai-text /blog/how-to-remove-chatgpt-formatting-from-copied-ai-text 301
+
+# ---------- Off-topic broken slug ----------
+/blog/where-was-the-filmed /blog/where-was-the-hobbit-filmed 301
+
+# ---------- Trailing slash -> bina slash (sabse last mein) ----------
+/:a/ /:a 301
+/:a/:b/ /:a/:b 301
+/:a/:b/:c/ /:a/:b/:c 301
