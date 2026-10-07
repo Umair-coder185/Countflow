@@ -1,9 +1,6 @@
-
-
-
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useDeferredValue, useEffect, useMemo, useState } from "react"
 
 import {
   AlertTriangle,
@@ -230,6 +227,41 @@ const LOCALE = "en-US"
 /*                            UNICODE / TEXT HELPERS                          */
 /* -------------------------------------------------------------------------- */
 
+/*
+  PERFORMANCE:
+  Creating an Intl.Segmenter is expensive. Previously a new one was created on
+  every call (several times per keystroke). Now each one is created lazily
+  once and reused for the lifetime of the page.
+*/
+let _graphemeSegmenter = null
+let _wordSegmenter = null
+let _sentenceSegmenter = null
+
+function getSegmenter(type) {
+  if (typeof Intl === "undefined" || !Intl.Segmenter) return null
+
+  try {
+    if (type === "grapheme") {
+      return (_graphemeSegmenter ??= new Intl.Segmenter(LOCALE, {
+        granularity: "grapheme",
+      }))
+    }
+
+    if (type === "word") {
+      return (_wordSegmenter ??= new Intl.Segmenter(LOCALE, {
+        granularity: "word",
+      }))
+    }
+
+    return (_sentenceSegmenter ??= new Intl.Segmenter(LOCALE, {
+      granularity: "sentence",
+    }))
+  } catch {
+    // Some browsers may not support a given granularity.
+    return null
+  }
+}
+
 function getGraphemeSegments(value) {
   if (!value) return []
 
@@ -245,11 +277,9 @@ function getGraphemeSegments(value) {
     é
   */
 
-  if (typeof Intl !== "undefined" && Intl.Segmenter) {
-    const segmenter = new Intl.Segmenter(LOCALE, {
-      granularity: "grapheme",
-    })
+  const segmenter = getSegmenter("grapheme")
 
+  if (segmenter) {
     return Array.from(
       segmenter.segment(value),
       (segment) => segment.segment
@@ -260,21 +290,19 @@ function getGraphemeSegments(value) {
   return Array.from(value)
 }
 
-function countGraphemes(value) {
-  return getGraphemeSegments(value).length
-}
-
 function getWordTokens(value) {
   if (!value.trim()) return []
 
-  if (typeof Intl !== "undefined" && Intl.Segmenter) {
-    const segmenter = new Intl.Segmenter(LOCALE, {
-      granularity: "word",
-    })
+  const segmenter = getSegmenter("word")
 
-    return Array.from(segmenter.segment(value))
-      .filter((segment) => segment.isWordLike)
-      .map((segment) => segment.segment)
+  if (segmenter) {
+    const tokens = []
+
+    for (const segment of segmenter.segment(value)) {
+      if (segment.isWordLike) tokens.push(segment.segment)
+    }
+
+    return tokens
   }
 
   return (
@@ -287,18 +315,16 @@ function getWordTokens(value) {
 function countSentences(value) {
   if (!value.trim()) return 0
 
-  if (typeof Intl !== "undefined" && Intl.Segmenter) {
-    try {
-      const segmenter = new Intl.Segmenter(LOCALE, {
-        granularity: "sentence",
-      })
+  const segmenter = getSegmenter("sentence")
 
-      return Array.from(segmenter.segment(value))
-        .map((segment) => segment.segment.trim())
-        .filter(Boolean).length
-    } catch {
-      // Some browsers may not support sentence segmentation.
+  if (segmenter) {
+    let count = 0
+
+    for (const segment of segmenter.segment(value)) {
+      if (segment.segment.trim()) count++
     }
+
+    return count
   }
 
   const matches = value
@@ -586,10 +612,16 @@ function analyzeText(value) {
   const graphemes =
     graphemeSegments.length
 
-  const charactersNoSpaces =
-    countGraphemes(
-      value.replace(/\s/gu, "")
-    )
+  /*
+    PERFORMANCE:
+    Reuse the grapheme list we already built instead of running a second
+    full grapheme segmentation on a whitespace-stripped copy of the text.
+  */
+  let charactersNoSpaces = 0
+
+  for (const segment of graphemeSegments) {
+    if (!/^\s/u.test(segment)) charactersNoSpaces++
+  }
 
   const words =
     getWordTokens(value)
@@ -772,6 +804,14 @@ function getPresetLimit(
 export default function CharacterCounterTool() {
   const [text, setText] = useState("")
 
+  /*
+    PERFORMANCE:
+    `text` updates immediately so typing always feels instant.
+    `deferredText` lags slightly behind and is used for the heavy analysis,
+    so React can paint keystrokes first and run the analysis afterwards.
+  */
+  const deferredText = useDeferredValue(text)
+
   const [selectedPresetId, setSelectedPresetId] =
     useState("x-post")
 
@@ -812,13 +852,13 @@ export default function CharacterCounterTool() {
   /* ---------------------------------------------------------------------- */
 
   const stats = useMemo(
-    () => analyzeText(text),
-    [text]
+    () => analyzeText(deferredText),
+    [deferredText]
   )
 
   const sms = useMemo(
-    () => getSmsInfo(text),
-    [text]
+    () => getSmsInfo(deferredText),
+    [deferredText]
   )
 
   /* ---------------------------------------------------------------------- */
