@@ -1,13 +1,13 @@
 export const metadata = {
-  title: "Free AI Text Cleaner - Remove ChatGPT Formatting | CountFlows",
+  title: "Free AI Text Cleaner - Remove ChatGPT Formatting ",
   description:
-    "Clean AI-generated text in one click. Remove markdown symbols, em dashes, invisible characters, and smart quotes from ChatGPT, Claude, or Gemini output. 100% free \u2014 your text never leaves your browser.",
+    "Free AI text cleaner to remove ChatGPT formatting, Markdown, em dashes, smart quotes, and invisible characters. Works with ChatGPT, Claude, and Gemini.",
   keywords:
     "ai text cleaner, chatgpt text cleaner, remove chatgpt formatting, remove markdown from text, clean text, ai text cleaner free, remove em dash from chatgpt, remove invisible characters from text, ai to plain text converter, clean up ai generated text, chatgpt formatting remover , eassy cheaner",
   openGraph: {
     title: "AI Text Cleaner - Remove ChatGPT Formatting",
     description:
-      "Remove markdown symbols, em dashes, invisible characters, and smart quotes from AI text in one click. 100% free and private.",
+      "Free AI text cleaner to remove ChatGPT formatting, Markdown, em dashes, smart quotes, and invisible characters. Works with ChatGPT, Claude, and Gemini.",
     url: "https://countflows.com/tools/ai-text-cleaner",
     type: "website",
     images: [

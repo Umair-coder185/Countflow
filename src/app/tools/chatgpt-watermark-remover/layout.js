@@ -3,7 +3,7 @@ export const metadata = {
     absolute: "ChatGPT Watermark Remover – Check Hidden Characters | CountFlows",
   },
 
-  description: "Scan ChatGPT text for hidden Unicode, zero-width characters, unusual spaces and copy-paste artifacts. Review and remove supported characters in your browser.",
+  description:  "Free ChatGPT watermark remover to detect and remove hidden Unicode, zero-width characters, unusual spaces, and invisible text. Clean AI text online.",
 
   alternates: {
     canonical: "https://countflows.com/tools/chatgpt-watermark-remover",
