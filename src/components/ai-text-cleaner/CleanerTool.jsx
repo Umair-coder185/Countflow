@@ -1,80 +1,121 @@
+"use client";
 
-
-
-"use client"
-
-import { useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   Check,
-  Code2,
+  ChevronDown,
+  ClipboardPaste,
   Copy,
   Download,
   Eraser,
   EyeOff,
-  FileCode,
+  FileCode2,
   FileText,
-  Globe,
   Layers,
-  List,
-  Minus,
-  Quote,
   RotateCcw,
+  Settings2,
   ShieldCheck,
-  Smile,
   Sparkles,
-  Type,
-  WrapText,
-} from "lucide-react"
+  WandSparkles,
+  X,
+} from "lucide-react";
 
-/* -------------------------------------------------------------------------- */
-/* CLEANING ENGINE                                                            */
-/* -------------------------------------------------------------------------- */
-/*
-  Everything below runs in the visitor's browser.
-  No API, database, localStorage, artificial delay, or extra npm package.
-*/
+/* =========================================================
+   AI TEXT CLEANER — COUNTflows
+   Responsive client-side text cleaning component
 
-const decodeEntities = (text) => {
-  const el = document.createElement("textarea")
-  el.innerHTML = text
-  return el.value
+   Features:
+   - 14 cleaning options
+   - 8 recommended options
+   - 6 advanced options
+   - Input/output comparison
+   - Cleanup report
+   - Changed-text highlighting
+   - Copy, download, sample and reset
+   - Mobile and desktop layouts
+   - Browser-side processing
+========================================================= */
+
+/* =========================================================
+   CLEANING UTILITIES
+========================================================= */
+
+function decodeEntities(text) {
+  const element = document.createElement("textarea");
+  element.innerHTML = text;
+  return element.value;
 }
 
-const stripHtmlTags = (text) =>
-  text.replace(/<[^>]+>/g, "")
+function stripHtmlTags(text) {
+  return text.replace(/<[^>]+>/g, "");
+}
 
-const removeMarkdown = (text) =>
-  text
+function removeMarkdown(text) {
+  return text
+    // Fenced code blocks: remove fences, preserve content.
+    .replace(/^```[^\n]*\n?/gm, "")
+    .replace(/^~~~[^\n]*\n?/gm, "")
+
+    // Markdown headings.
     .replace(/^[ \t]{0,3}#{1,6}[ \t]+/gm, "")
-    .replace(/(\*{1,3})(?=\S)([\s\S]*?\S)\1/g, "$2")
-    .replace(/(_{1,3})(?=\S)([\s\S]*?\S)\1/g, "$2")
-    .replace(/~~(?=\S)([\s\S]*?\S)~~/g, "$1")
-    .replace(/```[a-zA-Z0-9]*\n?/g, "")
+
+    // Images and links: preserve readable labels.
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+
+    // Bold, italic and strikethrough.
+    .replace(/\*\*\*([\s\S]+?)\*\*\*/g, "$1")
+    .replace(/___([\s\S]+?)___/g, "$1")
+    .replace(/\*\*([\s\S]+?)\*\*/g, "$1")
+    .replace(/__([\s\S]+?)__/g, "$1")
+    .replace(/~~([\s\S]+?)~~/g, "$1")
+
+    // Conservative single-emphasis handling.
+    .replace(/(^|[\s([{])\*([^*\n]+)\*(?=$|[\s)\]},.!?])/gm, "$1$2")
+    .replace(/(^|[\s([{])_([^_\n]+)_(?=$|[\s)\]},.!?])/gm, "$1$2")
+
+    // Inline code.
     .replace(/`([^`\n]+)`/g, "$1")
-    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")
+
+    // Blockquotes.
     .replace(/^[ \t]*>[ \t]?/gm, "")
-    .replace(/^[ \t]*([*\-_][ \t]*){3,}$/gm, "")
-    .replace(/^\|(.+)\|[ \t]*$/gm, (_, inner) =>
-      inner
+
+    // Horizontal rules.
+    .replace(/^[ \t]*(?:-{3,}|\*{3,}|_{3,})[ \t]*$/gm, "")
+
+    // Markdown table separator rows.
+    .replace(
+      /^[ \t]*\|?[ \t]*:?-{3,}:?[ \t]*(?:\|[ \t]*:?-{3,}:?[ \t]*)+\|?[ \t]*$/gm,
+      ""
+    )
+
+    // Readable markdown table rows.
+    .replace(/^[ \t]*\|(.+)\|[ \t]*$/gm, (_, cells) =>
+      cells
         .split("|")
         .map((cell) => cell.trim())
         .join("  ")
-    )
-    .replace(/^[ \t]*[:\-| ]+[ \t]*$/gm, "")
+    );
+}
 
-const removeBullets = (text) =>
-  text
+function removeBullets(text) {
+  return text
     .replace(
       /^[ \t]*[-*+\u2022\u00B7\u25E6\u25AA\u2023][ \t]+/gm,
       ""
     )
-    .replace(/^[ \t]*\d{1,3}[.)][ \t]+/gm, "")
+    .replace(/^[ \t]*\d{1,3}[.)][ \t]+/gm, "");
+}
 
-const removeEmoji = (text) =>
-  text
-    .replace(/[\p{Extended_Pictographic}\uFE0F]/gu, "")
-    .replace(/\u200D/g, "")
+function removeEmoji(text) {
+  return text
+    .replace(
+      /\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic})*/gu,
+      ""
+    )
+    .replace(/\uFE0F/g, "");
+}
 
 const HOMOGLYPH_MAP = Object.freeze({
   "\u0410": "A",
@@ -88,6 +129,7 @@ const HOMOGLYPH_MAP = Object.freeze({
   "\u0421": "C",
   "\u0422": "T",
   "\u0425": "X",
+
   "\u0430": "a",
   "\u0435": "e",
   "\u043E": "o",
@@ -98,6 +140,7 @@ const HOMOGLYPH_MAP = Object.freeze({
   "\u0456": "i",
   "\u0458": "j",
   "\u04BB": "h",
+
   "\u0391": "A",
   "\u0392": "B",
   "\u0395": "E",
@@ -114,49 +157,44 @@ const HOMOGLYPH_MAP = Object.freeze({
   "\u03A7": "X",
   "\u03BF": "o",
   "\u03B1": "a",
-})
+});
 
 const HOMOGLYPH_PATTERN = new RegExp(
   Object.keys(HOMOGLYPH_MAP).join("|"),
   "g"
-)
+);
 
-const advancedUnicodeCleanup = (text) =>
-  text
+function advancedUnicodeCleanup(text) {
+  return text
     .normalize("NFKC")
     .replace(
       HOMOGLYPH_PATTERN,
       (character) => HOMOGLYPH_MAP[character]
-    )
+    );
+}
 
-const smartPunctuation = (text) =>
-  text
+function smartPunctuation(text) {
+  return text
     .replace(/[\u201C\u201D\u201E\u201F]/g, '"')
     .replace(/[\u2018\u2019\u201A\u201B]/g, "'")
-    .replace(/\u2026/g, "...")
+    .replace(/\u2026/g, "...");
+}
 
-/*
-  Safer than converting spaced dashes to commas.
-  A hyphen preserves ranges such as "2015 – 2020" better than a comma.
-*/
-const fixDashes = (text) =>
-  text
+function fixDashes(text) {
+  return text
     .replace(/[ \t]*\u2014[ \t]*/g, " - ")
     .replace(/[ \t]*\u2013[ \t]*/g, "-")
-    .replace(/[ \t]{2,}/g, " ")
+    .replace(/[ \t]{2,}/g, " ");
+}
 
-/*
-  Conservative punctuation cleanup.
-  We intentionally do NOT force spaces after punctuation because doing so can
-  break URLs, domains, decimals, version numbers, and code.
-*/
-const punctuationSpacing = (text) =>
-  text
-    .replace(/\s+([.,;:!?\)\]\}])/g, "$1")
-    .replace(/([.,;:!?])[\t ]{2,}/g, "$1 ")
+function punctuationSpacing(text) {
+  return text
+    .replace(/[ \t]+([.,;:!?)}\]])/g, "$1")
+    .replace(/([.,;:!?])[ \t]{2,}/g, "$1 ");
+}
 
-const removeInvisible = (text) =>
-  text
+function removeInvisible(text) {
+  return text
     .replace(/^\uFEFF/, "")
     .replace(
       /[\u200B\u200C\u200D\u2060\uFEFF\u00AD\u180E]/g,
@@ -169,196 +207,175 @@ const removeInvisible = (text) =>
     .replace(
       /[\u00A0\u2000-\u200A\u202F\u205F\u3000]/g,
       " "
-    )
+    );
+}
 
-const stripDiacritics = (text) =>
-  text
+function stripDiacritics(text) {
+  return text
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\u0300-\u036f]/g, "");
+}
 
-const removeDuplicateLines = (text) => {
-  const seen = new Set()
+function removeDuplicateLines(text) {
+  const seen = new Set();
 
   return text
     .split("\n")
     .filter((line) => {
-      const trimmed = line.trim()
+      const trimmed = line.trim();
 
-      if (trimmed === "") return true
-      if (seen.has(trimmed)) return false
+      if (!trimmed) {
+        return true;
+      }
 
-      seen.add(trimmed)
-      return true
+      if (seen.has(trimmed)) {
+        return false;
+      }
+
+      seen.add(trimmed);
+      return true;
     })
-    .join("\n")
+    .join("\n");
 }
 
-const tidySpacing = (text) =>
-  text
-    .replace(/\r\n/g, "\n")
-    .replace(/\r/g, "\n")
+function tidySpacing(text) {
+  return text
+    .replace(/\r\n?/g, "\n")
     .split("\n")
     .map((line) =>
-      line.replace(/[ \t]+$/, "")
+      line.replace(/[ \t]+$/g, "")
     )
     .join("\n")
     .replace(/[ \t]{2,}/g, " ")
     .replace(/\n{3,}/g, "\n\n")
-    .trim()
+    .trim();
+}
 
-const removeBlankLines = (text) =>
-  text
+function removeBlankLines(text) {
+  return text
     .split("\n")
     .filter((line) => line.trim() !== "")
-    .join("\n")
+    .join("\n");
+}
 
-/* -------------------------------------------------------------------------- */
-/* CLEANER CONFIG                                                             */
-/* -------------------------------------------------------------------------- */
+/* =========================================================
+   CLEANER CONFIGURATION
+========================================================= */
 
 const CLEANING_OPTIONS = [
   {
     id: "invisible",
-    group: "recommended",
     label: "Remove hidden characters",
-    hint: "Zero-width spaces, BOM, control characters and odd spaces",
-    fn: removeInvisible,
+    hint: "Zero-width spaces, BOM and invisible Unicode",
+    group: "recommended",
     defaultOn: true,
-    icon: EyeOff,
+    fn: removeInvisible,
   },
   {
     id: "spacing",
-    group: "recommended",
     label: "Tidy spacing & line breaks",
-    hint: "Repeated spaces, trailing gaps and excessive blank lines",
-    fn: tidySpacing,
+    hint: "Extra spaces, trailing gaps and blank lines",
+    group: "recommended",
     defaultOn: true,
-    icon: WrapText,
+    fn: tidySpacing,
   },
   {
     id: "punctuation",
-    group: "recommended",
     label: "Straighten smart punctuation",
-    hint: "Curly quotes → straight quotes and … → ...",
-    fn: smartPunctuation,
+    hint: "Curly quotes and special ellipses",
+    group: "recommended",
     defaultOn: true,
-    icon: Quote,
+    fn: smartPunctuation,
   },
   {
     id: "dashes",
-    group: "recommended",
     label: "Replace em & en dashes",
-    hint: "Convert — and – to keyboard-safe hyphens",
-    fn: fixDashes,
+    hint: "Convert special dashes to plain hyphens",
+    group: "recommended",
     defaultOn: true,
-    icon: Minus,
+    fn: fixDashes,
   },
   {
     id: "punctspace",
-    group: "recommended",
     label: "Tidy punctuation spacing",
-    hint: "Remove stray spaces without breaking URLs or decimals",
-    fn: punctuationSpacing,
+    hint: "Remove unwanted gaps around punctuation",
+    group: "recommended",
     defaultOn: true,
-    icon: Type,
+    fn: punctuationSpacing,
   },
   {
     id: "markdown",
+    label: "Remove Markdown formatting",
+    hint: "Headings, bold markers, links and code marks",
     group: "recommended",
-    label: "Remove markdown formatting",
-    hint: "Headings, bold, links, code marks, tables and quotes",
-    fn: removeMarkdown,
     defaultOn: true,
-    icon: FileCode,
+    fn: removeMarkdown,
   },
   {
     id: "html",
-    group: "recommended",
     label: "Strip HTML tags",
-    hint: "Remove tags such as <p>, <div> and <span>",
-    fn: stripHtmlTags,
+    hint: "Remove HTML markup while retaining text",
+    group: "recommended",
     defaultOn: true,
-    icon: Code2,
+    fn: stripHtmlTags,
   },
   {
     id: "entities",
-    group: "recommended",
     label: "Decode HTML entities",
-    hint: "&amp; → &, &lt; → <",
-    fn: decodeEntities,
+    hint: "Convert &amp; and &lt; to readable characters",
+    group: "recommended",
     defaultOn: true,
-    icon: Code2,
+    fn: decodeEntities,
   },
-
   {
     id: "blanklines",
-    group: "advanced",
     label: "Remove all blank lines",
-    hint: "Intentionally collapse paragraph spacing",
-    fn: removeBlankLines,
+    hint: "Collapse empty lines between paragraphs",
+    group: "advanced",
     defaultOn: false,
-    icon: Minus,
+    fn: removeBlankLines,
   },
   {
     id: "bullets",
-    group: "advanced",
     label: "Remove bullets & numbering",
-    hint: "Remove -, • and numbered markers at line starts",
-    fn: removeBullets,
+    hint: "Remove list markers at the beginning of lines",
+    group: "advanced",
     defaultOn: false,
-    icon: List,
+    fn: removeBullets,
   },
   {
     id: "emoji",
-    group: "advanced",
     label: "Remove emojis",
     hint: "Remove pictographic emoji symbols",
-    fn: removeEmoji,
+    group: "advanced",
     defaultOn: false,
-    icon: Smile,
+    fn: removeEmoji,
   },
   {
     id: "diacritics",
-    group: "advanced",
     label: "Strip diacritics",
-    hint: "café → cafe, naïve → naive",
-    fn: stripDiacritics,
+    hint: "Convert café to cafe",
+    group: "advanced",
     defaultOn: false,
-    icon: Type,
+    fn: stripDiacritics,
   },
   {
     id: "advanced",
-    group: "advanced",
     label: "Advanced Unicode cleanup",
-    hint: "Normalize fullwidth, ligature and lookalike characters",
-    fn: advancedUnicodeCleanup,
+    hint: "Normalize fullwidth and lookalike characters",
+    group: "advanced",
     defaultOn: false,
-    icon: Globe,
+    fn: advancedUnicodeCleanup,
   },
   {
     id: "duplicates",
-    group: "advanced",
     label: "Remove duplicate lines",
-    hint: "Collapse exact repeated lines to one",
-    fn: removeDuplicateLines,
+    hint: "Keep the first occurrence of repeated lines",
+    group: "advanced",
     defaultOn: false,
-    icon: Layers,
+    fn: removeDuplicateLines,
   },
-]
-
-const OPTIONS_BY_ID = Object.fromEntries(
-  CLEANING_OPTIONS.map((option) => [
-    option.id,
-    option,
-  ])
-)
-
-const DEFAULT_OPTIONS = Object.fromEntries(
-  CLEANING_OPTIONS.map((option) => [
-    option.id,
-    option.defaultOn,
-  ])
-)
+];
 
 const PIPELINE_ORDER = [
   "entities",
@@ -375,488 +392,583 @@ const PIPELINE_ORDER = [
   "spacing",
   "blanklines",
   "punctspace",
-]
+];
+
+const OPTIONS_MAP = Object.fromEntries(
+  CLEANING_OPTIONS.map((option) => [
+    option.id,
+    option,
+  ])
+);
+
+const DEFAULT_OPTIONS = Object.fromEntries(
+  CLEANING_OPTIONS.map((option) => [
+    option.id,
+    option.defaultOn,
+  ])
+);
 
 const RECOMMENDED_OPTIONS =
   CLEANING_OPTIONS.filter(
-    (option) =>
-      option.group === "recommended"
-  )
+    (option) => option.group === "recommended"
+  );
 
 const ADVANCED_OPTIONS =
   CLEANING_OPTIONS.filter(
-    (option) =>
-      option.group === "advanced"
-  )
+    (option) => option.group === "advanced"
+  );
 
-/* -------------------------------------------------------------------------- */
-/* CLEAN + REPORT IN ONE PASS                                                 */
-/* -------------------------------------------------------------------------- */
+const SAMPLE_TEXT = [
+  "## Project Update",
+  "",
+  "**Status:** Complete",
+  "",
+  "The task is finished — ready for review.",
+  "",
+  "### Next Steps",
+  "",
+  "- Review the final draft",
+  "- Share it with the team",
+  "",
+  "“Everything looks good…”",
+].join("\n");
+
+/* =========================================================
+   CLEANING ENGINE & REPORT
+========================================================= */
 
 export function cleanText(
   input,
-  enabledOptions
+  enabledOptions = DEFAULT_OPTIONS
 ) {
   return PIPELINE_ORDER.reduce(
-    (result, id) => {
-      if (!enabledOptions[id]) {
-        return result
+    (currentText, optionId) => {
+      if (!enabledOptions[optionId]) {
+        return currentText;
       }
 
-      return OPTIONS_BY_ID[id].fn(result)
+      return OPTIONS_MAP[optionId].fn(currentText);
     },
     input
-  )
+  );
 }
 
 function cleanTextWithReport(
   input,
   enabledOptions
 ) {
-  let result = input
-  const changed = []
+  let currentText = input;
 
-  for (const id of PIPELINE_ORDER) {
-    if (!enabledOptions[id]) continue
+  const changed = [];
 
-    const option = OPTIONS_BY_ID[id]
-    const next = option.fn(result)
-
-    if (next !== result) {
-      changed.push({
-        id,
-        label: option.label,
-      })
+  for (const optionId of PIPELINE_ORDER) {
+    if (!enabledOptions[optionId]) {
+      continue;
     }
 
-    result = next
+    const option = OPTIONS_MAP[optionId];
+
+    const nextText = option.fn(currentText);
+
+    if (nextText !== currentText) {
+      changed.push({
+        id: option.id,
+        label: option.label,
+      });
+    }
+
+    currentText = nextText;
   }
 
   return {
-    text: result,
+    text: currentText,
     changed,
     beforeChars: input.length,
-    afterChars: result.length,
-  }
+    afterChars: currentText.length,
+    hasChanges: currentText !== input,
+  };
 }
-
-/* -------------------------------------------------------------------------- */
-/* SMALL HELPERS                                                              */
-/* -------------------------------------------------------------------------- */
-
-const SAMPLE_TEXT = `## Project Update
-
-This is **important** — but the copied text contains “smart quotes”, extra   spaces, and markdown.
-
-> It may also contain hidden formatting.
-
-• Keep the wording.
-• Remove the clutter.
-• Make it easy to paste elsewhere.`
 
 function getTextStats(text) {
-  const trimmed = text.trim()
+  const words =
+    text.trim().match(/\S+/g)?.length || 0;
+
+  const lines = text
+    ? text.split(/\r?\n/).filter(
+        (line) => line.trim()
+      ).length
+    : 0;
 
   return {
-    chars: text.length,
-    words: trimmed
-      ? trimmed.split(/\s+/).length
-      : 0,
-    lines: text
-      .split("\n")
-      .filter(
-        (line) => line.trim().length > 0
-      ).length,
-  }
+    characters: text.length,
+    words,
+    lines,
+  };
 }
 
-/*
-  Build a lightweight visual diff for the ORIGINAL text.
+/* =========================================================
+   CHANGE HIGHLIGHTING
 
-  - "same" segments render normally.
-  - "changed" segments are characters that were removed or replaced.
-  - Insertions that exist only in the cleaned output are not highlighted
-    in the original panel.
-  - Bounded look-ahead keeps this fast for normal pasted text and avoids
-    adding a diff library to the client bundle.
-*/
-function buildOriginalHighlightSegments(before, after) {
-  if (!before) return []
+   This highlights the changed span using common
+   prefix/suffix matching. It is a visual comparison,
+   not a character-by-character edit history.
+========================================================= */
 
-  const LOOK_AHEAD = 48
-  const segments = []
-
-  const push = (type, value) => {
-    if (!value) return
-
-    const previous = segments[segments.length - 1]
-
-    if (previous?.type === type) {
-      previous.value += value
-      return
-    }
-
-    segments.push({
-      type,
-      value,
-    })
+function getChangeSegments(before, after) {
+  if (before === after) {
+    return [
+      { text: before, changed: false },
+    ];
   }
 
-  let beforeIndex = 0
-  let afterIndex = 0
+  let prefix = 0;
 
   while (
-    beforeIndex < before.length &&
-    afterIndex < after.length
+    prefix < before.length &&
+    prefix < after.length &&
+    before[prefix] === after[prefix]
   ) {
-    if (
-      before[beforeIndex] ===
-      after[afterIndex]
-    ) {
-      push(
-        "same",
-        before[beforeIndex]
-      )
-
-      beforeIndex += 1
-      afterIndex += 1
-      continue
-    }
-
-    const beforeWindowEnd =
-      Math.min(
-        before.length,
-        beforeIndex + LOOK_AHEAD
-      )
-
-    const afterWindowEnd =
-      Math.min(
-        after.length,
-        afterIndex + LOOK_AHEAD
-      )
-
-    const nextAfterCharInBefore =
-      before.indexOf(
-        after[afterIndex],
-        beforeIndex + 1
-      )
-
-    const nextBeforeCharInAfter =
-      after.indexOf(
-        before[beforeIndex],
-        afterIndex + 1
-      )
-
-    const deletionDistance =
-      nextAfterCharInBefore !== -1 &&
-      nextAfterCharInBefore <
-        beforeWindowEnd
-        ? nextAfterCharInBefore -
-          beforeIndex
-        : Infinity
-
-    const insertionDistance =
-      nextBeforeCharInAfter !== -1 &&
-      nextBeforeCharInAfter <
-        afterWindowEnd
-        ? nextBeforeCharInAfter -
-          afterIndex
-        : Infinity
-
-    /*
-      If the cleaned text catches up by skipping characters from
-      the original, those source characters were removed.
-    */
-    if (
-      deletionDistance <
-      insertionDistance
-    ) {
-      push(
-        "changed",
-        before.slice(
-          beforeIndex,
-          beforeIndex +
-            deletionDistance
-        )
-      )
-
-      beforeIndex +=
-        deletionDistance
-      continue
-    }
-
-    /*
-      If the original catches up by skipping characters that only
-      exist in the cleaned output, advance the output pointer.
-    */
-    if (
-      insertionDistance <
-      deletionDistance
-    ) {
-      afterIndex +=
-        insertionDistance
-      continue
-    }
-
-    /*
-      Replacement / ambiguous single-character change.
-      Highlight the source character as changed.
-    */
-    push(
-      "changed",
-      before[beforeIndex]
-    )
-
-    beforeIndex += 1
-    afterIndex += 1
+    prefix++;
   }
 
-  if (beforeIndex < before.length) {
-    push(
-      "changed",
-      before.slice(beforeIndex)
-    )
+  let suffix = 0;
+
+  while (
+    suffix < before.length - prefix &&
+    suffix < after.length - prefix &&
+    before[before.length - 1 - suffix] ===
+      after[after.length - 1 - suffix]
+  ) {
+    suffix++;
   }
 
-  return segments
+  return [
+    {
+      text: before.slice(0, prefix),
+      changed: false,
+    },
+    {
+      text: before.slice(
+        prefix,
+        before.length - suffix
+      ),
+      changed: true,
+    },
+    {
+      text: suffix
+        ? before.slice(before.length - suffix)
+        : "",
+      changed: false,
+    },
+  ].filter((segment) => segment.text);
 }
 
-/* -------------------------------------------------------------------------- */
-/* COMPONENT                                                                  */
-/* -------------------------------------------------------------------------- */
+/* =========================================================
+   SMALL UI COMPONENTS
+========================================================= */
+
+function Stat({ label, value }) {
+  return (
+    <div
+      className="
+        flex items-center gap-1.5
+        text-xs text-slate-500
+        dark:text-slate-400
+      "
+    >
+      <span>{label}:</span>
+
+      <strong
+        className="
+          font-semibold text-slate-700
+          dark:text-slate-200
+        "
+      >
+        {value.toLocaleString()}
+      </strong>
+    </div>
+  );
+}
+
+function OptionToggle({
+  option,
+  enabled,
+  onToggle,
+  advanced = false,
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={enabled}
+      onClick={() => onToggle(option.id)}
+      className={`
+        flex min-h-[76px]
+        w-full items-start gap-3
+        rounded-xl border p-3
+        text-left transition-all
+        focus-visible:outline
+        focus-visible:outline-2
+        focus-visible:outline-offset-2
+        focus-visible:outline-cyan-600
+        ${
+          enabled
+            ? advanced
+              ? "border-violet-300 bg-violet-50 dark:border-violet-700 dark:bg-violet-950/30"
+              : "border-cyan-300 bg-cyan-50 dark:border-cyan-700 dark:bg-cyan-950/30"
+            : "border-slate-200 bg-white hover:border-slate-300 dark:border-slate-700 dark:bg-slate-900"
+        }
+      `}
+    >
+      <span
+        aria-hidden="true"
+        className={`
+          mt-0.5 flex h-5 w-5
+          shrink-0 items-center
+          justify-center rounded-md border
+          ${
+            enabled
+              ? advanced
+                ? "border-violet-600 bg-violet-600 text-white"
+                : "border-cyan-600 bg-cyan-600 text-white"
+              : "border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-800"
+          }
+        `}
+      >
+        {enabled && (
+          <Check className="h-3.5 w-3.5" />
+        )}
+      </span>
+
+      <span className="min-w-0">
+        <span
+          className="
+            block text-sm font-bold
+            leading-5 text-slate-900
+            dark:text-white
+          "
+        >
+          {option.label}
+        </span>
+
+        <span
+          className="
+            mt-1 block text-xs
+            leading-5 text-slate-500
+            dark:text-slate-400
+          "
+        >
+          {option.hint}
+        </span>
+      </span>
+    </button>
+  );
+}
+
+function ActionButton({
+  onClick,
+  disabled,
+  children,
+  icon: Icon,
+  title,
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      title={title}
+      className="
+        inline-flex min-h-10
+        items-center justify-center
+        gap-1.5 rounded-lg
+        border border-slate-200
+        bg-white px-3 py-2
+        text-xs font-semibold
+        text-slate-700
+        transition-colors
+        hover:border-cyan-300
+        hover:bg-cyan-50
+        focus-visible:outline
+        focus-visible:outline-2
+        focus-visible:outline-cyan-600
+        disabled:cursor-not-allowed
+        disabled:opacity-40
+        dark:border-slate-700
+        dark:bg-slate-900
+        dark:text-slate-200
+        dark:hover:bg-slate-800
+      "
+    >
+      <Icon
+        className="h-3.5 w-3.5"
+        aria-hidden="true"
+      />
+
+      {children}
+    </button>
+  );
+}
+
+/* =========================================================
+   MAIN COMPONENT
+========================================================= */
 
 export default function CleanerTool() {
-  const [input, setInput] = useState("")
-  const [output, setOutput] = useState("")
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+
   const [options, setOptions] =
-    useState(DEFAULT_OPTIONS)
-  const [report, setReport] = useState(null)
-  const [toast, setToast] = useState(null)
-  const [copied, setCopied] =
-    useState(false)
+    useState(DEFAULT_OPTIONS);
+
+  const [report, setReport] = useState(null);
+
   const [showChanges, setShowChanges] =
-    useState(false)
+    useState(false);
 
-  const toastTimerRef = useRef(null)
-  const reportRef = useRef(null)
+  const [showAdvanced, setShowAdvanced] =
+    useState(false);
 
-  const inputStats = getTextStats(input)
-  const outputStats = getTextStats(output)
+  const [toast, setToast] = useState("");
+
+  const [copied, setCopied] = useState(false);
+
+  const toastTimer = useRef(null);
+
+  const outputRef = useRef(null);
+
+  const inputStats = useMemo(
+    () => getTextStats(input),
+    [input]
+  );
+
+  const outputStats = useMemo(
+    () => getTextStats(output),
+    [output]
+  );
 
   const activeRecommended =
     RECOMMENDED_OPTIONS.filter(
       (option) => options[option.id]
-    ).length
+    ).length;
 
   const activeAdvanced =
     ADVANCED_OPTIONS.filter(
       (option) => options[option.id]
-    ).length
+    ).length;
 
-  const showToast = (message) => {
-    setToast(message)
+  function notify(message) {
+    setToast(message);
 
-    if (toastTimerRef.current) {
-      window.clearTimeout(
-        toastTimerRef.current
-      )
+    if (toastTimer.current) {
+      window.clearTimeout(toastTimer.current);
     }
 
-    toastTimerRef.current =
-      window.setTimeout(() => {
-        setToast(null)
-      }, 2200)
+    toastTimer.current = window.setTimeout(
+      () => setToast(""),
+      2600
+    );
   }
 
-  const updateInput = (value) => {
-    setInput(value)
-
-    if (output || report) {
-      setOutput("")
-      setReport(null)
-      setShowChanges(false)
-    }
+  function invalidateResult() {
+    setOutput("");
+    setReport(null);
+    setShowChanges(false);
+    setCopied(false);
   }
 
-  const toggleOption = (id) => {
+  function updateInput(value) {
+    setInput(value);
+    invalidateResult();
+  }
+
+  function toggleOption(id) {
     setOptions((previous) => ({
       ...previous,
       [id]: !previous[id],
-    }))
+    }));
 
-    if (output || report) {
-      setOutput("")
-      setReport(null)
-      setShowChanges(false)
-    }
+    invalidateResult();
   }
 
-  const resetOptions = () => {
-    setOptions(DEFAULT_OPTIONS)
-    setOutput("")
-    setReport(null)
-    setShowChanges(false)
-    showToast("Cleaning options reset")
+  function resetOptions() {
+    setOptions({ ...DEFAULT_OPTIONS });
+    invalidateResult();
+    notify("Default cleaning options restored");
   }
 
-  const handleSample = () => {
-    setInput(SAMPLE_TEXT)
-    setOutput("")
-    setReport(null)
-    setShowChanges(false)
+  function loadSample() {
+    setInput(SAMPLE_TEXT);
+    invalidateResult();
+    notify("Sample text loaded");
   }
 
-  const handleClear = () => {
-    setInput("")
-    setOutput("")
-    setReport(null)
-    setCopied(false)
-    setShowChanges(false)
+  function clearAll() {
+    setInput("");
+    invalidateResult();
+    notify("Text cleared");
   }
 
-  const handleClean = () => {
+  function handleClean() {
     if (!input.trim()) {
-      showToast(
-        "Paste or type some text first"
-      )
-      return
+      notify("Paste or type text first");
+      return;
     }
 
-    const result =
-      cleanTextWithReport(
-        input,
-        options
-      )
+    const result = cleanTextWithReport(
+      input,
+      options
+    );
 
-    setOutput(result.text)
-    setReport(result)
-    setShowChanges(
-      result.text !== input
-    )
+    setOutput(result.text);
+    setReport(result);
+    setShowChanges(false);
+    setCopied(false);
 
     if (result.changed.length === 0) {
-      showToast(
-        "Your text is already clean"
-      )
+      notify("No changes were needed");
     } else {
-      showToast(
-        `${result.changed.length} ${
+      notify(
+        `${result.changed.length} cleaning ${
           result.changed.length === 1
-            ? "cleaner changed"
-            : "cleaners changed"
-        } your text`
-      )
+            ? "rule applied"
+            : "rules applied"
+        }`
+      );
     }
 
-    window.requestAnimationFrame(() => {
-      reportRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      })
-    })
+    // On small screens, bring the result into view.
+    if (window.innerWidth < 768) {
+      window.setTimeout(() => {
+        outputRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 80);
+    }
   }
 
-  const handleCopy = async () => {
-    if (!output) {
-      showToast(
-        "Clean some text first"
-      )
-      return
+  async function handleCopy() {
+    if (!report) {
+      notify("Clean your text first");
+      return;
     }
 
     try {
-      await navigator.clipboard.writeText(
-        output
-      )
+      await navigator.clipboard.writeText(output);
 
-      setCopied(true)
-      showToast("Clean text copied")
+      setCopied(true);
 
-      window.setTimeout(() => {
-        setCopied(false)
-      }, 1600)
+      notify("Cleaned text copied");
+
+      window.setTimeout(
+        () => setCopied(false),
+        1800
+      );
     } catch {
-      showToast("Copy failed")
+      notify("Copy failed. Select the text manually.");
     }
   }
 
-  const handleDownload = () => {
-    if (!output) {
-      showToast(
-        "Clean some text first"
-      )
-      return
+  function handleDownload() {
+    if (!report) {
+      notify("Clean your text first");
+      return;
     }
 
-    const blob = new Blob(
-      [output],
-      {
-        type:
-          "text/plain;charset=utf-8",
-      }
-    )
+    const blob = new Blob([output], {
+      type: "text/plain;charset=utf-8",
+    });
 
-    const url =
-      URL.createObjectURL(blob)
+    const url = URL.createObjectURL(blob);
 
-    const anchor =
-      document.createElement("a")
+    const link = document.createElement("a");
 
-    anchor.href = url
-    anchor.download =
-      "countflows-cleaned-text.txt"
+    link.href = url;
+    link.download = "countflows-cleaned-text.txt";
 
-    document.body.appendChild(anchor)
-    anchor.click()
-    anchor.remove()
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
 
-    URL.revokeObjectURL(url)
+    window.setTimeout(
+      () => URL.revokeObjectURL(url),
+      1000
+    );
 
-    showToast("Text downloaded")
+    notify("Text file downloaded");
   }
+
+  const highlightSegments = useMemo(
+    () =>
+      report
+        ? getChangeSegments(input, output)
+        : [],
+    [input, output, report]
+  );
 
   return (
-    <div className="relative">
-      {/* -------------------------------------------------------------- */}
-      {/* TOAST                                                          */}
-      {/* -------------------------------------------------------------- */}
-
+    <div className="relative w-full">
+      {/* Toast */}
       {toast && (
         <div
           role="status"
           aria-live="polite"
-          className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 px-4"
+          className="
+            pointer-events-none fixed
+            bottom-20 left-1/2 z-50
+            w-max max-w-[90vw]
+            -translate-x-1/2
+            rounded-full
+            bg-slate-950 px-5 py-3
+            text-center text-sm
+            font-semibold text-white
+            shadow-xl
+            dark:bg-white
+            dark:text-slate-950
+          "
         >
-          <div
-            className="flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-2xl dark:bg-white dark:text-slate-950"
-          >
-            <Check
-              className="h-4 w-4 text-emerald-400 dark:text-emerald-600"
-              aria-hidden="true"
-            />
-
-            {toast}
-          </div>
+          {toast}
         </div>
       )}
 
-      {/* -------------------------------------------------------------- */}
-      {/* TOOL SHELL                                                     */}
-      {/* -------------------------------------------------------------- */}
-
+      {/* Main tool shell */}
       <div
-        className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-cyan-100 bg-white shadow-xl shadow-cyan-950/5 dark:border-cyan-900/50 dark:bg-slate-950 dark:shadow-black/30"
+        className="
+          relative mx-auto w-full
+          max-w-6xl overflow-hidden
+          rounded-2xl border
+          border-cyan-100
+          bg-white shadow-xl
+          shadow-cyan-950/5
+          dark:border-cyan-900/50
+          dark:bg-slate-950
+          dark:shadow-black/30
+          sm:rounded-3xl
+        "
       >
-        {/* ------------------------------------------------------------ */}
-        {/* HEADER                                                       */}
-        {/* ------------------------------------------------------------ */}
-
+        {/* Tool header */}
         <div
-          className="flex flex-col gap-4 border-b border-slate-100 px-4 py-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between sm:px-6"
+          className="
+            flex flex-col gap-3
+            border-b border-slate-100
+            px-4 py-4
+            dark:border-slate-800
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:px-6
+          "
         >
           <div className="flex items-center gap-3">
             <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/20"
+              className="
+                flex h-10 w-10 shrink-0
+                items-center justify-center
+                rounded-xl
+                bg-gradient-to-br
+                from-cyan-600 to-blue-700
+                text-white
+              "
             >
               <Eraser
                 className="h-5 w-5"
@@ -866,288 +978,491 @@ export default function CleanerTool() {
 
             <div>
               <h2
-                className="text-base font-black text-slate-900 dark:text-white"
+                className="
+                  text-base font-extrabold
+                  text-slate-900
+                  dark:text-white
+                  sm:text-lg
+                "
               >
-                Smart Text Cleaner
+                Smart AI Text Cleaner
               </h2>
 
               <p
-                className="mt-0.5 text-xs text-slate-500 dark:text-slate-400"
+                className="
+                  mt-0.5 text-xs
+                  text-slate-500
+                  dark:text-slate-400
+                "
               >
-                Remove formatting clutter
-                without rewriting your words.
+                Clean formatting without
+                rewriting your sentences.
               </p>
             </div>
           </div>
 
           <div
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/30 dark:text-emerald-300"
+            className="
+              inline-flex w-fit
+              items-center gap-1.5
+              rounded-full
+              border border-emerald-200
+              bg-emerald-50
+              px-3 py-1.5
+              text-xs font-semibold
+              text-emerald-700
+              dark:border-emerald-900
+              dark:bg-emerald-950/30
+              dark:text-emerald-300
+            "
           >
             <ShieldCheck
               className="h-3.5 w-3.5"
               aria-hidden="true"
             />
-
-            Browser-only · No upload
+            Browser-Based Cleaning
           </div>
         </div>
 
-        {/* ------------------------------------------------------------ */}
-        {/* INPUT / OUTPUT                                               */}
-        {/* ------------------------------------------------------------ */}
-
+        {/* Input and output workspace */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2"
+          className="
+            grid min-w-0
+            grid-cols-1
+            md:grid-cols-2
+          "
         >
-          {/* Input */}
-          <div
-            className="flex flex-col border-b border-slate-100 dark:border-slate-800 md:border-b-0 md:border-r"
+          {/* Original input */}
+          <section
+            aria-label="Original text"
+            className="
+              min-w-0 border-b
+              border-slate-100
+              dark:border-slate-800
+              md:border-b-0 md:border-r
+            "
           >
             <div
-              className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 px-4 py-3 dark:border-slate-800 sm:px-5"
+              className="
+                flex flex-wrap
+                items-center justify-between
+                gap-2 border-b
+                border-slate-100
+                px-4 py-3
+                dark:border-slate-800
+                sm:px-5
+              "
             >
-              <span
-                className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-500"
+              <div
+                className="
+                  flex items-center gap-2
+                  text-sm font-bold
+                  text-slate-900
+                  dark:text-white
+                "
               >
-                <FileText
-                  className="h-3.5 w-3.5"
+                <ClipboardPaste
+                  className="h-4 w-4 text-cyan-600"
                   aria-hidden="true"
                 />
+                Original Text
+              </div>
 
-                Original text
-              </span>
-
-              <div
-                className="flex items-center gap-3 text-xs font-medium text-slate-400"
-              >
-                <button
-                  type="button"
-                  onClick={handleSample}
-                  className="font-semibold text-cyan-600 hover:text-cyan-700 dark:text-cyan-400"
+              <div className="flex flex-wrap gap-2">
+                <ActionButton
+                  onClick={loadSample}
+                  icon={FileText}
+                  title="Load sample text"
                 >
-                  Try sample
-                </button>
+                  Sample
+                </ActionButton>
 
-                {report &&
-                  input !== output && (
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setShowChanges(
-                          (current) =>
-                            !current
-                        )
-                      }
-                      className="font-semibold text-rose-600 hover:text-rose-700 dark:text-rose-400"
-                    >
-                      {showChanges
-                        ? "Edit text"
-                        : "Show changes"}
-                    </button>
-                  )}
-
-                <span>
-                  {inputStats.chars} chars
-                </span>
-
-                <span>
-                  {inputStats.words} words
-                </span>
+                <ActionButton
+                  onClick={clearAll}
+                  icon={X}
+                  disabled={!input}
+                  title="Clear input and output"
+                >
+                  Clear
+                </ActionButton>
               </div>
             </div>
 
-            {showChanges &&
-            report ? (
-              <div
-                className="min-h-[220px] flex-1 overflow-y-auto bg-rose-50/25 px-4 py-4 text-sm leading-7 text-slate-700 dark:bg-rose-950/5 dark:text-slate-200 sm:min-h-[280px] sm:px-5 sm:text-base"
-              >
-                <div
-                  className="mb-3 inline-flex items-center gap-2 rounded-full border border-rose-200 bg-white px-3 py-1 text-[11px] font-semibold text-rose-700 dark:border-rose-900 dark:bg-slate-950 dark:text-rose-300"
-                >
-                  Red = removed or replaced
-                  source text
-                </div>
+            <label
+              htmlFor="ai-cleaner-input"
+              className="sr-only"
+            >
+              Paste or type text to clean
+            </label>
 
-                <div
-                  className="whitespace-pre-wrap break-words"
-                >
-                  {buildOriginalHighlightSegments(
-                    input,
-                    output
-                  ).map(
-                    (
-                      segment,
-                      index
-                    ) =>
-                      segment.type ===
-                      "changed" ? (
-                        <mark
-                          key={index}
-                          className="rounded bg-rose-200/80 px-0.5 text-rose-800 line-through decoration-rose-500 decoration-2 dark:bg-rose-900/50 dark:text-rose-200"
-                        >
-                          {segment.value}
-                        </mark>
-                      ) : (
-                        <span key={index}>
-                          {segment.value}
-                        </span>
-                      )
-                  )}
-                </div>
+            {showChanges && report ? (
+              <div
+                className="
+                  min-h-[180px]
+                  whitespace-pre-wrap
+                  break-words
+                  px-4 py-4
+                  font-mono text-sm
+                  leading-7
+                  text-slate-800
+                  dark:text-slate-200
+                  sm:min-h-[240px]
+                  sm:px-5
+                  lg:min-h-[280px]
+                "
+              >
+                {highlightSegments.map(
+                  (segment, index) => (
+                    <span
+                      key={index}
+                      className={
+                        segment.changed
+                          ? "rounded-sm bg-rose-200 text-rose-950 dark:bg-rose-900/60 dark:text-rose-100"
+                          : ""
+                      }
+                    >
+                      {segment.text}
+                    </span>
+                  )
+                )}
               </div>
             ) : (
               <textarea
+                id="ai-cleaner-input"
                 value={input}
                 onChange={(event) =>
-                  updateInput(
-                    event.target.value
-                  )
+                  updateInput(event.target.value)
                 }
-                placeholder="Paste AI-generated or copied text here…"
+                placeholder={
+                  "Paste your ChatGPT, Claude, Gemini or copied text here...\n\nExample:\n## Project Update\n**Status:** Complete"
+                }
                 spellCheck={false}
-                className="min-h-[220px] flex-1 resize-y bg-transparent px-4 py-4 text-sm leading-7 text-slate-700 outline-none placeholder:text-slate-300 dark:text-slate-200 dark:placeholder:text-slate-600 sm:min-h-[280px] sm:px-5 sm:text-base"
+                className="
+                  block min-h-[180px]
+                  w-full resize-y
+                  bg-transparent
+                  px-4 py-4
+                  font-mono text-sm
+                  leading-7
+                  text-slate-800
+                  outline-none
+                  placeholder:text-slate-400
+                  focus-visible:ring-2
+                  focus-visible:ring-inset
+                  focus-visible:ring-cyan-500
+                  dark:text-slate-200
+                  dark:placeholder:text-slate-600
+                  sm:min-h-[240px]
+                  sm:px-5
+                  lg:min-h-[280px]
+                "
               />
             )}
 
             <div
-              className="flex items-center justify-between border-t border-slate-100 px-4 py-2.5 text-xs text-slate-400 dark:border-slate-800 sm:px-5"
+              className="
+                flex flex-wrap
+                items-center justify-between
+                gap-2 border-t
+                border-slate-100
+                px-4 py-2.5
+                dark:border-slate-800
+                sm:px-5
+              "
             >
-              <span>
-                {inputStats.lines} non-empty
-                lines
-              </span>
+              <div className="flex flex-wrap gap-3">
+                <Stat
+                  label="Words"
+                  value={inputStats.words}
+                />
 
-              {input && (
+                <Stat
+                  label="Characters"
+                  value={inputStats.characters}
+                />
+              </div>
+
+              {report && (
                 <button
                   type="button"
-                  onClick={handleClear}
-                  className="font-semibold text-slate-500 hover:text-red-500"
+                  onClick={() =>
+                    setShowChanges(
+                      (previous) => !previous
+                    )
+                  }
+                  className="
+                    text-xs font-bold
+                    text-cyan-700
+                    hover:underline
+                    dark:text-cyan-400
+                  "
                 >
-                  Clear
+                  {showChanges
+                    ? "Edit original"
+                    : "Highlight changes"}
                 </button>
               )}
             </div>
-          </div>
+          </section>
 
-          {/* Output */}
-          <div className="flex flex-col">
+          {/* Cleaned output */}
+          <section
+            ref={outputRef}
+            aria-label="Cleaned text"
+            className={`
+              min-w-0 scroll-mt-20
+              flex-col
+              ${
+                report
+                  ? "flex"
+                  : "hidden md:flex"
+              }
+            `}
+          >
             <div
-              className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 px-4 py-3 dark:border-slate-800 sm:px-5"
+              className="
+                flex flex-wrap
+                items-center justify-between
+                gap-2 border-b
+                border-slate-100
+                px-4 py-3
+                dark:border-slate-800
+                sm:px-5
+              "
             >
-              <span
-                className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400"
+              <div
+                className="
+                  flex items-center gap-2
+                  text-sm font-bold
+                  text-slate-900
+                  dark:text-white
+                "
               >
                 <Sparkles
-                  className="h-3.5 w-3.5"
+                  className="h-4 w-4 text-emerald-600"
                   aria-hidden="true"
                 />
+                Cleaned Text
+              </div>
 
-                Clean output
-              </span>
-
-              <div className="flex items-center gap-2">
-                <span
-                  className="hidden text-xs font-medium text-slate-400 sm:inline"
-                >
-                  {outputStats.chars} chars ·{" "}
-                  {outputStats.words} words
-                </span>
-
-                <button
-                  type="button"
+              <div className="flex flex-wrap gap-2">
+                <ActionButton
                   onClick={handleCopy}
-                  aria-label="Copy cleaned text"
+                  disabled={!report}
+                  icon={copied ? Check : Copy}
                   title="Copy cleaned text"
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition-shadow hover:shadow-md dark:border-slate-700 dark:text-slate-400"
                 >
-                  {copied ? (
-                    <Check
-                      className="h-4 w-4 text-emerald-500"
-                    />
-                  ) : (
-                    <Copy className="h-4 w-4" />
-                  )}
-                </button>
+                  {copied ? "Copied" : "Copy"}
+                </ActionButton>
 
-                <button
-                  type="button"
+                <ActionButton
                   onClick={handleDownload}
-                  aria-label="Download cleaned text"
+                  disabled={!report}
+                  icon={Download}
                   title="Download cleaned text"
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition-shadow hover:shadow-md dark:border-slate-700 dark:text-slate-400"
                 >
-                  <Download className="h-4 w-4" />
-                </button>
+                  Download
+                </ActionButton>
               </div>
             </div>
 
             <div
-              className="min-h-[220px] flex-1 overflow-y-auto px-4 py-4 text-sm leading-7 text-slate-700 dark:text-slate-200 sm:min-h-[280px] sm:px-5 sm:text-base"
+              aria-live="polite"
+              className="
+                min-h-[180px]
+                flex-1 overflow-auto
+                px-4 py-4
+                sm:min-h-[240px]
+                sm:px-5
+                lg:min-h-[280px]
+              "
             >
-              {output ? (
+              {report ? (
                 <pre
-                  className="whitespace-pre-wrap break-words font-sans"
+                  className="
+                    whitespace-pre-wrap
+                    break-words
+                    font-mono text-sm
+                    leading-7
+                    text-slate-800
+                    dark:text-slate-200
+                  "
                 >
                   {output}
                 </pre>
               ) : (
                 <div
-                  className="flex h-full flex-col items-center justify-center gap-3 py-12 text-center"
+                  className="
+                    flex min-h-[150px]
+                    flex-col items-center
+                    justify-center gap-3
+                    text-center
+                    sm:min-h-[200px]
+                  "
                 >
                   <div
-                    className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-500 dark:bg-emerald-950/30 dark:text-emerald-400"
+                    className="
+                      flex h-12 w-12
+                      items-center justify-center
+                      rounded-2xl
+                      bg-emerald-50
+                      text-emerald-600
+                      dark:bg-emerald-950/30
+                      dark:text-emerald-400
+                    "
                   >
-                    <Sparkles
-                      className="h-5 w-5"
+                    <WandSparkles
+                      className="h-6 w-6"
                       aria-hidden="true"
                     />
                   </div>
 
-                  <div>
-                    <p
-                      className="text-sm font-bold text-slate-600 dark:text-slate-300"
-                    >
-                      Cleaned text appears here
-                    </p>
+                  <p
+                    className="
+                      text-sm font-semibold
+                      text-slate-600
+                      dark:text-slate-300
+                    "
+                  >
+                    Your cleaned text will appear here.
+                  </p>
 
-                    <p
-                      className="mt-1 text-xs text-slate-400"
-                    >
-                      Your wording stays yours.
-                    </p>
-                  </div>
+                  <p
+                    className="
+                      text-xs text-slate-400
+                    "
+                  >
+                    Paste text and select Clean My Text.
+                  </p>
                 </div>
               )}
             </div>
 
             <div
-              className="border-t border-slate-100 px-4 py-2.5 text-xs text-slate-400 dark:border-slate-800 sm:px-5"
+              className="
+                flex flex-wrap gap-3
+                border-t border-slate-100
+                px-4 py-2.5
+                dark:border-slate-800
+                sm:px-5
+              "
             >
-              {outputStats.lines} non-empty
-              lines
+              <Stat
+                label="Words"
+                value={outputStats.words}
+              />
+
+              <Stat
+                label="Characters"
+                value={outputStats.characters}
+              />
             </div>
-          </div>
+          </section>
         </div>
 
-        {/* ------------------------------------------------------------ */}
-        {/* CLEANUP REPORT                                               */}
-        {/* ------------------------------------------------------------ */}
+        {/* Main action */}
+        <div
+          className="
+            border-t border-slate-100
+            bg-white px-4 py-4
+            dark:border-slate-800
+            dark:bg-slate-950
+            sm:px-6 sm:py-5
+          "
+        >
+          <button
+            type="button"
+            onClick={handleClean}
+            disabled={!input.trim()}
+            className="
+              group flex min-h-12
+              w-full items-center
+              justify-center gap-2.5
+              rounded-xl
+              bg-gradient-to-r
+              from-cyan-600 to-blue-700
+              px-5 py-3.5
+              text-base font-extrabold
+              text-white shadow-md
+              shadow-cyan-600/15
+              transition-all
+              hover:from-cyan-700
+              hover:to-blue-800
+              hover:shadow-lg
+              focus-visible:outline
+              focus-visible:outline-2
+              focus-visible:outline-offset-2
+              focus-visible:outline-cyan-600
+              disabled:cursor-not-allowed
+              disabled:opacity-40
+              disabled:shadow-none
+              sm:text-lg
+            "
+          >
+            <Sparkles
+              className="h-5 w-5"
+              aria-hidden="true"
+            />
 
+            Clean My Text
+
+            <ArrowRight
+              className="
+                h-5 w-5
+                transition-transform
+                group-hover:translate-x-1
+              "
+              aria-hidden="true"
+            />
+          </button>
+
+          <p
+            className="
+              mt-2 text-center
+              text-xs leading-5
+              text-slate-500
+              dark:text-slate-400
+            "
+          >
+            Uses your selected options.
+            Text cleaning runs directly in your browser.
+          </p>
+        </div>
+
+        {/* Cleanup report */}
         {report && (
-          <div
-            ref={reportRef}
-            aria-live="polite"
-            className="border-t border-emerald-100 bg-emerald-50/50 px-4 py-5 dark:border-emerald-900/40 dark:bg-emerald-950/10 sm:px-6"
+          <section
+            aria-label="Cleanup report"
+            className="
+              border-t border-emerald-100
+              bg-emerald-50/60
+              px-4 py-5
+              dark:border-emerald-900/40
+              dark:bg-emerald-950/10
+              sm:px-6
+            "
           >
             <div
-              className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+              className="
+                flex flex-col gap-4
+                sm:flex-row
+                sm:items-start
+                sm:justify-between
+              "
             >
               <div>
                 <div
-                  className="flex items-center gap-2"
+                  className="
+                    flex items-center gap-2
+                  "
                 >
                   <div
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-white"
+                    className="
+                      flex h-8 w-8
+                      items-center justify-center
+                      rounded-full
+                      bg-emerald-600 text-white
+                    "
                   >
                     <Check
                       className="h-4 w-4"
@@ -1155,36 +1470,49 @@ export default function CleanerTool() {
                     />
                   </div>
 
-                  <div>
-                    <h3
-                      className="text-sm font-black text-slate-900 dark:text-white"
-                    >
-                      Cleanup report
-                    </h3>
-
-                    <p
-                      className="text-xs text-slate-500 dark:text-slate-400"
-                    >
-                      {report.changed.length === 0
-                        ? "No selected cleaner needed to change this text."
-                        : `${report.changed.length} ${
-                            report.changed.length === 1
-                              ? "cleaner made a change."
-                              : "cleaners made changes."
-                          }`}
-                    </p>
-                  </div>
+                  <h3
+                    className="
+                      text-base font-extrabold
+                      text-slate-900
+                      dark:text-white
+                    "
+                  >
+                    Cleanup Report
+                  </h3>
                 </div>
+
+                <p
+                  className="
+                    mt-2 text-sm
+                    text-slate-600
+                    dark:text-slate-300
+                  "
+                >
+                  {report.hasChanges
+                    ? `${report.changed.length} cleaning rules changed your text.`
+                    : "Your text did not need changes with the selected options."}
+                </p>
 
                 {report.changed.length > 0 && (
                   <div
-                    className="mt-4 flex flex-wrap gap-2"
+                    className="
+                      mt-3 flex flex-wrap gap-2
+                    "
                   >
                     {report.changed.map(
                       (item) => (
                         <span
                           key={item.id}
-                          className="rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-slate-950 dark:text-emerald-300"
+                          className="
+                            rounded-full
+                            border border-emerald-200
+                            bg-white px-3 py-1
+                            text-xs font-semibold
+                            text-emerald-700
+                            dark:border-emerald-900
+                            dark:bg-slate-900
+                            dark:text-emerald-300
+                          "
                         >
                           ✓ {item.label}
                         </span>
@@ -1195,42 +1523,125 @@ export default function CleanerTool() {
               </div>
 
               <div
-                className="grid grid-cols-2 gap-2 sm:min-w-[220px]"
+                className="
+                  grid grid-cols-2 gap-2
+                  sm:min-w-[210px]
+                "
               >
-                <ReportMetric
-                  label="Before"
-                  value={`${report.beforeChars} chars`}
-                />
+                <div
+                  className="
+                    rounded-xl border
+                    border-emerald-200
+                    bg-white p-3
+                    dark:border-emerald-900
+                    dark:bg-slate-900
+                  "
+                >
+                  <p
+                    className="
+                      text-xs text-slate-500
+                    "
+                  >
+                    Before
+                  </p>
 
-                <ReportMetric
-                  label="After"
-                  value={`${report.afterChars} chars`}
-                />
+                  <p
+                    className="
+                      mt-1 text-lg font-extrabold
+                      text-slate-900
+                      dark:text-white
+                    "
+                  >
+                    {report.beforeChars.toLocaleString()}
+                  </p>
+                </div>
+
+                <div
+                  className="
+                    rounded-xl border
+                    border-emerald-200
+                    bg-white p-3
+                    dark:border-emerald-900
+                    dark:bg-slate-900
+                  "
+                >
+                  <p
+                    className="
+                      text-xs text-slate-500
+                    "
+                  >
+                    After
+                  </p>
+
+                  <p
+                    className="
+                      mt-1 text-lg font-extrabold
+                      text-slate-900
+                      dark:text-white
+                    "
+                  >
+                    {report.afterChars.toLocaleString()}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
         )}
 
-        {/* ------------------------------------------------------------ */}
-        {/* CLEANING OPTIONS                                             */}
-        {/* ------------------------------------------------------------ */}
-
-        <div
-          className="border-t border-slate-100 bg-slate-50/60 px-4 py-6 dark:border-slate-800 dark:bg-slate-900/40 sm:px-6"
+        {/* Recommended options */}
+        <section
+          aria-labelledby="recommended-cleaning-heading"
+          className="
+            border-t border-slate-100
+            bg-slate-50/60
+            px-4 py-5
+            dark:border-slate-800
+            dark:bg-slate-900/40
+            sm:px-6 sm:py-6
+          "
         >
           <div
-            className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
+            className="
+              flex flex-col gap-3
+              sm:flex-row
+              sm:items-start
+              sm:justify-between
+            "
           >
             <div>
-              <div className="flex items-center gap-2">
+              <div
+                className="
+                  flex flex-wrap
+                  items-center gap-2
+                "
+              >
+                <Settings2
+                  className="
+                    h-4 w-4 text-cyan-600
+                  "
+                  aria-hidden="true"
+                />
+
                 <h3
-                  className="text-base font-black text-slate-900 dark:text-white"
+                  id="recommended-cleaning-heading"
+                  className="
+                    text-base font-extrabold
+                    text-slate-900
+                    dark:text-white
+                  "
                 >
-                  Recommended cleaning
+                  Recommended Cleaning
                 </h3>
 
                 <span
-                  className="rounded-full bg-cyan-100 px-2.5 py-1 text-xs font-bold text-cyan-700 dark:bg-cyan-950/50 dark:text-cyan-300"
+                  className="
+                    rounded-full bg-cyan-100
+                    px-2.5 py-1
+                    text-xs font-bold
+                    text-cyan-800
+                    dark:bg-cyan-950/50
+                    dark:text-cyan-300
+                  "
                 >
                   {activeRecommended}/
                   {RECOMMENDED_OPTIONS.length}
@@ -1238,277 +1649,206 @@ export default function CleanerTool() {
               </div>
 
               <p
-                className="mt-1 max-w-2xl text-sm text-slate-500 dark:text-slate-400"
+                className="
+                  mt-2 max-w-2xl
+                  text-sm leading-6
+                  text-slate-600
+                  dark:text-slate-400
+                "
               >
-                Fix the common formatting
-                problems people get after
-                copying text from AI tools,
-                websites and editors.
+                These options handle common formatting
+                issues in ChatGPT, Claude, Gemini
+                and copied online text.
               </p>
             </div>
 
             <button
               type="button"
               onClick={resetOptions}
-              className="inline-flex w-fit items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300"
+              className="
+                inline-flex min-h-10
+                w-fit items-center gap-1.5
+                text-xs font-semibold
+                text-slate-600
+                hover:text-cyan-700
+                dark:text-slate-300
+                dark:hover:text-cyan-400
+              "
             >
               <RotateCcw
                 className="h-3.5 w-3.5"
                 aria-hidden="true"
               />
 
-              Reset defaults
+              Reset Defaults
             </button>
           </div>
 
           <div
-            className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+            className="
+              mt-4 grid grid-cols-1
+              gap-2.5
+              sm:grid-cols-2
+              lg:grid-cols-4
+            "
           >
             {RECOMMENDED_OPTIONS.map(
               (option) => (
-                <CleanerToggle
+                <OptionToggle
                   key={option.id}
                   option={option}
-                  enabled={
-                    options[option.id]
-                  }
+                  enabled={options[option.id]}
                   onToggle={toggleOption}
-                  tone="cyan"
                 />
               )
             )}
           </div>
 
-          {/* Advanced uses native details: no extra React state */}
-          <details
-            className="group mt-5 rounded-2xl border border-violet-200/80 bg-violet-50/50 dark:border-violet-900/50 dark:bg-violet-950/10"
+          {/* Advanced options */}
+          <div
+            className="
+              mt-5 overflow-hidden
+              rounded-2xl
+              border border-violet-200
+              bg-violet-50/40
+              dark:border-violet-900/50
+              dark:bg-violet-950/10
+            "
           >
-            <summary
-              className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 marker:hidden"
+            <button
+              type="button"
+              aria-expanded={showAdvanced}
+              aria-controls="advanced-cleaning-options"
+              onClick={() =>
+                setShowAdvanced(
+                  (previous) => !previous
+                )
+              }
+              className="
+                flex min-h-14
+                w-full items-center
+                justify-between gap-3
+                px-4 py-3
+                text-left
+                focus-visible:outline
+                focus-visible:outline-2
+                focus-visible:outline-violet-600
+              "
             >
               <div>
-                <div className="flex items-center gap-2">
+                <div
+                  className="
+                    flex flex-wrap
+                    items-center gap-2
+                  "
+                >
                   <span
-                    className="text-sm font-black text-violet-800 dark:text-violet-300"
+                    className="
+                      text-sm font-extrabold
+                      text-violet-800
+                      dark:text-violet-300
+                    "
                   >
-                    Advanced cleaning
+                    Advanced Cleaning
                   </span>
 
                   <span
-                    className="rounded-full bg-violet-100 px-2 py-0.5 text-xs font-bold text-violet-700 dark:bg-violet-950/50 dark:text-violet-300"
+                    className="
+                      rounded-full
+                      bg-violet-100
+                      px-2.5 py-0.5
+                      text-xs font-bold
+                      text-violet-700
+                      dark:bg-violet-950
+                      dark:text-violet-300
+                    "
                   >
                     {activeAdvanced} active
                   </span>
                 </div>
 
                 <p
-                  className="mt-1 text-xs text-slate-500 dark:text-slate-400"
+                  className="
+                    mt-1 text-xs leading-5
+                    text-slate-500
+                    dark:text-slate-400
+                  "
                 >
-                  Optional tools that can
-                  intentionally remove or
-                  normalize content.
+                  Optional changes that may remove
+                  visible characters or formatting.
                 </p>
               </div>
 
-              <span
-                className="text-lg font-bold text-violet-500 transition-transform group-open:rotate-45"
+              <ChevronDown
+                className={`
+                  h-5 w-5 shrink-0
+                  text-violet-600
+                  transition-transform
+                  ${
+                    showAdvanced
+                      ? "rotate-180"
+                      : ""
+                  }
+                `}
                 aria-hidden="true"
-              >
-                +
-              </span>
-            </summary>
+              />
+            </button>
 
-            <div
-              className="grid grid-cols-1 gap-3 border-t border-violet-200/60 p-4 dark:border-violet-900/40 sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {ADVANCED_OPTIONS.map(
-                (option) => (
-                  <CleanerToggle
-                    key={option.id}
-                    option={option}
-                    enabled={
-                      options[option.id]
-                    }
-                    onToggle={
-                      toggleOption
-                    }
-                    tone="violet"
-                  />
-                )
-              )}
-            </div>
-          </details>
+            {showAdvanced && (
+              <div
+                id="advanced-cleaning-options"
+                className="
+                  grid grid-cols-1
+                  gap-2.5 border-t
+                  border-violet-200
+                  p-3
+                  dark:border-violet-900/50
+                  sm:grid-cols-2
+                  lg:grid-cols-3
+                "
+              >
+                {ADVANCED_OPTIONS.map(
+                  (option) => (
+                    <OptionToggle
+                      key={option.id}
+                      option={option}
+                      enabled={options[option.id]}
+                      onToggle={toggleOption}
+                      advanced
+                    />
+                  )
+                )}
+              </div>
+            )}
+          </div>
 
           <div
-            className="mt-4 flex items-start gap-2 rounded-xl border border-amber-200/70 bg-amber-50/60 px-3 py-2.5 text-xs leading-5 text-amber-800 dark:border-amber-900/40 dark:bg-amber-950/10 dark:text-amber-300"
+            className="
+              mt-4 flex items-start
+              gap-2 rounded-xl
+              border border-amber-200
+              bg-amber-50 px-3 py-3
+              text-xs leading-5
+              text-amber-900
+              dark:border-amber-900/40
+              dark:bg-amber-950/10
+              dark:text-amber-300
+            "
           >
             <ShieldCheck
-              className="mt-0.5 h-4 w-4 shrink-0"
+              className="
+                mt-0.5 h-4 w-4 shrink-0
+              "
               aria-hidden="true"
             />
 
-            CountFlows cleans formatting.
-            It does not rewrite your
-            sentences or send your text to
-            an AI model.
+            This tool removes formatting artifacts.
+            It does not automatically rewrite text,
+            humanize AI content or determine
+            whether writing was AI-generated.
           </div>
-        </div>
-
-        {/* ------------------------------------------------------------ */}
-        {/* PRIMARY ACTION                                               */}
-        {/* ------------------------------------------------------------ */}
-
-        <div
-          className="border-t border-slate-100 px-4 py-5 dark:border-slate-800 sm:px-6"
-        >
-          <button
-            type="button"
-            onClick={handleClean}
-            disabled={!input.trim()}
-            className="group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4 text-base font-black text-white shadow-lg shadow-cyan-500/20 transition-shadow hover:shadow-xl hover:shadow-cyan-500/30 disabled:cursor-not-allowed disabled:opacity-40 sm:text-lg"
-          >
-            <Sparkles
-              className="h-5 w-5"
-              aria-hidden="true"
-            />
-
-            Clean My Text
-
-            <ArrowRight
-              className="h-5 w-5"
-              aria-hidden="true"
-            />
-          </button>
-
-          <p
-            className="mt-2.5 text-center text-xs text-slate-400"
-          >
-            Runs instantly in your browser
-          </p>
-        </div>
-
-
+        </section>
       </div>
     </div>
-  )
-}
-
-/* -------------------------------------------------------------------------- */
-/* PRESENTATIONAL HELPERS                                                     */
-/* -------------------------------------------------------------------------- */
-
-function CleanerToggle({
-  option,
-  enabled,
-  onToggle,
-  tone,
-}) {
-  const Icon = option.icon
-
-  const activeClass =
-    tone === "violet"
-      ? `
-          border-violet-300
-          bg-white
-          shadow-sm
-
-          dark:border-violet-700/60
-          dark:bg-slate-950
-        `
-      : `
-          border-cyan-200
-          bg-white
-          shadow-sm
-
-          dark:border-cyan-800/60
-          dark:bg-slate-950
-        `
-
-  const iconClass =
-    tone === "violet"
-      ? `
-          bg-violet-100
-          text-violet-600
-
-          dark:bg-violet-950/50
-          dark:text-violet-300
-        `
-      : `
-          bg-cyan-100
-          text-cyan-600
-
-          dark:bg-cyan-950/50
-          dark:text-cyan-300
-        `
-
-  const switchClass =
-    tone === "violet"
-      ? "bg-violet-500"
-      : "bg-cyan-500"
-
-  return (
-    <button
-      type="button"
-      onClick={() =>
-        onToggle(option.id)
-      }
-      aria-pressed={enabled}
-      className={`flex min-h-[82px] items-start gap-3 rounded-2xl border p-3.5 text-left transition-shadow hover:shadow-md ${ enabled ? activeClass : ` border-slate-200 bg-white/60 dark:border-slate-700 dark:bg-slate-900/50 ` }`}
-    >
-      <div
-        className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${ enabled ? iconClass : ` bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500 ` }`}
-      >
-        <Icon
-          className="h-4 w-4"
-          aria-hidden="true"
-        />
-      </div>
-
-      <div className="min-w-0 flex-1">
-        <p
-          className={`text-sm font-bold ${ enabled ? ` text-slate-800 dark:text-slate-100 ` : ` text-slate-500 dark:text-slate-400 ` }`}
-        >
-          {option.label}
-        </p>
-
-        <p
-          className="mt-1 text-xs leading-5 text-slate-400 dark:text-slate-500"
-        >
-          {option.hint}
-        </p>
-      </div>
-
-      <span
-        aria-hidden="true"
-        className={`mt-1 h-5 w-9 shrink-0 rounded-full p-0.5 ${ enabled ? switchClass : ` bg-slate-300 dark:bg-slate-700 ` }`}
-      >
-        <span
-          className={`block h-4 w-4 rounded-full bg-white shadow-sm transition-transform ${ enabled ? "translate-x-4" : "translate-x-0" }`}
-        />
-      </span>
-    </button>
-  )
-}
-
-function ReportMetric({
-  label,
-  value,
-}) {
-  return (
-    <div
-      className="rounded-xl border border-emerald-200 bg-white px-3 py-2.5 dark:border-emerald-900 dark:bg-slate-950"
-    >
-      <p
-        className="text-[11px] font-semibold uppercase tracking-wider text-slate-400"
-      >
-        {label}
-      </p>
-
-      <p
-        className="mt-0.5 text-sm font-black text-slate-800 dark:text-white"
-      >
-        {value}
-      </p>
-    </div>
-  )
+  );
 }

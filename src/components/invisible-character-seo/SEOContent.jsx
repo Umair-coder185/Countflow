@@ -124,7 +124,9 @@ export default function SEOContent() {
               <div className="p-5 sm:p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300">X-Ray view</p>
                 <div className="mt-4 rounded-xl bg-gray-50 p-4 font-mono text-sm text-gray-900 dark:bg-slate-950 dark:text-slate-200">
-                  Hello <span className="inline-flex rounded-md border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-xs font-bold text-amber-700 dark:border-amber-900 dark:bg-amber-950/60 dark:text-amber-300">U+200B</span> World
+
+                  Hello<span className="inline-flex rounded-md border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-xs font-bold text-amber-700 dark:border-amber-900 dark:bg-amber-950/60 dark:text-amber-300">U+200B</span>World
+
                 </div>
                 <p className="mt-3 text-sm leading-6 text-gray-500 dark:text-slate-400">The detector reveals the Zero Width Space stored between the visible characters.</p>
               </div>
@@ -177,7 +179,9 @@ export default function SEOContent() {
 
           <ReferenceNote>
             Unicode documents U+200B separately from normal space characters and defines ZWJ/ZWNJ as characters with legitimate text-processing uses.{" "}
-            <a href="https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-6/" target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-700 underline decoration-cyan-300 underline-offset-4 dark:text-cyan-300">
+            <a
+              href="https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-23/"
+              target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-700 underline decoration-cyan-300 underline-offset-4 dark:text-cyan-300">
               Unicode Standard reference
             </a>
           </ReferenceNote>
@@ -449,7 +453,9 @@ To software:     different character sequence`}</code></pre>
           <div className="mt-6 space-y-3">
             {faqs.map((faq) => (
               <details key={faq.question} className="group rounded-xl border border-gray-200 bg-white p-5 transition hover:border-cyan-200 dark:border-white/10 dark:bg-slate-900 dark:hover:border-cyan-900">
-                <summary className="cursor-pointer list-none font-semibold text-gray-900 dark:text-white">{faq.question}</summary>
+
+                <summary className="cursor-pointer font-semibold text-gray-900 marker:text-cyan-600 dark:text-white dark:marker:text-cyan-300">{faq.question}</summary>
+
                 <p className="mt-3 leading-7 text-gray-600 dark:text-slate-300">{faq.answer}</p>
               </details>
             ))}

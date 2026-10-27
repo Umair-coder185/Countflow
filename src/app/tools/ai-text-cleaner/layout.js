@@ -1,29 +1,52 @@
+const SITE_URL = "https://countflows.com";
+const PAGE_URL = `${SITE_URL}/tools/ai-text-cleaner`;
+
+const TITLE =
+  "Free AI Text Cleaner – Clean ChatGPT Text Online | CountFlows";
+
+const DESCRIPTION =
+  "Clean AI text for free. Remove ChatGPT formatting, Markdown, em dashes, hidden characters and extra spaces. Paste your text and get clean results instantly.";
+
 export const metadata = {
-  title: "Free AI Text Cleaner - Remove ChatGPT Formatting ",
-  description:
-    "Free AI text cleaner to remove ChatGPT formatting, Markdown, em dashes, smart quotes, and invisible characters. Works with ChatGPT, Claude, and Gemini.",
-  keywords:
-    "ai text cleaner, chatgpt text cleaner, remove chatgpt formatting, remove markdown from text, clean text, ai text cleaner free, remove em dash from chatgpt, remove invisible characters from text, ai to plain text converter, clean up ai generated text, chatgpt formatting remover , eassy cheaner",
+  title: {
+    absolute: TITLE,
+  },
+
+  description: DESCRIPTION,
+
+  alternates: {
+    canonical: PAGE_URL,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
   openGraph: {
-    title: "AI Text Cleaner - Remove ChatGPT Formatting",
-    description:
-      "Free AI text cleaner to remove ChatGPT formatting, Markdown, em dashes, smart quotes, and invisible characters. Works with ChatGPT, Claude, and Gemini.",
-    url: "https://countflows.com/tools/ai-text-cleaner",
     type: "website",
+    url: PAGE_URL,
+    siteName: "CountFlows",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [
       {
-        url: "https://countflows.com/og-image.png",
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "CountFlows AI Text Cleaner",
       },
     ],
   },
-  alternates: {
-    canonical: "https://countflows.com/tools/ai-text-cleaner",
-  },
-}
 
-export default function Layout({ children }) {
-  return <>{children}</>
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [`${SITE_URL}/og-image.png`],
+  },
+};
+
+export default function AiTextCleanerLayout({ children }) {
+  return <>{children}</>;
 }

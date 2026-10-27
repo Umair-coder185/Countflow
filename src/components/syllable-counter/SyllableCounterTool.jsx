@@ -24,12 +24,21 @@ const POEM_PATTERNS = [
   { id: "custom", label: "Custom pattern", pattern: null },
 ]
 
-const parseCustomPattern = (input) =>
-  input
-    .split(",")
-    .map((n) => parseInt(n.trim(), 10))
-    .filter((n) => Number.isFinite(n) && n > 0 && n <= 20)
-    .slice(0, 12)
+
+const parseCustomPattern = (input) => {
+  const values = input.split(",").map((value) => value.trim());
+
+  if (!input.trim() || values.length > 12) return [];
+
+  if (values.some((value) => !/^\d+$/.test(value))) return [];
+
+  const numbers = values.map(Number);
+
+  if (numbers.some((value) => value < 1 || value > 20)) return [];
+
+  return numbers;
+};
+
 
 function wrapCanvasText(ctx, text, maxWidth) {
   const words = text.split(" ")
@@ -452,7 +461,7 @@ export default function SyllableCounterTool() {
                 onChange={(event) => setText(event.target.value)}
                 placeholder="Paste a word, poem, haiku, or song lyrics here. Use one line per verse for line-by-line counts…"
                 aria-label="Text to count syllables in"
-                className="min-h-[300px] w-full resize-y rounded-2xl border border-gray-200 bg-gray-50 p-4 text-base leading-7 text-gray-950 outline-none transition placeholder:text-gray-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-100/60 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:focus:bg-gray-850 dark:focus:ring-cyan-950/40"
+                className="min-h-[300px] w-full resize-y rounded-2xl border border-gray-200 bg-gray-50 p-4 text-base leading-7 text-gray-950 outline-none transition placeholder:text-gray-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-100/60 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:focus:bg-gray-800 dark:focus:ring-cyan-950/40"
               />
 
               <div className="mt-3 flex flex-wrap gap-2">

@@ -53,7 +53,9 @@ const faqSchema = {
   })),
 }
 
-const jsonLd = (obj) => ({ __html: JSON.stringify(obj) })
+
+const jsonLd = (obj) => ({ __html: JSON.stringify(obj).replace(/</g, "\\u003c") })
+
 
 const FEATURES = [
   {
@@ -96,7 +98,7 @@ export default function SyllableCounterPage() {
         </ol>
       </nav>
 
-      <section className="relative mx-auto max-w-5xl px-4 pb-8 pt-10 text-center md:px-8 md:pb-10 md:pt-14">
+      <section className="relative mx-auto max-w-5xl px-4 pb-6 pt-6 text-center md:px-8 md:pb-10 md:pt-12">
         <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50/90 px-3.5 py-1.5 text-xs font-semibold text-cyan-700 dark:border-cyan-800/60 dark:bg-cyan-950/40 dark:text-cyan-300">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
@@ -148,10 +150,10 @@ export default function SyllableCounterPage() {
 
       <div className="mx-auto mt-10 max-w-5xl px-4 text-center md:px-8">
         <Link
-          href="/blog"
+          href="/blog/stressed-and-unstressed-syllables"
           className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-950 dark:text-blue-300 dark:hover:border-blue-500 dark:hover:bg-slate-900"
         >
-          Writing &amp; poetry guides
+          Learn About Stressed &amp; Unstressed Syllables
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>

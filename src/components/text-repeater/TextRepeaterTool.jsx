@@ -1,24 +1,12 @@
 "use client";
 
-import {
-  useState,
-  useMemo,
-  useCallback,
-  useDeferredValue,
-  useRef,
-  useEffect,
-} from "react";
-import {
-  Copy,
-  Check,
-  Download,
-  RotateCcw,
-  Type,
-  Hash,
-  AlignLeft,
-  X,
-  Smile,
-} from "lucide-react";
+import { useState, useMemo, useCallback, useDeferredValue, useRef, useEffect } from "react";
+import { Copy, Check, Download, RotateCcw, Type, Hash, AlignLeft, X, Smile, ShieldCheck } from "lucide-react";
+
+/* ==================== CONFIGURATION ==================== */
+
+const MAX_REPEATS = 10000;
+const QUICK_COUNTS = [1, 5, 10, 50, 100, 500, 1000, 5000, 10000];
 
 const SEPARATORS = [
   { id: "newline", label: "New line", value: "\n" },
@@ -28,10 +16,6 @@ const SEPARATORS = [
   { id: "custom", label: "Custom", value: "" },
 ];
 
-const MAX_REPEATS = 10000;
-
-const QUICK_COUNTS = [1, 5, 10, 50, 100, 500, 1000, 5000, 10000];
-
 const EMOJI_GRID = [
   "😀", "😂", "🥰", "😎", "🤔", "😢", "😡", "🥳", "😴", "🤯",
   "👍", "👎", "👋", "🤝", "✌️", "🤞", "👏", "🙏", "💪", "✊",
@@ -40,17 +24,47 @@ const EMOJI_GRID = [
   "✅", "❌", "⚠️", "❓", "🔗", "📌", "📎", "🔒", "💬", "🌈",
 ];
 
+/* ==================== HELPERS ==================== */
+
+function getTextStats(value) {
+  if (!value) return { chars: 0, words: 0, lines: 0 };
+  return {
+    chars: value.length,
+    words: value.trim() ? value.trim().split(/\s+/).length : 0,
+    lines: value.split("\n").length,
+  };
+}
+
 function StatPill({ icon: Icon, value, label }) {
   return (
-    <span
-      className="hidden sm:inline-flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500"
-      title={label}
-    >
-      <Icon className="h-3 w-3" />
-      {typeof value === "number" ? value.toLocaleString() : value}
+    <span title={label} className="inline-flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+      <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+      <span className="sr-only">{label}: </span>
+      <span className="font-medium tabular-nums">{typeof value === "number" ? value.toLocaleString() : value}</span>
     </span>
   );
 }
+
+function ActionButton({ onClick, disabled, icon: Icon, children, primary = false, title }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      title={title}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 disabled:cursor-not-allowed disabled:opacity-40 ${
+        primary
+          ? "bg-cyan-700 text-white hover:bg-cyan-800"
+          : "border border-slate-200 bg-white text-slate-700 hover:border-cyan-300 hover:bg-cyan-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+      }`}
+    >
+      <Icon className="h-4 w-4" aria-hidden="true" />
+      {children}
+    </button>
+  );
+}
+
+/* ==================== MAIN COMPONENT ==================== */
 
 export default function TextRepeaterTool() {
   const [text, setText] = useState("");
@@ -62,132 +76,156 @@ export default function TextRepeaterTool() {
 
   const textareaRef = useRef(null);
   const pickerRef = useRef(null);
+  const copyTimerRef = useRef(null);
 
-  // Deferred values keep input responsive at high repeat counts
   const deferredText = useDeferredValue(text);
   const deferredCount = useDeferredValue(count);
 
-  // Close emoji picker on outside click
+  const validCount = Number.isInteger(count) && count >= 1 && count <= MAX_REPEATS;
+  const isOverMax = count > MAX_REPEATS;
+  const isPending = deferredText !== text || deferredCount !== count;
+
+  const separator = separatorId === "custom"
+    ? customSeparator
+    : SEPARATORS.find((item) => item.id === separatorId)?.value ?? "\n";
+
+  /* The repetition algorithm remains unchanged in principle. */
+  const output = useMemo(() => {
+    if (!deferredText || !Number.isInteger(deferredCount) || deferredCount < 1 || deferredCount > MAX_REPEATS) return "";
+    return Array(deferredCount).fill(deferredText).join(separator);
+  }, [deferredText, deferredCount, separator]);
+
+  const displayedOutput = isPending ? "" : output;
+  const hasOutput = displayedOutput.length > 0;
+
+  const inputStats = useMemo(() => getTextStats(text), [text]);
+  const outputStats = useMemo(() => getTextStats(displayedOutput), [displayedOutput]);
+
+  /* Close emoji picker on outside click or Escape. */
   useEffect(() => {
     if (!showEmoji) return;
-    function handleClick(e) {
-      if (pickerRef.current && !pickerRef.current.contains(e.target)) {
-        setShowEmoji(false);
-      }
+
+    function handleClick(event) {
+      if (event.target.closest?.("[data-emoji-toggle]")) return;
+      if (pickerRef.current && !pickerRef.current.contains(event.target)) setShowEmoji(false);
     }
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") setShowEmoji(false);
+    }
+
     document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, [showEmoji]);
 
-  const separator =
-    separatorId === "custom"
-      ? customSeparator
-      : SEPARATORS.find((s) => s.id === separatorId)?.value ?? "\n";
+  useEffect(() => {
+    return () => {
+      if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current);
+    };
+  }, []);
 
-  const clampedCount = Math.min(
-    Math.max(Math.round(deferredCount), 1),
-    MAX_REPEATS
-  );
+  const insertEmoji = useCallback((emoji) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
 
-  const output = useMemo(() => {
-    if (!deferredText || deferredCount < 1 || deferredCount > MAX_REPEATS)
-      return "";
-    return Array(clampedCount).fill(deferredText).join(separator);
-  }, [deferredText, clampedCount, separator, deferredCount]);
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const updated = text.slice(0, start) + emoji + text.slice(end);
 
-  const inputStats = useMemo(
-    () => ({
-      chars: text.length,
-      words: text.trim() ? text.trim().split(/\s+/).length : 0,
-      lines: text ? text.split("\n").length : 0,
-    }),
-    [text]
-  );
+    setText(updated);
+    setCopied(false);
+    setShowEmoji(false);
 
-  const outputStats = useMemo(
-    () => ({
-      chars: output.length,
-      words: output.trim() ? output.trim().split(/\s+/).length : 0,
-      lines: output ? output.split("\n").length : 0,
-    }),
-    [output]
-  );
-
-  const insertEmoji = useCallback(
-    (emoji) => {
-      const ta = textareaRef.current;
-      if (!ta) return;
-      const start = ta.selectionStart;
-      const end = ta.selectionEnd;
-      const next = text.slice(0, start) + emoji + text.slice(end);
-      setText(next);
-      requestAnimationFrame(() => {
-        ta.selectionStart = ta.selectionEnd = start + emoji.length;
-        ta.focus();
-      });
-      setShowEmoji(false);
-    },
-    [text]
-  );
+    requestAnimationFrame(() => {
+      textarea.focus();
+      textarea.setSelectionRange(start + emoji.length, start + emoji.length);
+    });
+  }, [text]);
 
   const handleCopy = useCallback(async () => {
-    if (!output) return;
+    if (!hasOutput) return;
+
     try {
-      await navigator.clipboard.writeText(output);
+      await navigator.clipboard.writeText(displayedOutput);
     } catch {
-      const ta = document.createElement("textarea");
-      ta.value = output;
-      ta.setAttribute("aria-hidden", "true");
-      ta.style.position = "fixed";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      document.body.removeChild(ta);
+      try {
+        const textarea = document.createElement("textarea");
+        textarea.value = displayedOutput;
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        const successful = document.execCommand("copy");
+        textarea.remove();
+
+        if (!successful) return;
+      } catch {
+        return;
+      }
     }
+
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }, [output]);
+
+    if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current);
+    copyTimerRef.current = window.setTimeout(() => setCopied(false), 2000);
+  }, [displayedOutput, hasOutput]);
 
   const handleDownload = useCallback(() => {
-    if (!output) return;
-    const blob = new Blob([output], { type: "text/plain;charset=utf-8" });
+    if (!hasOutput) return;
+
+    const blob = new Blob([displayedOutput], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "repeated-text.txt";
-    a.click();
-    URL.revokeObjectURL(url);
-  }, [output]);
+    const anchor = document.createElement("a");
+
+    anchor.href = url;
+    anchor.download = "countflows-repeated-text.txt";
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }, [displayedOutput, hasOutput]);
 
   const handleClear = useCallback(() => {
     setText("");
     setCount(3);
     setSeparatorId("newline");
     setCustomSeparator("");
+    setCopied(false);
+    setShowEmoji(false);
+    textareaRef.current?.focus();
   }, []);
 
-  const isOverMax = count > MAX_REPEATS;
-  const hasOutput = output.length > 0;
+  const handleCountChange = useCallback((event) => {
+    const value = event.target.value;
+    setCount(value === "" ? 0 : Number(value));
+    setCopied(false);
+  }, []);
 
   return (
-    <section className="max-w-5xl mx-auto px-4 md:px-8 py-8 md:py-12">
-      <div className="rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/90 p-4 md:p-8 shadow-xl shadow-cyan-200/20 dark:shadow-black/30 space-y-6">
+    <section id="text-repeater-tool" aria-label="Interactive text repeater" className="relative mx-auto max-w-5xl px-3 py-5 sm:px-5 sm:py-6 md:px-8 md:py-8">
 
-        {/* ──────── INPUT ──────── */}
+      <div className="space-y-5 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-cyan-950/5 dark:border-slate-700 dark:bg-slate-900 sm:space-y-6 sm:p-6 md:rounded-3xl md:p-8">
+
+        {/* ==================== INPUT ==================== */}
+
         <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <label
-              htmlFor="tr-input"
-              className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2"
-            >
-              <Type className="h-4 w-4 text-cyan-500" />
-              Input Text
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <label htmlFor="tr-input" className="inline-flex items-center gap-2 text-sm font-bold text-slate-800 dark:text-slate-200">
+              <Type className="h-4 w-4 text-cyan-600" aria-hidden="true" />
+              Enter Text to Repeat
             </label>
-            <div className="flex items-center gap-3">
-              <StatPill icon={Hash} value={inputStats.chars} label="Characters" />
-              <StatPill icon={Type} value={inputStats.words} label="Words" />
-              <StatPill icon={AlignLeft} value={inputStats.lines} label="Lines" />
+
+            <div className="flex flex-wrap items-center gap-3">
+              <StatPill icon={Hash} value={inputStats.chars} label="Input characters" />
+              <StatPill icon={Type} value={inputStats.words} label="Input words" />
+              <StatPill icon={AlignLeft} value={inputStats.lines} label="Input lines" />
             </div>
           </div>
 
@@ -196,39 +234,42 @@ export default function TextRepeaterTool() {
               ref={textareaRef}
               id="tr-input"
               value={text}
-              onChange={(e) => setText(e.target.value)}
-              placeholder="Type or paste your text, word, or emoji here…"
+              onChange={(event) => { setText(event.target.value); setCopied(false); }}
+              placeholder="Type or paste a word, message, paragraph, number, or emoji..."
               rows={4}
-              className="w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 pr-12 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition resize-y text-sm md:text-base"
+              spellCheck={false}
+              className="block min-h-[120px] w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 pr-12 text-sm leading-7 text-slate-900 outline-none placeholder:text-slate-400 focus-visible:border-cyan-500 focus-visible:ring-2 focus-visible:ring-cyan-500/30 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500 sm:min-h-[140px] sm:text-base"
             />
 
-            {/* Emoji picker toggle — inside textarea corner */}
             <button
               type="button"
-              onClick={() => setShowEmoji((v) => !v)}
-              aria-label="Emoji picker"
+              data-emoji-toggle
+              aria-label="Open emoji picker"
               aria-expanded={showEmoji}
-              className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 hover:bg-cyan-100 dark:hover:bg-gray-600 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+              aria-controls="text-repeater-emoji-picker"
+              onClick={() => setShowEmoji((previous) => !previous)}
+              className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-slate-600 transition-colors hover:bg-cyan-100 hover:text-cyan-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-600 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600"
             >
-              <Smile className="h-4 w-4" />
+              <Smile className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
 
-          {/* Emoji picker grid */}
+          {/* Emoji Picker */}
           {showEmoji && (
             <div
               ref={pickerRef}
-              role="dialog"
-              aria-label="Select an emoji"
-              className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-3 shadow-lg"
+              id="text-repeater-emoji-picker"
+              aria-label="Choose an emoji"
+              className="rounded-xl border border-slate-200 bg-white p-3 shadow-md dark:border-slate-700 dark:bg-slate-800"
             >
-              <div className="grid grid-cols-10 gap-1">
+              <div className="grid grid-cols-6 gap-1 sm:grid-cols-8 md:grid-cols-10">
                 {EMOJI_GRID.map((emoji) => (
                   <button
                     key={emoji}
                     type="button"
                     onClick={() => insertEmoji(emoji)}
-                    className="flex h-4 w-full  justify-center rounded-lg text-lg hover:bg-cyan-100 dark:hover:bg-gray-700 active:scale-90 transition-all duration-100"
+                    aria-label={`Insert ${emoji} emoji`}
+                    className="flex h-11 w-full items-center justify-center rounded-lg text-xl transition-colors hover:bg-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-600 dark:hover:bg-slate-700"
                   >
                     {emoji}
                   </button>
@@ -238,171 +279,167 @@ export default function TextRepeaterTool() {
           )}
         </div>
 
-        {/* ──────── CONTROLS ──────── */}
-        <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 items-start sm:items-end">
-          {/* Repeat count */}
-          <div className="space-y-1.5 w-full sm:w-auto">
-            <label
-              htmlFor="tr-count"
-              className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2"
-            >
-              <RotateCcw className="h-4 w-4 text-cyan-500" />
-              Repeats
-            </label>
-            <input
-              id="tr-count"
-              type="number"
-              min={1}
-              max={MAX_REPEATS}
-              value={count}
-              onChange={(e) => setCount(Number(e.target.value))}
-              aria-describedby={isOverMax ? "tr-count-error" : undefined}
-              className={`w-full sm:w-36 rounded-xl border ${
-                isOverMax
-                  ? "border-red-400 dark:border-red-500 focus:ring-red-400/50"
-                  : "border-gray-200 dark:border-gray-700"
-              } bg-white dark:bg-gray-800 px-4 py-2.5 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition text-sm font-mono`}
-            />
-            {isOverMax && (
-              <p
-                id="tr-count-error"
-                className="text-xs text-red-500 dark:text-red-400"
-                role="alert"
-              >
-                Max {MAX_REPEATS.toLocaleString()} repeats
-              </p>
-            )}
+        {/* ==================== REPEAT SETTINGS ==================== */}
 
-            <div className="flex flex-wrap gap-1.5 pt-1.5">
-              {QUICK_COUNTS.map((n) => (
-                <button
-                  key={n}
-                  type="button"
-                  onClick={() => setCount(n)}
-                  className={`px-2.5 py-0.5 rounded-full text-xs font-semibold transition-all duration-150 ${
-                    count === n
-                      ? "bg-cyan-500 text-white shadow-sm shadow-cyan-500/30"
-                      : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-cyan-50 dark:hover:bg-gray-700 hover:text-cyan-600 dark:hover:text-cyan-400"
-                  }`}
-                >
-                  {n >= 1000 ? `${n / 1000}K` : n}
-                </button>
-              ))}
-            </div>
-          </div>
+        <div className="grid gap-5 border-t border-slate-100 pt-5 dark:border-slate-800 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-7">
 
-          {/* Separator pills */}
-          <div className="space-y-1.5 flex-1 w-full">
-            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
-              <AlignLeft className="h-4 w-4 text-cyan-500" />
-              Separator
-            </span>
-            <div
-              className="flex flex-wrap gap-2"
-              role="radiogroup"
-              aria-label="Separator style"
-            >
-              {SEPARATORS.map((s) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  role="radio"
-                  aria-checked={separatorId === s.id}
-                  onClick={() => setSeparatorId(s.id)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-150 border ${
-                    separatorId === s.id
-                      ? "bg-cyan-500 text-white border-cyan-500 shadow-md shadow-cyan-500/25"
-                      : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:border-cyan-300 dark:hover:border-cyan-600 hover:text-cyan-600 dark:hover:text-cyan-400"
-                  }`}
-                >
-                  {s.label}
-                </button>
-              ))}
-            </div>
+          {/* Repeat Count */}
+          <fieldset className="min-w-0 space-y-3">
+            <legend className="mb-2 inline-flex items-center gap-2 text-sm font-bold text-slate-800 dark:text-slate-200">
+              <RotateCcw className="h-4 w-4 text-cyan-600" aria-hidden="true" />
+              Number of Repeats
+            </legend>
 
-            <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                separatorId === "custom"
-                  ? "max-h-16 mt-2 opacity-100"
-                  : "max-h-0 mt-0 opacity-0"
-              }`}
-            >
+            <div className="flex flex-wrap items-center gap-3">
+              <label htmlFor="tr-count" className="sr-only">Number of repetitions (1 to 10,000)</label>
+
               <input
-                type="text"
-                value={customSeparator}
-                onChange={(e) => setCustomSeparator(e.target.value)}
-                placeholder='e.g. | or ~ or ;;'
-                className="w-full max-w-xs rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition text-sm font-mono"
+                id="tr-count"
+                type="number"
+                inputMode="numeric"
+                min={1}
+                max={MAX_REPEATS}
+                step={1}
+                value={count}
+                onChange={handleCountChange}
+                aria-invalid={!validCount}
+                aria-describedby="tr-count-help"
+                className={`min-h-11 w-40 max-w-full rounded-xl border bg-white px-4 py-2.5 font-mono text-base font-semibold text-slate-900 outline-none focus-visible:ring-2 dark:bg-slate-800 dark:text-white ${
+                  validCount
+                    ? "border-slate-200 focus-visible:border-cyan-500 focus-visible:ring-cyan-500/30 dark:border-slate-700"
+                    : "border-red-400 focus-visible:border-red-500 focus-visible:ring-red-500/30 dark:border-red-500"
+                }`}
               />
+
+              <span id="tr-count-help" className={`text-xs font-medium ${validCount ? "text-slate-500 dark:text-slate-400" : "text-red-600 dark:text-red-400"}`}>
+                {validCount ? "Maximum 10,000 repeats" : "Enter a whole number from 1 to 10,000"}
+              </span>
             </div>
-          </div>
+
+            {/* Quick Presets */}
+            <div aria-label="Quick repeat count presets" className="flex flex-wrap gap-2">
+              {QUICK_COUNTS.map((value) => (
+                <button
+                  key={value}
+                  type="button"
+                  aria-pressed={count === value}
+                  onClick={() => { setCount(value); setCopied(false); }}
+                  className={`min-h-10 rounded-lg border px-3 py-2 text-xs font-bold tabular-nums transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-600 ${
+                    count === value
+                      ? "border-cyan-700 bg-cyan-700 text-white"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-cyan-300 hover:bg-cyan-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                  }`}
+                >
+                  {value.toLocaleString()}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+
+          {/* Separators */}
+          <fieldset className="min-w-0 space-y-3">
+            <legend className="mb-2 inline-flex items-center gap-2 text-sm font-bold text-slate-800 dark:text-slate-200">
+              <AlignLeft className="h-4 w-4 text-cyan-600" aria-hidden="true" />
+              Separator Style
+            </legend>
+
+            <div className="flex flex-wrap gap-2" aria-label="Choose separator">
+              {SEPARATORS.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  aria-pressed={separatorId === item.id}
+                  onClick={() => { setSeparatorId(item.id); setCopied(false); }}
+                  className={`min-h-10 rounded-lg border px-3 py-2 text-xs font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-600 ${
+                    separatorId === item.id
+                      ? "border-cyan-700 bg-cyan-700 text-white"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-cyan-300 hover:bg-cyan-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
+            {separatorId === "custom" && (
+              <div className="pt-1">
+                <label htmlFor="tr-custom-separator" className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">
+                  Custom Separator
+                </label>
+
+                <input
+                  id="tr-custom-separator"
+                  type="text"
+                  value={customSeparator}
+                  onChange={(event) => { setCustomSeparator(event.target.value); setCopied(false); }}
+                  placeholder="Example: | or ~ or ;;"
+                  className="min-h-11 w-full max-w-xs rounded-xl border border-slate-200 bg-white px-4 py-2.5 font-mono text-sm text-slate-900 outline-none placeholder:text-slate-400 focus-visible:border-cyan-500 focus-visible:ring-2 focus-visible:ring-cyan-500/30 dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+                />
+              </div>
+            )}
+          </fieldset>
         </div>
 
-        {/* ──────── OUTPUT ──────── */}
-        <div className="space-y-2">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
-              <Copy className="h-4 w-4 text-cyan-500" />
-              Output
-            </span>
+        {/* ==================== OUTPUT ==================== */}
 
-            <div className="flex items-center gap-3 flex-wrap">
-              <StatPill icon={Hash} value={outputStats.chars} label="Characters" />
-              <StatPill icon={Type} value={outputStats.words} label="Words" />
-              <StatPill icon={AlignLeft} value={outputStats.lines} label="Lines" />
+        <div className="space-y-3 border-t border-slate-100 pt-5 dark:border-slate-800">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 
-              {hasOutput && (
-                <>
-                  <span className="w-px h-4 bg-gray-200 dark:bg-gray-700 hidden sm:block" />
-                  <button
-                    type="button"
-                    onClick={handleCopy}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-cyan-500 hover:bg-cyan-600 active:scale-95 text-white px-4 py-1.5 text-xs font-semibold shadow-sm shadow-cyan-500/25 transition-all duration-150"
-                  >
-                    {copied ? (
-                      <Check className="h-3.5 w-3.5" />
-                    ) : (
-                      <Copy className="h-3.5 w-3.5" />
-                    )}
-                    {copied ? "Copied!" : "Copy"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleDownload}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-1.5 text-xs font-semibold transition-colors duration-150"
-                  >
-                    <Download className="h-3.5 w-3.5" />
-                    .txt
-                  </button>
-                </>
-              )}
+            <div className="flex flex-wrap items-center gap-3">
+              <h2 className="inline-flex items-center gap-2 text-sm font-bold text-slate-800 dark:text-slate-200">
+                <Copy className="h-4 w-4 text-cyan-600" aria-hidden="true" />
+                Repeated Text Output
+              </h2>
+
+              <div className="flex flex-wrap gap-3">
+                <StatPill icon={Hash} value={outputStats.chars} label="Output characters" />
+                <StatPill icon={Type} value={outputStats.words} label="Output words" />
+                <StatPill icon={AlignLeft} value={outputStats.lines} label="Output lines" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center">
+              <ActionButton onClick={handleCopy} disabled={!hasOutput} icon={copied ? Check : Copy} primary title="Copy all repeated text">
+                {copied ? "Copied!" : "Copy Text"}
+              </ActionButton>
+
+              <ActionButton onClick={handleDownload} disabled={!hasOutput} icon={Download} title="Download repeated text as a TXT file">
+                Download
+              </ActionButton>
             </div>
           </div>
+
+          <label htmlFor="tr-output" className="sr-only">Generated repeated text output</label>
 
           <textarea
             id="tr-output"
-            aria-label="Repeated text output"
             readOnly
-            value={output}
-            placeholder="Repeated text will appear here instantly as you type…"
+            value={displayedOutput}
+            placeholder={isPending ? "Updating repeated text..." : "Your repeated text will appear here as you type..."}
             rows={6}
-            className="w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 resize-y text-sm md:text-base font-mono"
+            spellCheck={false}
+            className="block min-h-[150px] w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 font-mono text-sm leading-7 text-slate-900 outline-none placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-cyan-500/30 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-100 dark:placeholder:text-slate-500 sm:min-h-[190px] sm:text-base"
           />
+
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="inline-flex items-center gap-1.5 text-xs leading-5 text-slate-500 dark:text-slate-400">
+              <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+              Text repetition runs in your browser.
+            </p>
+
+            {(text || customSeparator || count !== 3 || separatorId !== "newline") && (
+              <button
+                type="button"
+                onClick={handleClear}
+                className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-600 transition-colors hover:border-red-300 hover:bg-red-50 hover:text-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-red-950/20"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+                Clear All
+              </button>
+            )}
+          </div>
         </div>
 
-        {/* ──────── CLEAR ──────── */}
-        {(text || customSeparator || count !== 3) && (
-          <div className="flex justify-end">
-            <button
-              type="button"
-              onClick={handleClear}
-              className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-red-50 dark:hover:bg-red-950/30 hover:border-red-300 dark:hover:border-red-800 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 px-4 py-2 text-xs font-semibold transition-colors duration-150"
-            >
-              <X className="h-3.5 w-3.5" />
-              Clear all
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

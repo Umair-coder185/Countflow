@@ -1,353 +1,1144 @@
-import Link from "next/link"
+import Link from "next/link";
+import {
+  ArrowRight,
+  CheckCircle2,
+  FileText,
+  Info,
+  LockKeyhole,
+  Sparkles,
+} from "lucide-react";
 
-const h2Class =
-  "text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mt-12 mb-4"
+/* =========================================================
+   COUNTflows — AI TEXT CLEANER SEO CONTENT
 
-const h3Class =
-  "text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-100 mt-8 mb-2"
+   Search intent:
+   - ai text cleaner
+   - clean ai text
+   - chatgpt text cleaner
+   - ai text cleaner free
+   - remove chatgpt formatting
+   - clean text from ai
+   - remove ai formatting from text
 
-const pClass =
-  "text-gray-600 dark:text-gray-300 leading-7 mb-4"
+   Server component
+   Responsive: mobile, tablet and desktop
+========================================================= */
 
-const linkClass =
-  "text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+const h2Class = `
+  text-2xl md:text-3xl
+  font-extrabold tracking-tight
+  text-slate-900 dark:text-white
+`;
 
-const thClass =
-  "px-4 py-3 font-semibold text-gray-900 dark:text-gray-100"
+const h3Class = `
+  text-lg md:text-xl
+  font-bold
+  text-slate-900 dark:text-white
+`;
 
-const tdClass =
-  "px-4 py-3 align-top"
+const pClass = `
+  text-sm sm:text-base
+  leading-7
+  text-slate-600 dark:text-slate-300
+`;
 
-const trClass =
-  "border-t border-gray-200 dark:border-gray-700"
+const linkClass = `
+  font-semibold
+  text-cyan-700
+  underline-offset-4
+  hover:underline
+  dark:text-cyan-400
+`;
+
+const sectionClass = `
+  scroll-mt-24
+  py-8 md:py-10
+`;
+
+const cardClass = `
+  rounded-2xl border
+  border-slate-200
+  bg-white p-5
+  dark:border-slate-800
+  dark:bg-slate-900
+`;
+
+const CLEANING_FEATURES = [
+  {
+    title: "Remove Markdown Formatting",
+    description:
+      "Clean common Markdown syntax, including heading markers, bold text markers, links, blockquotes and inline code formatting.",
+    before: "**Important Update**",
+    after: "Important Update",
+  },
+  {
+    title: "Remove Hidden Characters",
+    description:
+      "Remove selected invisible Unicode characters, zero-width spaces, unusual spaces and certain control characters.",
+    before: "Text with hidden characters",
+    after: "Readable text without those characters",
+  },
+  {
+    title: "Replace Em Dashes",
+    description:
+      "Convert em dashes and en dashes to simpler hyphen-based punctuation when that cleaning option is enabled.",
+    before: "The task is complete — ready to share.",
+    after: "The task is complete - ready to share.",
+  },
+  {
+    title: "Straighten Smart Quotes",
+    description:
+      "Convert curly quotation marks and special ellipses into plain-text punctuation.",
+    before: "“Hello…”",
+    after: '"Hello..."',
+  },
+  {
+    title: "Clean Extra Spaces",
+    description:
+      "Remove repeated spacing, trailing gaps and excessive blank lines to make pasted text easier to use.",
+    before: "Hello    world",
+    after: "Hello world",
+  },
+  {
+    title: "Remove HTML Tags",
+    description:
+      "Remove HTML tags and decode supported HTML entities while retaining readable text.",
+    before: "<p>Hello world</p>",
+    after: "Hello world",
+  },
+];
+
+const STEPS = [
+  {
+    number: "01",
+    title: "Paste Your AI Text",
+    description:
+      "Copy your content from ChatGPT, Claude, Gemini, Copilot or another source. Paste it into the Original Text box.",
+  },
+  {
+    number: "02",
+    title: "Choose Cleaning Options",
+    description:
+      "Keep the recommended options enabled for common formatting cleanup, or change individual settings to suit your text.",
+  },
+  {
+    number: "03",
+    title: "Clean and Review",
+    description:
+      "Click Clean My Text. Review the result and cleanup report before copying or downloading the cleaned text.",
+  },
+];
+
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+}) {
+  return (
+    <div className="mb-6">
+      {eyebrow && (
+        <p
+          className="
+            mb-2 text-xs font-bold
+            uppercase tracking-widest
+            text-cyan-700
+            dark:text-cyan-400
+          "
+        >
+          {eyebrow}
+        </p>
+      )}
+
+      <h2 className={h2Class}>
+        {title}
+      </h2>
+
+      {description && (
+        <p
+          className={`
+            ${pClass}
+            mt-3 max-w-3xl
+          `}
+        >
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
 
 export default function SeoContent() {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-8 md:px-8">
+    <article
+      aria-label="AI Text Cleaner guide"
+      className="
+        mx-auto w-full max-w-5xl
+        px-4 pb-8
+        sm:px-6
+        lg:px-8
+      "
+    >
+      {/* ==============================================
+          WHAT IS AN AI TEXT CLEANER?
+      ============================================== */}
 
-      {/* -------------------------------------------------------------- */}
-      {/* PRIMARY SEARCH INTENT                                          */}
-      {/* -------------------------------------------------------------- */}
-
-      <h2 className={h2Class}>
-        What Is an AI Text Cleaner?
-      </h2>
-
-      <p className={pClass}>
-        An <strong>AI text cleaner</strong> removes unwanted formatting and
-        copy-paste artifacts from AI-generated text without rewriting the
-        message. CountFlows is a <strong>free AI text cleaner</strong> for
-        cleaning text copied from ChatGPT, Claude, Gemini, Copilot, and similar
-        tools. It can remove markdown, hidden Unicode characters, smart
-        punctuation, HTML, awkward spacing, em and en dashes, duplicate lines,
-        emojis, bullets, and other text artifacts.
-      </p>
-
-      <p className={pClass}>
-        The cleaner runs in your browser using fixed text-processing rules.
-        Your text is not sent to an AI model, and you choose which cleaning
-        options are applied.
-      </p>
-
-      {/* -------------------------------------------------------------- */}
-      {/* HOW TO                                                         */}
-      {/* -------------------------------------------------------------- */}
-
-      <h2 className={h2Class}>
-        How to Clean AI Text Without Rewriting It
-      </h2>
-
-      <ol className="mb-4 list-decimal space-y-2 pl-6 leading-7 text-gray-600 dark:text-gray-300">
-        <li>
-          <strong>Paste your text</strong> into the Original Text box.
-        </li>
-
-        <li>
-          <strong>Choose the cleaning options</strong> you want. The
-          recommended options handle common formatting problems, while
-          advanced options stay optional.
-        </li>
-
-        <li>
-          <strong>Click Clean My Text</strong>, review the cleaned output and
-          cleanup report, then copy or download the result.
-        </li>
-      </ol>
-
-      <p className={pClass}>
-        This is useful when text copied from an AI chat looks correct in the
-        chat window but pastes into Word, Google Docs, email, a CMS, or another
-        editor with unwanted symbols, spacing, or special characters.
-      </p>
-
-      {/* -------------------------------------------------------------- */}
-      {/* WHAT IT CLEANS                                                 */}
-      {/* -------------------------------------------------------------- */}
-
-      <h2 className={h2Class}>
-        What This AI Text Cleaner Removes
-      </h2>
-
-      <p className={pClass}>
-        Instead of applying one aggressive cleanup rule, CountFlows separates
-        common fixes from optional changes. This helps preserve the text you
-        want to keep.
-      </p>
-
-      <div className="mb-6 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
-        <table className="w-full min-w-[640px] text-left text-sm md:text-base">
-          <thead className="bg-cyan-50 dark:bg-cyan-900/30">
-            <tr>
-              <th className={thClass}>Cleanup</th>
-              <th className={thClass}>What it fixes</th>
-              <th className={thClass}>Example</th>
-            </tr>
-          </thead>
-
-          <tbody className="text-gray-600 dark:text-gray-300">
-            <tr className={trClass}>
-              <td className={tdClass}>Markdown</td>
-              <td className={tdClass}>
-                Headings, bold or italic markers, links, blockquotes,
-                backticks, and table syntax
-              </td>
-              <td className={tdClass}>
-                **important** becomes important
-              </td>
-            </tr>
-
-            <tr className={trClass}>
-              <td className={tdClass}>Hidden characters</td>
-              <td className={tdClass}>
-                Zero-width characters, BOMs, control characters, and unusual
-                spaces
-              </td>
-              <td className={tdClass}>
-                Invisible formatting is removed or normalized
-              </td>
-            </tr>
-
-            <tr className={trClass}>
-              <td className={tdClass}>Smart punctuation</td>
-              <td className={tdClass}>
-                Curly quotes and single-character ellipses
-              </td>
-              <td className={tdClass}>
-                “hello”… becomes "hello"...
-              </td>
-            </tr>
-
-            <tr className={trClass}>
-              <td className={tdClass}>Dashes</td>
-              <td className={tdClass}>
-                Em and en dashes that may not paste consistently
-              </td>
-              <td className={tdClass}>
-                — and – are converted to keyboard-safe hyphens
-              </td>
-            </tr>
-
-            <tr className={trClass}>
-              <td className={tdClass}>HTML</td>
-              <td className={tdClass}>
-                HTML tags and encoded entities copied from rendered content
-              </td>
-              <td className={tdClass}>
-                &lt;p&gt;Hello&lt;/p&gt; becomes Hello
-              </td>
-            </tr>
-
-            <tr className={trClass}>
-              <td className={tdClass}>Spacing</td>
-              <td className={tdClass}>
-                Repeated spaces, trailing whitespace, excess blank lines, and
-                stray spaces before punctuation
-              </td>
-              <td className={tdClass}>
-                Messy spacing becomes consistent plain text
-              </td>
-            </tr>
-
-            <tr className={trClass}>
-              <td className={tdClass}>Optional cleanup</td>
-              <td className={tdClass}>
-                Bullets, emojis, blank lines, duplicate lines, diacritics, and
-                advanced Unicode forms
-              </td>
-              <td className={tdClass}>
-                These stay optional because they can intentionally change
-                visible content
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      {/* -------------------------------------------------------------- */}
-      {/* UNIQUE PRODUCT VALUE                                           */}
-      {/* -------------------------------------------------------------- */}
-
-      <h2 className={h2Class}>
-        See What Changed Before You Copy
-      </h2>
-
-      <p className={pClass}>
-        Cleaning text should not feel like a black box. After a cleanup,
-        CountFlows shows a cleanup report with the rules that changed the text,
-        before-and-after character counts, and a highlighted view of removed
-        or replaced source characters. You can review the changes before using
-        the cleaned version.
-      </p>
-
-      <figure>
-        <img
-          src="/blogs/ai-text-cleaner.png"
-          alt="AI Text Cleaner cleanup report showing text changes"
+      <section
+        id="what-is-ai-text-cleaner"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="Free Online Text Cleaning"
+          title="What Is an AI Text Cleaner?"
+          description="An AI text cleaner removes unwanted formatting, special characters and copy-paste artifacts from text generated by AI tools or copied from other applications."
         />
-      </figure>
 
-      {/* -------------------------------------------------------------- */}
-      {/* HIGH-INTENT RELATED QUERY                                      */}
-      {/* -------------------------------------------------------------- */}
+        <div className="space-y-4">
+          <p className={pClass}>
+            <strong>CountFlows AI Text Cleaner</strong> is
+            a free browser-based tool for cleaning text
+            copied from ChatGPT, Claude, Gemini,
+            Copilot and other sources. It helps remove
+            Markdown symbols, unusual spaces, selected
+            invisible characters, HTML tags and smart
+            punctuation.
+          </p>
 
-      <h2 className={h2Class}>
-        Remove ChatGPT Formatting Without Rewriting the Text
-      </h2>
+          <p className={pClass}>
+            Instead of rewriting your sentences, the
+            cleaner applies specific text-processing
+            rules. You can enable or disable individual
+            options depending on which formatting
+            problems you want to fix.
+          </p>
 
-      <p className={pClass}>
-        Chat interfaces often render structured output such as headings,
-        bold text, lists, links, code, and other markdown-style formatting.
-        Copying that content into another application can leave visible syntax,
-        rich-text residue, unusual spacing, or Unicode characters behind.
-        Cleaning removes those formatting artifacts while keeping the wording
-        available for you to edit normally.
-      </p>
+          <p className={pClass}>
+            The cleaning operations run locally in
+            your browser. This tool does not require
+            your text to be sent to a remote AI model
+            for processing.
+          </p>
+        </div>
 
-      <p className={pClass}>
-        CountFlows does not try to make AI writing “undetectable” and it does
-        not rewrite sentences. It is a formatting and text-cleanup utility.
-      </p>
-
-      <p className={pClass}>
-        If your main issue is formatting copied from ChatGPT, see our{" "}
-        <Link
-          href="/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text"
-          className={linkClass}
+        <div
+          className="
+            mt-6 grid gap-3
+            sm:grid-cols-3
+          "
         >
-          guide to removing ChatGPT formatting
-        </Link>
-        . You can also read why{" "}
-        <Link
-          href="/blog/em-dash-ai-tell"
-          className={linkClass}
+          {[
+            "Free to use",
+            "14 cleaning options",
+            "No account required",
+          ].map((item) => (
+            <div
+              key={item}
+              className="
+                flex items-center gap-2
+                rounded-xl border
+                border-emerald-200
+                bg-emerald-50/60
+                px-4 py-3
+                text-sm font-semibold
+                text-emerald-800
+                dark:border-emerald-900
+                dark:bg-emerald-950/20
+                dark:text-emerald-300
+              "
+            >
+              <CheckCircle2
+                className="h-4 w-4 shrink-0"
+                aria-hidden="true"
+              />
+              {item}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ==============================================
+          HOW TO CLEAN AI TEXT
+      ============================================== */}
+
+      <section
+        id="how-to-clean-ai-text"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="Step-by-Step Instructions"
+          title="How to Clean AI Text Online for Free"
+          description="You can remove unwanted formatting from AI-generated text in three steps."
+        />
+
+        <ol
+          className="
+            grid list-none gap-4
+            md:grid-cols-3
+          "
         >
-          an em dash is not reliable proof of AI writing
-        </Link>
-        .
-      </p>
+          {STEPS.map((step) => (
+            <li
+              key={step.number}
+              className={cardClass}
+            >
+              <div
+                className="
+                  mb-4 flex h-11 w-11
+                  items-center justify-center
+                  rounded-xl
+                  bg-cyan-50
+                  text-sm font-extrabold
+                  text-cyan-700
+                  dark:bg-cyan-950/40
+                  dark:text-cyan-300
+                "
+              >
+                {step.number}
+              </div>
 
-      {/* -------------------------------------------------------------- */}
-      {/* SEMANTIC CLARITY                                               */}
-      {/* -------------------------------------------------------------- */}
+              <h3 className={h3Class}>
+                {step.title}
+              </h3>
 
-      <h2 className={h2Class}>
-        AI Text Cleaner vs. AI Humanizer
-      </h2>
+              <p className={`${pClass} mt-2`}>
+                {step.description}
+              </p>
+            </li>
+          ))}
+        </ol>
 
-      <p className={pClass}>
-        An AI text cleaner fixes formatting, spacing, punctuation, Unicode,
-        markup, and other copy-paste problems. An AI humanizer changes wording
-        or sentence structure. CountFlows is a cleaner, not a humanizer: the
-        goal is to make the text technically cleaner without automatically
-        rewriting your ideas.
-      </p>
-
-      {/* -------------------------------------------------------------- */}
-      {/* PRACTICAL USE                                                  */}
-      {/* -------------------------------------------------------------- */}
-
-      <h2 className={h2Class}>
-        Where Cleaned Text Is Useful
-      </h2>
-
-      <p className={pClass}>
-        Cleaned text is useful before pasting into Word or Google Docs,
-        publishing in a CMS, writing an email, preparing social media copy,
-        working with CSV or JSON, or moving text between applications that
-        handle formatting differently.
-      </p>
-
-      <p className={pClass}>
-        After cleaning, use the{" "}
-        <Link
-          href="/tools/character-counter"
-          className={linkClass}
+        <div
+          className="
+            mt-6 rounded-xl
+            border border-cyan-200
+            bg-cyan-50/60 p-4
+            dark:border-cyan-900
+            dark:bg-cyan-950/20
+          "
         >
-          Character Counter
-        </Link>{" "}
-        to check publishing limits, the{" "}
-        <Link
-          href="/tools/word-counter"
-          className={linkClass}
+          <p className={pClass}>
+            <strong>Tip:</strong> If you only want
+            to remove ChatGPT Markdown formatting,
+            keep the Markdown cleaning option enabled
+            and switch off any punctuation changes
+            you do not want.
+          </p>
+        </div>
+      </section>
+
+      {/* ==============================================
+          BEFORE AND AFTER EXAMPLE
+      ============================================== */}
+
+      <section
+        id="ai-text-cleaner-example"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="See the Difference"
+          title="AI Text Cleaner Example: Before and After"
+          description="This example shows how common Markdown markers and special punctuation can be cleaned while keeping the original wording."
+        />
+
+        <div
+          className="
+            grid gap-4
+            md:grid-cols-2
+          "
         >
-          Word Counter
-        </Link>{" "}
-        for length and text statistics, or the{" "}
-        <Link
-          href="/tools/keyword-density-checker"
-          className={linkClass}
+          <div
+            className="
+              min-w-0 rounded-2xl
+              border border-rose-200
+              bg-rose-50/60 p-5
+              dark:border-rose-900
+              dark:bg-rose-950/20
+            "
+          >
+            <div
+              className="
+                mb-4 flex items-center
+                gap-2
+              "
+            >
+              <span
+                className="
+                  flex h-7 w-7
+                  items-center justify-center
+                  rounded-full
+                  bg-rose-100
+                  text-rose-700
+                  dark:bg-rose-900/50
+                  dark:text-rose-300
+                "
+              >
+                <FileText
+                  className="h-4 w-4"
+                  aria-hidden="true"
+                />
+              </span>
+
+              <h3
+                className="
+                  text-sm font-bold
+                  text-rose-800
+                  dark:text-rose-300
+                "
+              >
+                Before Cleaning
+              </h3>
+            </div>
+
+            <pre
+              className="
+                whitespace-pre-wrap
+                break-words
+                font-mono text-sm
+                leading-8
+                text-slate-800
+                dark:text-slate-200
+              "
+            >
+              {
+                "## Project Update\n\n**Status:** Complete\n\nThe task is finished — ready for review.\n\n“Everything looks good…”"
+              }
+            </pre>
+          </div>
+
+          <div
+            className="
+              min-w-0 rounded-2xl
+              border border-emerald-200
+              bg-emerald-50/60 p-5
+              dark:border-emerald-900
+              dark:bg-emerald-950/20
+            "
+          >
+            <div
+              className="
+                mb-4 flex items-center
+                gap-2
+              "
+            >
+              <span
+                className="
+                  flex h-7 w-7
+                  items-center justify-center
+                  rounded-full
+                  bg-emerald-100
+                  text-emerald-700
+                  dark:bg-emerald-900/50
+                  dark:text-emerald-300
+                "
+              >
+                <CheckCircle2
+                  className="h-4 w-4"
+                  aria-hidden="true"
+                />
+              </span>
+
+              <h3
+                className="
+                  text-sm font-bold
+                  text-emerald-800
+                  dark:text-emerald-300
+                "
+              >
+                After Cleaning
+              </h3>
+            </div>
+
+            <pre
+              className="
+                whitespace-pre-wrap
+                break-words
+                font-mono text-sm
+                leading-8
+                text-slate-800
+                dark:text-slate-200
+              "
+            >
+              {
+                'Project Update\n\nStatus: Complete\n\nThe task is finished - ready for review.\n\n"Everything looks good..."'
+              }
+            </pre>
+          </div>
+        </div>
+
+        <p
+          className="
+            mt-3 text-xs leading-6
+            text-slate-500
+            dark:text-slate-400
+          "
         >
-          Keyword Density Checker
-        </Link>{" "}
-        when reviewing content for publication.
-      </p>
+          Illustrative example using Markdown,
+          dash, punctuation and spacing cleanup.
+          Actual results depend on your selected
+          options and input text.
+        </p>
+      </section>
 
-      {/* -------------------------------------------------------------- */}
-      {/* PRIVACY                                                        */}
-      {/* -------------------------------------------------------------- */}
+      {/* ==============================================
+          WHAT CAN THE TOOL REMOVE?
+      ============================================== */}
 
-      <h2 className={h2Class}>
-        Private, Browser-Based Text Cleaning
-      </h2>
+      <section
+        id="what-ai-text-cleaner-removes"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="Cleaning Capabilities"
+          title="What Does This AI Text Cleaner Remove?"
+          description="Choose the specific formatting problems you want to fix. The tool separates commonly used cleaning rules from more aggressive optional changes."
+        />
 
-      <p className={pClass}>
-        The cleaning rules run locally in your browser. CountFlows does not
-        need to send the pasted text to a remote AI model to perform the
-        cleanup, so you can clean text without creating an account or waiting
-        for a server response.
-      </p>
-
-      <p className={pClass}>
-        If you are comparing browser-based text cleaners, see our guide to{" "}
-        <Link
-          href="/blog/cleanpaste-site-alternatives"
-          className={linkClass}
+        <div
+          className="
+            grid gap-4
+            sm:grid-cols-2
+          "
         >
-          CleanPaste.site alternatives
-        </Link>
-        .
-      </p>
+          {CLEANING_FEATURES.map((feature) => (
+            <div
+              key={feature.title}
+              className={cardClass}
+            >
+              <h3
+                className="
+                  text-base font-bold
+                  text-slate-900
+                  dark:text-white
+                "
+              >
+                {feature.title}
+              </h3>
 
-      {/* -------------------------------------------------------------- */}
-      {/* RELATED TOOL                                                   */}
-      {/* -------------------------------------------------------------- */}
+              <p
+                className={`
+                  ${pClass}
+                  mt-2
+                `}
+              >
+                {feature.description}
+              </p>
 
-      <h3 className={h3Class}>
-        Need to change capitalization too?
-      </h3>
+              <div
+                className="
+                  mt-4 space-y-2
+                  rounded-xl
+                  bg-slate-50 p-3
+                  dark:bg-slate-950
+                "
+              >
+                <div>
+                  <span
+                    className="
+                      text-xs font-bold
+                      text-rose-700
+                      dark:text-rose-400
+                    "
+                  >
+                    Before
+                  </span>
 
-      <p className={pClass}>
-        Use the{" "}
-        <Link
-          href="/tools/case-converter"
-          className={linkClass}
+                  <p
+                    className="
+                      mt-1 break-words
+                      font-mono text-xs
+                      text-slate-700
+                      dark:text-slate-300
+                    "
+                  >
+                    {feature.before}
+                  </p>
+                </div>
+
+                <div
+                  className="
+                    border-t border-slate-200
+                    pt-2
+                    dark:border-slate-800
+                  "
+                >
+                  <span
+                    className="
+                      text-xs font-bold
+                      text-emerald-700
+                      dark:text-emerald-400
+                    "
+                  >
+                    After
+                  </span>
+
+                  <p
+                    className="
+                      mt-1 break-words
+                      font-mono text-xs
+                      text-slate-700
+                      dark:text-slate-300
+                    "
+                  >
+                    {feature.after}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="
+            mt-6 rounded-xl
+            border border-amber-200
+            bg-amber-50 p-4
+            dark:border-amber-900/50
+            dark:bg-amber-950/10
+          "
         >
-          Case Converter
-        </Link>{" "}
-        after cleaning if you also need sentence case, title case, uppercase,
-        or lowercase formatting.
-      </p>
+          <div className="flex items-start gap-2">
+            <Info
+              className="
+                mt-0.5 h-4 w-4
+                shrink-0 text-amber-700
+                dark:text-amber-400
+              "
+              aria-hidden="true"
+            />
 
-    </section>
-  )
+            <p className={pClass}>
+              <strong>Advanced options:</strong>{" "}
+              Emoji removal, diacritic stripping,
+              Unicode normalization, duplicate-line
+              removal and bullet removal can change
+              visible content. These options should
+              be enabled only when needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ==============================================
+          CHATGPT FORMATTING
+      ============================================== */}
+
+      <section
+        id="remove-chatgpt-formatting"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="ChatGPT Text Cleaning"
+          title="How to Remove ChatGPT Formatting from Copied Text"
+          description="Text copied from ChatGPT may include Markdown symbols, unusual spacing or punctuation that looks different when pasted into another application."
+        />
+
+        <div className="space-y-4">
+          <p className={pClass}>
+            ChatGPT and similar AI assistants can
+            produce formatted responses containing
+            headings, bold text, lists, links and
+            code blocks. Depending on how you copy
+            and paste the response, visible Markdown
+            syntax or special characters may remain.
+          </p>
+
+          <p className={pClass}>
+            To clean this text, paste it into
+            CountFlows AI Text Cleaner and keep the
+            relevant formatting-removal options
+            enabled. You can review the cleaned
+            result before using it in another editor.
+          </p>
+        </div>
+
+        <h3 className={`${h3Class} mt-6`}>
+          How to Clean Text Copied from ChatGPT
+        </h3>
+
+        <ol
+          className="
+            mt-4 list-decimal
+            space-y-3 pl-6
+            text-sm leading-7
+            text-slate-600
+            dark:text-slate-300
+            sm:text-base
+          "
+        >
+          <li>
+            Copy your text from ChatGPT and paste
+            it into the Original Text box.
+          </li>
+
+          <li>
+            Enable Remove Markdown Formatting
+            if your text contains unwanted heading,
+            bold or link markers.
+          </li>
+
+          <li>
+            Adjust the dash, punctuation, spacing
+            and hidden-character options as needed.
+          </li>
+
+          <li>
+            Click Clean My Text and compare the
+            cleaned result with your original.
+          </li>
+
+          <li>
+            Copy or download the cleaned text.
+          </li>
+        </ol>
+
+        <div
+          className="
+            mt-6 rounded-2xl
+            border border-cyan-200
+            bg-cyan-50/50 p-5
+            dark:border-cyan-900
+            dark:bg-cyan-950/20
+          "
+        >
+          <p className={pClass}>
+            For more detailed instructions, read
+            our{" "}
+            <Link
+              href="/blog/how-to-remove-chatgpt-formatting-from-copied-ai-text"
+              className={linkClass}
+            >
+              guide to removing ChatGPT formatting
+            </Link>
+            .
+          </p>
+
+          <p className={`${pClass} mt-3`}>
+            If you are specifically concerned about
+            em dashes, see our explanation of{" "}
+            <Link
+              href="/blog/em-dash-ai-tell"
+              className={linkClass}
+            >
+              whether an em dash indicates AI writing
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      {/* ==============================================
+          CLEANER VS HUMANIZER
+      ============================================== */}
+
+      <section
+        id="ai-text-cleaner-vs-humanizer"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="Understanding the Difference"
+          title="AI Text Cleaner vs. AI Humanizer"
+          description="These tools serve different purposes, so choosing the correct one matters."
+        />
+
+        <div
+          className="
+            grid gap-4
+            md:grid-cols-2
+          "
+        >
+          <div className={cardClass}>
+            <div
+              className="
+                mb-3 flex h-10 w-10
+                items-center justify-center
+                rounded-xl
+                bg-cyan-50
+                text-cyan-700
+                dark:bg-cyan-950/30
+                dark:text-cyan-400
+              "
+            >
+              <Sparkles
+                className="h-5 w-5"
+                aria-hidden="true"
+              />
+            </div>
+
+            <h3 className={h3Class}>
+              AI Text Cleaner
+            </h3>
+
+            <p className={`${pClass} mt-3`}>
+              Removes formatting artifacts,
+              unwanted spaces, selected invisible
+              characters, HTML tags and special
+              punctuation. Its main purpose is
+              technical text cleanup.
+            </p>
+          </div>
+
+          <div className={cardClass}>
+            <div
+              className="
+                mb-3 flex h-10 w-10
+                items-center justify-center
+                rounded-xl
+                bg-violet-50
+                text-violet-700
+                dark:bg-violet-950/30
+                dark:text-violet-400
+              "
+            >
+              <FileText
+                className="h-5 w-5"
+                aria-hidden="true"
+              />
+            </div>
+
+            <h3 className={h3Class}>
+              AI Humanizer
+            </h3>
+
+            <p className={`${pClass} mt-3`}>
+              Typically changes wording, sentence
+              structure or writing style. That is
+              different from removing formatting
+              symbols or copy-paste artifacts.
+            </p>
+          </div>
+        </div>
+
+        <p className={`${pClass} mt-5`}>
+          <strong>CountFlows is a text-cleaning tool,
+          not an AI detection bypass tool.</strong>{" "}
+          It does not promise to make AI-generated
+          writing undetectable.
+        </p>
+      </section>
+
+      {/* ==============================================
+          WHERE THE TOOL IS USEFUL
+      ============================================== */}
+
+      <section
+        id="where-to-use-cleaned-text"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="Practical Uses"
+          title="Where Can You Use Cleaned AI Text?"
+          description="Cleaned text can be useful when moving content between applications that handle formatting differently."
+        />
+
+        <div
+          className="
+            grid gap-3
+            sm:grid-cols-2
+            lg:grid-cols-3
+          "
+        >
+          {[
+            "Microsoft Word documents",
+            "Google Docs",
+            "Email drafts",
+            "Website and CMS editors",
+            "Social media captions",
+            "Notes and text editors",
+          ].map((item) => (
+            <div
+              key={item}
+              className="
+                flex items-center gap-2
+                rounded-xl border
+                border-slate-200
+                bg-white px-4 py-3
+                text-sm font-medium
+                text-slate-700
+                dark:border-slate-800
+                dark:bg-slate-900
+                dark:text-slate-200
+              "
+            >
+              <CheckCircle2
+                className="
+                  h-4 w-4 shrink-0
+                  text-emerald-600
+                "
+                aria-hidden="true"
+              />
+
+              {item}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ==============================================
+          PRIVACY & HOW THE TOOL WORKS
+      ============================================== */}
+
+      <section
+        id="browser-based-cleaning"
+        className={sectionClass}
+      >
+        <div
+          className="
+            rounded-2xl
+            border border-cyan-200
+            bg-gradient-to-br
+            from-cyan-50 to-white
+            p-5
+            dark:border-cyan-900
+            dark:from-cyan-950/20
+            dark:to-slate-900
+            sm:p-7
+          "
+        >
+          <div
+            className="
+              mb-4 flex h-11 w-11
+              items-center justify-center
+              rounded-xl
+              bg-white text-cyan-700
+              shadow-sm
+              dark:bg-slate-800
+              dark:text-cyan-400
+            "
+          >
+            <LockKeyhole
+              className="h-5 w-5"
+              aria-hidden="true"
+            />
+          </div>
+
+          <h2 className={h2Class}>
+            Private, Browser-Based AI Text Cleaning
+          </h2>
+
+          <p className={`${pClass} mt-4`}>
+            CountFlows applies its text-cleaning
+            rules directly in the browser. The
+            cleaning component does not need a
+            remote AI model or an account to
+            process pasted text.
+          </p>
+
+          <p className={`${pClass} mt-3`}>
+            Because the processing is based on
+            selectable rules, you can control
+            which transformations are applied.
+            Review the result before copying
+            it into another application.
+          </p>
+        </div>
+      </section>
+
+      {/* ==============================================
+          RELATED TOOLS & INTERNAL LINKS
+      ============================================== */}
+
+      <section
+        id="related-text-tools"
+        className={sectionClass}
+      >
+        <SectionHeading
+          eyebrow="More CountFlows Tools"
+          title="Useful Tools After Cleaning Your Text"
+          description="Once the formatting is clean, these related tools can help you inspect, measure or prepare the text."
+        />
+
+        <div
+          className="
+            grid gap-4
+            sm:grid-cols-2
+          "
+        >
+          <Link
+            href="/tools/invisible-character-detector"
+            className="
+              group flex items-start
+              justify-between gap-3
+              rounded-2xl border
+              border-slate-200
+              bg-white p-5
+              transition-colors
+              hover:border-cyan-300
+              hover:bg-cyan-50/30
+              dark:border-slate-800
+              dark:bg-slate-900
+              dark:hover:border-cyan-700
+            "
+          >
+            <div>
+              <h3 className={h3Class}>
+                Invisible Character Detector
+              </h3>
+
+              <p className={`${pClass} mt-2`}>
+                Inspect text for hidden Unicode
+                characters and unusual spaces.
+              </p>
+            </div>
+
+            <ArrowRight
+              className="
+                h-5 w-5 shrink-0
+                text-cyan-600
+                transition-transform
+                group-hover:translate-x-1
+              "
+              aria-hidden="true"
+            />
+          </Link>
+
+          <Link
+            href="/tools/character-counter"
+            className="
+              group flex items-start
+              justify-between gap-3
+              rounded-2xl border
+              border-slate-200
+              bg-white p-5
+              transition-colors
+              hover:border-cyan-300
+              hover:bg-cyan-50/30
+              dark:border-slate-800
+              dark:bg-slate-900
+              dark:hover:border-cyan-700
+            "
+          >
+            <div>
+              <h3 className={h3Class}>
+                Character Counter
+              </h3>
+
+              <p className={`${pClass} mt-2`}>
+                Count characters and check
+                text length for publishing.
+              </p>
+            </div>
+
+            <ArrowRight
+              className="
+                h-5 w-5 shrink-0
+                text-cyan-600
+                transition-transform
+                group-hover:translate-x-1
+              "
+              aria-hidden="true"
+            />
+          </Link>
+
+          <Link
+            href="/tools/word-counter"
+            className="
+              group flex items-start
+              justify-between gap-3
+              rounded-2xl border
+              border-slate-200
+              bg-white p-5
+              transition-colors
+              hover:border-cyan-300
+              hover:bg-cyan-50/30
+              dark:border-slate-800
+              dark:bg-slate-900
+              dark:hover:border-cyan-700
+            "
+          >
+            <div>
+              <h3 className={h3Class}>
+                Word Counter
+              </h3>
+
+              <p className={`${pClass} mt-2`}>
+                Measure word count and
+                review text statistics.
+              </p>
+            </div>
+
+            <ArrowRight
+              className="
+                h-5 w-5 shrink-0
+                text-cyan-600
+                transition-transform
+                group-hover:translate-x-1
+              "
+              aria-hidden="true"
+            />
+          </Link>
+
+          <Link
+            href="/tools/case-converter"
+            className="
+              group flex items-start
+              justify-between gap-3
+              rounded-2xl border
+              border-slate-200
+              bg-white p-5
+              transition-colors
+              hover:border-cyan-300
+              hover:bg-cyan-50/30
+              dark:border-slate-800
+              dark:bg-slate-900
+              dark:hover:border-cyan-700
+            "
+          >
+            <div>
+              <h3 className={h3Class}>
+                Case Converter
+              </h3>
+
+              <p className={`${pClass} mt-2`}>
+                Convert cleaned text to uppercase,
+                lowercase, title case or sentence case.
+              </p>
+            </div>
+
+            <ArrowRight
+              className="
+                h-5 w-5 shrink-0
+                text-cyan-600
+                transition-transform
+                group-hover:translate-x-1
+              "
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
+
+        <div
+          className="
+            mt-6 rounded-xl
+            border border-slate-200
+            bg-slate-50 p-5
+            dark:border-slate-800
+            dark:bg-slate-900/60
+          "
+        >
+          <p className={pClass}>
+            Comparing different text cleaning
+            services? Read our guide to{" "}
+            <Link
+              href="/blog/cleanpaste-site-alternatives"
+              className={linkClass}
+            >
+              CleanPaste.site alternatives
+            </Link>
+            .
+          </p>
+
+          <p className={`${pClass} mt-3`}>
+            If you are preparing content for
+            publication, you can also use the{" "}
+            <Link
+              href="/tools/keyword-density-checker"
+              className={linkClass}
+            >
+              Keyword Density Checker
+            </Link>
+            {" "}to inspect word and phrase frequency.
+          </p>
+        </div>
+      </section>
+    </article>
+  );
 }
