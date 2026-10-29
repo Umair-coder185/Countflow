@@ -1,6 +1,6 @@
 export const metadata = {
   title:
-    "Free Reading Time Calculator: How Long to Read This Text? | CountFlows",
+    "Free Reading Time Calculator: How Long to Read This Text?",
 
   description:
     "Free reading time calculator: paste any article, essay, or script and get an instant reading and speaking time estimate in seconds — no sign-up needed.",
@@ -24,7 +24,7 @@ export const metadata = {
 
     images: [
       {
-        url: "https://countflows.com/blogs/blog4-1.png",
+        url: "https://countflows.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "CountFlows Reading Time Calculator",
@@ -41,7 +41,7 @@ export const metadata = {
     description:
       "Paste your text and instantly estimate how long it will take to read or speak.",
 
-    images: ["https://countflows.com/blogs/blog4-1.png"],
+    images: ["https://countflows.com/og-image.png"],
   },
 
   robots: {

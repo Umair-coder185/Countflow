@@ -21,7 +21,7 @@ const READING_PRESETS = [
 
 function countWords(value) {
   return (
-    value.match(/[\p{L}\p{N}]+(?:['’\-][\p{L}\p{N}]+)*/gu) || []
+    value.match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu) || []
   ).length
 }
 

@@ -118,7 +118,8 @@ const blog4=`
 
 <h3>How Many Pages Is 1,000 Words?</h3>
 
-<p>Two pages single-spaced, four pages double-spaced with standard formatting. Switch the font and the count shifts: Arial produces about 3.7 double-spaced pages, Verdana closer to 4.4.</p>
+<p>About two pages single-spaced or four pages double-spaced with 12pt Times New Roman and one-inch margins. Other fonts, paragraph spacing and page settings can change the result, so treat these figures as estimates rather than exact page counts.</p>
+
 
 <h3>How Many Pages Is 2,000 Words?</h3>
 
@@ -161,7 +162,9 @@ const blog4=`
   <li>Set 12pt Times New Roman, one-inch margins, and the required spacing before you write, not after.</li>
   <li>Indent paragraphs rather than adding blank lines between them; extra paragraph spacing quietly inflates page count.</li>
   <li>Use one space after each period. Double spaces add up over a long document.</li>
-  <li>Trust the word count, not the page count. Pages change with formatting; words do not.</li>
+
+<li>Testing a document layout? Use the <a href="/tools/text-repeater">Text Repeater</a> to create repeated placeholder text, then check how your chosen font, margins and line spacing affect pagination. Repeated placeholder text is only a formatting test, not a substitute for a real essay.</li>
+
 </ul>
 
 <h2 id="bottom-line">The Bottom Line</h2>
@@ -180,9 +183,9 @@ const blog4=`
 
 <p>About 500 words single-spaced or 250 words double-spaced with 12pt font and standard margins, nearly identical to US Letter. At 1.5 spacing, an A4 page holds roughly 350 to 400 words.</p>
 
-<h3>How many words is a 300-page book?</h3>
+<h3>How Many Words Is a 300-Page Book?</h3>
 
-<p>Roughly 82,500 words at the publishing average of 275 words per page. The true figure ranges from 75,000 to 90,000 depending on trim size, font, and how much dialogue the book contains.</p>
+<p>A 300-page printed book may contain approximately 75,000 to 105,000 words if each page holds 250 to 350 words. Using a middle estimate of 275 words per page gives about 82,500 words. The actual count depends on the book's trim size, font, layout and amount of dialogue.</p>
 
 <h3>How many handwritten pages is 500 words?</h3>
 

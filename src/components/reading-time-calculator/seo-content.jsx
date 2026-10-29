@@ -176,9 +176,8 @@ export default function SEOContent() {
         from Marc Brysbaert's 2019 meta-analysis in the{" "}
         <em>Journal of Memory and Language</em>, which pooled 190 separate
         reading-speed studies. It found that adults silently read English
-        non-fiction at an average of 238 WPM and fiction at 260 WPM — both a
-        little lower than the 200–300 WPM range you'll see quoted in older or
-        less rigorous sources.
+        non-fiction at an average of 238 WPM and fiction at 260 WPM — within the broad 200–300 WPM range commonly used for everyday reading
+estimates.
       </p>
 
       <p className={pClass}>

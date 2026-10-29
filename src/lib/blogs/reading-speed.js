@@ -77,7 +77,9 @@ const readingspeed = `
 
   <section>
     <h2>How Many Pages Per Hour Is Normal?</h2>
-    <p>Most readers don't measure themselves in words per minute — they think in pages. At the average silent reading speed of 238 WPM, and with a typical paperback holding 250–300 words per page, the average reader gets through 40 to 55 pages per hour.</p>
+   
+<p>Most readers don't measure themselves in words per minute — they think in pages. At an average silent reading speed of 238 WPM, a paperback containing 250–300 words per page works out to approximately 48–57 pages per hour. Actual progress varies with page density, difficulty, interruptions and comprehension.</p>
+
     <table>
       <thead>
         <tr>
@@ -86,10 +88,12 @@ const readingspeed = `
         </tr>
       </thead>
       <tbody>
-        <tr><td>150 WPM (slower reader)</td><td>25–35 pages</td></tr>
-        <tr><td>238 WPM (average)</td><td>40–55 pages</td></tr>
-        <tr><td>300 WPM (fast)</td><td>55–70 pages</td></tr>
-        <tr><td>400+ WPM (skimming)</td><td>80+ pages, reduced recall</td></tr>
+    
+<tr><td>150 WPM</td><td>30–36 pages</td></tr>
+<tr><td>238 WPM (adult non-fiction average)</td><td>48–57 pages</td></tr>
+<tr><td>300 WPM</td><td>60–72 pages</td></tr>
+<tr><td>400 WPM</td><td>80–96 pages</td></tr>
+
       </tbody>
     </table>
     <p>If you read 20–30 pages an hour, that's still a normal pace for many readers — dense non-fiction, small fonts, note-taking, and unfamiliar topics all cut page counts down. A textbook page can hold 800 words, close to three paperback pages' worth of text, so the same reader can look "slow" on one book and "fast" on another purely because of formatting.</p>
@@ -104,7 +108,9 @@ const readingspeed = `
   <section>
     <h2>Reading Speed vs Reading Comprehension: The Trade-off</h2>
     <figure><img src="/blogs/speedreading.png" alt="reading speed vs comprehension"></figure>
-    <p>Faster does not always mean better. Push past the 400–500 WPM mark and reading comprehension collapses — not from any lack of skill, but because of the physical way eyes pull information off a page. Vision works in brief stops (fixations) and rapid hops (saccades), and no amount of training removes that mechanical ceiling.</p>
+   
+<p>Faster reading does not automatically mean better reading. At very high speeds, readers may sacrifice detail and comprehension, particularly when the material is unfamiliar or complex. Reading involves eye movements, language processing and understanding, so an impressive WPM score should always be evaluated alongside what the reader actually remembers.</p>
+
     <p>That is why WPM alone is an unreliable measure. Two people can both read at 300 WPM, yet one remembers everything while the other retains only the general idea. If you want an honest picture of your reading ability, always measure speed together with comprehension.</p>
   </section>
 
@@ -122,7 +128,9 @@ const readingspeed = `
 
   <section>
     <h2>Find Your Own Reading Speed in Under a Minute</h2>
-    <p>Averages give you a benchmark, but they can't tell you where you stand. Paste any passage into the <a href="/tools/reading-time" style="color:blue">Reading Time Calculator</a> to see your actual reading time in seconds — no manual math needed.</p>
+    
+<p>Averages provide a useful benchmark, but your personal reading speed depends on the material and how carefully you read. Use the <a href="/tools/reading-time">Reading Time Calculator</a> to estimate how long a passage may take at a selected reading pace. To measure your actual WPM, time yourself reading a passage and divide its word count by the minutes taken.</p>
+
     <p>If you're testing yourself on a full document rather than a short passage, run it through the <a href="/tools/word-counter" style="color:blue">Word Counter Tool</a> first to get an exact word count.</p>
   </section>
 
